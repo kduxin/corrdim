@@ -1,0 +1,4388 @@
+1. Historical Background
+NB: This section assumes familiarity with some of the terminology
+introduced in
+Section 2
+and
+Section 3
+.
+ Readers looking for a technical overview of recursive functions or
+computability theory are advised to start there.
+1.1 The Early History of Recursive Definitions
+Examples of recursive definitions can be found intermittently in the
+history of ancient and medieval mathematics. A familiar illustration
+is the sequence \ of
+Fibonacci numbers
+\ given by the recurrence \ and \ .
+ The definition of this sequence has traditionally been attributed to
+the thirteenth century Italian mathematician Leonardo of Pisa  who introduced it in his
+Liber Abaci
+in
+the context of an example involving population genetics . But descriptions of similar sequences can
+also be found in Greek, Egyptian, and Sanskrit sources dating as early
+as 700 BCE .
+General interest in recursion as a mode of function definition
+originated in the mid-nineteenth century as part of the broader
+program of arithmetizing analysis and the ensuing discussions of the
+foundations of arithmetic itself. In this context, the formulation of
+recursive definitions for number theoretic functions was closely tied
+to the isolation of mathematical induction as a mode of reasoning
+about the natural numbers. It was in this setting in which Grassmann
+ and Peirce  first gave the familiar recursive definitions
+of addition and
+ multiplication:
+
+\[\begin{align} \label{defnadd}
+\text{i.}\quad &&  x + 0 & = x \\ \nonumber
+\text{ii.}\quad &&  x +  & = +1
+\end{align}\]
+ 
+\[\begin{align} \label{defnmult}
+\text{i.}\quad &&  x \times 0 & = 0 \\ \nonumber
+\text{ii.}\quad &&  x \times  & =  + x
+\end{align}\]
+They then used these definition to prove the associative, commutative,
+and distributive laws for these
+ operations.
+
+The first person to employ the expression “definition by
+recursion” appears to have been Dedekind in his essay
+Was
+sind und was sollen die Zahlen
+. This work presents a set
+theoretic foundation for arithmetic wherein Dedekind demonstrated that
+it was possible to state and prove the existence and uniqueness of
+functions defined by primitive recursion as mathematical theorems
+. He formulated recursive definitions of addition
+, multiplication , and exponentiation
+ and then also formally proved by induction that the
+functions so defined satisfy the expected algebraic identities. The
+first two of these definitions would later be adopted by Peano 
+as defining the symbols \ and \ in the direct
+axiomatization of arithmetic he based on Dedekind’s
+monograph.
+1.2 The Origins of Primitive Recursion
+The first work devoted exclusively to recursive definability was
+Skolem’s  paper
+The foundations of elementary arithmetic established by the recursive
+mode of thought, without the use of apparent variables ranging over
+infinite domains.
+This work is significant with respect to the subsequent development of
+computability theory for at least three reasons. First, it contains a
+informal description of what we now call the
+primitive recursive
+functions
+. Second, it can be regarded as the first place where
+recursive definability is linked to effective computability . And third, it demonstrates that a wide range of
+functions and relations are primitive recursive in a manner which
+anticipates Gödel’s  use of primitive recursion for
+the arithmetization of syntax.
+One of Skolem’s stated goals was to present a logical foundation
+for number theory which avoids the use of unrestricted quantifiers. He
+was inspired in this regard by the observation that it is possible to
+develop much of elementary arithmetic without the use of the
+expressions “always”  and
+“sometimes”  which figure in
+the formalization of number theory given by Russell and Whitehead in
+Principia Mathematica
+. This was to be
+accomplished by formulating arithmetical theorems as what he referred
+to as
+functional assertions
+. These took the form of
+identities between terms defined by primitive recursive operations
+which Skolem referred to as
+descriptive functions
+. For
+instance, the commutativity of addition is expressed in this form by
+an equation with free variables
+\[\begin{equation}\label{funassert}
+x + y = y + x
+\end{equation}\]
+In cases where such statements are provable in the system Skolem
+describes, the intended interpretation is that the claim holds
+universally for all natural numbers—e.g., \\). But in Skolem’s system there is no means of
+negating such a statement to express a bare existential assertion
+without producing a witness.
+Statements like  would later be referred to by
+Hilbert & Bernays   as
+verifiable
+in the sense that their
+individual instances can be verified computationally by replacing
+variables with concrete numerals. This is accomplished by what Skolem
+referred to as the “recursive mode of thought”. The sense
+of this phrase is clarified by the following properties of the system
+he describes:
+the natural numbers are taken as basic objects
+together with the successor function \;
+it is assumed that descriptive functions proven to
+be equal may be substituted for one another in other expressions;
+all definitions of functions and relations on
+natural numbers are given by recursion;
+functional assertions such as  must
+be proven by induction.
+Taking these principles as a foundation, Skolem showed how to obtain
+recursive definitions of the
+predecessor
+and
+subtraction
+functions, the
+less than
+,
+divisibility
+, and
+primality
+relations,
+greatest
+common divisors
+,
+least common multiples
+, and
+bounded
+sums and products
+which are similar to those given in
+Section 2.1.2
+below.
+Overall Skolem considered instances of what we would now refer to as
+primitive recursion, course of values recursion, double recursion, and
+recursion on functions of type \.
+He did not, however, introduce general schemas so as to systematically
+distinguish these modes of definition. Nonetheless, properties
+i–iv of Skolem’s treatment provide a means of assimilating
+calculations like  to derivations in quantifier-free
+first-order logic. It is thus not difficult to discern in  the kernel of the system we now know as
+Primitive Recursive
+Arithmetic
+.
+The next important steps in the development of a general theory of
+recursive function arose as a consequence of the interaction between
+Hilbert’s Program
+and Gödel’s  proof of the Incompleteness Theorems.
+Hilbert  had announced the goal of proving the consistency of
+arithmetic—and ultimately also analysis and set theory— in
+the face of the set theoretic paradoxes. His initial plans for
+carrying out such a proof are described in a series of lectures and
+addresses in the 1910s–1920s which provide a description of what
+would come to be called the
+finitary standpoint
+—i.e.,
+the fragment of mathematical reasoning pertaining to finite
+combinatorial objects which was intended to serve as the secure basis
+for a consistency proof. The proof itself was to be carried out using
+the methods of what Hilbert referred to as
+metamathematics
+—i.e., the formal study of axioms and
+derivations which would grow into the subject now known as
+proof theory
+.
+In one of his initial descriptions of this program Hilbert 
+sketched the basic form which a metamathematical proof of consistency
+might take. Suppose, for instance, that \ is a
+mathematical theory about which it is possible to prove the following
+conditional:
+If \ applications of rules of inference applied to the axioms
+of a system \ do not lead to a contradiction, then
+\ applications also do not lead to a contradiction.
+Were it possible to provide a mathematical demonstration of i), it
+might seem possible to conclude
+\ is consistent.
+However Poincaré  observed that Hilbert’s approach
+relies on mathematical induction in inferring ii from i. He objected
+on the basis that this renders Hilbert’s proposed method
+circular in the case that the system \ in question itself
+subsumes principles intended to formalize
+ induction.
+
+Together with his collaborators Ackermann and Bernays, Hilbert
+developed metamathematics considerably during the 1910–1920s.
+This served as the basis of Hilbert’s  lecture wherein he
+replied to Poincaré by making a systematic distinction between
+“formal“ occurrences of mathematical induction in the
+object language and the metatheoretic use of induction as a
+“contentual“ [
+inhaltliche
+] principle used in
+order to reason about proofs as finite combinatorial objects. It was
+also in this context in which Hilbert connected the latter form of
+induction to the “construction and deconstruction of number
+signs” .
+As is made clear in subsequent presentations, Hilbert understood
+“number signs” to be unary numerals written in stroke
+notation of the form
+\[\nonumber
+|, ||, |||, \ldots\]
+Such expressions can be operated on concretely by adjoining or
+removing strokes in a manner which mirrors the arithmetical operations
+of successor and predecessor which figure in Skolem’s
+“recursive mode of thought“. This observation in turn
+informed Hilbert’s explanation of the meaning of functional
+assertions like  in terms of their logical
+derivability from recursive definitions which also serve as procedures
+for computing the values of functions they define .
+Hilbert first described a logical calculus for finitary number theory
+including “recursion and intuitive induction for finite
+totalities” in .
+
+Although this presentation also included a discussion of definition
+by simultaneous recursion, a more extensive treatment of what we would
+now recognize as
+recursion schemes
+is given in his well known
+paper “On the infinite” . This includes a discussion
+of what Hilbert calls
+ordinary recursion
+, transfinite
+recursion, as well as recursion at higher types. This treatment makes
+clear that Hilbert and his collaborators had taken substantial steps
+towards developing a general theory of recursive definability.
+Ultimately, however, the influence of Hilbert’s presentations
+was diminished in light of the more precise formulation of primitive
+recursion which Gödel would soon
+ provide.
+
+Gödel’s  definition was as
+follows:
+A number-theoretic function \\) is said to be
+recursively defined in terms of
+the number-theoretic
+functions \\) and \\) if
+\[\begin{align} \label{gprimrec}
+\text{i.}\quad & \phi  =  \psi \\ \nonumber
+\text{ii.}\quad & \phi  =  \mu,x_2,\ldots,x_n)
+\end{align}\]
+holds for all \.
+A number-theoretic function \ is said to be
+recursive
+if there is a finite sequence of number-theoretic functions \ that ends with \ and has the property
+that every function \ of the sequence is recursively defined
+in terms of two of the preceding functions, or results from any of the
+preceding functions by substitution, or, finally, is a constant or the
+successor function \…. A relation \\) between natural numbers is said to be
+recursive
+if
+there is a recursive function \\) such that,
+for all \
+\[\begin{equation}\label{prch}
+R \leftrightarrow \phi = 0
+\end{equation}\]
+Putting aside Gödel’s use of the term
+“recursive” rather than “primitive recursive”
+, this exposition comes close to
+coinciding with the contemporary definition of the primitive recursive
+functions given in
+Section 2.1
+.
+
+Gödel’s definition also improved upon those of his
+predecessors by clearly defining the class of initial functions which
+are allowed in primitive recursive definitions and by stating that
+each primitive recursive function possesses a definition in terms of a
+sequence of functions showing how it is built up from initial
+functions. This makes clear that the primitive recursive functions
+constitute a mathematically well-defined class of functions on the
+natural numbers ).
+Gödel additionally proved that the primitive recursive
+relations—defined as characteristic functions via
+—are closed under propositional operations and
+quantification bounded by a primitive recursive function .
+1.3 Arithmetical Representability and Gödel’s First Incompleteness Theorem
+The foregoing definition appears in Gödel’s well-known
+ paper “On formally undecidable propositions of
+Principia mathematica
+and related systems I”. As he
+observes immediately before presenting it, the definition of primitive
+recursion is in fact a digression from the main focus of the
+paper—i.e., proving the incompleteness of the axiomatic system
+of arithmetic he calls \. In order to understand
+Gödel’s contribution to the initial development of
+recursive function theory, it will be useful to attend both to some
+features of this system and also to his proof of the First
+Incompleteness Theorem itself. 
+System \ is obtained from that of Whitehead and
+Russell’s
+Principia Mathematica
+ by
+omitting the ramification of types, taking the natural numbers as the
+lowest type, and adding for them the second-order Peano axioms. It is
+hence a fixed formal system with finitely many non-logical axioms
+sufficient for the development of elementary number
+ theory.
+
+Recall also that an arithmetical system is said to be
+\-
+consistent
+if it does not prove both \\) and \\) for each natural
+number \ ))\) \-times) and that \-consistency
+implies
+simple consistency
+.
+The incompleteness theorem which Gödel proved states that if
+\ is ω-consistent, then there exists a formula
+\ which is
+undecidable in
+\—i.e., neither provable nor refutable from its
+axioms. In order to obtain such a formula, Gödel first
+demonstrated how it is possible to express various syntactic and
+metatheoretic properties of \-formulas and proofs as
+primitive recursive relations via a technique which has come to be
+known as the
+arithmetization of syntax
+.
+ Second, he showed that for every primitive recursive relation
+\\) there exists a “class sign”  \\) of \ such that the
+fact that \\) holds of  a given
+tuple of numbers \ is mirrored by the provability  in \ of the corresponding instance of
+\\) when the formal numeral \))\) -times) is substituted for
+\—i.e.,
+\[\begin{align} \label{rep}
+\text{i.}\quad & \text{if } R, \text{ then } \mathsf{P} \vdash \varphi_R \\ \nonumber
+\text{ii.}\quad & \text{if } \neg R, \text{ then } \mathsf{P} \vdash \neg \varphi_R
+\end{align}\]
+According to the terminology Gödel would later introduce in
+, in such a case \\)
+represents
+\\). In this presentation, he
+also generalized his prior definition to say that a function
+\\) is representable in \ just in case
+there exists a formula \\) such that for
+all \,
+\[\begin{equation}\label{repfun}
+f = m  \textrm{ if and only if } \mathsf{P} \vdash \varphi_f
+\end{equation}\]
+Gödel’s arithmetization of syntax provides a means of
+assigning to each primitive symbol, term, formula, and proof
+\ of \ a unique
+Gödel number
+\ according to its
+syntactic structure. This technique takes advantage of the familiar
+observation that a finite sequence of numbers \ can
+be encoded as a product of prime powers \ so that various correlative operations on sequences
+can be shown to be primitive recursive—e.g., the operation which
+takes two numbers \ and \ encoding sequences and returns the
+code \ of the result of concatenating \ followed by \.
+Gödel proceeded on this basis to show that a sequence of notions
+about the syntax and proof theory of \ are primitive
+recursive—e.g., the function \\) which returns
+the Gödel number of the negation of the formula coded by \
+can be defined as \. The availability
+of the relevant recursive definitions thus falls out naturally since
+the inductive definitions of syntactic notions like
+well-formed
+formula
+generalize the “construction and deconstruction of
+number signs” in the sense described by
+ Hilbert.
+
+The penultimate definition in Gödel’s list is the relation
+\\) which holds between the
+Gödel number of a \-formula \ and the
+Gödel number of a finite sequence of \-formulas
+\ just in case the latter is a correctly
+formed derivation of the former from the axioms of
+\—i.e.,
+\)\) iff \ via a derivation \ in which each
+\ is either an axiom of \ or follows from prior
+formulas via its rules of inference.
+From  it follows that there exists a formula
+\\) of \ which
+represents \\) and thus also a
+formula
+\[\textrm{Prov}_{\mathsf{P}} =_{\textrm{df}} \exists x \textrm{Proof}_{\mathsf{P}}.\]
+Gödel famously named the latter formula \\)  as it can be understood to express that there
+exists a proof from the axioms of \ of the formula with
+Gödel number \. But unlike the other formulas representing
+primitive recursive relations which figure in its definition,
+\\) contains an unbounded existential
+quantifier. And thus as Gödel is careful to observe, there is no
+reason to expect that it defines a primitive recursive relation.
+It is, nonetheless, this formula which Gödel uses to construct a
+sentence which is undecidable in \. This can be
+accomplished by the application of the so-called
+Diagonal
+Lemma
+
+ which states that for every formula \\) of \,
+there exists a sentence \ such that
+\[\mathsf{P} \vdash \psi_{\varphi} \leftrightarrow \varphi\]
+When applied to the formula \\),
+the Diagonal Lemma yields a sentence \—i.e.,
+the so-called
+Gödel sentence for
+\
+—such that \\). \ is thus interpretable
+as “saying of itself” that it is unprovable in
+\. Gödel showed that this formula has the following
+properties:
+if \ is consistent, then \;
+if \ is ω-consistent, then \.
+This constitutes what is now known as Gödel’s First
+Incompleteness Theorem.
+The proof of this fact relies explicitly on the representability of
+the relation \\) in \
+which in turn derives from its primitive recursiveness. But the
+techniques on which Gödel’s proof relies also contributed
+to the subsequent development of computability theory in several
+additional ways. First, it follows from the possibility of Gödel
+numbering the formulas of \ that we may also effectively
+enumerate them as \, \varphi_1, \varphi_2,
+\ldots\)—e.g., in increasing order of \. This provides a mechanism for referring to formulas via
+their indices which in turn served as an important precedent for
+Kleene’s  use of a similar indexation of general
+recursive definitions in his proof of the Normal Form Theorem .
+ Second, the proof of the Diagonal Lemma also demonstrates how it is
+possible to formalize the substitution of terms for free variables in
+a manner which may be understood to yield an effective form of
+Cantor’s diagonal argument .
+ This technique served as an important precedent for the use of
+diagonalization in results such as the undecidability of the Halting
+Problem ,
+ the Recursion Theorem ,
+ and the Hierarchy Theorem .
+Another significant contribution of Gödel’s paper derives
+from the fact that after proving the incompleteness of \,
+he took several steps towards isolating features of axiomatic theories
+which are sufficient to ensure that they satisfy analogous
+undecidability results. In addition to being sufficiently strong to
+satisfy , the other requirement which he identifies is that
+“the class of axioms and the rules of inference \ are
+recursively definable” . As he notes, these features
+hold both of Zermelo-Fraenkel set theory \] and a
+first-order arithmetical system similar to what we now call
+first-order Peano arithmetic \, relative to an
+appropriate Gödel numbering of their axioms. In particular, while
+neither of these systems is
+finitely axiomatizable
+, they may
+be axiomatized by a finite number of schemes  such that the relation
+\ is the Gödel number of an axiom of T
+is primitive recursive.
+This observation set the stage for Gödel’s subsequent
+revisiting of the incompleteness theorems in the lectures 
+wherein he suggests a significant generalization of his original
+ definition of recursiveness. Gödel starts out by providing
+the following informal characterization of the requirements of the
+theories just described:
+We require that the rules of inference, and the definitions of
+meaningful formulas and axioms, be constructive; that is, for each
+rule of inference there shall be a finite procedure for determining
+whether a given formula \ is an immediate consequence  of given formulas \ and there shall be a
+finite procedure for determining whether a given formula \ is a
+meaningful formula or an axiom. 
+He also makes clear that what he calls “recursiveness” is
+to be initially regarded as an
+informal
+notion which he is
+attempting to make precise:
+Recursive functions have the important property that, for each given
+set of values of the arguments, the value of the function can be
+computed by a finite procedure. Similarly, recursive relations
+ are decidable in the sense that, for each given \-tuple
+of natural numbers, it can be determined by a finite procedure whether
+the relation holds or does not hold , since the representing function is computable. 
+One of Gödel’s goals was thus to provide a mathematical
+definition of the term “recursive” which generalizes prior
+examples of recursive definability in a manner but also captures to as
+great an extent as possible the class of functions computable by a
+finite procedure. This led him to define the so-called
+general
+recursive functions
+
+ whose isolation in turn played an important role in the formulation
+of
+Church’s Thesis
+.
+ However Gödel’s definition also took place against the
+backdrop of other work which had been inspired by Hilbert’s
+original consideration of different forms of recursive definitions. It
+will now be useful to examine these developments.
+1.4 The Ackermann-Péter Function
+Already at the time of , Hilbert had anticipated that it would
+be possible to formulate definitions of functions whose values could
+be computed in a recursive manner but which are not themselves
+primitive recursive. In order to illustrate how such a definition
+might be obtained, he presented a heuristic argument involving the
+following sequence of functions:
+\[\begin{align}
+\nonumber \alpha_0 &= x + 1 &\text{} \\ 
+\nonumber \alpha_1 &= x + y &\text{} \\ 
+\nonumber \alpha_2 &= x \times y &\text{} \\ 
+\nonumber \alpha_3 &= x^y &\text{} \\ 
+\nonumber \alpha_4 &= \underbrace{x^{x^{\udots^x}}}_{y \textrm{ times}} &\text{} \\ 
+\nonumber  &\vdots
+\end{align}\]
+The functions in this sequence are defined so that
+\\) is obtained by primitive recursion as
+\,x)\), together with an appropriate base
+case. It thus makes sense mathematically to consider the function
+\[\begin{equation}\label{alphadef}
+\alpha = \alpha_i
+\end{equation}\]
+wherein the first argument \ represents the position of the
+function \\) in the prior list. For fixed \ it is thus possible to effectively compute the value of
+\\) by first constructing the definition of
+\\) and then evaluating it at \. But it is also
+easy to see that \\) will eventually dominate
+\\) for sufficiently large \. This in turn suggests
+that \\) cannot be defined by a finite number of
+applications of the primitive recursion scheme and is thus not itself
+primitive recursive.
+The specification of \\) just given does not itself have
+the form of a recursive definition. But it is possible to define
+similar functions in a manner which generalizes the format of the
+scheme . One means of doing so is to first use
+recursion on the type \—a
+simple form of recursion at higher types as envisioned by Skolem and
+Hilbert—to define an
+iteration functional
+as follows:
+\[\begin{aligned}
+\mathcal{Iter} &= \phi \\ \nonumber
+\mathcal{Iter} &= \phi) \end{aligned}\]
+\ takes as arguments a function \ as well as a number \ and
+is defined so that \ =
+\phi^{n+1}\)—i.e., the function which is the \th iterate
+of \. We may now define a function \ of type
+\\) as
+follows:
+\[\begin{aligned}
+\beta &= x+1 \textrm{ } \\ 
+\beta &= \mathcal{Iter} \nonumber\end{aligned}\]
+It can then be verified that
+\[\begin{align*}
+\beta & = x +1, \\
+\beta & = 2 +  - 3 = x+2, \\
+\beta & = 2 \times x - 3, \\
+\beta & = 2^{x+3} - 3, \\
+\beta &= \underbrace{2^{2^{\udots^2}}}_{x \textrm{ times}} - 3,\\ 
+  &\vdots
+\end{align*}
+\]
+On this basis, we may now define a variant of the so-called
+Ackermann-Péter function
+as \ =
+\beta\)—i.e., the result of applying the function
+\\) to the argument \. \\) has the same order of
+growth as \\) and it is possible to prove via the
+argument sketched above that \\) is not primitive recursive
+. Based on earlier work of
+Ackermann , Péter  also showed that \\)
+may also be defined by a so-called
+doubly recursive
+definition of the following form which takes only natural numbers as
+ arguments:
+
+\[\begin{align}
+\label{pidef}
+\pi &= x + 1\\ \nonumber
+\pi &= \pi\\ \nonumber
+\pi &= \pi) 
+\end{align}\]
+The third clause in this definition defines the value of \\)
+in terms of the value \\) rather than \\) in
+analogy with the scheme . It may thus not be
+immediately obvious that the definition  describes an
+algorithm for computing the values of \\) which always
+terminates in the manner illustrated by the calculation
+. Note, however, with each recursive application
+either \ decreases, or \ remains the same and \ decreases.
+It thus follows that each time \ reaches 0, \ will start to
+decrease so that the base case is eventually reached. Thus although
+the value of \\) grows very rapidly—e.g., \ =
+2^{2^{65536}}-3\)—it is still reasonable to regard
+
+as satisfying Gödel’s
+requirement that a recursively defined function is computable by a
+finite procedure.
+Systematic consideration of such alternative recursion schemes
+exemplified by  was initiated by Péter . It
+was also she who introduced the term “primitive recursive”
+to describe the class of functions given by Gödel’s scheme
+, a choice which would become standard after its
+adoption by Kleene . Péter additionally showed that
+Hilbert’s  formulation of “ordinary recursion”
+is equivalent to primitive recursion, and that the primitive recursive
+functions are closed under course of values recursion, as well as
+so-called
+nested recursions
+of one variable. Such studies led
+to her book , whose original German edition
+Rekursive Funktionen
+ was the first monograph devoted
+to recursive functions. Together with the later work of Grzegorczyk
+, these developments also inspired the investigation of various
+subrecursive hierarchies which would later play a role in proof theory
+and computer
+ science.
+
+1.5 The General Recursive Functions
+The immediate source for Gödel’s discussion of recursion in
+1934 was not Ackermann or Péter’s work but rather a
+private communication with Herbrand, who in two previous papers  had proposed a related means of generalizing recursive
+definitions. Gödel’s informal description of
+Herbrand’s suggestion was as
+ follows:
+
+If \ denotes an unknown function, and \
+are known functions, and if the \’s and \ are
+substituted in one another in the most general fashions and certain
+pairs of the resulting expressions are equated, then, if the resulting
+set of functional equations has one and only one solution for
+\, \ is a recursive function. 
+As an illustration, consider the following set of equations:
+\[\begin{align} \label{genrecex}
+\phi &= 0 \\ \nonumber
+\psi &= \phi + 1\\ \nonumber
+\phi &= \psi + 1
+\end{align}\]
+In this case, the “unknown” function denoted by
+\\) is specified in terms of the auxiliary function
+\\) in such a way that \\) appears only once on the
+lefthand side of the equations .
+Nonetheless, such a system of equations is unlike a primitive
+recursive definition in that it does not specify a unique means for
+computing the values of \\) by “deconstructing”
+\ in the deterministic manner illustrated by calculations such as
+.
+In the general case there is indeed no guarantee that there will exist
+a unique extensional function satisfying such a definition. But in the
+case of this example it can be shown that \ is the unique
+function of type \ satisfying
+\\) in the system of equations . This may be
+illustrated by considering the following calculation of
+\\):
+\[\begin{align} \label{genreccal}
+\text{i.}\quad   & \phi = \psi + 1 \\ \nonumber
+\text{ii.}\quad  & \psi = \phi +1 \\ \nonumber
+\text{iii.}\quad & \phi = \psi + 1 \\ \nonumber
+\text{iv.}\quad  & \psi = \phi + 1 \\ \nonumber
+\text{v.}\quad   & \phi = 0 \\ \nonumber
+\text{vi.}\quad  & \psi = 0 + 1 \\ \nonumber
+\text{vii.}\quad & \phi =  + 1 \\ \nonumber
+\text{viii.}\quad& \psi =  + 1) + 1 \\ \nonumber
+\text{ix.}\quad  & \phi =  + 1) + 1) + 1 \ 
+\end{align}\]
+As Gödel notes, such a calculation may be understood as a
+derivation in quantifier-free first-order logic wherein the only rules
+which are allowed are the substitution of numerals for variables and
+the replacement of a term on the righthand side of an equation by a
+numeral for which the corresponding identity has already been
+derived.
+Gödel introduced the term
+general recursive
+to describe
+a function defined in this manner. Following the modernized
+presentation of Odifreddi  this class may be specified
+on the basis of the following initial
+ definitions:
+
+Definition 1.1
+The class of
+numerals
+is the smallest set containing 0 and
+closed under the successor function \\). We write
+\ for the numeral \))\)
+\-times.
+The class of
+terms
+is the smallest set containing the
+numerals,
+variables
+\ and closed under the
+operations \\) and \\) where \ are terms and
+\ is a primitive \-ary functional symbol.
+If \ and \ are terms and \ is of the form
+\\) where \ do not contain
+any functional symbols other than \, then \ is an
+equation
+.
+A
+system of equations
+is a finite set of equations.
+\\) will be used to denote a
+system of equations containing primitive functional symbols
+\ and variables among \.
+Herbrand  gave a semantic characterization of what it means for
+a number theoretic function \ to be defined by a system of
+equations \\) by requiring
+both that there is a solution to the system and that \ coincides
+with the function determined as \ for every solution. He also
+suggested that this fact should be proved intuitionistically, which
+might in turn be thought to yield an effective procedure for computing
+the values of
+ \.
+
+He did not, however, specify a formal system in which such a proof
+should be carried out. And thus Gödel suggested  the
+following syntactic replacement for Herbrand’s definition:
+Definition 1.2:
+A function \ is
+general recursive
+if there is a
+system of equations \\) such
+that if \ is the leftmost functional symbol in the last
+equation of \ then for all \
+\[f = m\]
+if and only if the equation
+\[\psi^k_i = \overline {m}\]
+is derivable from the equations comprising \ via the
+following two rules:
+R1:
+Substitution of a numeral for every occurrence of a particular
+variable in an equation.
+R2:
+If \ =
+\overline{q}\) has already been derived, then
+\\) may be replaced
+with the numeral \ on the righthand side of an
+equation.
+In such a case we say that \
+defines
+\ with
+respect to \.
+It can be verified that the system of equations  and
+the derivation  exhibited above satisfy the foregoing
+requirements, thus illustrating how it is possible to mechanically
+calculate using a system of general recursive equations. However
+certain systems—e.g., \ = 0, \phi =
+s\}\)—are inconsistent in the sense of not being satisfied by
+any function on the natural numbers, while others—e.g.,
+\ = \phi\}\)—are not satisfied uniquely. One
+evident drawback of Gödel’s definition of general
+recursiveness is thus that there is no apparent means of establishing
+whether a given system of equations \ determines a
+unique function . This is one of the
+reasons why Gödel’s characterization has been replaced by
+other extensionally equivalent definitions such as Kleene’s
+partial recursive functions 
+ in the subsequent development of computability theory.
+1.6 Church’s Thesis
+By formalizing his informal characterization of recursiveness via
+Definition 1.2
+,
+ Gödel succeeded in formulating a definition which subsumes the
+primitive recursion scheme , the definition of the
+Ackermann-Péter function, as well as several other schemes
+considered by Hilbert. Gödel’s definition of general
+recursiveness thus also defined a class \ of functions
+of type \ which properly
+subsumes the primitive recursive functions \. Moreover,
+we now know that the class of functions representable in
+\ 
+corresponds not to the primitive recursive functions, but rather to
+the general recursive functions. Weakening the hypothesis that the set
+of  of the axioms of a formal system to the
+requirement that they be general recursive rather than primitive
+recursive thus indeed provides a generalization of the First
+Incompleteness Theorem the manner in which Gödel envisioned.
+The definition of \ is also of historical importance
+because it was the first among several equivalent  definitions of what were originally called the
+recursive functions
+but are now often referred to as the
+computable functions
+.
+ These developments also contributed to one of the two final chapters
+in the study of recursive definability prior to the initiation of
+computability theory as an independent subject—i.e., the
+isolation and eventual adoption of what is now known as
+Church’s Thesis
+.
+Church’s Thesis corresponds to the claim that the class of
+functions which are computable by a finite mechanical
+procedure—or, as it is traditionally said, are
+effectively
+computable
+—coincides with the class of general recursive
+functions—i.e.,
+
+\ is
+effectively computable if and only if \.
+It may appear that Gödel already proposed a version of
+Church’s Thesis in 1934. However, he did not immediately endorse
+it upon its first explicit articulation by
+ Church.
+
+And since the surrounding history is complex it will be useful to
+record the following observations as a prelude to
+Sections 2 and 3
+.
+
+
+Gödel delivered the lectures  while he was
+visiting Princeton in the spring of 1934. Already at that time Church,
+together with his students Kleene and Rosser, had made substantial
+progress in developing the formal system of function application and
+abstraction now known as the
+untyped lambda calculus
+. This
+system also provides a means of representing natural numbers as formal
+terms—i.e., as so-called
+Church numerals
+. This leads to
+a notion of a function being
+lambda-definable
+which is
+similar in form to . Church’s definition thus also
+characterize a class \ of lambda-definable functions
+which is similar in form to that of \. During this
+period, Kleene demonstrated that a wide range of number theoretic
+functions were included in \, in part by showing how it
+is possible to implement primitive recursion in the lambda calculus.
+This ultimately led Church to propose in early 1934 that the
+lambda-definable functions coincide with those possessing the property
+which he called “effective
+ calculability”.
+
+A natural conjecture was thus that lambda-definability coincided
+extensionally with general recursiveness. Unlike —which
+equates an informally characterized class of functions with one
+possessing a precise mathematical definition—the statement
+\ potentially admits to formal
+demonstration. Such a demonstration was given by Church  providing the first of several
+extensional equivalence results which Kleene  would
+eventually cite as evidence of what he proposed to call
+“Church’s Thesis”.
+Church’s Thesis underlies contemporary computability theory in
+the sense that it justifies the assumption that by studying
+computability relative to a
+single
+formalism  or \) we are thereby providing a
+general
+account of which functions can and cannot be
+effectively computed in principle by an algorithm. In light of this,
+it will be useful to catalog some additional evidence for
+Church’s Thesis in the form of the equivalence of
+\ with several other computational formalisms presented
+in the Stanford Encyclopedia:
+Let \ be a consistent, computably axiomatizable theory
+extending \ . Then the class
+of functions \ which is representable in
+\ in the sense of  above  replacing \) is such that
+\. .)
+The class \ consisting of the total functions which are
+members of the class of
+partial recursive functions
+ under the unbounded minimization
+operation) is such that \. .)
+The class \ of functions representable in
+Combinatory Logic
+ is such that
+\. .)
+The class \ of functions computable by a
+Turing machine
+ is such that \. .)
+The class \ of functions computable by
+Unlimited
+Register Machines
+introduced by Shepherdson & Sturgis 
+is such that \.  and Cooper .)
+Equivalence results of these forms testify to the mathematical
+robustness of the class \ and thereby also to that of
+the informal notion of effective computability itself. As we have
+seen, Gödel was originally led to the formulation of general
+recursiveness by attempting to analyze the background notion of
+recursive definition as a model of effective computation as inspired
+by the foundational developments of the late nineteenth and early
+twentieth
+ centuries.
+
+Further discussion of how the work of Church, Turing, and Post can be
+seen as providing independently motivated analyses of computability
+which also support Church’s Thesis can be found in Gandy 
+and Sieg .
+1.7 The
+Entscheidungsproblem
+and Undecidability
+In addition to the goal of widening the scope of Gödel’s
+Incompleteness Theorems, another motivation for work on recursive
+functions during the 1930s was the study of so-called
+undecidable
+
+problems
+. The
+original example of such a problem was that of determining whether a
+given formula \ of first-order logic is
+valid
+—i.e., true in all of its models. This was first
+described as the
+Entscheidungsproblem
+ for first-order logic by Hilbert & Ackermann in
+their textbook
+Grundzüge der theoretischen Logik
+:
+
+The
+Entscheidungsproblem
+is solved if one knows a procedure,
+which permits the decision of the universality [i.e., validity] or
+satisfiability of a given logical expression by finitely many
+operations. The solution of the problem of decision is of fundamental
+importance to the theory of all domains whose propositions can be
+logically described using finitely many axioms. 
+
+This passage illustrates another sense in which the question of the
+decidability of logical derivability is connected to the concerns
+which had initiated Hilbert’s study of metamathematics. For note
+that if \ is a
+finite
+set of axioms
+\, then the question of whether
+\ is a logical consequence of \ is equivalent to
+whether the sentence \ \rightarrow \psi\) is logically valid. By
+Gödel’s Completeness Theorem 
+for first-order logic, this is equivalent to the derivability of
+\ from Hilbert & Ackermann’s axiomatization of
+first-order logic. A positive answer to the
+Entscheidungsproblem
+could thus be interpreted as showing
+that it is possible to mechanize the search for proofs in mathematics
+in the sense of allowing us to algorithmically determine if a formula
+expressing an open question  is a logical
+consequence of a suitably powerful finitely axiomatized theory .
+In addition to analyzing the notion of effective computability itself,
+the mathematical goal of both Turing  and Church  was
+to provide a mathematically precise
+negative
+answer to the
+Entscheidungsproblem
+. The answers which they provided can be
+understood as proceeding in three phases:
+Via the method of the
+arithmetization of syntax
+described in
+Section 1.3
+Turing and Church showed how the
+Entscheidungsproblem
+could
+be associated with a set of natural numbers \.
+They then showed mathematically that \ is not
+decidable
+—i.e., its characteristic function is not
+computable in the formal sense, respectively relative to the models
+\ or \.
+They finally offered further arguments to the effect that these
+models subsume all effective computable functions thus suggesting the
+function is not computable in the informal sense either.
+The first of these steps can be undertaken by defining
+\[\begin{aligned}
+V & = \{\ulcorner \varphi \urcorner : \varphi \text{ is logically valid} \} \\
+& =  \{\ulcorner \varphi \urcorner :  \mathfrak{M} \models \varphi \text{ for all } \mathcal{L}_{\varphi} \text{-models } \mathfrak{M}\} \end{aligned}\]
+where \ is a Gödel numbering of the
+language of \ as described in
+Section 1.3
+.
+ The second step of Turing and Church’s negative answer to the
+Entscheidungsproblem
+relied on their prior specification of
+similar decision problems for the models \,
+\, and \. Together with Kleene ,
+they showed the following:
+Proposition 1.1:
+The characteristic functions of the
+following sets are not computable with respect to the relevant
+model:
+\
+\
+\ the system
+of equations \-term determines a general recursive
+function\
+For instance, Part i of
+Proposition 1.1
+shows that there is no Turing machine which outputs 1 if \
+halts on \ and 0 otherwise. This is thus a formulation of
+Turing’s well-known
+unsolvability of the Halting Problem
+
+.
+ Part ii and iii would also now be described as expressing that the
+sets \ \ and \ are all
+undecidable
+. By taking into account the equivalence results
+summarized in
+Section 1.6
+,
+Proposition 1.1
+thus shows that membership in these sets cannot be
+decided relative to
+any
+of the models in question.
+On this basis, Turing ) and Church  and \) then proved the following:
+Proposition 1.2:
+If \ were decidable , then \, and
+\ would be as well.
+The proofs which Turing and Church gave of these facts are
+constructive in the sense that they show how to effectively transform
+an individual instance of one of the models into a first-order formula
+such that the formula is valid if and only if the instance possesses
+the property in question—e.g., given a Turing machine \
+and input \, we construct a formula
+\ such that the computation \\) halts if and
+only if \ is valid. This method thus anticipates the
+definition of
+many-one reducibility
+given in
+Section 3.5.1
+below.
+In conjunction with the other arguments which Church and Turing had
+already offered in favor of Church’s Thesis ,
+ Propositions
+1.1
+and
+1.2
+can thus be taken to show that the
+Entscheidungsproblem
+is
+indeed not decidable in the informal sense described by Hilbert &
+Ackermann —i.e., not decidable by a “mechanical
+procedure using finitely many operations”. As we will see in
+Section 3
+,
+ the desire to develop a general theory of such undecidability results
+and the relations which they bear to one another was an important
+motivation for the further development of computability theory
+starting in the 1940s.
+1.8 The Origins of Recursive Function Theory and Computability Theory
+The developments just described form part of the prehistory of the
+subfield of contemporary mathematical logic which was originally known
+as
+recursive function theory
+. This subject was initiated in earnest by Kleene, Turing,
+and Post starting in the late 1930s, directly on the basis of the
+papers containing the equivalence and undecidability results
+summarized in
+Section 1.6
+and
+Section 1.7
+.
+ Of particular importance are the papers  of Kleene. These respectively contain the definition of the
+partial recursive functions, the proof of their equivalence to
+\, the Normal Form Theorem, the Recursion Theorem, and
+the definitions of the arithmetical and analytical hierarchies. Of
+equal importance are the papers  of Turing  and the paper  of Post .
+These developments will be surveyed in
+Section 3
+.
+ As we will see there, an important theme in the early stages of
+computability theory was the characterization of a notion of effective
+computability which is capable of supporting rigorous proofs grounded
+in intuitions about algorithmic calculability but which abstracts away
+from the details of the models mentioned in
+Section 1.6
+.
+ To this end, Gödel’s original definition of the general
+recursive equations was replaced in early textbook treatments  by Kleene’s definition of the
+partial recursive functions in terms of the unbounded minimization
+operator introduced in
+Section 2.2
+.
+ This characterization has in turn been replaced by machine-based
+characterizations such as those of Turing  or Shepherdson &
+Sturgis  in later textbooks 
+which are closer in form to informally described computer
+programs.
+What is retained in these treatments is an understanding of
+computation as a means of operating in an effective manner on finite
+combinatorial objects which can still be understood to fall under the
+“recursive mode of thought” as understood by early
+theorists such as Skolem, Hilbert, Gödel, and Péter. But
+at the same time, many of the basic definitions and results in
+recursive function theory are only indirectly related to recursive
+definability in the informal sense described in this section. In light
+of this, Soare  proposed that recursive function theory should
+be renamed
+computability theory
+and that we should
+accordingly refer to what were traditionally known as the
+recursive functions
+as the
+computable functions
+.
+Such a change in terminology has been largely adopted in contemporary
+practice and is reflected in recent textbooks such as Cooper 
+and Soare . Nonetheless, both sets of terminology are still
+widely in use, particularly in philosophical and historical sources.
+Readers are thus advised to keep in mind the terminological discussion
+at the beginning of
+Section 3
+.
+2. Forms of Recursion
+NB: Readers looking for a mathematical overview of recursive functions
+are advised to start here. Discussion of the historical context for
+the major definitions and results of this section can be found in
+Section 1
+.
+This section presents definitions of the major classes of recursively
+defined functions studied in computability theory. Of these the
+primitive recursive functions
+\ and the
+partial recursive functions
+\ are the most
+fundamental. The former are based on a formalization of the process of
+recursion described in the introduction to this entry and include
+virtually all number theoretic functions studied in ordinary
+mathematics. The partial recursive functions are formed by closing the
+primitive recursive functions under the operation of
+unbounded
+minimization
+—i.e., that of searching for the smallest
+witness to a decidable predicate. The class of
+recursive
+functions
+\—i.e., the partial recursive
+functions which are defined on all inputs—has traditionally been
+taken to correspond via Church’s Thesis
+ 
+ to those which can be effectively computed by an algorithm.
+The following notional conventions will be employed in the remainder
+of this entry:
+\ denotes the set of natural numbers,
+\ denotes the cross product \ \-times, and \ denotes a vector of
+fixed numbers \ .
+Lowercase Roman letters \ denote functions of type
+\ )—i.e.,
+the class of functions with domain \ and range
+\. For a fixed \, \ expresses that \ is a \-
+ary
+function )—i.e., \ has domain
+\ and range \.
+\ are used as formal variables over
+\ for the purpose of indicating the argument of
+functions. \ will also be used informally for arbitrary
+variables from this list. \ will be used to abbreviate a
+vector of variables \ .
+Boldface letters \ ) will be used to denote classes of
+functions which are subsets of \\).
+Calligraphic letters \
+) will be used to denote
+functionals
+on \—i.e., operations which map one or more functions of
+type \  to other functions.
+Uppercase letters \ will be used to denote
+relations
+—i.e., subsets of \—with
+the range \ reserved to denote unary
+relations—i.e., subsets of \.
+The
+characteristic function
+of a relation \ is denoted by
+\\)—i.e.,
+\[\chi_R = \begin{cases} 1 & \text{ if } R \\  0 & \text{ if } \neg R
+\end{cases}\]
+2.1 The Primitive Recursive Functions 
+2.1.1 Definitions
+A class \ of recursively defined functions may be
+specified by giving a class of initial functions \
+which is then closed under one or more functionals from a class
+\. It is in general possible to define a class in
+this manner on an arbitrary set of initial functions. However, all of
+the function classes considered in this entry will determine functions
+of type \—i.e., they will
+take \-tuples of natural numbers as inputs and  return
+a single natural number as output.
+In the case of the primitive recursive functions \, the
+initial functions include the nullary
+zero function
+\ which returns the value 0 for all inputs , \\) denotes the unary
+successor function
+\, and \
+denotes the \-ary
+projection function
+on to the \th
+argument )—i.e.,
+\[\pi^k_i = x_i\]
+This class of functions will be denoted by \. Note that since \ is a
+distinct function for each \, \
+already contains infinitely many functions.
+The functionals of \ are those of
+composition
+and
+primitive recursion
+. Composition takes \ functions
+\ of arity \ and a single function \ of
+arity \ and returns their
+composition
+—i.e., the
+function
+\[h =  f,\ldots,g_{j-1})\]
+of type \. As an example,
+suppose that \ is the multiplication function
+\\), \ is the constant 3 function , and \\)
+is the successor function \\). Then the composition of \ with
+\ and \ is the unary function \ = f,g_1) =
+mult)\) which we would conventionally denote by \\).
+The operation of composition may be understood as a class of
+functionals which for each \ takes as inputs
+\ functions \ of arity \ and a single
+function \ of arity \ and returns as output the \-ary
+function \ which composes these functions in the manner just
+illustrated. This is described by the following scheme:
+Definition 2.1:
+Suppose that \ and \. Then the term
+\ denotes the function
+\[f,\ldots,g_{j-1})\]
+of type \
+Primitive recursion is also a functional operation. In the simplest
+case, it operates by taking a single unary function \\) and a
+natural number \ and returns the unary function
+defined by
+\[\begin{align}
+h & =  n \label{prex1}\\ \nonumber
+h & =  g)
+\end{align}\]
+In such a definition, the first clause  determines the value of \ at 0, while the second clause
+determines how its value at \ depends on its value at \. In
+this case it is easy to see that the value of \ determines how
+many times the function \ is
+iterated
+ in determining the value of \. For instance, if \
+and \ = mult\), then \ = 3^{x+1}\)—i.e., the
+\st iterate of the map \.
+The full primitive recursion scheme generalizes  in two
+ways. First, it allows the value of the function \ at \ to
+depend not just on its own value at \, but also on the value of
+the variable \ itself. This leads to the scheme
+\[\begin{align} \label{prex2}
+h & =  n  \\ \nonumber
+h & =  g)
+\end{align}\]
+For instance, the definition of the factorial function \\)
+defined in the introduction to this entry can be obtained via
+ with \ and \ =
+times,x_0)\).
+A second possible generalization to  results from
+allowing the value of \ to depend on a finite sequence of
+auxiliary variables known as
+parameters
+which may also be
+arguments to the base case. In the case of a single parameter \,
+this leads to the scheme
+\[\begin{align}  \label{prex3}
+h & =  f \\ \nonumber
+h & =  g) 
+\end{align}\]
+The addition function \\) may, for instance, be
+defined in this way by taking \ = x_0\) and \ =
+s\). This definition can also be thought of as specifying that
+the sum \ is the value obtained by iterating the application of
+the successor function \ times starting from the initial value
+\ in the manner of . Similarly,
+\\) may be defined by taking \ = 0\) and
+\ = add\). This defines the product \
+as the value obtained by iterating the function which adds \ to
+its argument \ times starting from the initial value 0.
+Such definitions may thus be understood to provide algorithms for
+computing the values of the functions so
+ defined.
+
+For observe that each natural number \ is either equal to 0 or is
+of the form \ for some \. If we now introduce
+the abbreviation \)))\)
+\-times, the result of applying the successor function \ to a
+number denoted by \ thus yields the number denoted by
+\. We may thus compute the value of \ using
+the prior recursive definition of addition as follows:
+\[\begin{align}\label{prcalc2}
+\textit{add} & = s) \\
+& = s)) \nonumber\\
+& = s))) \nonumber\\
+& = s)) \nonumber\\
+& = s)))) \nonumber\\
+& = \overline{5}\nonumber\\
+\end{align}\]
+The full definition of the primitive recursion operation combines both
+generalizations of  into a single scheme which takes as
+arguments a \-ary function \, a \-ary function \,
+and returns a \-ary function \ defined as follows
+\[\begin{align}  \label{prscheme}
+h & = f \\   \nonumber
+h & = g)
+\end{align}\]
+Here the first \ arguments \ to \ are the
+parameters, the \st argument \ is the
+recursion
+variable
+, and the \nd argument \\)
+gives the prior value of \. An elementary set theoretic argument
+shows that for each \, if \ is \-ary and
+\ is \-ary, then a there is a unique \-ary function
+\ satisfying —see, e.g., .
+It will again be useful to introduce a formal scheme for referring to
+functions defined in this manner:
+Definition 2.2:
+Suppose that \ and \. Then the term \ denotes the
+unique function of type \
+satisfying .
+We may now formally define the class \ of primitive
+recursive functions as follows:
+Definition 2.3:
+The class of
+primitive recursive
+functions
+\ is the smallest class of functions
+containing the initial functions \ and closed under the functionals
+\[Op_{\mathbf{PR}} = \{\mathcal{Comp}^i_j,
+ \mathcal{PrimRec}_k\}.\]
+With the definition of \ in place, we may also define
+what it means for a relation \ to be
+primitive recursive:
+Definition 2.4:
+\ is a
+primitive recursive relation
+just in case its characteristic
+function
+\[\chi_R = \begin{cases} 1 & \text{ if } R \\  0 & \text{ if } \neg R
+\end{cases}
+\]
+is a primitive recursive function.
+Definition 2.4
+thus conventionalizes the characterization of a primitive recursive
+relation \ as one for which there exists an
+algorithm similar to that illustrated above which returns the output 1
+on input \ if \ holds of \ and the output 0 if
+\ does not hold of \. As will become clear below, most
+sets and relations on the natural numbers which are considered in
+everyday mathematics—e.g., the set
+PRIMES
+of prime
+numbers or the relation 
+\[\textit{DIV} = \{\langle n, m \rangle : n
+\textit{ divides } m \textit{ without remainder}\}\]
+ —are primitive
+recursive.
+The foregoing definition specifies \ as the
+minimal
+closure
+of \ under the functions in
+\. In other words, \ may be
+equivalently defined as the subclass of \\) satisfying the
+following properties:
+\[\label{prmc}\begin{equation}
+\end{equation}\]
+i.
+\
+ii.
+For all \ and \, if \ is \-ary and \ is \-ary ) then \.
+iii.
+For all \ and \, if
+\ is \-ary and \ is \-ary then
+\.
+iv.
+No functions are members of \ unless they can be
+defined by i–iii.
+Another consequence of
+Definition 2.3
+is thus that each function \ possesses a
+specification which shows how it may be defined from the initial
+functions \ in terms of a finite number of
+applications of composition and primitive recursion. This process may
+be illustrated by further considering the definitions of the functions
+\\) and \\) given above.
+Note first that although the familiar recursive definitions of
+addition  and multiplication  fit the
+format of , they do not fit the format of
+ which in this case requires that the argument \
+to the primitive recursion scheme be a \-ary function. It is,
+however, possible to provide a definition of \\) in
+the official form by taking \ = \pi^1_0\)—i.e., the
+identity function—and \ =
+\mathcal{Comp}^1_3[s,\pi^3_1]\)—i.e., the function which results
+from composing the successor function with the \-ary projection
+function on to its second argument. The expression
+\ may
+then be understood as a term which encodes the definition we have
+provided for addition. Multiplication can then be defined via
+ with \ and \ =
+\mathcal{Comp}^2_3[add,\pi^3_0,\pi^3_2]\). Thus 
+\[\mathcal{PrimRec}_1[\mathbf{0},\mathcal{Comp}^2_3[add,\pi^3_0,\pi^3_2]]\]
+ —or
+in explicit form 
+\[\mathcal{PrimRec}_1[\mathbf{0},\mathcal{Comp}^2_3[\mathcal{PrimRec}_1[\pi^1_0,\mathcal{Comp}^1_3[s,\pi^3_1]],\pi^3_0,\pi^3_2]]\]
+ —can be taken as a similar term
+encoding the definition of multiplication we have abbreviated by
+\\).
+These examples illustrate that the simpler recursion schemes which are
+employed in many informal recursive definitions may be assimilated to
+Definition 2.3
+—e.g.,
+ the function \\) defined in  maybe obtained as
+\.
+Repeated use of this and similar observations will be made  in the examples provided in
+Section 2.1.2
+.
+Another consequence of the fact that
+every
+\ is defined by a term given in this manner by
+ is the following:
+Proposition 2.1:
+The class of functions
+\ is countable.
+This can be demonstrated by showing that it is possible to enumerate
+\ as \ by introducing a Gödel
+numbering of terms formed from the expressions \ and \ in the manner
+described in
+Section 1.3
+.
+ Since there are uncountably many functions of type \ for all \, this observation also
+provides a non-constructive demonstration that there exist number
+theoretic functions which are not primitive recursive.
+2.1.2 Examples
+Almost all number theoretic functions and relations encountered in
+ordinary mathematics can be shown to be primitive recursive. In order
+to illustrate the extent of this class, we will present here a
+standard sequence of definitions which can be traced historically to
+Skolem . This can be used to show that the sequence coding
+\ and decoding \_i\) operations
+defined below are primitive recursive. This is in turn required for
+Gödel’s arithmetization of syntax 
+ as well as results like the Normal Form Theorem
+ 
+ which will be discussed below.
+Constant functions
+For each \ the constant \-function defined as
+\ = k\) is primitive recursive. This is because we can
+inductively define
+\[\begin{aligned}
+ \const_0 & = \mathbf{0}\\
+ \text{ and  }\\
+ \const_{k+1} & = \mathcal{Comp}^1_1[s,\const_k] \\
+& =  s))) \\
+& =_{\textrm{df}} \overline{k+1} \end{aligned}\]
+Exponentiation, super-exponentiation
+, …
+We have already seen that the addition function \\)
+can be defined by primitive recursion in terms of repeated application
+of successor and that the multiplication function
+\\) can be defined by primitive recursion in terms
+of repeated application of addition. We can continue this sequence by
+observing that the exponentiation function \ can be defined by
+primitive recursion in terms of repeated multiplication as follows:
+\[\begin{align}  \label{exp}
+\textit{exp} & =  \overline{1}\\ \nonumber
+\textit{exp} & =  \textit{mult}) 
+\end{align}\]
+The super-exponentiation function
+\[x \uarrow y = \underbrace{x^{x^{\udots^x}}}_{y \textrm{ times}}\]
+can be defined by primitive recursion in terms of repeated
+exponentiation as as follows:
+\[\begin{align}  \label{superexp}
+\textit{supexp} & =  \overline{1}\\ \nonumber
+\textit{supexp} & =  \textit{exp}) 
+\end{align}\]
+The sequence of functions
+\[\begin{aligned}
+\alpha_0 & = x + y, \\
+\alpha_1 & = x \times y, \\
+\alpha_2 & = x^y, \\
+\alpha_3 & = x \uarrow y, \\
+ &\vdots\\
+\end{aligned}\]
+whose \st member is defined in terms of primitive recursion of
+the \th member form a hierarchy of functions whose values grow
+increasingly quickly in proportion to their inputs. While each
+function in this sequence is primitive recursive, we can also consider
+the function \\) defined as \\)—a
+version of the so-called
+Ackermann-Péter function
+defined in
+Section 1.4
+—whose
+ values are not bounded by any fixed function \. As it can
+be shown that the values of \\) are not bounded by any of
+the functions \\), this shows that \\)
+cannot be defined by any finite number of applications of the scheme
+\. This provides a constructive proof that there
+exist functions of type \ which
+are not primitive recursive.
+Predecessor and proper subtraction
+The
+proper predecessor
+function is given by
+\[\textit{pred} = \begin{cases}
+0 & \text{ if } y = 0 \\
+ y - 1 & \text{otherwise} 
+\end{cases}\]
+This function is primitive recursive since it may be defined as
+\[\begin{align}  \label{pred}
+\textit{pred} & = 0\\ \nonumber
+\textit{pred} & = y
+\end{align}\]
+Note that the second clause of  does not depend on the
+prior value of \\). But this definition can still be
+conformed to the scheme  by taking \ =
+\mathbf{0}\) and \ = \pi^3_1\).
+The
+proper subtraction
+function is given by
+\[x \dotminus y = \begin{cases}
+x - y & \text{ if } y \leq x \\
+ 0 & \text{otherwise} 
+\end{cases}\]
+This function is also primitive recursive since it may be defined as
+\[\begin{align} \label{dotminus}
+x \dotminus 0 & = x \\ \nonumber
+x \dotminus  & = \textit{pred}
+\end{align}\]
+Absolute difference, signum, minimum, and maximum
+The absolute difference function is defined as
+\[|x - y| = \begin{cases}
+x - y & \text{ if } y \leq x \\
+ y - x & \text{otherwise} 
+\end{cases}\]
+\ may be defined by composition as \ + \) and is hence primitive recursive since \
+is.
+The
+signum
+function is defined as
+\[\textit{sg} = \begin{cases}
+1 & \text{ if } x \neq 0 \\
+ 0 & \text{otherwise} 
+\end{cases}\]
+This function may be defined by composition as \ = 1
+\dotminus \) and is hence primitive recursive as is the
+inverted signum
+function defined by
+\ = 1 \dotminus \textit{sg}\) which
+returns 1 if \ and 1 otherwise.
+The minimum and maximum functions may be similarly defined by
+composition from functions previously seen to be primitive recursive
+as follows:
+\[\begin{aligned}
+\min & = \overline{\textit{sg}} \times x + \overline{\textit{sg}} \times y\\
+\max & = \textit{sg} \times x + \textit{sg} \times y\end{aligned}\]
+Order and identity
+The characteristic functions of the
+less than
+relation
+) and
+equality
+relation ) on the natural
+numbers are definable as follows:
+\[\begin{aligned}
+\chi_< & = \textit{sg} \\ \nonumber
+\chi_= & =  1 \dotminus  + \textit{sg})\end{aligned}\]
+These relations are hence primitive recursive.
+As the
+less than or equal to
+relation ) is logically
+equivalent to \ it will follow from the next set
+of observations that this relation is also primitive recursive. The is
+additionally true of \, \ and \.
+Closure under propositional operations
+The set of primitive recursive relations is
+closed under boolean
+operations
+. In other words, if \\) and \\)
+are primitive recursive, then so are \\), \
+\wedge Q\), \ \vee Q\), \
+\rightarrow Q,\) and \ \leftrightarrow
+Q\).
+Given the interdefinability of the classical connectives, this follows
+upon noting the following:
+\[\begin{align*}
+\chi_{\neg P} & = 1 \dotminus \chi_{P} \\ 
+\chi_{P \wedge Q} & = \chi_{P} \times \chi_{Q}
+\end{align*}\]
+Bounded sums and products
+Suppose that \\) is primitive recursive. Then the
+bounded sum
+\ = \Sigma_{i=0}^y f\)
+and the
+bounded product
+\ = \Pi_{i=0}^y
+f\) are both primitive recursive as they may be
+respectively defined as follows:
+\[\begin{aligned}
+g & =  f \\ \nonumber
+g & = g + f \\  \nonumber
+h & =  f \\ \nonumber 
+h & = g \times f \end{aligned}\]
+Closure under bounded quantification
+The set of primitive recursive relations is also closed under
+bounded quantification
+—i.e., if \\) is a
+primitive recursive relation, then so are the relations \\) and \\). These may
+be respectively defined as follows as follows:
+\[\begin{aligned}
+u_R & =_{\textrm{df}} \chi_{\forall z \leq y R} = \Pi_{i=0}^y \chi_R \\ \nonumber
+e_R  & =_{\textrm{df}} \chi_{\exists z \leq R} = sg\left\right)\end{aligned}\]
+Closure under bounded minimization
+The set of primitive recursive relations is also closed under
+bounded minimization
+. This is to say that if \\)
+is a primitive recursive relation, then so is the function
+\\) which returns the least \ less than or equal to
+\ such that \\) holds if such a \ exists and
+\ otherwise—i.e.,
+\[\begin{align} \label{boundedmin}
+ m_R = 
+\begin{cases}
+\text{the least  such that } & \text{ if such a  exists} \\
+y + 1 & \text{ otherwise}
+\end{cases}\end{align}\]
+To see this, observe that if \\) is primitive recursive,
+then so is \\). It is then not
+difficult to verify that
+\[m_R = \Sigma_{i=0}^y \chi_{\forall z \leq y \neg R}.\]
+Divisibility and primality
+A natural number \ is said to be
+divisible
+by \ just
+in case there exists a \ such that \—i.e.,
+\ divides \ without remainder. In this case we write \. Note that if \ holds, then this must be
+witnessed by a divisor \ such that \. We
+may thus define \ in the following manner which shows
+that it is primitive recursive:
+\[x \divides y \Longleftrightarrow \exists z \leq y\]
+We may also define the
+non-divisibility
+relations \ as \\) which shows that it too is
+primitive recursive.
+Next recall that a natural number \ is
+prime
+just in case
+it is greater than 1 and is divisible by only 1 and itself. We may
+thus define the relation \\) in the following manner
+which shows that it is primitive recursive:
+\[\begin{aligned}
+\textit{Prime} \Longleftrightarrow \overline{1} < x \wedge \forall z \leq x)\end{aligned}\]
+The primes form a familiar infinite sequence \ \
+\ \ \…. Let \ =
+p_x\)—i.e., the function which returns the \th prime number.
+\\) can be defined by primitive recursion relative to the
+function \\) which returns the least \ such
+that \ is prime as follows:
+\[\begin{aligned}
+p & = \overline{2} \\ \nonumber
+p & = \nextPrime)\end{aligned}\]
+Recall that Euclid’s Theorem states that there is always a prime
+number between \ and \ and also that \\) is
+primitive recursive. It thus follows that \\) can be
+defined via bounded minimization as follows:
+\[\begin{aligned}
+\nextPrime = m_{x < z \ \wedge \ \textit{Prime}}+1)\end{aligned}\]
+It thus follows that \\) is primitive recursive.
+Sequences and coding
+The foregoing sequence of definitions provides some evidence for the
+robustness of the class of primitive recursive relations and
+functions. Further evidence is provided by the fact that it is
+possible to develop the machinery for coding and decoding finite
+sequences of natural numbers and for performing various combinatorial
+operations on sequences—e.g., adjunction of an element,
+concatenation, extracting a subsequence, substituting one element for
+another, etc. The primitive recursiveness of these operations
+underpins Gödel’s arithmetization of syntax as described in
+Section 1.3
+.
+ We present here only the basic definitions required to demonstrate
+the primitive recursiveness of the \-tupling and projection
+functions which are required for results in computability theory such
+as the Normal Form Theorem
+ 
+ discussed below.
+Given a finite sequence of natural numbers \
+we define its
+code
+to be the number
+\[\begin{align}
+ \label{primecode}
+p_0^{n_0 + 1} \times p_1^{n_1 + 1} \times p_2^{n_2 + 1} \times \ldots \times p_{k-1}^{n_{k-1}+1}
+\end{align}\]
+where \ is the \th prime number as defined above. In other
+words, the code of \ is the natural number
+resulting from taking the product of the numbers \ for
+\. This will be denote by \—e.g.,
+\[\begin{aligned}
+\langle 3,1,4,1,5 \rangle & = 2^{4} \times 3^{2} \times 5^{5} \times 7^{2} \times 11^{6} \\
+& = 39062920050000.\\
+\end{aligned}
+\]
+
+The operation which takes a sequence of arbitrary length to its code
+does not have a fixed arity and hence is not given by a single
+primitive recursive function. But it is not hard to see that if we
+restrict attention to sequences of given length \, then \
+is primitive recursive as it is simply the bounded product given by
+. Consider next the function \
+= n_i\) where \ and \ and which returns 0 when \ is not in this range
+or \ or 1 . In order to see
+that \\) is also primitive recursive, first
+observe that it is possible to recover \\)—i.e.,
+the
+length
+of the sequence coded by \—by searching
+for the least \ such that \ and \. Since \ also bounds all the primes \ which
+divide it we may define
+\[\begin{aligned}
+len = \begin{cases} 0 & \text{ if  or } \\
+1 + m_{p_z \divides s \wedge p_{z+1} \notdivides s} & \text{ otherwise} \end{cases}\end{aligned}\]
+It is straightforward to see that a function defined by cases with
+primitive recursive conditions is primitive recursive. So
+\\) is primitive recursive as well.
+Finally observe that \\) is equal to the
+smallest exponent \ such that \ but
+\ and that such an exponent is also bounded
+by \. We may thus provide a primitive recursive definition of
+\\) as follows:
+\[\begin{aligned}
+\textit{element} = \begin{cases} 0 & \text{ if   or  or }\\
+m_{p_i^{z+1} \divides s \wedge p_i^{z+2} \notdivides s} \dotminus 1 & \text{ otherwise} \end{cases}\end{aligned}\]
+The conventional abbreviation \_i = \textit{element}\) will
+be employed for this function below.
+2.1.3 Additional closure properties of the primitive recursive functions
+The primitive recursive functions and relations encompass a broad
+class including virtually all those encountered in ordinary
+mathematics outside of logic or computability theory. This is
+illustrated in part by the fact that \ contains
+functions such as \\) which grow far faster than those
+whose values we can feasibly compute in practice in the sense studied
+in
+computational complexity theory
+.
+ But the robustness of the class \ is also attested to
+by the fact that its definition is invariant with respect to a variety
+of modifications—e.g., with respect to the classes of initial
+functions \ and functionals \ on
+which its definition is based.
+As an initial illustration, consider the following scheme of so-called
+pure iteration
+:
+\[\begin{align} \label{pureiter}
+h & =  y \\ \nonumber
+h & = g)
+\end{align}\]
+It is easy to see that the function \ defined by 
+from \ in this manner is the \–iterate of
+\— i.e., \=_{\mathrm{df}} g))\)
+\–times with the convention that \ = y\). We will
+denote this functional by \. The scheme
+ thus generalizes  by making the value of
+base case an argument to \. But it is an apparent restriction of
+ in the sense that \ cannot depend on either the
+recursion variable or additional parameters.
+Suppose we now consider an alternative class of initial functions
+\ containing \, the binary coding
+function \, and the decoding functions \_0\)
+and \_1\) defined at the end of
+Section 2.1.2
+.
+  and \ operating on
+codes
+of ordered pairs.) Now define \ to be the
+smallest class of functions containing \ and closed
+under the functionals \.
+Theorem 2.1
+: The class
+\ is equal to the class \ of primitive
+recursive functions.
+This illustrates that if we slightly enlarge the class of initial
+functions, it is still possible to obtain the entire class
+\ via a scheme of functional iteration which at first
+appears less general than primitive recursion. See Odifreddi  for an account of further improvements which can be obtained
+in this direction.
+Other results show that the class \ also remains stable
+if primitive recursion is replaced with other schemes which may
+initially appear more general. The most familiar of these is the
+scheme of
+course of values recursion
+which is traditionally
+illustrated using the so-called
+Fibonacci function
+\\) which was briefly discussed at the beginning of
+Section 1
+.
+ This may be defined as follows:
+\[\begin{align} \label{fibdefn}
+fib & = 0\\ \nonumber
+fib & = 1\\ \nonumber
+fib & = fib + fib
+\end{align}\]
+This definition can readily be used to calculate the values of
+\\) in a recursive manner—e.g.,
+\[\begin{aligned} 
+\fib &= \fib + \fib \\ 
+  &=  + \fib) + +\fib)  \\ 
+  &=  + \fib) + 1) +  \\ 
+  &=  + 1) +  \\ 
+& = 5
+\end{aligned}\]
+This gives rises to the familiar sequence 0, 1, 1, 2, 5, 8, 13, 21,
+34, 55, 89, 144,… wherein \ \ and
+\ Note, however, the definition
+ cannot be directly assimilated to the primitive
+recursion scheme  since the third clause defines the
+value of \\) in terms of
+both
+\\) and
+\\). It is, however, still possible to show that \. One means of doing this is to again make use of the
+binary coding and projection functions to first define an auxiliary
+function \ = \langle 0,1 \rangle\) and
+\[g = \langle )_1,)_0 + )_1 \rangle\]
+which enumerates the pairs \, \ It is then easy to see that \ =
+)_0\).
+ is thus an instance where the value of the function
+\ at \ depends on the values \\) and \\) of its
+graph ). It is, of course, also possible to consider
+cases where \\) depends on an arbitrary number of its preceding
+values \, \ldots, h\). To this end, suppose we are given
+\\) and then define
+\[\begin{align*}
+\widetilde{h} &= \Pi_{i = 0}^y p_i^{h+1} \\
+& = \langle h, \ldots, h \rangle.\\
+\end{align*}
+\]
+We then say that \\) is defined by
+course of values
+recursion
+from \\) and \\) if
+\[\begin{aligned}
+h & = f \\ \nonumber
+h & = g)\end{aligned}\]
+Suppose that we now let \ denote the
+corresponding functional operation and let \ be the
+smallest class of functions containing \ and closed
+under \ and \. Then since it is
+easy to see that \\) is primitive recursive
+if \\) is, we also have the following:
+Theorem 2.2
+: The class
+\ is equal to the class \ of primitive
+recursive functions.
+Since course of values recursion is occasionally used in mathematical
+practice, it is significant that it does not lead outside the class of
+primitive recursive functions. There are, however, a number of other
+possible ways in which the scheme  might also be
+generalized, including what are known as
+double recursion
+and
+nested recursion
+. The definition of the
+Ackermann-Péter function \\) in
+Section 1.4
+exhibits the former since its value at \ depends on its value
+at
+both
+\ and \ and also the latter since the
+occurrence of the defined function \\) is
+“nested” within itself 
+on the righthand side of the third clause. Although such definitions
+arise less often in practice, they are important historically due to
+their occurrence in Hilbert’s original discussion of recursion
+.
+ Such schemes were considered systematically by Péter 
+who showed that unnested double recursion on its own also does not
+lead outside the class of primitive recursive functions.
+2.2 The Partial Recursive Functions  and the Recursive Functions 
+We have now seen two ways of showing that there exist number theoretic
+functions which are not primitive recursive—i.e., by observing
+that while there are only countably many primitive recursive functions
+there are uncountably many functions of type \ ) and also by constructing a
+function such as \ = \alpha_x\) which grows faster
+than any primitive recursive function. A third proof—originally
+due to Hilbert & Bernays —is based on the
+observation that it is possible to enumerate the class \
+as \,g_1,g_2, \ldots\)—e.g., by Gödel
+numbering the sorts of definitions considered at the end of
+Section 2.1.1
+.
+ If we then consider the modified diagonal function
+\[\begin{aligned}
+\delta = g_x + 1\end{aligned}\]
+it is easy to see that this function also cannot be primitive
+recursive. For if \\) coincided with some function
+\\) in the enumeration, then we would have \ = \delta
+= g_j + 1\), a contradiction. Note that this also shows that
+relative to such an enumeration the
+universal function
+\ = g_i\) for unary primitive recursive functions
+cannot itself be primitive recursive as we could otherwise define
+\\) as \ + 1\). Hilbert & Bernays 
+would later discuss this observation in regard to what has become
+known as their
+denotational paradox
+—see, e.g., .
+On the other hand, there are intuitively effective procedures for
+computing each of these functions. For instance, in the case of
+\\) we can proceed as follows:
+use \ to construct the definition of \\);
+compute the value of \\) by performing the corresponding
+primitive recursive calculation;
+add 1 and halt.
+This illustrates that although \\), \\), and
+\\) are not primitive recursive, they are still
+effectively computable
+in the sense discussed in
+Section 1.6
+.
+ There is thus a natural motivation for seeking to expand the
+definition of the class \ so as to encompass such
+intuitively computable functions.
+One means by which this can be accomplished builds on the observation
+that the bounded minimization operation \\) admits to a
+straightforward algorithmic characterization—i.e., to compute
+the value of \\) successively check \,\)
+\,\) …, \,\)… giving output
+\ and halting as soon as \\) holds and \ if no
+positive instance is found before \. This can be generalized
+to the so-called
+unbounded search
+operation. In particular,
+given a relation \\) we can define the operation
+\\) which returns the least \ such that
+\\) if such a \ exists and is undefined otherwise.
+Note that if \\) is primitive recursive, then it is still
+possible to effectively search for the value of \\)
+by successively checking \,\) \,\)….
+But since no upper bound is specified in advance, we are not
+guaranteed that this procedure will always terminate. In particular,
+if there is no \ such that \\) holds,
+then the procedure will continue indefinitely. In this case, we
+stipulate that \\) is
+undefined
+, from which
+it follows that \\) will correspond to what is known
+as a
+partial function
+—a notion which is made precise by
+the following sequence of definitions.
+2.2.1 Definitions
+The class of so-called
+partial recursive functions
+is
+obtained from our prior definition of \ by closing under
+an operation similar to \\) which is applied to
+functions rather than relations. In order to define this class, we
+first introduce the following conventions regarding
+partial
+functions
+which extends those given at the beginning of
+Section 2
+:
+A function \ is called
+total
+if \\) is defined for all \. Otherwise \\) is called
+partial
+.
+We write \\darrow\) to express that \\) is
+defined at \ and additionally \\darrow = m\) if
+\\) is defined at \ and equal to \. Otherwise
+we write \\uarrow\) to express that \\) is
+undefined at \
+The
+domain
+of \\) is the set \ =
+\{\vec{n} \in \mathbb{N}^k : f \darrow\}\).
+We write \ \simeq g\) just in case for all
+\, either \\) and \\)
+are both undefined or are both defined and equal.
+Suppose we are given a partial function \\).
+We now introduce terms of the form \\)
+defined as follows:
+\[\begin{align} \label{murec}
+\mu y f 
+  = \begin{cases} z & \text{if } z \text{ is such that } \\
+    &\:\: f = 0 \text{ and } \\
+    &\:\: \forall w < z\darrow \neq 0) \\
+\uarrow & \text{otherwise}
+\end{cases}\end{align}\]
+In other words, \\) is equal to the least \
+such that \ = 0\) provided that such an \ exists and
+also that \\) is defined but not equal to 0 for all \. On the other hand, \\) is
+undefined just in case either there is no \ such that
+\ = 0\) or there is such a \ but \\) is
+undefined for some \.
+Since this definition determines \\) uniquely,
+ can also be regarded as defining a functional
+\ which maps \-ary partial functions into
+\-ary partial functions. We now define the classes of functions
+\ and \ as follow:
+Definition 2.5:
+The class of
+partial recursive
+functions
+\ -recursive functions
+) is the smallest class of partial
+functions of type \ containing
+the initial functions \
+and closed under the functionals
+\[Op_{\mathbf{PartREC}} = \{\mathcal{Comp}^i_j,\mathcal{PrimRec}_k,\mathcal{Min}_k\}.\]
+We say that a function \ is
+partial recursive
+if \. Additionally
+we say that \ is
+recursive
+if \
+and \ is total. The set of recursive functions will be denoted by
+\.
+Note that despite its name,
+the class of partial recursive
+functions contains total functions
+. In particular, a
+recursive function
+is, by definition, one which is
+partial recursive while also being total
+. We will see in
+Section 3.2
+,
+ there also exist partial recursive functions which are genuinely
+partial and total functions which are not recursive.
+Note finally that if \\) is recursive it may be defined via
+some finite number of applications of composition, primitive
+recursion, and unbounded minimization in a manner which preserves the
+totality of intermediate functions in its definition. Thus although
+the specification of \\) may involve one or more
+applications of unbounded search, each search required to compute its
+value is guaranteed to terminate in a finite number of steps. It thus
+follows that all of functions in \ are computable by an
+algorithm . This
+constitutes part of the evidence for
+Church’s
+Thesis
+—i.e., the claim that \ coincides with
+the class of effectively computable functions—which was surveyed
+in
+Section 1.6
+.
+2.2.2 The Normal Form Theorem
+A question which naturally arises at this stage is whether more than
+one application of unbounded minimization is required to obtain all
+partial recursive functions. The fact that a single application is
+sufficient is a consequence of the
+Kleene Normal Form
+Theorem
+. In order to formulate this result, it is convenient to
+officially extend the application of the \-operator to relations
+in the manner discussed at the beginning of this section—i.e.,
+\[\begin{align} \label{unboundedminrel}
+\mu y R = 
+\begin{cases}
+\text{the least  such that } & \text{ if such a  exists} \\
+\uarrow & \text{ otherwise}
+\end{cases}\end{align}\]
+Theorem 2.3:
+For all \ there
+exists a \+2-ary primitive recursive relation
+\\)—the so-called
+Kleene
+\-predicate
+—and a primitive recursive function \\)
+) satisfying the following condition: for all
+\-ary partial recursive functions \\) there exists \ such that for all \
+\[f \simeq u)\]
+Since \ \simeq \mu y \chi_{\neg R}\), it
+is easy to see that the class \ can also be
+obtained by closing the primitive recursive functions under the
+operation defined by . One consequence of
+Theorem 2.3
+is thus that it is indeed possible to define any \-ary partial
+recursive function \\) by a single application of unbounded
+search applied to the relation \\) for an appropriate
+choice of \. More generally, the Normal Form Theorem illustrates
+how any such function may be defined from a
+single
+relation
+\\) wherein the value of \ serves as a
+description of the manner in which \\) is defined in terms
+of the basis functions \ and the operations
+\. Such an \ is known as an
+index
+for \\). As we will see in
+Section 3
+,
+ the availability of such indices is one of the central features of
+the partial recursive functions which allows them to provide the basis
+for a general theory of computability and non-computability.
+The complete details of the proof of
+Theorem 2.3
+are involved. But the basic idea may be summarized as follows:
+Every partial recursive function \\) is defined by a term
+\ over the language
+\[\mathbf{0},s,\pi^i_j,\mathcal{Comp}^j_k,\mathcal{PrimRec}_k,\mathcal{Min}_k\]
+in the manner which extends the notation scheme for partial recursive
+function introduced at the end of
+Section 2.1.1
+.
+ By associating the atomic expressions of this language with natural
+numbers in the manner of Gödel numbering \ described in
+Section 1.3
+and then employing the coding machinery described at the end of
+Section 2.1.2
+,
+ it is then possible to associate \ with a natural number
+\ which can serve as an index for
+\\).
+The definition of \\) can now be constructed by
+formalizing the following decision algorithm:
+on input \ construct a term \ defining
+\\) from \;
+understanding \ as a potential code for a sequence of
+intermediate computational steps similar to that exemplified by the
+calculation , check whether the result of carrying out
+the computation described by \ on input \ for
+\\) steps corresponds to \;
+if so, accept—i.e., \\) holds—and if
+not reject—i.e., \\) holds.
+By performing an unbounded search over codes of computation sequences
+in this manner, we achieve the dual purposes of both determining if
+the computation described by \ on input \ halts after
+a finite number of steps and, if so, also finding a code \ of a
+computation sequence which witnesses this fact. The function \\)
+can then be defined by formalizing the operation which extracts the
+output of the computation from the last step
+\_{\textit{len}-1}\) of the sequence encoded by \. In the
+case that \\) holds, \\) will thus correspond to
+the value \\). Since the foregoing steps require only
+performing bounded search and checking the local combinatorial
+properties of finite sequences, it can additionally be shown that
+\\) and \\) are primitive recursive.
+The techniques used in this proof can also be used to show that
+\\), the universal \-ary primitive recursive
+evaluation function \\), and the modified diagonal
+function \\) are all recursive . For
+instance note that the coding of definitions of \-ary partial
+recursive functions described above also allows us to uniformly
+enumerate all primitive recursive functions
+\,g_1,\ldots\) by considering the codes of terms
+not containing \. We can define in this manner a
+primitive recursive function \\) enumerating the indices for
+these functions such that we can obtain the universal function for
+\-ary primitive recursive function as \ = u,\vec{x},s)) = g_i\). But note that since
+\\) is always defined, \\) is not only
+partial recursive but also total, and hence recursive.
+Taking into account the equivalences between models of computation
+summarized in
+Section 1.6
+,
+ it is also possible to formulate a version of
+Theorem 2.3
+for each of the models of computation mentioned there. For instance,
+in the case of the Turing Machine model \, the analogous
+version of the Normal Form Theorem can be used to show that there is a
+single
+universal Turing machine
+
+\ such that every partial recursive function \\)
+corresponds to that computed by \\) for some \. Complete proofs of this sort were given by Turing  for \, by Kleene  for the general
+recursive functions \ ,
+by Shoenfield  for the class
+\ of functions representable in Peano
+Arithmetic, and by Cutland  for the Unlimited Register
+Machine model \.
+3. Computability Theory
+Computability Theory is a subfield of contemporary mathematical logic
+devoted to the classification of functions and sets of natural numbers
+in terms of their absolute and relative computability and
+definability-theoretic properties. This subject is closely related in
+both origin and content to the study of recursive functions. This is
+reflected by the fact that computability theory was known as
+recursive function theory
+ from the time of its inception in the 1930s until the
+late 1990s. It is also reflected in the formulation and proof of the
+so-called
+Recursion Theorem
+which provides a fundamental link
+between recursive definability and the sort of self-referential
+constructions which are at the core of many methods in computability
+theory .
+For reasons discussed in
+Section 1.7
+,
+ contemporary expositions of computability theory are often presented
+in an abstract manner which seeks to minimize reference to the
+specific features of a model of computation such as the partial
+recursive functions. It is thus useful to stress the following
+modifications to the traditional terminology which has been employed
+in
+Sections 1 and 2
+and the more contemporary terminology which will be employed in this
+section:
+The expressions
+computable function
+and
+partial computable function
+will be used
+instead of the traditional terms
+recursive
+function
+and
+partial recursive
+function
+as defined in
+Section 2.2.1
+.
+The expression
+computable set
+will be used
+instead of the traditional term
+recursive
+set
+. Similarly,
+computably
+enumerable
+
+set
+will
+be used instead of the traditional term
+recursively
+enumerable
+
+set
+.
+The other notational conventions introduced at the beginnings of
+Section 2.1
+and
+Section 2.2
+will be retained in this section.
+3.1 Indexation, the
+s
+-
+m
+-
+n
+Theorem, and Universality
+The first significant result in computability theory was
+Kleene’s  proof of the Normal Form Theorem which was
+presented in
+Section 2.2.2
+.
+ As discussed there, the Normal Form Theorem can be understood as
+illustrating how it is possible to associate each \-ary partial
+computable function \\) with a natural number \ known
+as its
+index
+such that \ \simeq \mu
+s)\). Such an \ can be thought of as a name for a
+computer program built up from the basis functions, composition,
+primitive recursion, and minimization by which the values
+\\) can be computed. This also leads to what is known as an
+indexation
+of \-ary partial computable functions
+\[\phi^k_0, \phi^k_1, \phi^k_2, \ldots, \phi^k_i, \ldots\]
+where \ \simeq \mu s T_k\). Such an
+enumeration provides a uniform means of listing off all partial
+computable functions in the order of their indices. It should be
+noted, however, that each partial computable function has infinitely
+many indices. For instance, given a function \ computed by \\), it is
+possible to define infinitely many extensionally coincident functions
+with distinct indices \, \phi_{e''},
+\ldots\)—e.g., by “padding” the definition encoded
+by \ with terms that successively add and then subtract \ for
+each \. As this yields a definition of an
+extensionally equivalent function, it thus follows that infinitely
+many of the \\) will correspond to the same function
+in extension.
+A result closely related to the Normal Form Theorem is the following
+which is conventionally known as the
+s-m-n
+Theorem:
+Theorem 3.1:
+For all \, there is
+a primitive recursive function \\) such
+that
+\[\phi^n_{s^m_n} \simeq \phi^{n+m}_i\]
+Here the function \\) should be thought of as acting
+on an index \ for an \-ary partial computable function
+together with values \ for the first \ of its arguments.
+This function returns an index for another partial computable function
+which computes the \-ary function determined by carrying out
+\ with the first \ of its arguments \
+fixed but retaining the next \ variables \ as inputs.
+Although the formulation of the
+s-m-n
+Theorem may at first
+appear technical, its use will be illustrated in the proof of
+Rice’s Theorem 
+and the
+Recursion Theorem 
+below.
+Another consequence of the Normal Form Theorem is the following:
+Theorem 3.2:
+For every \, there is
+a \-ary partial computable function \ which is
+universal in the sense that for all \-ary partial computable
+functions \\), there is an \ such that
+\ \simeq f\).
+This follows immediately from
+Theorem 2.3
+by taking \ = u)\) where
+\ is such that \ \simeq \phi^k_i\) in the
+enumeration of \-ary partial computable functions. As
+\\) can be used to compute the values of all
+\-ary partial computable functions uniformly in their index, it is
+conventionally referred to as the \-ary
+universal partial
+computable function
+.
+It is useful to observe that while we have just defined such a
+function for each \, it is also possible to define a binary
+function \\) which treats its second argument as a code
+for a finite sequence \ and then computes in the
+same manner as the \-ary universal function so that we have
+\ \simeq
+\upsilon^k\). This provides a means of replacing
+the prior enumerations of \-ary partial computable functions with
+a single enumeration of unary functions
+\[\phi_0, \phi_1, \phi_2, \ldots, \phi_i, \ldots\]
+where \ \simeq
+\upsilon \simeq
+\phi^k_i\).
+Together with
+Theorem 2.3
+,
+Theorem 3.1
+and
+Theorem 3.2
+codify the basic properties of a model of computation which make it
+suitable for the development of a general theory of computability. In
+Section 2
+such a model has been defined in the form of the partial recursive
+functions. But as was discussed briefly at the end of
+Section 2.2.2
+,
+ versions of these results may also be obtained for the other models
+of computation discussed in
+Section 1.6
+.
+ This licenses the freer usage of computer-based analogies and other
+appeals to Church’s Thesis employed in most contemporary
+treatments of computability theory which will also be judiciously
+employed in the remainder of this entry.
+3.2 Non-Computable Functions and Undecidable Problems
+Having just seen that there is a universal partial computable function
+\\), a natural question is whether this function is also
+computable . A negative answer is provided
+immediately by observing that by using \\) we may define
+another modified diagonal function \ = \upsilon + 1\) which
+is partial computable \) is). This in turn
+implies that \ \simeq \phi_j\) for some \. But now note
+that if \\) were total, then \\) would be defined
+and we would then have
+\[\begin{align*}
+d & = \phi_j \\
+& = \upsilon + 1 \\
+& = \phi_j + 1,
+\end{align*}\]
+a contradiction. Comparing this situation with that described at the
+beginning of
+Section 2.2
+we can see that the partial computable functions differ from the
+primitive recursive functions in admitting a universal function within
+the same class but at the same time giving up the requirement that the
+functions in the class must be total. In other words, while
+\ \in \mathbf{PartREC}\), the discussion in
+Section 2.2.2
+shows that \ \in \mathbf{REC} - \mathbf{PR}\).
+Since it is easy to see how the minimization operation can be used to
+define partial functions, the foregoing observations is expected. What
+is more surprising is that there are mathematically well-defined
+total
+functions which are not computable. Building on the
+discussion of the
+Entscheidungsproblem
+in
+Section 1.7
+,
+ the most famous example of such a function derives from the so-called
+Halting Problem
+
+for the Turing Machine model. This was originally formulated by
+Turing  as follows:
+Given an indexation of \ of Turing machines, does
+machine \ halt on the input \?
+An equivalent question can also be formulated in terms of the partial
+recursive functions:
+Is the partial computable function \\) defined for input
+\?
+The pairs of natural numbers \ corresponding to
+positive answers to this question determine a subset of \ as follows:
+\[\begin{aligned}
+ \HP = \{\langle i,n \rangle : \phi_i \darrow\} \end{aligned}\]
+A set  is said to be
+undecidable
+just in
+case its characteristic function is not computable. For instance let
+\ = \chi_{\HP}\) and observe that this, by definition, is
+a
+total function
+. The so-called
+undecidability of the
+Halting Problem
+may now be formulated as follows:
+Theorem 3.3:
+\\) is not a computable
+function.
+Proof:
+Suppose for a contradiction that \\) were
+computable. Consider the function \\) defined as
+\[\begin{aligned}
+g = \begin{cases} 
+0 & \text{if } h \darrow = 0 \\
+\uarrow & \text{otherwise}
+\end{cases}\end{aligned}\]
+On the assumption that \\) is computable, \\) is partial
+computable since, e.g., it may be computed by a program which on input
+\ computes \\) and returns 0 just in case \ = 0\)
+and otherwise goes into an infinite loop. It hence follows that \
+\simeq \phi_j\) for some \. But now observe that
+one of the following two alternatives must hold: i) \ \darrow\);
+or ii) \\uarrow\). We may thus reason by cases as follows:
+Suppose that \ \darrow\). Then \ = 0\) by definition of
+\\). Since \\) is the characteristic function of \,
+this means \ \uarrow\). But then since \ \simeq
+\phi_j\), \ \uarrow\), a contradiction.
+Suppose that \ \uarrow\). Then \ \neq 0\) by definition of
+\\). Since \\) is the characteristic function of \
+, the only other possibility is that \ = 1\)
+which in turn implies that \ \darrow\). But then since
+\ \simeq \phi_j\), \ \darrow\), a contradiction. □
+\\) thus provides an initial example of a mathematically
+well-defined total function which is not computable. Other
+non-computable functions can be defined by considering decision
+problems similar to \. Some well-known examples are as follows:
+\[\begin{align} \label{undecexs}
+K & = \{i : \phi_i \darrow\} \\ 
+ Z &= \{i : \phi_i\darrow = 0 \text{ for all }\} \nonumber \\
+ \TOT & = \{i : \phi_i \darrow \text{ for all }\}  \nonumber \\
+\textit{FIN}  & = \{i : \phi_i\darrow \text{ for at most
+finitely many distinct} \text{}\}\nonumber\\
+&  = \{i : W_i \text{ is finite} \}   \nonumber 
+\end{align}\]
+Suppose we let \, z, \textit{tot}\), and
+\\) be the characteristic functions of these sets. By
+making suitable modifications to the proof of
+Theorem 3.3
+it is possible to directly show the following:
+Proposition 3.1:
+None of the functions \, z,
+\textit{tot}\), and \\) are computable.
+For instance in the case of \\), we may argue as follows:
+define a function \\) which returns 0 if \ = 0\) and
+which is undefined otherwise;
+as before, if \\) is assumed to be computable, then \\)
+is partial computable and there is hence an index \ such that
+\ \simeq \phi_j\);
+but now observe that \ = 1\) iff \ \uarrow\) iff
+\ \uarrow\) iff \ = 0\).
+As this is again a contradictory situation, we may conclude that
+\\) is not computable.
+Note that each of the sets \ defined in  has the
+following property: if \ and \ \simeq \phi_k\),
+then \ as well. Sets with this property are known as
+index sets
+as they collect together the indices of all
+partial computable functions which share a common
+“semantic” property—i.e., one which is completely
+determined by their graphs such as being coincident with the constant
+0 function in the case of \ or being defined on all inputs in the
+case of \. An index set \ is called
+non-trivial
+if
+\ or \—i.e., it fails to
+either include or exclude all indices. It is easy to see that all of
+the sets defined in  are non-trivial index sets. The
+undecidability of these sets thus follows from the following more
+general result:
+Theorem 3.4
+: If \ is a non-trivial
+index set, then \ is undecidable.
+Proof:
+Let \ be a non-trivial index set and suppose for a
+contradiction that \\) is computable. Consider the
+everywhere undefined unary function \\)—i.e., \
+\uarrow\) for all \. Since \\) is partial
+computable, there is an index \ such that \ \simeq
+u\). We may suppose without loss of generality that \. , then we can
+switch the role of \ with its complement \ in the
+following argument and obtain the same result). Since \, we can also choose an index \ and define a
+function as follows:
+\[\begin{aligned}
+ f = \begin{cases} 
+\phi_a & \text{if } k = 1 \ \ \ \text{ \darrow$)} \\
+\uarrow & \text{if } k = 0 \ \ \ \text{ \uarrow$)} 
+\end{cases} \nonumber\end{aligned}\]
+Note that \\) is partial computable since it is defined by
+cases in terms of \\) based on the value of \\).
+There is thus an index \ such that \ \simeq \phi_c\).
+By applying the
+s-m-n
+Theorem 
+,
+ we thus have that \ \simeq \phi_{s^2_1}\). But
+note that we now have the following sequences of implications:
+\[\begin{align*}
+k = 1 & \Rightarrow f  \simeq \phi_a \\
+& \Rightarrow \phi_{s^2_1}  \simeq \phi_a\\
+&  \Rightarrow s^2_1 \in I  
+\end{align*}
+\]
+)
+\[\begin{align*}
+k = 0 & \Rightarrow f \simeq \phi_b \\
+& \Rightarrow \phi_{s^2_1} \simeq \phi_b \\
+& \Rightarrow s^2_1 \not\in I
+\end{align*}\]
+ is an index for \\)—the
+everywhere undefined function—and that \).
+It hence follows that the value of \\) may be computed by
+applying the following algorithm:
+on input \, calculate the value of \\) ;
+calculate the value of \)\) \) is computable).
+Either by invoking Church’s Thesis or by formalizing the prior
+algorithm as a partial recursive definition, it follows that \\)
+is computable. But this contradicts
+Proposition 3.1
+which shows that \\) is not computable. □
+Rice’s Theorem 
+provides a means of showing that many decision problems of practical
+import are undecidable—e.g., of determining whether a program
+always returns an output or whether it correctly computes a given
+function . Its proof also shows that
+if \ is a non-trivial index set, the problem of deciding \ can be “reduced” to that of deciding \ it
+the following sense:
+if
+we could effectively decide the
+latter,
+then
+we could also effectively decide the former by
+first calculating \\) and then checking if this value is in
+\. This method of showing undecidability will be formalized by the
+notion of a
+many-one reduction
+described in
+Section 3.5
+below.
+3.3 Computable and Computably Enumerable Sets
+A set \ is said to be
+computable
+
+ just in case its characteristic function is. More generally we have
+the following:
+Definition 3.1:
+A relation \ is
+computable
+just in case \\)
+is computable.
+This definition extends the definition of a primitive recursive
+relation given in
+Section 2.1
+—e.g.,
+ since sets like
+PRIMES
+and
+DIV
+are primitive
+recursive they are
+ipso facto
+computable. Via Church’s
+Thesis, the notion of a computable set thus also generalizes the
+accompanying heuristic about effective decidability—i.e., \
+is computable just in case there is an algorithm for deciding if
+\\) holds which always returns an answer after a finite
+ number of steps. On the other hand,
+it follows from the observations recorded in
+Section 3.2
+that none of
+HP
+,
+K
+,
+Z
+,
+TOT
+, or
+FIN
+are computable sets.
+A related definition is that of a
+computably enumerable
+
+set
+—i.e., one whose members can be
+enumerated by an effective procedure.  Officially we have the
+following:
+Definition 3.2:
+\ is
+computably enumerable
+ if \ or \
+is the range of a computable function—i.e.,
+\[A = \{m : \phi_e\darrow = m \text{ for some } n \in \mathbb{N}\}\]
+for some index \ of a total computable function.
+This definition can be extended to relations by viewing \ as a
+code for a finite sequence in the obvious way—i.e., \ is c.e. just in case there is a
+computable function \\) such that \\) if
+and only if \ = \langle n_0, \ldots, n_k \rangle\) for some
+\.
+If \ is computably enumerable, its members may thus be listed off
+as
+\[A = \{\phi_e, \phi_e, \phi_e, \ldots \}\]
+possibly with repetitions—e.g., the constant function
+\\) enumerates the singleton set \, which is
+thereby c.e. It is easy to see that a computable set \ is
+computably enumerable. For if \, then \ is
+c.e. by definition. And if \, we may choose
+\ and then define
+\[\begin{align} \label{cefromc}
+f = \begin{cases} 
+     x & \text{if } \chi_A = 1 \\ 
+     a & \text{otherwise} \end{cases}
+\end{align}\]
+In this case \\) is computable and has \ as its range.
+In proving facts about computably enumerable sets, it is often
+convenient to employ one of several equivalent definitions:
+Proposition 3.2:
+Suppose \.
+Then the following are equivalent:
+\ is computably enumerable.
+\ or \ is the range of a primitive recursive
+function.
+\\}\) for a computable
+relation \.
+\ is the domain of a partial computable function.
+The proof of
+Proposition 3.2
+is largely a matter of unpacking definitions. For instance, to see
+that iv implies i, suppose that \\)—i.e., \ \darrow\}\). If \ it is automatically c.e.
+Otherwise, there is an element \. We may now define
+\[\begin{aligned}
+f = \begin{cases} _0 & \text{if } T_1_0,_1) \\ a & \text{otherwise} \end{cases}\end{aligned}\]
+\\) thus treats its input as a pair \
+consisting of an input \ to \\) and a computation
+sequence \ as defined in the proof of the Normal Form Theorem
+ .
+ As \ varies over \, it thus steps through all
+possible inputs \_0\) to \ and also all possible
+witnesses \_1\) to the fact that the computation of \ on
+\_0\) halts. It then returns \_0\) if \_1\) is such a
+witness to a halting computation and \ otherwise. Thus the range
+of \\) will correspond to that of \\). And as
+\\) is computable 
+relation, it is easy to see that \\) is a computable function
+with range \. This shows that \ is c.e. as desired.
+Part iv of
+Proposition 3.2
+also provides a convenient uniform notation for computably enumerable
+sets—i.e., if \\) we denote \ by
+\ \darrow\}\). The sequence \ thus provides a uniform enumeration of c.e. sets
+relative to our prior enumeration of unary partial computable
+functions. This notation also aids the formulation of the
+following:
+Proposition 3.3:
+The computably enumerable sets are effectively closed under union,
+intersection, and cross product—i.e., there are computable
+functions \,\) \\) and
+\\) such that if \ and \ then
+\[A \cup B = W_{\textit{un}}, A \cap B = W_{\textit{int}}\]
+and
+\[\{\langle x,y \rangle : x \in A \ \& \ y \in B\} = W_{\textit{cr}}.\]
+The computable sets are additionally closed under complementation and
+relative complementation—i.e., if \ and \ are recursive,
+then so are \ and \.
+The proofs of these facts are also straightforward upon appeal to
+Church’s Thesis. For instance, if \ = A\)
+and \ = B\) then \\) can be
+taken to be an index for a program which simulates the computation of
+\\) and \\) in alternate stages and halts just in
+case one of these subcomputations halt. Note also that if \
+is computable, then \ = 1 \dotminus \chi_A\)
+is also computable, from which it follows that \ is
+ computable.
+
+A related observation is the following:
+Proposition 3.4
+: \ is computable if
+and only if \ and \ are both computably
+enumerable.
+The left-to-right direction is subsumed under
+Proposition 3.3
+.
+ For the right-to-left direction, suppose that \\) and \\).
+Then to decide \ we can perform an unbounded search for a
+computation sequence \ such that either \\) or
+\\), accepting in the first case and rejecting in the
+second. Since \, the search must
+always terminate and since \, the
+conditions are exclusive. Thus by again appealing to Church’s
+Thesis, \ is computable.
+We have seen that the computable sets are contained in the computably
+enumerable sets. Two questions which arise at this stage are as
+follows:
+are there examples of sets which are computably enumerable but
+not computable?
+are there are examples of sets which are not computably
+enumerable?
+A positive answer to both is provided by the following:
+Corollary 3.1:
+Recall the set \
+\darrow\}\)—i.e., the so called
+Diagonal Halting
+Problem
+. \ is computably enumerable but not computable while
+\ is not computably enumerable.
+\ is clearly c.e. as it is the domain of \\). On the other hand, we have seen that the characteristic
+function of \—i.e., the function \ = k\) as
+defined in
+Section 3.2
+—is
+ not computable. Thus \ is indeed a computably enumerable set
+which is not computable. To see that \ is not c.e.,
+observe that if it were, then \ would be computable by
+Proposition 3.4
+.
+ This in turn suggests a sense in which it is “harder” to
+decide membership in \ than in any computable set. The hierarchies
+introduced in
+Sections 3.5
+and
+Section 3.6
+will provide a means of making such observations precise.
+3.4 The Recursion Theorem
+The result which is now most often referred to as
+Kleene’s
+Recursion Theorem
+can be used to unify a number of effective
+diagonal arguments similar to that underlying
+Theorem 3.3
+and has a wide range of applications both in computability theory and
+other areas of mathematical logic and computer
+ science.
+
+Although its statement is straightforward, both its significance and
+the following proof become clearer upon considering subsequent
+applications.
+Theorem 3.5
+: Suppose that \\) is a
+total computable function. Then there is a number \
+such that \ \simeq \phi_{f}\).
+Proof:
+Consider the function \\) defined as follows:
+\[\begin{aligned}
+g = \begin{cases} \phi_{\phi_x} & \text{if } \phi_x \darrow \\ \uarrow & \text{otherwise} \end{cases} \end{aligned}\]
+As it is evident that \\) is partial computable, \
+\simeq \phi_e\) for some \. It thus follows by the
+s-m-n
+Theorem 
+that \ \simeq \phi_{s^2_1}\). Let \ =
+s^2_1\) and note that we then have \}\) is the same
+function as \}\) provided that \\) is
+defined. Note that \\) is a total computable function and is
+defined independently of the given function \\).
+Next let \ be an index for the composition of \\) with
+\\)—i.e., \ \simeq f)\). We now claim that
+\\) is the number called for in the statement of the theorem.
+For first note that since \\) and \\) are both total,
+\\) is also total and thus \\) is defined. From
+this it follows that \} \simeq \phi_{\phi_k}\). We
+now have the following sequence of functional identities:
+\[\phi_n \simeq \phi_{b} \simeq  \phi_{\phi_k} \simeq \phi_{f)} \simeq \phi_{f}\]
+□
+The Recursion Theorem is sometimes also referred to as the
+Fixed
+Point Theorem
+. Note, however, that
+Theorem 3.5
+does not guarantee the existence of an extensional fixed point for
+the given function \\)—i.e., a number \ such that
+\ = n\).  = x+1\).)
+But suppose we view \\) instead as a mapping on indices to
+partial computable functions or, more figuratively, as a means of
+transforming a
+program
+for computing a partial computable
+function into another program. On this interpretation, the theorem
+expresses that for every such computable transformation there is some
+program \ such that the function \\) which it computes
+is the same as the function \}\) computed by its image
+\\) under the transformation.
+As it may at first appear such an \ is defined in a circular
+manner, it is also
+prima facie
+unclear why such a program
+must exist. Indeed Soare  remarks that the
+foregoing proof of the Recursion Theorem is “very short but
+mysterious” and is “best visualized as a diagonal argument
+that fails”. In order to clarify both this comment and the
+proof, consider the matrix depicted in Figure 1 whose rows \
+enumerate not the values of partial computable functions but rather
+the functions themselves—i.e., the row \ will contain the
+functions \}, \phi_{\phi_i}, \ldots\) with the
+understanding that if \ \uarrow\), then \}\)
+denotes the totally undefined function. 
+\[\begin{matrix}
+\phi_{\phi_{0}} & \phi_{\phi_{0}} &  \ldots &  \phi_{\phi_{0}} & \ldots& \phi_{\phi_{0}} & \ldots& \phi_{\phi_{0})}& \ldots\\
+\phi_{\phi_{1}} & \phi_{\phi_{1}} & \ldots & \phi_{\phi_{1}} &  \ldots& \phi_{\phi_{1}} & \ldots& \phi_{\phi_{1})}& \ldots\\
+⋮&& ⋱ &&&&&⋮\\
+ \phi_{\phi_{i}} & \ldots & \ldots & \phi_{\phi_{i}} & \ldots &  \phi_{\phi_{i}} & \ldots&  \phi_{\phi_{i})} & \ldots \\
+⋮& & & & ⋱ & &&⋮\\
+ \phi_{\phi_{d}} & \ldots&  \ldots& \phi_{\phi_{d}} & \ldots&  \phi_{\phi_{d}} & \ldots&  \phi_{\phi_{d})}& \ldots& \phi_{\phi_{d})} \ldots\\
+⋮& & & & & & ⋱ & &&\uarrow\\
+ \phi_{\phi_{h_{f}}}& \ldots & \ldots&  \phi_{\phi_{h_{f}}}& \ldots& \phi_{\phi_{h_{f}}}&  \ldots& \phi_{\phi_{h_{f}})}& \ldots &= \\
+⋮& & & & & && & ⋱ &\darrow\\
+\phi_{\phi_{h_{f}}}& \ldots& \ldots& \phi_{\phi_{h_{f}}}& \ldots& \phi_{\phi_{h_{f}}}& \ldots& \phi_{\phi_{h_{f}})}&
+    \ldots&   \phi_{\phi_{h_{f}})} \ldots\\
+ ⋮\\
+\end{matrix}\]
+Figure 1:
+The matrix of partial
+computable functions employed in the proof of the
+Recursion Theorem 
+We may think of the function \\) given in
+Theorem 3.5
+as inducing a transformation on the rows so that \ is mapped to
+\}\). To this end, let \\) be an index to the total
+computable function which composes \ with \ so that we
+have
+\[\begin{aligned}
+\phi_{h_f} \simeq f)\end{aligned}\]
+Next consider the diagonal of this matrix—i.e., \}, \phi_{\phi_1}, \ldots\) Since the indices to the
+functions which comprise \ are given effectively, it must be the
+case that \ itself corresponds to some row \—i.e.,
+\[\begin{align} \label{dr} 
+\phi_{\phi_d} \simeq \phi_{\phi_i} \text{ for all } i \in \mathbb{N}
+\end{align}\]
+But now consider the image of \ under \—i.e., the row
+\} = \phi_{\phi_{h_f}}, \phi_{\phi_{h_f}},
+\ldots\) It follows from  that we must have
+\[\begin{equation} \label{lastrecthm1}
+\phi_{\phi_d)} \simeq  \phi_{\phi_{h_f})}
+\end{equation}\]
+But note that by the definition of \, \}) =
+f)\) and thus also from 
+\[\begin{equation} \label{lastrecthm2}
+\phi_{\phi_d)} \simeq  \phi_{f)}
+\end{equation}\]
+But now note that since \ and \ are all total, the
+value \)\) is defined. Thus setting \)\) it follows from  that \
+\simeq \phi_{f}\) as desired.
+As mentioned above, the Recursion Theorem may often be used to present
+compact proofs of results which would traditionally be described as
+involving
+self-reference
+. For instance, an immediate
+consequence is that for every \\) there is an \ such that
+\}\). To see this note that
+Theorem 3.5
+entails the existence of such an \ such that \ \simeq
+\phi_{f}\) for every computable \\). But since the domains of
+the functions must then coincide, it follows that \}\).
+It is useful to record the following alternative form of the Recursion
+Theorem:
+Corollary 3.2:
+For every partial computable function
+\\), there is an index \ such that \ \simeq
+f\).
+Proof:
+By the
+s-m-n
+Theorem 
+,
+ \ \simeq \phi_{s^2_1}\) for some \. But then the
+existence of the required \ follows by applying
+Theorem 3.5
+to \\). □
+Here are some easy consequences in the spirit described above which
+make use of this formulation:
+There is a number \ such that \ = x + n\).  = x + n\) in
+Corollary 3.2
+.
+ Analogous observations yield the existence of \ such that
+\ = x \times n, \phi_n = x^n\), etc.)
+There is a number \ such that \.  = \begin{cases}
+0 & \text{if } x = y \\
+ \uarrow & \text{otherwise} 
+\end{cases}\]
+in
+Corollary 3.2
+.)
+Consider a term \ corresponding to a “program”
+which determines the partial computable program with index \ .
+ We say that such a program is
+self-reproducing
+if for all
+inputs \, the computation of \ on \ outputs \. Since in order to construct \ it would seem
+that we need to know \ in advance, it might
+appear that self-reproducing programs need not exist. Note, however,
+that transposed back into our official terminology, the existence of
+such a program is equivalent to the existence of a number \ such
+that \ = n\). And this is guaranteed by applying
+Corollary 3.2
+to the function \ = x\).
+For further discussions of the Recursion Theorem in regard to
+self-reference and more advanced applications in computability theory
+see, e.g., Cutland , Rogers , Odifreddi
+, and Y. Moschovakis .
+Before leaving the Recursion Theorem, it will finally be useful to
+reflect on how it bears on the general concept of recursive
+definability as discussed in
+Sections 1 and 2
+.
+ Consider, for instance, a simple definition such as
+\[\begin{align} \label{recex}
+h & = k \\ \nonumber
+h & = g)
+\end{align}\]
+In the case that \\) and \\) are primitive recursive, we
+have remarked that it is possible to show that there exists a unique
+function \\) satisfying  by an external
+set-theoretic argument. But we may also consider the case in which
+\\) is assumed to be computable relative to a model of
+computation \ which differs from the partial recursive
+functions in that it does not natively support recursion as a mode of
+computation—e.g., the Turing Machine model \ or
+Unlimited Register Machine model \. If we simply set down
+ as a definition in this case, we would have no
+a
+priori
+assurance that \\) is computable relative to
+\ even if \\) is.
+Upon examination, however, it is clear that the only features of a
+model of computation on which the proof of
+Theorem 3.5
+relies are the existence of an indexation for which a version of the
+s-m-n
+Theorem 
+is available. If \ satisfies these conditions, the claim
+that \\) is computable relative to \ is equivalent
+to \ \simeq \phi_n\) where \ is an index drawn from some
+suitable indexation of the \-computable functions. But
+since the
+s-m-n
+Theorem for \ allows us to treat
+an index as a variable, we can also consider the function defined by
+\[\begin{aligned}
+f & = k \\ \nonumber
+f & = g)\end{aligned}\]
+Now note that the existence of an \ such that \ \simeq
+\phi_n\) is again guaranteed by
+Corollary 3.2
+.
+ This in turn yields
+\[\begin{aligned}
+\phi_n & = k \\ \nonumber
+\phi_n & = g)\end{aligned}\]
+This illustrates how the existence of a computable function satisfying
+a recursive definition such as  follows from the
+Recursion Theorem even if we have not started out by characterizing a
+“computable function” as one defined
+“recursively” in the informal sense discussed in
+Section 1
+.
+ And this in turn helps to explain why
+Theorem 3.5
+has come to be known as the
+Recursion
+Theorem.
+3.5 Reducibilities and Degrees
+A central topic in contemporary computability theory is the study of
+relative computability
+—i.e., if we
+assume
+that
+we are able to decide membership in a given set or compute a given
+function, which other sets or functions would we be able to decide or
+compute? This question may be studied using the notion of a
+reduction
+of one set \ to another \ which was
+introduced informally by Kolmogorov  as a means of transforming
+a “solution” of \ into a “solution” of
+ \.
+
+Turing  provided the first formal definition of a computational
+reduction in his study of ordinal logics. However, it was Post who
+first proposed to systematically study reducibility notions and their
+associated degree structures in his highly influential paper
+“Recursively enumerable sets of positive integers and their
+decision problems” .
+Therein Post explains the basic idea of a reduction and its
+significance as follows:
+Related to the question of solvability or unsolvability of problems is
+that of the reducibility or non-reducibility of one problem to
+another. Thus, if problem \ has been reduced to problem \,
+a solution of \ immediately yields a solution of \, while
+if \ is proved to be unsolvable, \ must also be
+unsolvable. For unsolvable problems the concept of reducibility leads
+to the concept of degree of unsolvability, two unsolvable problems
+being of the same
+degree of unsolvability
+if each is
+reducible to the other, one of lower degree of unsolvability than
+another if it is reducible to the other, but that other is not
+reducible to it, of incomparable degrees of unsolvability if neither
+is reducible to the other. A primary problem in the theory of
+recursively enumerable sets is the problem of determining the degrees
+of unsolvability of the unsolvable decision problems thereof. We shall
+early see that for such problems there is certainly a highest degree
+of unsolvability. Our whole development largely centers on the single
+question of whether there is, among these problems, a lower degree of
+unsolvability than that, or whether they are all of the same degree of
+unsolvability. 
+In order to appreciate this passage, it is again useful to think of a
+set \ as being associated with the
+problem
+of deciding membership in \—e.g., given a
+natural number \, is \ prime? ?) or is the \th partial computable function with
+input \ defined? ?). But even given this
+correspondence, the assertion that a solution to a problem \
+“immediately yields” a solution to \ may still be
+analyzed in a number of different ways. Two of the most important
+possibilities are as follows:
+Assuming that there is an algorithm for deciding questions of the form
+\, then it is possible to specify an algorithm for deciding
+questions of the form \.
+Assuming that we had access to an “
+oracle
+”
+capable of answering arbitrary questions of the form \ in a
+single step, then it is possible to specify an algorithm employing the
+oracle for deciding \.
+The formalization of these relations between problems leads to the
+notions of
+many-one reducibility
+and
+Turing
+reducibility
+which provide distinct but complementary analyses of
+the notions \
+is no harder to solve than
+\ and also
+the degree of unsolvability
+
+of
+\ is equal to that of
+ \
+.
+
+The latter notion came first historically and was introduced by
+Turing  and in an equivalent form by Kleene . However it
+was Post  who both introduced the former notion and also
+initiated the general study of Turing reducibility. In fact the final
+sentence of the passage quoted above describes an important technical
+question about the Turing degrees which would shape the early
+development of computability theory .
+3.5.1 The many-one degrees
+We have already seen an example of many-one reducibility in the proof
+of
+Rice’s Theorem 
+.
+ In particular, the proof showed that the problem of deciding
+membership in \ can be reduced to that of deciding membership in
+any non-trivial index set \ in the following sense: for all \,
+if \ then \ \in I\). Thus if there were an
+algorithm for deciding membership in \, we would be able to decide
+whether \ by using it to test whether \ \in I\).
+The function \\)  is thus a so-called
+many-one
+reduction
+of \ to \.
+The formal definition generalizes this example as follows:
+Definition 3.3:
+Given sets \, \ is said to be
+many-one
+-one)
+reducible
+to \ if there is a computable function \\)
+such that for all \,
+\[n \in A \text{ in and only if } f \in B\]
+In this case we write \.
+Using this notation, the foregoing example thus shows that \. These observations can generalized as follows:
+Proposition 3.5:
+Suppose that \.
+If \ is computable, then so is \.
+If \ is computably enumerable, then so is \.
+By contraposing
+Proposition 3.5
+it thus follows that in order to show that a set \ is
+non-computable  it suffices to show that a known
+non-computable  set can be reduced to it. As an initial
+example, observe that the Diagonal Halting Problem \ \darrow\}\) is reducible to the Halting Problem \ \darrow\}\) by the reduction \
+= \langle x,x \rangle\)—i.e., the computable pairing function of
+\ with itself is a many-one reduction showing \.
+Thus since \ is known to be non-computable, this gives another
+proof that \ also is not computable.
+Reducibility notions also typically come with an associated notion of
+what it means for a designated set to be
+complete
+relative to
+a class of sets—i.e., a set to which every set in the class may
+be reduced and which is itself a member of the class. As an initial
+example we have the following:
+Definition 3.4:
+A set \ is said to be
+many-one
+-)
+complete
+for the computably
+enumerable sets just in case the following conditions hold:
+\ is computable enumerable;
+For all computably enumerable sets \, \.
+An obvious example of a complete c.e. set is \. For since \\}\) and \\)
+is a computable relation, it follows from
+Proposition 3.2
+that \ is c.e. And on the other hand, if \, then \ if and only if \ thus showing
+that \.
+It is, nonetheless, standard to take \ rather than \ as the
+canonical complete c.e. Although it might at first seem that \
+contains “less computational information” than \, it
+is not hard to see that \ is also such that every c.e. set is
+\-reducible to it. For supposing that \, we may define a
+function
+\[\begin{aligned} \label{redK}
+f = \begin{cases} 1 & \text{ if } \phi_i \darrow \text{ } \\
+\uarrow & \text{otherwise}
+\end{cases}\end{aligned}\]
+As \\) is clearly partial computable, the
+s-m-n
+Theorem 
+gives a total recursive function \\) such that \
+\simeq \phi_{s^2_1}\). We then have
+\[n \in A \ \Leftrightarrow \ \phi_i \darrow \ \Leftrightarrow \ \phi_{s^2_1}) \darrow \  \Leftrightarrow \ s^2_1 \in K\]
+These biconditionals hold because \ \darrow\) just in case
+\}\) is \\)  as opposed to the everywhere undefined function just in
+case \}) \darrow\). But as the later
+condition is equivalent to \ \in K\), \\) is a
+many-one reduction showing \.
+This illustrates a sense in which deciding membership in \ can
+also be understood as universal for computably enumerable sets or,
+alternatively, that there is no c.e. set which is any
+“harder” to solve than \. Nonetheless, there are
+problems that are harder to solve than \ in the sense that they
+could not be solved even if we possessed a decision algorithm for
+\. For instance, it will follow from results given below that
+while \ is \-reducible to \, \ is not
+\-reducible to \. This illustrates how \-reducibility can
+be used to study the
+relative difficulty
+of solving
+computational problems.
+These considerations lead naturally to the notion of a
+degree of
+difficulty
+—another concept which can be made precise with
+respect to different reducibility notions. The version for many-one
+reducibility is given by the following definition:
+Definition 3.5:
+If \ and \ are many-one
+reducible to each other—i.e., \ and \—then we say that \ and \ are
+many-one
+equivalent
+and we write \.
+It follows immediately from
+Definition 3.3
+that \ is reflexive. It is also clearly transitive. \) and \\) are computable functions which respectively
+serve as many-one reductions showing \ and \, then their composition \)\) is a many-one reduction
+showing \.) As it thus follows that \ is an
+equivalence relation, it also makes sense to define the following:
+Definition 3.6:
+\\)—the
+many-one
+-)
+degree
+of \—is the
+equivalence class of \ with respect to \—i.e.,
+\ = \{B \subseteq \mathbb{N} : B \equiv_m A\}\). We
+call an \-degree
+computable
+if it contains a computable
+set and
+c.e
+. if it contains a computably enumerable set.
+The \-degree \\) of \ collects together all
+sets which are many-one equivalent to it. It can thus be thought of as
+an abstract representation of the relative difficulty of deciding
+membership in \ when this latter notion is in turn explicated in
+terms of \-reducibility. For instance, since our prior
+observations show that \ = \textrm{deg}_m\),
+they are thus “equally difficult” c.e. degrees.
+It is traditional to use boldface lower case Roman letters
+\ to denote degrees . We next define an ordering on \-degrees as
+follows:
+Definition 3.7:
+Let \ and \
+be \-degrees. We then define
+\ just in case there is a set \ and a set \ such that \.
+\ just in case \ and \.
+It is easy to see that \ is a partial order on
+\-degrees—i.e., irreflexive, antisymmetric, and transitive.
+We accordingly introduce the structure \ : A \subseteq \mathbb{N}\}, <_m\rangle\) which
+is traditionally known as the
+many-one
+
+degrees
+.
+Together with the similar study of the Turing degrees ,
+ investigating the structure of \ has been a major
+focus of research in computability theory since the time of
+Post’s  introduction of the many-one degrees. Some
+properties of this structure are as follows:
+Proposition 3.6:
+The \-degrees are not closed under complementation—i.e.,
+there exist sets \ such that \ and
+thus \\).
+\ =
+\{\emptyset\}\) and \ = \{\mathbb{N}\}\) are distinct
+\-degrees both of which are  computable.
+There is exactly one computable \-degree \ other
+than \ and \—i.e., \\) for any computable set \. Additionally, \ is minimal in
+\ in the sense that \
+for all degrees \ other than \ and
+\.
+If \ is a c.e. degree and \, then \ is also a c.e. degree.
+There is a
+maximum
+c.e. \-degree—i.e.,
+\ =_{\textrm{df}} \mathbf{0}'_m\)—in the sense
+that \ for all c.e. degrees
+\.
+Any pair of \-degrees \ have a
+least
+upper bound
+\—i.e., \ and \ and \
+is \-less than any other upper bound of \ and
+\. Since we have seen that \ is also a partial
+order, this implies that \ is additionally an
+upper semi-lattice
+.
+There exists a c.e. degree \ properly between
+\ and \—i.e.,
+\.
+Post  demonstrated part vii by showing that there exist
+so-called
+simple sets
+—i.e., sets \ which are
+c.e. and such that \ is infinite but does not
+contain an infinite c.e. subset. It is easy to see that a simple
+set cannot be computable. But on the other hand, Post also showed that
+a simple set cannot be \-complete. And it thus follows that if
+\ is simple \ \neq
+\mathbf{0}_m\) but \ and thus \. Suppose we now understand “degrees of
+unsolvability” in the passage quoted at the beginning of this
+section as corresponding to the c.e. \-degrees. It thus
+follows from part v of
+Proposition 3.6
+that \ is indeed a “highest” such degree
+and also from part vii that there is a lower but still
+“unsolvable”  degree.
+Although the other parts of
+Proposition 3.6
+have straightforward proofs, they provide some insight into the fact
+that \ is itself a highly complex structure . Nonetheless the first two parts of this
+theorem are often taken to illustrate awkward features of the many-one
+degrees as an abstract representation of computational
+difficulty—i.e., the exceptional behavior of
+\\) and \\) and
+the fact a set and its complement may inhabit different degrees  and \). It is
+partly in light of these features that the Turing degrees
+\ are the structure which are now most widely studied
+in computability theory. But as Post also alludes, it is relative to
+\ for which he was originally unable to demonstrate
+the existence of a c.e. set of an intermediate degree of
+unsolvability.
+3.5.2 The Turing degrees
+The notion of
+relative computability
+mentioned at the
+beginning of this section is now standardly analyzed in terms of
+computability in a set
+\.
+Informally, we say that a function \\) is computable in
+\ just in case there exists an algorithm which is effective in the
+traditional sense with the exception of the fact its computation may
+rely on computing one or more values \\). These values are
+in turn assumed to be available to the algorithm in a single step even
+though \\) may not itself be computable—e.g., if \.
+This notion was originally introduced by Turing  who described
+what he referred to as an
+oracle
+
+machine
+variant of the standard Turing Machine model
+\. An o-machine is otherwise like a normal Turing machine
+but also possesses a read-only
+oracle tape
+ on which the characteristic function of a set \ is
+assumed to be written at the beginning of its computation. The
+transitions of an o-machine are determined by its internal state
+together with the currently scanned symbols on both its read-write
+tape and the oracle tape, thus formalizing the idea that the machine
+may “consult the oracle” about the characteristic function
+of \ one or more times during the course of its
+ computation.
+
+Kleene  described an analogous idea for the
+general
+recursive functions
+as follows:
+A function \ which can be defined from given functions
+\ by a series of applications of general
+recursive schemata we call
+general recursive in
+the given
+functions; and in particular, a function definable
+ab initio
+by these means we call
+general recursive
+. 
+The former part of this characterization differs from the definition
+of general recursiveness given in
+Section 1.5
+in allowing that in addition to the initial functions \
+and \\), the functions \ can also enter
+into systems of equations which define the function \. This
+corresponds to the assumption that the values of \ are available in the course of a computation without the need
+for further calculation.
+It is also possible to modify the definition of the
+partial
+recursive functions
+given in
+Section 2.2.1
+to allow such relativization to an additional class of initial
+functions. Since relativization to a finite set of functions can be
+accomplished by successive relativization to a single function and the
+graph of a function can also be coded into a set, this is now
+standardly achieved as follows:
+Definition 3.8:
+Given a set \, we define the class of \-
+partial recursive
+functions
+\ to be the smallest class of
+partial functions containing the initial functions \\}\) and closed under the
+functionals
+\[Op_{\mathbf{PartREC}} = \{\mathcal{Comp}^i_j,\mathcal{PrimRec}_k,\mathcal{Min}_k\}.\]
+There are, of course, uncountably many subsets of the natural numbers.
+But for each such \, we may still understand
+\\) as a new primitive functional symbol which can be
+employed in constructing one of countably many \-partial recursive
+definitions in the manner discussed in
+Section 2.1.1
+.
+ It is thus also possible to list off all of the unary \-partial
+recursive functions relative to the codes of their definitions to
+obtain a uniform enumeration
+\[\begin{aligned}
+\phi_0^{A}, \phi_1^{A}, \phi^{A}_2, \ldots\end{aligned}\]
+and similarly for other arities. It is thus not difficult to see that
+we can thereby also obtain relativized versions of results like the
+s-m-n
+Theorem 
+and the Universality Theorem
+ 
+ as exemplified by the following:
+Theorem 3.6:
+For all \,
+there is an \-partial computable function \ which is
+universal
+in the sense that for all unary \-partial
+computable functions \\), there is an \
+such that \ \simeq f\).
+These observations in turn license the use of the expression
+computable in \
+to describe both a function
+\\) which is \-partial recursive and total and also a
+set \ such that \\) is computable in \. We also use
+the expression
+computably enumerable
+
+in \
+to describe a set \ which is the range of an \-partial
+recursive function and the notation \ to denote the domain of
+\\). It is then straightforward to see that many of our
+prior proofs about
+non-computability
+also carry over to the
+relativized setting—e.g., \\darrow\}\)
+is an example of a set which is computably enumerable in \ but not
+computable in \.
+We may now state the definition of
+Turing reducibility
+as
+follows:
+Definition 3.9:
+Given sets \, \ is said to be
+Turing
+-)
+reducible
+to \ just in case \ is computable in \.
+In this case we write \.
+It is a consequence of this definition that \ just in
+case \\) coincides with the  \-computable
+function given by \\) for some index \. For instance
+if we adopt Turing’s characterization of relative computability,
+we may think of \ as describing a program for a machine which can
+consult \ as an oracle. In this case, \ means that it
+is possible to decide if \ by carrying out the program
+described by \ on the input \ which may in turn require
+performing queries to the oracle \ during the course of its
+computation.
+We may also define a notion of completeness with respect to \
+as follows:
+Definition 3.10:
+We say that \ is
+Turing
+complete
+if \ is c.e. and all c.e. sets \ are
+such that \.
+It is easy to see that \ implies \. \) is a \-reduction of \ to \, then consider the
+program which first computes \\) and then, using \ an as
+oracle, checks if \ \in B\), outputting 1 if so and 0 if not.) It
+thus follows that \ is also Turing complete—i.e., it
+embodies the maximum “degree of unsolvability” among the
+the c.e. sets when this notion is understood in terms of Turing
+reducibility as well as many-one reducibility.
+Such observations can be made precise by first defining the notion of
+Turing equivalence:
+Definition 3.11:
+If \ and \ are Turing
+reducible to each other—i.e., \ and \—then we say that \ and \ are
+Turing
+equivalent
+and we write \.
+As it is again easy to see that \ is an equivalence
+relation, we may also define the notion of
+Turing degree
+as
+follows:
+Definition 3.12:
+\\)—the
+Turing degree
+of \—is the equivalence class of
+\ with respect to \—i.e., \ =
+\{B \subseteq \mathbb{N} : B \equiv_T A\}\).
+We can now define an ordering on Turing degrees as follows:
+Definition 3.13:
+Let \ and
+\ be Turing degrees. We then define
+\ just in case there is a set \ and a set \ such that \.
+\ just in case \ and \.
+As with the \-degrees, we say that \ is a
+computable Turing degree
+if it contains a computable set and
+a
+computably enumerable
+
+degree
+if it contains
+a c.e. set. If we consider the structure
+\[\mathcal{D}_T = \langle \{\textrm{deg}_T : A \subseteq \mathbb{N}\},\leq_T\rangle
+\]
+—which is known as the
+Turing degrees
+—it is again
+easy to see that \ is a partial order. Some observations
+which illustrate the relationship between \ and the
+many-one degrees \ are as follows:
+Theorem 3.7:
+There is exactly one computable Turing degree denoted by
+\\)  when there is no possibility of ambiguity with the
+\-degrees). \ consists of all of the computable
+sets and is the unique minimum Turing degree.
+For all sets \, and \ and thus also
+\ = \textrm{deg}_T\).
+\\) is the maximum amongst all c.e. Turing
+degrees.
+For any sets \, \ \subseteq
+\textrm{deg}_T\) and if
+\[\textrm{deg}_m \leq_m \textrm{deg}_m,\]
+then
+\[\textrm{deg}_T \leq_T \textrm{deg}_T.\]
+Since \ and \ are both  computable
+sets, by part i) we have \ =
+\textrm{deg}_T = \mathbf{0}_T\), unlike the \-degrees.
+And also unlike the \-degrees we have by part ii that
+\ = \textrm{deg}_T\).  via an algorithm which uses \ an as oracle, then we
+can also decide it using \ as an oracle by simply
+swapping the responses obtained in our former algorithm.)
+The structures of both \ and the c.e. degrees
+\[\mathcal{E}_T = \langle \{\textrm{deg}_T : A \text{ is c.e.}\}, \leq_T\rangle\]
+have been extensively investigated since the 1950s. One of their most
+basic properties may be considered by first defining the operation of
+sets
+\[A \oplus B = \{2n : n \in A\} \cup \{2n+1 : n \in B\}.\]
+\ is called the
+effective join
+of \ and
+\ as it encodes the “information” contained in \
+on the even members of \ and that contained \ on its
+odd members. \ is c.e. if both \ and \ are.
+Suppose we also define the operation
+\[\textrm{deg}_T \vee \textrm{deg}_T =_{\textrm{df}} \textrm{deg}\]
+on the degrees \\) and \\). Then it is not difficult to see that \ is the
+least upper bound
+of \
+and \ with respect to the structure \.
+Like the \-degrees, \ and \ both
+form an
+upper semi-lattice
+—i.e., a partial order in
+which least upper bounds always
+ exist.
+
+Given \, we may also consider \ \darrow\}\)—i.e., the set considered above which
+corresponds to the Diagonal Halting Problem relativized to the oracle
+\. \ is referred to as the
+jump
+of \ for which
+we also write \. This notation is also used to denote an
+operation on Turing degrees by setting \\) for some representative \. The
+following collects together several facts about the jump operation on
+both sets and degrees:
+Proposition 3.7:
+For any set \ with \ = \mathbf{a}\) and
+\ = \mathbf{b}\):
+If \ is computable, then \.
+\ is c.e. in \ but not computable in \.
+If \, then \ and if \, then
+\.
+\
+If \, then \.
+\
+If \ is c.e. in \, then \.
+Part ii of
+Proposition 3.7
+records the fact that the basic result that \ is c.e. but
+not computable holds for computability relativized to any set \.
+From this it follows that \ and thus also that the
+result of iterating the jump operation on any set \ yields a
+sequence
+\[\begin{aligned}
+A^{} & = A, \\
+A^{} & = \left}\right)' = A', \\
+A^{} & = \left}\right)' = A'', \\
+\vdots \\
+A^{} &= \left}\right)', \\
+\vdots
+\end{aligned}\]
+for which \} <_T A^{} <_T A^{} <_T \ldots\). As
+benchmarks in the Turing degrees we also define the sets
+\[\begin{aligned}
+\emptyset^0 & = \emptyset, \\
+\emptyset' & = K, \\
+\emptyset'' & = K', \\
+\vdots \\
+\emptyset^{} & = K^{'}, \\
+\vdots
+\end{aligned}\]
+and the degrees \} =
+\textrm{deg}_T})\). Note that the latter correspond to
+a linearly ordered sequence
+\[
+\mathbf{0} <_T \mathbf{0}' < _T\mathbf{0}'' <_T \ldots <_T \mathbf{0}^{} <_T \ldots
+\]
+Figure 2:
+The Turing degrees
+\. [A
+extended text-based description of figure 2
+is in the supplement.]
+As depicted in Figure 2, it is possible to use this sequence to
+classify many of the problems defined in
+Section 3.2
+:
+\ = \{A : A \text{ is
+computable}\}\)
+\ = \textrm{deg}_T\)
+\ =
+\textrm{deg}_T\)
+Such classifications illustrate how the position of a set within
+\ can be understood as a measure of how far away it is
+from being computable—i.e., of its
+degree of
+unsolvability
+or
+difficulty
+. However unlike other
+conventional measurement scales, the structure of \ is
+neither simple nor is it always straightforward to discern. Some
+evidence to this effect was provided by the fact that the answer to
+the following question was posed but left unanswered by Post
+ :
+
+Question 3.1
+: Is
+there a c.e. degree \ such that \?
+Post’s problem was eventually answered in the positive
+independently by Friedberg  and Muchnik  who showed the
+following:
+Theorem 3.8:
+There are c.e. sets \ and \
+such that \ and \. Thus if \\) and \\), then
+\ and \ and hence also \ and \.
+The proof of
+Friedberg-Muchnik Theorem 
+required the development of a new technique known as the
+priority
+method
+ which has become a
+central tool in the subsequent development of computability theory.
+The method provides a means of constructing a c.e. set \ with
+a certain property \ which may be described as follows:
+the desired properties of \ are divided into an infinite list
+of
+requirements
+\ such that if all of
+the \ are satisfied, then \ will satisfy \;
+the requirements are then associated with
+priorities
+corresponding to an ordering in which their satisfaction is to be
+preserved by the construction—e.g., \ might have the
+highest  priority, \ the second
+highest priority, \;
+\ is then constructed in stages \ with each stage \ attempting to satisfy the highest
+priority requirement \ which is currently unsatisfied, either by
+adding numbers to the current approximation \ of \ or by
+prohibiting other numbers from entering \ at a later stage \;
+it may happen that by satisfying some requirement \ at
+stage \ the process causes another requirement \ to become
+unsatisfied 
+injures
+\);
+in this case, the priority ordering is consulted in order to
+determine what action to take.
+In the case of
+Theorem 3.8
+,
+ this technique is used to simultaneously construct the two
+c.e. sets \ and \ of degree intermediate between
+\ and \ by alternating between the
+requirements \ which entail that \
+\darrow = 1\}\) at even stages to ensure \ and
+requirements \ which entail that \ \darrow = 1\}\) at odd stages so as to ensure \.
+Sophisticated application of the priority method have been employed in
+computability theory from the 1960s onward to investigate the
+structure of \ and
+ \.
+
+Some illustrative results which can be obtained either in this manner
+or more elementary techniques are as follows:
+There are continuum ) many distinct Turing
+degrees. In particular, although for a given degree \ the
+set of \ such that \ is
+countable, the set of \ such that \ is uncountable .
+For every degree \, there exists
+a degree \ which is
+incomparable
+to
+\—i.e., \ and
+\. Moreover, there is a set of
+\ pairwise incompatible degrees .
+There are
+minimal degrees
+\—i.e., degrees
+for which there is no \ such that \ . Thus in general
+\ is
+not
+a dense order. 
+There are pairs of degrees \ and \ which do
+not possess a greatest lower bound. Thus although \ is
+an upper semi-lattice, it is not a lattice .
+The same is true of \ .
+Every countable partially ordered set can be embedded into
+\ . However this is
+not
+true
+of \ into which there are finite non-distributive
+lattices which cannot be embedded .
+There is a non-c.e. degree \
+.
+For any c.e. degrees \, there is a
+c.e. degree \ such that \ . Thus unlike the Turing
+degrees in general, the c.e. degrees
+are
+densely
+ordered.
+For any c.e. degree \, there are
+incomparable c.e. degrees \ such that \
+.
+Let \\) be the first-order theory of the
+structure \ in the language with the with \
+and \. Not only is \\)
+undecidable , it is fact many-one equivalent to
+true
+second-order arithmetic
+.
+As is easily shown to be true of the join operation \, the jump operation \ is
+definable in \ in the language with \ and
+\ .
+These properties attest to the complexity of \ as a
+mathematical structure. A related question is whether
+\ is
+rigid
+in the following sense:
+Question 3.2:
+Does there exist a
+non-trivial
+automorphism
+of \—i.e., a mapping \ which preserves \
+and is not the identity?
+A negative answer to this question would show that the relation of
+\\) to other degrees uniquely determines the degree
+of unsolvability of \ relative to \. Recent work
+has pointed in this direction . Nonetheless,
+at the time of the 2020 update to this entry,
+Question 3.2
+remains a significant open problem in computability theory whose
+origins can be traced back to the original foundational work of
+Turing, Post, and Kleene surveyed above.
+3.6 The Arithmetical and Analytical Hierarchies
+The many-one degrees \ and the Turing degrees
+\ are sometimes referred to as
+hierarchies
+in
+the sense that they determine an ordering on
+\\)—i.e., the set of subsets of the
+natural numbers—in terms of relative computability. In a series
+of papers from the 1940s and 1950s, Kleene  and
+Mostowski  realized that it was also possible to
+impose another sort of ordering on \\) in
+terms of the logical complexity of the simplest predicate which
+defines a set \ in the languages of first- or
+second-order arithmetic. This idea leads to what are known as the
+arithmetical
+and
+analytical hierarchies
+, both of
+which can be understood as classifying sets in terms of their
+definitional
+ complexity. As we will
+see, the resulting classifications are related to those determined
+relative to \ in terms of relative computability. They
+are also similar in form to other definability hierarchies studied in
+computational complexity theory
+ and
+descriptive set theory
+.
+3.6.1 The arithmetical hierarchy
+Recall that according to the definitions given in
+Section 3.3
+,
+ a
+relation
+\ is said to be
+computable
+just in case its characteristic function
+\\) is a computable function and
+computably
+enumerable
+just in case it is the range of a computable function.
+In order to introduce the arithmetical hierarchy, it is useful to
+employ an alternative characterization of computable and computably
+enumerable relations in the form of a semantic analog to the
+proof-theoretic notion of
+arithmetical representability
+discussed in
+Section 1.3
+.
+Recall that the
+language of first-order arithmetic
+\ contains the primitive symbols
+\ respectively intended to denote the less
+than relation, successor, addition, and multiplication functions on
+the natural numbers as well as the first natural number 0. A
+first-order arithmetical formula
+is one built up from these
+expressions using variables, propositional connectives, and the
+first-order quantifiers \ where the variables
+are intended to range over the natural numbers \. Recall
+also that the
+standard model of first-order arithmetic
+is the
+structure \ in which the symbols of \ receive their
+intended interpretations. Finally we say that an
+\-formula \\)
+defines
+a
+relation \ just in case \\}\).
+
+For instance \ defines the less-than-or-equal
+relation \, \\) defines the even numbers,
+and
+\[\forall y \forall z \vee y = x)\]
+defines the prime numbers.
+Definition 3.14:
+A formula \\) of
+\ is said to be in the class \ if it
+contains only
+bounded first-order quantifiers
+—i.e.,
+those of the form \\) and \\) for \ an \-term
+not containing \. A formula is said to be in the class
+\ if it is of the form \\) for \ \in
+\Delta^0_0\) and to be in the class \ if it is of the form
+\\) for
+\ \in \Delta^0_0\). Finally, a formula
+\\) is said to be in the class \ if it
+is semantically equivalent to both a \-formula
+\\) and a \-formula
+\\)—i.e., \\) iff \\) iff
+\\) for all \.
+It is standard to extend this syntactic classification of formulas in
+terms of quantifier complexity to sets and relations on the natural
+numbers which can be defined by a formula in a given class. Thus, for
+instance, \ is a \-formula and the
+relation \ on \ is accordingly
+said to be \. On the other hand, while \\) is a \-formula, the set of even numbers is also
+defined by \\). Thus this set
+is also classified as \ in virtue of the existence of
+this latter definition which is simpler in the sense measured by the
+arithmetical hierarchy.
+The first step in relating such classifications to
+computability-theoretic notions is provided by the following:
+Proposition 3.8:
+A relation \ is computably enumerable if
+and only if there is a \-formula which defines
+\\).
+A relation \ is computable if and only if
+there is a \-formula which defines
+\\).
+Proposition 3.8
+may be proved by directly showing that for each partial recursive
+function \\) it is possible to construct a
+corresponding \-formula \\) whose
+logical structure mimics the steps in the definition of the former.
+This can be achieved by formalizing primitive recursion using an
+arithmetically definable coding of finite sequences and expressing
+minimization using an unbounded existential quantifier . But it is also possible to obtain
+Proposition 3.8
+in a uniform manner by showing that there is a so-called
+universal formula
+for \. In order specify such a
+formula, first note that it is possible to effectively enumerate all
+\-formulas with \ free variables as
+\, \psi^{k+1}_1, \ldots\) and then
+define a corresponding enumeration of \-formulas as
+\ = \exists x \psi_0,\)
+\ = \exists x \psi_1,\)…. We
+then have the following:
+Theorem 3.9
+: For all \, there
+exists a \-formula \\) such that
+for all \-formulas with \-free variables
+\\), the following biconditional
+\[\sigma_{k,1} \leftrightarrow \varphi^k_e\]
+holds in the standard model \ for all \.
+Theorem 3.9
+can be demonstrated by first observing that the truth of a
+\-formula \\) is equivalent to
+\\) for some \. Next note that the sequence of observations recorded in
+Section 2.1.2
+suffices to show that all \-definable relations are
+primitive recursive. We may thus consider an algorithm which on input
+\ uses \ to construct \\) and then
+performs an unbounded search for an \ such that
+\\) holds. By an appeal to Church’s Thesis
+ there
+is a computable function \\) for which we have the following:
+\[\mathfrak{N} \models \varphi^k_e \text{ if and only if } \mu s,\vec{m},s)) \darrow\]
+In order to construct the formula \\) promised
+by
+Theorem 3.9
+,
+ observe that standard techniques from the arithmetization of syntax
+allow us to obtain a \-formula \\)
+which defines the Kleene \-predicate \\)
+introduced in
+Section 2.2.2
+.
+ We may finally define \ = \exists z
+\tau_k,\vec{y},z)\). The first part of
+Proposition 3.8
+now follows by letting \ be such that
+\) = R\) and then taking
+\ \in \Sigma^0_1\) where \ is such
+that \ = e\). This is often formulated as what is known as the
+Enumeration Theorem
+which can be compared to
+Theorem 3.2
+:
+Proposition 3.9:
+A relation \ is computable enumerable if and only if there is a
+number \ ) such that
+\ is defined by \\).
+The second part of
+Proposition 3.8
+follows by observing that if \ is recursive then both \ and
+\ are c.e. Thus if \ is a c.e. index for
+\, then \ is defined by \\) which is equivalent to a \-formula
+since \ \in \Delta^0_1\).
+The formula classes \ and \ thus provide an
+alternative arithmetical characterization of the computable and
+computably enumerable sets. These classes also define the lowest
+levels of the
+arithmetical hierarchy
+which in full generality
+is defined as follows:
+Definition 3.15:
+In order to simplify notation, the
+classes \ and \ are both used as alternative
+names for the class \. A formula is said to be in the
+class \ if it is of the form \\) for \ \in
+\Pi^0_n\) and to be in the class \ if it is of the form
+\\) for
+\ \in \Sigma^0_n\). A formula
+\\) is \ if it is semantically
+equivalent to both a \-formula \\) and
+a \-formula \\).
+It thus follows that a formula is \ just in case it is
+of the form
+\[\exists \vec{x}_1 \forall \vec{x}_2 \exists \vec{x}_3 \ldots \mathsf{Q} \vec{x}_n \varphi\]
+ alternations of quantifier types and
+\ is \ if \ is even and \ if
+\ is odd). Similarly a \-formula is of the form
+\[\forall \vec{x}_1 \exists \vec{x}_2 \forall \vec{x}_3 \ldots \mathsf{Q} \vec{x}_n \varphi.\]
+The notations \, \, and \ are also
+standardly used to denote the classes of sets and relations which are
+definable by a formula in the corresponding syntactic class. For
+instance it follows from the second part of
+Proposition 3.8
+that \ is \ 
+and from the first part that \ and \ are \
+. It thus follows that their complements
+\ and \ are both \. It is
+also not hard to see that \ is \ as the fact that
+\\) is total may be expressed as \\) by using the arithmetized formulation of the
+\-predicate introduced above. Similarly, \ is
+\-definable since the fact that \\) is defined
+for only finitely many arguments is expressible as \)\).
+It is a consequence of the Prenex Normal Form Theorem for first-order
+logic that every \-formula \\) is
+provably equivalent to one of the form \\) for
+\ or \ . It thus follows that up to provable
+equivalence, every such formula is \ or \ for
+some \. Since it is conventional to allow that
+blocks of quantifiers may be empty in the
+Definition 3.15
+,
+ it follows that
+\[\Sigma^0_n \subseteq \Delta^0_{n+1} \subseteq \Sigma^0_{n+1}\]
+and
+\[\Pi^0_n \subseteq \Delta^0_{n+1} \subseteq \Pi^0_{n+1}.\]
+The fact that these inclusions are strict is a consequence of the
+so-called
+Hierarchy Theorem
+, a simple form of which may be
+stated as follows:
+Theorem 3.10
+: For all \,
+there exists a set \ which is
+\-definable but not \-definable and hence also
+neither \- nor \-definable for any \. It thus follows that \ is \-definable
+but not \-definable and hence also neither \-
+nor \-definable for any \.
+It is again possible to prove
+Theorem 3.10
+by a direct syntactic construction. For instance, building on the
+definition of the universal \-predicate
+\\), it may be shown that for every level
+\ of the arithmetical hierarchy, there is a
+\-formula \\) which defines
+\-
+satisfaction
+in the standard model in the
+sense that
+\[\begin{aligned}
+\mathfrak{N} \models \sigma_{k,n} \urcorner,\vec{m}) \leftrightarrow \varphi \end{aligned}\]
+for all \ \in \Sigma^0_n\) and \ -formulas
+introduced above). Now consider the \-formula \ =
+\neg \sigma_{2,n} \in \Pi^0_n\) and let \ be the set defined
+by \\). A standard diagonal argument shows that \
+cannot be \-definable and also that if \ \urcorner = l\) in the enumeration of
+\-formulas then \\) is a
+\-formula which cannot be provably equivalent to a
+\-formula . Thus as Kleene
+ observed, part of the significance of the Hierarchy Theorem
+is that it illustrates how the
+Liar Paradox
+may be formalized to yield a stratified form of Tarski’s
+Theorem on the undefinability of truth .
+We may also define a notion of completeness with respect to the levels
+of the arithmetical hierarchy as follows: \ is
+\-
+complete
+if \ is \-definable
+and for all \-definable \, we have \
+-
+complete
+). It is not hard to
+show that in addition to being many-one complete, \ is also
+\-complete. Similarly \ is
+\-complete, \ is \-complete, and \
+is \-complete. These observations can be subsumed under a
+more general result which relates the arithmetical hierarchy to the
+Turing degrees and from which
+Theorem 3.10
+can also be obtained as a corollary.
+Theorem 3.11
+:
+\ is \-definable iff \ is computably
+enumerable in some \-definable set iff \ is computably
+enumerable in some \-definable set.
+\}\) is \-complete for all \.
+\ is \-definable if and only if \ is
+computably enumerable in \}\).
+\ is \-definable if and only if \}\).
+The various parts of
+Theorem 3.11
+follow from prior definitions together with Propositions
+3.2
+and
+3.7
+.
+ Note in particular that it follows from parts ii and iv of
+Theorem 3.11
+together with part vii of
+Proposition 3.7
+that \}\) is an example of a set in the class
+\ from which it also follows that
+\}} \in \Pi^0_n - \Sigma^0_n\). This
+observation in turn strengthens the Hierarchy Theorem
+ 
+ by showing that \ and \ as depicted in Figure 3.
+Figure 3:
+The Arithmetical Hierarchy. [A
+extended text-based description of figure 3
+is in the supplement.]
+Part iv of
+Theorem 3.11
+can also be understood as generalizing
+Proposition 3.4
+. In particular, it characterizes the
+\-definable sets as those sets \ such that both
+\ and \ are computably enumerable in some
+\-complete set such as \}\). Restricting
+to the case \, this observation can also be used to provide an
+independent computational characterization of the
+\-definable sets, extending those given for the
+\-definable and \-definable sets by
+Proposition 3.8
+.
+Definition 3.16:
+A set \ is said to be
+limit
+computable
+if there is a computable sequence of finite sets
+\ such that
+\[n \in A \text{ if and only if } \textrm{lim}_s A^s = 1\]
+where \ = 1\) means that \\) exists
+and is equal to 1.
+If \ is c.e., then it is clear that \ is limit computable. For
+if \ is the range of a computable function \\), then we
+may take \ to be \, \ldots, \phi_e\}\) in which
+case \ In the
+general case of limit computability, the sequence of sets \ may be thought of as an approximation of \
+which need not grow monotonically in this way but can rather both grow
+and shrink as long as there is always a stage \ such that for all
+\, \ if \ and \ if
+\. Following Putnam , a limit computable set can
+also thus also be described as a so-called
+trial-and-error
+predicate
+—i.e., one for which membership can be determined
+by following a guessing procedure which eventually converges to the
+correct answer to the questions of the form \?
+The following is traditionally referred to as
+The Limit
+Lemma
+:
+Theorem 3.12
+: The following are
+equivalent:
+\ is limit computable.
+\
+We have seen that part iv of
+Proposition 3.11
+characterizes the sets Turing reducible to \ as the
+\-definable sets.
+Theorem 3.12
+thus extends the characterizations of the computable -definable) and computably enumerable -definable) sets given in
+Proposition 3.8
+by demonstrating the coincidence of the \-definable sets
+and those which are limit computable.
+3.6.2 The analytical hierarchy
+Kleene introduced what is now known as the
+analytical
+hierarchy
+in a series of papers  which built directly
+on his introduction of the arithmetical hierarchy in . His
+proximal motivation was to provide a definability-theoretic
+characterization of the so-called
+hyperarithmetical
+sets
+—i.e., those which are computable from transfinite
+iterates of the Turing jump through the constructive ordinals. On the
+other hand, Mostowski  had already noticed similarities between
+the arithmetical hierarchy of sets of natural numbers and results
+about hierarchies of
+point sets
+studied in descriptive set
+theory—i.e., sets of elements of
+Polish spaces
+—which have their origins in the
+work of Borel, Lebesgue, Lusin, and Suslin in the early twentieth
+century. Beginning in his PhD thesis under Kleene, Addison 
+refined Mostowski’s comparisons by showing that Kleene’s
+initial work could also be used to provide effective versions of
+several classical results in this tradition. We present here the
+fundamental definitions regarding the analytical hierarchy together
+with some of some results illustrating how it is connected it to these
+other developments.
+Definition 3.17:
+The
+language \
+of second-order arithmetic
+extends the language \
+of first-order arithmetic with the binary relation symbol \,
+together with
+set variables
+\ and set
+quantifiers \ and \. The standard model of
+\ is the structure \,0,<,s,+,\times,\in \rangle\).
+The intended range of the set quantifiers is thus
+\\) ) while the intended interpretation of \ is
+that the number \ is a member of the set \
+where \\).
+Note that in the general case a formula
+\\) of \ may
+have both free number variables \ and free set
+variables \. If \^k\) is defined by such a formula, then it is
+said to be
+analytical
+. Kleene  proved a normal form
+theorem for analytical relations which shows that if \ is
+analytical then it is definable by an \-formula of
+the form
+\[\forall X_1 \exists X_2 \forall X_3 \ldots \mathsf{Q} X_n \psi\]
+or
+\[\exists X_1 \forall X_2 \exists X_3 \ldots \mathsf{Q} X_n \psi\]
+where \\) contains only number quantifiers and
+\ is \ or \ depending on where \
+is even or odd. It thus possible to classify both
+\-formulas and the sets they define into classes as
+follows:
+Definition 3.18:
+We denote by both \ and \ the class of
+\-formulas containing no set quantifiers . An \
+formula is in the class \ if it is of the form
+\\) where \ and a relation is
+\-
+definable
+if it is defined by a
+\-formula. Similarly an \-formula
+is in the class \ if it is of the form \\) where \ and a relation is
+\-
+definable
+if is defined by a
+\-formula. A relation is
+\-
+definable
+just in case it is definable by both
+a \- and a \-formula.
+It hence follows that, as in the case of the arithmetical hierarchy,
+we have
+\[\Sigma^1_n \subseteq \Delta^1_{n+1} \subseteq \Sigma^1_{n+1}\]
+and
+\[\Pi^1_n \subseteq \Delta^1_{n+1} \subseteq \Pi^1_{n+1}.\]
+In addition, a version of the Enumeration Theorem for arithmetical
+sets can also be proven which can be used to obtain the following
+generalization of the Hierarchy Theorem:
+Theorem 3.13
+: For all \,
+there exists a set \ which is
+\-definable but not \-definable and hence also
+neither \- nor \-definable for any \. It thus follows that \ is \-definable
+but not \-definable and also neither \- nor
+\-definable for any \.
+In order to provide some illustrations of the levels of the analytical
+hierarchy, it is useful to record the following:
+Definition 3.19:
+A set \ is
+implicitly definable
+in \ just in case
+there is an arithmetical formula \\) with \ as its sole
+free set variable and no free number variables such that \ is the
+unique set satisfying \\) in the standard model of
+\.
+True Arithmetic
+) corresponds to the set of
+Gödel numbers of first-order arithmetical sentences true in the
+standard model of \—i.e., \. Prior to the definition of the
+analytical hierarchy itself, Hilbert & Bernays had already showed
+the following:
+Theorem 3.14
+:
+\ is implicitly definable in \.
+It is then not difficult to show the following:
+Proposition 3.10
+: If \ is
+implicitly definable, then \ is \-definable in
+\.
+It thus follows that \ is \-definable. On
+the other hand, it follows from Tarski’s Theorem on the
+undefinability of truth that \ is not arithmetically
+definable— i.e. \
+for any \. This in turn shows that the analytical
+sets properly extend the arithmetical ones.
+The class of \-definable subsets of \ is
+also related to Kleene’s original study of the class of
+hyperarithmetical sets, customarily denoted \. The
+definition of \ depends on that of a system of
+constructive ordinal notations known as \ which Kleene had introduced in .  in which he proved the
+Recursion Theorem 3.5
+—see
+ Rogers 1987, ch. 11.7 and Y. Moschovakis 2010.) \ can
+be informally characterized as the class of sets of natural numbers
+\ such that \}\) where \ is
+an ordinal which receives a notation \—i.e., \ just in case it is computable from a transfinite
+iteration the of Turing jump up to the first non-recursive ordinal
+ \.
+
+Kleene’s original result was as
+ follows:
+
+Theorem 3.15
+: A set \ is \-definable if and only if \.
+The next step up the analytical hierarchy involves the
+characterization of the \-definable sets. S. Kleene 
+originally established his normal form theorem for
+\-formulas using a variant of the language of
+second-order arithmetic which contains
+function quantifiers
+\ which are intended to range over \ instead of set quantifiers intended to range
+over \\) . In this
+setting, it is possible to show the following:
+Proposition 3.11:
+\ if and only if
+there is a computable -definable) relation
+\\) such that
+\[x \in A \text{ if and only if } \forall f \exists yR)\]
+where \\) denotes \,\ldots,f\rangle\).
+For each such relation, we may also define a computable tree
+\ consisting of the finite sequences \ such that for all proper initial
+subsequences \, \\) holds. A leaf
+node in this tree thus corresponds to the first place for which \
+holds. An infinite path in \ thus corresponds to a
+function \ such that \)\),
+which is in turn a witness to \. It thus follows that
+\ if and only if \ is well-founded. Since it
+is straightforward to effectively enumerate computable trees, it is
+also not difficult to show the following:
+Proposition 3.12:
+The set \ of indices to
+well-founded computable trees is \-complete for the
+\-definable sets—i.e., \ and for all
+\, \.
+Recalling that \ denotes the set of natural numbers which are
+notations for ordinals in Kleene’s \, a related
+result is the following:
+Proposition 3.13:
+\ is \-complete.
+It can then be shown using the
+Hierarchy Theorem 3.13
+that neither \ nor \ is \-definable. These
+results provide the basis for an inductive analysis of the structure
+of \- and \-definable sets in terms of
+constructive ordinals which builds on
+Theorem 3.15
+.
+The foregoing results all pertain to the use of
+\-formulas to describe sets of natural numbers. The
+initial steps connecting the analytical hierarchy to classical
+descriptive set theory are mediated by considering formulas
+\\) which define subclasses \\). In this case, \ may be
+identified with the graph of its characteristic function
+\\)—i.e., as an infinite sequence whose \th
+element is 1 if \ and 0 if \. In this way a
+formula \\) with a single free set variable may be understood
+as defining a subset of the
+Cantor space
+\ consisting of all infinite 0-1 sequences and a
+formula \\) with \ free as defining a
+subclass of \.
+In descriptive set theory, a parallel sequence of topological
+definitions of subclasses of \ is given in the context
+of defining the Borel sets and projective sets. First recall that one
+means of defining a topology on \ is to take as basic
+open sets all sets of functions \
+such that \ = \sigma\) for some \ and \. The
+boldface Borel
+Hierarchy
+on \ is now given by defining
+\ to be the collection of all open sets of
+\, \ ) to be the
+set of all complements \ of sets \, and \ to be the set
+of all countable unions \ where \.  denotes the set of
+closed sets, \ denotes the so-called
+\ sets, \ the \ sets,
+etc.) The union of these classes corresponds to the
+boldface Borel
+sets
+\ which may also be characterized as the
+smallest class of sets containing the open sets of \
+which is closed under countable unions and complementation. The
+so-called
+analytic sets
+are defined to be the continuous
+images of the Borel sets and are denoted by \
+while the
+co-analytic
+sets are defined to be the complements
+of analytic sets and are denoted by \. Finally,
+\ is used to denote the intersection of the
+analytic and co-analytic sets.
+Addison observed  that these classical definitions can be
+effectivized by restricting to computable unions in the definition of
+the \ sets. This leads to the so-called
+lightface
+version of the Borel hierarchy—customarily
+denoted using the same notations \ and \ used
+for the levels of arithmetical hierarchy—and corresponding
+definitions of \ , \
+, and \ sets. In particular,
+this sequence of definitions suggests an analogy between
+Theorem 3.15
+and the following classical result of Suslin:
+Theorem 3.16
+: The class of
+\ sets is equal to the class of Borel sets
+\.
+An effective form of
+Theorem 3.16
+relating the \ subsets of \ to the
+lightface Borel sets representable by computable codes can be obtained
+from Kleene’s original proof of
+Theorem 3.15
+. Addison also showed that it
+is similarly possible to obtain an effective version of Lusin’s
+Theorem —i.e., “any two disjoint analytic sets can
+be separated by a Borel set”—and Kondô’s
+theorem —i.e., “every \-relation
+can be uniformized by a \-relation”. See Y.
+Moschovakis  and also Simpson 
+4. Further Reading
+Historical surveys of the early development of recursive functions and
+computability theory are provided by Sieg , Adams , and
+Soare . Many of the original sources discussed in
+§1
+are anthologized in Davis , Heijenoort , and Ewald
+. Textbook presentation of computability theory at an elementary
+and intermediate level include Hopcroft & Ulman , Cutland
+, Davis, Sigal, & Weyuker , and Murawski . The
+original textbook expositions of the material presented in
+§2
+and
+§3
+ include Kleene
+, Shoenfield , and Rogers . The
+structure of the many-one and Turing Degrees is presented in more
+advanced textbooks such as Sacks , Shoenfield , Hinman
+, Soare , Cooper , and Soare . In addition to
+Shoenfield  and Rogers , the classic
+treatment of the hyperarithmetical and analytical hierarchies is Sacks
+. Classical and effective descriptive set theory are developed
+in Y. Moschovakis  and Kechris .
+Simpson  develops connections between computability theory and
+Reverse Mathematics
+—i.e., the axiomatic study of
+subsystems of second-order arithmetic whose ω-models may often
+be characterized using computability theoretic methods. Treatment of
+sub-recursive hierarchies and connections to proof theory and
+theoretical computer science are provided by Péter , Rose
+, Clote , and Schwichtenberg & Wainer
+. Many of the historical and mathematical topics surveyed in
+this entry are also presented in greater detail in the two volumes of
+Odifreddi’s
+Classical Recursion Theory
+,
+which contain many additional historical references.

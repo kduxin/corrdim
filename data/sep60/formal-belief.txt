@@ -1,0 +1,3130 @@
+1. Preliminaries
+1.1 Why Formalism?
+Why construct
+formal
+representations of belief? To a large
+extent, the rigours and rewards of formalism in epistemology are the
+same as they are in any other discipline. It requires that we state
+basic principles precisely, and in return it permits us to
+demonstrate, whether by deductive proof or
+computer simulation
+,
+ their logical consequences and connections. Often, these consequences
+and connections are unexpected—sometimes
+so
+unexpected
+that it is hard to imagine how they could have been discovered without
+the aid of the formalism. If an attractive-looking principle has an
+unattractive consequence, it is easy to imagine how one might have
+been tempted to evade or ignore it, had it not been so clearly
+demonstrated. Perhaps the most common tragedy is to find that several
+attractive principles are mutually inconsistent and that some
+unpleasant sacrifice must therefore be made. After a few such
+experiences, the epistemologist comes to feel that formal
+representations forestall equivocation and self-deception and promote
+progress and understanding.
+Of course, formal representations are not without their drawbacks.
+Once a formal framework is adopted, certain questions and projects
+become salient and others recede into the background. Some
+antecedently interesting questions may become impossible to express in
+the new formalism; insiders may be tempted to disparage these
+questions as senseless or uninteresting. In the worst cases, this can
+render formal work shallow, or evasive of important issues. These are
+the pitfalls of parochialism. To avoid them, it is sometimes helpful
+to recall what motivated the formalism in the first place. To this
+end, a framework's history is sometimes illuminating. It also helps to
+transition out of, and between, formalisms: this change of perspective
+combats parochialism in epistemology in the same way that immersion in
+a new language or culture tends to combat it more broadly.
+The preceding could be said for many subjects apart from epistemology.
+Indeed, mathematical method may facilitate progress on questions
+specific to epistemology, much as it has on questions specific to
+physics or economics. And excessive allegiance to a particular
+formalism has pitfalls in physics and economics, just as it does in
+epistemology. If we left the matter there, however, we would not do
+justice to the unique ambitions that have been framed for mathematical
+method in epistemology in particular.
+Leibniz dreamed of a
+characteristica universalis
+—an exact
+idea-calculus in which it would be possible to arbitrate scientific
+disputes by calculation and which would serve as a
+“lodestar” to those “who navigate the sea of
+experiments” . In the last century, the Unity
+of Science movement hoped that a new logic would serve as a universal
+language in which to commensurate all of the sciences and—so
+united—apply their full power to the problems of the day. But,
+as the clash between the Copernican and Ptolemaic systems illustrates,
+stating two theories precisely and mathematically does not suffice to
+adjudicate disputes between them. To that end, a significant effort
+was devoted to developing a calculus in which to compute the precise
+bearing of evidence, and thereby arbitrate between theories. This
+calculus was conceived not as a boon to philosophy alone, but as a
+kind of common law to govern and coordinate the federated republics of
+science. Many of the formalisms covered in this article can be traced
+back to a program whose ambition may stagger our contemporary
+imaginations.
+Pascal  applied the new probability calculus to
+intensely personal questions of faith. Indeed, many epistemologists
+are not particularly interested in norms for
+scientific
+inquirers, but in the norms governing the entire belief system of an
+individual: how their beliefs must cohere in order to be rational; how
+they must be reflected in decision making; and how they ought to
+accommodate new evidence. Subjective probability theory and its
+accompanying theory of rational decision is the most comprehensive
+contemporary expression of this project; for better or worse, it is by
+far the dominant theory of practical rationality of our day. We
+introduce it in Section 3.1.
+We invoke our illustrious forebears here mainly to illustrate the
+great scope of their ambitions, with the hope that their meliorist
+spirit will breathe life into the material covered in this article. In
+the midst of mathematical detail, it is easy to forget that formal
+epistemology is an expression of the hope that reason can be
+productively turned upon itself. If this project is miscarried, we
+risk obstructing or artificially circumscribing the scope and power of
+human reason. But what if it succeeds?
+1.2 The Objects of Belief
+In the following we will see several proposed models for the structure
+of belief. Most of these proposals take the objects of belief to be
+either
+propositions,
+or
+sentences
+in a formalized
+language. This section reviews the basic notions required to work with
+propositions and sentences in a formal language. If the reader feels
+overwhelmed with the technicalities in this section, they should feel
+free to postpone them, and refer back to it on-the-fly. Readers who
+are accustomed to working with these objects may freely skip this
+section.
+The received view is that the objects of belief are proposition and
+propositions are sets of
+possible worlds
+. But what are these
+supposed to be? This is a rather difficult question .
+ On one picturesque view, a possible world is a complete description
+of an alternative reality. To pick out a possible world is to
+specify–in a way careful to avoid contradiction–every fact
+that holds in some possible reality that is not necessarily our own.
+On this view, the set of
+all
+possible worlds \ is like
+a giant library that contains the complete history of every possible
+reality. The
+actual
+world picks out the volume that
+corresponds to our own reality.
+It is not necessary–and perhaps unhelpful–to think of
+possible worlds as total metaphysical possibilities. At this extremely
+fine level of granularity, each possibility specifies an infinity of
+obscure and uninteresting details. But context usually determines
+which features of the world we can take for granted; which we are
+uncertain about but would prefer not to be; and which are of no
+interest. For example, Sophia may be interested in the identity of the
+next mayor of Vienna, but whether they are left or right-handed is of
+no importance. For our purposes, a possible world is a complete
+specification of all and only those features of the world that are
+relevant given the context. The set \, therefore, is the set of
+all contextually relevant epistemic possibilities. Narrowing down the
+set of possibilities to an individual \ would completely
+settle some interesting question under discussion. A proposition
+\ is a
+set
+of possible worlds, i.e. it is a
+partial specification of the way the world is. To be certain that
+\ is true is to be certain that the actual world is among the set
+of worlds \ since \ is true in a possible
+world \ iff \.
+Propositions enjoy a set-theoretic structure. The relative complement
+of \, \, is the set of all worlds in which
+\ is false. If \ are arbitrary propositions, then their
+intersection \ is the set of all worlds in which \ and
+\ are both true. The disjunction \ is the set of worlds
+in which at least one of \ is true. The material conditional
+\ is the set of worlds \ in which
+either \ is false or \ is true. If \ we say
+that \
+entails
+\ and also that \ is
+logically stronger
+than \. If \ and
+\ we write \ and say that \ and \
+are
+logically equivalent
+. The tautological proposition \
+is true in all worlds and the contradictory proposition, the empty set
+\, is not true in any world. A set of propositions
+\ is
+consistent
+iff there is a world in which
+all the elements of \ are true, i.e. if \ Otherwise, we say that \ is
+inconsistent
+. A set of propositions \ is
+mutually exclusive
+iff the truth of any one element implies the
+falsehood of all other elements. The set of logical consequences of
+\, written \,\) is the set \. Note that if
+\ is inconsistent, then \\) is
+\\), the set of all propositions over \.
+A set of propositions \ is a
+field
+ iff \ contains \ and it is closed
+under intersection, union and complementation. That is to say that if
+\ are both elements of \ then \
+and \ are also elements of \ A set of
+propositions \ is a
+\-field
+-algebra
+) iff it is a field that is closed under
+countable
+intersections, i.e. if \ is a countable collection of propositions, then the
+intersection of all its elements \ is also an
+element of \ That definition implies that a
+\-field is also closed under countable unions. It is not
+difficult to prove that the intersection of \-fields is also
+a \-field. That implies that every collection of propositions
+\ generates \\), the least
+\-field containing \, by intersecting the set of
+all \-fields containing \.
+Propositions, although usually expressed by sentences in a language,
+are not themselves sentences. That distinction is commonly drawn by
+saying that propositions are
+semantic
+objects, whereas
+sentences are
+syntactic
+objects. Semantic objects  are meaningful, since they represent meaningful
+possibilities, whereas bits of syntax must be
+“interpreted” before they become meaningful. In a slogan:
+sentences are potentially meaningful, whereas propositions already
+are.
+For our purposes, a
+language
+\ is identified
+with the set of all grammatical sentences it contains. Sentences will
+be denoted by lowercase letters Greek \. The
+language \ is assumed to contain a set of
+atomic
+sentences \ which are not built out
+of any other sentences, as well as all the sentences generated by
+combining the atomic sentences with truth-functional connectives from
+propositional logic. In other words: if \ are sentences
+in \ then \, \,
+\, \, and \ are also sentences in \. These
+are meant to be read respectively as “not \”,
+“\ or \”, “\ and
+\”, “if \, then \” and
+“\ if and only if \”. The symbol \
+ denotes an arbitrarily chosen
+contradiction \) and the symbol
+\  denotes an arbitrary
+tautology.
+Some of the sentences in \ follow “logically”
+from others. For example, under the intended interpretation of the
+truth-functional connectives, \ follows from the sentence
+\ and also from the set of sentences \. To capture the essentials of deductive
+consequence, we introduce a
+consequence relation
+,
+\, which holds between any two sentences \, whenever \ is a deductive consequnce of \ .
+The consequence operator is assumed to satisfy the following
+properties, which abstract the characteristic features of deductive
+logic:
+\[\begin{align}
+\tag{Reflexivity}
+&\alpha \vdash \alpha;\\
+\tag{Monotonicity}
+\alpha \vdash \gamma, &\text{ implies } \alpha \wedge \beta \vdash \gamma;\\
+\tag{Cut}
+\alpha \vdash \beta \text{ and } \alpha \wedge \beta \vdash \gamma &\text{ implies } \alpha \vdash \gamma.
+\end{align}\]
+Reflexivity merely expresses the triviality that any sentence
+\ is a deductive consequence of itself. Monotonicity
+expresses the fact that adding more premises to a deductive argument
+allows you to derive all the same conclusions as you could with fewer.
+Cut says roughly that deductive conclusions are on an equal epistemic
+footing with their premises: there is no loss of confidence as
+derivations get longer. Together, these principles imply that
+“consequences of consequences are consequences” i.e. that
+\ and \ implies that
+\.
+We will write \\) for the set of all \ such that
+\. If \ is a finite set of sentences, we
+write \\) for \\) the
+set of all deductive consequences of the conjunction of all sentences
+in \. If \ is an infinite set of sentences, it is a
+bit more complicated to define \\) since the infinite
+conjunction of all sentences in \ is not a sentence of the
+formal language. To avoid infinite conjunctions, let \ be an enumeration of the sentences in \
+and let \, the conjunction of
+the first \ sentences in the enumeration. Finally, let
+\ = \cup_{i=1}^\infty \Cn\). It is sometimes
+convenient to state principles in terms of the consequence operator
+\\). For example, we assume that the deductive consequence
+relation satisfies the following additional property.
+\[\begin{align}
+\tag{Deduction Theorem}
+\beta\in \Cn \text{ implies that } \in\Cn.
+\end{align}\]
+The deduction theorem expresses the fact that you can prove the
+conditional sentence \ by assuming
+\ and then deriving \. Unsurprisingly, it is possible
+to prove that this property holds for most deductive logics one would
+encounter, including both propositional and first-order logic.
+Every formal language \ gives rise to a set of possible
+worlds in a canonical way. A
+model
+of \ assigns
+a truth value to every sentence in \ by first, assigning
+a truth value to ever atomic sentence and then, assigning truth values
+to all other sentences by respecting the intended meaning of the
+connectives. We write \ for the set of all models
+of \. Thus, each language \ induces a
+finitary field \ over the set of all models for
+\. \ is the set of propositions over
+\ that are expressed by the sentences in
+\. \ in turn induces a unique smallest
+\-field \\) that contains
+\.
+Once we have both a set of possibilities \ and a formal language
+\ in context, there is a standard systematic way of
+connecting them. A
+valuation function
+\ maps every
+atomic sentence \ in \ to a proposition
+\\subseteq W\), the set of worlds in which \ is
+true under that interpretation of the atoms. For example, if
+\, then atoms are mapped exactly to the models in
+which they are true. The valuation function also interprets the
+non-atomic sentences in a way that respects the intended meanings of
+the logical connectives, i.e. so that \=W\), \=W\setminus V\) and \=
+V\cap V.\) In this fashion, each sentence in
+\ is mapped to a set of possible worlds.
+We write \ if for all valuations \,
+\ \subseteq V.\) Then, \
+expresses the fact that no matter how the non-logical vocabulary of
+\ are interpreted, \ is true in all the worlds in
+which all sentences in \ are true. We say that \ is
+valid
+iff \, i.e if \\) for all valuation functions. Then, \ is valid iff
+\ is true in all possible worlds, no matter how the
+non-logical vocabulary are interpreted. For example, the sentence
+\ is valid.
+We assume the following property of our deductive consequence
+relation.
+\[\begin{align}
+  \tag{Soundness}
+  \text{If } \alpha \vdash \beta, \text{ then } \alpha \vDash \beta.
+  \end{align}\]
+Soundness says that if the sentence \ is a derivable
+consequence of \, then no matter how the non-logical
+vocabulary of \ are interpreted, \ is true in all
+the worlds in which \ true. That is to say that from true
+premises, our consequence relation always derives true conclusions.
+Soundness also implies that every theorem is valid. Soundness is a
+basic requirement of any
+deductive
+consequence relation, and
+illustrates the intended connection between deductive proof and
+semantic entailment.
+Sentences are, in a sense, capable of expressing distinctions that
+propositions cannot. For example, the two sentences \ and \ are obviously distinct. But if \ and \ are provably
+equivalent, i.e. if \ then \ and \ By Soundness, \ and
+\ Therefore, for any valuation function,
+\=V.\) So \ and \ must express the same proposition.
+Of course, an agent who is unaware of the equivalence might believe
+\ without believing \. What's worse, every sentence \ such
+that \ must express the tautological proposition \. Of
+course, ordinary agents do not always recognize theorems of
+propositional logic. For this reason, some argue that it is sentences,
+rather than propositions, that are the appropriate objects of belief.
+However, most of the proposed models we will study require that
+rational agents adopt the same belief attitude toward logically
+equivalent sentences. That is a very strict requirement, amounting to
+an assumption that every rational agents is
+logically
+omniscient
+, i.e. she finds all logical entailments to be
+completely transparent. So long as that is the case, there is no
+significant difference between taking the objects of belief to be
+sentences or propositions. See, however, Hacking , Garber 
+and Pettigrew  for ideas on how to relax the requirement of
+logical omniscience. Still others are not satisfied with either
+sentences, or propositions. Perry , Lewis  and Stalnaker
+ argue that in order to capture
+essentially indexical
+beliefs–beliefs that essentially involve indexicals such as
+I, here,
+or
+now
+–the objects of belief must be
+centered
+propositions. We will not take up this helpful
+suggestion here, but see Ninan  or Liao  for more on
+centered propositions.
+2. Representations of Full Belief
+A prominent tradition in epistemology takes belief to be an
+all-or-nothing matter. According to this view, there are three
+doxastic attitudes an agent can take toward a sentence or proposition:
+either she believes \ but not \; she believes
+\ but not \; or she believes neither \
+nor \. In the first case we say simply that she fully
+believes \; in the second case we say she fully
+disbelieves
+\ and in the third we say she
+suspends judgement
+with respect to \ and \. Perhaps it is also psychologically possible for an agent to
+fully believe both \ and \. Since most
+theorists agree that she ought not, we introduce no special
+terminology for this case. Any belief representation that allows for
+finer gradations of belief attitude we will call a
+graded
+representation of belief.
+The frameworks we introduce in this section deal chiefly with belief
+attitudes of the all-or-nothing variety. Most of these represent an
+agent’s belief state at any particular time by the set of all
+sentences that she fully believes. All of the frameworks will require
+that, as a matter of rationality, belief states must be deductively
+closed and not entail any contradictions. If that were the end of the
+story, these frameworks would not be very interesting. The real
+insight of these frameworks is that an agent’s belief state is
+not adequately represented by a complete list of her current beliefs,
+but only by her dispositions to
+update
+those beliefs upon
+acquiring new information. Thus, the focus of these frameworks is
+developing normative principles governing the dynamics of belief
+states as new information is assimilated. As we shall see, although
+these frameworks largely agree on the static principles of
+rationality, they conflict over the dynamical principles of belief
+update.
+It is often informative to see how qualitative update dynamics emerge
+from the finer structure of degrees of belief. We will see in this
+section several versions of the following kind of
+“representation” result: every agent satisfying a certain
+set of qualitative dynamical update principles can be thought of as an
+agent updating graded beliefs of a certain structure and, conversely,
+every agent with graded beliefs of that structure will satisfy the
+same set of qualitative dynamical principles. These results suggest
+bridge principles connecting full and partial representations of
+belief.
+2.1 Non-monotonic logic
+In
+Section 1.2
+we introduced the notion of a deductive consequence relation. One of
+the characteristic features of a deductive consequence relation is
+that adding more premises to a deductive argument allows you to derive
+all the same consequences as you could with fewer. In other words, for
+any sentences \ in \: if
+\ then \.
+Of course, all sorts of seemingly rational everyday reasoning violates
+Monotonicity. If Sophia is told that her thermometer reads 85°
+Fahrenheit, she would be justified in concluding that it is not too
+cold to have dinner in the garden. If she then learns that her
+thermometer was moved above the oven where she is boiling her pasta,
+she might retract her conclusion. That does not mean that her original
+inference was unreasonable or irrational. Non-monotonicity is simply
+unavoidable in ordinary human contexts. Inductive inference is
+famously non-monotonic. Ethical and legal reasoning is similarly shot
+through with non-monotonicities .
+Non-monotonic logic studies a defeasible consequence relation
+\ between premises, on the left of the wavy turnstile, and
+conclusions on the right. One may think of the premise \ on
+the left as a sentence expressing all the “hard evidence”
+that an agent may possesses, and the conclusion on the right to be the
+defeasible conclusions that are justified on the basis of \.
+The expression \ may be read as: if my total
+evidence were \, I would be justified in concluding
+\. Thus a particular relation of defeasible consequence
+represents an agent's dispositions to update her beliefs in light of
+new information.
+Recall from
+Section 1.2
+that a deductive consequence relation satisfies Soundness. That is to
+say that \ only if \ is true in all
+the worlds in which \ is true. It is clear from the preceding
+examples that defeasible reasoning cannot satisfy Soundness. If
+\ then perhaps \ is true in
+“typical” worlds in which \ is true. We call a
+consequence relation
+ampliative
+if \
+but there are worlds in which \ is true, but \ is
+false. The terminology derives from the Latin
+ampliare
+,
+“to enlarge”, because defeasible reasoning
+“extends” or “goes beyond” the premises.
+Ampliativity and non-monotonicity go hand in hand in all but the most
+contrived circumstances.
+Over the past forty years, researchers in artificial intelligence have
+created many different logics for defeasible inference, often
+developed to model a specific kind of defeasible reasoning. See the
+entry on
+non-monotonic logic
+for an excellent overview. In view of this profusion of specialized
+logics, non-monotonic logic investigates which properties a logic of
+defeasible consequence must have in order to count as a
+logic
+at all.  for the origins of this abstract
+point of view.) Non-monotonic logic provides a crucial
+lingua
+franca
+for comparing different logics of defeasible inference. It
+is also extremely apt for the purposes of this article because it
+allows us to compare different normative theories of how beliefs ought
+to be updated in light of new evidence, as well as theories of how
+full and partial beliefs ought to relate to each other.
+Before we proceed to the technical development, it will be helpful to
+introduce an important early critique of nonmonotonic logic due to the
+philosopher John Pollock. Pollock  identifies two sources of
+nonmonotonicity in defeasible reasoning. An agent may believe
+\ because she believes \ and takes \ to be a
+defeasible
+reason
+for \. Pollock distinguishes two
+kinds of
+defeaters
+for this inference: a
+rebutting
+defeater is a defeasible reason to believe \ whereas an
+undercutting
+defeater is a reason to believe \. Either kind of defeater may induce an agent to retract her
+belief in \. Pollock's point is that since nonmonotonic logics
+typically do not represent the structure of an agent's reasons, they
+often fail to elegantly handle cases of undercutting defeat. We shall
+soon see several examples.
+2.1.1 Principles for Non-montonic Logic
+Kraus, Lehmann and Magidor  articulate a set of principles that
+any “reasonable” nonmonotonic language must satisfy. It is
+now common to refer to this set of principles as System P. To this
+day, these principles remain the uncontroversial core of nonmonotonic
+logic.
+
+\
+Reflexivity
+
+If \ and \, then \.
+Left Logical Equivalence
+
+If \ and \, then \.
+Right Weakening
+
+If \ and \, then \.
+Cut
+
+If \ and \,
+then \.
+Cautious Monotonicity
+
+If \ and \,
+then \.
+Or
+Reflexivity merely expresses the truism that one is entitled to infer
+\ from itself. The next two principles govern how a
+non-monotonic consequence relation should interact with deductive
+consequence. Left Logical Equivalence says that if \ and
+\ are classically equivalent, then they license the exact same
+defeasible inferences. Right Weakening says that if \
+defeasibly licenses \, then it also licenses all the deductive
+consequences of \. Together, these principles say that
+defeasible reasoning encompasses all of deductive reasoning. This
+sounds unreasonable if we think of \ as modeling the
+defeasible reasoning of a bounded agent. It begins to sound better if
+we think of \ as modeling the ampliative conclusions that
+are justified on the basis of some “hard” evidence.
+The remaining principles are the heart of System P. Cut says that
+adding conclusions defeasibly inferred from \ to the
+premises does not
+increase
+inferential power. Cautious
+Monotonicity says that it does not
+decrease
+inferential
+power. Let \\) be \,
+the set of conclusions licensed by \. If we think of the
+premise on the left of \ as expressing my total
+“hard” evidence, and the set \\) as a theory
+inductively inferred on the basis of \, then Cautious
+Monotonicity is an expression of hypothetico-deductivism: if I learn a
+consequence of my theory \\), I should not retract any of my
+previous conclusions. Moreover, Cut says that I should not add any new
+conclusions. Taken together, the two principles say that if a
+consequence of your theory is added to your total evidence, your
+theory should not change, i.e. if \, then
+\=C\).
+The final principle is best approached by way of one of its instances.
+Substituting \ for \ yields the following
+principle:
+If \ and \, then \.
+Case Reasoning
+Any genuine consequence relation ought to enable reasoning by cases.
+If I would infer \ irrespective of what I learned about
+\, I should be able to infer \ before the matter of
+\ has been decided. In full generality, Or says that if
+\ follows defeasibly from both \ and \, it
+ought to follow from their disjunction. Any consequence relation that
+satisfies Reflexivity, Right Weakening and Or must also satisfy the
+following principle:
+If \, then \.
+Conditionalization
+Conditionalization says that upon learning new evidence, you never
+“jump to conclusions” that are not entailed by the
+deductive closure of your old beliefs with the new evidence. That is
+not an obviously appealing principle. An agent that starts out with
+only the trivial evidence \ will either fail to validate
+Conditionalization or never make any ampliative inferences at all.
+Suppose that after observing 100 black ravens an agent validating
+Conditionalization comes to believe that all ravens are black. Then,
+at the outset of inquiry, she must have believed that either all
+ravens are black, or she will see the first non-black raven among the
+first hundred. Such an agent seems strangely opinionated about when
+the first counterexample to the inductive generalization must
+appear.
+For a more realistic example, consider the 1887 Michelson-Morely
+experiment. After a null result failing to detect any significant
+difference between the speed of light in the prevailing direction of
+the presumed aether wind, and the speed at right angles to the wind,
+physicists turned against the aether theory. If the physicists
+validated Conditionalization then, before the experiments, they must
+have believed that either there is no luminiferous aether, or the
+aether wind blows quickly enough to be detected by their equipment.
+But why should they have been so confident that the aether wind is not
+too slow to be detectable?
+Even if there is nothing objectionable about an agent who validates
+Conditionalization, there is something very anti-inductivist about the
+thesis that all justified defeasible inferences on the basis of new
+evidence can be reconstructed as deductive inferences from prior
+conclusions plus the new evidence. Under Conditionalization,
+dispositions to form inductive generalizations must be
+“programmed in” with material conditionals at the outset
+of inquiry.  for a similar critique, in a slightly
+different context.) Anyone sympathetic to this critique must reject
+either Or, Reflexivity, or Right Weakening. Finding such surprising
+consequences of seemingly unproblematic principles is one of the boons
+of studying non-monotonic logic.
+We finish this section by introducing one more prominent and
+controversial principles of non-monotonic logic. Adding this principle
+to System P results in what is commonly referred to as System R. The
+position one takes on this principle will determine how one feels
+about many of the theories which we turn to in the following. Kraus et
+al.  claim that any rational reasoner should validate the
+following strengthening of Cautious Monotonicity:
+
+If \ and \, then \
+Rational Monotonicity
+Rational Monotonicity says that so long as new evidence \ is
+logically compatible with your prior beliefs \\), you should
+not retract any beliefs from \\). Accepting both Rational
+Monotonicity and Conditionalization amounts to saying that when
+confronted with new evidence that is logically consistent with her
+beliefs, a rational agent responds by simply forming the deductive
+closure of her existing beliefs with the new evidence. On that view,
+deductive logic is the only necessary guide to reasoning, so long as
+you do not run into contradiction. Stalnaker  gives the
+following well-known purported counterexample to Rational
+Monotonicity.
+Suppose that Sophia believes that Verdi is Italian and that Bizet and
+Satie are both French. Let \ be the sentence that Verdi and
+Bizet are compatriots. Let \ be the belief that Satie is
+French. Let \ be the sentence that Bizet and Satie are
+compatriots. Suppose that Sophia receives the evidence \. As
+a result, she concludes that either Verdi and Bizet are both French,
+or they are both Italian, but she cannot say which. She retains her
+belief that Satie is French. So \ and \. Now suppose that she receives
+the evidence \. Since \ is compatible with her
+previous conclusions, Rational Monotonicity requires her to retain
+belief in \ and conclude that all three composers are French.
+However, it seems perfectly rational to retract \ and conclude
+that the three are either all Italian, or all French.
+Kelly and Lin  use the following example to argue against
+Rational Monotonicity. There are just two people in Sophia's office,
+named Alice and Bob. She is interested in whether one of them owns a
+certain Ford. Let \ be the sentence that Alice owns the Ford.
+Let \ be the sentence that Bob has the Ford. Sophia has
+inconclusive evidence that Alice owns the Ford–she saw her
+driving one just like it. She has weaker evidence that Bob owns the
+Ford–his brother owns a Ford dealership. Based on her total
+evidence \ she concludes \, i.e. that
+someone in the office owns the Ford, but does not go so far as
+inferring \, or \. Then, Alice says that the Ford she
+was driving was rented and that she doesn't own a car. That defeats
+Sophia's main reason for \, and therefore she
+retracts her belief that someone in the office has a Ford. But since
+\, Rational Monotonicity
+requires her to retain belief in \ and conclude that
+Bob owns the Ford. However, there does not seem to be anything
+irrational about she has reasoned. This seems to be an illustration of
+Pollock’s  point: the logic is going wrong because it is
+ignoring the structure of Sophia’s reasons.
+Defenders of Rational Monotonicity will argue that, if we find these
+counterexamples plausible, it is because we are under-representing
+either the structure of the agents prior beliefs, or of the
+information that triggers the update. If we were to describe these in
+realistic detail, they argue, we would not be convinced by these
+counterexamples. For an elaboration of this line of defense, see
+Section 5 in Lin . Other criticisms of Rational Monotonicity do
+not rest essentially on the plausibility of counterexamples, but on
+the incompatibility of Rational Monotonicity with competing norms of
+inquiry. One such criticism, due to Lin and Kelly , will be
+discussed in Section 4.2.4. For another example, see Genin and Kelly
+.
+2.1.2 Preferential Semantics
+So far we have considered a non-monotonic consequence relation merely
+as a relation between syntactic objects. We can rephrase properties of
+non-monotonic logic “semantically,” i.e. in terms of the
+possible worlds in which the sentences are true or false. In some
+cases, this allows us to give a very perspicuous view on defeasible
+logic.
+Recall from
+Section 1.2
+that a deductive consequence relation satisfies Soundness, i.e. that
+\ only if \ is true in all the worlds in
+which \ is true. As we have discussed, non-monotonic logics
+are ampliative, and therefore must violate Soundness. Shoham 
+inaugurated a semantics for non-monotonic logics in which
+\ only if \ is true in a
+“preferred” set of worlds in which \ is true. On
+a typical interpretation, these are the most typical, or most normal
+worlds in which \ is true.
+Kraus et al.  first proved most of the results of this section.
+However, the original results are stated at a level of generality that
+creates too much technical fuss for our purposes here. We state a
+simplified, but more perspicuous, version of their results. See
+Makinson  and the entry on
+defeasible reasoning
+for a presentation truer to the original.
+A
+preferential model
+is a triple \ where \ is a set of possible worlds, \ is a valuation
+function and \ is an arbitrary relation on the elements of
+\. Recall from Section
+Section 1.2
+that \\) is the set of worlds in which \ is true.
+The relation \ is
+transitive
+iff \
+whenever \ and \. The relation \ is
+irreflexive
+iff for all \ it is not the case that
+\. A transitive, irreflexive relation is called a
+strict order
+. We write \ iff \ or
+\. The strict order \ is
+total
+iff for
+\ either \ or \.
+We say that \ is an
+\-minimal
+world iff \\) and there is no \\) such that \.
+Every preferential model gives rise to a consequence relation by
+setting \ whenever \ is true in all
+the
+\-minimal
+worlds. Kraus et al.  prove the
+following:
+Theorem
+. Suppose that \ is a strict order
+over \. Define the consequence relation \ by setting
+\ iff \ is true in all the
+\-minimal worlds. Then, \ satisfies KLM1-6. If
+\ is total, KLM7 is also satisfied. Conversely, suppose that
+the consequence relation \ satisfies KLM1–6. Then, there is
+a strict order \, such that \ iff
+\ is true in all the \-minimal worlds. If KLM7 is
+also satisfied, then the order can be chosen to be total.
+That means that we can interpret any consequence relation \
+satisfyings the basic KLM postulates in the following way:
+\ represents the belief dispositions of an agent who 
+has a strict plausibility ordering over the set of possibilities in
+\ and  believes whatever is entailed by the “most
+plausible” possibilities compatible with her hard evidence. If
+Rational Monotonicity is not satisfied, then some possibilities will
+be incommensurable in plausibility. Otherwise, all possibilities will
+be commensurable.
+2.2 AGM Belief Revision Theory
+Like nonmonotonic logic, the theory of belief revision is concerned
+with how to update one’s beliefs in light of new evidence. When
+the new evidence is consistent with all prior beliefs, the counsel of
+the theory is simple, if exacting: simply add the new evidence to your
+old stock of beliefs and close under deductive consequence. Things are
+more complicated when the new evidence is inconsistent with your prior
+beliefs. If you want to incorporate the new information and remain
+logically consistent, you will have to retract some of your original
+beliefs. The central problem of belief revision is that deductive
+logic alone cannot tell you which of your beliefs to give
+up–this has to be decided by some other means.
+Considering a similar problem, Quine and Ullian  enunciated the
+principle of “conservatism,” conseling that our new
+beliefs “may have to conflict with some of our previous beliefs;
+but the fewer the better.” In his , Quine dubs this the
+“maxim of minimal mutilation.” Inspired by these
+suggestive principles, Alchourrón, Gärdenfors, and
+Makinson  developed a highly influential theory of belief
+revision, known thereafter as AGM theory, after its three originators.
+In AGM theory, an agent’s beliefs are represented by a set of
+sentences \ from a formal language \. The set
+\ is called the
+belief state
+of the agent. The belief
+state is required to be consistent and deductively closed .
+ Of course, this is a somewhat unrealistic idealization. Levi 
+defends this idealization by changing the interpretation of the set
+\–these are the sentences that the agent is
+committed
+to believe, not those that she actually believes.
+Although we may never live up to our commitments, Levi argues that we
+are committed to the logical consequences of our beliefs. That may
+rescue the principle, but only by changing the interpretation of the
+theory.
+AGM theory studies three different types of belief change.
+Contraction
+occurs when the belief state \ is replaced
+by \, a logically closed subset of \ no longer
+containing \.
+Expansion
+occurs when the belief state
+\ is replaced with \\),
+the result of simply adding \ to \ and closing under
+logical consequence.
+Revision
+occurs when the belief state
+\ is replaced by the belief state \, the result of
+“minimally mutilating” \ in order to accommodate
+\.
+Contraction is the fundamental form of belief change studied by AGM.
+There is no mystery in how to define expansion, and revision is
+usually defined derivatively via the
+Levi identity
+:
+\ + p.\) Setting the mold for future work
+,
+Alchourrón, Gärdenfors and Makinson  proceed
+axiomatically: they postulate several principles that every rational
+contraction operation must satisfy. Fundamental to AGM theory are
+several representation theorems showing that certain intuitive
+constructions give rise to contraction operations satisfying the basic
+postulates and conversely, that every operation satisfying the basic
+postulates can be seen as the outcome of such a construction. See the
+entry on
+belief revision
+,
+ Huber , or Lin  for an excellent introduction to these
+results.
+AGM theory is unique in focusing on belief contraction. For someone
+concerned with maintaining a database, contraction is a fairly natural
+operation. Medical researchers might want to publish a data set, but
+make sure that it cannot be used to identify their patients. Privacy
+regulations may force data collectors to “forget” certain
+facts about you and, naturally, they would want to do this as
+conservatively as possible. However, a plausible argument holds that
+all forms of rational belief change occurring “in the
+wild” involve learning new information, rather than
+conservatively removing an old belief. All the other formalisms
+covered in the article focus on this form of belief change. For this
+reason, we focus on the AGM theory of revision and neglect
+contraction.
+Before delving into some of the technical development, we mention some
+important objections and alternatives to the AGM framework. As we have
+mentioned, the belief state of an agent is represented by the
+ set \ of sentences the agent is committed
+to believe. The structure of the agent’s
+reasons
+is
+not explicitly represented: you cannot tell of any two
+\ whether one is a reason for the other.
+Gärdenfors  distinguishes between
+foundations
+theories, that keep track of which beliefs justify which others, and
+coherence
+theories, which ignore the structure of
+justification and focus instead on whether beliefs are consistent with
+one another. Arguing for the coherence approach, he draws a stark
+distinction between the two:
+According to the foundations theory, belief revision should consist,
+first, in giving up all beliefs that no longer have a
+satisfactory justification
+and, second, in adding new beliefs
+that have become justified. On the other hand, according to the
+coherence theory, the objectives are, first, to maintain
+consistency
+in the revised epistemic state, and, second, to make
+minimal changes
+of the old state that guarantee overall
+coherence.
+Implicit in this passage is the idea that foundations theory are out
+of sympathy with the principle of minimal mutilation. Elsewhere
+, Gärdenfors is more conciliatory, suggesting that some
+hybrid theory is possible and perhaps even preferable:
+I admit that the postulates for contractions and revisions that have
+been introduced here are quite simpleminded, but they seem to capture
+what can be formulated for the meager structure of belief sets. In
+richer models of epistemic states, admitting, for example, reasons to
+be formulated, the corresponding conservativity postulates must be
+formulated much more cautiously .
+Previously, we have seen Pollock  advocating for
+foundationalism. In artificial intelligence, Doyle’s 
+reason maintenance system
+is taken to exemplify the foundations
+approach. Horty  argues that
+default logic
+aptly represents the structure of reasons. For a defense of
+foundationalism, as well as a useful comparison of the two approaches,
+see Doyle .
+Another foundationalist view advocates for
+belief bases
+instead of belief states. A belief base is a set of sentences that is
+typically not closed under logical consequence. Its elements represent
+“basic” beliefs that are not derived from other beliefs.
+This allows us to distinguish between sentences that are explicit
+beliefs, like “Shakespeare wrote Hamlet” and
+never-thought-of deductive consequences like “Either Shakespeare
+wrote Hamlet or Alan Turing was born on a Monday.” Revision and
+contraction are then redefined to operate on belief bases, rather than
+belief sets. That allows for finer distinctions to be articulated,
+since belief bases which have the same logical closure are not treated
+interchangeably. For an introduction to belief bases see the
+relevant section of the entry on the
+logic of belief revision
+.
+ For a book-length treatment, see Hansson .
+Finally, one of the most common criticisms of AGM theory is that it
+does not illuminate
+iterated
+belief change. In the
+following, we shall see that the canonical revision operation takes as
+input an entrenchment ordering on a belief state, but outputs a belief
+state without an entrenchment order. That severely underdetermines the
+result of a subsequent revision. For more on the problem of iterated
+belief revision, see Huber .
+2.2.1 Principles for Belief Revision
+Gärdenfors  proposes the following postulates for rational
+belief revision. For every set of sentences \ and any sentences \:
+
+\\);
+Closure
+
+\;
+Success
+
+\ \);
+Inclusion
+
+If \, then \ \subseteq \bB * \alpha \);
+Preservation
+
+\ is inconsistent iff \;
+Consistency
+
+If \, then \.
+Extensionality
+Closure, Success, Consistency and Extensionality all impose
+synchronic
+constraints on \. They say nothing
+about how it must be related to the prior belief state \.
+Closure requires the new belief set to be deductively closed. Dropping
+this requirement puts you in the camp of
+belief bases,
+rather
+than belief sets . Success requires that the new
+information is included in the new belief state.
+Non-prioritized
+belief revision relaxes this requirement
+. Extensionality requires that the agent is sensitive
+only to the logical content of the evidence, and not to its mode of
+presentation. Consistency requires that the new belief state is
+logically consistent, at least when the evidence is
+non-contradictory.
+Preservation and Inclusion are the only norms that are really about
+revision
+–they capture the diachronic spirit of AGM
+revision. Inclusion says that revision by \ should yield
+no more
+new beliefs than expansion by \. In other words,
+any sentence \ that you come to believe after revising by
+\ is a deductive consequence of \ and your prior
+beliefs. Consider the following principle:
+If \ then \\in\bB\).
+Conditionalization
+In
+Section 2.1.1
+,
+ we considered an analogue of conditionalization for nonmonotonic
+logic. All the same objections apply equally well in the context of
+belief revision. Recall from
+Section 1.2
+that a deductive consequence relation admits a deduction theorem iff
+\ implies that \ So long as a deduction theorem is provable
+for \,\) Inclusion and Conditionalization are equivalent.
+If you found any of the arguments against Conditionalization
+convincing, you ought to be skeptical of Inclusion.
+Preservation says that, so long as the new information \ is
+logically consistent with your prior beliefs, all of your prior
+beliefs survive revision by \. In the setting of
+non-monotonic logic, we called this principle Rational Monotony. All
+objections and counterexamples to Rational Monotony from
+Section 2.1.1
+apply equally well in belief revision. As we have seen, Preservation
+rules out any kind of
+undercutting
+defeat of previously
+successful defeasible inferences. Accepting both Preservation
+ and Inclusion  amounts to
+saying that when confronted with new evidence that is logically
+consistent with her beliefs, a rational agent responds by simply
+forming the deductive closure of her existing beliefs with the new
+evidence. On that view, deductive logic is the only necessary guide to
+reasoning, so long as you do not run into contradiction.
+Gärdenfors  also proposes the following two additional
+revision postulates, closely related to Inclusion and
+Preservation.
+
+\ \subseteq \Cn \);
+Conjunctive Inclusion
+
+If \, then \ \subseteq \bB *  \).
+Conjunctive Preservation
+It is possible to make the connection between belief revision and
+nonmonotonic logic precise. Given a belief set \ and a revision
+operation \ we can define a defeasible consequence relation by
+setting \
+Similarly, given a defeasible consequence relation \ we can
+define \ Then it is possible to
+prove the following correspondences between AGM belief revision and
+the set of principles we called System R in
+Section 2.1.1
+.
+ It follows that AGM revision can be represented in terms of a total
+preferential model over possible worlds.
+Theorem
+. Suppose that \ is a revision operation
+for \ satisfying all eight revision postulates. Then, the
+non-nonmonotonic consequence relation given by \ satisfies all the principles of
+System R. Conversely, suppose that \ is a consequence
+relation that satisfies all the principles of System R. Then, the
+revision operation \ defined letting \ and \ satisfies all eight revision postulates.
+2.2.2 Entrenchment
+Gärdenfors  introduces the notion of an
+entrenchment
+relation
+in the following way:
+Even if all sentences in a … set are accepted or considered as
+facts …, this does not mean that all sentences are of equal
+value for planning or problem-solving purposes. … We will say
+that some sentences … have a higher degree of
+epistemic
+entrenchment
+than others. The degree of entrenchment will,
+intuitively, have a bearing on what is abandoned …, and what is
+retained, when a contraction or revision is carried out.
+To model the degree of entrenchment, a relation \ is
+introduced holding between sentences of the language \.
+The notation \ is pronounced ‘\
+is at most as entrenched as \.’ Gärdenfors 
+requires that the relation satisfies the following postulates. For all
+\ in \:
+\\)
+If \ and \, then \
+Transitivity
+\\)
+If \, then \
+Dominance
+\\)
+\ or \
+Conjunctivity
+\\)
+If \\), then \ if
+and only if for all \ in \
+Minimality
+\\)
+If for all \ in \, then \\)
+Maximality
+Given a fixed set of background beliefs \ and an entrenchment
+ordering \ on \ and letting \ hold just in case \
+and \, we can define a revision
+operator \ as follows:
+\[
+\bB * \alpha = \Cn
+\]
+The idea behind this equation is that the agent revises by \
+by first clearing from her belief set anything less entrenched than
+\ ), adding \, and then closing under logical
+consequence. Gärdenfors and Makinson  prove that this
+definition gives rise to a revision operator satisfying AGM*1–8
+and, conversely, that every revision operator satisfying AGM*1–8
+can be seen as arising from
+some
+entrenchment order in this
+way. These results illustrate why AGM theory is not a theory of
+iterated
+revision: the revision operation takes as input an
+entrenchment order and belief state, but outputs only a belief state.
+That severely underdetermines the results of subsequent revisions.
+Grove  proves an analogous representation theorem for a systems
+of spheres semantics that generalizes Lewis’  semantics
+for counterfactuals. See the relevant section of the entry on the
+logic of belief revision
+for an introduction to
+Grove's possible world semantics. Segerberg  formulates the AGM
+approach in the framework of dynamic doxastic logic. Lindström
+& Rabinowicz  extend this to iterated belief revision. Of
+necessity, our presentation of belief revision theory has been rather
+compressed. For an excellent article-length introduction, see the
+entry on
+logic of belief revision
+,
+ Huber , or Lin . For a book-length treatment see
+Gärdenfors , Hansson , or Rott .
+2.3 Epistemic Logic
+The formal frameworks we have seen so far foreground dynamical
+principles of belief revision—they are essentially concerned
+with how to accommodate new information. That theoretical emphasis
+relegates other issues to the background. In particular, these
+frameworks cannot easily express principles of higher-order belief
+, or about the relationship between
+belief and knowledge. Therefore, these frameworks are relatively
+silent about classical epistemological issues such as whether
+knowledge entails belief ,
+ or why it is absurd to believe both \ and that you don't believe
+that \ .
+Epistemic logic, which in its modern formulation is typically traced
+to von Wright  and Hintikka , is a formal framework
+designed to foreground these matters. For an influential introductory
+text, see Fagin et al. . The formal language of epistemic logic
+extends that of propositional logic with epistemic operators \ and \, pronounced respectively as
+‘agent \ believes that \,’ and ‘agent
+\ knows that \’ When only one agent is under
+discussion, the subscripts are omitted.   Given this extension of the language, it is possible to
+express epistemic principles such as \[{\bf B}\rightarrow ,\] which says that your
+beliefs are closed under modus ponens, or \[ {\bf B}p \rightarrow {\bf
+B}{\bf B}p,\] which says that if you believe \, then you also
+believe that you believe it. Note that although the first principle
+has natural analogues in AGM  and non-monotonic logic , the second principle cannot be straightforwardly expressed
+in either formalism. For example, in the AGM framework we might
+understand \ as saying the same thing as \ but it is not at all clear how to express \.  and the auto-epistemology section of the entry on
+non-monotonic logic
+.) Furthermore,
+epistemic logic has no difficulty expressing principles governing the
+interaction of knowledge and belief. For example \ expresses the thesis that everything that is
+known is also believed. AGM and non-monotonic logic cannot easily say
+anything about these matters.
+Different choices of axioms governing belief, knowledge and their
+interaction give rise to different epistemic logics. A significant
+amount of work in epistemic logic characterizes these systems and
+proves various surprising consequences of the axioms.
+Kripke
+models
+are the basis of the most widely used semantics for
+epistemic logic.  for a discussion of whether or
+not these models are properly attributed to Kripke.) A Kripke model
+equips the set of possible worlds \ with a
+binary
+indistinguishibility relation
+over \. The basic
+idea is that two worlds \ stand in the relation \ if, were \ the actual world, agent \ could not rule out
+that the actual world is \. Then, the model is connected with the
+formal language via the following definition: \[ w \vDash {\bf
+B}_a\phi \text{ iff } w'\vDash \phi \text{ for all } w' \text{ such
+that } w R_a w^\prime. \] In other words: it is true in \ that
+\ believes \ iff \ is true in all the worlds \
+which \ cannot distinguish from \ Equipped with this
+semantics, it is possible to prove various elegant correspondences
+between epistemic principles and structural properties of the
+indistinguishibility relation. For example, the principle \ is validated whenever the
+indistinguishibility relation is transitive. The suspicious principle
+\ is validated whenever the
+indistinguishibility relation is reflexive. A significant amount of
+theoretical activity is devoted to the interplay between intuitive
+epistemic principles expressed in the language of modal logic and
+elegant structural conditions on indistinguishibility relations. For
+an excellent introduction to this subject see the entry
+on
+epistemic logic
+, or the more
+general entry on
+modal logic.
+For more on
+the relationship between the logic of knowledge and belief, see the
+entry on
+philosophical aspects of
+multi-modal logic
+. More recently, alternative topological
+semantics for epistemic logic have seen significant theoretical
+activity .
+As originally formulated in von Wright 
+and Hintikka , epistemic logic says nothing about how agents
+should react to new information. Segerberg introduced dynamic doxastic
+logic  to bridge the gap between belief revision and
+epistemic logic. Moreover, dynamic epistemic logic was developed for
+the same purpose, but with an emphasis on multiagent contexts . This
+framework benefits from theoretical contributions from philosophers,
+logicians, economists and computer scientists. A proper discussion of
+these developments would take us too far afield. The interested reader
+should consult the entry on
+dynamic epistemic logic
+.
+ For Bayesian approaches to auto-epistemology see van Fraassen . For a ranking-theoretic approach, see chapter 9 in Spohn 
+as well as Hild  and Spohn . For a very different
+approach to combining qualitative notions from traditional
+epistemology with probabilistic notions see Moss , who
+defends the thesis that knowledge involves probabilistic contents.
+3. Representations for Partial Belief
+It is commonly held that belief is not just an all-or-nothing matter,
+but admits of degrees. Sophia may believe that Vienna is the capital
+of Austria to a greater degree than she believes that Vienna will be
+sunny tomorrow. If her degrees of belief have numerical–and not
+just ordinal–structure, she might be twice as sure of the former
+than the latter. Philosophers sufficiently impressed by examples of
+this sort orient their activity around the structure of “partial
+belief” rather than the all-or-nothing variety.
+Although it is easy to generate plausible examples of partial beliefs,
+it is harder to say exactly what is meant by a degree of belief. An
+agent's degree of belief in \ may reflect their level of
+confidence in the truth of \, their willingness to assent to \
+in conversation, or perhaps how much evidence is required to convince
+them to abandon their belief in \ A venerable tradition,
+receiving classical expression in Ramsey  and de Finetti ,
+holds that degrees of belief are most directly reflected in which bets
+regarding \ an agent is willing to accept. At least since Pascal
+, mainstream philosophical opinion has held that
+degrees of belief are well-modeled by probabilities  for a readable history). To this day, subjective, or
+‘epistemic’, probability remains one of the dominant
+interpretations of the probability calculus.
+A parallel tradition, though never as dominant, holds that degrees of
+belief are neither so precise, nor as definitely comparable as
+suggested by Pascal's probabilistic analysis. Keynes  famously
+proposed that degrees of belief may enjoy only an
+ordinal
+structure, which admits of qualitative, but not quantitative,
+comparison. Keynes even suggests that the strength of some pairs of
+partial beliefs cannot be compared at all.
+Cohen  traces another minority tradition to Francis Bacon's
+Novum Organum
+. On the usual probability scale a
+degree of belief of zero in some proposition implies maximal
+conviction in its negation. On the Baconian scale, a degree of belief
+of zero implies no conviction in either the proposition or its
+negation. Thus, the usual scale runs from “disproof to
+proof” whereas the Baconian runs from “no evidence, or
+non-proof to proof.” In the past few decades, Baconian
+probability has received increasing attention, resulting in theories
+approaching the maturity and sophistication of those in the Pascalian
+tradition .
+In this section we introduce several frameworks for representing
+partial belief, starting with what is by far the most prominent
+framework: subjective probability theory.
+3.1 Subjective Probability Theory
+Subjective probability theory, often going under the sobriquet
+‘Bayesianism,’ is by far the dominant paradigm for
+modeling partial belief. The literature on the subject is by now very
+large. The summary provided here will, of necessity, be rather brief.
+For an article-length introduction see the entry on
+Bayesian epistemology
+,
+ Easwaran  or Weisberg . For a book-length
+introduction see Earman , Skyrms , Hacking , Howson
+and Urbach  or Huber . For an article-length introduction
+to Bayesian models of rational choice, see the entry on
+decision theory
+.
+ For an approachable book-length introduction to the theory of
+rational choice see Resnik .
+The heart of subjective
+probability theory is roughly the following:
+There is a fundamental psychological attitude called
+degree of
+belief
+, sometimes
+confidence
+or
+credence
+, that
+can be represented by numbers in the \ interval.
+The degrees of belief of rational agents satisfy the axioms of
+probability theory.
+The degrees of belief of rational agents are
+updated
+by
+some flavor of probabilistic conditioning.
+The first two principles are the synchronic requirements of Bayesian
+theory; the third principle concerns diachronic updating behavior.
+Most Bayesians would also agree to some version of the following
+principles, which link subjective probabilities with deliberation and
+action:
+Possible states of the world  are assigned a
+utility
+: a positive or negative real number that reflects the
+desirability or undesirability of that outcome.
+Rational agents perform only those actions that maximize
+expected
+utility
+What makes Bayesianism so formidable is that, in addition to providing
+an account of rational belief and its updating, it also provides an
+account of rational action and deliberation. No other theory can claim
+a developed, fine-grained account of all three of these aspects of
+belief. In the following we will briefly spell out some of the
+technical details of the Bayesian picture.
+3.1.1 The Formal Structure
+Degrees of belief in the  interval are introduced to quantify the
+strength of belief attitudes. For our purposes, we will take
+propositions to be the objects of partial belief. It is also possible
+to assign degrees of belief to sentences in a formal language, but for
+the most part nothing hinges on the approach we choose . Accordingly, let \ be a field of propositions over
+a set \ of possibilities. A function Pr: \ from \ into the set of real numbers, \, is a
+
+probability measure
+on \ if and only if for all propositions \ in
+\:
+\[\begin{align}
+\tag{Positivity}
+  \Pr &\ge 0 \\
+\tag{Unitarity}
+  \Pr &= 1 \\
+\tag{Additivity}
+ \Pr &= \Pr + \Pr
+ \text{ if } A\cap B = \varnothing
+\end{align}\]
+A triple \ satisfying these three
+principles is called a 
+probability space
+.
+From these principles it is possible to derive many illuminating
+theorems. For example, the degree of belief assigned to the
+contradictory proposition must equal zero. Furthermore, if \
+entails \ then \\leq \Pr\). Finally, for any
+proposition \ we have that \\leq
+1.\)
+Suppose that \ is also closed under countable
+intersections -field). Suppose Pr
+additionally satisfies, for all propositions \ in \,
+\[\begin{align}
+\tag{\-Additivity}
+\Pr = \sum_{i=1}^\infty \Pr, \text{ if } A_{i} \cap A_{j} = \varnothing \text{ for } i \ne j.
+\end{align}\]
+Then, Pr is a \- or
+countably additive
+probability
+measure on \ .
+In this case \ is a \- or
+countably additive probability space.
+Countable additivity is not as innocent as it looks: it rules out the
+possibility that any agent is indifferent over a countably infinite
+set of mutully exclusive possibilities. De Finetti 
+famously argued that we ought to reject countable additivity since it
+is conceivable that God could pick out a natural number “at
+random” and with equal  probability. For another example,
+suppose you assign 50% credence to the proposition \ that not
+all ravens that will ever be observed are black. Let \ be
+the proposition that the \ observed raven is the first
+non-black raven to appear. Then \ Countable additivity entails that for all \ there
+is a finite \ such that \ = 1/2
+-\epsilon.\) So you must be nearly certain that if not all ravens are
+black, the first non-black raven will appear among the first \
+ravens. But is it really a requirement of
+rationality
+that
+you must be opinionated about when the first non-black raven must
+appear? The only way to assign equal probability to all \
+is to violate countable additivity by setting \=0\) for
+all \. This solution has its own drawbacks. On all standard models
+of Bayesian update it will be impossible to become convinced that the
+\ raven is indeed non-black, even if you are looking at a
+white one. For more on countable additivity, see Chapter 13 in Kelly
+.
+A probability measure Pr on \ is
+regular
+just in
+case \ \gt 0\) for every non-empty or consistent proposition
+\ in \. Let \ be the set of all
+propositions \ in \ with \ \gt 0\). The
+conditional
+probability measure \:
+\mathbf{A}\times \mathbf{A}^{\Pr} \rightarrow \Re\) on \
+\) is defined for all pairs of propositions \ in
+\ and \ in \ by the ratio
+\[\tag{5}
+\Pr = \frac{\Pr}{\Pr}.
+\]
+. Conditionalization by \
+restricts all possibilities to those compatible with \ and
+renormalizes by the probability of \ to ensure that unitarity
+holds. The domain of the second argument place of \\) is restricted to \, since the ratio
+\/\Pr\) is not defined if \ = 0\). Note that
+\\) is a probability measure on \, for
+every proposition \ in \. Some authors take
+conditional probability measures \:
+\mathbf{A}\times \rightarrow
+\Re\) as primitive and define  probability measures
+in terms of them as \ = \Pr, given \\) for all
+propositions \ in \ .
+Conditional probabilities are usually assumed to be
+Popper-Rényi measures . Spohn 
+critizices Popper-Rényi measures for their lack of a complete
+dynamics, a feature already pointed out by Harper , and for
+their lack of a reasonable notion of independence. Relative
+probabilities  are claimed
+not to suffer from these two shortcomings.
+3.1.2 Interpretations
+What does it mean to say that Sophia’s subjective probability
+for the proposition that tomorrow it will be sunny in Vienna equals
+.55? This is a difficult question. Let us first answer a different
+one. How do we measure Sophia’s subjective probabilities? On one
+traditional account, Sophia’s subjective probability for \
+is measured by her
+betting ratio
+for \, i.e., the highest
+price she is willing to pay for a bet that returns 0
+otherwise. On a slightly different account Sophia’s subjective
+probability for \ is measured by her
+fair
+betting ratio
+for \, i.e., that number \\) such that she considers
+the following bet to be fair: \ otherwise
+\ with inequality for at least one).
+It need not be irrational for Sophia to be willing to bet you $5.5 to
+$4.5 that tomorrow it will be sunny in Vienna, but not be willing to
+bet you 450 that this proposition is true. She may even
+refuse a bet of 999. That is because there are other factors
+affecting her betting quotients than her degrees of belief. Sophia may
+be risk-averse, e.g. if she cannot risk blowing a $200 dollar hole in
+her monthly budget. Others may be risk-prone. For example, gamblers in
+the casino are risk prone: they pay more for playing roulette than the
+fair monetary value according to reasonable subjective probabilities.
+That may be perfectly rational if the thrill of gambling is itself a
+compensation. Note that it does not help to say that Sophia’s
+fair betting ratio for \ is that number \\) such
+that she considers the following bet to be fair: $\\) if \, and \\) otherwise \
+with inequality for at least one). Just as stakes of $200 may be too
+high for the measurement to work, stakes of $1 may be too low.
+Another complication arises when the proposition itself is a matter of
+personal importance to the agent. Suppose Sophia would be very unhappy
+if the Freedom Party wins a majority in the next election, but she
+thinks it is very unlikely. Nevertheless, she may be willing to pay
+100 if they do, and $0 otherwise. Imagine
+that she is buying a kind of insurance policy against bitter
+disappointment. In this case, her betting ratio does not obviously
+reflect her degree of belief that the FPÖ will win.
+Ramsey  avoids the first difficulty by pricing bets in utility
+instead of money. He avoids the second difficulty by presupposing the
+existence of at least one “ethically neutral” proposition
+
+which the agent takes to be just as likely to be true as she takes it
+to be false. See Section 3.5 of the entry on
+interpretations of probability
+.
+ Nevertheless, the bearing of the preceding examples is that fair
+betting ratios and subjective probabilities can easily come apart.
+Subjective probabilities are measured by, but not identical to, 
+betting ratios. The latter are operationally defined and observable.
+The former are unobservable, theoretical entities that, following
+Eriksson & Hájek , we take as primitive.
+3.1.3 Justifications
+The theory of subjective probability does not accurately describe the
+behavior of actual human beings . It is a
+normative theory intended to tell us how we
+ought
+to govern
+our epistemic lives.
+Probabilism
+is the thesis that a
+person’s degrees of belief
+ought
+to satisfy the axioms
+of probability. But why should they?
+The traditional answer is that an agent that violates the axioms of
+probability opens herself up, in some sense, to a system of bets that
+guarantee a sure loss. Answers of this flavor are called
+Dutch
+Book
+arguments. The
+pragmatic
+version of the argument
+posits a tight connection between degrees of belief and betting
+behavior. The argument concludes by proving a theorem to the effect
+that an agent would enter into a system of bets guaranteeing a sure
+loss iff her degrees of belief violate the probability calculus. But,
+as we have seen, there are reasons to doubt that the connection
+between degrees of belief and betting behavior is really so tight as
+required by the pragmatic Dutch book argument. That renders the
+argument less convincing. The
+depragmatized
+version of the
+argument posits a connection between degrees of belief and
+dispositions to consider systems of bets fair, without necessarily
+entering into them . It concludes by proving an essentially identical theorem to the
+effect that an agent would consider fair a system of bets guaranteeing
+a sure loss iff her degrees of belief violate the probability
+calculus. The depragmatized Dutch Book Argument is a more promising
+justification for probabilism. See, however, Hájek . For a much more extensive discussion see the entry on
+Dutch book arguments
+.
+Some epistemologists find Dutch book arguments to be unconvincing
+either because they disavow any suitable connection between degrees of
+belief and betting quotients, or they deny that any facts about
+something so pragmatic as betting could have normative epistemic
+force. Joyce  attempts to vindicate probabilism by considering
+the
+accuracy
+of degrees of belief. The basic idea here is
+that a degree of belief function is defective if there exists an
+alternative degree of belief function that is at least as accurate in
+each, and strictly more accurate in some, possible world. The accuracy
+of a degree of belief \\) in a proposition \ in a world \
+is identified with the distance between \\) and the truth value
+of \ in \, where 1 represents truth and 0 represents falsity.
+For instance, a degree of belief up to 1 in a true proposition is more
+accurate, the higher it is — and perfectly accurate if it equals
+1. The overall accuracy of a degree of belief function \ in a
+world \ is then determined by the accuracy of the individual
+degrees of belief \\). Joyce is able to prove that, given some
+conditions on how to measure distance or inaccuracy, a degree of
+belief function obeys the probability calculus if and only if there
+exists no alternative degree of belief function that is at least as
+accurate in each, and strictly more accurate in some, possible world
+. Therefore, degrees of belief should obey the
+probability calculus.
+Bronfman  observes that Joyce’s
+conditions on measures of inaccuracy do not determine a single
+measure, but rather a whole family of inaccuracy measures. All of
+Joyce’s measures agree that an agent whose degree of belief
+function violates the probability axioms should adopt a probabilistic
+degree of belief function which is at least as accurate in each, and
+more accurate in some, possible world. However, these measures may
+differ in their recommendation as to which particular probability
+measure the agent should adopt. In fact, for each possible world,
+following the recommendation of one measure will leave the agent less
+accurate according to some other measure. Why, then, Bronfman objects,
+should the ideal doxastic agent move from her non-probabilistic degree
+of belief function to a probability measure in the first place? Other
+objections are articulated in Maher  and, more recently, in
+Easwaran and Fitelson . These are addressed by Joyce ) and Pettigrew . Leitgeb and Pettigrew  present conditions that
+narrow down the set of measures of inaccuracy to the so-called
+quadratic scoring rules. This enables them to escape Bronfman’s
+objection. For a detailed treatment, see the entry on
+epistemic utility arguments for probabilism.
+For alternative justifications of probabilism see Cox  and the
+representation theorem of measurement theory .
+For criticism of the latter see Meacham & Weisberg . For a
+recent justification of probabilism from partition invariance see
+Leitgeb .
+3.1.4 Update Rules
+Probabilism imposes synchronic conditions on degrees of belief. But
+how should subjective probabilities be updated when new information is
+received? Update rules are
+diachronic
+conditions that tell us
+how to revise our subjective probabilities when we receive new
+information. There are two standard update rules. Strict
+conditionalization applies when the new information receives the
+maximal degree of belief. Jeffrey conditionalization allows for the
+situation in which no proposition is upgraded to full certainty when
+new information is acquired. In the first case, probabilism is
+extended by
+Strict Conditionalization
+If \\) is your subjective probability at time \, and if
+between \ and \ you become certain of \ and no logically stronger proposition, then your
+subjective probability at time \ should be \\).
+Strict conditionalization says that, so long as \ has positive
+prior probability, the agent’s new subjective probability for a
+proposition \ after becoming certain of \ should equal her old
+subjective probability for \ conditional on \. It is by far
+the most standard model of partial belief update.
+The discerning reader may object that there is a suppressed
+ceteris paribus
+clause in our statement of strict
+conditionalization. On the intended interpretation, the only
+external
+change to your subjective belief state between \
+and \ is that you become certain of \. Moreover, you do
+not forget anything, fall into doubts about prior beliefs, or acquire
+any new concepts. Finally, there is no time \
+between \ and \ by which your degree of belief in
+\ is promoted to 1, but before your other subjective probabilities
+have been able to “catch up”. If there were, you would be
+probabilistically incoherent between \ and
+\ On the intended interpretation, although you acquire
+the information between \ and \, your subjective
+probabilities remain unchanged until \, at which point
+the new information is assimilated holus-bolus. These sorts of
+considerations apply equally to the other forms of conditioning we
+discuss in this article, including those in Section 3.4. For a good
+discussion of the difficulties in interpreting conditionalization, see
+Spohn .
+What if new information does not render any proposition certain, but
+merely changes the subjective probability of some propositions?
+Jeffrey  gives the most widely accepted answer to this
+question. Roughly, Jeffrey conditionalization says that the ideal
+doxastic agent should keep fixed her “inferential
+beliefs,” that is, the probabilities of all hypotheses
+conditional on any evidential proposition.
+Jeffrey Conditionalization
+Suppose that \\) is your subjective probability at time
+\ and that between \ and \ your subjective
+probabilities in the partition \  change to \ with \. Then, your subjective probability
+at time \ should be \ = \sum_{i}
+\Pr p_{i}\).
+Jeffrey conditionalization says that the agent’s new subjective
+probability for \, after her subjective probabilities for the
+elements of the partition have changed to \, should equal the
+weighted sum of her old subjective probabilities for \ conditional
+on the \, where the weights are the new subjective
+probabilities \ for the elements of the partition.
+Why should we update our subjective probabilities according to strict
+or Jeffrey conditionalization? Dutch-book style arguments for strict
+conditionalization are given in Teller  and Lewis  and
+extended to Jeffrey conditionalization in Armendt . For more,
+see Skyrms . Leitgeb and Pettigrew  present an
+accuracy argument for strict conditionalization  as well as an argument for an alternative to Jeffrey
+conditionalization. For an overview, see the entry on
+epistemic utility arguments for probabilism
+.
+Other philosophers have provided arguments against strict  conditionalization: van Fraassen  holds that
+rationality does not require the adoption of a particular update rule
+. Arntzenius 
+uses, among others, the “shifting” nature of self-locating
+beliefs to argue against strict conditionalization, as well as against
+van Fraassen’s
+reflection
+principle . The second feature used by
+Arntzenius , called “spreading”, is not special to
+self-locating beliefs. Weisberg  argues that Jeffrey
+conditionalization cannot handle a phenomenon he terms
+perceptual
+undermining
+. See Huber  for a defense of Jeffrey
+conditionalization.
+For our purposes it is important to point out that conditional
+probability is always a lower bound for the probability of the
+material conditional. In other words, \[p\leq p,\] whenever \>0\). We can see this as a quantitative version
+of the qualitative principle of Conditionalization we discussed
+in
+Section 2.1.1
+. However confident a
+Bayesian agent becomes in \ after updating on \ she must have
+been at least as confident that \ is a material consequence of
+\. Popper and Miller  took this observation to be
+“completely devastating to the inductive interpration of the
+calculus of probability.” For the history of the Popper-Miller
+debate see Chapter 4 in Earman . A similar property can be
+demonstrated for Jeffrey conditioning .
+3.1.5 Ignorance
+Subjective probability theory models ignorance with respect to a
+proposition \ by assigning probability of .5 to \ and its
+complement \. More generally, an agent with subjective
+probability Pr is said to be
+ignorant
+with respect to the
+partition \ if and only if \ =
+1/n\). The
+Principle of Indifference
+requires a doxastic
+agent to distribute her subjective probabilities in this fashion
+whenever, roughly, the agent lacks evidence of the relevant kind.
+Leitgeb and Pettigrew  give an accuracy argument for the
+principle of indifference. However, the principle leads to
+contradictory results if the partition in question is not held fixed.
+For a simple example, suppose that Sophia is ignorant about the color
+of a certain marble. Then, she must be nearly certain that it is not
+Blue. In this case, ignorance about one thing entails that she is very
+opinionated about another. But presumably she is also ignorant about
+whether or not the color is Blue. For more on this, see the discussion
+of
+Bertrand’s paradox
+in Kneale  and Section 3.1
+of the entry on
+interpretations of probability
+.
+ A more cautious version of the principle of indifference, also
+applicable if the partition contains a countable infinity of elements,
+is the
+principle of maximum entropy
+. It requires the agent to
+adopt one of those probability measures Pr as her degree of belief
+function over -field generated by) the countable
+partition \ that maximize the quantity \ \log \Pr\). The latter is known as the
+entropy
+of Pr with respect to the partition \.
+See Paris .
+Suppose Sophia does not know much about wine. By the principle of
+indifference, her degree of belief that an Austrian Schilcher is a
+white wine and her degree of belief that it is a red wine should both
+be .5. Contrast this with the following case. Sophia is certain that a
+particular coin is fair, i.e. that the objective chance of the coin
+landing heads and the objective chance of the coin landing tails are
+both exactly .5. The
+principal principle
+
+requires roughly that, conditional on the objective chances,
+one’s subjective probability should equal the objective
+probability . By the principal principle, her
+degree of belief that the coin will land heads on the next spin should
+also be .5. Although Sophia’s subjective probabilities are alike
+in these two scenarios, there is an important difference. In the first
+case a subjective probability of .5 represents complete ignorance. In
+the second case it represents certainty about objective chances.
+Examples like these suggest that subjective probability theory is not
+an adequate account of partial belief because it cannot distinguish
+between total ignorance and knowledge, or at least certainty, about
+chances. We discuss potential responses to this objection in Section
+3.2
+3.1.6 Deliberation and Action
+One of the signal advantages of the Bayesian model of partial belief
+is that it is ready-made to plug into a prominent model of practical
+deliberation. Decision theory, or rational choice theory, is too large
+and sprawling a subject to be effectively covered here, although it
+will be presented in cursory outline. For an excellent introduction,
+see Thoma  and the entry on
+decision theory
+.
+ For our purposes, it is enough to note that a well-developed theory
+exists and that no comparable theory exists for alternative models of
+belief. However, recent work such as Lin  and Spohn  may remedy that inadequacy in the case of qualitative
+belief.
+Suppose you would like to make a six egg omelet. You’ve broken 5
+fresh eggs into a mixing bowl. Rooting around your fridge, you find a
+loose egg of uncertain provenance. If you are feeling lucky you can
+break the suspect egg directly into the mixing bowl; if you are wary
+of the egg, you might break it into a saucer first and incur more
+dishwashing.
+There are four essential ingredients to this sort of
+decision-theoretic situation. There are
+outcomes
+, over which
+we have defined
+utilities
+measuring the desirability of the
+outcome. In the case of the omelet the outcomes are a ruined omelet or
+a 5–6 egg omelet, with or without extra washing. There are
+states
+–usually unknown to and out of the control of the
+actor–which influence the outcome of the decision. In our case
+the states are exhausted by the possible states of the suspect egg:
+either good or rotten. Finally, there are
+acts
+which are
+under the control of the decision maker. In our case the acts include
+breaking the egg into the bowl or the saucer. Of course, there are
+other conceivable acts: you might throw the suspect egg away and make
+do with a 5-egg omelet; you might even flip a coin to decide what to
+do. We omit these for the sake of simplicity.
+To fit this into the framework of partial belief we assume that the
+set of acts \ partition \. We also assume
+the set of states \ partition \. We assume
+that the subjective probability function assigns a probability to
+every state given every act. We assume that acts and states are
+logically independent, so that no state rules out the performance of
+any act. Finally, we assume that given a state of the world \
+and an act \ there is exactly one outcome \ which is
+assigned a utility \\). The ultimate counsel of rational
+choice theory is that agents ought to perform only those acts that
+maximize
+expected
+utility. The expected utility of an act is
+defined as:
+\[ \text{EU} = \sum_{j=1}^m \Pr_{A_i}U,\]
+where \\) is roughly how likely the agent considers
+\ given that she has performed act \. Difficulties about
+how this quantity should be defined give rise to the schism between
+evidential and causal decision theory . However, in many situations, including the dilemma of the
+omelet, the act chosen does not affect the probabilities with which
+states obtain. This is called “act-state independence” in
+the jargon of rational choice theory. In cases of act-state
+independence there is broad consensus that \\) should
+be equal to the unconditional degree of belief \\).
+Central to the literature on decision theory are a number of
+representation theorems showing that every agent with qualitative
+preferences satisfying a set of rationality postulates can be
+represented as an expected utility maximizer . These axioms are controversial,
+and are subject to intuitive counterexamples. Allais  and
+Ellsberg  give examples in which seemingly rational agents
+violate the rationality postulates and therefore cannot, even in
+principle, be represented as expected utility maximizers. For more on
+the challenge of Ellsberg and Allais, see the entry on
+descriptive decision theory
+as well as Buchak .
+3.2 Imprecise Probabilities
+Consider the following modification of the two examples from section
+3.1.5. In the first case, Sophia is presented with a weathered and
+irregularly shaped coin–it was just discovered in an
+archeological dig of an ancient city. By probabilism, Sophia must have
+a
+precise
+real-valued credence that it will land heads on the
+next spin. By the principle of indifference, her credence in
+Heads
+must be precisely .5. In the second case, she is
+presented with a Euro coin that she is certain is fair–this has
+been confirmed by extensive experimentation. Probabilism and the
+principal principle require her credence in
+Heads
+to be
+precisely .5 in this case as well. As we have already seen, there is
+something unsatisfactory about treating ignorance 
+in the same way as certainty about chances .
+There are several different ways of spelling out what is wrong with
+this situation. In the case of the ancient coin, Sophia has a precise
+credence based only on some vague and imprecise information. In the
+case of the Euro, she has a precise attitude based on precise
+information. The basic intuition here is that it is bizzarre to
+require, as a matter of
+rationality
+, that Sophia have a
+precise attitude when her evidence is so imprecise. Sturgeon 
+suggests that evidence and attitude must “match in
+character,” i.e. sharp evidence warrants a sharp attitude and
+imprecise evidence warrants only an imprecise attitude. According to
+the “character matching” thesis, rationality requires that
+Sophia have an
+imprecise
+attitude toward the ancient
+coin.
+Joyce  articulates the difficulty in a different way. He
+suggests that there is an important difference between the
+weight
+and the
+balance
+of the evidence. In the case
+of the ancient coin, the evidence is balanced  but so
+scanty that it has no weight. In the case of the Euro, the evidence is
+weighty  and balanced because it favors
+both heads and tails equally. Joyce criticizes precise probabilism for
+its inability to represent the distinction between weight and balance
+of evidence. Skyrms  and Leitgeb  argue that this
+distinction
+is
+represented: beliefs that reflect weighty
+evidence are more
+resilient
+ or
+stable
+ under update. A few trials with the ancient coin might
+change Sophia’ credences dramatically, but not so for the Euro.
+The question takes on a different character when we consider its
+consequence for decision making. According to the standard theory, a
+utility-maximizing Bayesian must find at least one side of any bet
+attractive. It is straightforward to check that if a bet that costs
+\ and pays out \ has negative expected utility, then the
+other side of the bet, that costs \ and pays out \, has
+positive expected utility. Since her credences in both cases are the
+same, whatever bet Sophia accepts on the next spin of the Euro, she
+must also accept on the ancient coin. So even though her beliefs about
+the Euro are more stable, this difference is not reflected in her
+betting behavior. Yet intuitively, it seems reasonable to refuse to
+bet on the ancient coin at all. A bet on the Euro is
+risky
+:
+the outcome of the spin is uncertain, but there is no uncertainty
+about the chance with which each outcome occurs. A bet on the ancient
+coin is
+ambiguous
+: the outcome of the spin is uncertain and
+there is significant uncertainty about the chance with which each
+outcome occurs. Many seemingly rational people take account of this
+distinction in their decision making .
+ However, this distinction cannot be represented in the standard
+theory ).
+Imprecise probabilists  respond to these
+difficulties by denying that an agent’s credences are adequately
+described by a single probability function. Instead, they propose that
+a belief state is better represented by a
+set
+of probability
+functions. This set represents a kind of “credal
+committee,” where each member represents a way of precisifying
+the probability of every proposition. When new information arrives,
+each member updates by conditioning in the usual way. Levi requires
+that the credal set be closed under convex combinations. In other
+words, if \ are members of your credal set then \ q\) must also be a member of your credal set, for all
+\. According to Levi, convex combinations of
+\ are “potential resolutions of the conflict”
+between them and “one should not preclude potential resolutions
+when suspending judgement between rival systems” .
+However, resolving conflicts in this way leads to some unintuitive
+consequence. For example, if \ agree that two events are
+probabilistically independent, the same is not true of their convex
+combinations. Furthermore, if all members of the credal committee
+agree that some coin is biased  but not on the
+direction of the bias, it is unintuitive to require that some
+committee member believe that the coin is fair. For more on how to
+aggregate the opinions of agents with probabilistic credences, see
+Dietrich and List  and section 10.4 in Pettigrew .
+Whether or not we accept Levi’s convexity requirement, sets of
+probability functions give us the resources to distinguish ignorance
+from certainty about chances. If an agent is certain of an objective
+chance, every element of her credal committee will assign the same
+probability. However, if she is ignorant with respect to some
+proposition, her credal set will admit values in some interval \ . In her total ignorance about the ancient coin,
+Sophia might admit any value in the interval  for the proposition
+that it will land heads on the next spin. But since she knows that the
+Euro is fair, every member of her credal committee assigns .5 to the
+corresponding proposition. If we similarly redefine expected utility,
+then a bet on the Euro that costs 2 if it lands heads
+has positive expected utility. But a similar bet on the ancient coin
+has expected utility ranging from -2. This distinction allows
+for different attitudes towards the two bets.
+For a detailed exposition of imprecise probability theory, see Levi
+, van Fraassen , Walley  and Kyburg and Teng .
+For excellent introductions see Mahtani , as well as the entry
+on
+imprecise probability
+and its
+technical
+and
+historical
+appendices. See Weichselberger  for an approach that avoids
+sets of probability functions by assigning credal intervals
+\ directly to propositions. For a sophisticated
+recent view on which the contents of beliefs are sets of probability
+functions, see Moss .
+3.2 Dempster-Shafer Theory
+Dempster-Shafer  belief functions  can
+also be understood as an attempt to formally distinguish risk from
+ambiguity. Like probability functions, DS belief functions are
+real-valued functions \ satisfying
+Positivity and Unitarity. But whereas probability functions are
+additive, DS belief functions are only
+Super-additive
+, i.e.,
+for all propositions \ in \:
+\[\tag{6}
+\Bel + \Bel \le \Bel
+ \text{ if } A\cap B = \varnothing .
+\]
+Although \\leq 1\) for all \, the
+agent’s degree of belief in \ and her degree of belief in
+\ need not sum to 1.
+According to one interpretation , the
+number \\) represents the strength with which \ is
+supported by the agent’s knowledge or belief base. It may well
+be that this base supports neither \ nor its complement \. Since Sophia knows little about the ancient coin, her belief base
+will support neither the proposition \, that it will land heads,
+nor the proposition \, that it will land tails. However, Sophia
+may well be certain that it will not land on its edge. Hence
+Sophia’s DS belief function \ will be such that
+\ = \Bel = 0\) while \ = 1\). On the
+other hand, Sophia is certain that the Euro coin is fair. Therefore,
+if \ are the propositions that the Euro will land heads and
+tails respectively, her \ will be such that \ =
+\Bel = .5\) and \ = 1\). In this way, the
+theory of DS belief functions can distinguish between uncertainty and
+ignorance about chances. Indeed,
+\[
+\rI = 1 - \Bel - \ldots - \Bel -\ldots
+\]
+can be seen as a measure of the agent’s ignorance with respect
+to the countable partition \. On this definition, Sophia
+is maximally ignorant about the outcome of the next spin of the
+ancient coin and minimally ignorant about the Euro.
+Every proposition \ can be seen as dividing the agent’s
+knowledge base into three mutually exclusive and jointly exhaustive
+parts: a part that speaks in favor of \, a part that speaks
+against \ ), and a part that speaks
+neither in favor of nor against \. \\) quantifies the part
+that supports \\) quantifies the part that supports
+\, and I\ = 1 - \Bel - \Bel\)
+quantifies the part that supports neither \ nor \.
+We can understand the relation to subjective probability theory in the
+following way. Subjective probabilities require the ideal doxastic
+agent to divide her knowledge base into two mutually exclusive and
+jointly exhaustive parts: one that speaks in favor of \, and one
+that speaks against \. That is, the neutral part has to be
+distributed among the positive and negative parts. Subjective
+probabilities can thus be seen as DS belief functions without
+ignorance.  for a
+model of doxastic states that includes probability theory and
+Dempster-Shafer theory as special cases.)
+A DS belief function induces a
+plausibility
+function \, by setting
+\[
+\rP = 1 - \Bel,
+\]
+for all \ in \. Degrees of plausibility quantify that
+part of the agent’s knowledge or belief base which is compatible
+with \, i.e., the part that supports \ and the part that
+supports neither \ nor \. Dempster and Shafer call the
+plausibility of \ its
+upper probability.
+Indeed, one can
+interpret the interval \, P]\) as the interval of
+probabilities that the agent assigns to the proposition \. In our
+running example, Sophia assigns the interval \ to the
+proposition that the ancient coin will land heads and \ to
+the proposition that the Euro will land heads.
+Dempster-Shafer theory is more general than the theory of subjective
+probability in the sense that the latter requires additivity, whereas
+the former requires only super-additivity. However, most authors agree
+that DS theory is not as general as imprecise probability theory. The
+reason is that DS belief functions can be represented as convex sets
+of probabilities. More precisely, for every DS belief function
+\ there is a convex set of probabilities \ such
+that \=\min \{ p : p \in \mathcal{P}\}\) and \ = \max
+\{ p : p\in\mathcal{P}\} \) . As not every convex set
+of probabilities can be represented as a DS belief function, sets of
+probabilities arguably provide the most general framework we have come
+across so far.
+How are DS belief functions reflected in decision making? One
+interpretation of DS theory, called the
+tranferable belief
+model
+, distinguishes between two mental
+levels: the credal level, where one entertains and quantifies various
+beliefs, and the pignistic level, where one uses those beliefs for
+decision making. Its twofold thesis is that  betting ratios
+should indeed obey the probability calculus, but that degrees of
+belief, being different from  betting ratios, need not. It
+suffices that they satisfy the weaker DS principles. The idea is that
+whenever one is forced to bet on the pignistic level, the degrees of
+belief from the credal level are used to calculate  betting
+ratios that satisfy the probability axioms. These in turn are then
+used to calculate the agent’s expected utility for various
+acts.
+One of the chief novelties of Dempster-Shafer theory is its modeling
+of belief update, which we do not cover here. For a good introduction
+to this and other aspects of Dempster-Shafer theory, see Section 5.4
+in Kyburg and Teng . For a Dutch Book-style argument for
+Dempster-Shafer theory, see Paris . For an accuracy-style
+argument see Williams .
+3.3 Possibility and Plausibility Theory
+Let us summarize the accounts we have dealt with so far. Subjective
+probability theory requires degrees of belief to be additive. For any
+disjoint \ in \, a subjective probability function
+Pr: \ must satisfy:
+\[
+\Pr + \Pr = \Pr.
+\]
+Dempster-Shafer theory only requires degrees of belief to be
+super-additive. For any disjoint \ in \, a DS
+belief function Bel: \ must satisfy:
+\[
+\Bel + \Bel \le \Bel.
+\]
+But there are many other ways that we could have weakened the
+additivity axiom. Possibility theory  requires
+degrees of belief to be
+maxitive
+and hence sub-additive. For
+any \, a possibility measure \ must satisfy:
+\[
+\begin{align}
+\Pi & = 0;\\
+\Pi & =1;\\
+\max\{\Pi, \Pi\} & = \Pi;
+\end{align}
+\]
+which entails that
+\[ \Pi+\Pi \geq \Pi.\]
+The idea is that a proposition is at least as possible as each of the
+possibilities it comprises, and no more possible than the “most
+possible” possibility. The dual notion of a
+necessity
+measure
+\ is defined for all
+\ in \ by
+\[
+\Nu = 1 - \Pi,
+\]
+which implies that
+\[
+\Nu = \min\{\Nu, \Nu\}.
+\]
+Although the agent’s doxastic state in possibility theory is
+completely specified by either \ or \, the agent’s
+epistemic attitude towards a particular proposition \ is only
+jointly specified by \\) and \\). The reason is that, in
+contrast to probability theory, \\) is not
+determined by \\).
+Possiblity theory is inspired by fuzzy set theory . The
+latter is designed to accommodate linguistic phenomena of
+vagueness
+.
+ Vagueness arises for predicates like “tall” for which
+there are extreme, paradigmatic and borderline cases. We might
+represent this phenomenon formally by a membership function \, where \\) is the degree to which
+person of height \ belongs to the set of tall people \.
+Then, \\) is the set of all tall heights; \\)
+is the set of all short heights; and \}\mu^{-1}\)
+is the set of all borderline heights. Since many distinct heights are
+tall, it is clear why such membership functions should not satisfy
+Additivity.
+Fuzzy set theory interprets \\) as the degree to which
+the vague statement “someone measuring 178cm is tall” is
+true
+. Degrees of truth belong to the philosophy of language.
+They do not  have anything to do with degrees of belief, which
+belong to epistemology. The epistemological thesis of possibility
+theory is that your subjective degrees of possibility should reflect
+semantic facts about degree of membership. Suppose you learn that
+Sophia is tall. Then, your degree of possibility for the statement
+“Sophia is 178cm” should equal \\).
+That may handle borderline heights elegantly, but it has somewhat
+unintuitive consequences at the extremes. Since, presumably,
+\=\mu_T=1\), you must find it
+maximally possible that Sophia is 190 and 210cm tall.
+In “chancy” situations, possibility theory can only make
+very course-grained distinctions. Since Sophia is certain that the
+Euro coin will not land on its edge \=\Pi\), she must
+have \=1\) or \=1.\) The most natural way to model her
+attitude is to set \=\Pi=1\). There is no way of expressing
+a partial attitude towards both heads and tails, since these are both
+maximally possible.
+An even more general framework than possibility or Dempster-Shafer
+theory is provided by Halpern’s
+plausibility measures
+. These are functions Pl:\
+such that for all \ in \:
+\[\begin{align}
+\Pl &= 0; \\
+\Pl &= 1;\\
+\Pl &\le \Pl \text{ if } A \subseteq B.
+\end{align}\]
+With the exception of sets of probabilities, every model of partial
+belief that we have seen in this section is a special case of
+plausibility measures. While it is fairly uncontroversial that partial
+belief functions should obey Halpern’s plausibility calculus, it
+is questionable whether his minimal principles capture anything of
+epistemic interest. The resulting epistemology is, in any case, very
+thin. It should be noted, though, that Halpern does not intend
+plausibility measures to provide a complete epistemology, but rather a
+general framework to study more specific accounts.
+For more on
+possibility theory see Huber  and Halpern . See the latter
+especially for approaches to conditional possibility measures. For a
+helpful taxonomy of models of partial belief see this
+appendix
+to the entry on
+inductive logic
+.
+3.4 Ranking Theory
+Ranking theory  assigns
+numerical degrees of
+disbelief
+directly to possibilities in
+\. A
+pointwise ranking function
+\ assigns a natural number ) to each
+possible world in \. These numbers represent the degree of
+disbelief you assign to each possibility. Equipped with a pointwise
+ranking function, we can generate a
+numbered partition
+of
+\:
+\[
+\kappa^{-1}, \kappa^{-1},
+\kappa^{-1}, \ldots ,\kappa^{-1}.
+\]
+The cell \\) is the set of possibilities which are
+maximally disbelieved. The cell \\) is the set of
+possibilities which are disbelieved to degree \. Finally,
+\\) contains the possibilities which are not
+disbelieved .
+Except for \\), the cells \\) may be
+empty. Since one cannot consistently disbelieve everything, the first
+cell must not be empty.
+A pointwise ranking function \ induces a
+ranking
+function
+\
+on the field \ by setting,
+\[
+\varrho = \min\{\kappa: w \in A\}, 
+\]
+for each \. In other words: a set of worlds is only
+as disbelieved as its most plausible member. By convention, we set
+\=\infty\). This entails that ranking functions
+are 
+minimitive
+and hence super-additive. In other
+words, for all \ in \,
+\[
+\varrho = \min\{\varrho, \varrho\}.
+\]
+Alternatively, we can characterize ranking functions as those
+functions \
+satisfying
+\[\begin{align}
+\varrho &= 0;  \\
+\varrho &= \infty; \\
+\varrho &= \min \{\varrho, \varrho\},
+\end{align}\]
+for all \ The first axiom says that no agent
+should disbelieve the tautological proposition \. The second says
+that every agent should maximally disbelieve the contradictory
+prosition. Intuitively, the final axiom says that a disjunction \ should be disbelieved just in case both disjuncts are
+disbelieved. However, the meaning of the final axiom is not exhausted
+by this gloss .
+As stated above, the third axiom is called
+finite
+minimitivity.
+Just as in probability theory, it can be
+strengthened to countable unions, resulting in
+countably
+minimitive ranking functions. Unlike probability theory, finite
+minimitivity can also be strenghtened to arbitrary unions, resulting
+in
+completely
+minimitive ranking functions. See Huber 
+for conditions under which a ranking function defined on a field of
+propositions induces a pointwise ranking functions on the underlying
+set of possibilities.
+The number \\) represents the agent’s degree of
+disbelief in the proposition \. If \ \gt 0\), the agent
+disbelieves \ to a positive degree. Therefore, on pain of
+inconsistency, she cannot also disbelieve \ to a positive
+degree. In other words, for every proposition \ in \,
+at least one of \ has to be assigned rank 0. If
+\ = 0\), the agent does not disbelieve \ to a positive
+degree. However, this does not mean that she believes \ to a
+positive degree \ the agent may suspend judgment and assign rank 0
+to both \ and \. So belief in a proposition is
+characterized by disbelief in its negation.
+For each ranking function \ we can define a corresponding
+belief function
+\ by setting \ = \varrho - \varrho \) for all \ in \. The belief
+function assigns positive numbers to those propositions that are
+believed, negative numbers to those propositions that are disbelieved,
+and 0 to those propositions with respect to which the agent suspends
+judgment. Each ranking function \ induces a
+belief
+set
+\[\begin{align}
+\bB &= \{A \in \mathbf{A}: \beta \gt 0\} \\
+ &= \{A \in \mathbf{A}: \varrho \gt \varrho\} \\
+ &=\{A \in \mathbf{A}: \varrho \gt 0\}.
+\end{align}\]
+\ is the set of all propositions the agent believes to some
+positive degree, or equivalently, whose complements she disbelieves to
+a positive degree. The belief set \ induced by a
+ ranking function
+\ is consistent and deductively closed . Since any proposition with
+\>0\) is believed, ranking theory can be seen as satisfying
+the Lockean thesis 
+ without sacrificing deductive closure. Note, however, that we could
+have defined \ to include all those propositions \ with
+\ \gt t\) for some threshold \ greater than zero. See
+Raidl  for an exploration of these possibilities.
+So far we have discussed the synchronic structure ranking theory
+imposes on belief. How should ranks be updated when new information is
+received? The
+conditional
+ranking function
+\:\mathbf{A}\times\mathbf{A} \rightarrow
+\bN\cup \{\infty \} \) based on the non-conditional ranking function
+\ is defined by setting
+\[
+\varrho = \varrho - \varrho,
+\]
+for all \ in \ where \. We
+adopt the convention that \ and \ for all finite \. Note that this entails that
+\ = \infty\). Requiring that
+\ = \infty\) for all \ in
+\ guarantees that \\) is a
+ ranking function. Conditional ranking functions give
+rise to a ranking-theoretic counterpart of strict
+conditionalization:
+Plain Conditionalization
+.
+Suppose that \\) is your ranking function at time \
+and that \,\varrho \lt \infty\). Furthermore,
+suppose that between \ and \ you become certain of
+\ and no logically stronger proposition. Then, your ranking
+function at time \ should be \\).
+Note that all the considerations relevant to the interpretation of
+Bayesian conditionalization 
+ apply equally to ranking-theoretic conditioning. It is clear from the
+definition of conditioning that, as in the Bayesian case, the rank of
+the material conditional is a lower bound for the conditional rank:
+\\leq \beta\). That ensures that
+ranking-theoretic update satisfies Conditionalization .
+ It also satisfies a version of Rational Monotony: if \=0\) and \>0,\) then \>0.\) Therefore,
+ranking-theoretic update satisfies the “spirit” of AGM
+update. Note, however, that ranking theory has no trouble with
+iterated belief revision: a revision takes as input a ranking function
+and an evidential proposition and outputs a new ranking function.
+Moreveover, the situation changes if the threshold for belief is
+raised to some positive number greater than zero: in that case,
+Rational Monotony may no longer be satisfied .
+Plain conditionalization only covers the case when new evidence
+acquires the maximum degree of certainty. Spohn  also defines a
+ranking-theoretic analogue to Jeffrey conditionalization. In this
+case, new evidence does not acquire maximum certainty, but merely
+changes your ranks for various propositions. For more on
+ranking-theoretic notions of belief update see Huber . For
+a comparison of probability theory and ranking theory see Spohn 
+Why should grades of disbelief obey the ranking calculus? And why
+should ranking functions be updated according to ranking-theoretic
+conditionalization? Recall that in the case of subjective probability
+theory, analogous questions were answered by appeal either to the
+Dutch book arguments or considerations of epistemic accuracy. Is it
+possible to make similar arguments in favor of ranking theory?
+The short answer is yes: Huber  proves that
+obeying the normative constraints of the ranking calculus is a
+necessary and sufficient condition for maintaining consistency and
+deductive closure, both synchronically and in the face of new
+evidence. The latter end is, in turn, a necessary, but insufficient
+means to attaining the end of always having only true beliefs, and as
+many thereof as possible. Unlike the Dutch book arguments, this result
+requires no appeal to pragmatic considerations about betting behavior.
+Brössel, Eder & Huber  discuss the importance of this
+result as well as its Bayesian role-model, Joyce’s 
+“non-pragmatic” vindication of probabilism.
+It is fairly straightforward to see that any agent that obeys the
+synchronic requirements of the ranking calculus  will maintain beliefs that are
+mutually consistent and deductively closed, no matter what new
+evidence arrives. What is slightly more puzzling is why any agent who
+does
+not
+validate the ranking calculus must either have
+inconsistent beliefs, or fail to believe a logical consequence of some
+of her beliefs. In other words: it is clear that the ranking calculus
+is sufficient for deductive cogency, but why is it
+necessary
+?
+To sketch the necessity argument, we must introduce a bit of
+terminology. An agent’s degree of
+entrenchment
+for a
+proposition \ is the number of “independent and minimally
+positively reliable”  information sources saying
+\ that it would take for the agent to give up her disbelief that
+\. If the agent does not disbelieve \ to begin with, her
+degree of entrenchment for \ is 0. If no finite number of
+information sources is able to make the agent give up her disbelief
+that \, her degree of entrenchment for \ is \. Of
+course, information sources we typically encounter are rarely
+independent or mp-reliable. However, this is not crucial. Independent,
+mp-reliable sources are a theoretical construct – the connection
+between entrenchment and update is stated as a counterfactual because
+the agent need never actually encounter such information sources.
+The necessity argument proceeds by stipulating that entrenchment is
+reflected in degrees of disbelief. This connects an agent’s
+updating
+behavior
+with her ranks for various propositions.
+Recall that Bayesians stipulate a similar connection between degrees
+of belief and acceptable betting ratios. Equipped with this
+connection, Huber  proves that if an agent fails to
+validate the ranking calculus then, were she to encounter independent,
+mp-reliable information sources of various kinds, her beliefs would
+fail to be deductively cogent. That completes the necessity
+argument.
+With the possible exception of decision making , it seems that we can do
+everything with ranking functions that we can do with probability
+measures. Ranking theory also naturally gives rise to a notion of
+qualitative belief that incurs no Lottery-style paradoxes .
+ This may be vital if we want to stay in tune with traditional
+epistemology. The treatment of ranking theory in this article has
+been, of necessity, rather compressed. For an excellent article-length
+introduction see Huber . For an accessible book, see Huber
+. For an extensive book-length treatment, with applications to
+many subjects in epistemology and philosophy of science, see Spohn
+.
+4. Full and Partial Belief
+4.1 Eliminationism
+There are those who deny that there are any interesting principles
+bridging full and partial belief. Theorists of this persuasion often
+want either to eliminate one of these attitudes or reduce it to a
+special case of the other. Jeffrey  suggests that talk of full
+belief is vestigial and will be entirely superseded by talk of partial
+belief and utility:
+… nor am I disturbed by the fact that our ordinary notion of
+belief
+is only vestigially present in the notion of degree of
+belief. I am inclined to think Ramsey sucked the marrow out of the
+ordinary notion, and used it to nourish a more adequate view. But
+maybe there is more there, of value. I hope so. Show me; I have not
+seen it at all clearly, but it may be there for all that.
+Theorists such as Kaplan  also suggests that talk of full belief
+is superfluous once the mechanisms of Bayesian decision theory are in
+place. After all, only partial beliefs and utilities play any role in
+the Bayesian framework of rational deliberation, whereas full belief
+need not be mentioned at all. Those committed to full beliefs have the
+burden of showing how rationality will be the poorer without recourse
+to full belief. Kaplan calls this the
+Bayesian Challenge.
+Stalnaker  is much more sympathetic to a qualitative notion of
+belief, but acknowledges the force of the Bayesian challenge.
+It is true that there is no canonical qualitative analogue to the
+Bayesian theory of practical deliberation. However, the fact that it
+is the theorist of full belief that feels the challenge, and not
+vice versa
+, may be an accident of history: if a qualitative
+theory of practical deliberation had been developed first, the shoe
+would now be on the other foot. The situation would be even more
+severe if qualitative decision making, which we seem to implement as a
+matter of course, were less cognitively demanding than its Bayesian
+counterpart. Of course, this anticipates a robust theory of rational
+qualitative deliberation that is not immediately forthcoming. However,
+recent work such as Lin  and Spohn  may remedy that
+inadequacy. For example, Lin  proves a Savage-style
+representation theorem characterizing the relationship between full
+beliefs, desires over possible outcomes and preferences over acts. By
+developing a theory of rational action in terms of qualitative belief,
+Lin demonstrates how one might answer the Bayesian challenge.
+On the other hand there are partisans of full belief that are deeply
+skeptical about partial beliefs. See Harman , Pollock ,
+Moon , Horgan  and the “bad cop” in
+Hájek and Lin . Many of these object that partial beliefs
+have no psychological reality and would be too difficult to reason
+with if they did. Horgan  goes so far as to say that typically
+“there is no such psychological state as the agent’s
+credence in \” and that Bayesian epistemology is “like
+alchemy and phlogiston theory: it is not about any real phenomena, and
+thus it also is not about any genuine norms that govern real
+phenomena.” Harman  argues that we have very few explicit
+partial beliefs. A theory of reasoning, according to Harman, can
+concern only explicit attitudes, since these are the only ones that
+can figure in a reasoning process. Therefore, Bayesian epistemology,
+while perhaps an account of dispositions to act, is not a guide to
+reasoning. Nevertheless, partial beliefs may be implicit in our system
+of full beliefs in that they can be reconstructed from our
+dispositions to revise them:
+How should we account for the varying strengths of explicit beliefs? I
+am inclined to suppose that these varying strengths are implicit in a
+system of beliefs one accepts in a yes/no fashion. My guess is that
+they are to be explained as a kind of epiphenomenon resulting from the
+operation of rules of revision. For example, it may be that \ is
+believed more strongly than \ if it would be harder to stop
+believing \ than to stop believing \, perhaps because it would
+require more of a revision of one’s view to stop believing \
+than to stop believing \ .
+On this picture, almost all of our explicit beliefs are qualitative.
+Partial beliefs are not graded
+belief attitudes
+toward
+propositions, but rather dispositions to revise our
+full
+beliefs. The correct theory of partial belief, according to Harman,
+has more to do with entrechment orders  or
+ranking-theoretic degrees of belief  than with
+probabilities. Other apparently partial belief attitudes are explained
+as full beliefs
+about
+objective probabilities. So, in the
+case of a fair lottery with ten thousand tickets, the agent does not
+believe to a
+high degree
+that the \ ticket will not
+win, but rather fully believes that it is objectively improbable that
+it will win.
+Frankish  objects that Harman’s view requires that an
+agent have a full belief in any proposition that we have a degree of
+belief in: “And this is surely wrong. I have some degree of
+confidence  in the proposition that it will rain
+tomorrow, but I do not believe flat-out that it will rain – not,
+at least, by the everyday standards for flat-out belief.” Harman
+might reply that Frankish merely has a full belief in the objective
+probability of rain tomorrow. Frankish claims that this escape route
+is closed to Harman because single events “do not have objective
+probabilities,” but this matter is hardly settled.
+Staffel  gives an example in which a proposition with a higher
+degree of belief is apparently less entrenched than one with a lower
+degree of belief. Suppose that you will draw a sequence of two million
+marbles from a big jar full of red and black marbles. You do not know
+what proportion of the marbles are red. Consider the following
+cases:
+
+You have drawn twenty marbles, 19 black and one red. Your degree
+of belief that the last marble you will draw is black is \.
+
+You have drawn a million marbles, 900,000 of which have been
+black. Your degree of belief that the last marble you will draw is
+black is \.
+Staffel argues that your degree of belief in the first case is higher
+than in the second, but much more entrenched in the second than in the
+first. Therefore, degree of belief cannot be reduced to degree of
+entrenchment. Nevertheless, the same gambit is open to Harman in the
+case of the marbles–he can claim that in both scenarios you
+merely have a full belief in a proposition about objective chance. See
+Staffel  for a much more extensive engagement with Harman
+.
+4.2 Bridge Theories
+Anyone who allows for the existence of both full and partial belief
+inherits a thorny problem: how are full beliefs related to partial
+beliefs? That seemingly innocent question leads to a treacherous
+search for
+bridge principles
+connecting a rational
+agent’s partial beliefs with her full beliefs. Theorists engaged
+in the search for bridge principles usually take for granted some set
+of rationality principles governing full belief and its revision, e.g.
+AGM theory, or a rival system of non-monotonic reasoning. Theorists
+usually also take for granted that partial belief ought to be
+representable by probability functions obeying some flavor of Bayesian
+rationality. The challenge is to propose additional rationality
+postulates governing how a rational agent’s partial beliefs
+cohere with her full beliefs. In this section, we will for the most
+part accept received wisdom and assume that orthodox Bayesianism is
+the correct model of partial belief and its updating. We will be more
+open-minded about the modeling of full belief and its rational
+revision.
+In this section, we will once again take propositions over the set
+\ to be the objects of belief. As before, the reader is invited to
+think of \ as a set of coarse-grained, mutually exclusive,
+possible ways the actual world might be. We write \ to denote
+the set of
+propositions
+that the agent believes and use
+\\) as shorthand for \. We will also require some
+notation for qualitative propositional belief change. For all
+\, write \ for the set of propositions the
+agent would believe upon learning \ and no stronger proposition.
+We will also write \\) as shorthand for \ By
+convention, \ If \ is a set of propositions,
+we let \ be the set \
+The set \ represents an agent’s
+dispositions
+to update her qualitative beliefs given information from \.
+The following normative constraint on the set of full beliefs \
+plays a large role in what follows.
+Deductive Cogency.
+The belief set \ is
+consistent and \ if and only if \
+In other words, deductive cogency means that there is a single,
+non-empty proposition, \, which is the logically strongest
+proposition that the agent believes, entailing all her other
+beliefs.
+All of the rationality norms that we have seen for updating
+qualitative beliefs have propositional analogues. The following are
+propositional analogues for the AGM principles from Section 2.2.1.
+
+\\);
+
+\;
+
+\ \);
+
+If \ \), then \;
+
+\ is consistent iff \;
+
+If \, then \.
+
+\\);
+
+If \\) then, \
+\subseteq \Bel_{E\cap F}.\)
+Supposing that for all \, \ satisfies
+deductive cogency, the first six postulates reduce to the following
+three.
+
+\;
+
+\
+
+If \ then \
+Together, Inclusion and Preservation say that whenever information \ is consistent with  current belief \ \[\cap \Bel_E = \cap \Bel \cap E.\] If \ is a collection of propositions and for all \ the belief sets \ satisfy the AGM principles, we say that \ the agent’s disposition to update her qualitative beliefs given information from \, satsifies the basic AGM principles.
+We will use \\) to denote the probability function
+representing the agent’s partial beliefs. Of course,
+\\) is defined on a \-algebra of subsets of \.
+In the usual case, when \ is finite, we can take the powerset
+\\) to be the relevant \-algebra. To update
+partial belief, we adopt the standard probabilistic modeling. For
+\ such that \>0,\) \\) is the
+partial belief function resulting from learning \ We will
+sometimes use \ as a shorthand for \\). Almost
+always, partial belief is updated via standard conditioning. As
+before, \ is the set of propositions with positive
+probability according to \.
+4.2.1 Belief as Extremal Probability
+The first bridge principle that suggests itself is that full belief is
+just the maximum degree of partial belief. Expressed
+probabilistically, it says that at all times a rational agent’s
+beliefs and partial beliefs can be represented by a pair \ satisfying:
+Extremal Probability.
+\ if and only if
+\=1.\)
+Roorda  calls this the
+received view
+of how full and
+partial belief ought to interact. Gärdenfors  is a
+representative of this view, as are van Fraasen  and
+Arló-Costa , although the latter two accept a slightly
+non-standard probabilistic modeling for partial belief. For fans of
+deductive cogency, the following observations ought to count in favor
+of the received view.
+Theorem.
+If \ satisfy
+extremal probability, then \ is deductively cogent.
+Gärdenfors  proves the following.
+Theorem.
+Suppose that\ satisfy extremal probability for all \
+Then \ satisfies the AGM postulates.
+In other words: if an agent’s partial beliefs validate the
+probability axioms, she updates by Bayesian conditioning and fully
+believes all and only those propositions with extremal probability,
+her qualitative update behavior will satisfy all the AGM postulates
+. Readers who take
+the AGM revision postulates to be a
+sine qua non
+of rational
+belief update will take this to be good news for the received view.
+Roorda  makes three criticisms of the received view. Consider
+the following three propositions.
+Millard Fillmore was the 13th President of the United States;
+Millard Fillmore was a U.S. President;
+Millard Fillmore either was or was not a U.S. President.
+Of course, I am not as confident that Fillmore was the 13th president
+as I am in the truth of the tautology expressed in . Yet there does
+not seem to be anything wrong with saying that I fully believe each of
+,  and . However, if extremal probability is right, it is
+irrational to fully believe each of ,  and  and not assign
+them all the same degree of belief.
+Roorda’s second objection appeals to the standard connection
+between degrees of belief and practical decision making. Suppose I
+fully believe . According to the standard interpretation of degrees
+of belief in terms of betting quotients, I ought to accept a bet that
+pays out a dollar if  is true, and costs me a million dollars if
+ is false. In fact, if I truly assign unit probability to , I
+ought to accept nearly any stakes whatsoever that guarantee some
+positive payout if  is true. Yet it seems perfectly rational to
+fully believe  and refrain from accepting such a bet. If we accept
+Bayesian decision theory, extremal probability seems to commit me to
+all sorts of weird and seemingly irrational betting behavior.
+Roorda’s final challenge to extremal probability appeals to
+corrigibility
+, according to which it is reasonable to believe
+that at least some of my beliefs may need to be abandoned in light of
+new information. However, if partial beliefs are updated via Bayesian
+conditioning, I can never cease to believe any of my full beliefs
+since if \=1\) it follows that \=1\) for all \
+such that \>0\). If we believe in Bayesian conditioning,
+extremal probability seems to entail that I cannot revise any of my
+full beliefs in light of new information.
+4.2.2 The Lockean Threshold
+The natural response to the difficulties with the received
+view is to retreat from full certainty. Perhaps full belief
+corresponds to partial belief above some
+threshold
+falling
+short of certainty. Foley  dubbed this view the
+Lockean
+thesis
+, after some apparently similar remarks in Book IV of
+Locke’s 
+Essay Concerning Human
+Understanding.
+So far, the Lockean thesis is actually ambiguous.
+There may be a single threshold that is rationally mandated for all
+agents and in all circumstances. Alternatively, each agent may have
+her own threshold that she applies in all circumstances–that
+threshold may characterize how “bold” or
+“risk-seeking” the agent is in forming qualitative
+beliefs. A yet weaker thesis holds that the threshold may be
+contextually determined. We distinguish the strong,
+context-independent Lockean thesis  from the weaker,
+context-dependent thesis . The domain of the quantifier may be
+taken as the set of all belief states \ a
+particular
+agent may find herself in, or as the set of all
+belief states whatsoever.
+
+There is a threshold \\) such that all rational  \ satisfy \[\Bel \text{ iff } \Pr \geq s.\]
+
+For every rational \ there is a threshold \\) such that \[\Bel \text{ iff } \Pr \geq s.\]
+Most discussions of the Lockean thesis have in mind the strong thesis.
+More recent work, especially Leitgeb , adopts the weaker thesis.
+The strong thesis leaves the correct threshold unspecified. Of course,
+for every \\) we can formulate a specific thesis
+\ in virtue of which the strong thesis is true. For
+example, \ is a very permissive version of the
+thesis, whereas \ and \ are more
+stringent. It is also possible to further specify the weak thesis. For
+example, Leitgeb  believes that the contextually-determined
+threshold should be equal to the degree of belief assigned to the
+strongest proposition that is fully believed. In light of deductive
+cogency, that corresponds to the orthographically ungainly
+\}\).
+The strong Lockean thesis gives rise to the well-known
+Lottery
+paradox
+, due originally to Kyburg . The lesson of the
+Lottery is that the strong thesis is in tension with deductive
+cogency. Suppose that \ is the universally correct Lockean
+threshold. Now think of a fair lottery with \ tickets, where \
+is chosen large enough that \ \geq s.\) Since the lottery is
+fair, it seems permissible to fully believe that
+some
+ticket
+is the winner. It also seems reasonable to assign degree of belief
+\ to each proposition of the form ‘The \
+ticket is the winner.’ According to the Lockean thesis, such an
+agent ought to fully believe that the first ticket is a loser, the
+second ticket is a loser, the third is a loser, etc. Since cogency
+requires belief to be closed under conjunction, she ought to believe
+that all the tickets are losers. But now she violates cogency by
+believing both that every ticket is a loser and that some ticket is a
+winner. Since \ was arbitrary, we have shown that no matter how
+high we set the threshold, there is some Lottery for which an agent
+must either violate the Lockean thesis or violate deductive cogency.
+According to Kyburg, what the paradox teaches is that we should give
+up on deductive cogency: full belief should not necessarily be closed
+under conjunction. Many others take the lesson of the Lottery to be
+that the strong Lockean thesis is untenable.
+Several authors , Ryan , Douven ) attempt
+to revise the strong Lockean thesis by placing restrictions on when a
+high degree of belief warrants full belief. Broadly speaking, they
+propose that a high degree of belief is sufficient to warrant full
+belief unless some defeating condition holds. For example, Douven
+ says that it is sufficient except when the proposition is a
+member of a
+probabilistically self-undermining
+set. A set
+\ is probabilistically self-undermining iff for all \>s\) and \\leq s,\) where \.\) It is clear that this proposal would prohibit
+full belief that a particular lottery ticket will lose.
+All proposals of this kind are vitiated by the following sort of
+example due to Korb . Let \ be any proposition with a degree
+of belief above threshold but short of certainty. Let \ be the
+proposition that the \ lottery ticket  tickets) will lose. Consider the set \ Each member of \ is above
+threshold, since \ is above threshold. Furthermore, the set
+\ meets Douven’s  defeating conditions. Therefore,
+these proposals prohibit full belief in any proposition with degree of
+belief short of certainty. Douven and Williamson  generalize
+this sort of example to trivialize an entire class of similar formal
+proposals.
+Buchak  argues that what partial beliefs count as full beliefs
+cannot merely be a matter of the degree of partial belief, but must
+also depend on the type of evidence it is based on. According to
+Buchak, this means there can be no merely formal answer to the
+question: what conditions on partial belief are necessary and
+sufficient for full belief? The following example, of a type going
+back to Thomson , illustrates the point. Your parked car was hit
+by a bus in the middle of the night. The bus could belong either to
+the blue bus company or the red bus company. Consider the following
+two scenarios.
+
+You know that the blue company operates 90%
+of the buses in the area, and the red bus company operates only 10%.
+You have degree of belief 0.9 that a blue bus is to blame.
+
+The red and blue companies operate an equal
+number of buses. A 90% reliable eyewitness testifies that a blue bus
+hit your car. You have degree of belief 0.9 that a blue bus is to
+blame.
+Buchak  argues that it is rational to have full belief that a
+blue bus is to blame in the first scenario, but not in the second. You
+have only statistical evidence in the first scenario, whereas in the
+second, a causal chain of events connects your belief to the accident
+, Nelkin  and Schauer ). These
+intuitions, Buchak observes, are reflected in our legal practice:
+purely statistical evidence is not sufficient to convict. If you find
+Buchak’s point convincing, you will be unsatisfied with most of
+the proposed accounts for how full and partial belief ought to
+correspond ).
+Despite difficulties with buses and lotteries, the dynamics of
+qualitative belief under the strong thesis are independently
+interesting to investigate. For example, van Eijk and Renne 
+axiomatize the logic of belief for a Lockean with threshold
+\. Makinson and Hawthorne  investigate which
+principles of non-monotonic logic are validated by Lockean agents.
+Before turning to proposed solutions to the Lottery paradox, we make
+some observations about qualitative Lockean revision, inspired largely
+by Shear and Fitelson .
+It is a theorem of the probability calculus that \ \leq
+\Pr\). So if \ is assigned a high degree of belief
+given \, the material conditional \ must have
+been assigned a degree of belief at least as high
+ex ante
+. It
+is easy to see that as a probabilistic analogue of the principle of
+Conditionalization from non-monotonic logic or, equivalently, the AGM
+Inclusion principle. That observation has the following consequence:
+any belief that the Lockean comes to have after conditioning, she
+could have arrived at by adding the evidence to her prior beliefs and
+closing under logical consequence. Therefore Lockean updating
+satisfies the AGM principle of Inclusion. Furthermore, it follows
+immediately from definitions that Lockean update satisfies Success and
+Extensionality.
+Theorem.
+Suppose that \\). For
+all \, let \ \geq s\}\).
+Then, \ satisfies Inclusion, Success and
+Extensionality.
+In Section 2.2, we argued that Inclusion and Preservation capture the
+spirit of AGM revision. If Lockean revision also satsified
+Preservation, we would have a clean sweep of the AGM principles, with
+the exception of deductive cogency. However, that cannot hold in
+general. It is possible to construct examples where \ \lt
+s,\) \\geq s\) and yet \ \lt s\). For Lockean agents
+this means that it is possible to lose a belief, even when revising on
+a proposition that is not disbelieved.
+Recall the example of Alice, Bob and the Ford from Section
+2.1.1. Let \ corresponding to the worlds in which
+Alice owns the Ford, Bob own the Ford and no one in the office owns
+the Ford.  Suppose the probability function \[\Pr =\frac{6}{10},
+\Pr=\frac{3}{10} \text{ and } \Pr=\frac{1}{10}\] captures my
+partial beliefs. For Lockean thresholds in the interval \,
+my full beliefs are exhausted by \ Now suppose
+I were to learn that Alice does not own the Ford. That is consistent
+with all beliefs in \, but since \ =
+\frac{3}{4}\) it follows by the Lockean thesis that \. So Lockeanism does not in general validate
+Preservation. The good news, at least for those sympathetic to
+Pollock’s critique of non-monotonic logic, is that the Lockean
+thesis allows for undercutting defeat of previous beliefs.
+However, Shear and Fitelson  also have some good news for fans
+of AGM and the Lockean thesis. Two quantities are in the
+golden
+ratio
+\ if their ratio is the same as the ratio of their
+sum to the larger of the two quantities, i.e. for \, if
+\ then \. The
+golden ratio is an irrational number approximately equal to \
+Its inverse \ is approximately \ Shear and
+Fitelson prove the following intriguing result.
+Theorem.
+Suppose that \. For all \, let \ \geq s\}.\) Let \ Then \ satisfies the six
+basic AGM postulates.
+That shows that for relatively low thresholds, Lockean updating
+satsifies all the AGM postulates–at least when we restrict to
+deductively cogent belief sets. For an explanation of why the golden
+ratio arises in this context see Section 6.2 in Genin .
+4.2.3 The Stability Theory of Belief
+For many, sacrificing deductive cogency is simply too high a price to
+pay for a bridge principle, even one so simple and intuitive as the
+strong Lockean thesis. That occassions a search for bridge principles
+that can be reconciled with deductive cogency. One proposal, due to
+Leitgeb  and Arló-Costa , holds that
+rational full belief corresponds to a stably high degree of belief,
+i.e. a degree of belief that remains high even after conditioning on
+new information. Leitgeb calls this view the
+Humean thesis
+,
+due to Hume’s conception of belief as an idea of superior
+vivacity, but also of superior steadiness. See Loeb  for a
+detailed development of the stability theme in Hume’s conception
+of belief. Leitgeb  formalizes Hume’s definition,
+articulating the following version of the thesis:
+
+For all rational pairs  \ there is \ such that \[\Bel \text{ iff } \neg B \notin \Bel \text{ implies } \Pr> s.\]
+In other words: every full belief must have stably high conditional
+degree of belief, at least when conditioning on propositions which are
+not currently disbelieved. Since full belief occurs on both sides of
+the biconditional, it is evident that this is not a proposed
+reduction
+of full belief to partial belief, but rather a
+constraint that every rational agent must satisfy. The Humean thesis
+leaves the precise threshold \ unspecified. Of course, for every
+\ we can formulate a specific thesis
+\ in virtue of which the thesis is true. For example,
+\ requires that every fully believed proposition
+remains more likely than its negation when conditioning on
+propositions not currently disbelieved.
+Some form of stability is widely considered to be a necessary
+condition for
+knowledge
+. Socrates propounds such a view in
+the
+Meno
+. Paxson Jr. and Lehrer  champion such a view
+in the epistemology literature post-Gettier . However, stability
+is not usually mooted as a condition of
+belief
+. Raidl and
+Skovgaard-Olsen  claim that Leitgeb’s stability condition
+is more appropriate in an analysis of knowledge and too stringent a
+condition on belief. A defender of the Humean thesis might say that
+every
+rational
+belief is possibly an instance of knowledge.
+Since knowledge is necessarily stable, unstable beliefs are
+ipso
+facto
+not known.
+Leitgeb demonstrates the following relationships between the Humean
+thesis, deductive cogency and the weak Lockean thesis.
+Theorem.
+Suppose that \
+satsify \ and \ Then, \
+is deductively cogent and \ satisfy
+\}.\)
+So if an agent satisfies the Humean thesis and does not
+“fully” believe the contradictory proposition, her
+qualitative beliefs are deductively cogent and furthermore, she
+satisfies the weak Lockean thesis, where the threshold is set by the
+degree of belief assigned to \ the logically strongest
+proposition she believes. Leitgeb also proves the following partial
+converse.
+Theorem.
+Suppose that \ is deductively cogent
+and \ satisfy \}\). Then, \ satsify
+\ and \.
+Together, these two theorems say that the Humean thesis  is equivalent to deductive cogency and the weak Lockean
+thesis \)). Since it is always possible
+to satisfy HT\, Leitgeb gives us an ingenious way to
+reconcile deductive cogency with a version of the Lockean thesis.
+Recall the example of the lottery. Let \ where \ is the world in which the \ ticket
+is the winner. No matter how many tickets are in the lottery, a Humean
+agent cannot believe any ticket will lose. Suppose for a contradiction
+that she believes \, the proposition that the
+first ticket will lose. Now suppose she learns \, that
+all but the first and second ticket will lose. This is compatible with
+her initial belief, but her updated degree of belief that the first
+ticket will lose must be \. That contradicts the Humean thesis.
+So she cannot believe that any ticket will lose. In this Lottery
+situation the agent cannot fully believe any non-trivial proposition.
+This example also shows how sensitive the Humean proposal is to the
+fine-graining of possibilities. If we coarsen \ into the set of
+possibilities \, where \ is the world in which
+the first ticket is the winner and \ is “the” world
+in which some other ticket is the winner, the agent can believe that
+the first ticket will lose without running afoul of the Humean thesis.
+If Buchak  is right, no agent should have beliefs in lottery
+propositions–these beliefs would necessarily be formed on the
+basis of purely statistical evidence. Kelly and Lin  give
+another scenario in which Humean agents seem radically skeptical, but
+in situations which are evidentially unproblematic. Suppose the
+luckless Job goes in for a physical. On the basis of a thorough
+examination, the doctor forms the following dire opinion of his
+health: her degree of belief that Job will survive exactly \
+months is \ Therefore, her degree of belief that Job
+will not survive the year is \ Shockingly, the Humean thesis prevents the
+doctor from forming
+any
+non-trivial beliefs. Let \
+be the proposition that Job survives at most \ months and let
+\ be the proposition that he survives at least \ months.
+Let \ be the strongest proposition that the doctor believes.
+Suppose for a contradiction that \ entails some least upper bound
+for the number of Job’s remaining months, i.e for some \,
+\ entails \ and does not entail \ for
+any \. By construction, \ =
+\frac{\Pr}{\Pr} = \frac{1}{2}\) for all \. But since
+\ is compatible with \, the Humean thesis requires that
+\ > \frac{1}{2}.\) Contradiction.
+The example of the doctor suggests that the price of Humeanism is a
+rather extreme form of skepticism: in many situations a Humean agent
+will have no non-trivial full beliefs at all. That criticism is
+developed extensively in Rott  and Douven and Rott . The
+doctor also illustrates how the Humean proposal allows arbitrarily
+small perturbations of partial beliefs to be reflected as huge
+differences in full beliefs. Suppose the doctor is slightly more
+confident that Job will not survive a month, i.e. her survival
+probabilities decrease as \ Now the
+doctor can believe that Job will be dead in two months without running
+afoul of the Humean thesis.
+So far we have inquired only into the synchronic content of the Humean
+proposal. What sort principles of qualitative belief update does it
+underwrite? Leitgeb demonstrates an intimate relationship between the
+AGM revision principles and the Humean thesis: every agent that
+satisfies the AGM principles, as well as a weak version of the Lockean
+thesis, must also satisfy the Humean thesis. So if you think that AGM
+theory is the correct theory of rational qualitative belief update
+ you must also accept the
+Humean thesis. More precisely, Leitgeb proves the following:
+Theorem.
+Suppose that \
+satisfies all AGM postulates and for all \ \ only if \>r.\) Then, for all \
+\ satisfy \.
+So any agent that violates the Humean thesis must either fail to
+satisfy the AGM postulates, or the high-probability requirement. Note
+that the converse is not true: it is not the case that that if all
+pairs \ satisfy the Humean thesis,
+then \ must satisfy the AGM postulates. To
+prove this, suppose that \ satisfy the
+Humean thesis and \ for some \ If we let \, then \ satisfy the Humean thesis. However, such an agent patently
+violates rational and even Cautious Monotony. For a somewhat more
+detailed treatment of the relationship between AGM theory and the
+Humean thesis, see Section 6.3 in Genin . For a full treatment,
+see Leitgeb .
+4.2.4 The Tracking Theory of Belief
+Lin and Kelly  propose that qualitative belief update ought to
+track
+partial belief update. On their picture, partial and
+full beliefs are maintained and updated by parallel cognitive systems.
+The first system, governed by the probabilistic norms of Bayesian
+coherence and conditioning, is precise, slow and cognitively
+expensive. That system is engaged for important deliberations
+requiring a lot of precision and occuring without much time pressure,
+e.g. retirement planning. The second, which in some way maintains and
+updates full beliefs, is quicker and less cognitively burdensome. That
+system is engaged in ordinary planning: grocery shopping, or selecting
+a restaurant for a department event. .) What keeps these two parallel
+systems in sync with each other?
+Lin and Kelly  study
+acceptance rules
+that specify a mechanism for transitioning gracefully into the qualitative and out of the probabilistic system. An acceptance rule \ maps every partial belief state \ to a unique qualitative belief state \\) with which it coheres. For example, the strong Lockean thesis determines an acceptance rule once we specify a threshold. The Humean thesis, on the other hand, underdetermines an acceptance rule, merely imposing constraints on acceptable pairs \ An agent’s qualitative updates
+track
+her probabilistic updates iff \[\alpha_E=\alpha,\] whenever \>0\). In other words: acceptance followed by qualitative revision yields the same belief state as probabilistic revision followed by acceptance.
+Here is a way to understand the tracking requirement. Suppose that,
+although an agent maintains a latent probabilistic belief state, most
+of her cognitive life is spent reasoning with and updating qualitative
+beliefs. A typical day will go by without having to engage the
+probabilistic system at all. Suppose Monday is a typical day. Let
+\, \Pr \rangle\) be the belief state she woke up
+with on Monday: her full and partial beliefs are in harmony. Let \
+be the total information she acquired since waking up. Since
+qualitative beliefs are updated on the fly, she goes to sleep with the
+qualitative belief state \_E\). Overnight, her
+probabilistic system does the difficult work of Bayesian conditioning
+and computes the partial belief state \, just in case she runs
+into any sophisticated decision problems on Tuesday. Before waking,
+she transitions out of her probabilistic system \ and into the
+qualitative belief state \\). If she fails the tracking
+requirement, she may wake up on Tuesday morning with a qualitative
+belief state that is drastically different from the one she had went
+to sleep with on Monday night. If she tracks, then she will notice no
+difference at all. For such an agent, no mechanism 
+is required to bring her full and partial beliefs back into harmony on
+Tuesday morning. Supposing that we
+enter
+the probabilistic
+system by conditioning our previous partial belief state \ on
+all new information \, and
+exit
+by accepting
+\,\) tracking ensures that transitioning in and out of
+the probabilistic system does not induce any drastic changes in
+qualitative beliefs. An agent that tracks will notice no difference at
+all. An agent that does not track may find her full and partial
+beliefs perpetually falling out of sync, requiring many expensive
+acceptance operations to bring them back into harmony.
+Tracking may be a desirable property, but are there any architectures
+that exhibit it? Lin and Kelly  answer this question
+affirmitively. Since Bayesian conditioning is taken for granted, Lin
+and Kelly must specify two things: a qualitative revision operation
+and an acceptance rule that jointly track conditioning. We turn now to
+the details of their proposal. As usual, let \ be a set of worlds.
+A
+question
+\ is a partition of \ into a
+countable collection of mutually exhaustive propositions \ which are the complete
+answers
+to \ The
+partial belief function \ is defined over the algebra of
+propositions \ generated by \ Let \ be a
+well-founded, strict partial order over the answers to \.  This is interpreted as a
+plausibility
+ordering,
+where \ means that \ is strictly
+more
+plausible than \. Every plausibility order
+\ gives rise to a deductively cogent belief state
+\ by letting \ iff there is some
+\ strictly more plausible than \ and closing under logical
+consequence. In other words, \ is the disjunction of
+the minimal elements in the plausibility order.
+First we  specify an acceptance rule. Lin and Kelly propose the
+odds threshold rule
+. The  degree of belief function \ is used to determine a plausibility order by setting \[H_i \prec_p H_j \text{ if and only if } \frac{\Pr}{\Pr} > t,\] where \ is a constant greater than \ and \,\Pr>0\). This determines an acceptance rule by setting \= \Bel_{\prec_p}.\) Since the odds threshold rule determines a plausibility order \ and any plausibility order \  gives rise to a deductively cogent belief state \ the Lottery paradox is avoided. In other words: the bridge principle that any rational \  are related by \\) enures that \ is deductively cogent. Furthermore, the odds threshold rule allows non-trivial qualitative beliefs in situations where the stability theory precludes them. Recall the case of the doctor. Consider the odds threshold \. Given this threshold, the hypothesis that Job will survive exactly 1 month is strictly more plausible than the proposition that he will survive at least \ months for any \. This threshold yields the full belief that Job will survive at most 10 months. However, in the case of the Lottery, the odds threshold rule precludes any non-trivial beliefs.  may allow non-trivial beliefs in the Lottery situation.) See Rott  and  Douven and Rott  for an extensive comparison of the relative likelihood of forming non-trivial qualitative beliefs on the odds-threshold and stability proposals.
+It remains to specify the qualitative revision operation. Lin and
+Kelly adopt an operation proposed by Shoham . The plausibility
+order \ is updated on evidence \ by setting every answer
+incompatible with \ to be strictly less plausible than every
+answer compatible with \ and otherwise leaving the order
+unchanged. Let \ denote the result of this update operation.
+We use the updated plausibility order to define a belief revision rule
+by setting \ Then, for all \, \ is deductively cogent and satisfies:
+
+\;
+
+\
+
+If \ then \
+However, it does not necessarily satisfy Preservation. To see this
+suppose that \ and \ but
+\ is not ordered with \ or \. Then \ However \ even though \
+Lin and Kelly prove that Shoham revision and odds-threshold based
+acceptance jointly track conditioning:
+Theorem.
+Let \ equal \ and let
+\. Then \}\) satisfies
+deductive cogency, Success, Cautious Monotony and Inclusion.
+Furthermore, \_E = \alpha\) for all
+\.
+In other words: odds-threshold acceptance followed by Shoham revision
+yields the same belief state as Bayesian conditioning followed by
+odds-threshold acceptance.  recommend a
+modification of the odds-threshold rule proposed in Lin and Kelly
+.) Although the original plausibility ordering \ is
+built from the probability function \ subsequent qualitative
+update proceeds without consulting the  probabilities.
+That shows that there are at least some architectures that
+effortlessly keep the probabilistic and qualitative reasoning systems
+in harmony.
+Fans of AGM will regret that Shoham revision does not satisfy AGM
+Preservation . Lin and Kelly  prove that no
+“sensible” acceptance rule that tracks conditioning can
+satisfy Inclusion and Preservation. We omit the technical definition
+of sensible rules here. For a summary, see Section 6.4 in Genin
+.
+4.2.5 Epistemic Decision Theory
+All of the bridge principles we have seen so far have the following in
+common: whether an agent’s full and partial beliefs cohere is a
+matter of the full and partial beliefs
+alone
+. It is not
+necessary to mention preferences or utilities in order to evaluate a
+belief state. There is another tradition, originating in Hempel 
+and receiving classical expression in Levi , that assimilates
+the problem of “deciding” what to believe to a Bayesian
+decision-theoretic model. Crucially, these authors are not committed
+to a picture on which agents literally decide what to
+believe–rather they claim that an agent’s beliefs are
+subject to the same kind of normative evaluation as their practical
+decision-making. Contemporary contributions to this tradition include
+Easwaran , Pettigrew  and Dorst . Presented here is
+a somewhat simplified version of Levi’s  account taking
+propositions, rather than sentences, as the objects of belief.
+As usual, let \ be a set of possible worlds. The agent is taken to
+be interested in answering a
+question
+\ which is
+a partition of \ into a finite collection of mutually exhaustive
+answers \ Levi calls situations of this
+sort “efforts to replace agnosticism by true belief,”
+echoing themes in Peirce :
+Doubt is an uneasy and dissatisfied state from which we struggle to
+free ourselves and pass into the state of belief; while the latter is
+a calm and satisfactory state which we do not wish to avoid, or to
+change to a belief in anything else. On the contrary, we cling
+tenaciously, not merely to believing, but to believing just what we do
+believe.
+The agent’s partial beliefs are represented by a probability function \ that is defined, at a minimum, over the algebra \ generated by the question. Levi recommends the following procedure to determine which propositions are fully believed: disjoin all those elements of \ that have
+maximal
+expected epistemic utility and then close under deductive consequence. The
+expected epistemic utility
+of a hypothesis \ is defined as: \[E := \Pr\cdot U + \Pr\cdot u,\] where \\) is the epistemic utility of accepting \ when it is true, and \\) is the utility of accepting \ when it is false. How are \, U\) to be determined? Levi is guided by the following principles.
+True answers have greater epistemic utility than false
+answers.
+True answers that afford a high degree of relief from agnosticism
+have greater epistemic utility than true answers that afford a low
+degree of relief from agnosticism.
+False answers that afford a high degree of relief from agnosticism
+have greater epistemic utility than false answers that afford a low
+degree of relief from agnosticism.
+It is easy to object to these principles. The first principle
+establishes a lexicographic preference for true beliefs. It is
+conceivable that, contra this principle, an informative false belief
+that is approximately true should have greater epistemic utility than
+an uninformative true belief. The first principle precludes trading
+content against truthlikeness. It is also conceivable that, contra the
+third principle, one would prefer to be wrong, but not too
+opinionated, than wrong and opinionated. The only unexceptionable
+principle seems to be the second.
+To measure the degree of relief from agnosticism, a probability
+function \\) is defined over the elements of \.
+Crucially, \\) does not measure a degree of belief, but
+degree of
+uninformativeness
+. The degree of relief from
+agnosticism afforded by \ also referred to as the
+amount of content
+in \, is defined to be the complement of
+uninformativeness: \ = m.\) Levi argues that all
+the elements of \ ought to be assigned the same amount of
+content, i.e. \=\frac{1}{n}\) and therefore \=
+\frac{n-1}{n}\) for each \. The set of epistemic
+utility functions that Levi recommends satisfy the following
+conditions:
+\ = 1 - q\cdot cont;\)
+\ = \hspace{7pt} - q\cdot cont,\)
+where \ All such utility functions are guaranteed to satisfy Levi’s three principles. The parameter \ is interepreted as a “degree of caution,” representing the premium  placed on truth as opposed to relief from agnosticism. When \ the epistemic utility of suspending judgement, \\), is equal to zero. This is the situation in which the premium placed on relief from doubt is the maximum. Levi proves that expected epistemic utility \\) is maximal iff \> q \cdot cont.\) Therefore, Levi’s ultimate recommendation is that the agent believe all deductive consequences of \[\cap \{ \neg H_i \in {\bf Q} : \Pr> 1 - q \cdot cont \}.\] From this formulation  it is possible to see Levi’s proposal as a question-dependent version of the Lockean thesis where the appropriate threshold is a function of content. However, Levi takes pains to make sure that the result of this operation is deductively cogent and therefore  avoids Lottery-type paradoxes.
+Contemporary contributions to the decision-theoretic tradition proceed
+differently from Levi. Most recent work does not take epistemic
+utility to be primarily a function of content. Most of these proposals
+do not refer to a question in context. Many proposals, such as
+Easwaran , Dorst , are equivalent to a version of the
+Lockean thesis, where the threshold is determined by the utility the
+agent assigns to true and false beliefs. Since these are essentially
+Lockean proposals, they are subject to Lottery-style paradoxes.

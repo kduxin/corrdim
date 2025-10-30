@@ -1,0 +1,3733 @@
+1. ‘Part’ and Parthood
+A preliminary caveat is in order. It concerns the very notion of
+‘part’ that mereology is about, which does not have an
+exact counterpart in ordinary language. Broadly speaking, in English
+we can use ‘part’ to indicate any portion of a given
+entity. The portion may itself be attached to the remainder, as in
+, or detached, as in ; it may be cognitively or functionally
+salient, as in –, or arbitrarily demarcated, as in ;
+self-connected, as in –, or disconnected, as in ;
+homogeneous or otherwise well-matched, as in –, or
+gerrymandered, as in ; material, as in –, or
+immaterial, as in ; extended, as in –, or unextended,
+as in ; spatial, as in –, or temporal, as in ; and
+so on.
+
+The handle is part of the mug.
+
+The remote control is part of the stereo system.
+
+The left half is your part of the cake.
+
+The cutlery is part of the tableware.
+
+The contents of this bag is only part of what I bought.
+
+That area is part of the living room.
+
+The outermost points are part of the perimeter.
+
+The first act was the best part of the play.
+All of these uses illustrate the general notion of ‘part’
+that forms the focus of mereology, regardless of any internal
+distinctions.  Sometimes,
+however, the English word is used in a more restricted sense. For
+instance, it can be used to designate only the cognitively salient
+relation of parthood illustrated in , the relevant notion of
+salience being determined by Gestalt factors  or other perceptual and
+cognitive factors at large . Or it may designate only
+the functional relation reflected in the parts list included in the
+user's manual of a machine, or of a ready-to-assemble product, as in
+, in which case the parts of an object
+x
+are just its
+“components”, i.e., those parts that are available as
+individual units regardless of their actual interaction with the other
+parts of
+x
+.  Clearly, the properties of such restricted relations
+may not coincide with those of parthood understood more broadly, and
+it will be apparent that pure mereology is only concerned with the
+latter.
+On the other hand, the English word ‘part’ is sometimes
+used in a broader sense, too, for instance to designate the relation
+of material constitution, as in , or the relation of mixture
+composition, as in , or the relation of group membership, as in
+:
+
+The clay is part of the statue.
+
+Gin is part of martini.
+
+The goalie is part of the team.
+The mereological status of these relations, however, is controversial.
+For instance, although the constitution relation exemplified in 
+was included by Aristotle in his threefold taxonomy of parthood
+, many contemporary authors
+would rather construe it as a
+sui generis
+, non-mereological
+relation  or
+else as the relation of identity , possibly
+contingent or occasional identity . Similarly, the ingredient-mixture relationship
+exemplified in  is of dubious mereological status, as the
+ingredients may undergo significant chemical transformations that
+alter the structural characteristics they have in isolation . As for cases such as
+, there is disagreement concerning whether teams and other groups
+should be regarded as genuine mereological wholes, and while there are
+philosophers who do think so , many are
+inclined to regard groups as entities of a different sort and to
+construe the relation of group membership as distinct from parthood
+. For all these reasons, here we shall take mereology to be
+concerned mainly with the principles governing the relation
+exemplified in –, leaving it open whether one or more such
+broader uses of ‘part’ may themselves be subjected to
+mereological treatments of some sort.
+Finally, it is worth stressing that mereology assumes no ontological
+restriction on the field of ‘part’. In principle, the
+relata can be as different as material bodies, events, geometric
+entities, or spatio-temporal regions, as in –, as well as
+abstract entities such as properties, propositions, types, or kinds,
+as in the following examples:
+
+Rationality is part of personhood.
+
+The antecedent is the ‘if’ part of the
+conditional.
+
+The letter ‘m’ is part of the word
+‘mereology’.
+
+Carbon is part of methane.
+This is not uncontentious. For instance, to some philosophers the
+thought that such abstract entities may be structured mereologically
+cannot be reconciled with their being universals. To adapt an example
+from Lewis , if the letter-type ‘m’ is part of the
+word-type ‘mereology’, then so is the letter-type
+‘e’. But there are two occurrences of ‘e’ in
+‘mereology’. Shall we say that the letter is part of the
+word twice over? Likewise, if
+carbon
+is part of
+methane
+, then so is
+hydrogen
+. But each methane
+molecule consists of one carbon atom and four hydrogen atoms. Shall we
+say that
+hydrogen
+is part of
+methane
+four times
+over? What could that possibly mean? How can one thing be part of
+another more than once? These are pressing questions, and the friend
+of structured universals may want to respond by conceding that the
+relevant building relation is not parthood but, rather, a
+non-mereological mode of composition . However,
+other options are open, including some that take the difficulty at
+face value from a mereological standpoint .
+Whether such options are viable may be controversial. Yet their
+availability bears witness to the full generality of the notion of
+parthood that mereology seeks to characterize. In this sense, the
+point to be stressed is metaphilosophical. For while Leśniewski's
+and Leonard and Goodman's original formulations betray a nominalistic
+stand, reflecting a conception of mereology as an ontologically
+parsimonious alternative to set theory, there is no necessary link
+between the analysis of parthood relations and the philosophical
+position of
+ nominalism.
+
+As a formal theory  mereology is simply an attempt
+to lay down the general principles underlying the relationships
+between an entity and its constituent parts, whatever the nature of
+the entity, just as set theory is an attempt to lay down the
+principles underlying the relationships between a set and its members.
+Unlike set theory, mereology is not committed to the existence of
+abstracta
+: the whole can be as concrete as the parts. But
+mereology carries no nominalistic commitment to
+concreta
+either: the parts can be as abstract as the whole.
+Whether this way of conceiving of mereology as a general and
+topic-neutral theory holds water is a question that will not be
+further addressed here. It will, however, be in the background of much
+that follows. Likewise, little will be said about the important
+question of whether one should countenance different 
+part-whole relations to hold among different kinds of entity , or perhaps
+even among entities of the same kind . Such a
+question will nonetheless be relevant to the assessment of certain
+mereological principles discussed below, whose generality may be
+claimed to hold only in a restricted sense, or on a limited
+understanding of ‘part’. For further issues concerning the
+alleged universality and topic-neutrality of mereology, see also
+Johnston , Varzi , Donnelly , Hovda ,
+and Johansson . 
+2. Core Principles
+With these provisos, and barring for the moment the complications
+arising from the consideration of intensional factors , we may proceed to review some core mereological
+notions and principles. Ideally, we may distinguish here between 
+those principles that are simply meant to fix the intended meaning of
+the relational predicate ‘part’, and  a variety of
+additional, more substantive principles that go beyond the obvious and
+aim at greater sophistication and descriptive power. Exactly where the
+boundary between  and  should be drawn, however, or even whether
+a boundary of this sort can be drawn at all, is by itself a matter of
+controversy.
+2.1 Parthood as a Partial Ordering
+The usual starting point is this: regardless of how one feels about
+matters of ontology, if ‘part’ stands for the general
+relation exemplified by – above, and perhaps also
+–, then it stands for a partial ordering—a
+reflexive, transitive, antisymmetric relation:
+
+Everything is part of itself.
+
+Any part of any part of a thing is itself part of that
+thing.
+
+Two distinct things cannot be part of each other.
+As it turns out, most theories put forward in the literature accept
+–. Some misgivings are nonetheless worth mentioning that
+may, and occasionally have been, raised against these principles.
+Concerning reflexivity , two sorts of worry may be distinguished.
+The first is that many legitimate senses of ‘part’ just
+fly in the face of saying that a whole is part of itself. For
+instance, Rescher  famously objected to Leonard and Goodman's
+theory on these grounds, citing the biologists' use of
+‘part’ for the functional subunits of an organism as a
+case in point: no organism is a functional subunit of itself. This is
+a legitimate worry, but it appears to be of little import. Taking
+reflexivity  as constitutive of the meaning of
+‘part’ simply amounts to regarding identity as a limit
+ case of parthood. A stronger relation, whereby nothing
+counts as part of itself, can obviously be defined in terms of the
+weaker one, hence there is no loss of generality . Vice versa, one could frame a mereological theory by taking
+proper parthood as a primitive instead. As already Lejewski 
+noted, this is merely a question of choosing a suitable primitive, so
+nothing substantive follows from it. .
+Here, however, we stick to a notion of identity that obeys traditional
+wisdom, which is to say a notion whereby identity is an equivalence
+relation subject to Leibniz's law.) The second sort of worry is more
+serious, for it constitutes a genuine challenge to the idea that 
+expresses a principle that is somehow constitutive of the meaning of
+‘part’, as opposed to a substantive metaphysical thesis
+about parthood. Following Kearns , consider for instance a
+scenario in which an enduring wall, W, is shrunk down to the size of a
+brick and eventually brought back in time so as to be used to build
+ the original W. Or suppose wall W is
+bilocated to my left and my right, and I shrink it to the size of a
+brick on the left and then use it to replace a brick from W on the
+right. In such cases, one might think that W is part of itself in a
+sense in which ordinary walls are not, hence that either parthood is
+not reflexive or proper parthood is not irreflexive. For another
+example , if shapes are construed as abstract
+universals, then self-similar shapes such as fractals may very well be
+said to contain themselves as parts in a sense in which other shapes
+do not. Whether such scenarios are indeed possible is by itself a
+controversial issue, as it depends on a number of background
+metaphysical questions concerning persistence through time, location
+in space, and the nature of shapes. But precisely insofar as the
+scenarios are not obviously
+im
+possible, the generality and
+metaphysical neutrality of  may be questioned. 
+Similar considerations apply to the transitivity principle, . On
+the one hand, several authors have observed that many legitimate
+senses of ‘part’ are non-transitive, fostering the study
+of mereologies in which  may fail . Examples
+would include:  a biological subunit of a cell is not a part of the
+organ of which that cell is a part;  a handle can be part of
+a door and the door of a house, though a handle is never part of a
+house;  my fingers are part of me and I am part of the team, yet
+my fingers are not part of the team. . Arguably, however, such misgivings stem again from the
+ambiguity of the English word ‘part’. What counts as a
+biological subunit of a cell may not count as a subunit, i.e., a
+distinguished
+part of the organ, but that is not to say that
+it is not part of the organ at all. Similarly, if there is a sense of
+‘part’ in which a handle is not part of the house to which
+it belongs, or my fingers not part of my team, it is a restricted
+sense: the handle is not a
+functional
+part of the house,
+though it is a functional part of the door and the door a functional
+part of the house; my fingers are not
+directly
+part of the
+team, though they are directly part of me and I am directly part of
+the team.  as a
+reductio
+of the very idea that the group-membership relation
+is a genuine case of parthood, as mentioned above
+ad
+.)
+It is obvious that if the interpretation of ‘part’ is
+narrowed by additional conditions, e.g., by requiring that parts make
+a functional or direct contribution to the whole, then transitivity
+may fail. In general, if
+x
+is a φ-part of
+y
+and
+y
+is a φ-part of
+z
+,
+x
+need not be a
+φ-part of
+z
+: the predicate modifier ‘φ’
+may not distribute over parthood. But that shows the non-transitivity
+of ‘φ-part’, not of ‘part’, and within a
+sufficiently general framework this can easily be expressed with the
+help of explicit predicate modifiers . On the other hand, there is again a genuine worry that,
+regardless of any ambiguity concerning the intended interpretation of
+‘part’,  expresses a substantive metaphysical thesis
+and cannot, therefore, be taken for granted. For example, it turns out
+that time-travel and multi-location scenarios such as those mentioned
+in relation to  may also result in violations of the transitivity
+of both parthood  and proper parthood . And the same could be said of cases that involve
+no such
+exotica
+. For instance, Gilmore  brings
+attention to the popular theory of structured propositions originated
+with Russell . Already Frege  pointed out that if the
+constituents of a proposition are construed mereologically as 
+parts, then we have a problem: assuming that Mount Etna is literally
+part of the proposition that Etna is higher than Vesuvius, each
+individual piece of solidified lava that is part of Etna would also be
+part of that proposition, which is absurd. The worse for Russell's
+theory of structured propositions, said Frege. The worse, one could
+reply, for the transitivity of parthood .
+Concerning the antisymmetry postulate , the picture is even more
+complex. For one thing, some authors maintain that the relationship
+between an object and the stuff it is made of provides a perfectly
+ordinary counterexample of the antisymmetry of parthood: according to
+Thomson , for example, a statue and the clay that constitutes it
+are part of each other, yet distinct. This is not a popular view: as
+already mentioned, most contemporary authors would either deny that
+material constitution is a relation of parthood or else treat it as
+improper
+parthood, i.e., identity, which is trivially
+antisymmetric . Moreover, those who regard constitution
+as a genuine case of proper parthood tend to follow Aristotle's
+hylomorphic conception and deny that the relation also holds in the
+opposite direction: the clay is part of the statue but not vice versa
+. Still, insofar as Thomson's
+view is a legitimate option, it represents a challenge to the putative
+generality of . Second, one may wonder about the possibility of
+unordinary
+cases of symmetric parthood relationships. Sanford
+ refers to Borges's Aleph as a case in point: “I saw
+the earth in the Aleph and in the earth the Aleph once more and the
+earth in the Aleph …”. In this case, a plausible reply is
+simply that fiction delivers no guidance to conceptual investigations:
+conceivability may well be a guide to possibility, but literary
+fantasy is by itself no evidence of conceivability . Perhaps the same could be said of Fazang's Jeweled Net of Indra,
+in which each jewel has every other jewel as part .
+However, other cases seem harder to dismiss. Surely the Scholastics
+were not merely engaging in literary fiction when arguing that each
+person of the Trinity is a proper part of God, and yet also identical
+with God .
+And arguably time travel is at least conceivable, in which case again
+ could fail: if time-traveling wall W ends up being one of the
+bricks that compose  its own bottom half, H, then we have a
+conceivable scenario in which W is part of H and H is part of W while
+W ≠ H . Third, it may be argued that
+antisymmetry is also at odds with theories that have been found
+acceptable on quite independent grounds. Consider again the theory of
+structured propositions. If
+A
+is the proposition that the
+universe exists—where the universe is something of which
+everything is part—and if
+A
+is true, then on such a
+theory the universe would be a proper part of
+A
+; and since
+A
+would in turn be a proper part of U, antisymmetry would be
+forfeit . Likewise, if
+A
+is the
+proposition that
+B
+is true, and
+B
+the proposition
+that
+A
+is contingent, then again
+A
+and
+B
+would be part of each other even though
+A
+≠
+B
+. Finally, and more generally, it may be observed that
+the possibility of mereological loops is to be taken seriously for the
+same sort of reasons that led to the development of non-well-founded
+set theory, i.e., set theory tolerating cases of self-membership and,
+more generally, of membership circularities . This is especially significant in view of the possibility
+of reformulating set theory itself in mereological terms—a
+possibility that is extensively worked out in the works of Bunt 
+and especially Lewis  . For all these reasons, the antisymmetry
+postulate  can hardly be regarded as constitutive of the basic
+meaning of ‘part’, and some authors have begun to engage
+in the systematic study of “non-well-founded mereologies”
+in which  may fail .
+In the following we aim at a critical survey of mereology as
+standardly understood, so we shall mainly confine ourselves to
+theories that do in fact accept the antisymmetry postulate along with
+both reflexivity and transitivity. However, the above considerations
+should not be dismissed. On the contrary, they are crucially relevant
+in assessing the scope of mereology and the degree to which its
+standard formulations and extensions betray intuitions that may be
+found too narrow, false, or otherwise problematic. Indeed, they are
+crucially relevant also in assessing the ideal desideratum mentioned
+at the beginning of this section—the desideratum of a neat
+demarcation between core principles that are simply meant to fix the
+intended meaning of ‘part’ and principles that reflect
+more substantive theses concerning the parthood relation. Classical
+mereology takes the former to include the threefold claim that
+‘part’ stands for a reflexive, transitive and
+antisymmetric relation, but this is not to say that “anyone who
+seriously disagrees with them had failed to understand the word”
+, just as departure from the basic principles of
+classical logic need not amount to a “change of subject”
+. And just as the existence of widespread and
+diversified disagreement concerning the laws of logic may lead one to
+conclude that “for all we know, the only inference left in the
+intersection of 
+all
+logics might be the
+identity
+inference: From
+A
+to infer
+A
+” , so one might take the
+above considerations and the corresponding development of
+non-classical mereologies to indicate that there may be “no
+reason to assume that any useful core mereology […] functions
+as a common basis for all plausible metaphysical theories”
+.
+2.2 Other Mereological Concepts
+It is convenient at this point to introduce some degree of
+formalization. This avoids ambiguities stemming from ordinary language
+and facilitates comparisons and developments. For definiteness, we
+assume here a standard first-order language with identity, supplied
+with a distinguished binary predicate constant, ‘P’, to be
+interpreted as the parthood
+ relation.
+
+Taking the underlying logic to be the classical predicate calculus
+with
+ identity,
+
+the requisites on parthood discussed in Section 2.1 may then be
+regarded as forming a first-order theory characterized by the
+following proper axioms for ‘P’:
+
+Reflexivity
+P
+xx
+
+Transitivity
+ → P
+xz
+
+Antisymmetry
+ →
+x
+=
+y
+.
+ We may call such
+a theory
+Core Mereology
+—
+M
+for
+ short
+
+—since
+ it represents the common starting point of all standard theories.
+Given –, a number of additional mereological
+predicates can be introduced by definition. For example:
+
+Equality
+EQ
+xy
+=
+df
+P
+xy
+∧ P
+yx
+
+Proper Parthood
+PP
+xy
+=
+df
+P
+xy
+∧
+¬
+x
+=
+y
+
+Proper Extension
+PE
+xy
+=
+df
+P
+yx
+∧
+¬
+x
+=
+y
+
+Overlap
+O
+xy
+=
+df
+∃
+z
+
+
+Underlap
+U
+xy
+=
+df
+∃
+z
+.
+An intuitive model for these relations, with ‘P’
+interpreted as spatial inclusion, is given in Figure 1.
+Figure 1
+. Basic patterns of mereological relations.
+.
+Note that ‘U
+xy
+’ is bound to hold if one assumes
+the existence of a “universal entity” of which everything
+is part. Conversely, ‘O
+xy
+’ would always hold if
+one assumed the existence of a “null item” that is part of
+everything. Both assumptions, however, are controversial and we shall
+come back to them below.
+Note also that the definitions imply  that EQ, O, and U
+are all reflexive and symmetric; in addition, EQ is also
+transitive—an equivalence relation. By contrast, PP and PE are
+irreflexive and asymmetric, and it follows from  that both are
+also transitive—so they are strict partial orderings. Since the
+following biconditional is also a straightforward consequence of the
+axioms ,
+
+P
+xy
+↔ ,
+it should now be obvious that one could in fact use proper parthood as
+an alternative starting point for the development of classical
+mereology, using the right-hand side of  as a definiens for
+‘P’. This is, for instance, the option followed in Simons
+, as also in Leśniewski’s original theory ,
+where the partial ordering axioms for ‘P’ are replaced by
+the strict ordering axioms for
+ ‘PP’.
+
+Ditto for ‘PE’, which was in fact the primitive relation
+in Whitehead's  semi-formal treatment of the mereology of events
+. Other options
+are in principle possible, too. For example, Goodman  used
+‘O’ as a primitive and Leonard and Goodman  used its
+ opposite:
+
+
+Disjointness
+D
+xy
+=
+df
+¬O
+xy
+.
+However, the relations corresponding to such predicates are strictly
+weaker than PP and PE and no biconditional is provable in
+M
+that would yield a corresponding definiens of
+‘P’ ). Thus, other things being equal,
+‘P’, ‘PP’, and ‘PE’ appear to be
+the only reasonable options. Here we shall stick to ‘P’,
+referring to J. Parsons  for further discussion.
+Finally, note that identity could itself be introduced by definition,
+due to the following obvious consequence of the antisymmetry postulate
+:
+
+x
+=
+y
+↔ EQ
+xy
+.
+Accordingly, theory
+M
+could be formulated in a pure
+first-order language by assuming  and  and replacing 
+with the following variant of the Leibniz axiom schema for identity
+:
+
+Indiscernibility
+EQ
+xy
+→ .
+One may in fact argue on these grounds that the parthood relation is
+in some sense conceptually prior to the identity relation , and since ‘EQ’ is not definable in
+terms of ‘PP’ or ‘PE’ alone except in the
+presence of stronger axioms ), the argument
+would also provide evidence in favor of ‘P’ as the most
+fundamental primitive. As we shall see in Section 3.2, however, the
+link between parthood and identity is philosophically problematic. In
+order not to compromise our exposition, we shall therefore keep to a
+language containing both ‘P’ and ‘=’ as
+primitives. This will also be convenient in view of the previous
+remarks concerning the controversial status of Antisymmetry, on which
+ depends.
+The last remark is also relevant to the definition of ‘PP’
+given above. That is the classical definition used by Leśniewski
+and by Leonard and Goodman and corresponds verbatim to the intuitive
+characterization of proper parthood used in the previous section.
+However, in some treatments ,
+ ‘PP’ is defined directly in terms of ‘P’,
+without using identity, as per the following variant of :
+
+ Proper Parthood
+PP
+xy
+=
+df
+P
+xy
+∧ ¬P
+yx
+.
+. Similarly for
+‘PE’. In
+M
+the difference is immaterial,
+since the relevant definientia are provably equivalent. But the
+equivalence in question depends crucially on Antisymmetry. Absent
+, the second definition is strictly stronger: any two things that
+are mutually P-related would count as proper parts of each other
+according to  but not, obviously, according to , which
+forces PP to be asymmetric. Indeed, in the presence of  and 
+the latter definition is still strong enough to deliver a strict
+partial ordering, whereas  does not even yield a transitive
+relation unless  is
+ assumed.
+
+Another important difference is that, absent , the biconditional
+in  continues to hold only if ‘PP’ is defined as in
+; if  is used instead, the left-to-right direction
+fails whenever
+x
+and
+y
+are distinct mutual parts. In
+view of the above remarks concerning the doubtful status of , it
+is therefore convenient to work with the weaker definition. Standardly
+it makes no difference, but some of the definitions and results
+presented below would not extend to non-well-founded mereology if
+ were used instead.  Furthermore, since both definitions force PP to be irreflexive,
+it should be noted that the only way to develop a non-well-founded
+mereology that allows for strict mereological loops, i.e., things that
+are proper part of themselves, is to rely on yet another definition or
+else take ‘PP’ as a primitive .
+3. Decomposition Principles
+M
+is standardly viewed as embodying the common core
+of any mereological theory. Not just any partial ordering qualifies as
+a part-whole relation, though, and establishing what further
+principles should be added to – is precisely the
+question a good mereological theory is meant to answer. It is here
+that philosophical issues begin to multiply, over and above the
+general concerns mentioned in Section 2.1.
+Generally speaking, such further principles may be divided into two
+main groups. On the one hand, one may extend
+M
+by
+means of
+decomposition principles
+that take us from a whole
+to its parts. For example, one may consider the idea that whenever
+something has a proper part, it has more than one—i.e., that
+there is always some
+mereological difference
+ between a whole and its proper parts. This
+need not be true in every model for
+M
+: a world with
+only two items, only one of which is part of the other, would be a
+counterexample, though not one that could be illustrated with the sort
+of geometric diagram used in Figure 1. On the other hand, one may
+extend
+M
+by means of
+composition principles
+that go in the opposite direction—from the parts to the whole.
+For example, one may consider the idea that whenever there are some
+things, there exists a whole that consists exactly of those
+things—i.e., that there is always a
+mereological sum
+ of two or more parts. Again, this need not
+be true in a model for
+M
+, and it is a matter of much
+controversy whether the idea should hold unrestrictedly.
+3.1 Supplementation
+Let us begin with the first sort of extension. And let us start by
+taking a closer look at the intuition according to which a whole
+cannot be decomposed into a single proper part. There are various ways
+in which one can try to capture this intuition. Consider the following
+:
+
+Company
+PP
+xy
+→ ∃
+z
+
+
+Strong Company
+PP
+xy
+→ ∃
+z
+
+
+Supplementation
+
+PP
+xy
+→ ∃
+z
+.
+The first principle, , is a literal rendering of the
+idea in question: every proper part must be accompanied by another.
+However, there is an obvious sense in which  only
+captures the letter of the idea, not the spirit: it rules out the
+unintended model mentioned above  but not, for
+example, an implausible model with an infinitely descending chain in
+which the additional proper parts do not leave any remainder at all
+.
+The second principle, , is stronger: it rules out
+both models as unacceptable. However,  is still too
+weak to capture the intended idea. For example, it is satisfied by a
+model in which a whole can be decomposed into several proper parts all
+of which overlap one another , and it may be argued
+that such models do not do justice to the meaning of ‘proper
+part’: after all, the idea is that the removal of a proper part
+should leave a remainder, but it is by no means clear what would be
+left of
+x
+once
+z
+ is
+removed.
+Figure 2
+. Three unsupplemented models. 
+It is only the third principle, , that appears to provide a full
+formulation of the idea that a whole cannot be decomposed into a
+single proper part. According to this principle, every proper part
+must be “supplemented” by another,
+disjoint
+part,
+and it is this last qualification that captures the notion of a
+remainder. Should , then, be incorporated into
+M
+as a further fundamental principle on the meaning of
+‘part’?
+Most authors  would say so. Yet here
+there is room for genuine disagreement. In fact, it is not difficult
+to conceive of mereological scenarios that violate not only , but
+also  and even . A case in point
+would be Brentano's  theory of accidents, according to which a
+mind is a proper part of a thinking mind even though there is nothing
+to make up for the difference.  Similarly, in Fine's  theory of
+qua
+-objects, every basic object  qualifies as the only
+proper part of its incarnations . Another interesting example is provided
+by Whitehead's  theory of extensive connection, where no
+boundary elements are included in the domain of quantification: on
+this theory, a topologically closed region includes its open interior
+as a proper part in spite of there being no boundary elements to
+distinguish them—the domain only consists of extended regions.
+ Finally, consider the view, arguably held by
+Aquinas, according to which the human person survives physical death
+along with her soul . On the understanding that persons are hylomorphic
+composites, and that two things cannot become one, the view implies
+that upon losing her body a person will continue to exist,
+pre-resurrection, with only one proper part—the soul.  Indeed, any case of
+material coincidence resulting from mereological diminution, as in the
+Stoic puzzle of Deon and Theon  and its modern variant of
+Tibbles and Tib , would seem to be at odds with
+Supplementation: after the diminution, there is nothing that makes up
+for the difference between what was a proper part and the whole with
+which it comes to coincide, short of holding that the part has become
+identical to the whole , or has ceased to exist , or did not exist in the first place . One may
+rely on the intuitive appeal of  to discard all of the above
+theories and scenarios as implausible. But one may as well turn things
+around and regard the plausibility of such theories as a good reason
+not to accept  unrestrictedly, as argued e.g. by D. Smith ,
+Oderberg , and Lowe . As things stand, it therefore seems
+appropriate to regard such a principle as providing a minimal but
+substantive addition to –, one that goes beyond the
+basic characterization of ‘part’ provided by
+M
+. We shall label the resulting mereological theory
+MM
+, for
+Minimal Mereology
+.
+Actually
+MM
+is now redundant, as Supplementation
+turns out to entail Antisymmetry so long as parthood is transitive and
+reflexive: if
+x
+and
+y
+were proper parts of each
+other, contrary to , then every
+z
+that is part of one
+would also be part of—hence overlap—the other, contrary to
+. For ease of reference, we shall continue to treat  as an
+axiom. But the entailment is worth emphasizing, for it explains why
+Supplementation tends to be
+explicitly
+rejected by those who
+do not endorse Antisymmetry, over and above the more classical
+examples mentioned above. For instance, whoever thinks that a statue
+and the corresponding lump of clay are part of each other will find
+Supplementation unreasonable: after all, such parts are coextensive;
+why should we expect anything to be left over when, say, the clay is
+“subtracted” from the statue? .
+Indeed, Supplementation has recently run into trouble also
+independently of its link with Antisymmetry, especially in the context
+of time-travel and multilocation scenarios such as those already
+mentioned in connection with each of – . As a result, a question that is gaining increasing attention is
+whether there are any ways of capturing the supplementation intuition
+that are strong enough to rule out the models of Figure 2 and yet
+sufficiently weaker than  to be acceptable to those who do not
+endorse some
+M
+-axiom or other—be it
+Antisymmetry, Transitivity, or Reflexivity.
+Two sorts of answer may be offered in this regard . The first is to weaken the Supplementation conditional by
+strengthening the antecedent. For instance, one may simply rephrase
+ in terms of the stricter notion of proper parthood defined in
+, i.e., effectively:
+
+Strict Supplementation
+ →
+∃
+z
+.
+In
+M
+this is equivalent to . Yet it is logically
+weaker, and it is easy to see that this suffices to block the
+entailment of  even in the presence of – . Still,  is sufficiently stronger than
+ and  to rule out all three patterns
+in Figure 2, and it obviously preserves the spirit of —if
+not the letter. The second sort of answer is to weaken Supplementation
+by adjusting the consequent. There are various ways of doing this, the
+most natural of which appears to be the following:
+
+Quasi-supplementation
+PP
+xy
+→ ∃
+z
+∃
+w
+.
+Again, this principle is stronger than  and
+, since it rules out all patterns in Figure 2, and in
+M
+it is equivalent to . Indeed,
+ says, literally, that if something has a proper
+part, then it has at least
+two
+disjoint parts, which Simons
+ takes to express the same intuition captured by . Yet
+ is logically weaker than , since it admits the
+non-antisymmetric model in Figure 3, middle, and for that reason it
+may be deemed more suitable in the context of theories that violate
+. Note also that  does not admit the symmetric
+model on Figure 3, left, so in a way it is stronger than
+. In another way, however, it is weaker, since it
+admits the model in Figure 3, right, which  rules out
+.
+Figure 3
+. More unsupplemented patterns.
+There are other options, too. For instance, in some standard
+treatments, the Supplementation principle  is formulated using
+‘PP’ also in the consequent:
+
+Proper Supplementation
+PP
+xy
+→ ∃
+z
+.
+In
+M
+this is once again equivalent to , but the
+equivalence depends on Reflexivity and Symmetry. Absent  or
+,  is logically stronger. Yet again one may rely on
+the alternative definition of ‘PP’ to obtain variants of
+ that are stronger than  and weaker than
+. Similarly for , which may be further weakened
+or strengthened by tampering with the parthood predicates occurring in
+the antecedent and in the consequent.
+3.2 Strong Supplementation and Extensionality
+We may also ask the opposite question: Are there any stronger ways of
+expressing the supplementation intuition besides ? In classical
+mereology, the standard answer is in the affirmative, the main
+candidate being the following:
+
+Strong Supplementation
+¬P
+yx
+→ ∃
+z
+.
+Intuitively, this says that if an object
+fails
+to include
+another among its parts, then there must be a remainder, something
+that makes up for the difference. It is easily seen that, given
+M
+,  implies , so any
+M
+-theory violating  will
+a fortiori
+violate . For instance, on Whitehead's boundary-free theory of
+extensive connection, a closed region is not part of its interior even
+though each part of the former overlaps the latter. More generally,
+the entailment holds as long as parthood is antisymmetric . However,
+the converse is not true. The diagram in Figure 4 illustrates an
+M
+-model in which  is satisfied, since each
+proper part counts as a supplement of the other; yet  is
+false.
+Figure 4
+. A supplemented model violating Strong
+Supplementation.
+The theory obtained by adding  to – is thus a
+proper extension of
+MM
+. We label this stronger theory
+EM
+, for
+Extensional Mereology
+, the attribute
+‘extensional’ being justified precisely by the exclusion
+of countermodels that, like the one in Figure 4, contain distinct
+objects with the same proper parts. In fact, it is a theorem of
+EM
+that
+no
+composite objects with the same
+proper parts can be distinguished:
+
+ → ).
+ This goes
+far beyond the intuition that lies behind the basic Supplementation
+principle . Does it go too far?
+On the face of it, it is not difficult to envisage scenarios that
+would correspond to the diagram in Figure 4. For example, we may take
+x
+and
+y
+to be the sets {{
+z
+}, {
+z
+,
+w
+}} and {{
+w
+},{
+z
+,
+w
+}}, respectively
+, interpreting ‘P’
+as the ancestral of the improper membership relation . But sets are abstract entities, and the
+ancestral relation does not generally satisfy  . Can we also envisage similar scenarios in the domain
+of concrete, spatially extended entities, granting  in its
+generality? Admittedly, it is difficult to
+picture
+two
+concrete objects mereologically structured as in Figure 4. It is
+difficult, for example, to draw two extended objects composed of the
+same proper parts because drawing something
+is
+drawing its
+proper parts; once the parts are drawn, there is nothing left to be
+done to get a drawing of the whole. Yet this only proves that pictures
+are biased towards . Are there any philosophical reasons to
+resist the extensional force of  beyond the domain of abstract
+entities, and in the presence of ?
+Two sorts of reason are worth examining. On the one hand, it is
+sometimes argued that sameness of proper parts is not
+sufficient
+for identity. For example, it is argued that: 
+two words can be made up of the same letters , two tunes of the same notes , and so on; or  the same flowers can compose a nice bunch or
+a scattered bundle, depending on the arrangements of the individual
+flowers ; or  two groups can have
+co-extensive memberships, say, the Library Committee and the
+Philosophy Department football team ; or  a cat must be distinguished from the corresponding
+amount of feline tissue, for the former can survive the annihilation
+of certain parts  whereas the latter cannot by
+definition . On the other hand, it is
+sometimes argued that sameness of parts is not
+necessary
+for
+identity, as some entities may survive mereological change. If a cat
+survives the annihilation of its tail, then the tailed cat  and the tailless cat  are numerically
+the same in spite of their having different proper parts . If any of these arguments is accepted, then clearly  is too
+strong a principle to be imposed on the parthood relation. And since
+ follows from , it might be concluded that
+EM
+is on the wrong track.
+Let us look at these objections separately. Concerning the necessity
+aspect of mereological extensionality, i.e., the left-to-right
+conditional in the consequent of ,
+
+x
+=
+y
+→ ∀
+z
+,
+it is perhaps enough to remark that the difficulty is not peculiar to
+extensional mereology. The objection proceeds from the consideration
+that ordinary entities such as cats and other living organisms  survive
+all sorts of gradual mereological change. This a legitimate thought,
+lest one be forced into some form of “mereological
+essentialism” . However, the same can be said of other types of change
+as well: bananas ripen, houses deteriorate, people sleep at night and
+eat at lunch. How can we say that they are the same things, if they
+are not quite the same? Indeed,  is essentially an instance of the
+identity axiom schema
+
+x
+=
+y
+→ ,
+and it is well known that this axiom schema runs into trouble when
+‘=’ is given a diachronic reading. 
+ The problem is a general one. Whatever the solution, it will
+therefore apply to the case at issue as well, and in this sense the
+above-mentioned objection to  can be disregarded. For example, the
+problem would dissolve immediately if the variables in  were taken
+to range over four-dimensional entities whose parts may extend in time
+as well as in space , or if
+identity itself were construed as a contingent relation that may hold
+at some times or worlds but not at others . Alternatively, on a more traditional, three-dimensional
+conception of material objects, the problem of change is often
+accounted for by relativizing properties and relations to times,
+rewriting  as
+
+x
+=
+y
+→
+∀
+t
+.
+ If so, then again the specific
+worry about  would dissolve, as the relativized version of 
+would only warrant the following variant of the conditional in
+question:
+
+x
+=
+y
+→
+∀
+t
+∀
+z
+.
+ The need to relativize parthood to time, and
+perhaps to other parameters such as space, possible worlds, etc., has
+recently been motivated also on independent grounds, from the
+so-called “problem of the many”  to material
+constitution , modal realism , vagueness , relativistic spacetime , or the general theory of location . One way or the other, then, such revisions may be regarded as
+an indicator of the limited ontological neutrality of extensional
+mereology. But their independent motivation also bears witness to the
+fact that controversies about  stem from genuine and fundamental
+philosophical conundrums and cannot be assessed by appealing to our
+intuitions about the meaning of ‘part’.
+The worry about the sufficiency aspect of mereological extensionality,
+i.e., the right-to-left conditional in the consequent of ,
+
+∀
+z
+ →
+x
+=
+y
+,
+is more to the point. However, here too there are various ways of
+responding on behalf of
+EM
+. Consider counterexample
+—say, two words made up of the same letters, as in
+‘else’ and ‘seel’. If these are taken as
+word-types, a lot depends on how exactly one construes such things
+mereologically, and one might simply dismiss the challenge by
+rejecting, or improving on, the dime-store thought that word-types are
+letter-type composites ). Indeed, if they
+were, then word-types would not only violate extensionality, hence the
+Strong Supplementation principle ; they would violate the basic
+Supplementation principle , since ‘seel’  would contain a proper part 
+that consists of a single proper part . On
+the other hand, if the items in question are taken as word-tokens,
+then presumably they are made up of distinct letter-tokens, so again
+there is no violation of , hence no reason to reject  on
+these grounds. Of course, we may suppose that one of the two
+word-tokens is obtained from the other by rearranging the same
+letter-tokens. If so, however, the issue becomes once again one of
+diachronic non-identity, with all that it entails, and it is not
+obvious that we have a counterexample to . 
+What if our letter-tokens are suitably arranged so as to form both
+words at the same time? For example, suppose they are arranged in a
+circle . In this case one might be inclined to say
+that we have a genuine counterexample. But one may equally well insist
+that we have got just one circular inscription that, curiously, can be
+read as two different words depending on where we start. Compare: I
+draw a rabbit that to you looks like a duck. Have I thereby made two
+drawings? I write ‘p’ on my office glass door; from the
+outside you read ‘q’. Have I therefore produced two
+letter-tokens? And what if Mary joins you and reads it upside down;
+have I also written the letter ‘b’? Surely then I have
+also written the letter ‘d’, as my upside-down office mate
+John points out. This multiplication of entities seems preposterous.
+There is just one thing there, one inscription, and what it looks  to you or me or Mary or John is irrelevant to what that thing
+is. Similarly—it may be argued—there is just one
+inscription in our example, a circular display of four letter-tokens,
+and whether we read it as an ‘else’-inscription or a
+‘seel’-inscription is irrelevant to its mereological
+structure. 
+Case —the flowers—is not significantly different. The
+same, concrete flowers cannot compose a nice bunch and a scattered
+bundle
+at the same time
+. Similarly for many other cases of
+this sort that may come to mind, including much less frivolous
+prima facie
+counterexamples offered by the natural
+sciences—from the different phases of matter  to the different possibilities of chemical binding; see
+e.g. Harré and Llored  and Sukumar . 
+counterexamples to extensionality. A full treatment of such arguments
+goes beyond the scope of this entry, but see e.g. Calosi
+et
+al
+. 2011 and Calosi and Tarozzi 2014 for counter-arguments.)
+Case  is more delicate, as it depends on one's metaphysics of
+such things as committees, teams, and groups generally. If one denies
+that the relevant structural relation is a genuine case of parthood
+), then of course the counterexample
+misfires. If, on the other hand, one takes groups to be
+bona
+fide
+mereological composites—and composites consisting of
+enduring persons as opposed to, say, person-stages, as in Copp
+—then a lot depends on one's reasons to treat groups with
+co-extensive memberships as in fact distinct. Typically such reasons
+are just taken for granted, as if the distinctness were obvious. But
+sometimes informal arguments are offered to the effect that, say, the
+coextensive Library Committee and football team must be distinguished
+insofar as they have different persistence conditions, or different
+properties broadly understood. For instance, the players of the team
+can change even though the Committee remains the same, or one group
+can be dismantled even though the other continues to operate, or one
+group has different legal obligations than the other, and so on . If so, then case  becomes relevantly similar
+to case . There, too, the intuition is that a living animal such
+as a cat is something “over and above” the mere lump of
+feline tissue that constitutes its body—that they have different
+survival conditions and, hence, different properties—so it
+appears that here we have a genuine counterexample to mereological
+extensionality . It is for similar reasons that
+some philosophers are inclined to treat a vase and the corresponding
+lump of clay as distinct in spite of their sharing the same proper
+parts—possibly even the same improper parts, contrary to ,
+as seen in Section
+ 2.2.
+
+Two responses may nonetheless be offered in such cases on behalf of
+EM
+.
+Focusing on , the first response is to insist that, on the face of
+it, a cat and the corresponding lump of feline tissue  do not share the same proper
+parts after all. For, on the one hand, if one believes that at least
+one such thing,
+x
+, is part of the other,
+y
+, then it
+must be a proper part; and insofar as nothing can be a proper part of
+itself, it follows immediately that such things do not in fact
+constitute a counterexample to .  here.) On the other hand, if one believes that neither
+x
+nor
+y
+is part of the other, then presumably the
+same belief will also apply to some of their proper parts—say,
+the cat's tail and the corresponding lump of tissue. And if the tail
+is not part of
+that
+lump, then presumably it is also not part
+of the larger lump of tissue that constitutes the whole cat . Thus, again, it would appear that
+x
+and
+y
+do not have the same proper parts after all and do not,
+therefore, constitute a counterexample to . 
+The second and more general response on behalf of
+EM
+is that the appeal to Leibniz's law in this context is illegitimate.
+Let ‘Tibbles’ name our cat and ‘Tail’ its
+tail, and grant the truth of
+
+Tibbles can survive the annihilation of Tail.
+There is, indeed, an intuitive sense in which the following is also
+true:
+
+The lump of feline tissue constituting Tail and the rest of
+Tibbles's body cannot survive the annihilation of Tail.
+However, this intuitive sense corresponds to a
+de dicto
+reading of the modality, where the definite description in  has
+narrow scope:
+
+In every possible world, the lump of feline tissue constituting
+Tail and the rest of Tibbles's body ceases to exist if Tail is
+annihilated.
+On this reading,  is hardly negotiable. Yet this is irrelevant in
+the present context, for  does not amount to an ascription of a
+modal property and cannot be used in connection with Leibniz's law.
+ On the other hand,
+consider a
+de re
+reading of , where the definite
+description has wide scope:
+
+The lump of feline tissue constituting Tail and the rest of
+Tibbles's body is such that, in every possible world, it ceases to
+exist if Tail is annihilated.
+On this reading, the appeal to Leibniz's law would be legitimate
+ and one
+could rely on the truth of  and  ) to conclude
+that Tibbles is distinct from the relevant lump of feline tissue.
+However, there is no obvious reason why  should be regarded as
+true on this reading. That is, there is no obvious reason to suppose
+that the lump of feline tissue that in the actual world constitutes
+Tail and the rest of Tibbles's body—
+that
+lump of feline
+tissue that is now resting on the carpet—cannot survive the
+annihilation of Tail. Indeed, it would appear that any reason in favor
+of this claim
+vis-à-vis
+the truth of  would have
+to
+presuppose
+the distinctness of the entities in question,
+so no appeal to Leibniz's law would be legitimate to
+determine
+the distinctess . This is
+not to say that the putative counterexample to  is wrong-headed.
+But it requires genuine metaphysical work to establish it and it makes
+the rejection of extensionality, and with it the rejection of the
+Strong Supplementation principle , a matter of genuine
+philosophical controversy. , see e.g. Lewis 1971: 204ff, Jubien 1993: 118ff, and Varzi 2000:
+291ff. See also King's 2006 reply to Fine 2003 for a more general
+diagnosis of the semantic mechanisms at issue here.)
+3.3 Complementation
+There is a way of expressing the supplementation intuition that is
+even stronger than . It corresponds to the following thesis,
+which differs from  in the consequent:
+
+Complementation
+
+¬P
+yx
+→
+∃
+z
+∀
+w
+).
+This says that if
+y
+is not part of
+x
+, there exists
+something that comprises exactly those parts of
+y
+that are
+disjoint from
+x
+—something we may call the
+difference
+or relative
+complement
+between
+y
+and
+x
+. It is easily checked that this principle implies
+. On the other hand, the diagram in Figure 5 shows that the
+converse does not hold: there are two parts of
+y
+in this
+diagram that do not overlap
+x
+, namely
+z
+and
+w
+, but there is nothing that consists exactly of such parts,
+so we have a model of  in which  fails.
+Figure 5
+. A strongly supplemented model violating
+Complementation.
+Any misgivings about  may of course be raised against . But
+what if we agree with the above arguments in support of ? Do they
+also give us reasons to accept the stronger principle ? The
+answer is in the negative. Plausible as it may initially sound, 
+has consequences that even an extensionalist may not be willing to
+accept. For example, it may be argued that although the base and the
+stem of this wine glass jointly compose a larger part of the glass
+itself, and similarly for the stem and the bowl, there is nothing
+composed just of the base and the bowl , since these two pieces are standing apart. More
+generally, it appears that  would force one to accept the
+existence of a wealth of “scattered” entities, such as the
+aggregate consisting of your nose and your thumbs, or the aggregate of
+all mountains higher than Mont Blanc. And since V. Lowe , many
+authors have expressed discomfort with such entities
+regardless
+of extensionality.  As it turns out, the extra strength of  is
+therefore best appreciated in terms of the sort of mereological
+aggregates that this principle would force us to accept, aggregates
+that are composed of two or more parts of a given whole. This suggests
+that any additional misgivings about , besides its extensional
+implications, are truly misgivings about matters of composition. We
+shall accordingly postpone their discussion to Section 4, where we
+shall attend to these matters more fully. For the moment, let us
+simply say that  is, on the face of it, not a principle that can
+be added to
+M
+without further argument.
+3.4 Atomism, Gunk, and Other Options
+One last important family of decomposition principles concerns the
+question of atomism. Mereologically, an atom 
+is an entity with no proper parts, regardless of whether it is
+point-like or has spatial  extension:
+
+Atom
+A
+x
+=
+df
+¬∃
+y
+PP
+yx
+.
+By definition of ‘PP’, all atoms are pairwise disjoint and
+can only overlap things of which they are part. Are there any such
+entities? And, if there are, is everything entirely made up of atoms?
+Is everything comprised of at least some atoms? Or is everything made
+up of atomless “gunk”—as Lewis  calls
+it—that divides forever into smaller and smaller parts? These
+are deep and difficult questions, which have been the focus of
+philosophical investigation since the early days of philosophy and
+throughout the medieval and modern debate on anti-divisibilism, up to
+Kant's antinomies in the
+Critique of Pure Reason
+.
+ Along with nuclear physics, they made their way into contemporary
+mereology mainly through Nicod's  “geometry of the
+sensible world”, Tarski's  “geometry of
+solids”, and Whitehead's  theory of “extensive
+connection” mentioned in Section 3.1, and are now center stage
+in many mereological disputes at the intersection between metaphysics
+and the philosophy of space and time . Here we shall confine
+ourselves to a brief examination.
+The two main options, to the effect that everything is ultimately made
+up of atoms, or that there are no atoms at all, are typically
+expressed by the following postulates, respectively:
+
+Atomicity
+∃
+y
+
+
+Atomlessness
+∃
+y
+PP
+yx
+.
+ These postulates are mutually
+incompatible, but taken in isolation they can consistently be added to
+any standard mereological theory
+X
+considered here.
+Adding  yields a corresponding
+Atomistic
+version,
+AX
+; adding  yields an
+Atomless
+version,
+ÃX
+. Since finitude together with the
+antisymmetry of parthood  jointly imply that mereological
+decomposition must eventually come to an end, it is clear that any
+finite model of
+M
+—and
+a fortiori
+of
+any extension of
+M
+—must be atomistic.
+Accordingly, an atomless mereology
+ÃX
+admits
+only models of infinite cardinality. An example of such a model,
+establishing the consistency of the atomless versions of most standard
+mereologies considered in this survey, is provided by the regular open
+sets of a Euclidean space, with ‘P’ interpreted as
+set-inclusion . On the other hand, the consistency of an
+atomistic theory is typically guaranteed by the trivial one-element
+model , though one can
+also have models of atomistic theories that allow for infinite
+domains. A case in point is provided by the closed intervals on the
+real line, or the closed sets of a Euclidean space . In
+fact, it turns out that even when
+X
+is as strong as
+the full calculus of individuals, corresponding to the theory
+GEM
+of Section 4.4, there is
+no
+purely
+mereological formula that says whether there are finitely or
+infinitely many atoms, i.e., that is true in every finite model of
+AX
+but in no infinite model .
+Concerning Atomicity, it is also worth noting that  does not
+quite say that everything is ultimately
+made up
+of atoms; it
+merely says that everything
+has
+atomic
+ parts.
+
+As such it rules out gunky worlds, but one may wonder whether it
+fully captures the atomistic intuition. In a way, the answer is in the
+affirmative. For, assuming Reflexivity and Transitivity,  is
+equivalent to the following
+
+P
+zx
+→ ∃
+y
+,
+which is logically equivalent to
+
+ → P
+yx
+) ∧
+)
+, which is an instance of the general
+schema
+
+ ∧ ).
+And  is the closest we can get to saying that
+x
+is
+composed of the φs, i.e., all and only those entities that satisfy
+the given condition φ : every φ is part of
+x
+, and any part of
+x
+overlaps some φ. Indeed, provided the φs are
+pairwise disjoint, this is the standard definition of what it means
+for something
+x
+to be composed of the φs , and surely enough, if the φs are all atomic, then they
+are pairwise disjoint. Thus, although  does not
+say
+that
+everything is ultimately composed of atoms, it implies it—at
+least in the presence of  and .  would perhaps be a
+better way to express the assumption of atomism.) In another way,
+however,  may still not be enough. For if the domain is infinite,
+ admits of models that seem to run afoul of the atomistic
+doctrine. A simple example is a descending chain of decomposition that
+never “bottoms out”, as in Figure 6: here
+x
+is
+ultimately composed of atoms, but the pattern of decomposition that
+goes down the right branch “looks” awfully similar to a
+gunky precipice. For a concrete example ,
+consider the set of all subsets of the natural numbers, with parthood
+modeled by the subset relation. In such a universe, each singleton
+{
+n
+} will count as an atom and each infinite set {
+m
+:
+m
+>
+n
+} will be “made up” of atoms.
+Yet the set of all such infinite sets will be infinitely descending.
+Models of this sort do not violate the idea that everything is
+ultimately composed of atoms. However, they violate the idea that
+everything can be
+decomposed into
+its ultimate constituents.
+And this may be found problematic if atomism is meant to carry the
+weight of metaphysical grounding: as J. Schaffer puts it, the
+atomist's ontology seems to drain away “down a bottomless
+pit” ; being is “infinitely deferred, never
+achieved” . Are there any ways available to the
+atomist to avoid this charge? One option would simply be to require
+that every model be finite, or that it involve only a finite set of
+atoms. Yet such requirements, besides being philosophically harsh and
+controversial even among atomists, cannot be formally implemented in
+first-order mereology, the former for well-known model-theoretic
+reasons and the latter in view of the above-mentioned result by Hodges
+and Lewis . The only reasonable option would seem to be a
+genuine strengthening of Atomicity in the spirit of what Cotnoir
+ calls “superatomism”. Given any object
+x
+,
+ guarantees the existence of
+some
+parthood chain that
+bottoms out at an atom. Superatomicity would require that
+every
+parthood chain of
+x
+bottoms out—a
+property that fails in the model of Figure 6. At the moment, such ways
+of strengthening  have not been explored. However, in view of the
+connection between classical mereology and Boolean algebras , mathematical models for superatomistic
+mereologies may be recovered from the work on superatomic Boolean
+algebras initiated by Mostowski and Tarski  and eventually
+systematized in Day .  See
+also Shiver  for ways of strengthening  in the context of
+stronger mereologies such as
+GEM
+, or
+within theories formulated in languages enriched with set variables or
+plural quantification.
+Figure 6
+. An infinitely descending atomistic model.
+
+Another thing to notice is that, independently of their philosophical
+motivations and formal limitations, atomistic mereologies admit of
+significant simplifications in the axioms. For instance,
+AEM
+can be simplified by replacing  and 
+with
+
+Atomistic Supplementation
+¬P
+xy
+→ ∃
+z
+,
+which in turns implies the following atomistic variant of the
+extensionality thesis :
+
+x
+=
+y
+↔ ∀
+z
+).
+Thus, any atomistic extensional mereology is truly
+“hyperextensional” in Goodman's  sense: things built
+up from exactly the same atoms are identical. In particular, if the
+domain of an
+AEM
+-model has only finitely many atoms,
+the domain itself is bound to be finite. An interesting question,
+discussed at some length in the late 1960's  and taken up more recently by Simons 
+and Engel and Yoes , is whether there are atomless analogues of
+. Is there any predicate that can play the role of
+‘A’ in an atomless mereology? Such a predicate would
+identify the “base”  of the
+system and would therefore enable mereology to cash out Goodman's
+hyperextensional intuitions even in the absence of atoms. The question
+is therefore significant especially from a nominalistic perspective,
+but it has deep ramifications also in other fields . In special cases there is no difficulty in providing a positive
+answer. For example, in the
+ÃEM
+model
+consisting of the open regular subsets of the real line, the open
+intervals with rational end points form a base in the relevant sense.
+It is unclear, however, whether a general answer can be given that
+applies to any sort of domain. If not, then the only option would
+appear to be an account where the notion of a “base” is
+relativized to entities of a given sort. In Simons's terminology, we
+could say that the ψ-ers form a base for the φ-ers if and only
+if the following variants of  and  are satisfied:
+
+Relative Supplementation
+ → )
+
+Relative Atomicity
+φ
+x
+→ ∃
+y
+.
+An atomistic mereology would then correspond to the limit case where
+‘ψ’ is identified with the predicate ‘A’
+for every choice of ‘φ’. In an atomless mereology, by
+contrast, the choice of the base would depend each time on the level
+of “granularity” set by the relevant specification of
+‘φ’.
+Concerning atomless mereologies, one more remark is in order. For just
+as  is too weak to rule out unpleasant atomistic models, so too
+the formulation of  may be found too weak to capture the intended
+idea of a gunky world. For one thing, as it stands  presupposes
+Antisymmetry. Absent , the symmetric two-element pattern in
+Figure 3, left, would qualify as atomless. To rule out such models
+independently of , one should understand  in terms of the
+stronger notion of ‘PP’ given in , i.e.,
+
+Proper Atomlessness
+∃
+y
+.
+Likewise, note that the pattern in Figure 2, middle, will qualify as a
+model of  unless Supplementation is assumed, though again such a
+pattern does not quite correspond to what philosophers ordinarily have
+in mind when they talk about gunk. It is indeed an interesting
+question whether Supplementation  is in some sense presupposed by the
+ordinary concept of gunk. To the extent that it is, however, then
+again one may want to be explicit, in which case the relevant
+axiomatization may be simplified. For instance,
+ÃMM
+can be simplified by merging  and
+ into a single axiom:
+
+Atomless Supplementation
+P
+xy
+→ ∃
+z
+).
+There is, in addition, another, more important sense in which 
+may seem too week. After all, infinite divisibility is loose talk.
+Given  ), gunk may have denumerably
+many, possibly continuum-many parts; but can it have more? Is there an
+upper bound on the cardinality on the number of pieces of gunk? Should
+it be allowed that for
+every
+cardinal number there may be
+more than that many pieces of gunk?  is silent on these
+questions. Yet these are certainly aspects of atomless mereology that
+deserve scrutiny. It may even be thought that the world is not mere
+gunk but “hypergunk”, as Nolan  calls
+it—gunk such that, for any set of its parts, there is a set of
+strictly greater cardinality containing only its parts. It is not
+known whether such a theory is consistent , and even if it were, some philosophers would
+presumably be inclined to regard hypergunk as a mere logical
+possibility . Nonetheless the question is indicative of
+the sort of leeway that  leaves, and that one might want to
+regiment.
+So much for the two main options, corresponding to atomicity and
+atomlessness. What about theories that lie somewhere between these two
+extremes? Surely it may be held that there are atoms, though not
+everything need be made up of atoms; or it may be held that there is
+atomless gunk, though not everything need be gunky.  Formally, these
+possibilities can be put again in terms of suitable restrictions on
+ and , by requiring that the relevant conditions hold
+exclusively of certain entities:
+
+φ-
+Atomicity
+φ
+x
+→ ∀
+y
+)
+
+φ-
+Atomlessness
+φ
+x
+→ ∀
+y
+.
+And the options in question would correspond to endorsing
+ or  for specific values of
+‘φ’. At present, no thorough formal investigation has
+been pursued in this spirit . Yet the issue is particularly pressing when it comes to
+the mereology of the spatio-temporal world. For example, it is a
+plausible thought that while the question of atomism may be left open
+with regard to the mereological structure of material objects , one might be able to settle it
+ with regard to the structure of space-time itself.
+This would amount to endorsing a version of either
+ or  in which
+‘φ’ is understood as a condition that is satisfied
+exclusively by regions of space-time. Some may find it hard to
+conceive of a world in which an atomistic space-time is inhabited by
+entities that can be decomposed indefinitely , in which case accepting  for regions would
+entail the stronger principle . However, 
+would be genuinely independent of  unless it is assumed that
+every mereologically atomic entity should be spatially unextended, an
+assumption that is not part of definition  and that has been
+challenged by van Inwagen  and Lewis  . More generally, such issues depend on the broader
+question of whether the mereological structure of a thing should
+always “mirror” or be in perfect “harmony”
+with that of its spatial or spatio-temporal receptacle, a question
+addressed in J. Parsons  and Varzi  and further
+discussed in Schaffer , Uzquiano  and Saucedo . 
+Similar considerations apply to other decomposition principles that
+may come to mind at this point. For example, one may consider a
+requirement to the effect that ‘PP’ forms a dense
+ordering, as already Whitehead  had it:
+
+Density
+PP
+xy
+→ ∃
+z
+.
+As a general decomposition principle,  might be deemed too
+strong, especially in an atomistic setting.  However, it is plausible to suppose that 
+should hold at least with respect to the domain of spatio-temporal
+regions, regardless of whether these are construed as atomless gunk or
+as aggregates of spatio-temporal atoms. For more on this, see
+Eschenbach and Heydrich  and Varzi .
+Finally, it is worth noting that if one assumed the existence of a
+“null item” that is part of everything, corresponding to
+the postulate
+
+Bottom
+∃
+x
+∀
+y
+P
+xy
+,
+then such an entity would perforce be an atom. Accordingly, no
+atomless mereology is compatible with this assumption. But it bears
+emphasis that  is at odds with a host of other theories as well.
+For, given , the Antisymmetry axiom  will immediately
+entail that the atom in question is unique, while the Reflexivity
+axiom  will entail that it overlaps everything, hence that
+everything overlaps everything. This means that under such axioms the
+Supplementation principle  cannot be satisfied except in models
+whose domain includes a single element. Indeed, this is also true of
+the weaker Quasi-supplementation principle, . It
+follows, therefore, that the result of adding  to any theory at
+least as strong as  +  + , and a fortiori
+to
+MM
+and any extension thereof, will immediately
+collapse to triviality in view of the following corollary:
+
+∃
+x
+∀
+y x
+=
+y
+.
+‘Triviality’ may strike one as the wrong word here. After
+all, there have been and continue to be philosophers who hold
+radically monistic ontologies—from the Eleatics  to
+Spinoza  all the way to contemporary authors such as
+Horgan and Potrč , whose comparative ontological parsimony
+results in the thesis that the whole cosmos is but one huge extended
+atom, an enormously complex but partless “blobject”. For
+all we know, it may even be that the best ontology for quantum
+mechanics, if not for Newtonian mechanics, consists in a lonely atom
+speeding through configuration-space . None of this is
+trivial. However, none of this corresponds to fully endorsing ,
+either. For such philosophical theories do not, strictly speaking,
+assert the existence of one single
+entity
+—which is what
+ says—but only the existence of a single material substance
+along with entities of other kinds, such as properties or
+spatio-temporal regions. In other words, they only endorse a sortally
+restricted version of . In its full generality,  is much
+stronger and harder to swallow, and most mereologists would rather
+avoid it. The bottom line, therefore, is that theories endorsing
+ are likely to be highly non-standard,
+pace
+Carnap's
+persuasion that the null item would be a “natural and convenient
+choice” for certain purposes . A few authors have indeed
+gone that way, beginning with Martin , who rejects
+unrestricted Reflexivity and characterizes the null item as
+“that which is not part of itself”. Other notable
+exceptions include Bunt  and Meixner  and, more recently,
+Hudson  and Segal , both of whom express sympathy for the
+null individual at the cost of foregoing unrestricted
+Supplementation. See also Priest 
+and Cotnoir and Weber , who avoid  through a paraconsistent
+recasting of the underlying logic. Still another option would be to
+treat the null item as a mere algebraic “fiction” and to
+amend the entire mereological machinery accordingly, carefully
+distinguishing between trivial cases of parthood and overlap  and genuine, non-trivial
+ones:
+
+Genuine Parthood
+GP
+xy
+=
+df
+P
+xy
+∧
+∃
+z
+¬P
+xz
+
+Genuine Overlap
+GO
+xy
+=
+df
+∃
+z
+.
+The basic
+M
+-axioms need not be affected by this
+distinction. But stronger principles such as Supplementation could
+give way to their “genuine” counterparts, as in
+
+Genuine Supplementation
+PP
+xy
+→ ∃
+z
+,
+and this would suffice to block the inference to  while keeping
+with the spirit of standard mereology. This strategy is not uncommon,
+especially in the mathematically oriented literature , and we shall briefly
+return to it in Section 4.4 below. In general, however, mereologists
+tend to side with traditional wisdom and steer clear of 
+altogether.
+4. Composition Principles
+Let us now consider the second way of extending
+M
+mentioned at the beginning of Section 3. Just as we may want to
+regiment the behavior of P by means of decomposition principles that
+take us from a whole to its parts, we may look at composition
+principles that go in the opposite direction—from the parts to
+the whole. More generally, we may consider the idea that the domain of
+the theory ought to be closed under mereological operations of various
+sorts: not only mereological sums, but also products, differences, and
+more.
+4.1 Upper Bounds
+Conditions on composition are many. Beginning with the weakest, one
+may consider a principle to the effect that any pair of suitably
+related entities must underlap, i.e., have an upper bound:
+
+ξ-
+Bound
+ξ
+xy
+→ ∃
+z
+.
+Exactly how ‘ξ’ should be construed is, of course, an
+important question by itself—a version of what van Inwagen
+ calls the “Special Composition Question”. A
+natural choice would be to identify ξ with mereological overlap,
+the rationale being that such a relation establishes an important tie
+between what may count as two distinct parts of a larger whole. As we
+shall see , with ξ so construed 
+is indeed rather uncontroversial. By contrast, the most liberal choice
+would be to identify ξ with the universal relation, in which case
+ would reduce to its consequent and assert the
+existence of an upper bound for
+any
+pair of entities
+x
+and
+y
+. An axiom of this sort was used, for
+instance, in Whitehead's  mereology of
+ events.
+
+In any case, and regardless of any specific choice, it is apparent
+that  does not express a strong condition on
+composition, as the consequent is trivially satisfied in any domain
+that includes a universal entity of which everything is part, or any
+entity sufficiently large to include both
+x
+and
+y
+as
+parts regardless of how they are related.
+4.2 Sums
+A stronger condition would be to require that any pair of suitably
+related entities must have a
+minimal
+underlapper—something composed exactly of their parts and
+nothing else. This requirement is sometimes stated by saying that any
+suitable pair must have a mereological “sum”, or
+ “fusion”,
+
+though it is not immediately obvious how this requirement should be
+formulated. Consider the following definitions:
+
+Sum
+1
+
+S
+1
+zxy
+=
+df
+∀
+w
+)
+
+Sum
+2
+S
+2
+zxy
+=
+df
+P
+xz
+∧
+P
+yz
+∧ ∀
+w
+)
+
+Sum
+3
+S
+3
+zxy
+=
+df
+∀
+w
+)
+ Then, for each
+i
+∈ {1, 2, 3}, one could
+extend
+M
+by adding a corresponding axiom as follows,
+where again ξ specifies a suitable binary condition:
+
+ξ-
+Sum i
+ξ
+xy
+→
+∃
+z
+S
+i zxy
+.
+In a way,  would seem the obvious choice,
+corresponding to the idea that a sum of two objects is just a minimal
+upper bound of those objects relative to P .
+However, this condition may be regarded as too weak to capture the
+intended notion of a mereological sum. For example, with ξ
+construed as overlap,  is satisfied by the
+model of Figure 7, left: here
+z
+is a minimal upper bound of
+x
+and
+y
+, yet
+z
+hardly qualifies as a sum
+“made up” of
+x
+and
+y
+, since its parts
+include also a third, disjoint item
+w
+. Indeed, it is a simple
+fact about partial orderings that among finite models
+ is equivalent to , hence
+just as weak.
+By contrast,  corresponds to a notion of sum
+that may seem too strong. In a way, it says—literally—that
+any pair of suitably ξ-related entities
+x
+and
+y
+compose something, in the sense already discussed in connection with
+: they have an upper bound all parts of which overlap either
+x
+or
+y
+. Thus, it rules out the model on the left of
+Figure 7, precisely because
+w
+is disjoint from both
+x
+and
+y
+. However, it also rules out the model on the
+right, which depicts a situation in which
+z
+may be viewed as
+an entity truly made up of
+x
+and
+y
+insofar as it is
+ultimately composed of atoms to be found either in
+x
+or in
+y
+. Of course, such a situation violates the Strong
+Supplementation principle , but that's precisely the sense in
+which  may seem too strong: an
+anti-extensionalist might want to have a notion of sum that does not
+presuppose Strong Supplementation.
+The formulation in  is the natural compromise.
+Informally, it says that for any pair of suitably ξ-related
+entities
+x
+and
+y
+there is something that overlaps
+exactly those things that overlap either
+x
+or
+y
+.
+This is strong enough to rule out the model on the left, but weak
+enough to be compatible with the model on the right. Note, however,
+that if the Strong Supplementation axiom  holds, then
+ is equivalent to .
+Moreover, it turns out that if the stronger Complementation axiom
+ holds, then all of these principles are trivially satisfied in
+any domain in which there is a universal entity: in that case,
+regardless of ξ, the sum of any two entities is just the complement
+of the difference between the complement of one minus the other. , a genuine cross between decomposition and
+composition principles.)
+Figure 7
+. A sum
+1
+that is not a
+sum
+3
+, and a sum
+3
+that is not a sum
+2
+.
+The intuitive idea behind these principles is in fact best appreciated
+in the presence of , hence extensionality, for in that case the
+relevant sums must be unique. Thus, consider the following definition,
+where
+i
+∈ {1, 2, 3} and ‘℩’ is the
+definite descriptor):
+
+x
++
+i y
+=
+df
+℩
+z
+S
+i zxy
+.
+In the context of
+EM
+, each
+ would then imply that the
+corresponding sum operator has all the “Boolean”
+properties one might expect . For example, as long as
+the arguments satisfy the relevant condition
+ ξ,
+
+each +
+i
+is idempotent, commutative, and
+associative,
+
+x
+=
+x
++
+i x
+
+x
++
+i y
+=
+y
++
+i x
+
+x
++
+i
+ =  +
+i z
+,
+and well-behaved with respect to parthood:
+
+P
+x
+
+
+P
+xy
+→ P
+x
+
+
+P
+z
+→
+P
+xz
+
+P
+xy
+↔
+x
++
+i y
+=
+y
+.
+ would warrant defining ‘P’ in terms of
+‘+
+i
+’, treated as a primitive. For
+i
+=3, this was actually the option endorsed in Leonard 1930:
+187ff.)
+Indeed, here there is room for further developments. For example, just
+as the principles in  assert the
+existence of a minimal underlapper for any pair of suitably related
+entities, one may at this point want to assert the existence of a
+maximal overlapper, i.e., not a “sum” but a
+“product” of those entities. In the present context, such
+an additional claim can be expressed by the following principle:
+
+ξ-
+Product
+ξ
+xy
+→ ∃
+z
+R
+zxy
+,
+where
+
+Product
+R
+zxy
+=
+df
+∀
+w
+),
+and ‘ξ’ is at least as strong as ‘O’
+). In
+EM
+one could then introduce the corresponding binary
+operator,
+
+x
+×
+y
+=
+df
+℩
+z
+R
+zxy
+,
+and it turns out that, again, such an operator would have the
+properties one might expect. For example, as long as the arguments
+satisfy the relevant condition ξ, × is idempotent,
+commutative, and associative, and it interacts with each
++
+i
+in conformity with the usual distribution
+laws:
+
+x
++
+i
+ =  ×
+
+
+x
+×  =  +
+i
+.
+Now, obviously  does not qualify as a composition
+principle in the main sense that we have been considering here, i.e.,
+as a principle that yields a whole out of suitably ξ-related parts.
+Still, in a derivative sense it does. It asserts the existence of a
+whole composed of parts that are
+shared
+by suitably related
+entities. Be that as it may, it should be noted that such an
+additional principle is not innocuous unless ‘ξ’
+expresses a condition stronger than mere overlap. For instance, we
+have said that overlap may be a natural option if one is unwilling to
+countenance arbitrary scattered sums. It would not, however, be enough
+to avoid embracing scattered products. Think of two C-shaped objects
+overlapping at both extremities; their sum would be a one-piece
+O-shaped object, but their product would consist of two disjoint,
+separate parts . Moreover, and independently, if
+ξ were just overlap, then  would be
+unacceptable for anyone unwilling to embrace mereological
+extensionality. For it turns out that the Strong Supplementation
+principle  would then be derivable from the weaker
+Supplementation principle  using only the partial ordering axioms
+for ‘P’ . In other words, unless ‘ξ’
+expresses a condition stronger than overlap,
+MM
+cum
+ would
+automatically
+include
+EM
+. This is perhaps even more remarkable, for
+on first thought the existence of products would seem to have nothing
+to do with matters of
+de
+composition, let alone a
+decomposition principle that is committed to extensionality. On second
+thought, however, mereological extensionality is really a
+double-barreled thesis: it says that two wholes cannot be decomposed
+into the same proper parts but also, by the same token, that two
+wholes cannot be composed out of the same proper parts. So it is not
+entirely surprising that as long as proper parthood is well behaved,
+as per , extensionality might pop up like this in the presence of
+substantive composition principles.  is combined with a seemingly
+innocent thesis such as the existence of products, so the
+anti-extensionalist should keep that in mind.)
+4.3 Infinitary Bounds and Sums
+One can get even stronger composition principles by considering
+infinitary bounds and sums. For example,  can be
+generalized to a principle to the effect that any non-empty
+set
+of  entities satisfying a suitable condition
+ψ has an upper bound. Strictly speaking, there is a difficulty in
+expressing such a principle in a standard first-order language. Some
+early theories, such as those of Tarski  and Leonard and Goodman
+, require explicit quantification over sets . Others, such as Lewis's , resort to the
+machinery of plural quantification of Boolos . One can, however,
+avoid all this and achieve a sufficient degree of generality by
+relying on an axiom schema where sets are identified by predicates or
+open formulas. Since an ordinary first-order language has a
+denumerable supply of open formulas, at most denumerably many sets  can be specified in this way. But for most purposes
+this limitation is negligible, as normally we are only interested in
+those sets of objects that we are able to specify. Thus, for most
+purposes the following axiom schema will do, where ‘φ’
+is any formula in the language and ‘ψ’ expresses the
+condition in question:
+
+General
+ψ-
+Bound
+) →
+∃
+z
+∀
+w
+.
+ The three binary sum axioms
+corresponding to the schema in  can be
+strengthened in a similar fashion as follows:
+
+General
+ψ-
+Sum i
+) →
+∃
+z
+S
+i z
+φ
+w
+,
+where
+
+General
+ Sum
+1
+
+S
+1
+z
+φ
+w
+=
+df
+∀
+v
+)
+
+General Sum
+2
+S
+2
+z
+φ
+w
+=
+df
+∀
+w
+ ∧
+∀
+v
+)
+
+General Sum
+3
+S
+3
+z
+φ
+w
+=
+df
+∀
+v
+).
+ Thus,
+each  says that if there are some
+φ-ers, and if every φ-er satisfies condition ψ, then the
+φ-ers have a sum of the relevant type. It can be checked that each
+variant of  includes the
+corresponding finitely principle  as
+a special case, taking ‘φ
+w
+’ to be the formula
+‘
+w
+=
+x
+∨
+w
+=
+y
+’ and
+‘ψ
+w
+’ the condition
+‘ ∧
+’. And, again, it
+turns out that in the presence of Strong Supplementation,
+ and  are equivalent.
+One could also consider here a generalized version of the Product
+principle , asserting the conditional existence
+of a maximal common overlapper—a common “nucleus”,
+in the terminology of Leonard and Goodman —for any
+non-empty set of entities satisfying a suitable condition. Adapting
+from Goodman , such a principle could be stated as
+follows:
+
+General
+ψ-
+Product
+) →
+∃
+z
+R
+z
+φ
+w
+,
+where
+
+General Product
+R
+z
+φ
+w
+=
+df
+∀
+v
+)
+and ‘ψ
+w
+’ expresses a condition at least as
+strong as ‘∀
+x
+’ ). This principle includes the finitary version
+ as a special case, taking
+‘φ
+w
+’ and ‘ψ
+w
+’ as
+above, so the remarks we made in connection with the latter apply
+here. An additional remark, however, is in order. For there is a sense
+in which  might be thought to be redundant in
+the presence of the infinitary sum principles in
+. Intuitively, a maximal common
+overlapper  of a set of overlapping entities is
+simply a minimal underlapper  of their common parts; that is
+precisely the sense in which a product principle qualifies as a
+composition principle. Thus, intuitively, each of the infinitary sum
+principles above should have a substitution instance that yields
+ as a
+theorem
+, at least when
+‘ψ
+w
+’ is as strong as indicated. However, it
+turns out that this is not generally the case unless one assumes
+extensionality. In particular, it is easy to see that
+ does not generally imply
+, for it may not even imply the binary version
+. This can be verified by taking
+‘ξ
+xy
+’ and ‘ψ
+w
+’ to
+express
+just
+the requirement of overlap, i.e., the conditions
+‘O
+xy
+’ and
+‘∀
+x
+’,
+respectively, and considering again the non-extensional model
+diagrammed in Figure 4. In that model,
+x
+and
+y
+do
+not have a product, since neither is part of the other and neither
+z
+nor
+w
+includes the other as a part. Thus,
+ fails, which is to say that
+ fails when ‘φ’ picks out the
+set {
+x, y
+}; yet  holds, for both
+z
+and
+w
+are things that overlap exactly those things
+that overlap some common part of the φ-ers, i.e., of
+x
+and
+y
+.
+In the literature, this fact has been neglected until recently . It is, nonetheless, of major significance for a full
+understanding of  non-extensional mereologies. As we
+shall see in the next section, it is also important when it comes to
+the axiomatic structure of mereology, including the axiomatics of the
+most classical theories.
+4.4 Unrestricted Composition
+The strongest versions of all these composition principles are
+obtained by asserting them as axiom schemas holding for
+every
+condition ψ, i.e., effectively, by foregoing any reference to
+ψ altogether. Formally this amounts in each case to dropping the
+second conjunct of the antecedent, i.e., to asserting the schema
+expressed by the relevant consequent with the only proviso that there
+are some φ-ers. In particular, the following schema is the
+unrestricted version of , to the
+effect that every specifiable non-empty set of entities has a
+sum
+i
+:
+
+Unrestricted Sum
+i
+∃
+w
+φ
+w
+→
+∃
+z
+S
+i z
+φ
+w
+.
+For
+i
+=3, the extension of
+EM
+obtained by
+adding every instance of this schema has a distinguished pedigree and
+is known in the literature as
+General Extensional Mereology
+,
+or
+GEM
+. It corresponds to the classical systems of
+Leśniewski and of Leonard and Goodman, modulo the underlying
+logic and choice of primitives. The same theory can be obtained by
+extending
+EM
+with  instead, for in
+the presence of extensionality the two schemas are equivalent. Indeed,
+it turns out that the latter axiomatization is somewhat redundant:
+given just Transitivity and Supplementation, Unrestricted
+Sum
+2
+entails all the other axioms, i.e.,
+GEM
+is the same theory as  +  +
+. By contrast, extending
+EM
+with
+ would result in a weaker theory , though
+one can still get the full strength of
+GEM
+with the
+help of additional axioms. For example, Hovda  shows that the
+following will do:
+
+Filtration
+ →
+∃
+w
+.
+ +  +  +
+). For other ways of axiomatizatizing of
+GEM
+using , see e.g. Link  and Landman 
+. See also Sharvy , where the
+extension of
+M
+obtained by adding 
+is called a “quasi-mereology”.
+Figure 8
+. A model of
+EM
++
+ but not of
+GEM
+.
+GEM
+is a powerful theory, and it was meant to be so
+by its nominalistic forerunners, who were thinking of mereology as a
+good alternative to set theory. It is also decidable ,
+whereas for example,
+M
+,
+MM
+, and
+EM
+, and many extensions thereof turn out to be
+undecidable.  Just how powerful is
+GEM
+? To answer this question, let us focus on the
+classical formulation based on  and consider the
+following generalized sum operator:
+
+General Sum
+σ
+x
+φ
+x
+=
+df
+℩
+z
+S
+3
+z
+φ
+w
+.
+Then  and  can be simplified to a single axiom
+schema:
+
+Unique Unrestricted Sum
+3
+∃
+x
+φ
+x
+→
+∃
+z
+,
+and we can introduce the following definitions:
+
+Sum
+x
++
+y
+=
+df
+σ
+z
+
+
+Product
+x
+×
+y
+=
+df
+σ
+z
+
+
+Difference
+x
+−
+y
+=
+df
+σ
+z
+
+
+Complement
+~
+x
+=
+df
+σ
+z
+D
+zx
+
+Universe
+U
+=
+df
+σ
+z
+P
+zz
+.
+Note that  and  yield the binary operators defined in
+ and  as special cases. Moreover, in
+GEM
+the General ψ-Product principle
+ is also derivable as a theorem, with
+‘ψ’ as weak as the requirement of mutual overlap, and
+we can introduce a corresponding functor as follows:
+
+General Product
+π
+x
+φ
+x
+=
+df
+σ
+z
+∀
+x
+.
+The full strength of the theory can then be appreciated by considering
+that its models are closed under each of these functors, modulo the
+satisfiability of the relevant conditions. To be explicit: the
+condition ‘D
+zU
+’ is unsatisfiable, so
+U
+cannot have a complement. Likewise products are defined only for
+overlappers and differences only for pairs that leave a remainder.
+Otherwise, however, – yield perfectly well-behaved
+functors. Since such functors are the natural mereological analogues
+of the familiar set-theoretic operators, with ‘σ’ in
+place of set abstraction, it follows that the parthood relation
+axiomatized by
+GEM
+has essentially the same
+properties as the inclusion relation in standard set theory. More
+precisely, it is isomorphic to the inclusion relation restricted to
+the set of all non-empty subsets of a given set, which is to say a
+complete Boolean algebra with the zero element removed—a result
+that can be traced back to Tarski  and first proved in
+Grzegorczyk .
+
+There are other equivalent formulations of
+GEM
+that
+are noteworthy. For instance, it is a theorem of every extensional
+mereology that parthood amounts to inclusion of overlappers:
+
+P
+xy
+↔ ∀
+z
+.
+This means that in an extensional mereology ‘O’ could be
+used as a primitive and ‘P’ defined accordingly, as in
+Goodman , and it can be checked that the theory defined by
+postulating  together with the Unrestricted Sum principle
+ and the Antisymmetry axiom  is equivalent to
+GEM
+. Another elegant axiomatization of
+GEM
+, due to an earlier work of Tarski
+ ,
+
+is obtained by taking just the Transitivity axiom  together with
+the Sum
+2
+-analogue of the Unique Unrestricted Sum axiom
+. By contrast, it bears emphasis that the result of adding
+ to
+MM
+is
+not
+equivalent
+to
+GEM
+, contrary to the “standard”
+characterization given by Simons  and inherited by much
+literature that followed, including Casati and Varzi  and the
+first edition of this
+ entry.
+
+This follows immediately from Pontow's  counterexample
+mentioned at the end of Section 4.3, since the non-extensional model
+in Figure 4 satisfies , and was first noted in
+Pietruszczak . More generally, in Section 4.2 we have
+mentioned that in the presence of the binary Product postulate
+, with ξ construed as overlap, the Strong
+Supplementation axiom  follows from the weaker Supplementation
+axiom . However, the model shows that the postulate is not
+implied by  any more than it is implied by its
+restricted variants . Apart from its relevance
+to the proper characterization of
+GEM
+, this result is
+worth stressing also philosophically, for it means that
+ is by itself too weak to generate a sum out of any
+specifiable set of objects. In other words, fully unrestricted
+composition calls for extensionality, on pain of giving up
+both
+supplementation principles. The anti-extensionalist
+should therefore keep that in mind.  instead of , for we have
+already noted that such a way of sanctioning unrestricted composition
+turns out to be enough, in
+MM
+, to entail Strong
+Supplementation along with the existence of all products and, with
+them, of all sums; see Varzi 2009, with discussion in Rea 2010 and
+Cotnoir 2016 . In this sense, the standard way of characterizing
+composition given in , on which  is based, is
+not as neutral as it might seem. On this and related matters,
+indicating that the axiomatic path to “classical extensional
+mereology” is no straightforward business, see also Hovda 2009
+and Gruszczyński and Pietruszczak 2014.)
+Would we get a
+full
+Boolean algebra by supplementing
+GEM
+with the Bottom axiom , i.e., by positing
+the mereological equivalent of the empty set? One immediate way to
+answer this question is in the affirmative, but only in a trivial
+sense: we have already seen in Section 3.4 that, under the axioms of
+MM
+,  only admits of degenerate one-element
+models. Such is the might of the null item. On the other hand, suppose
+we rely on the “non-trivial” notions of genuine parthood
+and genuine overlap defined in –. And suppose we
+introduce a corresponding family of “non-trivial”
+operators for sum, product, etc. Then it can be shown that the theory
+obtained from
+GEM
+by adding  and replacing
+ and  with the following non-trivial
+variants:
+
+Genuine Strong Supplementation
+¬P
+yx
+→ ∃
+z
+
+
+Genuine Unrestricted Sum
+3
+∃
+w
+φ
+w
+→
+∃
+z
+∀
+v
+)
+is indeed a full Boolean algebra under the new operators . This shows that, mathematically, mereology does indeed
+have all the resources to stand as a robust and yet nominalistically
+acceptable alternative to set theory, the real source of difference
+being the attitude towards the nature of singletons . As already mentioned, however, from a philosophical perspective
+the Bottom axiom is by no means a favorite option. The null item would
+have to exist “nowhere and nowhen” , or perhaps “everywhere and everywhen” , and that is hard to swallow. One may try to
+justify the gulp in various ways, perhaps by construing the null item
+as a non-existing individual , as a Meinongian object
+lacking all nuclear properties , as an Heideggerian
+nothing that nothings , or as the
+ultimate incarnation of divine omnipresent simplicity . But few philosophers would be willing to go ahead and swallow
+for the sole purpose of neatening up the algebra.
+Finally, it is worth recalling that the assumption of atomism
+generally allows for significant simplifications in the axiomatics of
+mereology. For instance, we have already seen that
+AEM
+can be simplified by subsuming  and 
+under a single Atomistic Supplementation principle, .
+Likewise, it is easy to see that
+GEM
+is compatible
+with the assumption of Atomicity , and the resulting theory has some attractive features. In
+particular, it turns out that
+AGEM
+can be simplified
+by replacing any of the Unrestricted Sum postulates in
+ with the more perspicuous
+
+Atomistic Sum
+i
+∃
+w
+φ
+w
+→
+∃
+z
+S
+i z
+),
+which asserts, for any non-empty set of entities, the existence of a
+sum
+i
+composed exactly of all the atoms that
+compose those entities. Indeed,
+GEM
+also provides the
+resources to overcome the limits of the Atomicity axiom 
+discussed in Section 3.4. For, on the one hand, the infinitely
+descending chain depicted in Figure 6 is not a model of
+AGEM
+, since it is missing all sorts of sums. On the
+other, in
+GEM
+one can actually strenghten  in
+such a way as to require explicitly that everything be made entirely
+atoms, as in
+
+Strong Atomicity
+∃
+y
+A
+y
+∧
+P
+x
+σ
+y
+A
+y
+.
+ It should be noted, however, that such advantages
+come at a cost. For regardless of the number of atoms one begins with,
+the axioms of
+AGEM
+impose a fixed relationship
+between that number, κ, and the overall number of things, which
+is going to be 2
+κ
+–1. As Simons 
+pointed out, this means that the possible cardinality of an
+AGEM
+-model is restricted. There are models with 1, 3,
+7, 15, 2
+ℵ
+0
+, and many more cardinalities,
+but no models with, say, cardinality 2, 4, 6, or
+ℵ
+0
+. Obviously, this is not a consequence of
+ alone but also of the other axioms of
+GEM
+ for each
+i
+and has 2
+elements, and can be expanded at will to get models of any finite
+cardinality, or indefinitely to get a model with ℵ
+0
+elements, as in Figure 2, center; see also Figure 8 for a supplemented
+non-filtrated model of  with 4 elements and Figure
+7, right, for a supplemented non-extensional model of
+ with 6 elements). Still, it is a fact that in the
+presence of such axioms each  rules out a
+large number of possibilities. In particular, every finite model of
+AGEM
+—hence of
+GEM
+—is
+bound to involve massive violations of what Comesaña 
+calls “primitive cardinality”, namely, the intuive thesis
+to the effect that, for any integer
+n
+, there could be exactly
+n
+things. And since the size of any atomistic domain can
+always be reached from below by taking powers, it also follows that
+AGEM
+cannot have infinite models of strongly
+inaccessible cardinality. Such is, as Uzquiano  calls it, the
+“price of universality” in the context of Atomicity.
+What about
+ÃGEM
+, the result of adding the
+Atomlessness axiom ? Obviously the above limitation does not
+apply, and the Tarski model mentioned in Section 3.4 will suffice to
+establish consistency. However, note that every
+GEM
+model—hence every
+ÃGEM
+model—is
+necessarily bound at the top, owing to the existence of the universal
+entity
+U
+. This is not by itself problematic: while the
+existence of
+U
+is the dual the Bottom axiom, a top jumbo of
+which everything is part has none of the formal and philosophical
+oddities of a bottom atom that is part of everything . Yet a philosopher who believes in
+infinite divisibility, or at least in its possibility, might feel the
+same about infinite composability. Just as everything could be made of
+atomless gunk that divides forever into smaller and smaller parts,
+everything might be mereological “junk”—as Schaffer
+ calls it—that composes forever into greater and
+greater wholes. 
+Ascent
+∃
+y
+PP
+xy
+.
+See Whitehead 1919: 101; 1920: 76).
+GEM
+is compatible
+with the former possibility, and
+ÃGEM
+makes it
+into a universal necessity. But neither has room for the latter.
+Indeed, the possibility of junk might be attractive also from an
+atomist perspective. After all, already Theophilus thought that even
+though everything is composed of monads, “there is never an
+infinite whole in the world, though there are always wholes greater
+than others
+ad infinitum
+” . Is this a serious limitation of
+GEM
+? More generally, is this a serious limitation of
+any theory in which the existence of
+U
+is a
+theorem—effectively, any theory endorsing at least the
+unrestricted version of ?  in terms of the stronger
+definition given in ; see above,
+ad
+.)
+Some authors have argued that it is , given
+that junk is at least conceivable  and admits
+of plausible cosmological and mathematical models . Others have argued that it isn't, because junk is
+metaphysically impossible . Others still
+are openly dismissive about the question . One may
+also take the issue to be symptomatic of the sorts of trouble that
+affect any theory that involves quantification over absolutely
+everything, as the Unrestricted Sum principles in
+ obviously do . One way or the other, from a formal perspective the
+incompatibility with Ascent may be viewed as an unpleasant consequence
+of , and a reason to go for weaker
+theories. In particular, it may be viewed as a reason to endorse only
+finitary sums, which is to say only instances of
+, or perhaps its unrestricted
+version:
+
+Finitary Unrestricted Sum i
+∃
+z
+S
+i zxy
+.
+ This would be consistent with the existence of junky worlds
+as it is consistent with the existence of gunky worlds. Yet it should
+be noted that even this move has its costs. For example, it turns out
+that in a world that is both gunky and junky   is in tension with the
+Complementation principle  for each
+i
+.
+Moreover, while  is compatible with junky
+worlds
+, i.e., models that fully satisfy the Ascent axiom
+, it is in tension with the possibility of worlds containing
+junky structures along with other, disjoint elements .
+4.5 Composition, Existence, and Identity
+The algebraic strength of
+GEM
+, and of its weaker
+finitary and infinitary variants, is worth emphasizing, but it also
+reflects substantive mereological postulates whose philosophical
+underpinnings leave room for considerable controversy well beyond the
+gunk/junk dispute. Indeed,
+all
+composition principles turn
+out to be controversial, just as the decomposition principles examined
+in Section 3. For, on the one hand, it appears that the weaker,
+restricted formulations, from  to
+, are just not doing enough work: not
+only do they depend on the specification of the relevant limiting
+conditions, as expressed by the predicates ‘ξ’ and
+‘ψ’; they also treat such conditions as merely
+sufficient for the existence of bounds and sums, whereas ideally we
+are interested in an account of conditions that are both sufficient
+and necessary. On the other hand, the stronger, unrestricted
+formulations appear to go too far, for while they rule out the
+possibility of junky worlds, they also commit the theory to the
+existence of a large variety of
+prima facie
+implausible,
+unheard-of mereological composites—a large variety of
+“junk” in the good old sense of the word.
+Concerning the first sort of worry, one could of course construe every
+restricted composition principle as a biconditional expressing both a
+sufficient
+and
+a necessary condition for the existence of an
+upper bound, or a sum, of a given pair or set of entities. But then
+the question of how such conditions should be construed becomes
+crucial, on pain of turning a weak sufficient condition into an
+exceedingly strong requirement. For example, with regard to
+ we have mentioned the idea of construing
+‘ξ’ as ‘O’, the rationale being that
+mereological overlap establishes an important connection between what
+may count as two distinct parts of a larger  whole. However,
+as a necessary condition overlap is obviously too stringent. The top
+half of my body and the bottom half do not overlap, yet they do form
+an integral whole. The topological relation of contact, i.e., overlap
+or
+abut, might be a better candidate. Yet even that would be
+too stringent. We may have misgivings about the existence of scattered
+entities consisting of totally disconnected parts, such as my umbrella
+and your left shoe or, worse, the head of this trout and the body of
+that turkey . Yet in other cases it appears
+perfectly natural to countenance wholes that are composed of two or
+more disconnected entities: a bikini, a token of the lowercase letter
+‘i’, my copy of
+The Encyclopedia of Philosophy
+—indeed any garden-variety
+material object, insofar as it turns out to be a swarm of spatially
+isolated elementary particles . Similarly for some
+events, such as Dante's writing of
+Inferno
+versus the sum of
+Sebastian's stroll in Bologna and Caesar's crossing of Rubicon . More generally, intuition and common sense suggest
+that
+some
+mereological composites exist, not all; yet the
+question of
+which
+composites exist seems to be up for grabs.
+Consider a series of almost identical mereological aggregates that
+begins with a case where composition appears to obtain 
+and ends in a case where composition would seem not to obtain . Where should we
+draw the line? In other words—and to limit ourselves to
+—what value of
+n
+would
+mark a change of truth-value in the soritical sequence generated by
+the schema
+
+The set of all φ-ers has a sum
+i
+if and
+only if every φ is ψ,
+when ‘φ’ picks out my body cells and
+‘ψ’ expresses the condition ‘less than
+n
++1 nanometers apart from another φ-er’? It may
+well be that whenever some entities compose a bigger one, it is just a
+brute fact that they do so , perhaps a matter of
+contingent fact . But if we are unhappy
+with brute facts, if we are looking for a principled way of drawing
+the line so as to specify the circumstances under which the facts
+obtain, then the question is truly challenging. That is, it is a
+challenging question short of treating it as a mere verbal dispute, if
+not denying that it makes any sense to raise it in the first place
+. This is, effectively,
+van Inwagen's “Special Composition Question” mentioned in
+Section 4.1, an early formulation of which may be found in Hestevold
+. For the most part, the literature that followed has focused on
+the conditions of composition for material objects, as in Sanford
+, Horgan , Hoffman and Rosenkrantz , Merricks
+, Hawley , Markosian , Vander Laan , and Silva
+. Occasionally the question has been discussed in relation to
+the ontology of actions, as in Chant . In its most general form,
+however, the Special Composition Question may be asked with respect to
+any domain of entities whatsoever.
+Concerning the second worry, to the effect that the
+unrestricted
+sum principles in 
+would go too far, its earliest formulations are almost as old as the
+principles themselves . Here one
+popular line of response, inspired by Quine , is simply to
+insist that the pattern in  is the only
+plausible option, disturbing as this might sound. Granted, common
+sense and intuition dictate that some and only some mereological
+composites exist, but we have just seen that it is hard to draw a
+principled line. On pain of accepting brute facts, it would appear
+that any attempt to do away with queer sums by restricting composition
+would have to do away with too much else besides the queer entities;
+for queerness comes in degrees whereas parthood and existence cannot
+be a matter of degree . As Lewis  puts it, no restriction on composition can
+be vague, but unless it is vague, it cannot fit the intuitive
+desiderata
+. Thus, no restriction on composition could serve
+the intuitions that motivate it; any restriction would be arbitrary,
+hence gratuitous. And if that is the case, then either mereological
+composition never obtains or else the only non-arbitrary, non-brutal
+answer to the question, Under what conditions does a set have a
+sum
+i
+?, would be the radical one afforded by
+: Under any condition whatsoever. 
+Besides, it might be observed that any complaints about the
+counterintuitiveness of unrestricted composition rest on psychological
+biases that should have no bearing on the question of how the world is
+actually structured. Granted, we may feel uneasy about treating
+shoe-umbrellas and trout-turkeys as
+bona fide
+entities, but
+that is no ground for doing away with them altogether. We may ignore
+such entities when we tally up the things we care about in ordinary
+contexts, but that is not to say they do not
+exist
+. Even if
+one came up “with a formula that jibed with all ordinary
+judgments about what counts as a unit and what does not” , what would that show? The psychological factors that
+guide our judgments of unity simply do not have the sort of
+ontological significance that should be guiding our construction of a
+good mereological theory, short of thinking that composition itself is
+merely a secondary quality . In the words of
+Thomson : reality is like “an over-crowded
+attic”, with some interesting contents and a lot of junk, in the
+ordinary sense of the term. We can ignore the junk and leave it to
+gather dust; but it is there and it won't go away. 
+A third worry, which applies to all 
+composition principles, is this. Mereology is supposed to be
+ontologically “neutral”. But it is a fact that the models
+of a theory
+cum
+composition principles tend to be more
+densely populated than those of the corresponding composition-free
+theories. If the ontological commitment of a theory is measured in
+Quinean terms—
+via
+the dictum “to be is to be a
+value of a bound variable” —it follows that
+such theories involve greater ontological commitments than their
+composition-free counterparts. This is particularly worrying in the
+absence of the Strong Supplementation postulate —hence the
+extensionality principle —for then the ontological
+exuberance of such theories may yield massive multiplication. But the
+worry is a general one: composition, whether restricted or
+unrestricted, is not an ontologically “innocent”
+operation.
+There are two lines of response to this worry . First, it could be
+observed that the ontological exuberance associated with the relevant
+composition principles is not substantive—that the increase of
+entities in the domain of a mereological theory
+cum
+composition principles involves no substantive additional commitments
+besides those already involved in the underlying theory
+without
+composition. This is obvious in the case of modest
+principles in the spirit of  and
+, to the effect that all suitably related
+entities must have an upper bound. After all, there are small things
+and there are large things, and to say that we can always find a large
+thing encompassing any given small things of the right sort is not to
+say much. But the same could be said with respect to those stronger
+principles that require the large thing to be composed
+exactly
+of the small things—to be their mereological
+sum in some sense or other. At least, this seems reasonable in the
+presence of extensionality. For in that case it can be argued that
+even a sum is, in an important sense, nothing
+over and above
+its constituent parts. The sum is just the parts “taken
+together” ; it is the parts “counted
+loosely” ; it is, effectively, “the
+same portion of Reality” , which is strictly a
+multitude and loosely a single thing. That's why, if you proceed with
+a six-pack of beer to the six-items-or-fewer checkout line at the
+grocery store, the cashier is not supposed to protest your use of the
+line on the ground that you have seven items: either s/he'll count the
+six bottles, or s/he'll count the one pack. This thesis, known in the
+literature as “composition as identity”, is by no means
+uncontroversial and admits of different formulations . To the extent
+that the thesis is accepted, however, the charge of ontological
+exuberance loses its force. The additional entities postulated by the
+sum axioms would not be a genuine addition to being; they would be, in
+Armstrong's phrase, an “ontological free lunch” . In fact, if composition is in some sense a form of identity, then
+the charge of ontological extravagance discussed in connection with
+unrestricted composition loses its force, too. For if a sum is nothing
+over and above its constituent proper parts, whatever they are, and if
+the latter are all right, then there is nothing extravagant in
+countenancing the former: it just is them, whatever they are. 
+Secondly, it could be observed that the objection in question bites at
+the wrong level. If, given some entities, positing their sum were to
+count as further ontological commitment, then, given a mereologically
+composite entity, positing its proper parts should also count as
+further commitment. After all, every entity is distinct from its
+proper parts. But then the worry has nothing to do with the
+composition axioms; it is, rather, a question of whether there is any
+point in countenancing a whole along with its proper parts
+or
+vice versa . And if the answer is
+in the negative, then there seems to be little use for mereology
+tout court
+. From the point of view of the present worry, it
+would appear that the only thoroughly parsimonious account would be
+one that rejects
+any
+mereological complex whatsoever.
+Philosophically such an account is defensible  and
+the corresponding axiom,
+
+Simplicity
+A
+x
+,
+is certainly compatible with
+M
+. But the immediate corollary
+
+P
+xy
+↔
+x
+=
+y
+says it all: nothing would be part of anything else and parthood would
+collapse to identity. ; see
+van Inwagen 1990:
+ 72ff.
+
+Van Inwagen himself endorses a restricted version of nihilism, which
+leaves room for composite living things. So does Merricks 2000, 2001,
+whose restricted nihilism leaves room for composite conscious
+things.)
+In recent years, further worries have been raised concerning
+mereological theories with substantive composition
+principles—especially concerning the full strength of
+GEM
+. Among other things, it has been argued that the
+principle of unrestricted composition does not sit well with certain
+fundamental intuitions about persistence through time , that it is incompatible with certain plausible theories
+of space , or that it leads to paradoxes similar to the
+ones afflicting naïve set theory . A detailed
+examination of such arguments is beyond the scope of this entry. For
+some discussion of the first issue, however, see Rea , McGrath
+, Hudson  and Eklund . On the
+second, see Oppy  and Mormann . Hudson  also
+contains some discussion of the last point.
+5. Indeterminacy and Fuzziness
+We conclude with some remarks on a question that was briefly mentioned
+above in connection with the Special Composition Question but that
+pertains more generally to the underlying notion of parthood that
+mereology seeks to systematize. All the theories examined so far, from
+M
+to
+GEM
+and its variants, appear to
+assume that parthood is a perfectly determinate relation: given any
+two entities
+x
+and
+y
+, there is always an objective,
+determinate fact of the matter as to whether or not
+x
+is part
+of
+y
+. However, in some cases this seems problematic. Perhaps
+there is no room for indeterminacy in the idealized mereology of space
+and time as such; but when it comes to the mereology of ordinary
+spatio-temporal particulars  the picture looks
+different. Think of objects such as clouds, forests, heaps of sand.
+What exactly are their constitutive parts? What are the mereological
+boundaries of a desert, a river, a mountain? Some stuff is positively
+part of Mount Everest and some stuff is positively not part of it, but
+there is borderline stuff whose mereological relationship to Everest
+seems indeterminate. Even living organisms may, on closer look, give
+rise to indeterminacy issues. Surely Tibbles's body comprises his tail
+and surely it does not comprise Pluto's. But what about the whisker
+that is coming loose? It used to be a firm part of Tibbles and soon it
+will drop off for good, yet meanwhile its mereological relation to the
+cat is dubious. And what goes for material bodies goes for everything.
+What are the mereological boundaries of a neighborhood, a college, a
+social organization? What about the boundaries of events such as
+promenades, concerts, wars? What about the extensions of such ordinary
+concepts as baldness, wisdom, personhood?
+These worries are of no little import, and it might be thought that
+some of the principles discussed above would have to be revisited
+accordingly—not because of their ontological import but because
+of their classical, bivalent presuppositions. For example, the
+extensionality theorem of
+EM
+, , says that
+composite things with the same proper parts are identical, but in the
+presence of indeterminacy this may call for qualifications. The model
+in Figure 9, left, depicts
+x
+and
+y
+as non-identical
+by virtue of their having distinct determinate parts; yet one might
+prefer to describe a situation of this sort as one in which the
+identity between
+x
+and
+y
+is itself indeterminate,
+owing to the partly indeterminate status of the two outer atoms.
+Conversely, in the model on the right
+x
+and
+y
+have
+the same determinate proper parts, yet again one might prefer to
+suspend judgment concerning their identity, owing to the indeterminate
+status of the middle atom.
+Figure 9
+. Objects with indeterminate parts .
+Now, it is clear that a lot here depends on how exactly one
+understands the relevant notion of indeterminacy. There are, in fact,
+two ways of understanding a claim of the form
+
+It is indeterminate whether
+a
+is part of
+b
+,
+depending on whether the phrase ‘it is indeterminate
+whether’ is assigned wide scope, as in , or narrow scope,
+as in :
+
+It is indeterminate whether
+b
+is such that
+a
+is part of it.
+
+b
+is such that it is indeterminate whether
+a
+is part of it.
+On the first understanding, the indeterminacy is merely
+de
+dicto
+: perhaps ‘
+a
+’ or
+‘
+b
+’ are vague terms, or perhaps
+‘part’ is a vague predicate, but there is no reason to
+suppose that such vagueness is due to objective deficiencies in the
+underlying reality. If so, then there is no reason to think that it
+should affect the apparatus of mereology either, at least insofar as
+the theory is meant to capture some structural features of the world
+regardless of how we talk about it. For example, the statement
+
+The loose whisker is part of Tibbles
+may owe its indeterminacy to the semantic indeterminacy of
+‘Tibbles’: our linguistic practices do not, on closer
+look, specify exactly which portion of reality is currently picked out
+by that name. In particular, they do not specify whether the name
+picks out something whose current parts include the whisker that is
+coming loose and, as a consequence, the truth conditions of  are
+not fully determined. But this is not to say that the stuff out there
+is mereologically indeterminate. Each one of a large variety of
+slightly distinct chunks of reality has an equal claim to being the
+referent of the vaguely introduced name ‘Tibbles’, and
+each such thing has a perfectly precise mereological structure: some
+of them currently include the lose whisker among their parts, others
+do not.  Alternatively, one could hold that the indeterminacy
+of  is due, not to the semantic indeterminacy of
+‘Tibbles’, but to that of ‘part’ : there is no one parthood relation; rather, several
+slightly different relations are equally eligible as extension of the
+parthood predicate, and while some such relations connect the loose
+wisker to Tibbles, others do not. In this sense, the dashed lines in
+Figure 9 would be “defects” in the models, not in the
+reality that they are meant to represent. Either way, it is apparent
+that, on a
+de dicto
+understanding, mereological indeterminacy
+need not be due to the way the world is : it may just be an
+instance of a more general and widespread phenomenon of indeterminacy
+that affects our language and our conceptual apparatus at large. As
+such, it can be accounted for in terms of whatever
+theory—semantic, pragmatic, or even epistemic—one finds
+best suited for dealing with the phenomenon in its generality. 
+ The principles of mereology, understood as a theory of the parthood
+relation
+, or of all the relations that qualify as admissible
+interpretations of the parthood predicate, would hold
+ regardless.
+
+By contrast, on the second way of understanding claims of the form
+, corresponding to , the relevant indeterminacy is genuinely
+de re
+: there is no objective fact of the matter as to whether
+a
+is part of
+b
+, regardless of the words we use to
+describe the situation. For example, on this view  would be
+indeterminate, not because of the vagueness of ‘Tibbles’,
+but because of the vagueness of Tibbles itself: there simply would be
+no fact of the matter as to whether the whisker that is coming loose
+is part of the cat. Similarly, the dashed lines in Figure 9 would not
+reflect a “defect” in the models but a genuine, objective
+deficiency in the mereological organization of the underlying reality.
+As it turns out, this is not a popular view: already Russell 
+argued that the very idea of worldly indeterminacy betrays a
+“fallacy of verbalism”, and some have gone as far as
+saying that
+de re
+indeterminacy is simply not
+“intelligible”  or
+ruled out
+a priori
+. Nonetheless, several
+philosophers feel otherwise and the idea that the world may include
+vague entities relative to which the parthood relation is not fully
+determined has received considerable attention in recent literature,
+from Johnsen , Tye , and van Inwagen  to
+Morreau , McKinnon , Akiba , N. Smith , Hyde
+, Carmichael , and Sattig ,
+inter alia
+. Even those who do not find that thought
+attractive might wonder whether an
+a priori
+ban on it might
+be unwarranted—a deep-seated metaphysical prejudice, as Burgess
+ puts it.  It is therefore
+worth asking: How would such a thought impact on the mereological
+theses considered in the preceding sections?
+There is, unfortunately, no straightforward way of answering this
+question. Broadly speaking, two main sorts of answer may be
+considered, depending on whether  one simply takes the
+indeterminacy of the parthood relation to be the
+reason
+why
+certain statements involving the parthood predicate lack a definite
+truth-value, or  one understands the indeterminacy so that
+parthood becomes a genuine matter of
+degree
+. Both options,
+however, may be articulated in a variety of ways.
+On option  ,
+it could once again be argued that no modification of the basic
+mereological machinery is strictly necessary, as long as each
+postulate is taken to characterize the parthood relation insofar as it
+behaves in a determinate fashion. Thus, on this approach,  should
+be understood as asserting that everything is definitely part of
+itself,  that any definite part of any definite part of a thing
+is itself a definite part of that thing,  that things that are
+definitely part of each other are identical, and so on, and the truth
+of such principles is not affected by the consideration that parthood
+need not
+be fully determinate. There is, however, some leeway
+as to how such basic postulates could be integrated with further
+principles concerning explicitly the indeterminate cases. For example,
+do objects with indeterminate parts have indeterminate identity?
+Following Evans , many philosophers have taken the answer to be
+obviously in the affirmative. Others, such as Cook , Sainsbury
+, or Tye , hold the opposite view: vague objects are
+mereologically elusive, but they have the same precise identity
+conditions as any other object. Still others maintain that the answer
+depends on the strength of the underlying mereology. For instance, T.
+Parsons  argues that on a theory such as
+EM
+cum
+unrestricted binary
+ sums,
+
+the
+de re
+indeterminacy of  would be inherited by
+
+Tibbles is identical with the sum of Tibbles and the loose
+whisker.
+A related question is: Does countenancing objects with indeterminate
+parts entail that composition be vague, i.e., that there is sometimes
+no matter of fact whether some things make up a whole? A popular view,
+much influenced by Lewis , says that it does. Others, such
+as Morreau , argue instead that the link between vague
+parthood and vague composition is unwarranted: perhaps the
+de
+re
+indeterminacy of  is inherited by some instances of
+
+Tibbles is composed of
+x
+and the loose whisker.
+; yet this
+would not amount to saying that composition is vague, for the
+following might nonetheless be true:
+
+There is something composed of
+x
+and the loose
+whisker.
+Finally, there is of course the general question of how one should
+handle logically complex statements concerning, at least in part,
+mereologically indeterminate objects. A natural choice is to rely on a
+three-valued semantics of some sort, the third value being, strictly
+speaking, not a truth value but rather a truth-value gap. In this
+spirit, both Johnsen and Tye endorse the truth-tables of Kleene 
+while Hyde those of Łukasiewicz . However, it is worth
+stressing that other choices are available, including
+non-truth-functional accounts. For example, Akiba  and Morreau
+ recommend a form of “supervaluationism”. This was
+originally put forward by Fine  as a theory for dealing with
+de dicto
+indeterminacy, the idea being that a statement
+involving vague expressions should count as true  if and only
+it is true  on every “precisification” of those
+expressions. Still, a friend of
+de re
+indeterminacy may
+exploit the same idea by speaking instead of precisifications of the
+underlying reality—what Sainsbury  calls
+“approximants”, Cohn and Gotts 
+“crispings”, and T. Parsons 
+“resolutions” of vague objects. As a result, one would be
+able to explain why, for example,  appears to be true and 
+false ,
+whereas both conditionals would be equally indeterminate on Kleene's
+semantics and equally true on Łukasiewicz's:
+
+If the loose whisker is part of the head and the head is part of
+Tibbles, then the whisker itself is part of Tibbles.
+
+If the loose whisker is part of the head and the head is part of
+Tibbles, then the whisker itself is not part of Tibbles.
+As for option —to the effect that
+de re
+mereological indeterminacy is a matter of degree—the picture is
+different. Here the main motivation is that whether or not something
+is part of something else is really not an all-or-nothing affair. If
+Tibbles has two whiskers that are coming loose, then we may want to
+say that neither is a definite part of Tibbles. But if one whisker is
+looser than the other, then it would seem plausible to say that the
+first is part of Tibbles to a
+lesser
+degree than the second,
+and one may want the postulates of mereology to be sensitive to such
+distinctions. This is, for example, van Inwagen's  view of the
+matter, which results in a fuzzification of parthood that parallels in
+many ways to the fuzzification of membership in Zadeh's  set
+theory, and it is this sort of intuition that also led to the
+development of such formal theories as Polkowsky and Skowron's 
+“rough mereology” or N. Smith's  theory of
+“concrete parts”. Again, there is room for some leeway
+concerning matters of detail, but in this case the main features of
+the approach are fairly clear and uniform across the literature. For
+let π be the characteristic function associated with the parthood
+relation denoted by the basic mereological primitive, ‘P’.
+Then, if classically this function is bivalent, which can be expressed
+by saying that π always takes, say, the
+value 1 or the value 0 according to whether or not
+x
+is part
+of
+y
+, to say that parthood may be indeterminate is to say
+that π need not be fully bivalent. And whereas option  simply
+takes this to mean that π may sometimes be undefined, option 
+can be characterized by saying that the range of π may include
+values intermediate between 0 and 1, i.e., effectively, values from
+the closed real interval . In other words, on this latter
+approach π is still a perfectly standard, total function, and the
+only serious question that needs to be addressed is the genuinely
+mereological question of what conditions should be assumed to
+characterize its behavior—a question not different from the one
+that we have considered for the bivalent case throughout the preceding
+sections.
+This is not to say that the question is an easy one. As it turns out,
+the “fuzzification” of the core theory
+M
+is rather straightforward, but its extensions give rise to various
+issues. Thus, consider the partial ordering axioms –.
+Classically, these correspond to the following conditions on π
+:
+
+π = 1
+
+π ≥ min, π)
+
+If π = 1 and π = 1, then
+x
+=
+y
+,
+and one could argue that the very same conditions may be taken to fix
+the basic properties of parthood regardless of whether π is
+bivalent. Perhaps one may consider weakening  as
+follows :
+
+If π = 1, then π ≥ π.
+Or one may consider strengthening  as follows :
+
+
+If π > 0 and π > 0, then
+x
+=
+y
+.
+But that is about it: there is little room for further adjustments.
+Things immediately get complicated, though, as soon as we move beyond
+M
+. Take, for instance, the Supplementation principle
+ of
+MM
+. One natural way of expressing it in
+terms of π is as follows:
+
+If π = 1 and
+x
+≠
+y
+, then π = 1 for some
+z
+such that, for all
+w
+, either π = 0
+or π = 0.
+There are, however, fifteen other ways of expressing  in terms of
+π, obtained by re-writing one or both occurrences of ‘=
+1’ as ‘> 0’ and one or both occurrences of
+‘= 0’ as ‘< 1’. In the presence of
+bivalence, these would all be equivalent ways of saying the same
+thing. However, such alternative formulations would not coincide if
+π is allowed to take non-integral values, and the question of which
+version best reflect the supplementation intuition would have to be
+carefully examined. 
+And this is just the beginning: it is clear that similar issues arise
+with most other principles discussed in the previous sections, such as
+Complementation, Density, or the various composition principles. .)
+On the other hand, it is worth noting that precisely because the
+difficulty is mainly technical—the framework itself being fairly
+firm—now some of the questions raised in connection with option
+ tend to be less open to controversy. For example, the question of
+whether mereological indeterminacy implies vague identity is generally
+answered in the negative, especially if one adheres to the spirit of
+extensionality. For then it is natural to say that non-atomic objects
+are identical if and only if they have exactly the same parts to the
+same degree—and that is not a vague matter . In other words, given that classically the
+extensionality principle  corresponds to the following
+condition:
+
+If there is a
+z
+such that either π = 1 or π = 1, then
+x
+=
+y
+if and only if, for every
+z
+, π = π,
+it seems perfectly natural to stick to this condition even if the
+range of π is extended from {0, 1} to . Likewise, the
+question of whether mereological indeterminacy implies vague
+composition or vague existence is generally answered in the
+affirmative . Van Inwagen  takes this to be a rather
+obvious consequence of the approach, but N. Smith  goes
+further and provides a detailed analysis of how one can calculate the
+degree to which a given non-empty set of things has a sum, i.e., the
+degree of existence of the sum. .
+The one question that remains widely open is how all of this should be
+reflected in the semantics of our language, specifically the semantics
+of logically complex statements. As a matter of fact, there is a
+tendency to regard this question as part and parcel of the more
+general problem of choosing the appropriate semantics for fuzzy logic,
+which typically amounts to an infinitary generalization of some
+truth-functional three-valued semantics. The range of possibilities,
+however, is broader, and even here there is room for
+non-truth-functional approaches—including degree-theoretic
+variants of supervaluationism .

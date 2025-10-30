@@ -1,0 +1,1463 @@
+1. On computational complexity
+Central to the development of computational complexity theory is the notion of a
+decision problem
+. Such a problem corresponds to a set \ in which we wish to decide membership. For instance the problem \ corresponds to the subset of the natural numbers which are prime – i.e. \. Decision problems are typically specified in the form of questions about a class of mathematical objects whose positive instances determine the set in question – e.g.
+\ Given a formula \ of propositional logic, does there exist a satisfying assignment for \?
+\ \ \) Given a list of cities \, the integer distance \\) between each pair of cities \, and a budget  \, is there a tour visiting each city exactly once and returning to the starting city of total distance \?
+\ Given an \ integer matrix \ and an \-dimensional vector of integers \, does there exist an \-dimensional vector \ of integers such that \?
+\ Given a finite bipartite graph \, does there exist a perfect matching in \?   is
+bipartite
+just in case its vertices can be partitioned into two disjoints sets \ and \ such that all of its edges \ connect a vertex in \ to one in \.   A
+matching
+is a subset of edges  \ no two members of which share a common vertex.  \ is
+perfect
+if it matches all vertices.)
+These problems are typical of those studied in complexity theory in two fundamental respects.  First, they are all
+effectively decidable
+.  This is to say that they may all be decided in the ‘in principle’ sense studied in
+computability theory
+– i.e. by an effective procedure which halts in finitely many steps for all inputs.  Second, they arise in contexts in which we are interested in solving not only isolated instances of the problem in question, but rather in developing methods which allow it to be efficiently solved on a mass scale – i.e. for all instances in which we might be practically concerned.  Such interest often arises in virtue of the relationship of computational problems to practical tasks which we seek to analyze using the methods of discrete mathematics.  For example, instances of \ arise when we wish to check the consistency of a set of specifications , instances of \ and \ arise in many logistical and planning applications, instances of \ arise when we wish to find an optimal means of pairing candidates with jobs, 
+ etc.
+
+The resources involved in carrying out an algorithm to decide an instance of a problems can typically be measured in terms of the number of processor cycles  and the amount of memory space  which are required to return a solution.   The methods of complexity theory can be useful not only in deciding how we can most efficiently expend such resources, but also in helping us to distinguish which effectively decidable problems possess efficient decision methods in the first place.  In this regard, it is traditional to distinguish pre-theoretically between the class of
+feasibly decidable problems
+– i.e. those which can be solved in practice by an efficient algorithm – and the class of
+intractable problems
+– i.e. those which lack such algorithms and may thus be regarded as intrinsically difficult to decide . The significance of this distinction is most readily appreciated by considering some additional examples.
+1.1 A preliminary example
+A familiar example of a computational problem is that of
+primality testing
+– i.e. that of deciding \?  This problem was intensely studied in mathematics long before the development of digital computers.   for a history of primality testing and
+
+for a recent survey of the state of the art.)   After a number of preliminary results in the 19th and 20th centuries, the problem \ was shown in 2004 to possess a so-called
+polynomial time
+decision algorithm – i.e. the so-called
+AKS primality test
+
+. This qualifies \ as feasibly decidable relative to the standards which are now widely accepted in complexity theory and algorithmic analysis .
+Two related problems can be used to illustrate the sort of contrasts in difficulty which complexity theorists seek to analyze:
+\ Given natural
+numbers \ and \, do  \ and \ possess greatest common divisor \?   and \
+relatively prime
+?)
+\ Given natural numbers \
+and \, does there exist \ such that \?
+\ can be solved by applying Euclid’s greatest common divisor algorithm – i.e. on input \, repeatedly compute the remainders \\), \\), \\) …, until \ and then return ‘yes’ if \ and ‘no’ otherwise. It may be shown that the number of steps in this sequence is always less than or equal to 
+ \\).
+
+This means that in order to determine if \ and \ are relatively prime, it suffices to calculate a number of remainders which is proportional to the number of digits in the decimal representation of the smaller of the two numbers. As this may also be accomplished by an efficient algorithm , it may plausibly be maintained that if we are capable of
+inscribing
+a pair of numbers \ – e.g. by writing their numerical representations in binary or decimal notation on a blackboard or by storing such numerals in the memory of a digital computer of current design – then either we or such a computer will also be able to carry out these algorithms in order to decide whether \ and \ are relatively prime. This is the hallmark of a
+feasibly decidable
+problem – i.e. one which can be decided in the ‘in practice’ sense of everyday concretely embodied computation.
+\ is a decision variant of the familiar problem of finding the
+prime factorization
+of a given number \ – i.e. the unique sequence of primes \ and exponents \ such that \. It is not difficult to see that if there existed an efficient algorithm for deciding \, then there would also exist an efficient algorithm for determining prime 
+ factorizations.
+
+It is also easy to see that the function taking \ to its prime factorization is effectively computable in the traditional sense of computability theory. For instance, it can be computed by the
+trial division algorithm
+.
+In its simplest form, trial division operates by successively testing \ for divisibility by each integer smaller than \ and keeping track of the divisors which have been found thus far. As the number of divisions required by this procedure is proportional to \ itself, it might at first seem that it is not a particularly onerous task to employ this method to factor numbers of moderate size using paper and pencil calculation – say \. Note, however, that we conventionally denote natural numbers using
+positional notations
+such as binary or decimal numerals. A consequence of this is that the length of the expression which is typically supplied as an input to a numerical algorithm to represent an input \ is proportional not to \ itself, but rather to \\) where \ is the base of the notation system in 
+ question.
+
+As a consequence it is possible to concretely inscribe positional numerals of moderate length which denote astronomically large numbers. For instance a binary numeral of 60 digits denotes a number which is larger than the estimated age of the universe in seconds and a binary numeral of 250 digits denotes a number which is larger than the estimated age of the universe in Planck 
+ times.
+
+There are thus natural numbers whose binary representations we can easily inscribe, but for which no human mathematician or foreseeable computing device can carry out the trial division algorithm. This again might not seem particularly troubling as this algorithm is indeed ‘naive’ in the sense that it admits to several obvious improvements – e.g. we need only test \ for divisibility by the numbers \ to find an initial factor, and of these we need only test those which are themselves prime . Nonetheless, mathematicians have been attempting to find more efficient methods of factorization for several hundred years. The most efficient factorization algorithm yet developed is similar to the trial division algorithm in that it requires a number of primitive steps which grows roughly in proportion to \ .
+
+A consequence of these observations is that there exist concretely inscribable numbers – say on the order of 400 decimal digits – with the following properties:  we are currently unaware of their factorizations; and  it is highly unlikely we could currently find them even if we had access to whatever combination of currently available computing equipment and algorithms we wish.
+Like the problems introduced above, \ is of considerable practical importance, perhaps most famously because the security of well known cryptographic protocols assume that it is intractable in the general case .  But the foregoing observations still do not entail any fundamental limitation on our ability to know a number’s prime factorization. For it might still be hoped that further research will yield a more efficient algorithm which will allow us to determine the prime factorization of every number \ in which we might take a practical interest. A comparison of Euclid’s algorithm and trial division again provides a useful context for describing the properties which we might expect such an algorithm to possess. For note that the prior observations suggest that we ought to measure the size of the input  \ to a numerical algorithm not by  \ itself, but rather in terms of the length of \’s binary representation. If we let \\) denote this quantity, then it is easy to see that the efficiency of Euclid’s algorithm is given by a function which grows proportionally to \ for fixed \ ), whereas the efficiency of trial division is given by a function proportional \ for fixed \ ).
+The difference in the growth rate of these functions illustrates the contrast between
+polynomial time complexity
+– which is currently taken by complexity theorists as the touchstone of feasibility – and
+exponential time complexity
+– which has traditionally been taken as the touchstone of intractability. For instance, if it could be shown that no polynomial time factorization algorithm exists, it might then seem reasonable to conclude that \ is a genuinely intractable problem.
+Although it is currently unknown whether this is the case, contemporary results provide circumstantial evidence that \ is indeed intractable .  Stronger evidence can be adduced for the intractability of conjecture  \, \, and \ . The technical development of complexity theory aims to make such comparisons of  computational difficulty precise and to show that the classification of certain problems as intractable admits to rigorous mathematical analysis.
+1.2 Basic conventions
+As we have just seen, in computational complexity theory a problem \ is considered to be
+complex
+in proportion to the difficulty of carrying out the most efficient algorithm by which it may be decided. Similarly, one problem \ is understood to be
+more complex
+ than another problem \ just in case \ possesses a more efficient decision algorithm than the most efficient algorithm for deciding \. In order to make these definitions precise, a number of technical conventions are employed, many of which are borrowed from the adjacent fields of
+computability theory
+ and
+algorithmic analysis
+. It will be useful to summarize these before proceeding further.
+A reference model of computation \ is chosen to represent algorithms. \ is assumed to be a
+reasonable
+model in the sense that it accurately reflects the computational costs of carrying out the sorts of informally specified algorithms which are encountered in mathematical practice. The deterministic
+Turing machine model
+\ is traditionally selected for this purpose. 
+Decision problems are represented as sets consisting of objects which can serve as the inputs for a machine \. For instance, if \ is used as the reference model then it is assumed that all problems \ are represented as sets of finite binary strings – i.e. \. This is accomplished by defining a mapping \ whose definition will depend on the type of objects which comprise \. For instance, if \, then \ will typically be the binary numeral representing \. And if \ is a subset of \ – i.e. the set of formulas over a formal language \ such as that of propositional logic – then \ will typically be a 
+Gödel numeral
+for \. Based on these conventions, problems \ will henceforth be identified with sets of strings \  corresponding to their images under such an encoding.
+A machine \ is said to
+decide
+a language \ just in case \ computes the characteristic function of \ relative to the standard input-output conventions for the model \. For instance, a Turing machine \  decides \ just in case for all \, the result of applying \ to \ yields a halting computation ending in a designated accept state if \ and a designated reject state if \. A
+function problem
+is that of computing the values of a given function \. \ is said to solve a function problem \ just in case the mapping induced by its operation coincides with \\) – i.e. if \ = f\) for all \ where \\) denotes the result of applying machine \ to input \, again relative to the input-output conventions for the model \.
+For each problem \, it is also assumed that an appropriate notion of
+problem size
+is defined for its instances. Formally, this is a function \ chosen so that the efficiency of a decision algorithm for \ will varying uniformly in \. As we have seen, if \, it is standard to take \\) – i.e. the number of digits  of the binary numeral \ representing \. Similarly if \ is a class of logical formulas over a language \ , then \ will typically be a measure of \’s syntactic complexity . If \ is a graph theoretic problem its instances will consist of the encodings of finite graphs of the form \ where \ is a set of
+vertices
+and \ is a set of
+edges
+. In this case \ will typically be a function of the cardinalities of the sets \ and \.
+The efficiency of a machine \ is measured in terms of its
+time complexity
+– i.e. the number of basic steps \\) required for \ to halt and return an output for the input \ ). This measure may be converted into a function of type \ by considering \ = \max \{time_M : \lvert x\rvert = n \}\) – i.e. the
+worst case time complexity
+of \ defined as the
+maximum
+number of basic steps required for \ to halt and return an output for all inputs \ of size \. The
+worst case space complexity
+of \ – denoted \\) – is defined similarly – i.e. the maximum number of tape cells  visited or written to in the course of \’s computation for all inputs of size \.
+The efficiency of two machines is compared according to the
+order of growth
+of their time and space complexities. In particular, given a function \ we define its order of growth to be \) = \{g : \exists c \exists n_0 \forall n \geq n_0 \lt c \cdot f) \}\) – i.e. the set of all functions which are
+asymptotically bounded
+by \\), ignoring scalar factors. For instance, for all fixed \ the following functions are all in \\): the constant \-function, \, n, c_1 \cdot n^2 + c_2\).  However \\). A machine \ is said to have
+lower time complexity
+ another machine \ if \ \in O)\), but not conversely. Space complexity comparisons between machines are performed similarly.
+The time and space complexity of a problem \ are measured in terms of the worst case time and space complexity of the asymptotically most efficient algorithm for deciding \. In particular, we say that \ has
+time complexity
+\)\) if the worst case time complexity of the most time efficient machine \ deciding \ is in \)\). Similarly, \ is said to be
+harder to decide
+
+than
+\ if the time complexity of \ is asymptotically bounded by the time complexity of \. The space complexity of a problem is defined similarly.
+A
+complexity class
+can now be defined to be the set of problems for which there exists a decision procedure with a given running time or running space complexity. For instance, the class \)\) denotes the class of problems with time complexity \\). \ – or
+polynomial time
+– is used to denote the union of the classes \\) for \ with respect to the reference model \. \ hence subsumes all problems for which there exists a decision algorithm which can be implemented by a Turing machine whose time complexity is of polynomial order of growth. \)\) and \ – or
+polynomial space
+– is defined similarly. Several other complexity classes we will consider below , \, \) are defined by changing the reference model of computation, the definition of what it means for a machine to accept or reject an input, or both.
+1.3 Distinguishing notions of complexity
+With these conventions in place, we can now record several respects in which the meaning assigned to the word ‘complexity’ in computational complexity theory differs from that which is assigned to this term in several other fields.  In computational complexity theory, it is problems – i.e.
+infinite sets
+of finite combinatorial objects like natural numbers, formulas, graphs  – which are assigned ‘complexities’.  As we have just seen, such assignments are based on  the time or space complexity of the most efficient algorithms by which membership in a problem can be decided. A distinct notion of complexity is studied in
+Kolmogorov complexity theory
+. Rather than studying the complexity of sets of mathematical objects, this subject attempts to develop a notion of complexity which is applicable to individual combinatorial objects – e.g.
+specific
+natural numbers, formulas, graphs, etc. For instance, the Kolmogorov complexity of a finite string \ is defined to be the size of the smallest program for a fixed universal Turing machine which outputs \ given the empty string as input. In this setting, the ‘complexity’ of an object is thus viewed as a measure of the extent to which its description can be compressed algorithmically.
+Another notion of complexity is studied in
+descriptive complexity theory
+. Like computational complexity theory, descriptive complexity theory also seeks to classify the complexity of infinite sets of combinatorial objects. However, the ‘complexity’ of a problem is now measured in terms of the logical resources which are required to define its instances relative to the class of all finite structures for an appropriate signature. As we will see in
+Section 4.4
+this approach often yields alternative characterizations of the same classes studied in computational complexity theory.
+Yet another subject related to computational complexity theory is
+algorithmic analysis
+
+,
+Cormen, Leiserson, and Rivest 2005
+). Like computational complexity theory, algorithmic analysis studies the complexity of problems and also uses the time and space measures \\) and \\) defined above. The methodology of algorithmic analysis is different from that of computational complexity theory in that it places primary emphasis on gauging the efficiency of specific algorithms for solving a given problem. On the other hand, in seeking to classify problems according to their degree of intrinsic difficulty, complexity theory must consider the efficiency of
+all
+algorithms for solving a problem. Complexity theorists thus make greater use of complexity classes such as \, and \ whose definitions are robust across different choices of reference model.  In algorithmic analysis, on the other hand, algorithms are often characterized relative to the finer-grained hierarchy of running times \, n, n \cdot \log_2, n^2, n^3, \ldots\) within 
+ \.
+
+2. The origins of complexity theory
+2.1 Church’s Thesis and effective computability
+The origins of computational complexity theory lie in
+computability theory
+and early developments in algorithmic analysis. The former subject began with the work of Gödel, Church, Turing, Kleene, and Post originally undertaken during the 1930s in attempt to answer Hilbert’s
+Entscheidungsproblem
+– i.e. is the problem \ of determining whether a given formula of first-order logic is valid decidable? At this time, the concept of
+decidability
+at issue was that of
+effective decidability in principle
+– i.e. decidability by a rule governed method  each of whose basic steps can be individually carried out by a finitary mathematical agent but whose execution may require an unbounded number of steps or quantity of memory space.
+We now understand the
+Entscheidungsproblem
+to have been answered in the negative by
+Church 
+and
+Turing 
+. The solution they provided can be reconstructed as follows: 1) a mathematical definition of a model of computation \ was presented; 2) an informal argument was given to show that \ contains representatives of
+all
+effective procedures; 3) a formal argument was then given to show that no machine \ decides \.
+Church 
+took \ to be the class of terms \ in the
+untyped lambda calculus
+, while Turing took \ to correspond the class of \ of
+Turing machines
+. Church also showed the class \ of lambda-definable functions is extensionally coincident with the class \ of
+general recursive functions
+. Turing then showed that the class \ of functions computable by a Turing machine was extensionally coincident with \.
+The extensional coincidence of the classes \, and \ provided the first  evidence for what
+Kleene 
+would later dub
+Church’s Thesis
+– i.e.
+
+A function \ is effectively computable if and only if \\) is recursive.
+CT can be understood to assign a precise epistemological significance to Church and Turing’s negative answer to the
+Entscheidungsproblem
+. For if it is acknowledged that \  and \) contain
+all
+effectively computable functions, it then follows that a problem \ can be shown to be
+effectively undecidable
+– i.e. undecidable by any algorithm whatsoever, regardless of its efficiency – by showing that the characteristic function \\) of \ is not recursive. CT thus allows us to infer from the fact that problems \ for which \\) can be proven to be non-recursive – e.g. the
+Halting Problem
+
+or the word problem for semi-groups
+
+– are not effectively decidable.
+It is evident, however, that our justification for such classifications can be no stronger than the stock we place in CT itself. One form of evidence often cited in favor of the thesis is that the coincidence of the class of functions computed by the members of \ and \ points to the mathematical robustness of the class of recursive functions. Two related forms of inductive evidence are as follows:  many other independently motivated models of computation have subsequently been defined which describe the same class of functions;  the thesis is generally thought to yield a classification of functions which has thus far coincided with our ability to compute them in the relevant ‘in principle’ sense.
+But even if the correctness of CT is granted, it is also important to keep in mind that the concept of computability which it seeks to analyze is an
+idealized
+one which is divorced in certain respects from our everyday computational practices. For note that CT will classify \\) as effectively computable even if it is only computable by a Turing machine \ with time and space complexity functions \\) and \\) whose values may be astronomically large even for small inputs.
+
+Examples of this sort notwithstanding, it is often claimed that Turing’s original characterization of effective computability provides a template for a more general analysis of what it could mean for a function to be computable by a mechanical device. For instance,
+Gandy 
+and
+Sieg 
+argue that the process by which Turing originally arrived at the definition of a Turing machine can be generalized to yield an abstract characterization of a mechanical computing device.   Such characterizations may in turn be understood as describing the properties which a physical system would have to obey in order for it to be concretely implementable.  For instance the requirement that a Turing machine may only access or modify the tape cell which is currently being scanned by its read-write head may be generalized to allow modification to a machine’s state at a bounded distance from one or more computational loci.  Such a requirement can in turn be understood as reflecting the fact that classical physics does not allow for the possibility of action at a distance.
+On this basis CT is also sometimes understood as making a prediction about which functions are
+physically computable
+– i.e. are such that their values can be determined by measuring the states of physical systems which we might hope to use as practical computing devices.  We might thus hope that further refinements of the Gandy-Sieg conditions 
+or
+Bellantoni and Cook 
+discussed in
+Section 4.5
+)  will eventually provide insight as to why some mathematical models of computation appear to yield a more accurate account than others of the exigencies of concretely embodied computation which complexity theory seeks to analyze.
+2.2 The Cobham-Edmond’s Thesis and feasible computability
+Church’s Thesis is often cited as a paradigm example of a case in which mathematical methods have been successfully employed to provide a precise analysis of an informal concept – i.e. that of effective computability. It is also  natural to ask whether the concept of feasible computability described in
+Section 1
+itself admits a mathematical analysis similar to Church’s Thesis.
+We saw above that \ is an example of a problem of antecedent mathematical and practical interest for which more efficient algorithms have historically been sought.   The task of efficiently solving combinatorial problems of the sort exemplified by \, \ and \ grew in importance during the 1950s and 1960s due to their role in scientific, industrial, and clerical applications. At the same time, the availability of digital computers began to make many such problems mechanically solvable on a mass scale for the first time.
+This era also saw several theoretical steps which heralded the attempt to develop a general theory of feasible computability. The basic definitions of time and space complexity for the Turing machine model were first systematically formulated by
+Hartmanis and Stearns 
+in a paper called “On the Computational Complexity of Algorithms”. This paper is also the origin of the so-called Hierarchy Theorems  
+which demonstrate that a sufficiently large increase in the time or space bound for a Turing machine computation allows more problems to be decided.
+A systematic exploration of the relationships between different models of computation was also undertaken during this period. This included variants of the traditional Turing machine model with additional heads, tapes, and auxiliary storage devices such as stacks. Another important model introduced at about this time was the
+random access
+ machine \ . This model provides a simplified representation of the so-called
+von Neumann architecture
+on which contemporary digital computers are based. In particular, a RAM machine \ consists of a finite sequence of instructions  \ expressing how numerical operations  are to be applied to a sequence of registers \ in which values may be stored and retrieved directly by their index.
+Showing that one of these models \ determines the same class of functions as some reference model \ ) requires showing that for all \, there exists a machine \ which computes the same function as \ . This is typically accomplished by constructing \ such that each of the basic steps of \ is simulated by one or more basic steps of \. Demonstrating the coincidence of the classes of functions computed by the models \ and \ thus often yields additional information about their relative efficiencies. For instance, it is generally possible to extract from the definition of a simulation between \ and \ time and space
+overhead functions
+\\) and \\) such that if the value of a function \\) can be computed in time \\) and space \\) by a machine \, then it can also be computed in time \)\) and space \)\) by some machine \.
+For a wide class of  models, a significant discovery was that efficient simulations can be found. For instance, it might at first appear that the model \ allows for considerably more efficient implementations of familiar algorithms than does the model \ in virtue of the fact that a RAM machine can access any of its registers in a single step whereas a Turing machine may move its head only a single cell at a time. Nonetheless it can be shown that there exists a simulation of the RAM model by the Turing machine model with
+cubic time overhead
+and
+constant space overhead
+– i.e. \) \in O^3)\) and \) \in O)\)
+
+. On the basis of this and related results,
+Emde Boas 
+formulated the following proposal to characterize the relationship between reference models which might be used for defining time and space complexity:
+Invariance Thesis
+‘Reasonable’ models of computation can simulate each other within a polynomially bounded overhead in time and a constant-factor overhead in space.
+The 1960s also saw a number of advances in algorithmic methods applicable to problems in fields like graph theory and linear algebra. One example was a technique known as
+dynamic programming
+. This method can sometimes be used to find efficient solutions to
+optimization problems
+which ask us to find an object which minimizes or maximizes a certain quantity from a range of possible solutions. An algorithm based on dynamic programming solves an instance of such a problem by recursively breaking it into subproblems, whose optimal values are then computed and stored in a manner which can then be efficiently reassembled to achieve an optimal overall solution.
+Bellman 
+showed that the naive time complexity of \\) for \ could be improved to \\) via the use of dynamic programming.  The question thus arose whether it was possible to improve upon such algorithms further, not only for \, but also for other problem such as \ for which efficient algorithms had been sought but were not known to exist.  In order to appreciate what is at stake with this question, observe that the naive algorithm for \ works as follows: 1) enumerate the set \ of all possible tours in \ and compute their weights; 2) check if the cost of any of these tours is \. Note, however, that if \ has \ nodes, then \ may contain as many as \ tours.
+This is an example of a so-called
+brute force
+algorithm -- i.e. one which solves a problem by exhaustively enumerating all possible solutions and then successively testing whether any of them are correct.  Somewhat more precisely, a problem \ is said to admit a brute force solution if there exists a feasibly decidable relation \ and a family of uniformly defined finite sets \ such that \ if and only if there exists a feasibly sized witness \ such that \\). Such a \ is often called a
+certificate
+for \’s membership in \. The procedure of deciding \ by exhaustively searching through all of the certificates \ and checking if \\) holds at each step is known as a
+brute force search
+. For instance, the membership of a propositional formula \ with atomic letters among \ in the problem \ can be established by searching through the set \ of possible valuation functions of type \, to determine if there exists \ such that \. Note, however, that since there are \ functions in \, this yields only an exponential time decision algorithm.
+Many other problems came to light in the 1960s and 1970s which, like \ and  \, can easily be seen to possess exponential time brute force algorithms but for which no polynomial time algorithm could be found. On this basis, it gradually came to be accepted that a sufficient condition for a decidable problem to be intractable is that the most efficient algorithm by which it can be solved has at best exponential time complexity. The corresponding positive hypothesis that possession of a polynomial time decision algorithm should be regarded as sufficient grounds for regarding a problem as feasibly decidable was first put forth by
+Cobham 
+and
+Edmonds 
+.
+Cobham began by citing the evidence motivating the Invariance Thesis as suggesting that the question of whether a problem admits a polynomial time algorithm is independent of which model of computation is used to measure time complexity across a broad class of alternatives. He additionally presented a machine-independent characterization of the class \ – i.e. functions \ which are computable in polynomial time – in terms of a restricted form of primitive recursive definition known as
+bounded recursion on notation
+.
+Edmonds 
+first proposed that polynomial time complexity could be used as a positive criterion of feasibility – or, as he put it, possessing a “good algorithm” – in a paper in which he showed that a problem which might
+a priori
+be thought to be solvable only by brute force search  from above) was decidable by a polynomial time algorithm.  Paralleling a similar study of brute force search in the Soviet Union, in a subsequent paper
+Edmonds 
+also provided an informal description of the complexity class \.  In particular, he characterized this class as containing those problems \ for which there exists a “good characterization” – i.e. \ is such that the membership of an instance \ may be verified by using brute force search to find a certificate \ of feasible size which certifies \’s membership in 
+ \.
+
+These observations provided the groundwork for has come to be known as the
+Cobham-Edmonds Thesis
+
+:
+
+A function \ is feasibly computable if and only if \\) is computed by some machine \ such that \ \in O\) where \ is fixed and \ is drawn from a reasonable model of computation \.
+CET provides a characterization of the notion of a feasibly computable function discussed in
+Section 1
+which is similar in form to Church’s Thesis. The corresponding thesis for decision problems holds that a problem is feasibly decidable just in case it is in the class \. As just formulated, however, CET relies on the informal notion of a
+reasonable
+model of computation. A more precise formulation can be given by replacing this notion with a specific model such as \ or \ from the
+first machine class
+as discussed in
+Section 3.1
+below.
+CET is now widely accepted within theoretical computer science for reasons which broadly parallel those which are traditionally given in favor of Church’s Thesis.  For instance, not only is the definition of the class \ stable across different machine-based models of computation in the manner highlighted by the Invariance Thesis, but there also exist several machine independent characterizations of this class which we will consider in
+Section 4
+.  Such results testify to the robustness of the definition of polynomial time computability.
+It is also possible to make a case for CET which parallels the quasi-inductive argument for CT. For in cases where we can compute the values of a function  uniformly for the class of instances we are concerned with in practice, this is typically so precisely because we have discovered a polynomial time algorithm which can be implemented on current computing hardware .  And in instances where we are currently unable to uniformly compute the values of a function  for all arguments in which we take interest, it is typically the case that we have not discovered a polynomial time algorithm .
+Nonetheless, there are several features of CET which  suggest it should be regarded as less well established than CT.  Paramount amongst these is that we do not as yet know whether \ is properly contained in complexity classes such as \ which appear to contain highly intractable problems.  The following additional caveats are also often issued with respect to the claim that the class of computational problems we can decide in practice neatly aligns with those decidable in polynomial time using a conventional deterministic Turing 
+ machine.
+
+CET classifies as
+feasible
+those functions whose most efficient algorithms have time complexity \ for arbitrarily large scalar factors \ and exponents \. This means that if a function is only computable by an algorithm with time complexity \ or \, it would still be classified as feasible. This is so despite the fact that we would be unable to compute its values in practice for most or all inputs.
+CET classifies as
+infeasible
+functions whose most efficient algorithms have time complexity which is of super-polynomial order of growth inclusive of, e.g., \ or \))}\). However, such algorithms would run more efficiently when applied to the sorts of inputs we are likely to be concerned with than an algorithm with time complexity of  \\).
+There exist problems for which the most efficient known decision algorithm has exponential time complexity in the worst case -hard in the general case – see
+Section 3.2
+)  but which operate in polynomial time either in the average case or for a large subclass of problem instances of practical interest. Commonly cited examples include \ , as well as some problems from graph theory , and computational algebra .
+Many of the problems studied in complexity theory are decision variants of optimization problems.  In cases where these problems are  \-complete, it is a consequence of CET  – see
+Section 4.1
+) that they do not admit feasible
+exact
+algorithms – i.e. algorithms which are guaranteed to always find a maximal or minimal solution.  Nonetheless, it is known that a significant subclass of \-complete problems possess polynomial time
+approximation algorithms
+-- i.e. algorithms which are guaranteed to find a solution which is within a certain constant factor of optimality.   For instance the optimization version of the problem \ defined below possesses a simple polynomial time approximation algorithm which allows us to find a solution  which is no larger than twice the size of an optimal solution.
+There are non-classical models of computation which are hypothesized to yield a different classification of problems with respect to the appropriate definition of ‘polynomial time computability’. A notable example is the existence of a procedure known as
+Shor’s algorithm
+which solves the problem \ in polynomial time relative the a model of computation known as the Quantum Turing Machine .
+3. Technical development
+3.1 Deterministic and non-deterministic models of computation
+According to the Cobham-Edmonds Thesis the complexity class \ describes the class of feasibily decidable problems. As we have just seen, this class is defined in terms of the reference model \ in virtue of the assumption that it is a ‘reasonable’ model of computation. Several other models of computation are also studied in complexity theory not because they are presumed to be accurate representations of the costs of concretely embodied computation, but rather because they help us better understand the limits of feasible computability. The most important of these is the
+non-deterministic Turing machine
+model \.
+Recall that a
+deterministic Turing machine
+\ can be represented as a tuple \ where \ is a finite set of internal states, \ is a finite tape alphabet, \ is \’s start state, and \ is a transition function mapping state-symbol pairs \ into state-action pairs \. Here \ is chosen from the set of actions \ – i.e. write the symbol \ on the current square, move the head left, or move the head right. Such a function is hence of type \. On the other hand, a non-deterministic Turing machine \ is of the form \ where \, and \ are as before but \ is now only required to be a
+relation
+– i.e. \ \times \). As a consequence, a machine configuration in which \ is in state \ and reading symbol \ can lead to finitely many distinct successor configurations – e.g. it is possible that \ relates \ to
+both
+\ and \ for distinct states \ and \ and actions \ and 
+ \.
+
+This difference in the definition of deterministic and non-deterministic machines also necessitates a change in the definition of what it means for a machine to decide a language \. Recall that for a deterministic machine \, a
+computation sequence
+starting from an initial configuration \ is a finite or infinite sequence of
+machine configurations
+\ Such a configuration consists of a specification of the contents of \’s tape, internal state, and head position. \ is the unique configuration determined by applying the transition function \ to the active state-symbol pair encoded by \ and is undefined if \ is itself undefined on this pair . If \ is a non-deterministic machine, however, there may be more than one configuration which is related to the current configuration by \ at the current head position. In this case, a finite or infinite sequence \ is said to be a computation sequence for \ from the initial configuration \ just in case for all \, \ is among the configurations which are related by \ to \ .
+We now also redefine what is required for the machine \ to
+decide a language
+\:
+\ always halts – i.e. for all initial configurations \, the computation sequence \ of \ is of finite length;
+if \ and \\) is the configuration of \ encoding \ as input, then
+there exists
+a computation sequence \,C_1, \ldots, C_n\) of \ such that \\) is an accepting state;
+if \, then
+all
+computation sequences \,C_1, \ldots, C_n\) of \ are such that \\) is a rejecting state.
+Note that this definition treats accepting and rejecting computations asymmetrically. For if \, some of \’s computation sequences starting from \\) may still lead to rejecting states as long as it
+least one
+leads to an accepting state. On the other hand, if \, then
+all
+of \’s computations from \\) are required to lead to rejecting states.
+Non-deterministic machines are sometimes described as making undetermined ‘choices’ among different possible successor configurations at various points during their computation. But what the foregoing definitions actually describe is a tree \ of all possible computation sequences starting from a given configuration \ for a deterministic machine \ . Given the asymmetry just noted, it will generally be the case that
+all
+of the branches in \}\) must be surveyed in order to determine \’s decision about the input \.
+Figure 1.
+A potential computation tree \}\) for a non-deterministic Turing machine \ starting from the initial configuration \\). Accepting states are labeled \ and rejecting states \. Note that although this tree contains an accepting computation sequence of length 4, its maximum depth of 5 still counts towards the determination of \ = \max \{\text{depth}})\ :\ \lvert x\rvert = n\)}.
+The time complexity \\) of a non-deterministic machine \ is the maximum of the depths of the computation trees \}\) for all inputs \ such that \. Relative to this definition, non-deterministic machines can be used to implement many brute force algorithms in time polynomial in \. For instance the \ problem can be solved by a non-deterministic machine which on input \ uses part of its tape to non-deterministically construct  a string representing a valuation \ assigning a truth value to each of \’s \ propositional variables and then computes \ using the method of truth tables ). As \ just in case a satisfying valuation exists, this is a correct method for deciding \ relative to conventions – from above. This means that \ can be solved in polynomial time relative to \.
+This example also illustrates why adding non-determinism to the original deterministic model \ does not enlarge the class of decidable problems. For if \ decides \, then it is possible to construct a machine \ which also decides \, by successively simulating each of the finitely many possible sequences of non-deterministic choices \ might have made in the course of its 
+ computation.
+
+It is evident that if \ has time complexity \\), then \ must generally check \})\) sequences of choices ) in order to determine the output of \ for an input of length \. While the availability of such simulations shows that the class of languages decided by \ is the same as that decided by \ – i.e. exactly the recursive ones – it also illustrates why the polynomial time decidability of a language by a non-deterministic Turing machine only guarantees that the language is decidable in
+exponential
+time by a deterministic Turing machine.
+In order to account for this observation,
+Emde Boas 
+introduced a distinction between two classes of models of computation which he labels the
+first
+and
+second machine classes
+. The first machine class contains the basic Turing machine model \ as well as other models which satisfy the Invariance Thesis with respect to this model. As we have seen, this includes the multi-tape and multi-head Turing machine models as well as the RAM model. On the other hand, the second machine class is defined to include those deterministic models whose members can be used to efficiently simulate non-deterministic computation. This can be shown to include a number of standard models of
+parallel computation
+such as the
+PRAM machine
+which will be discussed in
+Section 3.4.3
+.  For such models the definitions of polynomial time, non-deterministic polynomial time, and polynomial space coincide.
+Experience has borne out that members of the first machine class are the ones which we should consider
+reasonable
+models of computation in the course of formulating the Cobham-Edmonds Thesis. It is also widely believed that members of the second machine class do not provide realistic representations of the complexity costs involved in concretely embodied computation 
+,
+Schorr 
+,
+Vitányi 
+). Demonstrating this formally would, however, require proving separation results for complexity classes which are currently unresolved. Thus while it is widely believed that the second machine class properly extends the first, this is currently an open problem.
+3.2 Complexity classes and the hierarchy theorems
+Recall that a complexity class is a set of languages all of which can be decided within a given time or space complexity bound \\) or \\) with respect to a fixed model of computation. To avoid pathologies which would arise were we to define complexity classes for ‘unnatural’ time or space bounds  it is standard to restrict attention to complexity classes defined when \\) and \\) are
+time
+or
+space constructible
+. \\) is said to be time constructible just in case there exists a Turing machine which on input consisting of \  1s) halts after exactly \\) steps. Similarly, \\) is said to be space constructible just in case there exists a Turing machine which on input \ halts after having visited exactly \\) tape cells. It is easy to see that the time and space constructible functions include those which arise as the complexities of algorithms which are typically considered in practice – \, n^k, 2^n, n!\), etc.
+When we are interested in deterministic computation, it is conventional to base the definitions of the classical complexity classes defined in this section on the model \.  Supposing that \\) and \\) are respectively time and space constructible functions, the classes \)\) and \)\) are defined as follows:
+\[
+\begin{align*}
+\textbf{TIME}) = \{X \subseteq \{0,1\}^* \ : \ \exists & T \in \mathfrak{T} \forall n \leq t) \\
+             &  \text{and } T \text{ decides } X \} \\
+
+\textbf{SPACE})= \{X \subseteq \{0,1\}^* \ : \ \exists & T \in \mathfrak{T}\forall n \leq s) \\
+             & \text{and } T \text{ decides } X \}
+\end{align*}\]
+Since all polynomials in the single variable \ are of order \\) for some \, the classes known as
+polynomial time
+and
+polynomial space
+are respectively defined as \\) and \\). It is also standard to introduce the classes \\)  and \)\) .
+In addition to classes based on the deterministic model \, analogous non-deterministic complexity classes based on the model \ are also studied. In particular, the classes \)\) and \)\) are defined as follows:
+\[
+\begin{align*}
+\textbf{NTIME}) = \{X \subseteq \{0,1\}^* \ : \ \exists  & N \in \mathfrak{N} \forall n \leq t) \\ 
+   & \text{and } N \text{ decides } X \} \\
+
+\textbf{NSPACE}) = \{X \subseteq \{0,1\}^* \ : \ \exists & N \in \mathfrak{N} \forall n \leq s) \\ 
+   & \text{and } N \text{ decides } X \}
+\end{align*}
+\]
+The classes \ , \ , \ , and \  are defined analogously to \, \, \ and \ – e.g. \\).
+Many classical results and important open questions in complexity theory concern the inclusion relationships which hold among these classes. Central among these are the so-called
+Hierarchy Theorems
+which demonstrate that the classes \)\) form a proper hierarchy in the sense that if \\) grows sufficiently faster than \\), then \)\) is a proper superset of \)\) )\) and \)\)).
+Theorem 3.1
+Suppose that \\) and \\) are time constructible, \\) and \\) are space constructible, \ \geq t_1 \geq n\), and \ \geq s_1 \geq n\).
+If
+\[\lim_{n \rightarrow \infty} \frac{t_1 \log)}{t_2} = 0, 
+\]
+then \) \subsetneq \textbf{TIME})\).
+
+If
+\[\lim_{n \rightarrow \infty} \frac{t_1}{t_2} = 0,
+\]
+then \) \subsetneq \textbf{NTIME})\).
+
+If
+\[\lim_{n \rightarrow \infty} \frac{s_1}{s_2} = 0,
+\]
+then \) \subsetneq \textbf{SPACE})\).
+
+These results may all be demonstrated by modifications of the diagonal argument by which
+Turing 
+originally demonstrated the undecidability of the classical
+Halting Problem
+.
+
+Nonetheless, Theorem 3.1 already has a number of interesting consequences about the relationships between the complexity classes introduced above. For instance, since the functions \ and \ satisfy the hypotheses of parts i), we can see that \\) is always a proper subset of \\) . It also follows from part i) that \)\) for any time bound \\) which is of super-polynomial order of growth – e.g. \ or \^2}\). Similarly, parts i) and ii) respectively implies that \ and \. And it similarly follows from part iii) that \.
+Note that since every deterministic Turing machine is, by definition, a non-deterministic machine, we clearly have \ and \. Some additional information about the relationship between time and space complexity is reported by the following classical results:
+Theorem 3.2
+Suppose that \\) is both time and space constructible. Then
+\) \subseteq \textbf{SPACE})\)
+\) \subseteq \textbf{TIME})})\)
+The first of these results recapitulates the prior observation that a non-deterministic machine \ with running time \\) may be simulated by a deterministic machine \ in time exponential in \\). In order to obtain Theorem 3.2.i), note this process can be carried out in space bounded by \\) provided that we make sure to erase the cells which have been used by a prior simulation before starting a new 
+ one.
+
+Another classical result of
+Savitch 
+relates \)\) and \)\):
+Theorem 3.3
+For any space constructible function \\), \) \subseteq \textbf{SPACE})^2)\).
+A corollary is that \, suggesting that non-determinism is computationally less powerful with respect to space than it appears to be with respect to time.
+The foregoing results establish the following basic relationships among complexity classes which are also depicted in Figure 2:
+\[
+\textbf{L} \subseteq \textbf{NL} \subseteq \textbf{P} \subseteq \textbf{NP} \subseteq \textbf{PSPACE} \subseteq \textbf{EXP} \subseteq \textbf{NEXP} \subseteq \textbf{EXPSPACE}
+\]
+As we have seen, it is a consequence of Theorem 3.1 that \ and \. It thus follows that at least one of the first four displayed inclusions must be proper and also at least one of the third, fourth, or fifth.
+Figure 2.
+Inclusion relationships among major complexity classes. The only depicted inclusions which are currently known to be proper are \ and \.
+At the moment, however, this is
+all
+that is currently known – i.e. although various heuristic arguments can be cited in favor of the properness of the other displayed inclusions, none of them has been proven to hold. Providing unconditional proofs of these claims remains a major unfulfilled goal of complexity theory. For instance, the following is often described as the single most important open question in all of theoretical computer science:
+Open Question 1
+Is \ properly contained in \?
+The significance of Open Question 1 as well as several additional unresolved questions about the inclusion relations among other complexity classes will be considered at greater length in
+Section 4.1
+.
+3.3 Reductions and \-completeness
+Having now introduced some of the major classes studied in complexity theory, we next turn to the question of their internal structure. This can be studied using the notions of the reducibility of one problem to another and of a problem being complete for a class. Informally speaking, a problem \ is said to be
+reducible
+to another problem \ just in case a method for solving \ would also yield a method for solving \. The reducibility of \ to \ may thus be understood as showing that solving \ is at least as difficult as solving \. A problem \ is said to be
+complete
+for a complexity class \ just in case \ is a member of \ and all problems in \ are reducible to \. The completeness of \ for \ may thus be understood as demonstrating that \ is representative of the most difficult problems in \.
+The concepts of reduction and completeness were originally introduced in computability theory. Therein a number of different definitions of reduction are studied, of which
+many-one
+and
+Turing reducibility
+are the most familiar . Analogues of both of these have been studied in complexity theory under the names
+polynomial time many-one reducibility
+– also known as
+Karp reducibility
+
+– and
+polynomial time Turing reducibility
+– also known as
+Cook reducibility
+
+. For simplicity we will consider only the former 
+ here.
+
+Definition 3.1
+For languages \, \ is said to be
+polynomial time many-one reducible
+to \ just in case there exists a polynomial time computable function \\) such that
+\[
+\text{for all } x \in \{0,1\}^*, x \in X \text{ if and only if } f \in Y
+\]
+In this case we write \ and say that \\) is a polynomial time reduction of \ to \.
+Note that if \ is polynomial time reducible to \ via \\), then an efficient algorithm \ for deciding membership in \ would also yield an efficient algorithm for deciding membership in \ as follows:  on input \, compute \\);  use \ to decide if \ \in Y\), accepting if so, and rejecting if not.
+It is easy to see that \ is a reflexive relation. Since the composition of two polynomial time computable functions is also polynomial time computable, \ is also transitive. We additionally say that a class \ is
+closed
+under \ if \ and \ implies \. It is also easy to see that the classes \ and \ are closed under this relation.
+
+A problem \ is said to be
+hard
+for a class \ if \ for all \. Finally \ is said to be
+complete
+for \ if it is both hard for \ and also a member of \.
+Since the mid-1970s a major focus of research in complexity theory has been the study of problems which are complete for the class \ – i.e. so-called
+NP -complete problems
+. A canonical example of such a problem is a time-bounded variant of the Halting Problem for \ :
+\ Given the index of a
+non-deterministic Turing machine \, an input
+\, and a time bound \ represented as a string \, does
+\ accept \ in \ steps?
+It is evident that \ is in \ since on input \ an efficient universal non-deterministic machine can determine if \ accepts \ in time polynomial in \ and \. To see that \ is hard for \, observe that if \, then \ corresponds to the set of strings accepted by some non-deterministic machine \ with polynomial running time \\). If we now define \ = \langle \ulcorner N \urcorner,x,1^{p} \rangle\), then it is easy to see that \\) is a polynomial time reduction of \ to \.
+Since \ is \-complete, it follows from the closure of \ under \ that this problem is in \ only if \. Since this is widely thought not to be the case, this provides some evidence that \ is an intrinsically difficult computational problem. But since \ is closely related to the model of computation \ itself this may appear to be of little practical significance. It is thus of considerably more interest that a wide range of seemingly unrelated problems originating in many different areas of mathematics are also \-complete.
+One means of demonstrating that a given problem \ is \-hard is to show that \ may be reduced to it. But since most mathematically natural problems bear no relationship to Turing machines, it is by no means obvious that such reductions exist. This problem was circumvented at the beginning of the study of \-completeness by
+Cook 
+and
+Levin 
+who independently demonstrated the following:
+
+Theorem 3.4
+\ is \-complete.
+We have already seen that \ is in \. In order to demonstrate Theorem 3.4 it thus suffices to show that all problems \ are polynomial time reducible to \. Supposing that \ there must again be a non-deterministic Turing machine \ accepting \ with polynomial time complexity \\). The proof of Theorem 3.4 then proceeds by showing that for all inputs \ of length \ for \, we can construct a propositional formula \ which is satisfiable if and only if \ accepts \ within \\) steps.
+
+Although \ is still a problem about a particular system of logic, it is of a more combinatorial nature than \. In light of this, Theorem 3.4 opened the door to showing a great many other problems to be \-complete by showing that \ may be efficiently reduced to them. For instance, the problems \  and \ introduced above are both \-complete.  Here are some other examples of \-complete problems:
+\ Given a propositional
+formula \ in
+3-conjunctive normal form
+) –
+i.e. \ is the conjunction of disjunctive clauses containing
+exactly three negated or unnegated propositional variables – does
+there exist a satisfying assignment for \?
+\ Given a finite graph \, does \ contain a Hamiltonian Path ?
+\ Given a graph \ and a natural number \,
+does there exist a set of vertices \ of cardinality
+\ such that no two vertices in \ are connected by an
+edge?
+\ Given a graph \ and a natural number \,
+does there exist a set of vertices \ of cardinality \ such that for each edge \, at least one of \ or
+\ is a member of \?
+\ Given a finite set \,
+a finite family \ of subsets of \ and a natural number
+\, does there exist a subfamily \ of cardinality \ such that \?
+The problem \ was shown to be \-complete in Cook’s original paper
+
+.
+
+The other examples just cited are taken from a list of 21 problems  which were shown by
+Karp 
+to be \-complete. The reductions required to show the completeness of these problems typically require the construction of what has come to be known as a
+gadget
+– i.e. a constituent of an instance of one problem which can be used to simulate a constituent of an instance of a different problem.  For instance, in order to see how \ may be reduced to \, first observe that a \ formula has the form
+\[
+ \ \wedge \  \ \wedge \ \ldots \  \wedge \ 
+\]
+where each \ is a
+literal
+– i.e. \ or \ for some propositional variable \. A formula \ of this form is satisfiable just in case there exists a valuation satisfying at least one of the literals \ or \ for all \. On the other hand, suppose that we consider the family of graphs \ which can be partitioned into \ disjoint triangles in the manner depicted in Figure 3. It is easy to see that any independent set of size \ in such a graph must  contain exactly one vertex from each triangle in \. This in turn suggests the idea of using a graph of this form as a gadget for representing the clauses of a \ formula.
+Figure 3.
+The graph \ for the formula \ \wedge  \wedge \).
+A reduction of \ to \ can now be described as follows:
+Let \ be a \ formula consisting of \ clauses as depicted above.
+We construct a graph \ consisting of \-triangles \ such that the nodes of \ are respectively labeled with the literals \ comprising the \th clause of \. Additionally, \ contains an edge connecting nodes in each triangle corresponding to literals of
+opposite sign
+as depicted in Figure 3.
+
+Now define a mapping from instances of \ to instances of \ as \ = \langle G_{\phi},n \rangle\). As \ contains \ vertices \) edges), it is evident that \\) can be computed in polynomial time. To see that \\) is a reduction of \ to \, first suppose that \ is a valuation such that \.  Then we must have \ for at least one literal in every clause of \. Picking the nodes corresponding to this literal in each triangle \ in \ thus yields an independent set of size \ in \. Conversely, suppose that \ is an independent set of size \ in \. By construction, \ contains exactly one vertex in each of the \. And since there is an edge between each pair of nodes labeled with oppositely signed literals in different triangles in \, \ cannot contain any contradictory literals. A satisfying valuation \ for \ can be constructed by setting \ = 1\) if a node labeled with \ appears in \ and \ = 0\) otherwise.
+Since \ is transitive, composing polynomial time reductions together provides another means of showing that various problems are \-complete. For instance, the completeness of \ was originally demonstrated by
+Karp 
+via the series of reductions
+\[
+\sc{SAT} \leq_P 3\text{-}\sc{SAT} \leq_P \sc{INDEPENDENT}\ \sc{SET} \leq_P \sc{VERTEX}\ \sc{COVER} \leq_P \sc{HAMILTONIAN}\ \sc{PATH} \leq_P \sc{TSP}.
+\]
+Thus although the problems listed above are seemingly unrelated in the sense that they concern different kinds of mathematical objects – e.g. logical formulas, graphs, systems of linear equations, etc. – the fact that they are \-complete can be taken to demonstrate that they are all computationally universal for \ in the same manner as \.
+
+It also follows from the transitivity of \ that the existence of a polynomial time algorithm for even
+one
+\-complete problem would entail the existence of polynomial time algorithms for
+all
+problems in \. The existence of such an algorithm would thus run strongly counter to expectation in virtue of the extensive effort which has been devoted to finding efficient solutions for particular \-complete problems such as \ or \. Such problems are thus standardly regarded as constituting the most difficult problems in \.
+As long as Open Question 1 is answered in the positive – i.e. \ – \-complete problems thus fit the description of effectively decidable problems which are intrinsically difficult in the sense described in
+Section 1
+.  As we are now about to see, however, they are by no means the hardest problems studied by complexity theorists. Nor is complexity theory incapable of making further distinctions about the difficulty of problems which lie inside \ or between \ and \ .
+3.4 Other complexity classes
+3.4.1 \ and \
+In contrast to the non-deterministic Turing machine model \, the acceptance and rejection conventions for deterministic models of computation such as \ are
+symmetric
+. In other words, for a deterministic machine \ to either accept or reject an input \, it is both necessary and sufficient that there exist a single halting computation \,\ldots,C_n\). The output of the machine is then determined by whether \\) is an accepting or rejecting configuration. A consequence of this is that complexity classes like \ which are defined in terms of this model are
+closed under complementation
+– i.e. for all languages \, \ is in \ if and only if its complement \ is also in \.
+
+If we define the class \ to consist of those problems whose complements are in the class \, it thus follows that \.
+In contrast to this, there is no
+a priori
+guarantee that classes such as \ defined in terms of non-deterministic models are closed under complementation. For consider a problem such as \ belonging to this class. \ – i.e. the complement of \– consists of the set of formulas for which there does not exist a satisfying valuation – i.e. the contradictory formulas of propositional logic. From this it follows that \ if and only if \ – i.e. the set of valid propositional formulas. As this observation provides an easy polynomial time reduction of \ to \, the latter is thus not only a member of \, but is also complete for this class.
+
+Note, however, that in order to show that \ requires that we show that \ is true with respect to
+all
+valuations.  As there exist \ valuations for a formula containing \ propositional variables, it is by no means evident that the membership of an arbitrary formula in \ can be decided in polynomial time by an algorithm which can be implemented as a non-deterministic Turing machine relative to the acceptance and rejection conventions describe above. In fact, the following is another fundamental unresolved question in contemporary complexity theory:
+Open Question 2
+Are the classes \ and \ distinct?
+It is widely believed that like Open Question 1, Open Question 2 has an affirmative answer. But observe that if any \-complete problem could be shown to be in \, it would also follow that \.
+
+This in turn suggests that problems which are known to be in the class \ are unlikely to be \-complete -complete). This class consists of those problems \ which possess polynomial sized certificates for demonstrating both membership and 
+non-membership.
+It is easy to see that \ includes all problems in \. But this class also contains some problems which are not currently known to be feasibly decidable. An important example is \ .   For on the one hand, a number \ which divides \ serves as a certificate for the membership of \ in \. And on the other hand, in order to demonstrate the membership of \ in \, it suffices to exhibit a prime factorization of \ in which no factor is less than \. This follows because prime factorizations are unique ) and because the primality of the individual factors can be verified in polynomial time by the AKS algorithm. Hence \ is in \ and \ simultaneously.
+As with other computational problems of practical importance, considerable effort has been put into finding an efficient algorithm for \. If our inability to find an efficient factorization algorithm is indeed indicative that this problem is not in \, then a positive answer to Open Question 2 would entail that there are natural mathematical problems which are not feasibly decidable but which are also not \-complete. This in turn suggests that the degree structure of problems lying between \ and \  may provide a yet finer grained analysis of intrinsic computational difficulty than is provided by the Cobham-Edmonds Thesis alone.
+
+3.4.2 The Polynomial Hierarchy, polynomial space, and exponential time
+If initial attempts to find an efficient algorithm for solving a problem \ which is known to be decidable are unsuccessful, a common strategy is to attempt to show that \ is \-complete. For assuming \, it then follows from the Cobham-Edmonds thesis that no feasible algorithm for solving \ can exist.
+Nonetheless, fields which make use of discrete mathematics often give rise to decidable problems which are thought to be considerably more difficult than \-complete ones. For recall that it is a consequence of Theorem 3.1 that the classes \ and \  both properly extend \. Hence problems complete for these classes can currently be classified as infeasible regardless of how Open Question 1 is resolved. Such problems include several sub-cases of the decision problem for first-order logic  
+ as well as versions of some of the game-theoretic problems considered in this section.
+
+A complexity class which is likely to be properly contained in \ but which still contains many apparently infeasible problems which arise in computational practice is \. A prototypical example of a problem in \ can be formulated using the notion of a
+quantified boolean formula
+[QBF] – i.e. a statement of the form \ where \ or \ and \ is a formula of propositional logic containing the propositional variables \ which are treated as bound by these quantifiers. A QBF-formula is said to be
+true
+if when \ is interpreted as an existential or universal quantifier over the truth value which is assigned to \, \ is true with respect to all of the valuations determined by the relevant quantifier prefix – e.g. \\) is a true quantified boolean formula, while \ \wedge x_3)\) is not. We may now define the problem
+\
+Given a quantified boolean formula \, is \ true?
+Stockmeyer and Meyer 
+showed the following:
+Theorem 3.5
+\ is \-complete.
+
+This result suggests that there is a close connection between problems which can be decided using unbounded time but a feasible amount of memory space and those which could be solved if we were able to answer certain kinds of existential or universal queries in a single step using a bounded number of alternations between the two kinds of queries. This observation can be used to give an alternative characterization of several of the complexity classes we have considered. Recall, for instance, that \ can be informally characterized as the set of problems \ for which membership can be established by providing a certificate of the appropriate sort – e.g. \ can be established by exhibiting a satisfying valuation. Similarly, \ can be similarly characterized as the set of problems for which
+non-membership
+can be established by the existence of such a certificate – e.g. \ can also be established by exhibiting a satisfying valuation.
+On the basis of these observations, it is not difficult to prove the following:
+Proposition 3.1
+Call a relation \\)
+polynomial decidable
+if \ \} \in \textbf{P}\).
+A problem \ is in \ just in case there exists a polynomial decidable relation \\) and a polynomial \\) such that \ if and only if \ R\).
+A problem \ is in \ just in case there exists a polynomial decidable relation \\) and a polynomial \\) such that \ if and only if \ R\).
+Proposition 3.1 provides the basis for defining a hierarchy of complexity classes – i.e. the so-called
+Polynomial Hierarchy
+[\] – based on the logical representation of computational problems.  We first define \ and \ to be alternative names for the class \ – i.e. \. We then define \ to be the class of problems of the form \ R\}\) where \ \in \Pi^P_{n}\) and \ to be the class of problems of the form \ S\}\) where \ \in \Sigma^P_{n}\) and \\) and \\) are both polynomials. \ is the set of problems which are in both \ and \. Finally, the class \ is then defined as \.
+
+It follows immediately from Proposition 3.1 that \ and \. It is also evident from the foregoing definitions that we have the containment relations \ and \ depicted in Figure 4. It is also not difficult to show that \. These relationships are similar to those which obtain between the analogously defined \- and \-sets in the Arithmetic Hierarchy studied in computability theory 
+. But whereas it can be shown by a standard diagonal argument that the arithmetic hierarchy does not collapse, the following are also currently unresolved questions of fundamental importance:
+Open Question 3
+Is \ a proper hierarchy – i.e. is it the case that for all \, \ and \?
+Is \ properly contained in \?
+Figure 4.
+The Polynomial Hierarchy.
+To better understand why Open Questions 3a,b) are also expected to be decided positively, it will be useful to further explore the relationship between \ and the characterization of \ in terms of quantifier alternations. To this end, we first show that the problem \ may be redefined in terms of a game between a player called
+Verifier
+– who can be thought of as attempting to demonstrate that a QBF-formula \ is true – and another player called
+Falsifier
+– who can be thought of as attempting to demonstrate that \ is not true.
+
+Supposing that \ is of the form \, a play of the
+verification game
+for \ is defined as follows:
+•
+In the first round,
+Verifier
+moves by selecting a value for \\).
+•
+In the second round,
+Falsifier
+moves by selecting a value for \\).
+\
+•
+In the \th round,  either
+Verifier
+or
+Falsifier
+selects a value of \\), depending on whether \ or \.
+•
+If \ then
+Verifier
+is the winner and if \ then
+Falsifier
+is the winner.
+A
+winning strategy
+for
+Verifier
+in the verification game for \ is a sequence of moves and countermoves for all possible replies and counter-replies of
+Falsifier
+which is guaranteed to result in a win for
+Verifier
+. Let us call the problem of deciding whether
+Verifier
+has such a winning strategy for \ \. As the moves of the two players mirror the interpretations of \ and \ for QBF formulas, it is not difficult to see that \ just in case \. And for any QBF-formula \ with \ initial quantifiers we may efficiently construct an equivalent formula with at most \ quantifiers in the required alternating form by interspersing dummy quantifiers as needed. It thus follows that like \, \ is also \-complete.
+Although \ is defined in terms of a very simple game, similar results can be obtained for suitable variations of a variety of well familiar board games. Consider, for instance the following variation on the standard rules of Go:  the game is played on an \ board;  the winner of the game is the player with the most stones at the end of \ rounds.
+Lichtenstein and Sipser 
+demonstrated the \-completeness of the following problem:
+\
+Given a board position in an \ game of Go, does there exist a winning strategy for black ?
+Subject to similar modification to the end game rules, analogous results have also been obtained for chess
+
+and checkers
+
+.
+
+What these games have in common is that the definition of a winning strategy for the player who moves first involves the alternation of existential and universal quantifiers in a manner which mimics the definition of the classes \ and \ which comprise \. Taking this into account, suppose we define \ to be the variant of \ wherein there are at most \ alternations of quantifiers in \  rounds). \ may be shown to be complete for the class \ in the Polynomial Hierarchy. Note, however, as the value of \ increases, we expect that it should become more difficult to decide membership in \ in much the same way that it appears to become more difficult to determine whether a given player has a winning strategy for increasingly long games of Go or chess.
+This observation provides part of the reason why it is currently expected that the answer to Open Question 3a is positive. For as we can now see, the assertion \ for some \ is equivalent to the assertion that the problem of determining whether
+Verifier
+has a winning strategy for \-round verification games is no harder than that of deciding this question for \-round games for all \. A related observation bears on the status of Open Question 3b. For note that if \, then \ would be complete for \ ). Since \ is defined as \, it would then follow that \ for some \. But in this case, we would again have that the problem of determining whether
+Verifier
+has a winning strategy for \-round verification games would be no harder than that of deciding this question for \-round games for all \. As this again runs contrary to expectation, it is also widely believed not only that \ but also that the former class differs from the latter in failing to have complete problems.
+3.4.3 Parallel, probabilistic, and quantum complexity
+Even taking into account our current inability to resolve Open Questions 1–3, the hierarchy of complexity classes depicted in Figure 2 ranging from \ to \ represent the most robust benchmarks of computational difficulty now available. Beyond this hierarchy a wide array of additional classes are also studied which are believed to demarcate additional structure either inside \ or between \ and \. Comprehensive consideration of the diversity of these classes is beyond the scope of the current survey. But to complement our understanding of classes defined relative to \ and \, it will be useful to consider three additional classes – \, \, and \ – which are defined relative to other models of computation.
+One way of defining \ is in terms of a model of computation \ known as the
+Parallel RAM
+ machine. This model is a variant of the conventional RAM model described in
+Section 2.2
+which allows for parallelism. A PRAM machine \ consists of a sequence of programs \}\), each comprised by a finite sequence of instructions for performing operations on registers as before. Each program also controls a separate processor with its own program counter and accumulator. The processors operate in parallel and can write to a common block of registers, adopting some policy for resolving with conflicts. Finally, the number of programs  comprising \ is not fixed, but can vary with the size of the input \ according to the function \\). In this way, a PRAM machine can recruit more processors to operate on larger inputs, although the number of processors employed must be fixed uniformly in the size of the input.
+Although the PRAM model is deterministic, it is easy to see that its members can be used to efficiently simulate the operation of a non-deterministic Turing machine \ by recruiting sufficiently many processors to carry out all paths in a given computation tree for \ in parallel. This model is hence a member of van Emde Boas’s
+
+second machine class and as such is not considered to be a reasonable model of computation. Nonetheless, \ is a useful theoretical model in that it provides a formal medium for implementing procedures which call for certain operations to be carried out simultaneously in parallel.
+It has long been known that certain problems – e.g. matrix multiplication, graph reachability, and sorting – admit parallel algorithms which in some cases are faster than the most efficient known sequential ones . But this observation would still be of little practical significance if the algorithms in question achieved such speed up only at the cost of having to employ exponentially many processors relative to the size of their inputs. For in this case it seems that we would have little hope of building a computing device on which they could be concretely implemented.
+It is notable, however, that the parallel algorithms for the problems just mentioned only require a number of processors which is polynomial in size of their input \ and also only require time
+polylogarithmic
+in \ )\) for fixed \). This motivates the definition of \ as the class of problems which can be solved by a PRAM machine in time \)\) using \\) processors ).
+
+In particular, the amount of
+work
+ performed by a machine satisfying this definition will be polynomial in the size of its input.
+We have seen that the Cobham-Edmond’s Thesis suggests that \ coincides with the class of problems which can be feasibly decided by algorithms implementable relative to a sequential model of computation such as \. In much the same way, it is often suggested that \ coincides with the class of problems which can be feasibly decided by algorithms which can be implemented relative to a parallel model such as \ . In particular, it can be shown that any PRAM machine which runs in time \)\) using \\) processors can be simulated by a polynomial time sequential machine. From this, it follows that \ is a subset of \.
+\ is of interest in part because the opposite inclusion is not known to hold – i.e. the following question is also open:
+Open Question 4
+Is \ properly contained in \?
+The current consensus is that like Open Questions 1–3, Open Question 4 will also be answered in the positive. In this case, the heuristic argument derives from the observation that if \, then it would be the case that every problem \ possessing a \\) sequential algorithm could be ‘sped up’ in the sense of admitting a parallel algorithm which requires only time \)\) using \\) processors. Even allowing for the case where \ is substantially larger than \, this is thought to be unlikely in virtue of the fact that certain problems in \ appear to be ‘inherently sequential’ in the sense of exhibiting structure which makes them resistant to parallelization. In particular, this is conjectured to be true of \-complete problems such as determining whether a boolean circuit evaluates to true, or if a formula in the Horn fragment of propositional logic is satisfiable.
+
+Another active area of research in complexity theory concerns classes defined in terms of
+probabilistic
+models of computation. Instances of such models are assumed to have access to some genuine source of randomness – e.g. a fair coin or a quantum mechanical random number generator – which can be used to determine the course of their computation. This basic idea has given rise to a number of different paradigms for modeling probabilistic computation, of which the original non-deterministic Turing machine model \ is an early exemplar. As we have seen, however, non-deterministic Turing machines cannot be employed as a practical model of probabilistic computation. For in order to use \ to conclude that \ is not a member of a given language \ requires that we examine
+all
+of \’s potential computations on this input .
+It is thus also reasonable to ask how we might modify the definition of \ so as to obtain a characterization of probabilistic algorithms which we might usefully employ. One answer is embodied in the definition of the class \, or
+bounded-error probabilistic polynomial time
+.
+
+This class can be most readily defined relative to a model of computation known as the
+probabilistic Turing machine
+\. Such a device \ has access to a random number generator which produces a new bit at each step in its computation but is otherwise like a conventional Turing machine. The action taken by \ at the next step is then determined by the value of this bit, in addition to its internal state and the currently scanned symbol.
+\ can now be defined to include the problems \ such that there exists a probabilistic Turing machine \ and a constant \ with the following properties:
+\ runs in polynomial time for all inputs;
+for all inputs \, at least fraction \ of the possible computations of \ on \ accept;
+for all inputs \, at least fraction \ of the possible computations of \ on \ reject.
+This definition seeks to formalize the intuitive characterization of a problems decidable by a probabilistic algorithm as one for which there exists a decision procedure which can make undetermined choices during its computation but still solves the problem correctly in a ‘clear majority’ of cases  bounded away from \). It is not difficult to see that if we possessed an algorithm for deciding \ which is implementable by a machine \ satisfying –, then we could correctly decide whether \ with arbitrarily high probability by applying the algorithm repeatedly and checking whether the majority of its computations accepted or rejected.
+
+As the standard Turing machine model \ corresponds to a special case of \, it follows that \. For a long time, it was also thought that \ might be an example of a problem which was in \ but not \.
+
+However, we now know that this problem is in \ in virtue of the AKS primality algorithm. At present, not only are there few known candidates for separating these classes, but it is also not known if \ is contained in \  by
+Lautemann 
+). Thus although it might at first seem plausible that the ability to make random choices during the course of a computation allows us to practically solve certain problems which resist efficient deterministic algorithms, it is again an open problem whether this is true.
+A final complexity class which has attracted considerable attention in recent years is known as \ . \ is defined analogously to \ but using a model \ of
+quantum computation
+instead of the model \.  Such a model can be roughly characterized as a device which makes use of quantum-mechanical phenomena   to perform operations on data represented by sequences
+qubits
+– i.e. quantum superpositions of vectors of 0s and 1s. Based on early suggestions of
+Manin 
+and
+Feynman 
+, a number of such models were proposed in the 1980s and 90s on which the precise definition of \ can be based – e.g. the Quantum Turing Machine of
+Deutsch 
+.
+Several algorithms have been discovered which can be implemented on such devices  which run faster than the best known classical algorithms for the same problem. Among these are
+Grover’s algorithm
+
+for searching an unsorted database \), whereas the best possible classical algorithm is \\)) and
+Shor’s algorithm
+
+for integer factorization ^3)\), whereas the best known classical algorithm is \)^{1/3})}\)). Since it can be shown that quantum models can simulate models such as the classical Turing machine, \ contains \ and \. And as we have just seen, \ contains at least one problem – i.e. \ – which is not known to be contained in \.
+Although it can be shown that \, the relationship between the former class and \ is currently not well understood. In particular, no polynomial time quantum algorithms have been discovered for solving \-complete problems which are implementable on the more widely accepted models of quantum computation. There is also considerable controversy as to whether it will prove possible to construct physical realizations of such models which are sufficiently robust to reliably solve instances of problems which cannot currently be solved using classical hardware.   Even if a proof of \ were found, further empirical investigation would thus be required to determine the bearing of quantum computation on either the limits of feasible computation or on the status of the Cobham-Edmonds thesis itself. Nonetheless, quantum computation is a very active area of research at present.
+
+4. Connections to logic and philosophy
+There has to date been surprisingly little philosophical engagement with computational complexity theory.  Although several questions which have their origins in computability theory – e.g. the status of Church’s Thesis and the significance of effectively undecidable problems – have been widely discussed, the analogous questions about the Cobham-Edmonds Thesis and the significance of effectively decidable but feasibly undecidable problems have attracted little attention amongst philosophers of mathematics. And despite ongoing interest in logical knowledge and resource bounded reasoning, fields such as epistemology, decision theory, and social choice theory have only recently begun to make use of complexity-theoretic concepts and results.  This section will attempt to bridge some of these gaps by highlighting connections between computational complexity and traditional topics in logic and philosophy.
+4.1 On the significance of \?
+The appreciation of complexity theory outside of theoretical computer science is largely due to the notoriety of open questions such as 1–4. Of these, Open Question 1 – henceforth \ – has attracted the greatest attention. Along with long standing unresolved questions from pure and applied mathematics such as the Riemann Hypothesis and the Hodge Conjecture, it is the subject of a major prize competition – i.e. the Millennium Problems . It is also frequently the focus of survey articles and popular expositions – e.g.
+
+,
+
+, and
+
+.
+There are indeed several reasons to suspect that the resolution of \ will prove to have far reaching practical and theoretical consequences outside of computer science. Perhaps the most significant of these revolves around the possibility that despite the various heuristic arguments which can currently be offered in favor of the hypothesis that \, there remains the possibility that \ is true after all. Recall that \ can be characterized as the class of problems membership in which can be
+decided
+efficiently, whereas \ can be characterized as the class of problems for which membership can be
+verified
+efficiently once an appropriate certificate is provided. If it turned out that \, then the difficulty of these two tasks would coincide  for all problems in \. Some consequences of this would be that the task of finding a satisfying valuation \ for a propositional formula \ is no harder than constructing its truth table, the task of factoring a natural number would be no more difficult than verifying that a given factorization is correct, etc.
+Our intuitions strongly reflect the fact that the former problems in such pairs
+seem
+more difficult than the latter. But beyond collapsing distinctions currently appear almost self-evident, the coincidence of \ and \ would also have a more radical effect on the situation which we currently face in mathematics. For suppose that \ is a recursively axiomatic theory which is sufficiently strong to formalize our current mathematical theorizing – e.g. Zermelo Fraenkel set theory with the Axiom of Choice [\], supplemented as needed with large cardinal hypotheses. Observe that regardless of the proof theoretic strength of \, the following question about derivability in this theory will still presumably be decidable in polynomial time:
+\ 
+Given a formula \ in the language of \ and a finite object \ of the appropriate sort , is \ a well-formed proof of \ from the axioms of \?
+
+For such standard definitions it will also be the case that for each \, there will be of order \\) \-derivations of length \ ). We can thus non-deterministically check if \ is derivable by a proof of size \ by guessing a sequence of symbols length \ and then checking  whether it is a well-formed proof of \. It thus follows that the following problem is in \:
+\
+Given a formula \ in the language of \ and a natural number \, does there exist a valid \-derivation \ of length \ such that \ is a valid proof of \?
+We are, of course, generally interested in the question of whether \ is provable in \
+without
+a restriction on the length of its derivation – e.g. in the case where \ expresses the Riemann Hypothesis and \ is a theory like \. But in a letter to von Neumann,
+Gödel 
+observed that if we were able to efficiently decide \, then this would already have enormous significance for mathematical practice. For note that it seems plausible to assume that no human mathematician will ever be able to comprehend a proof containing 100 million symbols  pages). If we were able to efficiently check if \ ) and obtained a negative answer, Gödel concludes that “there would be no reason to think further about [\]”
+
+. For in this case a demonstration that \  and a sufficiently powerful \) would be sufficient to show that we have no hope of ever comprehending a proof of \ even if one were to exist.
+But now note that since \, if it so happened that \ then the task of determining whether a mathematical formula is derivable in our preferred mathematical theory by a proof of feasible length would be checkable by an efficient algorithm. Gödel suggests that this would have the following consequence:
+[D]espite the unsolvability of the
+Entscheidungsproblem
+the mental effort of the mathematician in the case of yes-or-no questions could be completely replaced by machines.
+
+
+Building on this observation, several more recent commentators
+
+have also underscored the significance of Open Question 1 by suggesting that \ would entail the dispensability of creativity not just in mathematics, but also for a number of other tasks – e.g. theory construction or music composition – which are traditionally thought to involve elements of non-algorithmic insight.
+But although the coincidence of \ and \ would have intriguing consequences, it also seems likely that the discovery of a proof validating the consensus view that \ would be regarded as foundationally significant. As we have seen, the sort of evidence most often cited in favor of the proper inclusion of \ in \ is the failure of protracted attempts to find polynomial time algorithms for problems in \ in which we have a strong practical interest either in deciding in practice or in proving to be intractable.
+
+A proof that \ would thus not only have the effect of validating such inductive evidence, but it would provide additional evidence that the Cobham-Edmonds Thesis provides a correct analysis of the pre-theoretical notion of feasibility. In particular, it would allow us to unconditionally assert that \-hard problems are intractable in the general case.
+Recall, however, that such inductive considerations form only part of the overall evidence which can be cited in favor of \. In particular, various heuristic considerations also point to the non-coincidence of the classes \ and \ and of \ and \, and hence to positive answers for Open Questions 2 and 3. But were it to be the case that \, then these questions would be resolved negatively in a manner which runs strongly counter to our current expectations .
+Given the convergence of several forms of non-demonstrative evidence for the conjecture that \, it is also reasonable to ask why this statement has proven so difficult to resolve in practice. For note that although this statement originates in theoretical computer science, it may be easily formulated as statements about natural numbers. In particular, \ is equivalent to the statement that for all indices \ and exponents \, there exists a propositional formula \ such that the deterministic Turing machine \ does not correctly decide \’s membership in \ in \ steps. Using familiar techniques from the
+arithmetization of syntax
+, it is not difficult to see that this statement can be formalized in the language of first-order arithmetic as a \-statement – i.e. a statement \ of the form \\) where \\) contains only bounded numerical quantifiers.
+Based on its logical form alone, we cannot currently exclude the possibility that \ is independent not just of first-order Peano arithmetic [\], but of even stronger axiom systems such as \. But although early results suggested \ may be independent of some very weak axiomatic theories , it is now believed that this statement is unlikely to be independent of stronger theories like \ which approximate the mathematical axioms we employ in practice. In particular,
+Ben-David and Halevi 
+showed that if it were possible to use current proof theoretic techniques to show the independence of \ from \, then this demonstration itself would also show that \ is very close to being in \ in a sense which can be made precise using techniques from circuit complexity.
+
+As this is thought to be implausible,
+Aaronson 
+suggests that we currently possess no reason to suspect that \ is more likely to be independent of \ ) than other currently open number theoretic statements.
+But at the same time, a consensus has also developed that it is unlikely that we will be able to settle the status of \ on the basis of currently known methods of proof. A familiar example is the method of diagonalization, as employed in the proof of the undecidability of the classical Halting Problem . We have seen that a variant of this method can be used to show \ in the proof of Theorem 3.1. But diagonalization proofs yielding such separations typically relativize to oracle-based computation in the following sense: if such a proof yields \ for complexity classes \ and \, then a suitable modification will also typically yield \ for all oracles \.
+
+Baker, Gill, and Solovay
+
+famously established the existence of oracles \ and \ such that \ and \. As we would expect a proof of \ based on diagonalization to relativize to both \ and \, this suggests that it is not possible to use this method to separate \ and \.
+Despite the negative character of this and other results which are often taken to bear on the status of \?, resolving this and the other open questions remains an important topic of research in theoretical computer science. Several programs for separating complexity classes have recently been explored using techniques from circuit complexity
+
+, proof theory
+
+, and algebraic geometry
+
+. However, the current consensus
+
+is that these approaches are still in need of substantial refinement or that genuinely new methods will be required in order to yield the desired separations.
+It thus seems reasonable to summarize the current status of the \? problem as follows:  \ is widely believed to be true on the basis of convergent inductive and heuristic evidence;  we currently have no reason to suspect that this statement is formally independent of the mathematical theories which we accept in practice; but  a proof \ is still considered to be beyond the reach of current techniques.
+4.2 Satisfiability, validity, and model checking
+We have seen that logic provides many examples of problems which are studied in complexity theory. Of these, the most often considered are
+satisfiability
+,
+validity
+, and
+model checking
+. In order to formulate these problems uniformly, it is convenient to take a
+logic
+\ to be a triple \ consisting of a set of formulas \, a class of structures \ in which the members of \ are interpreted, and a satisfaction relation \ which holds between structures and formulas. We may assume that \ is specified in the manner typified by propositional logic – i.e. as a set of syntactic primitives and inductive formulation rules. On the other hand, the definitions of both \ and \ will vary according to the sort of logic in question – e.g. in the case of classical propositional logic, \ will be the class of atomic valuations \ and \ holds just in case \ is true with respect to \ , and in the case of modal logic \ will typically be a class of
+Kripke models
+satisfying a given frame condition and \ is the standard forcing relation \ which holds between a model, a world, and a formula.
+Given a logic \ specified in this manner, we may now formulate the following problems:
+\
+Given a formula \, does there exist a structure \ such that \?
+\
+Given a formula \, is it the case that for all \, \?
+\
+Given a formula \ and a structure \, is it the case that \?
+To specify these problems formally, a suitable encoding of the members of \ and \ as finite binary strings must be provided. Although this is typically unproblematic in the case of \, \ may sometimes include infinite structures. In this case, the model checking problem is only considered for finite structures . And in cases where a logic is standardly characterized proof theoretically rather than semantically – i.e. as the set of formulas derivable from some set of axioms of \ rather than the class of formulas true in all structures – the validity problem is understood to coincide with the problem of deciding whether \ is derivable from \. In such cases, the satisfiability and model checking problems are generally not considered.
+The problems \, \, and \ have been studied for many of the logics employed in philosophy, computer science, and
+artificial intelligence
+. A number of results are summarized in Table 1, focusing on systems surveyed in other articles in this encyclopedia. The reader is referred to these and the other references provided for the definition of the fragment or system in question as well as the relevant definitions of \, \, or \.
+
+Classical Logic
+SATISFIABILITY
+VALIDITY
+MODEL CHECKING
+full propositional
+\-complete
+\-complete
+\
+
+Horn clauses
+P
+-complete
+P
+-complete
+\
+
+full first-order
+\-complete
+\-complete
+\-complete
+
+monadic first-order
+\-complete
+\-complete
+
+\
+\-complete
+\-complete
+
+\
+\-complete
+\-complete
+
+\
+\-complete
+\-complete
+
+Intuitionistic Logic
+SATISFIABILITY
+VALIDITY
+MODEL CHECKING
+full propositional
+\-complete
+\-complete
+\-complete
+
+full first-order
+\-complete
+\-complete
+
+Modal Logic
+SATISFIABILITY
+VALIDITY
+MODEL CHECKING
+\
+\-complete
+\-complete
+\-complete
+
+\
+\-complete
+\-complete
+\
+
+Epistemic Logic
+SATISFIABILITY
+VALIDITY
+MODEL CHECKING
+\, \
+\-complete
+\-complete
+
+\, \
+\-complete
+\-complete
+
+Provability Logic
+SATISFIABILITY
+VALIDITY
+MODEL CHECKING
+\
+\-complete
+\-complete
+
+Justification Logic
+SATISFIABILITY
+VALIDITY
+MODEL CHECKING
+\
+\-complete
+\-complete
+
+Dynamic Logic
+SATISFIABILITY
+VALIDITY
+MODEL CHECKING
+\
+\-complete
+\-complete
+\-complete
+
+Temporal Logic
+SATISFIABILITY
+VALIDITY
+MODEL CHECKING
+\
+\-complete
+\-complete
+\-complete
+
+\
+\-complete
+\-complete
+\
+
+\
+\-complete
+\-complete
+\-complete
+
+Relevance Logic
+SATISFIABILITY
+VALIDITY
+MODEL CHECKING
+\
+\-complete
+
+Linear Logic
+SATISFIABILITY
+VALIDITY
+MODEL CHECKING
+\
+\-complete
+
+\
+\-complete
+
+\
+\-complete
+
+Table 1.
+The complexity of the satisfiability, validity, and model checking problems for some common logics.
+4.3 Proof complexity
+We have seen that the satisfiability and validity problems for propositional logic are respectively complete for \ and \. Although these problems are characterized in terms of the semantics for propositional logic, certain questions about its proof theory may also be addressed using techniques from complexity theory. By a
+proof system
+\ for propositional logic we understand a definition of the symbol \ which characterizes what it means for a formula \ to be
+derivable
+from a given set of axioms and rules. We write \ just in case there is a derivation \  with \ as its conclusion in the system \. Examples of such formalisms include standard definitions of
+Hilbert systems
+\,
+
+natural deduction systems
+\, and
+sequent systems
+\ for propositional logic . Each of these systems may be shown to be
+sound
+and
+complete
+for propositional validity – i.e. for all propositional formulas \, \ if and only if \ for \.
+In the context of complexity theory, it is convenient to reformulate the definition of a proof system as a mapping \ whose domain consist of all binary string and whose range is the class of all valid formulas. Recall, for instance, that a Hilbert derivation is a finite sequences of formulas \ each of whose members is either a logical axiom or follows from earlier members by
+modus ponens
+.  A finite sequence of formulas  can be encoded as a binary string so that it is may be recognized in polynomial time if  \ is the code of a well-formed proof.  \ can now be defined so if \ encodes such a derivation, then \ = \psi_n \)  and \\) is some fixed tautology otherwise.
+Such a system is said to be
+polynomially bounded
+if there exists a polynomial \\) such that for all \, there is a derivation \ such that \ = \phi\) and \\) – i.e. just in case all tautologies of size \ possess \-proofs of size at most \\).
+The basic observation about such systems is as follows:
+Theorem 4.1
+ There exist a polynomially bounded proof system if and only if \.
+
+Since it is strongly suspected that \ , the current consensus is that polynomial proof systems do not exist. At present, however, the failure of polynomial boundedness has not been proven for most familiar proof systems, inclusive of \, \, and \.
+A natural question to ask about a proof system \ is thus whether it is possible to identify classes of tautologies \ which are ‘hard’ in the sense that any \-proof demonstrating that \ is valid must be infeasibly long relative to the size of \. A positive answer was obtained by
+Haken 
+for the system known as
+resolution
+on which many automated theorem-provers are based. Haken’s proof made use of Cook and Reckhow’s
+
+observation that we may formulate the Pigeon Hole Principle  – i.e. the statement that any assignment of \ pigeons to \ holes must assign two pigeons to some hole – in propositional logic by using the atomic letter \ to express that pigeon \ gets placed in hole \. The formula
+\[
+\text{PHP}_n = \bigwedge_{0 \leq i \leq n} \ \bigvee_{0 \leq j \lt n} P_{ij} \rightarrow \bigvee_{0 \leq i \lt m \leq n} \bigvee_{0 \leq j \lt n} 
+\]
+which formalizes the \-pigeon version of PHP is thus a tautology for each \. \ is hence provable in any complete proof system for propositional logic.
+Haken showed that any resolution proof of \ must have size at least exponential in \. From this it follows that resolution is not polynomially bounded. However, it was later shown by
+Buss 
+that the system \ , \ which can be shown to efficiently simulate \) do admit proofs of \ which are of size polynomial in \.  One subsequent direction of research in proof complexity has been to identify additional proof systems for which PHP or related combinatorial principles are also hard.  See, e.g.,
+Buss 
+,
+Segerlind 
+.
+4.4 Descriptive complexity
+Another connection between logic and computational complexity is provided by the subject known as
+descriptive complexity theory
+. As we have seen, a problem \ is taken to be ‘complex’ in the sense of computational complexity theory in proportion to how difficult it is to decide algorithmically. On the other hand, descriptive complexity takes a problem to be ‘complex’ in proportion to the logical resources which are required to describe its instances. In other words, the descriptive complexity of \ is measured according to the sort of formulas which is needed to define its instances relative to an appropriate background class of finitary structures.
+Descriptive complexity begins with the observation that since computational problems are comprised by finite combinatorial objects , it is possible to describe their instances as finite structures in the conventional sense of
+first-order model theory
+. In particular, given a problem \, we associate with each of its instances \ a finite structure \ over a relational signature \ whose non-logical vocabulary will depend on the type of objects which comprise \.
+
+Given such a signature \, we define \\) to be the class of all \-structures with finite domain. In the context of descriptive complexity theory, a
+logic
+\ is taken to be an extension of the language of first-order logic with one or more classes of additional expressions such as higher-order quantifiers or fixed-point operators. These are treated semantically as logical symbols. If \ is such a logic, and \ a signature, we write \}\) to denote the class of well-formed sentences constructed using the logical symbols from \ and the relational symbols from \. A sentence \}\) is said to
+define
+a problem \ just in case \ is coextensive with the set of \-structures satisfying \ – i.e.
+\[
+\{\mathcal{A}_x \mid x \in X \} = \{\mathcal{A} \in \text{Mod} \mid \mathcal{A} \models \phi \}
+\]
+If \ is a complexity class, then a logic \ is said to
+capture
+\ just in case for every problem \, there is a signature \ and a formula \}\) which defines \.
+Descriptive characterizations have been obtained for many of the major complexity classes considered in
+Section 3
+, several of which are summarized in Table 2. The first such characterization was established with respect to
+second-order existential logic
+). The language of this system includes formulas of the form \\) where the variables \ are second-order and \ itself contains no other second-order quantifiers.
+Fagin 
+established the following:
+Theorem 4.2
+\ is captured by the logic \.
+This result provided one of the first
+machine independent
+characterizations of an important complexity class – i.e. one whose formulation does not make reference to a specific model of computation such as \ or \. The availability of such characterizations is often taken to provide additional evidence for the mathematical robustness of classes like \.
+Theorem 4.2 generalizes to provide a characterization of the classes which comprise the Polynomial Hierarchy. For instance, the logics \ and \ uniformly capture the complexity classes \ and \  ). Moreover \  captures \ itself. On the other hand, it can also be shown that first-order logic ) captures only a very weak complexity class known as \ consisting of languages decidable by polynomial size circuits of constant depth.
+In order to characterize additional classes, other means of extending the expressive capacity of first-order logic must be considered such as adding least fixed point or transitive closure operators. Consider, for instance, a formula \\) in which the \-ary relation \ only appears positively  and \ is of length \. If \ is the domain of a structure \, then such a formula will induce a monotone mapping of type \}\) from the power set of \ to the power set of \ defined by \} = \{\vec{a} \in A^m \mid \mathcal{A}^R_B \models \psi \}\) where \ denotes the model in which the symbol \ is interpreted as \ and is just like \ otherwise. In such a case it follows that there will exist a
+least fixed point
+for the mapping \}\) – i.e. a set \ such that \} = F\) and which is contained in all other sets with this property . Let us denote this set by \)\).
+
+The logic \\) can now be defined as the extension of first-order logic with the new relation symbols \}\) for each formula \\) in which the relation variable appears only positively and with new atomic formulas of the form \}\). Such formulas are interpreted as follows: \}\) if and only if \)\). The logic \\)is similarly defined by adding a transitive closure operator \}\) which holds of a term \ just in case \ is in the transitive closure of the relation denoted by \\) in \.  The logic \\) and \\) are defined analogously by adding these operators to \ and allowing them to apply to formulas containing second-order variables.
+We may now state another major result of descriptive complexity theory:
+Theorem 4.3
+ \ is captured by \\) relative to ordered models  for structures interpreting \ as a linear order on \).
+Immerman  describes Theorem 4.3 as “increas[ing] our intuition that polynomial time is a class whose fundamental nature goes beyond the machine models with which it is usually defined”.  Taken in conjunction with Theorem 4.2 it also provides a logical reformulation of the \ problem itself – i.e. \ if and only if there exists a class of ordered structures definable in existential second-order logic which is not definable by a formula of \\).
+On the other hand, the restriction to ordered structures in the formulation of Theorem 4.3 is known to be essential in the sense that there are simply describable languages in \ – e.g.
+\[
+ \sc{PARITY} = \{w \in \{0,1\}^* : w \text{ contains an odd number of 1s}\}
+\]
+– which cannot be define over \\) without using \. More generally, the question of there exists a logic which captures  \ over unordered structures is currently one of the major open questions in descriptive complexity.  See, e.g.,
+
+and
+
+.
+Complexity class
+Logic
+Reference
+\
+\
+
+\
+\\)
+
+\
+\\)
+
+,
+
+\
+\
+
+\
+\
+
+\
+\
+
+\
+\
+
+\
+\\)
+
+\
+\\)
+
+Table 2.
+Descriptive characterization of complexity classes.
+4.5 Bounded arithmetic
+Another connection between logic and computational complexity is provided by first-order arithmetical theories which are similar in form to familiar systems such as Primitive Recursive Arithmetic and Peano arithmetic. Connections between formal arithmetic and computability theory have been known since the 1940s – e.g. the sets of natural numbers definable by \-formulas and \-formulas in the standard model of arithmetic respectively correspond to the recursive and recursively enumerable sets, the provably total functions of \ correspond to the primitive recursive functions while those of \ correspond to the \-recursive functions . From the 1970s onwards, a number of similar results have been obtained which link the levels of the Polynomial Hierarchy to a class of first-order theories collectively known as
+bounded arithmetics
+.
+In the course of studying the relationship between arithmetic and complexity theory, it is often useful to consider functions in addition to sets. For instance we may consider the class \ of functions computable by a deterministic Turing machine in polynomial time. Similarly, we define \ to be the class of functions computable by a deterministic Turing machine in polynomial time with the use of an oracles for a set in level \ of \. As in the case of \, it is not known whether the hierarchy \ collapses.
+A first link between formal arithmetic and complexity was provided by Cobham’s
+
+original characterization of \ in terms of a functional algebra similar to that by which the
+primitive recursive functions
+are defined. The class in question is generated by the following class of basis functions \:
+\[
+z = 0, s_0 = 2 \cdot x, s_1 = 2 x + 1, \pi^i_n = x_i, x \# y = 2^{\lvert x\rvert \cdot \lvert y\rvert}
+\]
+We also define the following variant of primitive recursion:
+Definition 4.1
+The function \\) is said to be defined from \, h_0, h_1\) and \\) by
+limited recursion on notation
+just in case
+\[
+\begin{aligned}
+ f &= g\\
+ f) &= h_0) \\
+ f) &= h_1)
+\end{aligned}
+\]
+and \ \leq k\) for all \.
+We define the class \ of functions definable by limited recursion on notation to be the least class containing \ and closed under composition and the foregoing scheme. A slight variant of Cobham’s original result may now be stated as follows:
+Theorem 4.4
+ \ \in \textbf{FP}\) if and only if \ \in \mathcal{F}\).
+Like Theorems 4.2 and 4.3, Theorem 4.4 is significant because it provides another machine-independent characterization of an important complexity class. Recall, however, that Cobham was working at a time when the mathematical status of the notion of feasibility was still under debate. So it is also reasonable to ask if the definition of \ can  be understood as providing an independently motivated analysis of feasible computability akin to the analyses which Church and Turing are often said to have provided for effective computability.
+Relative to the standards discussed in
+Section 1.1
+it seems reasonable to maintain  that the basis functions \ are feasibly computable and also that this property is preserved under composition. Now suppose that \\) is defined by limited recursion on notation from \, h_0, h_1\) and \\). In this case, \ = h_i)\) depending on whether \ is even ) or odd ). From this it follows that the depth of the recursion required to compute the value of \\) will be proportional to \\) – i.e. proportional to the
+length of \’s binary representation
+, as opposed to \ itself as when \\) is defined as \)\) by ordinary primitive recursion. This suggests that feasibility is also preserved when a function is defined by limited recursion on notation.
+It is harder to motivate the inclusion of the function \ in \ and of the condition \ \leq k\) in Definition 4.1 on pre-theoretical grounds alone. For these features of the definition of \ can be see to have precisely the effect of placing a polynomial bound on the auxiliary functions which can be computed during the sort of length-bounded recursion just described. On the other hand, such indirect reference to polynomial rates of growth is avoided in similar functional characterizations of \ due to
+Leivant 
+ and
+Bellantoni and Cook 
+.
+Direct reference to polynomial rates of growth is also avoided in the formulation of the first-order arithmetical theory now known as \ 
+under the name \). \ is formulated over the traditional language of first-order arithmetic – i.e. \ – and consists of the axioms of Robinson’s \ together with the restriction of the induction scheme of \ arithmetic to \-formulas – i.e. those containing only
+bounded quantifiers
+of the form \ or \ where \ is a term not containing \.
+Prior to this
+Bennett 
+had shown that there exists a \-formula \\) which defines the graph of the exponentiation function relative to the standard model of arithmetic. \ proves that \\) satisfies the standard defining equations for exponentiation. But it may also be shown that this theory does not prove the totality of exponentiation under this or any other definition in the following sense:
+Theorem 4.5
+ 
+Suppose that \\) where \\) is itself \ . Then for some \-term \\), \ \phi\).
+Recall that a function \\) is
+provably total
+in a theory \ just in case there is a \-formula \\) defining the graph of \\) in the language of \ such that \\). Since terms in the language of arithmetic are polynomials with positive coefficients, it follows from Theorem 4.3 that all of the provably total functions of \ are of polynomial rate of growth. In particular, exponentiation is not provably total in this theory.  For this reason Parikh referred to \ as an “anthropomorphic system”.
+
+In order to obtain arithmetical theories which describe \ and the higher levels of \ precisely, two approaches have been pursued, respectively due to
+Buss 
+and to
+Zambella 
+. Buss presented a sequence of first-order theories
+\[
+\mathsf{S}^1_2 \subseteq \mathsf{T}^1_2 \subseteq \mathsf{S}^2_2 \subseteq \ldots \mathsf{S}^i_2 \subseteq \mathsf{T}^i_2 \subseteq \mathsf{S}^{i+1}_2 \subseteq \ldots
+\]
+whose provably total functions correspond to the levels of the hierarchy \. These theories are stated over the language \, where the intended interpretation of \ is \ \rceil\), and of \ is \ as above. Whereas a traditional bounded quantifier is of the form \ or \, a so-called
+sharply bounded quantifier
+is of the form \ or \  an \-term not involving \). The syntactic classes \ and \ are defined in a manner reminiscent to how the classes \ and \ are defined in the traditional arithmetical hierarchy – i.e. by counting alternations of bounded quantifiers, ignoring sharply bounded ones.
+The theories \ and \ both extend a base theory known as \. \ contains 32 axioms, which include those of \, as well as others which axiomatize the intended interpretations of \, \ and \ . We also define the following induction schemas:
+\-\ \ \wedge \forall x \rightarrow \phi) \rightarrow \forall x \phi\)
+for all \ \in \Sigma^b_i\).
+\-\ \ \wedge \forall x  \rightarrow \phi) \rightarrow \forall x \phi\) 
+for all \ \in \Sigma^b_i\).
+Finally, we define the theories \-\ and \-\ and also \ and \.
+Some basic results linking the language \ and these theories to the Polynomial Hierarchy are as follows:
+Theorem 4.6
+ A set \ belongs to \ if and only \ is definable by a \-formula \\) in the standard model – i.e. \ \}\).
+Theorem 4.7
+ A function \\) belongs to \ if and only if \\) is provably total in \ relative to a \-definition – i.e. if and only if there is a \-formula \\) such that \\).
+It follows from Theorem 4.7 that \\) is computable in polynomial time just in case it is provably total in \ relative to a \-definition.
+Buss 
+also showed that \, that \ and \ are finitely axiomatizable, and that \. It is not known if either of the hierarchies of theories displayed above collapses or whether either \ or \ is finitely axiomatizable. However, either the existence of an \ such that \ or the finite axiomatizability of \ or \ can be shown to entail the collapse of the Polynomial Hierarchy.
+The second approach for relating formal arithmetic to \ employs a series of second-order theories \ originally introduced by
+Zambella 
+
+and
+Cook and Nguyen 2010
+). These extend the first-order language \ with symbols \ and \ as well as the quantifiers \ and \ intended to range over finite sets of natural numbers. The theory \ extends \ with second-order quantifier axioms, extensionality for sets, axioms formalizing that \ is intended to denote the largest element of \, and a second-order comprehension schema for \-formulas – i.e. formulas containing only bounded first-order quantifiers and set quantifiers of the form \\)  is a first-order term not containing \). In parallel to Theorem 4.7, it can be shown that a function \\) is in \ just in case it is definable by a \-formula relative to which it is provably total in \. Similar characterizations of the classes \ may be obtained by considering the theories \ ) obtained by extending comprehension to wider classes of bounded second-order formulas.
+4.6 Strict finitism
+The most direct links between philosophy of mathematics and computational complexity theory have thus far arisen in the context of discussions of the view traditionally known as
+strict finitism
+. This view is most prominently associated with Yessenin-Volpin
+
+, who is in turn best known for questioning whether expressions such as \ or \ denote natural numbers. Presuming that such expressions denote at all, Yessenin-Volpin contended that they cannot be taken to describe what he referred to as
+feasible numbers
+– i.e. numbers up to which we may count in practice. On this basis, he outlined a foundational program wherein feasibility is treated as a basic notion and traditional arguments in favor of the validity of mathematical induction and the uniqueness of the natural number series are called into question. Antecedents for such a view may be found in 
+Bernays , van Dantzig , and Wang 
+.
+
+Recall that one tenet of the traditional form of finitism associated with the
+Hilbert Program
+is that the natural numbers should not be conceived as comprising a completed infinite totality. Strict finitists are sometimes described as going one step further than this and actively denying that there are infinitely many natural numbers. However, the following are more characteristic of claims which such theorists explicitly endorse:
+
+It is possible to identify a class of natural numbers corresponding to those which can be constructed in practice by counting or whose values are otherwise explicitly representable as numerals, either concretely or in intuition.
+
+We possess notations – e.g. decimal numerals such as \ – which do not denote numbers in this class.
+In emphasizing the practical aspects of how we use numerals to represent natural numbers in the course of performing arithmetical computations, it is evident that the concerns which motivate strict finitism anticipate some of those which also inspired the development of complexity theory. Nonetheless, strict finitism has attracted few followers. To see why this is so, observe that  makes clear that strict finitists propose to identify natural numbers with
+numerals
+such as the familiar sequence \ of unary numerals.
+If we regard such expressions as tokens rather than types, then it makes sense to consider the task of concretely ‘counting up to’ a number by 
+constructing its unary representation in the sense described by Yessenin-Volpin.  For recall that it is a characteristic feature of numerals that they may be generated from certain initial symbols by the application of a finite set of syntactic formation rules – e.g. the unary numerals are generated by applying the formation rule \ to the initial symbol \. But once this is acknowledged, it also seems difficult to resist the following additional thesis:
+
+If a numeral \ can be feasibly constructed, then so can \ ).
+
+In attempting to accommodate – simultaneously, we must confront a tension which has led many authors to follow
+Dummett 
+in concluding that strict finitism lacks a coherent formulation. For suppose we let \\) symbolize that \ denotes a feasible number in Yessenin-Volpin’s sense. Then it would seem to follow from  that we ought to accept
+\\)
+But it would also seem to follow from  that we should also accept
+\ \rightarrow F)\)
+and from  that we should accept
+\\)
+where \ is an expression denoting an ‘infeasible number’ such as  \, \ or \.
+Dummett observed that two different forms of the classical
+sorites paradox
+now intervene to show that – are inconsistent. For on the one hand, by applying mathematical induction – i.e. the principle that for all definite properties \\) of natural numbers, we may infer \\) from \\) and \ \rightarrow P)\) – to the predicate \\), we may conclude that \\) from  and . But then \\) follows by universal instantiation, in contradiction to . And on the other hand, even without appealing to induction, a contradiction can also be derived in the form of a conditional sorites argument by deriving \\) as the result of repeatedly applying
+modus ponens
+to the series \, F \rightarrow F, F \rightarrow F, \ldots\) obtained from  by universal instantiation.
+Although it would be uncharitable to think that Yessenin-Volpin was unaware of these observations, the first person to directly reply to the charge that - are inconsistent appears to have been
+Parikh 
+.
+
+His response can be understood as consisting of two parts, both of which bear on the analysis of the informal notion of feasibility considered in Sections
+1.1
+and
+2.2
+. 
+ On the one hand, Parikh considers what he refers to as the
+almost consistent theory
+\. This theory is formulated over the language \\}\) supplemented with terms for all closed primitive recursive functions and contains the statement \\) where \ is some fixed primitive recursive term intended to denote an ‘infeasible’ number such as \. Finally, \ contains the axioms of \ with the induction schema restricted to formulas not containing \\).
+In light of the latter restriction, it is not possible to mimic the inductive form of the sorites argument in \. But of course \ is still inconsistent in virtue of the conditional form of the argument. Nonetheless, Parikh showed that for appropriate choices of \, any proof of a contradiction in \ must itself be very long.  For instance, if we consider the
+super-exponential function
+\ and \ = 2^{2 \Uparrow x}\) and let \ be the primitive recursive term \, it is a consequence of Parikh’s result that any proof of a contradiction in \ must be on the order of \ steps long. For example if \, then such a proof must be at least \ lines 
+ long.
+
+This suggests the possibility of a two-part reply on behalf of the strict finitist to Dummett’s argument against strict 
+ finitism:
+
+The inductive form of the sorites is ruled out in virtue of the fact that \\) is not a definite  property of natural numbers.
+At least for certain choices of \, the conditional form is also not a threat because the only derivation of a contradiction from – is too long to be carried out in practice.
+The possibility of such a reply notwithstanding, it is also natural to ask at this point whether the notion of feasibility considered in complexity theory might also be vague in a manner which could render it susceptible to the sort of soritical argument envisioned by
+Dummett 
+. Note, however, that our discussion thus far suggests that the notion of feasibility in which strict finitists have been interested is a property of
+individual natural numbers
+. This is out of keeping with the way we have seen that this notion is treated in complexity theory. For instance, in order to employ the Cobham-Edmond’s Thesis to judge whether a problem \ is feasibly decidable, we consider the order of growth of the time complexity \\) of the most efficient algorithm for deciding \. From the perspective of complexity theory, feasibility is thus a notion which applies not to individual natural numbers \, but either to time complexity functions of type \ or their rates of growth.
+Next observe that the following are consequences of the Cobham-Edmonds thesis:
+\\)  is a feasible rate of growth.
+Since all polynomial orders of growth are feasible, it follows that if \\) is feasible, then so is \\).
+Super-polynomial orders of growth such as \\) are not feasible.
+On this basis one might indeed fear that the intuitions about feasibly computable functions codified by the Cobham-Edmonds thesis exhibit the same kind of instability as do intuitively acceptable principles about feasibly constructible numbers.
+To see that this is not the case, however, observe that we compare the growth rates of \ not by the standard ordering \ on the natural numbers but rather the following ordering \:
+\[
+ O) \prec O) \text{ if and only if there exists } 
+ n_0,c \in \mathbb{N} \text{ such that for all } 
+ n \gt n_0, f \lt c \cdot g
+\]
+It is a consequence of this definition that \ \prec O \prec O \prec O \ldots\) – i.e. the polynomial orders of growth do form an \-sequence with respect to \. However, it also follows that \ \prec O\) for all \ – i.e. \\) is a ‘point at infinity’ sitting above each polynomial order of growth with respect to this ordering .
+
+And from this it follows that such orders cannot be reached from below by a sorties-like sequence of feasible orders of growth \ \prec O \prec O \prec O \ldots\) When analyzed according to the Cobham-Edmonds thesis, it hence appears that the ‘naive’ notion of feasible computability does not suffer from the sort of instability which Dummett takes to plague the notion of a feasibly constructible number.
+These observations point to another theme within the writings of some strict finitists which suggests that they also anticipate the way in which predicates like ‘feasible’ and ‘infeasible’ are now employed in complexity theory. For instance, while
+van Dantzig 
+suggests that the feasible numbers are closed under addition and multiplication,
+Yessenin-Volpin 
+explicitly states that they should not be regarded as closed under exponentiation. The possibility that exponentiation should be understood to play a role in the formulation of strict finitism itself is also suggested by the fact that the particular examples of ‘infeasible numbers’ which have been put forth by Yessenin-Volpin and others have typically employed exponential or iterated exponential notations of the forms such as \ or \. This in turn suggests another reply to the sorties-based argument against strict finitism.
+Recall that the theory \ introduced in
+Section 4.5
+allows us to define the graph of the exponential function \ via a \-formula \\) in the sense that \\) and \ \rightarrow \varepsilon)\). But as we have seen, \ does not prove the totality of the exponential function nor  does Buss’s theory \. From this it follows that the theory \\) is proof-theoretically consistent. By the completeness theorem for first-order logic, there thus exists a model \ for the language of bounded of arithmetic such that \\). But although it follows from Theorem 4.5 that all the polynomial time computable functions are defined for all inputs in \, there also exists an object \ in the domain of \ satisfying \\). And from this it follows that the expression we would conventionally write as ‘\’ fails to denote a value in \.
+
+Of course any model \\) must be nonstandard. Thus not only must the domain of \ be infinite, but also there will exist ‘natural numbers’ in the sense of \ which will have infinitely many predecessors when viewed from the outside of \. One might thus at first think that the use of structures like \ to explore the consequences of strict finitism would be antithetical to its proponents.
+Note, however, that such theorists are typically careful to avoid explicitly asserting that there are only finitely many feasible numbers. Instead they give examples of expressions whose denotations  would be infeasibly large – e.g. those given in the formulation of . Certainly the claim that there is a
+largest
+feasibly constructible number would invite the challenge that the strict finitist nominate such a number \. And any such nomination would in turn invite the rejoinder that if \ is feasibly constructible, then \ must be as well. But in the sort of model \ under consideration the definite description ‘the largest \ such that \ exists’ will be non-denoting in virtue of the fact that the elements \ such that \\) form a proper initial segment. The existence of such models might thus be taken to elucidate Yessenin-Volpin’s
+
+claim that there are distinct natural number sequences which are distinguished by the primitive recursive functions under which they are closed.
+
+4.7 Logical knowledge and the complexity of deductive reasoning
+The most direct links between complexity theory and epistemology which have thus far been discussed are mediated by the observation that deciding logical validity  is generally a computationally difficult task. For on the one hand, a traditional view in epistemology is that
+logical knowledge
+– e.g. knowledge that certain statements are
+logical validities
+– is a paradigm case of
+a priori
+knowledge
+. If this is correct, then it would seem that we should credit normal epistemic agents with knowledge of the class of logically valid sentences of systems such as propositional and first-order logic which are commonly taken to underlie everyday reasoning. But on the other hand, the results presented in
+Section 4.2
+make clear that the problem of deciding whether \ is a validity of one of these systems is computationally intractable.
+The apparent clash between philosophical views about knowledge which predict that logical validities ought to be easy to come to know  and the technical fact that the validity and satisfiability problems for even the weakest familiar systems are intractable is the origin of two developments which traditionally have been of interest to epistemologists: the problem of
+logical omniscience
+and the study of theories of
+minimal
+or
+bounded rationality
+.
+The problem of logical omniscience is often presented as having originated from within the subject known as
+epistemic logic
+. In this setting, knowledge is treated as a modal operator \ where sentences of the form \ are assigned the intended interpretation
+agent \ knows that \
+. The goal is to then set down axioms and rules which characterize how we should reason about statements of this form. For instance the principle that knowledge of a statement entails its truth is rendered as \ and the principle that knowledge of a conjunction entails knowledge of its conjuncts is rendered as \ \rightarrow \). Other principles – e.g. \, which expresses that \’s failure to know \ entails that he knows of this failure – are considered more controversial. However the consensus view  is that the most defensible choices of logics of knowledge lie between the
+modal systems
+\ and \.
+The precise axiomatization which is adopted for \ notwithstanding, the use of modal logic to model reasoning about knowledge has the following two consequences:
+\ for all \
+if \ and \ for all \, then \
+ and  respectively report that an agent’s knowledge includes all propositional tautologies and that the set of sentences he knows is closed under logical consequence.
+
+Note, however, that both of these results seem
+prima facie
+implausible relative to our everyday understanding of knowledge. For on the one hand, not only are there infinitely many distinct propositional tautologies, but there are even relatively short ones which many otherwise normal epistemic agents will fail to recognize as such. And on the other, it is generally acknowledged that the set of sentences which we know or believe  is not closed under logical consequence. This is often illustrated by observing that an otherwise competent epistemic agent might know the axioms of a mathematical theory ) without knowing all of its theorems .
+The results summarized in Sections
+4.2
+and
+4.3
+underscore just how severe these problems are. Note first that the problem of deciding whether a given formula is a tautology is \-complete, and hence very likely to be intractable. But we have also seen that results from proof complexity strongly suggest that any proof system which an agent is likely to adopt for reasoning about propositional logic  will be such that there are infinitely many statements whose simplest proofs are of length at least exponential relative to their size. It is thus likely that there will exist ‘short’ tautologies – e.g. with fewer than 100 propositional letters – whose shortest proof in a conventional natural deduction system will be astronomically long. Similar remarks apply to the problem of determining whether a finite set of sentences \ is consistent – a task which is surely of epistemic import in everyday reasoning. In particular, it is readily seen that consistency checking is simply a re-description of the canonical \-complete problem \.
+It is already a consequence of the Cobham-Edmonds Thesis  that such problems are computationally intractable. But if we abandon the simplifying assumption that everyday reasoning is based on classical propositional logic, then validity and consistency checking only become harder. For instance, if we think that agents can reason about their own knowledge or that of others using a modal logic such as \ or \, then the corresponding validity and satisfiability problems become \-complete. And if we assume that they reason in propositional relevance logic, classical first-order logic, or intuitionistic first-order logic, then the validity problem becomes \-complete .
+One common reaction to these observations is to acknowledge that as plausible as the axioms of traditional epistemic logics may appear, they formalize not our everyday understanding of knowledge but rather an idealized or ‘implicit’ notion more closely resembling ‘knowability in principle’ . Another reaction has been to attempt to modify the interpretation of the language of epistemic logic to mitigate the effects of  and . This can be achieved by altering the account of semantic validity for the modal language in question – e.g. through the use of so-called
+impossible worlds
+
+,
+awareness models
+
+, or
+local models
+
+. But although these techniques can be used to circumvent particular cases of  and , they also typically complicate the task of explaining why the set of sentences known by an agent may exhibit some potentially desirable closure properties .
+An approach to logical omniscience which explicitly takes computational complexity into account is proposed by
+Artemov and Kuznets 
+. They suggest that a logic of knowledge should formalize not just statements of the form ‘\ is knowable by agent \’ but also ones of the form ‘\ is known by agent \ on the basis of evidence \’. They then exhibit a family of
+Justification Logics
+for reasoning about statements of the latter form which satisfy the so-called
+Strong Logical Omniscience Test
+– i.e. if a statement of the form ‘\ is known by agent \ on the basis of evidence \’ is derivable, then a proof of \ can be found in time polynomial in the size of \ and \.
+The foregoing modifications to epistemic logic fall broadly within the scope of the subject which has come to be known as
+bounded rationality
+– c.f., e.g.,
+
+. This development can be traced to work in decision theory and cognitive psychology which attempts to take into account that human agents face resource limitations in everyday decision making. The attempt to develop models of decision which take resource limitations into account is sometimes presented as a counterpoint to the
+normative models of rational choice
+which are often employed in economics and political science. In this context, decision making is often modeled as a form of optimization. In particular, it is traditionally required that fully rational agents be able to find an optimal choice among an array of alternatives,  the potential infeasibility of carrying out a search amongst them notwithstanding.
+These developments serve as part of the background to a debate in epistemology which originated with Cherniak’s
+
+theory of
+minimal rationality
+. Cherniak attempts to provide a characterization of rationality which is responsive to both traditional normative characterizations as well as complexity theoretic results about the difficulty of deductive inference of the sort discussed above. According to his account, a minimally rational agent need only make
+some
+of the valid inferences which follow from his beliefs in a proof system for classical logic. He further suggests that the inferences which are selected may depend on the sorts of heuristics considered by cognitive psychologists such as
+Tversky and Kahneman 
+. As such, Cherniak proposes that the use of heuristics which may be of benefit to an agent in certain circumstances – even potentially unsound ones – should be regarded as falling under a generalized account of rationality informed by computational complexity theory. Related themes are discussed by
+Harman 
+and
+Morton 
+.
+5. Further reading
+Historical surveys of the early development of computational complexity theory by the Western and Soviet schools are respectively provided in
+
+and
+
+.
+
+and
+
+provide detailed treatments of machine models, simulation results, the status of the Invariance Thesis, and the distinction between the first and second machine classes. Basic topics in complexity theory are presented in semi-popular form in
+
+,
+
+,
+
+, and
+
+. Introductory presentations can also be found in many general undergraduate textbooks on theoretical computer science such as
+
+,
+
+, and
+
+. More advanced textbook treatments of complexity theory include
+
+,
+
+,
+
+,
+
+, and
+
+. Many of these books cover topics which are not surveyed here but which may be of interest to philosophers – e.g. randomized algorithms, probabilistically checkable proofs, natural proofs, zero-knowledge proofs, and interactive proof systems.
+
+contains survey articles on several complexity-related topics. The standard reference on \-completeness remains
+
+which contains a list of over 300 \-complete problems. A similar reference on \-completeness is
+
+. Structural complexity theory – i.e. the study of different reduction notions and the corresponding degree structures – is developed in
+
+and
+
+. Textbook treatments of proof complexity, descriptive complexity, and bounded arithmetic are respectively provided by
+
+,
+
+, and
+
+.
+
+and
+
+also provide recent philosophically-oriented surveys of complexity theory.

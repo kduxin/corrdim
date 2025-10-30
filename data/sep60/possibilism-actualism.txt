@@ -1,0 +1,4502 @@
+1. The Focus of the Debate
+The debate between possibilists and actualists is at root
+ontological
+. It is not—fundamentally, at least—a
+debate about meaning, or the proper linguistic primitives of our modal
+discourse, or the model theory of certain formal languages, or the
+permissibility of certain inferences. It is a disagreement over
+what there is
+, about the kinds of things that reality
+includes. Characterizing the nature of the debate precisely, however,
+is challenging. As noted in the preceding introduction, the debate
+centers around the question of whether, in addition to such things as
+you and me, reality includes
+possibilia
+, such as
+Bergoglio’s merely possible children, the children he does not
+actually
+have but
+could have
+had if only things had
+gone rather differently. Clearly, if there
+are
+such things in
+some sense, they differ from us rather dramatically: a merely possible
+child is not
+actually
+anyone’s child and indeed, we are
+inclined to say, does not
+actually
+exist at all and, hence,
+is not actually conscious but only could have been, does not actually
+have a body but only could have had one, and so on. As we will see in
+more detail in the following section, in many historical and more
+contemporary discussions, this alleged difference is characterized in
+terms of distinct
+ways
+, or
+modes
+, of being, and it
+will be useful, for now, to continue to frame the debate in these
+terms. Specifically, on this
+bi-modal
+conception of the
+debate, on the one hand, there is the more substantial and robust mode
+of
+actuality
+ that you and I
+enjoy. And, on the other hand, there is the more rarefied mode
+ exhibited by things that fail
+to be
+ actual.
+
+While  there has been some disagreement over the
+location of abstract objects like the natural numbers in this scheme,
+what uniquely distinguishes
+possibilia
+on the bi-modal
+conception is that, for the possibilist, they are
+contingently
+non-actual:
+Poss
+:
+There are
+possibilia
+, that is, things that are not actual
+but could have been.
+It is clarifying to represent matters more formally. Accordingly,
+where \ is the
+actuality
+predicate, we have:
+Poss
+\:
+\\)
+As noted in the above introduction, in its simplest form, actualism is
+just the denial of possibilism: there are no mere
+possibilia
+.
+However, the actualist’s denial is meant to be stronger: that
+possibilism is false is not a mere historical accident; rather, for
+the actualist, not only are there not in fact any
+possibilia
+,
+there
+couldn’t
+be any:
+Act
+:
+There could not have been any
+possibilia
+, that is, any
+things that are not actual but could have been
+or, again, more formally:
+Act
+\:
+\\)
+For the actualist, then, the possibilist’s purported mode of
+contingent non-actuality, or
+mere possibility
+, is empty:
+necessarily, anything that
+could have been
+actual already
+is
+actual. Otherwise put, necessarily, there are no
+contingently non-actual
+ things.
+
+Actualism is quite clearly the preferred common sense position here:
+on a first hearing, the idea that the Pope’s unborn children
+dwell in some shadowy corner of reality is to most ears ludicrous on
+its face—and defending against this common sense intuition
+remains arguably the central challenge facing the possibilist. But the
+motivations for possibilism are surprisingly strong. We have already
+noted what is perhaps the strongest of these: possibilism yields a
+straightforward, unified semantics for our modal discourse. By
+appealing to
+possibilia
+, the possibilist can provide
+satisfying truth conditions for otherwise semantically problematic
+modal statements like
+
+along the lines of those for
+
+that
+ground
+their intuitive truth in the modal properties of
+individuals. As we might also put it: possibilism provides
+truthmakers
+for such statements as
+
+that actualism is apparently unable to supply. But a powerful second
+motivation is that possibilism falls out as a
+consequence
+of
+the most natural quantified modal logic. In particular, in that logic,
+
+is an immediate logical consequence of
+
+.
+  These motivations in turn present a
+twofold
+challenge for the actualist
+:
+to provide a systematic and philosophically satisfying account of
+truth conditions for the likes of
+
+;
+ and
+to develop a robust quantified modal logic that invalidates such
+inferences as the one from
+
+to
+
+.
+What makes the possibilism-actualism debate so interesting is that,
+while actualism is the overwhelming metaphysical choice of most
+philosophers, there is no easy or obvious way for the actualist to
+meet these challenges. We will explore a number of attempts in this
+essay.
+2. The Origins and Nature of
+Possibilia
+2.1 Possibilism and the Bi-Modal Conception of Being
+To fully appreciate what is at issue in the possibilism-actualism
+debate, as well as its framing in those terms, it is important to see
+its origins—more generally, the origins of the bi-modal
+conception of being—in the ancient, and vexing, philosophical
+problem of
+non-existent objects
+.
+ Inklings of the bi-modal conception arguably trace back to the dawn
+of western philosophy in the goddess’s enigmatic warning to
+Parmenides
+not to be deceived by the “unmanageable” idea “that
+things that are not
+are
+”.
+
+It finds clearer expression in Seneca’s description of the
+Stoics, for whom being included both physical objects and
+“incorporeals”
+ that “have a
+derivative kind of reality” :
+The Stoics want to place above this [the existent] yet another, more
+primary genus…. Some Stoics consider “something”
+the first genus, and I shall add the reason why they do. In nature,
+they say, some things exist, some do not exist. But nature includes
+even those which do not exist—things which enter the mind, such
+as centaurs, giants, and whatever else falsely formed by thought takes
+on some image despite lacking substance. 
+The Stoics’ motivation for their bifurcation of
+“nature” was clearly to explain the
+intentionality
+of our thought and discourse, our apparent ability to think and talk
+as coherently about the creatures of mythology and fiction as about
+ordinary physical existents. Later variations broadened the
+Stoics’ realm of incorporeal intentional objects to include
+possibilia
+. In the early medieval period, the Islamic
+Mutazilite theologians distinguished between
+thing
+ and
+existent
+) to
+comport with two passages of the Quʹran  suggesting
+that God
+commands
+non-existent things into existence
+. Avicenna  under the influence of
+the Mutazilates, was more explicit still that these non-existent
+things are
+possibilia
+:
+It is necessary with respect to everything that came into existence
+that before it came into existence, it was in itself possibly
+existent. For if it had not been possibly existent in itself, it never
+would exist at all. Moreover, the possibility of its existence does
+not consist in the fact that an agent could produce it or that an
+agent has power over it. Indeed, an agent would scarcely have power
+over it, if the thing itself were not possible in
+ itself.
+
+Similar ideas were espoused by a number of other prominent medieval
+philosophers including
+Giles of Rome
+,
+Henry of Ghent
+,
+John Duns Scotus
+,
+William of Ockham
+, and
+Francisco Suarez
+.
+
+Although the grounds of possibility and intentionality were prominent
+themes in the modern
+ period,
+
+the idea of explaining them in terms of any sort of bifurcation of
+being largely receded until the early nineteenth century beginning,
+notably, with the remarkable work of
+Bernard Bolzano
+.
+ Specifically, in his work on the ground of possibility, Bolzano
+developed a sophisticated bi-modal account of being on which
+everything there
+is
+divides into those things
+ with
+Wirklichkeit
+, usually rendered
+“actuality” by Bolzano’s
+ translators,
+
+and those with
+Bestand
+, typically rendered
+“subsistence”. Importantly, for Bolzano as well as for
+many of his successors, to be actual  is to be part
+of the causal order and, hence, typically at any rate, to occupy a
+position in space and time—in a word ,
+to be
+concrete
+.
+
+Subsistence, by contrast, is the mode of being shared by non-concrete
+objects, which in particular for Bolzano included both
+possibilia
+and
+abstracta
+like numbers and
+propositions. Unlike
+abstracta
+, however, Bolzano’s
+possibilia
+are only
+contingently
+subsistent,
+contingently
+non-concrete, and, hence, are capable of
+Wirklichkeit
+:
+[I]n addition to those things that have actuality
+…there are others that have mere
+possibility , as well as those
+that could never make the transition to actuality, e.g., propositions
+and truths as such . 
+Motivated chiefly to provide a ground for intentionality, several
+decades later,
+Alexius Meinong
+ famously postulated a rich class of non-existent
+objects to explain our apparent ability to conceive and talk about,
+not only creatures of myth and fiction, but impossible objects like
+the round square. Roughly, in Meinong’s theory, for any class of
+“ordinary” properties  there is an intentional object
+ having
+exactly
+those
+ properties.
+
+Presumably, then, although he did not broach the issue of possible
+objects
+ directly,
+
+among these objects would be those having  the
+property
+being a possible child of Bergoglio
+. However,
+importantly, although he broadly accepted Bolzano’s bi-modal
+division of being into concrete and subsistent
+ objects,
+
+Meinong ascribed no variety of being whatsoever to his intentional
+objects, not even the subsistence  enjoyed by
+abstracta
+like mathematical objects and
+ propositions.
+
+Although strongly influenced by Meinong, the early Russell 
+spurned the idea that intentional objects are being-less but not the
+objects themselves, save for
+impossibilia
+like the round
+square. Rather, he simply moved them all into the subsistent realm
+alongside the objects of mathematics, reserving the “world of
+existence” for “actual objects” in the
+spatio-temporal causal order :
+
+Being
+is that which belongs to…every possible object
+of thought….Numbers, the Homeric gods, relations, chimeras and
+four-dimensional spaces all have being, for if they were not entities
+of a kind, we could make no propositions about them. Thus being is a
+general attribute of everything, and to mention anything is to show
+that it is….
+Existence
+, on the contrary, is the
+prerogative of some only amongst beings….[T]his distinction
+[between being and existence] is essential, if we are ever to deny the
+existence of anything. For what does not exist must be something, or
+it would be meaningless to deny its existence; and hence we need the
+concept of being, as that which belongs even to the non-existent.
+Russell’s thoroughgoing modal skepticism led him to exclude
+possibilia
+from his non-existent
+ objects.
+
+Nonetheless, were he to have admitted them into his ontology, the
+subsistent realm would be their natural place in his bifurcated
+ontology. Quine , in the voice of his fictional possibilist
+metaphysician Wyman—and undoubtedly influenced at the time by
+recent work of C. I. Lewis  and Rudolf Carnap
+ 
+
+—made
+ exactly this move in a justly famous and widely-cited paper that
+played a pivotal role in both framing the philosophical issues and
+fixing modern terminology:
+Pegasus…has his being as an unactualized possible. When we say
+of Pegasus that there is no such thing, we are saying, more precisely,
+that Pegasus does not have the special attribute of actuality. Saying
+that Pegasus is not actual is on a par, logically, with saying that
+the Parthenon is not red; in either case we are saying something about
+an entity whose being is unquestioned. 
+To be a mere
+possibile
+, then, according to Wyman, is to be
+unactualized
+, i.e., it is, unqualifiedly, to
+be
+but
+to fail to exemplify “the special attribute of actuality”;
+it is to
+subsist
+rather than to
+exist
+.
+
+But perhaps equally important for fixing the nature of the modern
+possibilism-actualism debate was Quine’s explicit break from his
+nineteenth and early twentieth century predecessors on the ontological
+status of
+abstracta
+; speaking now in his own voice, he
+says:
+If Pegasus existed he would indeed be in space and time, but only
+because the word “Pegasus” has spatio-temporal
+connotations, and not because “exists” has spatio-temporal
+connotations. If spatio-temporal reference is lacking when we affirm
+the existence of the cube root of 27, this is simply because a cube
+root is not a spatio-temporal kind of thing, and not because we are
+being ambiguous in our use of “exist”. 
+For Quine, that is, their necessary non-concreteness notwithstanding,
+abstract objects exist no less robustly than we and, hence, in the
+context of the possibilism-actualism debate, are fully
+actual
+.
+
+A particular advantage of this view of
+abstracta
+for the
+debate is that, assuming that there could be no
+necessarily
+non-actual objects,
+possibilia
+are the only things lacking
+actuality in the possibilist’s universe and, hence, actualism
+can take a particularly common and familiar form:
+Act
+*:
+Necessarily, everything is actual.
+That is, more formally put once again:
+Act
+\:
+\
+But the most important consequence of this wholesale shift in the
+ontological status of
+abstracta
+is that it opened the door to
+perhaps the most prominent form of contemporary actualism—dubbed
+
+ersatz modal realism
+by David Lewis
+—on which modal phenomena are understood in
+terms of
+abstracta
+of various sorts and, hence, in terms of
+actually existing things only, as per
+Act
+*.
+
+
+One final matter requires attention. Quine’s choice of Pegasus
+as his paradigmatic
+possibile
+in the above quote highlights
+the fact that even relatively modern discussions often conflate the
+two motivations for non-existent objects and, consequently, conflate
+fictional objects and
+possibilia
+, and this leads to an
+important confusion about the nature of
+possibilia
+that is
+important to avoid. It is particularly evident in another well-known
+Quinean passage. Returning to his own voice, in an attempt to show
+that possibilism is ultimately incoherent, Quine asks a series of
+rhetorical questions, beginning with the following:
+Take, for instance, the [merely] possible fat man in that doorway;
+and, again, the [merely] possible bald man in that doorway. Are they
+the same possible man, or two possible men? How do we decide? How many
+possible men are there in that doorway? 
+That is, on this characterization of possibilism, a merely possible
+F
+is something that  fails to be actual but,
+nonetheless, like a Meinongian intentional object, is
+actually
+an
+F
+—a merely possible man in that
+doorway has the property of being in the given doorway; hence the
+purportedly unanswerable questions about whether or not he is
+identical with the indefinitely many other merely possible but
+somewhat differently described men who can also be said to occupy the
+same space. However, as Linsky and Zalta  emphasize, a
+merely possible
+F
+needn’t  be an
+F
+. Rather, a merely possible
+F
+is
+ something that is
+not in fact
+an
+F
+but
+rather only
+could be
+an
+F
+.
+
+In particular, a merely possible bald man in that doorway is neither
+bald, nor a man, nor in that doorway—indeed, it has the
+complements of all those properties. Rather, it is only something that
+could
+have those properties.
+With that problem corrected, this Quinean framing has by and large
+become the dominant conception of the possibilism-actualism
+distinction in the contemporary
+ literature.
+
+2.2 Possibilism Without Bi-Modalism
+We have characterized actualism as, first and foremost, the denial of
+possibilism, defined as the thesis
+ 
+ that there are things that contingently fail to be actual. Following
+the historical precedents just detailed, actuality has been depicted
+as the more robust of two purported modes of being. However, work by
+Linsky and Zalta  and Williamson  casts doubt
+upon the viability of the possibilism-actualism distinction under this
+bi-modal conception. Williamson questions its coherence: what,
+exactly, is the nature of the “robustness” that allegedly
+distinguishes actuality from the merely possible; as Williamson  puts it: “being actual had better be actually doing
+something harder than just being…. But what is that harder
+thing…?” Convinced there is no cogent answer to the
+question, Williamson proposes scotching the possibilism-actualism
+distinction entirely in favor of an allegedly much clearer distinction
+between
+necessitism
+and
+contingentism
+, that is,
+between the thesis that, necessarily, all things exist necessarily
+) and its denial.
+
+
+Linsky and Zalta  do not so much question the coherence
+of the possibilism-actualism distinction  as dissolve
+ it.
+
+Specifically, they show that, for all that the thesis
+ 
+ that, necessarily, everything is actual tells us, there is nothing to
+prevent avowed possibilists like
+ themselves
+
+from simply rejecting the idea that Bergoglio’s merely possible
+children “have a [mode] of being that is less than the
+full-fledged existence” that we enjoy, and insisting instead
+that they too are fully actual and, hence, exist as robustly as we
+ do.
+
+It’s just that we, by sheer happenstance, are
+concrete
+and they are not; we, that is, happen to exist in the spatio-temporal
+causal order and they do not. But things might just as well have been
+the other way ’round: existence-wise, we are all on an
+ontological par. There are thus no
+possibilia
+in the sense of
+Poss
+at all; necessarily, everything is actual, as per
+Act
+*
+.
+ On this telling, then, Linsky and Zalta and their ilk all turn out to
+be fully-fledged actualists, their ontological commitments
+notwithstanding.
+Clearly, however, even if one is skeptical of the bi-modal conception,
+the core of the intended debate remains: whether or not to countenance
+the likes of Bergoglio’s possible children. In response to those
+who do, actualists define themselves simply as those who do not. The
+historical trajectory sketched above explains why the debate has often
+come to be framed in terms of distinct modes of
+being—
+actuality
+and
+mere possibility
+. But this
+bi-modal framing is inessential: when the intended debate is kept in
+the foreground, “actuality”, for the actualist, is best
+understood simply as a placeholder for whatever it is that allegedly
+distinguishes the likes of us  from the likes of Bergoglio’s merely possible children.
+Linsky and Zalta  and Williamson 
+themselves, in fact, just re-introduce what is essentially
+Bolzano’s characterization of
+possibilia
+: they are
+contingently non-concrete
+. On this characterization,
+possibilism can take a form that clarifies the debate without any
+mention of modes of being and, hence, avoids the above critiques:
+Poss
+C
+:
+There are
+possibilia
+, that is, things that are not
+concrete but could have been
+or, more formally, where \ is
+concreteness
+:
+Poss
+\:
+\\)
+Accordingly, actualism becomes:
+Act
+C
+:
+There could not have been any
+possibilia
+, that is, any
+things that are not concrete but could have been
+or, more formally:
+Act
+\:
+\\)
+So on this framing, for the possibilist, what allegedly distinguishes
+the likes of us  from
+possibilia
+in the sense of
+Poss
+C
+is:
+not
+being contingently non-concrete. Taking this, then,
+to be what “actuality” signifies, with a bit of
+propositional logic, we have:
+A!Def
+:
+\ for any
+term \
+That is, on this framing, to be actual is to be either concrete or
+necessarily non-concrete; or, more simply put, it is to be either
+concrete or abstract. It is a straightforward exercise to show that,
+under this definition of actuality,
+Poss
+C
+is equivalent to the original definition
+Poss
+and that
+Act
+C
+is equivalent to the
+principle
+Act
+*
+that, necessarily, everything is
+ actual.
+
+Of course, possibilists who are more inclined toward the bi-modal
+conception will still prefer the original framing of the debate in
+terms of a primitive notion of actuality as per
+Poss
+and
+Act
+. But even the most committed bi-modalist will
+agree that contingent non-concreteness is at least necessarily
+coextensive with mere possibility and, hence, its complement with
+actuality. So, for those skeptical of the original framing, nothing
+essential to the debate is lost if it is simply understood in terms of
+concreteness as per
+Poss
+C
+and
+Act
+C
+.
+Note on David Lewis
+. The influential and highly
+original late twentieth century philosopher
+David Lewis
+also rejected bi-modalism and famously defended a view that is often
+characterized as a variety of possibilism. In fact, Lewis’s
+possibilism is orthogonal to the classical possibilism-actualism
+debate under discussion in this entry. See the supplemental document
+Classical Possibilism and Lewisian Possibilism
+for details.
+3. Possibilism and Possible World Semantics
+Possibilism would almost surely not be taken as seriously as it is
+were it not for the dramatic development of possible world semantics
+for modal logic in the second half of the twentieth century. For it
+not only enables the possibilist to formulate truth modal conditions
+with particular clarity and cogency, it yields a natural and elegant
+quantified modal logic, known as SQML, in which possibilism’s
+fundamental metaphysical principles fall out as logical truths. In
+order to appreciate the cogency of possibilism, therefore, it is
+important to understand basic possible world semantics.
+3.1 Basic Possible World Semantics
+Possible world semantics is built upon
+Tarski
+’s
+  epochal theory of truth in the first half of the
+twentieth century. Tarski’s theory provided a rigorous account
+of the fundamental semantic connections between the languages of
+classical logic and non-linguistic reality that determine the truth
+conditions for the sentences of those languages. By generalizing
+Tarski’s theory to modal
+ languages,
+
+possible world semantics promised an equally rigorous account of the
+semantic connections between those languages and
+modal
+reality, and thereby an equally rigorous account of modal truth
+conditions. It is illuminating therefore to start with an account of
+Tarskian semantics.
+3.1.1 Tarskian Interpretations
+Given a standard first-order language \ with the truth
+functional operators \ a distinguished identity
+predicate \ and the universal quantifier \ a
+Tarskian interpretation
+\
+for
+\
+specifies a nonempty set \—the
+universe
+of
+\—for the quantifiers of \ to range over and
+assigns appropriate semantic values to the terms  constants and variables) and predicates of \.
+Specifically, to each term \ of \ \ assigns a
+referent \ and, to each
+n
+-place predicate
+\ of \ \ assigns a set \ of
+n
+-tuples of members of \ often referred to as
+the
+extension
+of \ in
+ \.
+
+The extension \ assigned to the identity predicate, of
+course, is always stipulated to be the “real” identity
+relation for \ i.e., the set \. Those assignments to the terms and predicates of
+\ in turn, completely determine the truth values of all the
+formulas of \ by means of a familiar set of recursive clauses.
+To facilitate the quantificational clause, let
+\ be the interpretation that assigns the
+individual \ to the variable \ and is otherwise exactly like
+\. This apparatus then delivers a
+compositional
+theory of meaning for \ that is, an account on which the
+meaning  of a complex formula is
+determined by its grammatical structure and the meanings of its
+semantically significant parts and hence, ultimately, in the Tarskian
+case, by the semantic values assigned to the terms and predicates of
+the language:
+An atomic formula \ is
+true
+in
+\—
+true
+\,
+for short—if and
+only if \
+A negation \ is true
+\
+if and only if
+\ is not
+true\.
+A conditional \ is true
+\
+iff
+\ is true
+\
+if \ is.
+A universally quantified formula \ is
+true\ if and only if, for all individuals \
+\ is
+true\.
+Clauses for the other standard truth-functional operators and the
+existential quantifier under their usual definitions follow
+straightaway from these clauses. In particular, where
+\
+Def
+:
+\
+it follows that:
+An existentially quantified sentence
+\ is true\ if and only if, for some
+individual \ \ is
+true\.
+A set \ of formulas of \ is said to be
+satisfiable
+if there is an interpretation for \ in
+which every member of \ is true. A formula \ is
+valid
+, or a
+logical truth
+—written
+\—if it is true in every interpretation for
+\.
+The above definitions yield a
+logic
+, in one standard sense: a
+class of formal languages for which we’ve provided a model
+theoretic semantics that determines a rigorous notion of logical
+ truth.
+
+And the logic they define is
+classical  predicate
+logic
+.
+3.1.2 Truth
+Simpliciter
+Strictly speaking, truth in an interpretation is a purely mathematical
+relation between the formulas of a formal language and rigorously
+defined mathematical objects of a certain type. However, in practice,
+most formal languages are
+applied
+languages and this will
+enable us to define an objective notion of truth
+simpliciter
+for classical predicate logic. More specifically, an applied formal
+language \ is designed to clearly and unambiguously formalize
+a range of discourse about some real world domain —call this the
+intended domain
+of \. Hence,
+each constant of \ symbolizes a name in the given discourse
+and each predicate of \ symbolizes a predicate of the
+ discourse.
+
+An interpretation \ for \ will be
+intended
+,
+then, just in case its universe \ comprises exactly the
+individuals in the intended domain of \ and \ assigns
+to the constants and predicates of \ the actual semantic
+values of the names and natural language predicates they are meant to
+symbolize. The compositional truth condition of a sentence \
+in an intended interpretation thus traces
+\’s
+truth value down to the basic
+atomic facts on which it ultimately depends or, as we might put it,
+the atomic facts on which its truth value is
+grounded
+. Thus,
+a sentence \ of an applied language \ will be
+true
+just in case it is true\ for some intended
+interpretation \ for \.
+3.1.3 SQML Interpretations
+Intuitively, a Tarskian interpretation of an applied non-modal
+language represents a possible world, a way in which the properties
+and relations expressed by the predicates of the language might be
+exemplified by the things in the universe of the interpretation. The
+idea underlying possible world semantics is simply to interpret a
+modal language \ by bringing a collection of Tarskian
+interpretations together to represent a modal space of many possible
+worlds in a single interpretation of
+ \.
+
+So let \ be the result of adding the modal operator
+\ to some standard first-order language \. As with a
+Tarskian interpretation of \ an
+SQML interpretation
+\ for
+\ specifies a nonempty set \ to
+serve as its universe. Also as in Tarskian semantics, \
+assigns each term \ of \ a semantic value
+\. Additionally, however, \ specifies a
+nonempty set \—these are typically called the set of
+“possible worlds” of \ but can be any nonempty
+set. One member \ of \ is designated as the “actual
+world” of \. To give substance and structure to these
+“worlds”, \ then assigns extensions to the
+predicates of \
+relative to
+each
+world—that is, for every
+n
+-place predicate \ of
+\ and each world \ \ assigns a set
+\ of
+n
+-tuples of members of
+\ the
+extension of
+\
+at
+\;
+
+in particular, the extension \ of the identity predicate
+at all worlds \ is stipulated to be \. In this way \ represents the different ways
+that the properties and relations expressed by those predicates can
+change  from world to world.
+Given an SQML interpretation \ then, the Tarskian truth
+conditions above are generalized by relativizing them to worlds as
+follows: for any possible world \ of \ ,
+An atomic formula \ is
+true
+at \ in
+\—
+true
+\,
+for short—if and
+only if \
+A negation \ is
+true\
+if and only if \ is
+not
+true\.
+A conditional \ is
+true\
+iff \ is
+true\
+if \ is.
+A universally quantified formula \ is
+true\
+if and only if, for all
+individuals \ \ is
+true\.
+Putting the clause for universally quantified formulas together with
+the clause for negated formulas and the definition
+∃Def
+of the existential quantifier, we have
+An existentially quantified formula
+\ is
+true\
+if
+and only if, for some individual \ \ is
+true\.
+And to these, of course, is added the critical modal case that
+explicitly interprets the operator \ to be a quantifier over
+possible worlds:
+A necessitation \ is
+true\
+if and only if, for all worlds
+\ \ is
+true\.
+The possibility operator \ is defined as usual in terms of
+\:
+\
+Def
+:
+\
+That is, intuitively, to say that a statement is possible is just to
+say that its negation isn’t necessary. The structural similarity
+between \ and ∃
+Def
+should be unsurprising given that, semantically, the necessity
+operator \ is literally a universal quantifier over the set of
+worlds. Accordingly, it follows from \ and the
+semantic clause for necessitations that
+\ is
+true\
+if and only if, for some world
+\ \ is
+true\.
+We say that a formula \ of \ is
+true
+in
+an SQML interpretation \ for \ if it is
+true\,
+i.e., true in
+\ at the “actual world” \ of \.
+Satisfiability and logical truth are defined exactly as they are
+above
+for classical predicate logic, albeit relative to modal languages
+\ and the preceding notion of truth in an SQML
+interpretation; in particular, a formula \ of \
+is logically true if it is true in every SQML interpretation. The
+logic so defined is, of course, SQML.
+3.1.4 Modal Truth
+Simpliciter
+The definition of truth
+simpliciter
+above for formulas of an
+applied non-modal language \ stems from the fact that a
+Tarskian interpretation \ for \ can take the things in
+ the actual world and represent how they
+actually exemplify the properties and relations expressed by the
+predicates of \. But if we can represent the actual world  by means of an intended Tarskian
+interpretation, then there is no reason that we can’t represent
+a merely
+possible
+world in which those same things exist but
+have different properties and stand in different relations and, hence,
+define objective notions of truth at a world and of truth
+simpliciter
+for the formulas of a modal language as well,
+that is, notions of truth that are not simply relative to formal,
+mathematical interpretations but, rather, correspond to objective
+modal reality. So let \ be an applied modal language
+whose individual constants and predicates represent those in some
+ordinary range of modal discourse and let \ be its intended
+domain. Say that \ is an
+intended
+interpretation of
+\ if
+its set \ of “possible worlds” is in fact a
+sufficiently comprehensive set of honest-to-goodness possible
+ worlds,
+
+its designated “actual world” is in fact the actual
+world,
+its universe is the intended domain \ of \
+and
+the referents assigned to the constants of \ are the
+ones they actually refer to and the extensions assigned to the
+predicates of \ at each world \ are the ones
+they in fact have at \.
+Then, where \ is an intended interpretation of \
+we can say that a formula \ of \ is
+true
+at
+a world \—
+true
+\
+—just
+in case \
+and \ is
+true\,
+and
+that \ is
+true
+just in case it is
+true\.
+3.2
+SQML
+: A Deductive System for SQML
+Ideally, a logic \ has a sound and complete proof
+theory, that is, an accompanying deductive system whose
+theorems—the formulas provable in the system—are exactly
+the logical truths of \.
+
+There is such a system for SQML—for convenience, we’ll
+refer to it by setting “SQML” in italics:
+SQML
+.
+
+“SQML” is an acronym for “simplest quantified modal
+logic”, and it is so-called because it is a straightforward
+amalgam of the most popular and semantically least complicated
+propositional
+modal logic
+S5 and
+classical first-order logic
+—FOL,
+ for
+ short.
+
+The deductive system
+SQML
+, accordingly, is an amalgam of the
+corresponding deductive systems
+S5
+and
+FOL
+.
+
+S5 builds on the foundation of classical propositional
+logic—PL, for short—whose deductive system
+PL
+takes every instance of the following schemas as its axioms and Modus
+Ponens as its inference rule:
+Propositional Axiom Schemas
+P1
+:
+\\)
+P2
+:
+\) \to  \to
+)\)
+P3
+:
+\ \to  \to \neg
+\varphi)\)
+Rule of Inference
+MP
+:
+\ follows from \ and \
+On top of this foundation the system
+S5
+adds the rule of
+Necessitation and every instance of the following three schemas:
+Modal Axiom Schemas
+K
+:
+\ \to \)
+T
+:
+\
+5
+:
+\
+Rule of Inference
+Nec
+:
+\ follows from \
+K
+is a fundamental principle common to all the modal
+logics we will survey here: if a conditional is necessary, then its
+consequent is necessary if its antecedent is.
+T
+expresses that necessity implies truth, and
+5
+expresses that what is possible is not a mere matter of happenstance;
+no possibility could have turned out to be impossible; or again: what
+is possible in the actual world is possible in every world. The basic
+normal
+deductive system
+K
+is the result of adding
+
+K
+and the rule of Necessitation
+to
+PL
+; the system
+T
+is the result of adding all
+instances of
+T
+to
+K
+; and the system
+S5
+is the result of adding all instances of
+5
+to
+T
+.
+
+Two important principles  can be
+proved in
+S5
+:
+
+4
+:
+\
+B
+:
+\
+4
+says of necessities what
+5
+says
+about possibilities: necessity is not a matter of happenstance; the
+necessary truths of our world are necessary in every world.
+B
+says that anything that is in fact the case had to
+have been possible; the truths in our world are, at the least,
+possibilities in every other world.
+Schemas
+T
+,
+5
+,
+4
+,
+and
+B
+all have common equivalent forms it is useful
+to note:
+T
+◊
+:
+\
+5
+◊
+:
+\
+4
+◊
+:
+\
+B
+◊
+:
+\
+We obtain the full deductive system
+SQML
+by adding the
+quantificational and identity axioms of
+FOL
+and the rule of
+Generalization to
+S5
+:
+Quantificational Axiom Schemas
+Q1
+:
+\\to\)
+Q2
+:
+\ where \ is a
+term that is substitutable for \ in \ and
+\ is the result of replacing every free occurrence
+of \ in \ with an occurrence of
+ \
+
+Q3
+:
+\ if there are no free
+occurrences of \ in \.
+Identity Axiom Schemas
+Id1
+:
+\
+Id2
+:
+\,\) where \ is
+substitutable for \ in \ and \ is the
+result of replacing some or all free occurrences of \ in
+\ with occurrences of \
+Rule of Inference
+Gen
+:
+\ follows from \
+Proofs and Theorems
+The notions of proof and theoremhood are defined as usual; we define
+them generally as they will apply to each of the deductive systems
+discussed in this entry. Specifically, for any deductive system
+S
+, a
+proof
+in
+S
+is a finite sequence of
+formulas of the language \ of
+S
+—\
+in the case of
+SQML
+—such that each formula is either an
+axiom of
+S
+or follows from preceding formulas in the sequence
+by a rule of inference of
+S
+. A proof is a proof
+of
+the formula occurring last in the sequence. A formula \ of
+\ is a
+theorem of S
+—\—if there is a proof of it in
+S
+. And if
+\ is a set of formulas of \ then \ is a
+theorem of
+\ —\—if, for some finite subset
+\ of \ \\ldots)\) is a theorem of
+S
+.
+As the role of an individual constant in a theorem of
+SQML
+is
+essentially indistinguishable from that of a free variable, it is
+useful to note the following:
+Metatheorem
+: Let \ be a formula of
+\ that contains an individual constant \ of
+\ and let \ be a variable that doesn’t occur
+in \. Then if \ is a theorem of
+SQML
+, so is
+ \
+
+The metatheorem justifies the following derived rule of inference,
+where \ \ and \ are as indicated there:
+Gen
+*:
+\ follows from \
+That is, informally put, if a formula containing an individual
+constant is a theorem, we can effectively generalize on it as if it
+were a free variable.
+3.3 Possibilism, Necessitism, and Logical Truth
+In addition to the degree of clarity it brings to the issues, a
+compelling reason for expressing the possibilism-actualism debate in
+formal terms is how starkly it illustrates the inextricable link
+between logic and metaphysics, in particular, the dramatic impact our
+metaphysical choices have on quantified modal logic. Arguably the best
+known illustration of this is seen in the validity of the inference
+from
+
+to
+
+in SQML and, more generally, in the validity of the
+Barcan
+ Formula
+:
+
+BF
+:
+\
+That is, informally, if there
+could be
+something satisfying
+any given description \ then
+there is
+something
+that
+could
+satisfy that description, a thing that is
+possibly
+\ The validity of
+BF
+in
+SQML rests on two facts:
+first
+,
+ that in the model theory of SQML , the possibility operator \ is literally
+an existential quantifier ranging over all possible worlds; and
+second
+,
+ that, in evaluating an existentially quantified formula
+\ at a possible world \ the initial
+occurrence of \ in the formula ranges unrestrictedly over
+all individuals. Hence, switching the order of adjacent occurrences of
+\ and \ in a formula will not alter its truth
+value; to say that some world and some object are thus and so is to
+say no more and no less than that some object and some world are thus
+and
+ so.
+
+And this is what warrants, in particular, the inference from
+
+to
+
+.
+ Letting “\” represent the predicate “is
+Bergoglio’s child”, the logical form of
+
+is \. Expressed semantically in
+SQML: some world and some individual are such that, in that world,
+that individual is Bergoglio’s child. But that is to say no more
+and no less than that some individual and some world are such that, in
+that world, that individual is Bergoglio’s child, \ i.e.,
+
+.
+In its validation of
+BF
+, then, SQML underwrites in
+general, and as a matter of logic, the possibilist’s thesis that
+de dicto
+modal truths like
+
+asserting simply that there
+could
+be things that are thus
+and so are
+in fact
+grounded in
+de re
+modal truths
+about the modal properties of individuals, i.e., the properties they
+have at some or all possible
+ worlds.
+
+If, as in the case of
+
+,
+ that appears to commit us to things like merely possible human
+beings, things that, for actualists anyway, intuitively do not in any
+sense exist, things that in no sense
+are
+, so much the worse
+for actualist intuitions; or so says the possibilist.
+BF
+is not the only controversial logical truth of
+SQML or even, perhaps, the most controversial one. Another is its
+converse:
+CBF
+:
+\
+That is, informally, if there is, in fact, something that
+could
+satisfy a given description \ then it is
+possible that something satisfy that description.
+CBF
+is valid for exactly the same reason that
+BF
+is: the
+order of adjacent occurrences of \ and \ in a
+formula does not alter its logical content.
+To see why
+CBF
+is controversial, especially for
+typical actualists, note that most all of us believe that there are
+contingent beings, things that reality might just as well have lacked
+as to have contained, things like you and me that simply might have
+failed to be identical to anything:
+CB
+:
+\
+However,
+CBF
+is incompatible with the existence of
+contingent beings! For, as an instance of
+CBF
+we
+have
+CBF
+*:
+\
+Hence, by
+MP
+, we can infer
+😱:
+\
+which says that there could be something that is distinct from
+everything  and that, of course, is
+logically impossible. Hence,
+CB
+is logically false in
+SQML and so it is a logical truth of SQML that there are no contingent
+beings, i.e., that, rather, everything is necessarily identical with
+something:
+N
+:
+\
+Indeed, since logical truths in SQML are all necessary,
+N
+is itself a necessary truth:
+\
+N
+:
+\
+So SQML yields not only possibilism 
+and its ilk) but
+necessitism
+, that is, the thesis that
+everything there is and, indeed, everything there ever could be, is a
+necessary
+ being;
+
+—you,
+ me, the Eiffel Tower, Bergoglio’s possible children, merely
+possible members of exotic species that never in fact evolved, merely
+possible suns that never formed, etc. Otherwise put: everything there
+could possibly be already
+is
+and, moreover, could not have
+failed to be.
+Although it is a logical truth of SQML, necessitism is not
+analytically entailed by possibilism. There is, in particular, nothing
+in the idea of a mere
+possibile
+that demands its necessity,
+nothing that rules out worlds from which it might be altogether
+absent, worlds  in which nothing is identical to it. This might lead one
+to wonder whether SQML, by building necessitism into its logical
+foundations, has  gotten the logical
+cart before the philosophical horse. On reflection, however, it is
+clear that necessitism is, not only a natural complement to
+possibilism, but an essential component of it. For, as we’ve
+seen, the central justification for possibilism is that it provides
+truthmakers for modal propositions like
+
+;
+ it grounds them in the modal properties of individuals. If the
+purported truthmakers for those propositions could fail altogether to
+be, if it
+could be
+that there are no such things, then, for
+all we know, it might just as well be that there are
+in fact
+no such things and, hence, that there are no truthmakers for
+
+and its ilk after all; and with that, possibilism’s central
+philosophical justification collapses. Necessitism closes the door on
+this prospect: both
+possibilia
+and actually existing things
+alike are necessary
+ beings.
+
+At first sight, of course, necessitism is a shocking philosophical
+doctrine. For, most compellingly, the urgent intuition of our own
+contingency—that at one time in the past we did not exist and
+that at another in the not too distant future we will forever cease to
+be—is a central element of our lived human experience. But by
+necessitism, not only have we always existed and will so continue
+forever into the future, we—no less than God and the number
+17—could not have failed to be. The possibilist, however, will
+respond that the worry here has badly conflated existence in the sense
+of
+being
+, in the sense of mere identity with something, and
+existence in the sense of
+actuality
+. More specifically, the
+worry has confused two corresponding notions of contingency, viz.,
+contingency as the possibility of absolute non-being, i.e.,
+Cont
+∃
+:
+\ \eqdf
+\Diamond\neg\exists \sfy\, \sfy=\sfx\)
+and contingency as the possibility of non-actuality, i.e.,
+Cont
+\:
+\ \eqdf \Diamond\neg
+\sfA!\sfx\)
+As per SQML, says the possibilist,
+contingency
+∃
+is a logical
+impossibility. However, they continue,
+contingency
+\
+comports fully
+with our lived experience and, in fact, is all that our experience
+warrants: our sense of our own contingency is rooted in our possible,
+indeed imminent, non-actuality and, hence, in the fact that, in the
+not-too-distant future, we shall forever cease to be
+actual
+.
+We shall thus forever cease to be conscious, to be embodied, to love
+and be loved, etc.; nothing distinctive of our human existence will
+survive. That something identical to each of us—a mere
+possibile
+, a featureless point in logical space—remains
+at worlds and times where we are non-actual offers no existential
+solace. 
+The actualist, of course, in denying possibilism, i.e., in denying
+that there could be any contingently non-concrete objects, allows no
+daylight between being, existence, and actuality: to be is to exist
+and to exist to be actual. Hence, for the actualist,
+contingency
+∃
+, the possibility of non-being, is the
+only concept of contingency on the table. As contingency in this sense
+is a logical impossibility according to SQML, the actualist clearly
+needs an alternative quantified modal logic tuned to their
+metaphysical sensibilities.
+SQML thus throws
+the twofold challenge
+that possibilism presents to actualism into stark relief. The notion
+of an intended SQML interpretation of an applied modal language, with
+its single domain of actual and merely possible individuals and its
+recursive account of truth at a world, vividly traces the semantic
+dependence of complex propositions down to the individuals on which
+their truth values are grounded. And the corresponding deductive
+system
+SQML
+provides the possibilist with a clean, complete
+framework in which to represent their reasoning. In the remaining
+sections of this entry we will look at prominent actualist responses
+to the two-fold possibilist challenge.
+4. Actualist Responses to the Possibilist Challenge
+There are any number of representatives of, and variations on,
+actualism. For brevity, I will focus on several particularly important
+accounts. We will begin with a close look at the extraordinarily
+influential work of Saul Kripke. Although Kripke himself does not
+appear to have been particularly motivated by any great commitment to
+actualism, both his version of possible world semantics and its
+corresponding deductive system capture important elements of the
+actualist perspective.
+4.1 Kripke Semantics and Its Logic
+Given the controversial consequences of SQML, it seems clear that
+actualists need an alternative quantified modal logic on which
+BF
+,
+CBF
+, and \ fail
+to be logically true; ideally, it will also have a sound and complete
+deductive system in which, consequently, those principles are not
+derivable as theorems. The system of Kripke 1963b satisfies both of
+these desiderata and, hence, meets the second element of the
+possibilist’s two-fold challenge; as we will see, whether it
+meets the first—a satisfying account of the truth conditions for
+modal propositions like
+
+—is
+ a more delicate matter.
+4.1.1 Kripke Interpretations
+Just as necessitism is not analytically entailed by possibilism, its
+denial—i.e., that there at least could be contingent  beings—is not
+analytically entailed by actualism. An actualist could consistently
+maintain that, necessarily, everything is necessarily identical with
+something and hence in particular, given their rejection of contingent
+non-
+concreta
+, that, necessarily, every concrete thing is
+necessarily identical to some concrete thing—put another way,
+that, necessarily, if something is concrete at any time at all, it is
+necessarily and eternally concrete.
+ 
+For typical actualists, however, it is fundamental to their view that
+there are in fact many contingent beings, many things that could have
+failed to be identical with anything; reality could have altogether
+lacked many things that just happen to exist. A natural  way of expressing this is
+to say that there are possible worlds where at least some things in
+the actual world are simply absent; more generally, it is to say that
+what exists—that is, for the actualist, what there
+is
+in the broadest sense—
+varies
+from world to world. This
+fundamental actualist intuition is at the heart of Kripke’s
+semantics for quantified modal languages.
+Recall that an SQML interpretation \ for a first-order modal
+language \ specifies nonempty sets \ and
+\—the “individuals” and “worlds” of
+\—along with a distinguished element \ of
+\ the “actual” world of the interpretation; it then
+assigns a denotation \ to each term \ and an
+extension \ to each
+n
+-place
+predicate \ at each world \. A
+Kripke
+interpretation
+\ of \ is exactly like an
+SQML interpretation except for one modification that reflects the
+fundamental actualist intuition noted above, viz., the addition of a
+function \ that assigns to each world \ of
+\ a
+subset
+\ of \—intuitively, of
+course, the individuals that
+exist in
+\. No restrictions
+are placed on the domain of any world; any set of individuals,
+including the empty set, will do, although it is required that \:w \in W\},\) i.e., that \ consists of
+exactly the individuals that exist in some
+ world.
+
+The definition of truth at a world in a Kripke interpretation
+\ is defined exactly as it is for an SQML interpretation
+\ except for the quantified clause, where the difference
+between Kripke interpretations and SQML interpretations just noted
+comes to the fore. Specifically, when a quantified formula
+\ is evaluated at a world \ the quantifier
+ranges only over \,\) the set of objects in the domain
+of \. Thus, the modal clause in the definition of truth at a world
+is revised as follows:
+A universally quantified formula
+\ is
+true\
+if
+and only if, for all individuals \,\) \
+is
+true\.
+And, accordingly:
+An existentially quantified formula \ is
+true\
+if and only if, for some
+individual \,\) \ is
+true\.
+The definitions of truth, satisfiability and logical truth are
+unchanged. Call the logic determined by Kripke semantics KQML.
+A Note on “Serious” Actualism
+. KQML takes over the
+semantics of predicates from SQML without modification: by the above
+condition \ the extension \
+that a Kripke interpretation \ assigns to a predicate at a
+world consists of arbitrary
+n
+-tuples of individuals in \
+However, as Kripke himself  notes,
+[i]t is natural to assume that [a predicate] should be
+false
+in a world…of all those individuals not existing in that
+world….
+Many actualists strongly agree, for the following reason: predicates
+express properties and relations. Hence, if a  predicate
+\ is true of an individual \ at a world \ it means that
+\
+exemplifies
+the property that \ expresses at
+\. But  it is surely an undeniable
+metaphysical principle—dubbed
+serious actualism
+by
+Plantinga —that an object must
+exist
+, must be
+identical with something, in order to exemplify properties; an object
+cannot both be utterly absent from a world and yet have properties
+there. To rule this prospect out in Kripke’s model theory, then,
+rather than allowing an
+n
+-place predicate’s extension
+at a world to contain arbitrary
+n
+-tuples of individuals, we
+need to
+restrict
+\’s
+extension at \ to
+n
+-tuples of individuals
+in
+\. More formally put, we need to replace the offending condition
+\ with the more felicitous condition
+\^n.\)
+However, others  and Fine ) respond that,
+while most properties and relations obviously entail
+existence—
+being a horse
+, say, or
+being taller
+than
+—it is far from clear that all do. Notably, if I fail
+to exist at a world, then that in some sense clearly seems to
+characterize
+me at that world and what else is
+characterization
+than property exemplification? Thus , it seems entirely reasonable to say that, at
+worlds in which I fail to exist, I have the property
+non-existence
+, as well as the complements of all the
+distinctly human properties noted
+above—
+non-consciousness
+,
+non-embodiment
+, etc.,
+my nonexistence
+ notwithstanding.
+
+So for these philosophers, the condition \ on the assignment of extensions to predicates is fine as it
+stands.
+Serious actualism—also known as
+property actualism
+,
+the  existence requirement
+ and
+the being constraint
+—is a substantive logical and philosophical issue.
+However, as it is for the most part a domestic dispute among
+actualists, it is largely orthogonal to the possibilism-actualism
+debate proper. Consequently, it will not be pursued here in any
+greater depth. For further discussion in addition to the references
+above see Plantinga 1985 ,
+Salmon 1987, Menzel 1991 and 1993, Deutsch 1994, Bergmann 1996 and
+1999, Hudson 1997, Stephanou 2007, Hanson 2018, and Jacinto
+ 2019.
+
+4.1.2 KQML and the Controversial Logical Truths of SQML
+All three of the controversial logical truths of
+SQML—
+BF
+,
+CBF
+, and
+\—are invalid in KQML, that is, in KQML, they
+are not logically true. The key in each case is KQML’s
+modification of the way that quantified formulas are evaluated at
+worlds. As we saw in
+§3.3
+above, the validity of
+BF
+in SQML—its truth in
+every interpretation—depends essentially on the fact that, in
+evaluating an existentially quantified formula \
+at an arbitrary possible world \ the initial occurrence of
+\ in the formula ranges unrestrictedly over all
+individuals. In KQML, by contrast, the range of the initial quantifier
+\ is
+restricted
+to \,\) to the
+individuals that exist in \. And, because what exists can vary
+from world to world, this renders
+BF
+invalid: from
+the fact that some world and some individual
+existing in that
+world
+are thus and so it certainly does not follow that some
+individual
+existing in the actual world
+and some world are
+thus and so. Notably, while in some worlds there are children of
+Bergoglio, nothing here in the actual world is a child of Bergoglio in
+any world, i.e., \ is true and
+\ is false. Hence, the
+BF
+instance
+BF
+*:
+\
+expressing the inference from
+
+to
+
+is false as
+ well.
+
+
+As we also saw in
+§3.3
+,
+CBF
+entails the principle
+N
+that
+everything  is
+necessarily identical to something. And, obviously, so too does the
+full necessitism principle \
+N
+. But
+N
+is clearly invalid in KQML: because world domains
+can vary, an individual \ in the actual world might not exist in
+another world, i.e., it might be that nothing is identical to \ in
+some
+ worlds.
+
+Hence, since
+N
+is invalid in KQML, so are
+CBF
+and
+ \
+N
+.
+
+4.1.3
+KQML
+: Kripke’s Deductive System for KQML
+As noted in
+§3.2
+,
+ the deductive system
+SQML
+is sound and complete for
+SQML—all and only the logical truths of SQML are provable in
+SQML
+, including the three controversial principles
+BF
+,
+CBF
+, and
+\
+N
+. Since, as we just saw in the previous
+section, those principles are all invalid in KQML, to formulate a
+sound and complete deductive system of his own, Kripke had to modify
+SQML
+rather severely to block the derivation of those
+principles without also blocking any of KQML’s valid
+formulas.
+Kripke’s solution is nicely illustrated by means of a  proof in
+SQML
+of
+BF
+*
+:
+1.
+\
+Q2
+2.
+\\)
+1,
+Nec
+3.
+\
+2,
+K
+
+4.
+\
+B
+◊
+5.
+\
+3, 4,
+PL
+6.
+\\)
+5,
+Gen
+7.
+\
+6,
+Q1
+,
+Q3
+, and
+PL
+
+8.
+\\)
+7,
+Nec
+9.
+\
+8,
+K
+and
+MP
+10.
+\
+B
+11.
+\
+9, 10,
+PL
+12.
+\
+11, \
+Def
+,
+\
+Def
+, and
+PL
+It is clear where the problem lies: the universal instantiation schema
+Q2
+is invalid in KQML! To see this in the particular
+case of line 1, suppose that \ is
+true in  a given
+Kripke interpretation \ with individuals \ and worlds
+\. Then, by
+the quantificational clause
+in the definition of truth at a world in Kripke’s semantics,
+everything that exists in the “actual world” \ of
+\ is not in the extension of \ at any world \ in
+\ i.e., for all \\) and for all \ \. Recall, however, that the value
+\ assigned to \ can be anything in the set \
+of individuals of \; in particular, \ might not
+exist in \ and, hence, might well be in the extension of
+\ at some other world of \ in which case \ will be false in
+ \
+
+Here we begin to see the logical challenge that confronts the
+actualist: a logically valid principle of SQML—in this case, a
+standard principle of classical logic—is rendered invalid when
+we attempt to revise our modal semantics so as to accommodate
+actualist intuitions. The challenge is then how  to revise
+the principle in question, and this in turn often requires a choice
+between several competing possibilities, each of which may require
+further revisions still. Kripke himself avoids several options that
+might suggest themselves in light of the invalidity of
+Q2
+in KQML. For instance, taking a lead from Prior
+, an actualist might argue that
+terms—individual constants and variables —are directly referring expressions like proper names and
+demonstratives and, hence, that an accurate model theoretic
+representation of actualism should require that the value
+\ that \ assigns to an arbitrary term \
+should be restricted to the domain of the actual world \ of
+\—one cannot, after all, refer to individuals that
+don’t actually exist. This modification of KQML would indeed
+preserve the validity of
+Q2
+but at the cost of
+invalidating
+Nec
+—notably, it would render the
+inference from line 1 to line 2 in the above proof invalid. For, while
+line 1 might now be true at the actual world \ of an
+arbitrary interpretation \ because we’ve stipulated that
+\ exist in \ that very fact could well render
+line 1 false at some other world \: \ might be true at \ but our actually existing individual
+\ although not in the extension of \ in the
+actual world, might well be in its extension at \. So, under the
+proposed modification, the question for the actualist instead becomes
+how to modify
+Nec
+—perhaps by limiting how it
+applies to formulas involving individual constants and free variable
+occurrences in some
+ way.
+
+The most common actualist response to the invalidity of
+Q2
+, rather than to try to preserve it by modifying
+the semantics of KQML, is simply to replace it with its
+free logical
+counterpart :
+FQ2
+:
+\,\) where \ is any term other than
+\
+That is, what is true of everything—i.e., everything that
+actually
+exists—will be true of anything in particular
+if
+it is actual. Unlike
+Q2
+,
+FQ2
+is valid in KQML as it stands and, moreover,
+every instance of it is necessary: what is true of everything in a
+given world will be true of anything in particular
+if
+it is
+identical with something in that world. Hence,
+FQ2
+raises no problems for
+Nec
+. And, critically,
+outfitted with
+FQ2
+instead of
+Q2
+, it
+is no longer possible to prove
+BF
+.
+
+However, Kripke  is loath to adopt a solution
+that, like the ones just suggested, involves “revising
+quantification theory or modal logic”. So instead Kripke opts
+for another that he borrows from Quine. In his account of
+quantification, Quine  points out that any occurrence
+of a name in an ordinary logical truth is inessential to its truth:
+what is said of the referent of the name could just as well be said of
+anything. Thus, it is not in virtue of any distinctive properties of
+God or Socrates that the following proposition is true:
+)
+If God created everything, then God created Socrates
+or, more formally:
+)
+\
+), that is, would have been true no matter what
+“God” and “Socrates” refer to. If anything,
+then, names obscure the grounds of logical truth. Hence, the
+discerning logical eye sees name occurrences in the likes of )
+as implicitly quantified variables and, hence, sees the completely
+general logical form that underlies
+ it:
+
+)
+\\)
+The same goes for free variable occurrences—semantically,
+variables are essentially names, so free variable occurrences in
+logical truths should also be seen as implicitly universally
+quantified. Hence, properly expressed, the axioms of a
+logical
+system, a system designed to have all and only
+logical truths as its theorems, should be purely general and, hence,
+should be purged of individual constants and free variable
+occurrences. In particular, universal instantiation, properly
+expressed, will replace the instantiated term \ in the
+consequent of
+Q2
+with a universally quantified variable:
+KQ2
+:
+\,\) where
+\ is substitutable for \ in \
+Accordingly, line 1 of the proof of
+BF
+* requires an
+initial universal quantifier to bind the free occurrence of
+\:
+1.*
+\\)
+Application of
+Nec
+to line 1* now yields only
+2.*
+\\)
+and the intended proof to
+BF
+* stalls out. To continue
+along the lines of the SQML proof above we would need to be able to
+swap the initial necessity operator \ in line 2* with the
+universal quantifier to infer
+\\)
+That is, we would need to be able to prove the relevant instance
+of
+CBF
+□
+:
+\
+But, as the label indicates, this is just an equivalent form of
+CBF
+and, as Kripke  notes,
+attempting to prove it under the proposed revision
+KQ2
+of
+Q2
+stalls out for the same
+ reason.
+
+The necessitism principle \
+N
+meets a similar
+fate. A standard proof of \
+N
+in SQML begins
+with an instance of
+Q2
+and proceeds as follows:
+1.
+\
+Q2
+2.
+\
+1, \
+Def
+,
+PL
+3.
+\
+Id1
+4.
+\
+2, 3,
+MP
+5.
+\
+4,
+Nec
+6.
+\
+5,
+Gen
+,
+Nec
+But with
+KQ2
+replacing
+Q2
+,
+critically, we are unable to wedge the necessity operator in between
+the two quantifiers; we can only get the likes of the following:
+1.
+\\)
+KQ2
+2.
+\\)
+1, \
+Def
+,
+PL
+3.
+\
+2,
+Q1
+,
+MP
+4.
+\
+Id1
+,
+Gen
+5.
+\
+3, 4,
+MP
+6.
+\
+5,
+Nec
+and line 6 is unproblematically valid in KQML: it is simply the
+innocuous triviality that everything in a given world is identical to
+something
+in that world
+—not, as
+\
+N
+would have it, in
+every
+world.
+Two further important modifications to the framework of SQML follow
+from Kripke’s Quinean conception of the purely general nature of
+logical truth. First, individual constants have no place; since there
+are no individual constants in any axioms, there are none in any
+theorems. Hence, it is not possible to reason with them in
+Kripke’s system. Consequently, Kripke restricts his semantics to
+languages with no individual
+ constants.
+
+Second, under the Quinean conception, the manner in which quantifiers
+and modal operators are introduced into proofs needs serious revision.
+For example, the proposition \\)
+is valid in KQML. In
+SQML
+, it is proved by deriving the
+tautology \ and applying the rule of
+Generalization:
+1.
+\ \to \sfF\sfx)\)
+P1
+2.
+\) \to \)
+1,
+P2
+,
+MP
+3.
+\\)
+P1
+4.
+\
+2, 3,
+MP
+5.
+\\)
+4,
+Gen
+But axioms can’t have free variables under the Quinean
+conception and, hence, that proof is not available. Likewise, the
+de re
+validity \\) is proved in
+SQML
+by applying the rule of
+Necessitation to the
+T
+instance \ and then generalizing:
+1.
+\
+T
+2.
+\\)
+1,
+Nec
+3.
+\\)
+2,
+Gen
+But again, for the same reason, this proof is also unavailable.
+Kripke’s solution here—once again borrowing from Quine
+—jettisons both
+Gen
+and
+Nec
+and cleverly incorporates the desired effects of
+both rules directly into his specification of the logical axioms of
+his deductive system—which, of course, we will call
+KQML
+. To express the solution clearly, say that a formula is
+closed
+if it contains no free variable occurrences, and
+define a
+closure
+of a formula \ to be any closed
+formula resulting from prefixing a  string of
+universal quantifiers and necessity operators, in any order, to
+\. Then, given a language \ without any
+individual constants, any
+closure
+of any instance of any of
+the following schemas is an axiom of
+KQML
+:
+Propositional Axiom Schema
+Taut
+: \ where \ is a
+propositional
+ tautology
+
+Modal Axiom Schemas
+K
+,
+T
+, and
+5
+Quantificational Axiom Schemas
+Q1
+,
+KQ2
+, and
+Q3
+Identity Schemas
+Id1
+,
+Id2
+Should the serious actualism constraint be enforced, we add:
+Serious Actualism Schema
+SA
+: \ for \ and where \ is a variable other
+than \
+As noted,
+KQML
+’s sole rule of inference is
+MP
+, Modus Ponens. Accordingly, a
+proof
+in KQML
+is a finite sequence of formulas of \
+such that each is either an axiom of
+KQML
+or follows from
+preceding formulas in the sequence by
+MP
+.
+Crucially, then, with regard to such KQML validities as \\) and \\) that are derivable in
+SQML
+by applications of
+Gen
+and
+Nec
+,
+instances
+of
+the above schemas can contain free variable occurrences. So, in
+particular, \\) is a closure of
+the propositional tautology \ and \\) is a closure of the
+T
+instance \ and, hence,
+both validities are axioms  of
+KQML
+.
+With these modifications in place, Kripke is able to demonstrate that
+his deductive system
+KQML
+is sound and complete for closed
+formulas relative to his semantics. Soundness, in particular, tells us
+that no invalid formula is provable in the system. Hence, since
+BF
+,
+CBF
+, and \ are
+all invalid in KQML, soundness guarantees that they are all unprovable
+in
+KQML
+.
+4.1.4 Is KQML a Genuinely Actualist Logic?
+On the face of it, KQML provides the actualist with a powerful
+alternative to SQML. However, one might well question its actualist
+credentials. Specifically, despite the invalidity of the
+actualistically objectionable principles
+BF
+,
+CBF
+, and \
+N
+, it is
+questionable whether KQML has escaped ontological commitment to
+possibilia
+, for the following reason. KQML provides us with a
+formal semantics for  modal languages \
+and, in particular, an account of how the truth value of a given
+formula \ of \ is determined in an
+interpretation by the meanings assigned to its semantically
+significant component parts, notably, the meanings of its predicates.
+As noted above
+in our exposition of SQML, truth-in-a-model is not the same as truth
+simpliciter
+. However, given an
+applied modal language
+\ we were able to define a notion of modal truth
+simpliciter
+for formulas of \ in terms of truth
+in an
+intended
+interpretation, an interpretation \
+for \ comprising the very things that the language is
+intuitively understood to be “about”. Thus, when \
+is an intended SQML interpretation, the things it is about are the
+honest-to-goodness actual and merely possible individuals in the
+domain \ of \ and the honest-to-goodness possible worlds
+of \. In particular, if our applied language is one in which
+\ is meant to express that Bergoglio
+might have had children, \ will include at least some of his
+merely possible children and \ will contain a world in which some
+of them
+are
+, in fact, his children and hence concrete and,
+hence, in which they are actual in the sense of
+A!Def
+.
+ There is thus, more generally, for each world \ the set
+\ of things in \ that are actual in \. Note, however,
+that, in light of this, we can transform \ into a KQML
+interpretation \ simply by defining a function \ that, for each world \ returns exactly the set
+\. However, that is simply a formal modification that affects
+the evaluation of quantified formulas at worlds; it does not alter
+\’s
+ontological
+commitments, which are still exactly those of \. But there
+seems no other way to construct a notion of an
+intended
+Kripke interpretation that will yield the right truth values for
+propositions like
+
+.
+ From this perspective, the invalidity of
+BF
+,
+CBF
+, and \
+N
+in KQML—in
+particular, their falsity in an intended Kripke interpretation
+\—results from a simple adjustment of the
+semantical apparatus with no substantive change in the metaphysics. So
+instead of a genuinely actualist alternative to the possibilist
+commitments of SQML, KQML appears to remain no less steeped in
+them—the denizens of other worlds that are not in the domain of
+the actual world simply fail to be actual in the sense of
+A!Def
+.
+ Of course, this metalinguistic fact cannot be
+expressed
+in
+\—even if one adds the actuality predicate to
+\ due to the quantifier restrictions in the semantics of
+KQML, the assertion that there are things that aren’t actual,
+\ will be false in \ at
+every world. But that does not make the possibilist commitments of
+\
+ disappear.
+
+An option for the actualist here, perhaps, is simply to deny that
+Kripke interpretations have any genuine metaphysical bite. Rather, the
+role of Kripke’s possible world semantics is simply to get the
+intuitive validities right; soundness and completeness proofs for
+KQML
+then demonstrate that the system preserves those
+intuitive validities and, hence, that it is a trustworthy vehicle for
+reasoning directly about the modal facts of the matter. The formal
+semantics proper is just a useful device toward this end. However, on
+the face of it, anyway, this instrumentalist take on Kripke’s
+semantics is an uncomfortable one for the actualist. Consider ordinary
+Tarskian semantics for classical first-order logic FOL. Intuitively,
+this semantics is more than just a formal instrument. Rather, an
+intended interpretation for a given applied language \ shows
+clearly how the semantic values of the relevant parts of a formula of
+\—the objects, properties, relations, etc. in the world
+those parts signify—contribute to the actual truth value of the
+sentence. The semantics thus provides insight into the
+“word-world” connection that explains how it is that
+sentences of natural language can express truth and falsity, how they
+can carry good and bad information. The possibilist is able to
+generalize this understanding of the semantics of first-order
+languages directly to modal languages \. The embarrassing
+question for the actualist who would take the proposed instrumentalist
+line on Kripke’s semantics is: what distinguishes Kripkean
+semantics from Tarskian? Why does the latter yield insight into the
+word-world connection and not the former? Actualists owe us either an
+explanation of how Kripke’s semantics can be understood
+non-instrumentally without entailing possibilism or a plausible
+instrumentalist answer to the possibilist challenge. The former option
+is explored in
+§4.2
+,
+ the latter in
+§4.3
+and
+§4.4
+.
+4.2 Haecceitism
+One of the best known responses to the possibilist challenge was
+developed by Alvin Plantinga . Plantinga’s response
+) requires no
+significant modifications to KQML beyond explicitly adopting the
+serious actualism
+condition discussed at the end of
+ §4.1.1.
+
+Rather, his response has almost entirely to do with the metaphysics
+of intended interpretations, or what he calls
+applied
+semantics
+. More specifically, he claims to provide an
+actualistically acceptable ontology for constructing intended
+interpretations for applied languages.
+4.2.1 Worlds and Essences
+To appreciate Plantinga’s account, note first that a challenge
+to actualism that we have not focused on hitherto is the nature of
+possible worlds
+themselves. The main reason for this is simply that the basic
+semantic argument for
+possibilia
+laid out in the Introduction
+to this entry does not assume or require them. If, however, one takes
+possible world semantics of some ilk seriously, so that possibility
+and necessity are correlated in some manner with truth at some or all
+possible worlds, then, insofar as
+possibilia
+are said to
+exist in
+non-actual possible worlds, such worlds are
+themselves reasonably classified as some variety of
+possibilia
+themselves, some variety of merely possible,
+non-existent object. Hence, because Plantinga takes possible world
+semantics seriously, the first task he sets for himself is to define
+possible worlds in an actualistically acceptable way.
+Plantinga defines a possible world to be a
+state of affairs
+of a certain sort. A state of affairs for Plantinga is an abstract,
+fine-grained, proposition-like entity characteristically referred to
+by sentential gerunds like
+the earth’s being smaller than
+the
+sun
+.
+
+Some states of affairs
+obtain
+and others do not:
+the
+earth’s being smaller than the sun
+obtains;
+seven’s being the sum of three and five
+does
+ not.
+
+Importantly, all states of affairs are necessary beings irrespective
+of whether or not they obtain. A state of affairs \ is
+possible
+if it possibly obtains; \
+includes
+another state of affairs \ if, necessarily, \ obtains only if
+\ does and \
+excludes
+\ if it is not possible
+that both \ and \ obtain; \ is
+maximal
+if, for
+any state of affairs \ \ either includes or excludes \.
+A
+possible world
+, then, is a maximal possible state of
+affairs; and
+the actual world
+is the possible world that, in
+fact, obtains. It is easy to show that, under those definitions, a
+state of affairs is a possible world just in case it possibly includes
+all and only the states of affairs that obtain. Since worlds are
+states of affairs and, for Plantinga, states of affairs are all
+actually existing abstract entities, their existence is consistent
+with actualism, as desired.
+The core of Plantinga’s answer to the possibilist challenge is
+the notion of an
+ essence
+, an idea that traces
+back clearly at least to
+ Boethius.
+
+Plantinga defines the
+essential
+properties
+of an object to be those properties that it couldn’t possibly
+have lacked without simply failing to exist
+ altogether.
+
+A bit more formally put: \ is essential to \ just in case,
+necessarily, if \ exists ), then \ has \.
+Intuitively, the essential properties of an object are the ones that
+make the object “what it is”. For example, on at least
+some conceptions of human persons,
+being human
+is essential
+to Bergoglio while
+being Catholic
+isn’t—there is
+ no possible world containing Bergoglio in which
+he fails to be human but many in which he, say, becomes a Buddhist
+monk or is a lifelong atheist. A property is an essence of an object
+\ then, just in case  it is essential to \ and 
+nothing
+but
+\ could have exemplified it; and a property
+is an essence
+simpliciter
+just in case it is possibly an
+essence of something.
+A critical, and distinctive, element of Plantinga’s account is
+that there are many unexemplified essences, i.e., essences that are
+not, in fact, the essences
+of
+anything, specifically, those
+he dubs
+haecceities
+. Haecceities are “purely
+nonqualitative” properties like
+being Plantinga
+, or
+perhaps,
+being identical with Plantinga
+, that do no more than
+characterize an object \ as
+that very thing
+. Pretty
+clearly, haecceities are essences: Plantinga, for example, could not
+have existed and failed to have the property
+being Plantinga
+and it is not possible that anything else have that property. And,
+importantly,
+qua
+abstract property, like all essences,
+being Plantinga
+exists necessarily, whether exemplified or
+not—although, of course, had it not been exemplified, it
+wouldn’t have had the name “being Plantinga”, or any
+name at all, for that matter.
+4.2.2 Intended Haecceitist Interpretations
+As we saw in
+§4.1.3
+above, the problem with KQML for actualists is that an intended
+Kripke interpretation for an applied modal language \
+appears to involve commitment to
+possibilia
+no less than
+SQML—to get the truth values of propositions like
+
+right, an intended Kripke interpretation \ for \
+will still have to include mere
+possibilia
+like
+Bergoglio’s merely possible children; indeed, but for the
+addition of the domain function \ on worlds tacked on
+to invalidate the problematic validities of SQML, \ will be
+indistinguishable from an intended SQML interpretation of
+\. Plantinga’s diagnosis, roughly put, is that
+Kripke’s semantics gets the
+structure
+of the modal
+universe right but that it needs his worlds and haecceities to realize
+that structure in an actualistically acceptable way. Specifically, an
+intended
+haecceitist
+interpretation \ for an applied
+modal language \ is a Kripke interpretation that
+specifies sets \ and \ as usual, but \ is a sufficiently
+expansive set of Plantinga’s maximal possible states of affairs
+and \ a corresponding set of haecceities. The domain function
+\ as usual will map each possible world \ to a
+subset of \ i.e., to a set of haecceities that Plantinga refers
+to as the
+essential domain
+of \. This is the set of
+haecceities that are
+exemplified
+in \ where a haecceity
+\ is exemplified in \ just in case \ includes the state of
+affairs
+\’s being
+exemplified
+. Otherwise put, the essential domain
+\\) of \ consists of those haecceities that would
+have been exemplified if \ had obtained. Since, as noted above,
+haecceities are necessary beings that exist even if unexemplfied, they
+can serve as actually existing “proxies” for the
+individuals there
+would have been
+had \ obtained . In this way, Plantinga’s haecceitist interpretations can
+represent
+the possibilist’s non-actual worlds and their
+merely possible inhabitants without incurring any possibilist
+commitments.
+Because an intended haecceitist interpretation \ for an
+applied language \ is a Kripke interpretation , every variable \ is, as
+usual, assigned a member \ of the set \ of individuals
+of \ i.e., a haecceity, and every predicate \ is
+assigned a set \ of
+n
+-tuples of haecceities in
+the essential domain of \ for each world \. Monadic
+atomic formulas, in particular, are evaluated as usual: \ is
+true\
+just in case \. However, although the
+formal
+truth
+conditions in \ for atomic formulas do not differ from those
+defined for atomic formulas in an intended SQML interpretation
+\ it is important to understand that, in these different
+contexts, those formally identical truth conditions represent starkly
+different metaphysical conditions. Specifically, in an intended SQML
+interpretation \ that \ indicates
+that, at \ the  object \
+exemplifies the property \ expressed by \. By contrast,
+in an intended haecceitist interpretation \ that \ indicates, not that \
+exemplifies
+\ at \ but that it is
+coexemplified with
+\ at \. Thus, for example, the truth condition for
+
+—formalized
+ as \—in an intended
+haecceitist interpretation \ is obviously
+not
+that
+there is a possible world in which some haecceity \ is one of
+Bergoglio’s children—haecceities are properties and,
+hence, necessarily non-concrete—but, rather, that
+
+There is a possible world in which some haecceity \ is
+coexemplified with
+being a child of Bergoglio
+.
+Likewise for
+n
+-place atomic formulas generally:
+\ is true at \ just in case the haecceities
+\ respectively, are coexemplified
+with the relation \ that \ expresses in \.
+Plantinga’s haecceitism thus delivers the same sort of
+systematic, compositional account of the truth conditions for modal
+propositions as possibilism but without the commitment to unactualized
+possibilia
+.
+It is important to be clear on the fact that coexemplification at a
+world is primitive here, and not definable in terms of
+exemplification. Of course, if a  atomic formula \
+is
+in fact
+true in an intended haecceitist interpretation
+\ i.e., if it is true at the actual world \ then
+there is an object that exemplifies both \ and
+\—notwithstanding the fact that this implication is not
+itself represented in \ since \\) only
+contains haecceities, not the objects that exemplify them. However, it
+is critical not to generalize this implication and take the
+coexemplification of two properties—notably, a haecceity \
+and some property \—
+at a world
+\ to imply that
+there is something that exemplifies them at \. For if that were
+so, then the truth conditions for the likes of
+
+would once again entail that there are
+possibilia
+, and
+Plantinga could rightly be accused of being committed to them—he
+simply
+ignores
+them in his haecceitist model theory. But the
+correct implication is this: if \ is
+true\,
+so that \ is
+coexemplified with \ at \ then,
+had
+\
+obtained, there
+would have been
+an individual that
+would
+have
+exemplified both \ and \. Importantly,
+though, the fact that \ is coexemplified with \ at
+\ stands on its own; it does not hold in virtue of the
+corresponding counterfactual. Indeed, the dependency goes in the other
+direction: that there could have been an individual with \
+ obtained) is true in virtue of the fact
+that some  haecceity is possibly coexemplified with
+\.
+4.2.3 Modalism
+Plantinga’s haecceitist account illustrates an important point
+about most forms of actualism that is sometimes a source of confusion,
+namely, that most actualists are also
+modalists
+. That is,
+most actualists take the English modal operators
+“necessarily”, “possibly”, and the like,
+collectively, to be primitive and, hence, not to be definable in terms
+of non-modal notions. On the face of it, however, insofar as the
+formal operators \ and \ are taken to symbolize
+their English counterparts, defining the modal operators would appear
+to be exactly what possible world semantics purports to do. For,
+unlike
+the classical connectives and quantifiers
+,
+ in basic possible world semantics the modal operators are not
+interpreted
+homophonically
+. That is, they are not interpreted
+with the very natural language operators they are intended to
+represent—a necessitation \ in particular, is not
+defined to be true in an interpretation just in case \ is
+necessarily
+true in it. Rather, in basic possible world
+semantics, the necessity operator is interpreted as a restricted
+universal quantifier: a necessitation \ is true in an
+interpretation \ just in case \ is true at
+every
+possible world
+of \. However, whether or not that proves
+to be a
+definition
+of the necessity operator depends on what
+one takes a possible world to be.
+David Lewis
+famously
+defined possible worlds
+to be  large, scattered concrete objects similar in kind
+but spatio-temporally unconnected to our own physical universe. Under
+such an understanding of possible worlds, possible world semantics
+arguably provides a genuine definition of the modal operators on which
+the truth conditions assigned to modal formulas do not themselves
+involve any modal
+ notions.
+
+As it is sometimes put, such a definition is
+“eliminative” or “reductive”—modal
+notions are eliminated in the semantics in favor of quantification
+over  worlds.
+Plantinga’s haecceitist semantics is decidedly not of this sort.
+Recall
+,
+ in particular, that Plantinga defines a possible world to be a
+maximal possible state of affairs. Spelling this definition out
+explicitly in the truth condition for necessitations ) then yields:
+\ is true if and only if \ is true at all states of
+affairs \ such that  for all states of affairs \ either,
+necessarily
+, \ obtains only if \ does or,
+necessarily
+, \ obtains only if \ doesn’t, and
+
+possibly
+, \ obtains.
+Clearly, the truth condition here interprets the modal operator
+\ homophonically and, hence, on pain of circularity, cannot be
+taken to provide any kind of eliminative analysis of the modal
+operator \ But, as we’ve detailed at length, such an
+analysis is not Plantinga’s goal. Rather, his account is meant
+to show how the truth conditions for atomic formulas in an intended
+interpretation serve to ground propositions like
+
+in the modal properties of haecceities. 
+Given such an interpretation, then, the truth conditional clauses of
+Plantinga’s theory yield non-eliminative but philosophically
+illuminating
+equivalences
+that reveal the connections between
+the statements expressible in a basic modal language \
+and the deeper metaphysical truths of his
+ theory.
+
+Haecceities are thus the key to Plantinga’s answers to both
+prongs of possibilism’s
+twofold challenge to actualism
+.
+ First, Plantinga’s haecceitist semantics delivers a
+compositional theory of truth conditions that grounds general
+de
+dicto
+modal propositions like
+
+systematically in the modal properties of individuals of a certain
+sort—specifically, coexemplification relations that haecceities
+stand in with other properties at possible worlds. Second, his
+haecceitist semantics enables him to adopt KQML  without modification and, hence, to have a
+robust quantified modal logic that has no possibilist commitments.
+4.3 Strict Actualism
+As robust as the haecceitist solution is, many actualists find that it
+grates against some very strong intuitions, especially about the
+nature of properties.
+But there is a deeper issue dividing
+the haecceitists from other actualists. To clarify, consider that many
+propositions are
+singular
+in form. That is, unlike general
+propositions like
+all whales are mammals
+, some propositions
+are “directly about” specific individuals—for
+example, the proposition
+Marie Curie was a German citizen
+.
+Call the individuals a singular proposition is directly about the
+subjects
+of the proposition. Singular propositions are
+typically expressed by means of sentences involving names, pronouns,
+indexicals, or other devices of direct reference. As we’ve seen,
+possibilists believe that there are singular propositions whose
+subjects are not actual, viz., propositions about mere
+possibilia
+: for the possibilist, recall,
+
+is grounded in singular propositions of the form
+\ is
+Bergoglio’s child
+, for
+possibilia
+\.
+Similarly, haecceitists like Plantinga, although actualists in the
+strict sense, also believe there are singular possibilities that are
+in a derivative but clear sense directly about things that don’t
+exist, viz., those possibilities involving unexemplified haecceities
+like
+\ is coexemplified with being Bergoglio’s
+child
+. Say that a
+strict
+actualist is an actualist who
+rejects the idea that there are, or even could be, singular
+propositions that are directly about things that do not exist in
+either the possibilist’s or the haecceitist’s sense. It
+follows that, had some actually existing individual \ failed to
+exist, there would have been no singular propositions about \; or,
+as Prior puts it, there would have been no
+facts
+about \
+not even the fact that \ fails to exist ; or again: singular propositions
+supervene on
+the individuals they are about. For the strict actualist, then,
+necessarily, all propositions are either wholly general or, at most,
+are directly about existing individuals only.
+So understood, the strict actualist rejects the intuition that drives
+both possibilism and haecceitism, viz., that
+de dicto
+modal
+propositions like
+
+are grounded ultimately in the modal properties of, and relations
+among, individuals of some ilk. Rather, our illustrative statement
+
+is, ultimately, brute; it is true simply because it is possible that
+ something is Bergoglio’s child,
+full stop, as there is nothing to instantiate the quantifier; there is
+nothing such that, possibly ,
+it
+is
+Bergoglio’s child.
+How then do things stand for the strict actualist with respect to the
+first element of the possibilist’s two-fold challenge? The
+answer of course depends entirely on what one takes to be a
+“systematically and philosophically satisfying” account of
+the truth conditions for modal assertions like
+
+.
+ Possibilists 
+clearly consider preservation of Tarski-style compositionality
+ to be essential for meeting this element of the
+challenge: one must ultimately be able to ground the truth of complex
+modal statements in the modal properties of  individuals. But it is not at all clear that the
+strict actualist must agree. They might well rather simply reject this
+demand and insist instead that
+
+and its like stand on their own and do not need the sort of grounding
+that possibilists insist upon. Since this is simply a consequence of
+the rejection of
+possibilia
+and their actualist proxies, from
+the strict actualist perspective, it is a philosophically satisfying
+result. The apparent loss of Tarski-style compositionality is, for the
+strict actualist, a price worth
+ paying.
+
+From this perspective, possible world semantics can with some
+justification be seen as nothing more than a useful but ontologically
+inert formal instrument, an evocative but ultimately dispensable
+philosophical
+ heuristic.
+
+In that case, the only serious challenge that possibilism raises for
+the strict actualist is the formulation of an actualistically kosher
+quantified modal
+deductive system
+whose basic principles
+intuitively reflect strict actualist sensibilities. We turn now to two
+of the best known accounts. 
+4.3.1 Prior’s Quantified Modal Logic \
+It was Arthur Prior who, in 1956, first proved that
+BF
+is a theorem of
+SQML
+.
+Clearly aware of its possibilist and necessitist implications, Prior
+sought to develop a logic consistent with strict actualism and, hence,
+a logic in which
+BF
+,
+CBF
+, and
+\
+N
+all fail. The result was his deductive
+system \. The first installment—the propositional component
+—arrived
+ only a year later; quantification theory with identity was added a
+decade later .
+Recall that the central intuition driving strict actualism is that,
+necessarily, a singular proposition supervenes on the individuals it
+is about—call these individuals the
+subjects
+of the
+proposition—and, hence, that, necessarily, there is simply no
+information, no singular propositions, about things that fail to
+exist; if \ is a singular proposition about \ then,
+necessarily, \ exists only if \ does. Conversely, necessarily,
+if all the individuals \ is about exist, then so does \. Prior
+expressed this connection between singular propositions and their
+subjects in terms of formulas and their constituent singular terms,
+i.e., their constituent individual constants and free variables. And,
+in formulating \, instead of the existence or nonexistence of
+propositions, Prior typically spoke of the “statability”
+or “unstatability” of the formulas that express
+ them.
+
+Specifically, let \ be a formula and \ the
+singular proposition \ expresses. Intuitively, then, for
+Prior, \ is
+statable
+, or
+formulable
+,
+at
+a world \ if and only if \ exists at \
+and, hence, if and only if all of
+\’s
+subjects exist at \.
+Thus, where \ is the denotation of a singular term
+\:
+S
+:
+A formula \ containing exactly the singular terms
+\ is
+statable
+at a world \ if and
+only if \ all exist at \.
+Hence, in particular, if any of the \ fails to exist at
+\ then \ is
+unstatable
+there.
+So far, there is little for any strict actualist to take issue with in
+Prior’s framing of the issues here. However, Prior makes a
+critical inference about unstatability that distinguishes his logic
+starkly from other varieties of strict actualism :
+Gap
+:
+If a statement \ is unstatable at a world \ then
+\ is neither true nor false at \
+The logical implications of
+Gap
+are dramatic. Note
+first that the usual interdefinability of necessity and possibility
+fails. To see this for the particular case of
+SQML
+’s
+\
+,
+ consider, say, the obvious truth that Bergoglio is not a subatomic
+particle—say, a proton, \. Since Bergoglio is a
+contingent being, there are worlds where he doesn’t exist.
+Hence, there are worlds where \ fails to be statable
+and thus, by
+Gap
+, where it is neither true nor false
+and thus in particular where it is not true. It follows that \ is not necessary, \ But,
+obviously, \ does not follow; assuming that
+Bergoglio is essentially human, it is not possible that he is a
+proton. So \ will not do. By the same token, if
+Bergoglio is essentially human, it is impossible that he fail to be
+human, \. For \ is
+obviously not true in worlds where he exists, and in worlds where he
+doesn’t, it is not statable and hence, by
+Gap
+again, neither true nor false and thus again not true. But \ does not follow; for \ is also not statable,
+hence not true, in Bergoglio-free worlds. So necessity cannot be
+defined as usual in terms of possibility—impossible falsehood
+does not imply necessary truth. Rather, necessity is impossible
+falsehood
+plus
+necessary statability. Otherwise put: if a
+statement \ couldn’t be false, then in order for it to
+be necessarily true, the proposition it expresses must necessarily
+exist
+.
+To capture this implication of
+Gap
+formally, and to
+axiomatize the logic of strict actualism 
+generally, Prior makes basically two changes to the language
+\—call this language \. First, for
+reasons that will become evident shortly, he takes \ rather
+than \ as a primitive operator. Secondly, he adds a new
+sentential operator \ for necessary statability
+ to \. It is also
+useful to think of impossible falsehood as a sort of
+weak
+necessity
+signified by its own operator:
+\
+Def
+:
+\
+Necessity proper—or
+strong
+necessity—is then
+definable in \ as indicated in terms of weak necessity and
+n
+-statability:
+\
+Def
+\:
+\
+Axiom Schemas for Necessary Statability
+Prior’s first axiom for
+n
+-statability is that it is not
+a property a statement \ could lack if it could have it all;
+otherwise put: if the proposition that \ expresses
+could
+exist necessarily, then it
+does
+exist
+necessarily:
+S1
+:
+\
+Prior’s next two axioms for
+n
+-statability express
+principle
+S
+above. The first captures the
+left-to-right direction that, intuitively, expresses the supervenience
+of propositions on their subjects: a statement \ is
+n
+-statable only if the things referred to in \ are
+necessary beings. Prior could in fact express that the object
+signified by an individual constant \ is necessary in the usual
+fashion as \ but, given
+\
+Def
+\, this unpacks rather cumbersomely
+to \. However, as we will see, in the context of \
+this is equivalent simply to \ For
+convenience, Prior shortens this to \; more
+ generally:
+
+SDef
+:
+\ where
+\ is a variable distinct from \
+Now say that a term \ occurring in a formula \ is
+free in
+\ if \ is either an individual
+constant or a variable with a free occurrence in \ and say
+that \ is
+singular
+if some term is free in it and
+wholly general
+otherwise. Given this, Prior axiomatizes the
+left-to-right direction of principle
+S
+as
+follows:
+S2
+:
+\ for terms \ that are in free
+in \.
+That is, a singular assertion \ is
+n
+-statable only
+if each individual that it names is a necessary being.
+Prior’s final axiom for
+n
+-statability is essentially
+the converse: if all the individuals that \ names are
+necessary, then \ is
+n
+-statable. A simple
+convention enables us clearly to express this axiom 
+schematically. Let \ be any formula of \; then,
+for any \
+SDef
+*:
+\\ldots)\)
+It is useful to note that, under this convention, when \
+\ is equivalent to \ \to \theta,\) and that, when
+\ \ is just
+\
+
+Given this, we can express Prior’s final axiom for
+n
+-statability as follows:
+S3
+:
+\ where \ are all of the terms that are free in
+\
+Note in particular that it follows from
+S3
+—specifically, from the case
+\—that every wholly general formula is
+n
+-statable.
+By
+S2
+and
+S3
+together, then, a
+formula \ is
+n
+-statable if and only if all of its
+component free terms are. Or, more informally put: the proposition
+that \ expresses exists necessarily if and only if all of
+its subjects do.
+Given the axioms for \ we can lay out the rest of
+Prior’s system \. For its non-modal foundations, \ takes
+every propositional tautology  to be an axiom and follows
+SQML
+in adopting
+standard classical axioms for quantification and identity. However,
+the non-modal fragment of the system itself is not
+quite
+classical. For reasons we will discuss below, it includes a modified
+version of
+modus ponens
+that renders some classical
+first-order validities unprovable.
+Propositional Axiom Schema
+Taut
+Quantificational Axiom Schemas
+Q1
+,
+Q2
+, and
+Q3
+Identity Axiom Schemas
+Id1
+,
+Id2
+Rules of Inference
+MP
+\
+:
+\ follows from \ and
+\ where \ are all of the
+terms that are free in \ but not in \
+Gen
+:
+\ follows from \
+\ also has its own version of
+Gen
+*
+,
+ which, recall, allows us to universally generalize on constants as if
+they were free variables:
+Gen
+\:
+Suppose \ is a formula of \ that contains an
+individual constant \ of \ and that \ is a
+variable that is substitutable for \ in \. Then if
+\ is a theorem of \, so is
+\
+\ preserves the classical assumption that all names denote
+something: for any term \ other than the variable \
+\ is a theorem; in the special case where
+\ is \ and \ is \:
+1.
+\
+Q2
+2.
+\ \to \)
+Taut
+3.
+\
+1, 2,
+MP
+\
+4.
+\
+3, ∃
+Def
+5.
+\
+Id1
+6.
+\
+4, 5,
+MP
+\
+However, because of the qualification in
+MP
+\,
+the intuitively weaker classical theorem that something
+exists—more exactly, that something is self-identical, \—is
+not
+provable. The usual proof in
+classical predicate logic runs along the above lines:
+1.
+\
+Q2
+2.
+\ \to
+\)
+Taut
+3.
+\
+1, 2,
+MP
+\
+4.
+\
+3, \
+Def
+5.
+\
+Id1
+In classical logic, of course, \ is
+immediate from lines 4 and 5 by
+MP
+. However,
+MP
+\ only yields
+6.
+\
+4, 5,
+MP
+\
+That is, in \, that something exists only follows from the
+self-identity of some particular object
+if
+that object is a
+necessary being, an object that exists in every possible world. We
+will be able to appreciate Prior’s motivations here 
+ once
+Q
+’s underlying propositional modal logic is in
+place.
+\’s propositional modal axiom schemas are structurally
+identical to those of
+SQML
+, but with weak necessity in place
+of strong
+ necessity:
+
+Modal Axiom Schemas
+K
+Q
+:
+\ \to \)
+T
+Q
+:
+\
+5
+Q
+:
+\
+Likewise its rule of necessitation; because some logical truths are
+not
+n
+-statable and, hence, not true in every
+world—notably, singular logical truths like
+Prior, if a
+logician, is a logician
+, \—we can
+only infer that an arbitrary logical truth is weakly necessary, false
+in no world:
+Rule of Inference
+Nec
+\:
+\ follows from \
+4.3.2 \, Contingency, and the Controversial Logical Truths of
+SQML
+Prior touted \ as a “modal logic for contingent
+beings” . It is therefore a rather awkward theorem of
+\ that there are no contingent beings in the strong, actualist
+sense of
+Cont
+\
+:
+ since, for any term \ other than \ \ is a theorem of \, by
+Nec
+\
+
+Def
+)
+ it is weakly necessary, \
+and the problematic theorem
+\\)
+follows directly by
+Gen
+\ and
+Cont
+\. However, Prior  argues
+that there is still a robust way of expressing the intuitive
+contingency of an object \ viz., that
+\’s
+existence is not 
+necessary, i.e.  denotes \), that \ is not true in all worlds: \. But in the context of \ this is equivalent to saying
+simply that \ is not
+n
+-statable,
+\. Accordingly, given
+SDef
+,
+ we have:
+Cont
+\:
+\ \eqdf \neg\rS \sfx\)
+As noted above, for Prior, the prospect of logical truths that are not
+necessarily statable renders the general principle of necessitation
+unsound. Rather, strong necessity only follows for those logical
+truths that are
+n
+-statable; this is usefully expressed as a
+derived rule of
+ inference:
+
+Nec
+\:
+\ follows from \.
+Since wholly general formulas are all
+n
+-statable, another
+important derived rule is immediate:
+Nec
+\:
+\ follows from \ if \ is wholly
+general.
+Of course, if
+in fact
+there is a  necessary
+being—Allah, say—then, by
+S3
+, some
+singular logical truths—e.g.,
+something exists if Allah
+exists
+, \—will be
+n
+-statable and, hence,
+ necessary. But no such truths are
+provably
+n
+-statable in \, as \ is not a theorem of
+\, for any term \ and, hence, by
+S2
+,
+neither is \ for any formula \ in which
+\ is free. Thus, not only are all wholly general theorems
+provably necessary as per
+Nec
+\ they are
+the only provably necessary logical truths of \.
+The unprovability of \ in \ and, hence, more generally,
+\’s inability to prove the existence of any necessary beings
+is the key difference between \ and
+SQML
+and, more
+specifically, it is what justifies the inapplicability of the full
+necessitation principle
+Nec
+to formulas containing
+free terms, since some of those terms might refer to contingent
+beings. This is, in particular, the key to blocking the controversial
+theorems of
+SQML
+, as their proofs all depend essentially on
+such an application of
+Nec
+.
+
+Indeed, \ is essentially just
+SQML
+shorn of its
+necessitism. If, as Prior  observed, we restore it by
+ruling out the prospect of contingent beings explicitly,
+N
+\:
+\
+\ simply collapses into
+SQML
+.
+
+ and the
+necessitist principle \
+N
+are equivalent in
+\.) More exactly put: for any formula \ of
+\ \ is a theorem of
+SQML
+if and only
+if it is a theorem of \ +
+N
+\ and hence if
+and only if \ is a theorem of \.
+In particular, both
+BF
+and
+CBF
+fall
+out as entirely unproblematic theorems under the assumption of
+necessitism:
+BF
+\:
+\\)
+CBF
+\:
+\\)
+It is important to emphasize the profound philosophical difference
+between Prior’s \ and the necessitist’s
+SQML
+that is reflected in the preceding observations. As we’ve seen,
+\ was deeply motivated by Prior’s strict actualism; this is
+most clearly seen in his introduction of the
+n
+-statability
+operator \ and the axioms
+S1
+–
+S3
+expressing the necessary
+ontological dependence of propositions on their subjects. But, in
+stark contrast to the necessitist’s
+SQML
+, Prior’s
+metaphysical predilections are not baked into \—unlike the
+necessitist, he has only made them
+consistent
+with his logic;
+his axioms for \ and his distinction between strong and weak
+necessity only have purchase if
+N
+\ is
+explicitly denied. For Prior, both necessitism and strict actualism
+are substantive philosophical theses and, hence, the choice between
+them—i.e., whether or not to adopt
+N
+\ as
+a proper axiom of a philosophical
+theory
+—is left as a
+matter for pure metaphysics, not logic, to decide.
+This sentiment also lies behind Prior’s restricted version
+MP
+\ of
+MP
+. As noted above,
+MP
+\ prevents the derivation of \ from the likes of \. But
+if \
+were
+provable, then, since it
+is wholly general, it would follow by
+Nec
+\ that it is strongly necessary,
+\ that is, informally put, it would be
+a theorem of \ that, in every possible world, there is at least
+one thing. Again, though, that there couldn’t be an empty world,
+that it couldn’t have been the case that nothing exists, is a
+substantive metaphysical thesis that logic is better off leaving
+undecided. Prior’s restriction in
+MP
+\
+ensures that this is in fact the case in \.
+4.4 Perspectivalism
+Despite the fact that Prior was able to provide a notion of
+contingency—contingency\—for his logic \, it is
+difficult to downplay the awkwardness of the fact that the most
+natural expression of
+contingency—contingency
+∃
+—is unavailable
+to him; it is, recall, a theorem of \ that, necessarily, there are
+no contingent
+∃
+beings—\. Thus, although seemingly
+well-motivated by his strict actualist metaphysics, the fact that
+Prior cannot consistently assert that he himself might not have
+existed, that he himself is a contingent
+∃
+being,
+arguably throws strict actualism into doubt: as Deutsch  observes,
+…surely there is a sense in which “Prior exists”
+might have been
+false
+; [but] there is no way to express this
+in Prior’s system.
+Robert Adams  developed an important and influential
+strict actualist account of possible worlds that provides an intuitive
+notion of modal truth on which Prior
+is
+a
+contingent
+∃
+being and which, more generally, provides
+a strong justification for modifications that temper at least some of
+the more severe elements of Prior’s logic.
+Because of the centrality of contingency
+∃
+in
+Adams’ account, it will be useful to introduce a distinct
+predicate \ to express the property of being identical with
+something:
+DefE!
+:
+\ where \ is any
+term other than \
+The contingency
+∃
+of an object \ is then simply
+expressed as \.
+For actualists like Adams, of course, the property of being identical
+with something is necessarily coextensive with the property of
+existing and, hence, \ is often called the
+existence
+predicate. It is important to note the stark contrast between the
+existence predicate \ and the actuality predicate \.
+As we have seen, \ is a non-logical predicate introduced in
+the context of the possibilism-actualism debate to 
+signify a distinguished non-logical property: the property  that, according to the possibilist, distinguishes the
+likes of us  from
+possibilia
+. \ by contrast, is a purely logical
+predicate that does not presuppose any particular metaphysical
+baggage—actualists and possibilists alike  will agree that, as a simple matter of logic,
+necessarily, everything is identical to something, \ However, given
+ 
+ that possibilists are also committed to necessitism, \ they will disagree with the typical actualist
+over whether or not there are any contingent
+∃
+beings,
+i.e., over whether or not \
+4.4.1 World Stories
+The most fundamental notion in Adams’ account is that of a
+proposition
+, by which he means an abstract entity that is
+expressed
+by a declarative sentence and which can be either
+true or false, depending on how the world is.  Particularly
+important for Adams’ account is the notion of a
+singular
+proposition
+introduced in §4.3
+,
+ i.e., a proposition that “involves or refers to an individual
+directly” . Crucially, as a strict actualist, Adams
+follows Prior in holding that a singular proposition is ontologically
+dependent on the individuals it is about—the
+“subjects” of the proposition—and, hence, that,
+necessarily, a singular proposition exists if and only if all of its
+subjects exist. Beyond this, Adams does not provide a rigorous theory
+of propositions but, rather, takes the notion to be sufficiently
+well-understood for his purposes.
+Adams’ account centers around his notion of a
+world
+story
+, his own “actualistic treatment of possible
+worlds” . The intuitive idea is that a world story is
+a complete description of things as they are or could be. Adams’
+ initially spells this idea out as follows. Say that a set \
+of propositions is
+maximal
+if for any proposition \
+\ contains either \ or its negation \
+
+and that \ is
+consistent
+if it is possible that all the
+members of \ be  true; \ then, is a
+world
+story
+if it is both maximal and consistent, and a proposition
+\ is
+true in
+a world story
+w
+just in case \
+is a member of \. And a world story is
+true
+, or
+obtains
+, if all the propositions that are true in it are, in
+fact, true. 
+However, Adams came to realize that his 1974 definition did not
+properly reflect strict actualist principles and subsequently 
+offered a more subtle
+ definition.
+
+According to strict actualism, no singular propositions are in any
+sense “about” mere
+possibilia
+and, hence, there
+are no such propositions in the actual world, i.e., the true world
+story. For Adams, possible worlds generally ought to reflect this fact
+about the actual world. That is, following Prior, a singular
+proposition \ about some  individuals
+\ should be true in a world \ only if those
+individuals—hence, \ itself—would have existed if
+\ had obtained. As Prior would put it: a proposition can be true
+in a world \ only if is
+statable
+in \. Thus, just as
+there are in the actual world no singular propositions about
+individuals that could have existed but do not, likewise, in every
+other world \ there should be no singular propositions about
+ individuals that would not have existed had \ obtained.
+To reflect this in his conception of worlds, Adams alters his
+definition so that a set \ of propositions is a world only if it
+could be
+be maximal with respect to the
+actually
+existing
+propositions that would exist if it obtained. As Adams
+puts it:
+Intuitively, a world-story should be complete with respect to singular
+propositions about those actual individuals that would still be actual
+if all the propositions in the story were true, and should contain no
+singular propositions at all about those actual individuals that would
+not exist in that case. 
+A world, then, is a set of propositions that could be both maximal in
+this sense and such that all of its members are true. Equivalently
+put: a set of propositions is a world just in case, possibly, its
+members are exactly the true propositions that
+actually
+exist.
+
+It follows in particular that the proposition \ that
+Adams doesn’t exist is not true in any world story; for, by
+strict actualism, since it is a singular proposition about Adams, it
+couldn’t be true without Adams existing—in which case, of
+course, it would be false. Very much unlike Prior, however, it does
+not
+follow for Adams that his non-existence is not possible,
+\.
+4.4.2 Truth
+at
+a World
+Adams’ break with Prior on this point is semantic, not
+metaphysical. Specifically, over and above the notion of truth
+in
+a world defined above, Adams identifies a second notion of
+truth relative to a world that he calls truth
+at
+a world. The
+difference between the two is one of
+perspective
+, a
+difference in what we might call the
+evaluative standpoint
+.
+The propositions that are true
+in
+a world \ recall, are
+those that are
+members
+of \; hence, intuitively, they
+would all have existed had \ obtained. They are thus the
+propositions that can be recognized as true from a standpoint
+“within” \—since they would have existed if
+\ had obtained, an agent with sufficient cognitive powers  that might have existed if \ had obtained could have
+grasped and evaluated them. However—and this is Adams’
+crucial insight—from her perspective in \ that same agent
+can also evaluate propositions in \ with respect to
+other
+worlds \—notably, for any individual \ in \ she can
+see that the proposition \ that \ doesn’t
+exist rightly characterizes any \-free world \ the absence of
+the proposition in question
+in
+\ notwithstanding. The
+proposition is thus, from the standpoint of \ said to be true
+at
+, but not
+in
+, \. As Adams, here in the actual
+world, puts it with regard to the proposition \ that
+he doesn’t exist:
+A world story that includes no singular proposition about me …
+represents my possible non-existence, not by including the proposition
+that I do not exist but simply by omitting me. That I would not exist
+if all the propositions it includes … were true is not a fact
+internal to the world that it describes, but an observation that we
+make from our vantage point in the actual world, about the relation of
+that world story to an individual of the actual world. 
+If, therefore, we take a proposition to be possible if it is true
+at
+, rather than
+in
+, a world, since the proposition
+\ that Adams doesn’t exist is true at some
+worlds, his non-existence is possible after all, \ contrary to Prior. This change in perspective thus paves
+the way for a logic that is consistent with the existence of
+contingent
+∃
+beings. Recall also that Adams is a
+serious actualist
+:
+ to have a property is to exist. Hence, at worlds where a given object
+fails to exist, it has no properties. Thus, in particular, at a world
+\ where Prior fails to exist, he also fails to be a logician, that
+is, it is
+true at
+\ that he is not a logician, \. Hence, the conditional proposition that he is, if a
+logician, a logician—\—is also
+true at \ and so true at
+all
+worlds, not just those in
+which he exists. It is therefore not just
+weakly necessary
+,
+ i.e., unable to be false, \,\) but strongly necessary, \.\)
+By taking truth
+at
+, rather than
+in
+, a world to be
+our guiding semantic intuition, then, it appears that, without
+compromising the metaphysics of strict actualism, we can restore at
+least some of the familiar logical connections between possibility
+and necessity that were lost in Prior’s \ and, in
+particular, restore the modal status of at least some logical truths
+to full necessity.
+Two things are worth mentioning here. First, it is important to note
+that, while most philosophers will welcome these results, there is
+still a clear
+choice
+that is being made here. Adams has
+identified two intuitive notions of truth with respect to a world
+\ within a strict actualist metaphysics that, as we’ve just
+seen, appear to yield dramatically different logical truths. Both,
+however, are coherent. Prior built his logic \ on the one; Adams
+proposes to build one on the other—at least, in part .
+Second, it needs to be emphasized that these are
+intuitive
+semantic notions only. For not only are there well-known, formidable
+challenges to the notion of a world story that he does not
+ address,
+
+because Adams is a strict actualist, a formal, compositional
+semantics is simply unavailable to him, for the reasons noted in the
+introduction to §4.3
+.
+ Hence, Adams’ talk of propositions being true in or at possible
+worlds cannot themselves be considered literally true but, as with
+similar talk from Prior, must simply be viewed as an evocative
+heuristic whose primary purpose is to motivate the basic logical
+principles underlying his variety of strict actualism.
+4.4.3 A Quantified Modal Logic for Perspectivalists
+Unlike Prior, Adams does not develop a rigorous deductive system.
+Rather, in his 1981, he simply identifies a number of informal
+semantic principles . However, a clear set of
+axioms and rules requiring only a bit of supplementation can in fact
+be derived from those
+ principles.
+
+We will call the resulting system
+A
+.
+Adams assumes classical propositional logic ), which
+can be incorporated into
+A
+via the basic propositional
+schemas
+P1
+-
+P3
+and the rule
+MP
+of
+modus ponens
+. For the rest, it is
+illuminating to start with the axioms of
+SQML
+—albeit
+with both modal operators as primitive—and then focus on
+additions and modifications required by Adams’ informal
+principles.
+Adams’ first modally significant principle   is
+one expressing
+serious actualism
+,
+ the principle that an individual cannot have a property or stand in a
+relation without existing. For reasons that will become clear below,
+we will use a somewhat more general schema than schema
+SA
+introduced in the context of Kripke’s system
+KQML
+:
+
+GSA
+:
+\ for terms \ )
+Thus, in particular, for any property \ by
+GSA
+and
+Nec
+we have that, necessarily, Adams has \
+only if he exists: \\). The problem here
+is that Adams  considers identity to be a relation;
+identity statements are thus simply a variety of atomic formula and,
+hence, it is also an instance of
+GSA
+that Adams is
+self-identical only if he exists, \. As
+Adams accepts the usual
+laws of identity
+Id1
+and
+Id2
+, we appear to have the
+following simple argument to Adams’ necessary existence:
+1.
+\
+Id1
+2.
+\
+GSA
+3.
+\
+1, 2
+MP
+4.
+\
+3
+Nec
+However, if identity is a relation, then, given serious actualism, one
+is not self-identical at worlds in which one fails to exist. This
+might suggest restricting necessitation to theorems provable without
+any instance of
+Id1
+, which would block not only the
+inference from line 3 to line 4 but also the
+proof of the more general necessitist principle
+\
+N
+that, necessarily, everything necessarily
+exists, \. However,
+that would still not be enough for, as we saw above, necessitism also
+follows immediately from the instance
+CBF
+*
+of the converse Barcan formula, whose
+proof
+involves no instance of
+Id1
+.
+Adams  lays the blame for such problems on the classical
+quantification schema
+Q2
+. Following Fine , he adopts the solution mentioned above in our discussion of
+KQML
+, namely, replacing
+Q2
+with its free
+logical counterpart ):
+FQ2
+:
+\,\) where
+\ is any term that is substitutable for \ in
+\
+It is a simple exercise to show that, with only
+FQ2
+at one’s disposal instead of
+Q2
+, one can only
+prove that
+CBF
+holds  under the
+assumption that everything exists necessarily, which of course the
+typical actualist roundly rejects:
+CBF
+A
+:
+\\)
+\ and \
+N
+can then be blocked
+simply by replacing
+Id1
+with its generalization:
+\
+Id1
+:
+\
+which, together with
+FQ2
+, only allows one to prove
+modally innocuous
+conditional
+identities of the form
+\
+In general, the strategy of giving up the classical schema
+Q2
+in favor of its free counterpart
+solely
+to make room for contingent beings in one’s quantified modal
+logic is a bit fraught for the actualist. For, according to actualism,
+there are no
+possibilia
+and, hence, constants and free
+variables cannot but denote actually existing things. Consequently,
+instances of both
+Q2
+and
+Id1
+are
+still logical truths; they are simply logical truths of the actual
+world that fail at some possible worlds. Ideally, then, as Adams puts
+, in a proper quantified modal logic, they should be
+“contingent theorems”, that is, provable but not subject
+to necessitation. This idea can in fact be preserved in
+A
+simply by adding a schema expressing the actualist view that all terms
+denote existing things:
+E!
+\:
+\ for all terms \
+and modifying necessitation accordingly:
+Nec
+*:
+\ follows from \ so long as \ is
+provable without any instance of
+E!
+\.
+Given
+E!
+A
+and a bit of
+propositional logic, all instances of
+Q2
+follow
+immediately from
+FQ2
+, and all instances of
+Id1
+follow from
+FQ2
+and
+
+\
+Id1
+.
+
+But, because of the restriction in
+Nec
+*, their
+necessitations do not.
+Perspectivalism and
+De Re
+Modality
+As we’ve seen, Adams’ notion of truth at a world promises
+to restore at least some of what was arguably lost in Prior’s
+\, notably the logical equivalence between necessary truth and
+impossible falsehood:
+\:
+\
+But the gains are rather marginal, given the profound implications of
+Adams’ take on perspectivalism for propositional modal logic.
+Matters here turn on Adams’ understanding of what it is for a
+modal
+proposition \ or \ to
+be true at a possible world \. Just as in the actual world, from a
+standpoint within another possible world \ a proposition
+\ that exists in \ can be true
+at
+worlds where
+it doesn’t exist. \/\ will thus
+be true from a standpoint in \ if, from that perspective,
+\ is true at some/all worlds. But if \ does
+not
+exist in \—if, for example, \ is
+\ and \ is Adams-free—then it is not
+available to be evaluated from a standpoint within \ and, hence,
+from that standpoint, is neither true nor false at any world and,
+hence, neither possible nor necessary. For Adams, this means that,
+from
+our
+standpoint in the actual world, both
+\ and \ are true at \:
+[F]rom an actualist point of view…there
+are
+no
+possibilities or necessities
+de re
+about non-actual
+individuals. So if I were not an actual individual there would be none
+about me. The singular propositions that I exist and that I do not
+exist would not exist to have the logical properties, or enter into
+the relations with some or all world-stories, by virtue of which my
+existence or non-existence would be possible or necessary. I therefore
+say that “\,” “\~,” “\,” and “\~” are all false, and their negations true, at worlds in
+which I do not exist. Neither my existence nor my non-existence would
+be possible or necessary if I did not exist. 
+Thus, according to Adams,
+de re
+modal propositions are
+existence entailing: an  modal proposition
+\ or \ can be true at a world only if
+it exists there and, hence, only if its subjects do as well. This idea
+can be axiomatized by a modalized version of the serious actualism
+principle
+GSA
+ and
+ 
+
+):
+MSA
+:
+\ where \ is either
+\ or \ and \ is free in \.
+An immediate consequence of
+MSA
+is to render many
+instances of \ contingent. For, at an Adams-free world
+\ \ for example, is true so, by
+MSA
+both \ and
+\ are true at \. So, given
+MSA
+, it appears that the equivalence between
+necessary truth and impossible falsehood holds at a world only for the
+propositions that exist there, i.e., in Prior’s terminology, the
+propositions that are
+statable
+there. Because, for the strict actualist, necessarily, a proposition
+exists if and only if all of its subjects exist, no new sentential
+operator is needed to express propositional existence; a simple
+counterpart to
+SDef
+* will do:
+E!Def
+*:
+\\ldots),\) where
+\ are all of the terms that occur free in
+\
+That is, \ says that \ holds if all
+of
+\’s
+subjects
+exist—hence, for the strict actualist, if the proposition
+ \ itself exists. Note that, when \
+is wholly general, \ and so \ is just
+\.
+Given
+E!Def
+*, the observation above—that the
+equivalence of necessity and impossible falsehood at a world only
+holds for the propositions that exist there—can now be expressed
+axiomatically in the schema:
+\:
+\\)
+Much like the instances of
+Q2
+, then, because
+\ is an axiom of
+A
+for any term \
+singular instances of \ fall out as contingent theorems
+of
+A
+. By the observation above, wholly general instances of
+\ are simply instances of \ and,
+hence, their necessitations are provable.
+Implications for Necessitation,
+4
+,
+B
+, and
+5
+MSA
+’s impact reverberates throughout the modal
+propositional base of Adams’ logic. Recall that the
+truth-in/truth-at distinction appeared to have restored the necessity
+of singular logical truths like
+Prior, if a logician, is a
+logician
+, \. The addition of
+MSA
+, however, leads quickly to necessitism, as it
+becomes possible to reason to Prior’s existence, \
+without any instances of
+E!
+A
+:
+1.
+\
+PL
+2.
+\\)
+1,
+Nec
+*
+3.
+\ \to \sfE!\sfp\)
+MSA
+4.
+\
+2,3,
+MP
+5.
+\
+4,
+Nec
+*
+6.
+\
+5,
+Gen
+*,
+Nec
+*
+Clearly, as Adams  notes, a “suitable
+restriction” on necessitation  is
+called for. Adams himself does not specify, but it is clear what it
+must be. Singular logical truths like \ are
+indeed true at all worlds and, hence, necessary—but only
+contingently so; for, by
+MSA
+, \\) is false at Prior-free worlds. More generally, just as the
+equivalence of necessity and impossible falsehood only holds at a
+world for the propositions that exist there, the necessity of a
+proposition at a world will only hold for the propositions that exist
+there.
+Nec
+* thus requires a qualification similar to
+\’s:
+Nec
+A
+:
+\ follows from \ so long as
+\ is provable without any instance of
+E!
+A
+.
+\ is now still provably necessary:
+1.
+\
+PL
+2.
+\\)
+1,
+Nec
+A
+3.
+\
+E!
+A
+4.
+\\)
+2, 3,
+MP
+But, because \\) depends essentially on
+E!
+A
+,
+its
+necessitation
+is not provable. And if one soldiers on in an attempt to replicate the
+reasoning in the above proof to derive necessitism:
+5.
+\ \to \sfE!\sfp\)
+MSA
+6.
+\
+4,5,
+MP
+one can proceed no further, as the proof of \ in line 6
+depends on \
+qua
+instance of
+E!
+A
+in line 3.
+The modal schemas
+K
+and
+T
+,
+ with their simple modalities, are unaffected by
+MSA
+but not so for the schemas
+4
+,
+B
+, and
+5
+,
+ all three of which involve nested modalities. The example of
+\\) above motivating
+Nec
+A
+has already shown that
+singular necessities might not themselves be necessary and, hence,
+serves as well to illustrate the invalidity of
+4
+:
+\ is true at all possible worlds, and hence,
+necessary, \\); but \\) fails to be true at Prior-free worlds and, hence, is not
+itself necessary, i.e., \\).
+B
+’s invalidity is illustrated by any contingent
+singular truth; that Prior is a logician, say, \. By
+MSA
+, \ is not possible at Prior-free
+worlds, and, hence, it is not necessarily possible, \. And, of course, since it is also in fact possible that
+Adams is a philosopher, \ the same example shows
+that
+5
+is invalid.
+The natural fix for Adams, of course, is to qualify the nested
+modalities in each case with the condition that the proposition in
+question
+ exists:
+
+4
+A
+:
+\\)
+B
+A
+:
+\\)
+5
+A
+:
+\\)
+As with
+KQML
+, only
+T
+and
+5
+A
+are needed for
+A
+;
+4
+A
+and
+B
+A
+are derivable from them. And,
+similar to what was observed with
+Q
+, it is easy to show that,
+if one extends
+A
+with the thesis of necessitism by replacing
+E!
+A
+with its necessitation,
+\:
+\ for all terms \
+the system simply collapses into
+SQML
+.
+Summarizing, then: Adams’ distinction between truth
+in
+a world and truth
+at
+a world motivated a number of intuitive
+semantic principles that, when formalized, yield a
+“perspectivalist” modal logic
+A
+:
+Propositional Axiom Schemas
+P1
+,
+P2
+,
+P2
+Modal Axiom Schemas
+K
+,
+T
+,
+5
+A
+,
+\
+Serious Actualist Axiom Schemas
+GSA
+,
+MSA
+Quantificational Axiom Schemas
+Q1
+,
+FQ2
+,
+Q3
+Existence Axiom Schema
+E!
+A
+Identity Axiom Schemas
+∀Id1
+,
+Id2
+Rules of Inference
+MP
+,
+Gen
+,
+Nec
+A
+As noted,
+A
+restores a number of intuitively desirable
+logical features that were lost in Prior’s \, in particular,
+the logical equivalence of necessity and impossible falsehood, and the
+necessity of singular logical truths. Within modal contexts, however,
+properties similar to \ return, albeit in a milder form: where
+\ requires the necessary existence of a proposition in order for
+it to be possible or necessary in a modal context,
+A
+requires
+only
+de facto
+existence. The final approach that will be
+examined here argues that the strict actualist needn’t even
+concede that much.
+4.4.4 Perspectivalism without
+MSA
+A number of philosophers who are at least sympathetic to strict
+actualism have pointed out that, contrary to Adams, strict actualism
+does not entail
+MSA
+—in
+ effect, the principle that a singular modal propositions cannot be
+true without existing—and, hence, that the still rather severe
+restrictions of
+A
+are unnecessary . Moreover, they suggest that Adams’ own distinction
+between truth in a world and truth at a world provides the intuitive
+semantic foundation for this claim. Thus Menzel  notes
+that, just as we can consider a negated proposition to be true
+at
+a world where it doesn’t exist by considering it
+from our perspective in the actual world where it does, we can do the
+same for modal propositions. Turner spells out the idea as follows
+regarding an arbitrary
+de re
+modal proposition \ where \ is an actually existing object that, in fact,
+has the property \:
+Return to the “picture thinking” that truth at a world is
+supposed to capture. We are standing outside of a world, looking into
+it, and using the propositions, objects, properties, and relations of
+our own world to describe what we see. It makes sense to think that
+which predications of \ are true at a world is determined solely
+by things going on in that world—how could facts from other
+worlds ever get into the picture? But we tend to think that modal
+truths are not made true solely by what is going on in any one world
+but by what goes on in the entire space of possible worlds.
+Furthermore, on the model of “standing outside” of a world
+looking into it, it is not implausible to think that we should be able
+to “see” the entire space of possible worlds. We can say,
+of a non-\ world \ that at that world it is possible that
+\ is \ precisely because, standing outside of \ we can
+see other worlds – worlds where \ exists and is \.
+
+On this take, then, Adams fails to fully embrace his distinction
+between truth in a world and truth at a world. He evaluates negated
+propositions at worlds where they fail to exist from our perspective
+in the actual world, but does not extend the idea to modal
+propositions; instead, to evaluate a modal proposition
+\/\ at a world \ he switches back
+to an internal perspective that requires the existence of \
+in \ i.e., the evaluative perspective that Prior adopted across
+the board. It is unsurprising, then, that Adams’ logic
+A
+restores only some of the logical truths that were lost in
+Prior’s \. But, as Turner notes, a broader embrace of
+Adams’ perspectivalism would have us evaluate
+all
+propositions from our standpoint in the actual world. So
+“situated”, a modal proposition
+\/\ can then be considered true at a
+world \ simply if \ is )’s) true at all/some worlds. As in the shift from Prior to
+Adams, then, there is no change to the metaphysics of strict actualism
+but only a shift in the underlying 
+ semantics.
+
+The logical implications of maintaining this fixed perspective in the
+actual world are quite dramatic. First and foremost, it undermines the
+motivation for
+MSA
+entirely and, with it, the
+arguments against the validity of the principles
+\,
+4
+,
+B
+,
+5
+, and the rule of necessitation
+Nec
+*. All of those can therefore be embraced without
+the existence qualifications of
+\,
+4
+\,
+B
+\,
+5
+\,
+and
+\.
+Substituting the unqualified
+principles and the rule
+Nec
+*
+in their place results in what might be called a
+fully
+perspectivalist modal logic
+A
+* for the strict actualist that
+restores everything that was lost in Prior’s
+Q
+, and
+does so without the expressive restrictions of Kripke’s
+KQML
+.
+Propositional Axiom Schemas
+P1
+,
+P2
+,
+P2
+Modal Axiom Schemas
+K
+,
+T
+,
+5
+, \
+Serious Actualist Axiom Schema
+GSA
+Quantificational Axiom Schemas
+Q1
+,
+FQ2
+,
+Q3
+Existence Axiom Schema
+E!
+A
+Identity Axiom Schemas
+∀Id1
+,
+Id2
+Rules of Inference
+MP
+,
+Gen
+,
+Nec
+*
+A
+*  is proved sound
+and complete in Menzel 1991.

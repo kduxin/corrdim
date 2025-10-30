@@ -1,0 +1,3174 @@
+1. Infinity in philosophy: some historical remarks
+In Greek, ‘to apeiron’ means ‘the infinite’:
+‘a’ denotes privation and ‘peras’ the notion
+of ‘limit’ or ‘bound’. Etymologically, the
+English word ‘infinite’ comes from the Latin word
+‘infinitas’: ‘in’ = ‘not’ and
+‘finis’ = ‘end’, ‘boundary’,
+‘limit’, ‘termination’, or ‘determining
+factor’. In contemporary English, there is a range of uses of
+the word ‘infinite’:
+In a loose or hyperbolic sense, ‘infinite’ means
+‘indefinitely or exceedingly great’, ‘exceeding
+measurement or calculation’, ‘immense’, or
+‘vast’.
+In a strict but non-mathematical sense that reflects its
+etymological history, ‘infinite’ means ‘having no
+limit or end’, ‘boundless’, ‘unlimited’,
+‘endless’, ‘immeasurably great in extent ’. This strict, non-mathematical
+sense is often applied to God and divine attributes, and to space,
+time and the universe.
+There is also a strict, mathematical sense, according to which
+‘infinite’ quantities or magnitudes are those that are
+measurable but that have no finite measure; and ‘infinite’
+lines or surfaces or volumes are measurable lines or surfaces or
+volumes that have no finite measure.
+Related to the distinction between meanings  and  is a
+distinction between metaphysical and mathematical meanings of
+infinity. This has been usefully employed in some of the most
+encompassing accounts of infinity, such as Moore ). Moore sees the
+metaphysical notion as bound up with the notions of
+‘totality’, ‘absoluteness’ and
+‘perfection’. While our entry is focused on the strict
+mathematical sense of ‘infinity’, one cannot cleanly
+separate the various meanings in the historical development of the
+subject, especially in the first stages. In addition, treating
+infinity as a ‘perfection’ in theology from the outset
+does not mirror the complexity of the historical development; for
+instance, we find traces in the 13th century of thinkers who
+attributed finiteness to God or in any case denied God’s
+infinity even when not explicitly stating the finiteness of God .
+The infinite has been of central concern to Western thought since the
+very first pre-Socratic fragment. It concerned the philosopher
+Anaximander , who identified
+the principle and origin of existing things as
+to apeiron
+. In
+Anaximander, the principle has both an ontological and an ethical
+significance. The Pythagoreans  saw the infinite
+negatively and emphasized the lack of definiteness associated with it;
+they also gave it spatial connotations. Indeed, in the 5th century BCE
+the Pythagorean Archytas of Tarentum  gave
+the following argument for the spatial infinitude of the cosmos based
+on the contradiction that postulating a boundary to it would seem to
+entail. If the cosmos is bounded, then one could extend one’s
+hand or a stick beyond its boundary to find either empty space or
+matter. And this would be part of the world, which thus cannot be
+bounded on pain of contradiction. So the world is
+unbounded
+.
+Archytas identified this with the world being
+infinite
+. Kant
+similarly identified the unbounded and the infinite in his
+cosmological antinomy. In
+ Section
+8
+we will see that these notions should be distinguished, but a
+mathematically precise articulation of the distinction had to wait
+until the development of new conceptions of space in the 19th
+century.
+The Eleatics  held a monist
+conception of reality, the One, and Melissus declared it to be
+infinite. Such a monistic conception of reality sees change  as appearance, and Zeno’s famous paradoxes of infinity
+ emerge in this
+context. Suffice here to say that Zeno’s paradoxes  involved the infinitely small and
+were aimed at buttressing Parmenides’ monism. Working across the
+5th and the 4th century BCE, Democritus defended an atomistic theory
+with an infinite void and infinitely many atoms. The infinite by this
+time had shown some of its major aspects, taken as substance by some
+and as plurality  by
+others.
+If the urgency of problems related to the infinite reached Greek
+consciousness with Zeno’s paradoxes, the most influential
+discussion was due to Aristotle. In order to put Aristotle’s
+discussion in perspective, we need to list a number of ways in which
+mathematical infinity had emerged not only in philosophy, as we have
+described, but also in mathematics. We have already seen with Archytas
+the notion of spatial infinitude of the cosmos. But in number theory,
+the natural numbers were considered infinite, at least in the sense
+that given any natural number a greater one could be found. In
+geometry, we find both the infinite by addition  and by division . Thus,
+mathematics presented processes of iteration without limit. The most
+sophisticated technique for dealing with iterated processes in the
+measurements of plane and solid figures was developed by Eudoxus , and we discuss it in
+ Section
+2.1
+.
+By the time Aristotle  developed his discussion of
+the infinite, this concept had thus made its presence felt in
+philosophy, mathematics, and natural philosophy . It would be hard to exaggerate the role
+played by Aristotle in the history of infinity. He articulated some
+essential conceptual distinctions that were to influence all
+subsequent discussions. He was a finitist in the sense that in his
+universe, everything is finite. The cosmos is finite, bodies are
+finite, geometrical segments are finite, each number is finite, etc.
+However, there are processes that can be iterated indefinitely, giving
+rise to what he called ‘potential infinity’. He claimed in
+fact that “in a sense [the infinite] is and in a sense it is
+not.” .
+Any arbitrary segment can be extended in length  or halved without limit,
+but at each stage we remain within the finite. Time is also
+potentially infinite in both directions and can be divided without
+limit.
+This conception stands in opposition to that of ‘actual
+infinity’, which would result if some infinite processes could
+be completed, carried out ‘all at once’, as it were. If
+actual infinity were real, then one could have infinitely long bodies,
+infinitely long or infinitely small segments, the totality of natural
+numbers, an infinite number, infinitely many instants of time, etc.
+Aristotle rejected the notion of the infinite as a primordial
+substance, as we have encountered in Anaximander, and most of his
+discussion of the infinite takes place within a physical context,
+namely one relating to spatio-temporal features of reality. As a
+consequence, Aristotle’s discussion of the infinite fell
+squarely in what we have characterized as the
+‘mathematical’ notion of infinity, where infinity applies
+first of all to magnitudes  and what is
+quantifiable . His
+Physics
+discusses the infinitely large, excluded because the world is finite;
+and the infinitely small, excluded because the division of matter can
+only be potentially infinite and thus finite at each stage, never
+reaching an infinitesimal quantity—one that is less than any
+finite quantity, while being something. The exclusion of the
+infinitely large also has as a consequence that Aristotle cannot allow
+a potential infinity by addition in an unqualified manner . Infinity by
+addition, then, is to be conceptualized as a sort of inverse operation
+to infinity by division which gives us the primary evidence for the
+existence of the potential infinite. This is the implicit force of the
+contrastive “but” in the following quote. Aristotle
+writes :
+‘To be’, then, may mean ‘to be
+potentially’
+or ‘to be
+actually’
+; and the infinite is either in
+addition
+or in
+division
+. It has been
+stated that magnitude is not in actual operation infinite; but it is
+infinite in division – it is not hard to refute indivisible
+lines – so that it remains for the infinite to be potentially.
+
+The Aristotelian distinction between potential and actual infinity has
+had a major influence up to contemporary times. , Lear , Kouremenos
+, Coope , Nawar , Cooper , Ugaglia , and
+Hussey’s commentary to Aristotle .)
+Aristotle’s conception had, in addition to issues related to the
+constitution of the physical continuum, important consequences in
+cosmology. While he considered the cosmos to be finite, he thought
+that the movement of the celestial spheres had no beginning and no end
+. The issue of the “eternity of the world” was
+to exercise some of the best theological and philosophical minds after
+Aristotle, especially in connection to theological issues. For
+instance, Johannes Philoponus 
+argued in favor of a beginning of the world by claiming that the
+contrary thesis would lead to a paradox of infinity .
+Philoponus presented another paradox of infinity concerning infinite
+time that we will discuss in the version formulated by
+al-Ghazālī —see the
+Supplement on al-Ghazālī’s objection
+Of even more pressing significance was the abandonment of
+Aristotle’s view on the finiteness of the cosmos and the
+Renaissance move from the finite to the infinite universe described in
+the classic text by Koyré . While
+Copernicus  put the sun at the center of the
+universe, he still worked with a finite model of the
+universe. Foreshadowed by Epicurus , Hasdai Crescas
+, and Nicolaus Cusanus , Giordano
+Bruno  defended the idea of infinitely many worlds,
+each of infinite size, existing simultaneously. Bruno is a good
+example of how mathematical and theological notions of infinity were
+used simultaneously in the history of the concept. For instance,
+in
+On the Infinite, the Universe, and Worlds
+ he argued
+from God’s infinite power to the infinitude of the universe.
+By contrast, Kepler and Galileo did not think that the issue of
+whether the world was infinite in size could be settled either way.
+Kepler thought that the notion of an infinite universe was a
+metaphysical one and not founded on empirical evidence. Galileo
+claimed, in a famous letter to Francesco Ingoli written in 1624, that
+mankind would never be able to know whether the universe is finite or
+infinite. The progressive geometrization of space 
+led to Newton’s gravitational theory in which the universe is
+infinitely extended spatially and temporally. Physical space became
+identified with the space of Euclid’s geometry and in this way
+physical space was geometrized.
+Theological elements were still present when Newton identified space
+with the “sensorium Dei” . For the next two centuries cosmology was developed
+according to Newtonian theory: an infinite Euclidean space, flat and
+absolute, which provides the receptacle for all physical objects whose
+relations are structured by universal gravitation.
+With Riemann in the mid-19th Century, and then with relativistic
+cosmology, one went back to a finite universe, but cosmologists are
+now fully aware that the issue of the finitude of the world is very
+much an open question that depends crucially on the curvature and the
+topology of space .
+Our discussion above indicates a few essential aspects of the concept
+of infinity that will be useful in the later discussion. There are
+obviously many areas of contact and/or intersection between the more
+mathematical notion of infinity and the qualitative notion of
+infinity. Qualitative notions of infinity cannot be easily
+characterized directly but in general they appeal to features that do
+not seem to have a clear quantitative aspect. For instance, God might
+be defined as infinite because it has none of the limitations of
+finite creatures; this property was accounted for in some Scholastic
+philosophy by claiming that God, unlike finite creatures, is that
+unique entity in which essence and existence coincide. Often coupled
+with this was the claim that God’s infinity is incomprehensible,
+and this might be a good indicator that we cannot achieve a positive
+account of qualitative infinity. At the same time, claims concerning
+infinite divine power or goodness offer a possible connection to
+quantitative conceptions, and this explains why the boundary line
+between quantitative and qualitative conceptions is not so sharp.
+Indeed, according to some authors the qualitative and mathematical
+conceptions are inextricably tied. Consider for instance
+Pascal’s use of infinite distance both in projective geometry
+and in his
+Pensées
+where he muses on the infinite
+distance  between finite human beings and the
+infinite God . The following passage is
+representative of the powerful and suggestive role that appeal to
+finiteness and infinity plays in Pascal’s apologetics:
+For in the end what is humanity [l’homme] in nature? A
+nothingness compared to the infinite, everything [un tout] compared to
+a nothingness, a mid-point between nothing and everything, infinitely
+far from understanding the extremes; the end of things and their
+beginning [principe] are insuperably hidden for him in an impenetrable
+secret. \What can he therefore imagine? He is\ equally
+incapable of seeing the nothingness from where he came, and the
+infinite in which he is covered [englouti]. […] .
+Moreover, Pascal’s
+pari
+ is also intimately tied
+to the notion of infinity in the form of an infinite reward.  These topics are of great importance for
+philosophy of religion, decision theory, and philosophical
+anthropology.
+However, this entry does not concern those conceptions of infinity
+that are connected to infinite divine power, infinite modes, and in
+general about those conceptions of infinity that are not of a
+mathematical kind. We do not intend to downplay the importance of
+those aspects of the history of infinity to which giants such as
+Plotinus, Cusanus, Descartes, Pascal, Spinoza, Fichte, Hegel, and
+Kierkegaard contributed, among others. Leibniz and Kant also belong to
+that list, but we will say more about them later on. But our entry
+would lose focus if we were to try to pursue all these developments
+even at a superficial level, and the treatment of qualitative infinity
+is worthy of an article in its own right. Thus, we content ourselves
+with a list of bibliographical references through which the reader can
+reconstruct the contributions to the topic.
+For overviews of the history of infinity which include both
+mathematical and metaphysical aspects, see Moore  and Zellini
+. For further discussion of Aristotle’s views on infinity
+see the entries on:
+Aristotle
+;
+Aristotle and mathematics
+; and
+Aristotle and metaphysics
+. 
+For ancient and medieval conceptions of infinity see Sweeney ,
+Sweeney , Kretzmann , Coté , Biard and Celeyrette
+, Duhem , Dewender , Davenport , Murdoch ,
+Uckelman ; for the early modern period see Nachtomy and Winegar
+; for infinity in Kant and the idealist period see Kreis ;
+Monnoyeur  spans all periods.
+For more on infinity in philosophy of religion, see the following
+references.
+on divine infinity: Koetsier and Bergmans , Göcke and
+Tapp , the papers in the final section of Heller and Woodin ,
+and various entries including
+God and other ultimates
+,
+ontological arguments
+,
+Nicolaus Cusanus
+,
+Robert Grosseteste
+,
+John Duns Scotus
+,
+ and
+Ibn Arabi
+;
+on infinity in God’s creation, apart from our subsequent
+discussion of whether space and time are infinite: the entries
+cosmology and theology
+,
+cosmological argument
+,
+fine-tuning
+,
+infinite regress arguments
+,
+principle of sufficient reason
+,
+ and
+being and becoming in modern physics
+;
+ and
+on ‘heavenly infinity’, apart from our subsequent
+discussion of Pascal’s Wager: the entries on
+Pascal’s wager
+,
+the meaning of life
+, and
+religion and morality
+.
+It is worth noting that Cantor’s development of set theory was
+influenced by theological considerations: see, for example, Dauben
+ and Tapp .
+As we have said, we are mostly excluding the topic of infinity in
+science and the social sciences from our purview, although see the
+Supplement on Infinite Idealizations
+.
+To the extent that we discuss infinity in science , our focus is primarily on the
+mathematical machinery involved, which has a venerable history. This
+brings us to the topic of the next section.
+2. Infinity in mathematics: a brief historical overview
+In this section we will begin by showing how Greek mathematics
+studiously avoided the use of infinity in the presentation of its
+results by making use of
+the method of exhaustion
+. Then
+we will look at the widespread use of infinitary objects and
+procedures in 17th-century mathematics , infinitesimals in the calculus
+) and Galileo’s problem of extending counting to infinite
+collections . By the early 18th-century mathematics had undergone
+its first “infinitistic revolution” . Infinity had
+become a pressing foundational problem, and this will lead us to
+section
+3
+.
+2.1 The method of exhaustion
+We have already mentioned that the potential infinite occurs in Greek
+mathematics from the outset, most obviously in the natural number
+series and in the geometrical operations of addition and division of
+segments and other geometrical magnitudes. The Greek mathematicians,
+starting with Eudoxus, developed a technique for measuring plane and
+solid figures that avoided recourse to the infinite even where an
+infinite “limit” process would seem to be forced by the
+situation. This technique, known today as
+the method of
+exhaustion
+, is found in Euclid’s
+Elements
+, book XII, and then in some of the most spectacular
+results by Archimedes . The idea is to replace an
+infinite approximation by a double reductio ad absurdum. That means
+that one shows the equality in area or volume of two figures, say a
+circle \ and an associated triangle \, by noting that \ or \ and then showing that the assumptions \ and \ both lead to a contradiction. ’ and ‘\’ refer with systematic
+ambiguity to the figures and their areas/volumes.) Further discussion
+can be found in the
+Supplement on Quadratures of the Circle by Exhaustion and by Indivisibles
+.
+Greek mathematics generally avoids any recourse to the actual
+infinite, and scholars have spoken of a “horror of
+infinity” typical of Greek mathematics. This is in general
+correct with respect to the way mathematical results are presented in
+their final and public presentation. However, one should keep in mind
+that no such “horror of infinity” is to be found when one
+looks at the heuristic strategies pursued by Greek mathematicians. In
+the case of Archimedes, this was made evident by the fortunate
+rediscovery of his method 
+where we see him using infinitary and mechanical considerations as
+tools he exploited for the discovery of geometrical theorems . For instance, in his description
+of the method for finding the proportion between the area of a
+parabolic segment and that of a related triangle, Archimedes thinks of
+geometric figures  as composed of infinitely many one-dimensional segments and
+then exploits the law of the lever to gain the determination of the
+relation between the areas in question. In a portion of the text of
+the method that has only recently become available , Archimedes explicitly
+operates with infinite collections.
+2.2 The theory of indivisibles and points at infinity
+Early modern mathematicians were impressed by the Euclidean and
+Archimedean rigor, but there was widespread suspicion  that Archimedes must have had a less rigorous heuristic method
+that he used to discover his surprising results.
+In the 17th century, infinitary considerations in geometry opened the
+way to new geometrical techniques in
+quadratures
+and
+cubatures
+—i.e. the determination of areas of plane
+figures and of volumes of solid figures, respectively. We owe to
+Cavalieri and Torricelli a geometrical theory of indivisibles that was
+later put in an arithmetico-algebraic setting by Wallis .
+Cavalieri’s original idea  was that the relation between
+the areas of two plane figures could be obtained by a systematic
+comparison of what he called the
+indivisibles
+of the figures.
+An indivisible of a figure is a geometrical entity of lower dimension
+than the figure itself. An indivisible of a line is a point; an
+indivisible of a plane figure is a line segment; an indivisible of a
+solid is a plane figure. Consider a square with top side AB and bottom
+side CD. An indivisible of the square is any arbitrary segment with
+the same length as AB that can be obtained by letting AB move parallel
+to itself until it reaches CD. See the
+Supplement on Quadratures of the Circle by Exhaustion and by Indivisibles
+for an explanation of how to give the quadrature of the circle with
+the indivisibilist method, and how this courts infinite
+collections.
+Cavalieri’s applications of the theory of indivisibles were
+limited to finite figures and thus did not go beyond the geometrical
+boundaries typical of Greek mathematics. However, Torricelli broke new
+ground with the determination of the volume of an infinitely long
+ solid . Up to then, all
+the results concerning finite figures obtained through indivisibles
+could easily be proved by finitary Archimedean techniques and by
+avoiding any mention of infinity—just as in the case of the
+quadrature of the circle presented in the
+Supplement on Quadratures of the Circle by Exhaustion and by Indivisibles
+.
+However, infinity figured explicitly in Torricelli’s result that
+an infinitely long solid  had a finite volume
+.
+This was the first infinitary result in Western mathematics, for the
+infinite was not eliminable using some alternative finitary technique
+but rather showed up as a feature of the very object that had to be
+measured. Torricelli’s infinitary result put enormous pressure
+on empiricist conceptions of infinity. The heuristic fruitfulness of
+the indivisibilist method was also accompanied by paradoxes that
+threatened its foundations. Among them was Tacquet’s proof using
+indivisibles that all triangles have the same area. The
+indivisibilists were able to deal with such paradoxes in various ways,
+but the foundations of the system remained shaky  and Jullien ).
+Another area in which the infinite made its appearance in 17th century
+geometry is in the work of Desargues . Whereas in Euclidean geometry parallel lines
+do
+not
+meet, Desargues entertained the idea of having parallel
+lines meet at a point at infinity. This was a very fruitful idea that
+led to the development of projective geometry.
+2.3 The calculus
+The most fruitful development in the use of infinity in 17th century
+mathematics was that of the calculus.
+From a geometrical point of view, the calculus provides techniques for
+drawing tangents at an arbitrary point of a curve and for measuring
+the area under a portion of a curve. The differential calculus treats
+the first problem and the integral calculus the second. The
+fundamental theorem of the calculus states that these problems are
+inverses of each other. The calculus was developed independently by
+Newton and Leibniz, but its spread owed much to a significant number
+of mathematicians throughout Europe. The first textbook of the
+differential calculus was published in 1696 by the Marquis de
+l’Hôpital . It is worthwhile
+to consider its axiomatized structure, for it will help us see
+immediately the infinitary foundations on which the new discipline
+presented itself to the international community. We first have two
+definitions:
+Definition I.
+Those quantities are called variable
+which increase or decrease continually, as opposed to constant
+quantities that remain the same while others change.
+Definition II.
+The infinitely small portion by which
+a variable quantity continually increases or decreases is called the
+Differential.
+The two postulates are as follows.
+Postulate I.
+We suppose that two quantities that
+differ by an infinitely small quantity may be used interchangeably, or
+ that a quantity which is increased or
+decreased by another quantity that is infinitely smaller than it is,
+may be considered as remaining the same.
+Postulate II.
+We suppose that a curved line may be
+considered as an assemblage of infinitely many straight lines, each
+one being infinitely small, or  as a
+polygon with an infinite number of sides, each being infinitely small,
+which determine the curvature of the line by the angles formed amongst
+themselves.
+We see in the above the explicit infinitary characterization of some
+of the basic entities appealed to in the new calculus. Both postulates
+require something that the Greeks had studiously avoided, namely the
+consideration of infinitely small quantities and the reduction of
+curves to infinilateral polygons. While l’Hôpital and a
+number of French mathematicians were enthusiastic about going
+“infinitary”, Leibniz himself developed a fictionalist
+account of the appeal to infinitely small quantities ). Also note the use of
+geometrical and kinematic  concepts. Much of the 19th
+century work on the calculus was devoted to removing geometrical and
+kinematic notions from the foundations of the discipline.
+The literature in this area is enormous and we refer to Goldenbaum and
+Jesseph  for a recent collection of essays on Leibnizian
+infinitesimals. The debates on the foundations of the calculus led to
+some lively contributions, such as Berkeley’s
+The
+Analyst
+ and more mathematical work. But even after
+infinitesimals were eliminated from the calculus through the combined
+work of Cauchy, Bolzano, Dedekind, and Weierstrass in the 19th
+century, they were widely employed in geometry. Moreover, contemporary
+alternative theories of analysis  have led to rigorous theories that, taken with a grain
+of salt, can be seen as vindicating some of the 17th century
+intuitions. We will come back to these developments below.
+2.4 Counting infinite collections
+There is one final aspect of 17th century discussions of infinity that
+is relevant for later considerations: the problem of extending the
+concept of counting from the finite to the infinite. This problem is
+related to the issue of whether there is only one infinity or whether
+there might be different sizes of infinity. As we have mentioned,
+Philoponus argued that the eternity of the world led to a
+contradiction. In particular, he claimed, if the world has no beginning in the
+past, then the number of individuals up to Socrates would be infinite;
+but then by adding the number of individuals from Socrates to now, one
+would obtain an infinity larger than the previous one, and this, he
+concluded, is “one of the most impossible things” . It was typical of Greek thought to reject the idea that
+there can be different sizes of infinity.
+The Islamic mathematician Ibn Qurrah  took a decidedly
+infinitistic attitude and argued, against the Aristotelian
+commentators, that there can be different sizes of infinity . He claimed, for instance, that the odd and the even
+numbers have the same size, but that the multiples of three are 1/3 of
+the total number of natural numbers. Contrary to what has been claimed
+in the literature, his intuition was not that the even numbers and the
+odd numbers have the same size because there is a one-to-one
+correspondence between them. Rather we have a
+“frequentist” intuition: every even number is followed by
+an odd number; multiples of three appear every three numbers, etc. We
+find a similar position in Grosseteste’s treatise
+De
+Luce
+.
+Galileo Galilei epitomized the paradoxical situation we run into when
+trying to generalize counting from the finite to the infinite. In
+Two New Sciences
+, he presented a paradox
+of infinity. On the one hand, there is an intuition that there are
+fewer
+square numbers than natural numbers, since the first
+collection is properly contained in the second . On the other hand, there
+is an intuition that there are
+the same number
+of squares and
+natural numbers, since there is a one-to-one correspondence—a
+bijection—
+between the natural numbers and their
+squares. Galileo’s own conclusion, following Oresme and Albert
+of Saxony who had discussed similar issues in the 14th century, was to
+claim that one cannot apply the relations of
+equality
+,
+greater than
+, and
+smaller than
+to infinite
+collections. Much subsequent theorizing about infinity can be regarded
+as respecting one intuition at the expense of the other.
+The intuition that if one set is a proper subset of another, the
+former is smaller than the latter, traces back to Euclid—call
+this the
+part-whole
+intuition. Bolzano  was sympathetic
+to it, and he tried to develop a theory of infinite sets that
+preserved it. He was not successful, but he warned his readers not to
+conflate one property of an infinite set—that it can be put in
+one-to-one correspondence with a proper subset of itself—with a
+criterion of ‘size’ . Cantor , by contrast, later used one-to-one correspondence as the
+defining characteristic of
+cardinal numbers
+: the numbers that
+answer ‘how many?’ questions, and that generalize counting
+from the finite to the infinite in his set theory. He thus sided with
+the intuition that if there is a bijection between two sets, they have
+the same size—call this the
+bijection
+intuition. The
+intuition is clearly correct for finite sets. For example, the set of
+fingers on a normal human hand can be paired up with the set of toes
+on a normal human foot, and vice versa: there is a bijection between
+these two sets. And of course, the two sets have the same size .
+A central question is whether the intuition is correct also for
+infinite sets. We will discuss Cantor’s theory and, by contrast,
+some recent implementations of counting, known as theories of
+numerosities
+, that preserve the part-whole intuition also for
+infinite sets—see the
+Supplement on Theories of Numerosities
+.
+In conclusion, the “infinitistic revolution” in the 17th
+and the early 18th century left an important legacy for philosophy and
+mathematics. The theory of indivisibles introduced new magnitudes
+characterized infinitarily , and new infinitary geometrical objects extended the
+classical geometrical universe. Moreover, the debates on the calculus
+were focused on the nature of the infinitely small and the infinitely
+large. Finally, the issues emerging from Galileo’s paradox were
+a prelude to the problem of extending counting from finite to infinite
+collections.
+These problems were gradually addressed in the 19th and 20th
+centuries, and out of these discussions there emerged different
+mathematical notions of infinity. We will work our way in stages to
+these conceptions, via a discussion of some landmarks in the
+contemporary mathematics of infinity.
+Among the numerous general treatments of the use of infinity in
+mathematics we recommend Lévy , Zellini , Moore ,
+Vilenkin , Barrow . For more detailed accounts of the history
+of the calculus, see Kline , Boyer , Edwards , and
+Grattan-Guinness . The most recent scholarship on the theory of
+indivisibles is to be found in Jullien . For recent collections on
+Leibnizian infinitesimals see Goldenbaum and Jesseph  and Goethe,
+Beeley and Rabouin . On concepts of mathematical infinity in the
+19th century see König .
+3. Mathematics: number systems, Cantor’s paradise, and beyond
+To deal with some of the issues concerning the infinite raised in
+ Section
+2
+,
+ mathematicians have developed various different structures that
+explicitly include infinities. These structures ascribe different
+properties to infinities that are appropriate for different
+applications. In some cases, there are multiple kinds of structure
+that can be developed for an application. Explicitly countenancing
+infinities has opened up an enormous range of choices and
+possibilities, which has been a wellspring of development in modern
+mathematics.
+We now give a very quick tour of infinity in modern mathematics.
+ Section
+3.1
+reminds the reader of several familiar number systems: the natural
+numbers, integers, rational numbers, and real numbers.
+ Section
+3.2
+discusses the infinite operations of limits and sums that underlie
+calculus, and introduces the “extended real numbers”
+\ and \. The material in these two sections is
+covered in most textbooks on real analysis, and even many calculus
+textbooks, so some readers might already be familiar with it, while
+others might benefit from having such a textbook on hand to expand on
+some of the points.
+Sections
+3.3
+and
+3.4
+are more mathematically advanced. Section
+3.3
+introduces Cantor’s more mathematically sophisticated
+“cardinals and ordinals”, which are probably the
+mathematical developments that have done the most to untangle many of
+the conceptual confusions around infinity. This material is covered in
+greater detail in most textbooks on set theory, and parts of it are
+discussed in many logic textbooks as well. It can be read largely
+independently of the other sections.
+Section
+3.4
+discusses a more recent mathematical theory of infinitely large and
+infinitesimal numbers that provides an alternate setting for calculus.
+This theory of “non-standard analysis” has not become as
+central a part of the mathematics curriculum as real analysis and set
+theory. It may thus be unfamiliar to most readers, and it is harder to
+find accessible introductions elsewhere. Although non-standard
+analysis is not as central a part of the cultural understanding of
+infinity in mathematics as cardinals are, we include it both because
+it is a topic of growing interest in mathematics research, and because
+it can help make mathematically rigorous sense of both many intuitive
+thoughts about infinity and some of the early work on calculus in the
+17th and 18th centuries.
+Up to a point, various philosophical applications and puzzles
+involving infinity can be understood without much understanding of the
+mathematics of infinity. However, the mathematics helps us formulate
+and tackle them rigorously. Mathematics-shy readers could skip parts
+of our tour 
+ and still benefit from the later sections, but we encourage them to
+make the effort and read on. The mathematical understanding of
+infinity is a great achievement in its own right.
+3.1 Some number systems
+The
+natural numbers
+form the most elementary number system.  as a natural number as well, but some others do not.) \ is a natural number. For any natural number \,
+\—the
+successor
+of \—is also a natural
+number. The natural numbers—\—are closed
+under addition: if \ and \ are natural numbers, then so is
+\. And they are closed under multiplication: if \ and
+\ are natural numbers, then so is \. We use the
+natural numbers for counting ‘how many’ of something there
+are, though they clearly fail when applied to infinite sets, for
+instance the set of squares of natural numbers or the set of natural
+numbers themselves. This is what ‘infinities of counting’
+will extend, in section
+3.3
+.
+The
+integers
+consist of the natural numbers, their additive
+inverses ), and \:
+\[\dots , -3, -2, -1, 0, 1, 2, 3, \dots.\]
+They form the most elementary number system that is also closed under
+subtraction: If \ and \ are integers, then so is
+\.
+The
+rational numbers
+can be expressed in the form
+\, where \ and \ are integers, \.
+They form the most elementary number system that includes the integers
+and that is closed under division, except by 0. If \ and \
+are rational numbers, \ is also a rational number if
+\.
+The rational numbers are
+dense
+: for any two rational numbers
+\ and \ such that \, there is at least one
+rational number \ such that \—for
+example, the arithmetic mean of \ and \, \/2\),
+lies between them. Indeed, for any two rational numbers \ and
+\ such that \ is strictly less than \, for any
+natural number \, there are more than \ distinct rational
+numbers that lie between \ and \. Where the integers
+spread infinitely ‘outward’ in both directions, the
+rationals also divide infinitely ‘inward’.
+However, the rational numbers still have “gaps”. For
+instance, if we consider the equation, \, we can verify that
+there are values of \ where \ is negative, and values of \
+where \ is positive. However, there is no rational number \
+for which \ is exactly equal to 0. To fill these gaps, we
+construct the “real numbers”.
+The real numbers can be constructed out of the rational numbers by
+defining each real number to be a
+Dedekind cut
+of the
+rationals. A Dedekind cut of the rationals is a pair of sets \ and
+\ such that:
+every rational number belongs to exactly one of \ and
+\;
+every member of \ is less than each member of \; and
+\ has no largest element.
+We refer to \ as the ‘left set’ of the cut and \
+as the ‘right set’.
+For any rational number \, there is a Dedekind cut corresponding
+to it, where \ consists of the numbers strictly less than \,
+while \ consists of \ and all larger numbers. However, there
+are also other partitions, where \ does not contain a smallest
+element. For instance, we can let \ include all the rational
+numbers whose cube is less than 2, while \ includes all the rational numbers whose cube is greater than 2. Since there is
+no rational number whose cube is exactly equal to 2, this pair of sets
+forms a partition, representing the real number we think of as the
+cube root of 2.
+If \ and \ are two real numbers, represented by Dedekind cuts
+with left sets \ and \, and right sets \ and
+\, we can define operations of addition and multiplication of
+real numbers in terms of operations on the members of these sets. The
+left set of \ is the set of all rational numbers that result
+from adding a member of \ and a member of \, while the
+right set is the set of all rational numbers that result from adding a
+member of \ and a member of \.  If \ and \ are both positive, then we can define
+the right set of \ as the set of all rational numbers that
+result from multiplying a member of \ by a member of \,
+with the left set defined as the set of all other rational numbers.
+ or
+\ is negative.) Subtraction and division can then be defined as
+the inverses of these operations, just as for the rationals.
+The real numbers are closed under addition, subtraction,
+multiplication, and division by all real numbers except 0. They have
+the further feature that there are no “gaps”: for any
+bounded set of real numbers, there is a least upper bound, and for any
+continuous function from real numbers to real numbers, if the function
+is negative at one point and positive at another, there must be some
+point at which it is exactly equal to 0. For further discussion, see
+the entry on
+Dedekind’s contributions to the foundations of mathematics
+.
+There are several uses for which we want a number system with no gaps,
+and thus we use the real numbers. If you try to measure the amount of
+water in a large vessel by counting out a specific number of small
+cups, there’s no guarantee the number of cups will be an
+integer. If you try to measure a long distance by counting out the
+length of your foot, there’s no guarantee the number of feet
+will be an integer. We might know that something is more than 4 of the
+units and less than 5. By moving to fractions of these units, we can
+get more precise—4 cups and 5 to 6 ounces, or 4 feet and 5 to 6
+inches—but there’s still no guarantee that a specific
+rational number will give the precise amount. But we can generate a
+sequence of approximations that get closer and closer by using smaller
+and smaller fractions of these units. So in measuring ‘how
+much’ of something there is, or giving coordinates to describe
+the location of a point in geometric space, we use the real numbers,
+to guarantee, as we show in the next section, that there is some
+precise value the sequence of approximations converges to.
+3.2 Limits, infinite sums, and the extended real numbers; \ and \
+The mathematical property of ‘lacking gaps’ is referred to
+as ‘completeness’ — the formal statement is that an
+ordered set is
+complete
+if every bounded, increasing sequence
+of elements has a ‘limit’. These limits are the first
+infinite operation that we define on numbers.
+3.2.1 Limits of sequences
+A
+sequence
+of numbers is an ordered list of numbers, which we
+may symbolize:
+\[a_1, a_2, \dots\]
+or
+\[\langle a_n\rangle.\]
+The members of a sequence are indexed by the natural numbers, \.
+The formal definition of a limit says the sequence \
+converges to \
+, or
+has limit \
+if and only if the terms of the sequence eventually stay arbitrarily
+close to \. Formally:
+\[\lim_{n\to\infty} a_n=l\]
+iff
+for each real number \, there exists a natural number
+\, such that for every natural number \,
+\.
+We will say a bit more about the symbol ‘\’ that
+appears in this definition later, but for now it just indicates the
+behavior of the sequence beyond any particular finite point.
+As we will demonstrate shortly, not every sequence has a limit, but we
+can define an important class of sequences that do. A sequence is
+increasing
+if each term in the sequence is at least as large
+as the previous term. A sequence is
+bounded
+if there is some
+real number that is larger than every term in the sequence. It turns
+out that every bounded, increasing sequence has a limit. The
+successive approximations to the measurement of some physical quantity
+with a finer and finer measuring unit will amount to a bounded,
+increasing sequence of numbers, and thus this definition of a limit
+allows us to give a numerical representation of any physical
+quantity.
+To show that every bounded, increasing sequence has a limit, consider
+the Dedekind cuts defining the individual real numbers in the
+sequence. Let us define a new Dedekind cut by taking its left set to
+contain every rational in the left set of at least one of these terms
+of the sequence, and taking its right set to contain every rational
+that is in
+all
+of the right sets of these terms. Because the
+sequence is bounded, we know that the right set is non-empty, and the
+rest of the properties of a Dedekind cut are not hard to check.
+It is not hard to check that the real number constructed in this way
+is the limit of the sequence. To see how this works in a specific
+case, we can consider the sequence \ This sequence is increasing, since each term is greater than
+the one that came before, and it is bounded, since 2 is a number that
+is strictly greater than every term in the sequence. The Dedekind cut
+constructed as above will correspond to the number 1. To see this,
+note that for any rational number q less than 1, we can let
+\. Then there is some \ such that
+\. The \th term in the sequence will then be
+greater than \, so \ will be in its left set, and thus in the
+left set we constructed above. But 1 itself, and every rational number
+greater than it, are all in the right set constructed above. This
+reasoning also shows that the sequence converges to 1 according to the
+definition of a limit. For any \, and an \ such that
+\, the \th term in the sequence is within
+\ of 1, and all later terms of the sequence are greater
+than the \th term, but still less than 1, so they must also all be
+within \ of 1.
+This fact about bounded, increasing sequences also underlies the use
+of infinite decimal notation for real numbers. When we say that the
+number \, we just mean that \ is the limit
+of the sequence \. One fact about this
+notation that many people find surprising is that the decimal notation
+\ is the limit of the sequence \, and thus is precisely 1. Some people feel the intuition that
+\ should somehow denote a number ‘infinitely
+close’ to 1, but not equal to it. We will be able to make sense
+of an idea like this in section
+3.4
+,
+ but it turns out that decimal notation is not the way to do it. For a
+useful demonstration of this point, see Vi Hart’s
+video
+9.999... reasons that .999... = 1
+.
+Many sequences that are not increasing have limits as well. For
+instance, the sequence \^n/n, \dots\)
+can be seen to converge to the value 0, even though it is not
+increasing. However, if a sequence is not bounded, like the sequence
+\, it does not have a limit—if it had a limit,
+there would have to be some values \, \, and \,
+such that all terms in the sequence beyond the first \ are within
+\ of \. But then any number that is larger than the
+first \ terms of the sequence, and also larger than
+\, would be a bound for the sequence. And some sequences
+that are not increasing also fail to have a limit—for instance,
+the sequence \ does not have a limit,
+because there is no value such that all terms of the sequence are
+eventually within \ of that value.
+3.2.2 Infinite sums and products
+With the definition of the limit of a sequence, we can now also often
+define infinitary versions of the operations of addition and
+multiplication. For a finite number of terms, we define the
+‘partial sum’ \ and
+‘partial product’ \. For an
+infinite
+sequence of numbers \, their
+infinite sum or product  is the limit of the
+partial sums or products:
+\[\sum_{i=1}^\infty a_i=\lim_{n\to\infty}\sum_{i=1}^n a_i\]
+and
+\[\prod_{i=1}^\infty a_i=\lim_{n\to\infty}\prod_{i=1}^n a_i.\]
+Thus,
+\=1\).
+We can show that if an infinite sequence of terms has a sum that
+converges, then the terms themselves must converge to 0. That’s
+because the terms \ must converge, so that for any
+\, there must be \, such that every one of the
+\ is within \ of the limit whenever
+\. Thus, every such \ must have absolute value less
+than \, so that both successive partial sums can be within
+\ of this limit. 
+However, just having the terms \ converge to 0 is not sufficient
+for the sum to converge. A deep and important fact about infinite sums
+is that \ fails to converge, because
+the partial sums eventually exceed any finite bound. To see this, note
+that the first term is greater than \, the next two terms are
+both greater than \, the next four terms are all greater than
+\, and in general there are \ terms that are each
+greater than \. So to get a partial sum greater than \, it
+is sufficient to add the first \ terms.
+But if the terms \ converge to 0, and each one is smaller in
+absolute value and has the opposite sign as the previous term, then
+the infinite sum must converge. If the first term in the sequence is
+positive, this is because the even numbered partial sums form a
+bounded, increasing sequence, and the odd numbered partial sums form a
+bounded, decreasing sequence, and the difference between successive
+terms of these two sequences is a term of the original sequence and
+thus converges to 0. Thus, the sum
+\^{i+1}}{i}\) converges . But a somewhat surprising fact, known as
+the Riemann rearrangement theorem, states that if the positive terms
+of a sequence have no finite sum, and the negative terms of the
+sequence have no finite sum, but the individual terms themselves
+converge to 0, then for any real number \, the terms of the
+sequence can be put into some order so that \ is the sum of the
+sequence in that order! To prove this, just rearrange the terms by
+beginning with enough positive terms to bring a partial sum above
+\, then enough negative terms to bring a partial sum below \,
+then enough partial sums to bring a partial sum above \ again, and
+so on. This process must be able to be carried out, because the
+partial sum of the positive terms eventually exceeds any finite bound,
+and similarly with the partial sum of the negative terms. Since the
+individual terms of the sequence are all eventually within
+\ of 0, these partial sums must eventually never differ
+from \ by more than \, and so the sum of this
+arrangement of the terms must converge to \.
+Thus, infinite summation has some importantly different features from
+finite summation. For any finite set of real numbers, the sum of those
+numbers is well-defined, and doesn’t depend on the order you add
+them. But with an infinite sequence of real numbers, there may be no
+number that is the sum of that sequence in that order. And even if
+there is, it may be possible to rearrange the terms of the sequence so
+that they sum to another value.
+But there are some cases in which the sum can be known to behave
+nicely. If all the terms in the sequence are positive, and there is
+some
+order in which their sum converges, then their sum must
+converge to this value in
+any
+order. This is because the
+partial sums form an increasing sequence, and for any two orderings of
+the terms, and any partial sum of one of those orderings, there must
+be some partial sum of the other ordering that includes all of the
+terms in that partial sum, and vice versa. Similarly, the value of the
+sum doesn’t depend on the order of summation if all the terms
+are negative. And if the positive terms have a convergent sum, and the
+negative terms of a series also do, then the sum of the series taken
+in any order must be equal to the sum of these two sums. Such a
+sequence is said to be
+absolutely convergent
+, as the sum of
+the absolute values of the terms converges.
+3.2.3 Limits of functions and the extended real numbers \
+Infinite sequences and sums aren’t the only ways that limits
+appear in mathematics. Functions of a real value can also have limits.
+The limit of a function of a real value \ as \ goes to
+infinity is defined in a similar way to the limit of a sequence
+indexed by natural numbers. To say
+\[\lim_{x\to+\infty} f=l\]
+is to say that for every \, there is an \, such that
+whenever \, \\) is within \ of \. For
+example, \, because \ can be
+made as small as one likes by choosing large enough \.  approaches
+positive
+infinity to
+distinguish this from the limit at the other end of the axis.)
+But it is also often useful to be able to define the limit of a
+function at some particular finite real-valued input. For instance, we
+might be interested in the function \=\frac{x^2-9}{x-3}\) as
+\ approaches 3.  This particular function is defined
+for all real numbers
+other
+than 3, and at any such input
+\ it takes the value \. We would like to be able to say that
+the limit of this function as \ approaches 3 is 6. The way we make
+this precise is to say that
+\[\lim_{x\to a} f=l\]
+iff
+for each real number \, there exists a \,
+such that for every \ with \,
+\-l|<\epsilon.\)
+That is, for any degree of approximation to the limit that we want,
+there is some degree of approximation for the input that suffices to
+guarantee that the function is that close. In the initial definition
+of a limit as \ goes to \, we required \ to
+‘approximate’ \ by being sufficiently large, but
+now we require it to approximate \ by having a difference from
+\ that is sufficiently small, just as the values of the sequence
+or function approximate the limit \.
+We can do the reverse to put \ on the right side of the limit
+as well. That is, we say
+\[\lim_{x\to a} f=+\infty\]
+iff
+for every \, there exists a \, such that for every \
+with \, \>M\),
+and similarly
+\[\lim_{x\to+\infty} f=+\infty\]
+iff
+for every \, there exists an \, such that for every
+\, \>M\).
+Since \ ’—similar methods work for
+‘\’) can appear in each place where a real
+number can appear in this limit notation, it is natural to see if we
+can extend the definition of real numbers so that it can be
+included.
+And in fact, if we take the definition of a Dedekind cut, and relax
+the requirement that the left and right sets be non-empty, we get two
+new elements—the one with an empty right set is greater than
+every rational number, and called ‘\’, while the
+one with an empty left set is less than every rational number, and
+called ‘\’. Within these ‘extended real
+numbers’, not only does every
+bounded
+increasing sequence have a
+limit, but
+every
+increasing sequence has a limit.
+Just as the real numbers emerge naturally as the tools to measure
+finite quantities, as the limits of rational approximations, the
+extended real numbers emerge naturally as the tools to measure
+potentially infinite quantities that can be approximated by finite
+quantities. \ can be taken to be the area of an infinite
+region, the length of an infinite line, the limit of \ as
+\ goes to 0, and so on. Although we are used to thinking of
+lengths and areas as positive numbers, it is sometimes useful to
+consider them as negative as well, when we care about the direction
+that they are pointing, and in this sort of situation \ is
+useful as well. Just as the real number operations of addition,
+multiplication, subtraction, and division correspond to certain
+operations on the quantities they measure, these operations can often
+be extended to these extended real numbers, as long as we are careful
+about a few cases.
+Adding or subtracting a finite area from an infinite area leaves it
+infinite. Adding a shape with infinite area to another shape of the
+same infinite area leaves the total area unchanged, and subtracting a
+negative infinite one from a positive one or vice versa is similar.
+But \ + \) cannot be meaningfully evaluated; nor
+can \ - \). If you take one infinitely large
+region, and remove an infinitely large region, you might be left with
+nothing, or a positive region, but you might still be left with an
+infinitely large region; or if the region you subtracted was larger
+than the original region, you might be left with a negative
+region—even an infinite negative region.
+These restrictions also apply to the use of these extended real
+numbers as the limits of sequences or functions. Whenever two
+sequences or functions both have a finite limit, their sum or
+difference will have a limit that is the sum or difference of their
+limits. When one has a finite limit and the other is infinite, then
+their sum or difference will be determined by the one that is
+infinite. But when both are infinite, there are problems. We can see
+that \, \, and \ are all functions that go
+to \ as \ goes to 0. If we add or subtract any of these
+functions from a function with a finite limit, the resulting function
+still has limit of \. If we add them to each other in any
+combination, the result still has limit \. But if we
+consider their differences, we see that \ has 0 as its
+limit, \ has \ as its limit, and \\) has \ as its limit. So “\” is said to be an “indeterminate form” that
+can’t be evaluated.
+Multiplying or dividing an infinite number by a finite positive number
+leaves it unchanged, and multiplying or dividing by a finite negative
+number reverses its sign. Similarly for multiplying the infinite
+numbers by themselves or each other. But an infinite number divided by
+an infinite number, or an infinite number multiplied by 0, are also
+indeterminate forms. As \ approaches 0, the function
+\ has limit 1, while the function
+\ has limit \. If we take the function
+\ whose limit is \ and multiply it by the function
+\ whose limit is 0, we get the function \, that has no limit
+as \ approaches 0  and \ as the paradigms of functions with
+limit \, rather than \ or \). For similar
+reasons, these extended real numbers don’t provide a way to
+divide by 0. So although the extended real numbers have some nice
+properties, and can be used for measurement in various cases,
+arithmetic involving them is not as nice as the standard real
+numbers.
+3.2.4 Related infinities
+The Dedekind cut construction was done as a way to make sense of
+limits of the rational numbers. This first created the real numbers,
+which can be thought of as the limits of bounded infinite sequences of
+rational numbers. We then considered
+all
+limits that made
+sense, including towards the ends of the real line, yielding the extended reals, including the standard reals as well as \ and \.
+Versions of this process can be carried out with other mathematical
+entities as well. Projective geometry adds additional points ‘at
+infinity’ to the Euclidean plane, one for each family of
+parallel lines, to help explain features of visual geometry, like the
+way that parallel railroad tracks appear to meet at the horizon,
+infinitely far away. Riemannian geometry extends the complex numbers
+by adding just a
+single
+number \ that one can
+approach simultaneously ‘in all directions’ in the complex
+plane. These alternate geometries provide foundations for material
+discussed in section
+2.2
+, and also 
+ section
+8.2
+. Several of these
+are discussed in the entry on
+nineteenth century geometry
+, 
+and others are discussed in topology textbooks under the topic of
+‘compactification’.
+Because these infinities are inherently considered as limits of finite
+approximations, there is no way for one infinite element to lie
+“beyond” another—at most it can lie in a
+“different direction”, the way that the points of
+convergence of different families of parallel lines do, or the way
+\ and \ do in the extended reals.
+But as we will shortly see, there are other notions of infinity for
+which one infinity can lie “beyond” another. In section
+3.3
+,
+ we will discuss the ideas of infinity that we get from generalizing
+the use of the natural numbers for counting, rather than generalizing
+the use of the real numbers for measuring. And in section
+3.4
+,
+ we will discuss yet another mathematical theory of infinity, which
+arises from an alternate formulation of calculus, where the
+\’s and \’s are treated as actually
+being infinitely small, rather than just being arbitrary finite
+measures of smallness.
+3.3 Infinities of counting
+3.3.1 Preliminaries
+As mentioned above, this section is more mathematically dense than the
+previous two. However, we need this level of mathematical rigor to
+develop Cantor’s theory of ordinals and cardinals, which are
+widely regarded as the most significant mathematical advance in our
+understanding of the infinite.
+An insomniac, counting imaginary sheep to try to get to sleep, will
+never run out of natural numbers to do the job: 1, 2, 3,
+…. There is no bound on the set of natural numbers. This is our
+first infinite set. It is perhaps a natural thought that there is just
+one infinity for counting infinite sets, which we might symbolise
+‘\’. The thought may seem even more natural when
+we
+define
+an infinite set as one that has the same size  as a proper subset of it. In fact,
+the thought could hardly be more mistaken: as we will soon see,
+according to mathematical orthodoxy—namely contemporary set
+theory and the attendant notion of cardinality of a set—there
+are
+infinitely many infinities
+. This prompts a series of
+questions: Is there a smallest one? Yes, as we will see. Is there a
+largest one? No, as we will see. What can be said about the spacing
+between the infinities and how far infinities extend? Well, we will
+see. We can also ask parallel questions about the infinitely
+small.
+Recall Galileo’s paradox of infinity, based on the collision of
+the part-whole intuition and the bijection intuition, and his
+conclusion that one cannot apply the relations of ‘less
+than’, ‘equality’, and ‘greater than’ to
+infinite collections. Modern mathematical orthodoxy, embodied in
+contemporary set theory, rejects Galileo’s conclusion. That
+orthodoxy is grounded in the bijection intuition, following Cantor
+rather than Euclid and Bolzano. When there is a bijection between two
+sets, we say that they have the same
+cardinality
+. The notion
+of cardinality does not respect the part-whole intuition. For example,
+the squares of natural numbers are a proper subset of the natural
+numbers, but they have the same cardinality since they can be put in
+one-to-one correspondence.
+Foundational programs such as neo-logicism also start from a notion of
+“equinumerosity” based on the Cantorian bijection
+intuition. It was not until the early 2000s that a group of
+mathematicians working on non-standard analysis  developed a theory of “numerosities” that agrees on
+finite sets with Cantorian cardinality but that also upholds the
+part-whole intuition for infinite sets, and thus diverges from
+Cantorian cardinalities. . One can consider numerosities as a
+refinement of Cantorian cardinalities. Every two sets that have the
+same numerosity have the same cardinality, but the converse does not
+hold. For instance, in this approach the set of squares has numerosity
+strictly less than the set of natural numbers. See the
+Supplement on Theories of Numerosities
+.
+3.3.2 Set theory: \ and \
+The sort of infinities that are most familiar to philosophers are
+infinities used for counting. In the early 1820s, Bolzano arrived at
+the idea that an infinite set is one for which there is a bijection
+between the set and a proper subset of it.  Dedekind  gave this as a
+definition
+of being
+infinite. It is easy to prove that a Dedekind-infinite set must
+contain a set that is just as large as the natural numbers. See the
+Supplement on Proofs of Theorems
+.
+Dedekind’s
+definition is only one among several alternative definitions of
+infinite set  that have been
+proposed by him and after him. If one assumes the Axiom of Choice,
+these alternative definitions turn out to be equivalent.  of pairwise-disjoint non-empty sets,
+there exists a function that selects exactly one element from each set
+in \.) But without the Axiom of Choice, the definitions can be
+shown not to be equivalent and the foundational situation is rather
+delicate but well understood .
+The modern theory of infinities of counting derives from Cantor
+. He observed that a natural way to set up a bijection between
+finite sets is to order the elements of each set, and pair the first
+element of one set with the first of the other, the second of one set
+with the second of the other, and so on. This sometimes works with
+infinite sets—for example, it gives the one-to-one
+correspondence between the natural numbers and the squares . When there is a one-to-one
+correspondence between two sets, such that every pair of elements of
+one set bears the same ordering as the corresponding pair of elements
+of the other set, the two ordered sets are said to have the same
+order type
+.
+But for some infinite sets 
+there is no first element under their standard ordering. In this
+case, it is possible to re-order the elements of the set so that
+every non-empty subset has a first element, so that this process
+works. Such an ordering is called a
+well-ordering
+. 
+We can reorder the integers, alternating between positive and
+negative: 0, -1, 1, -2, 2, -3, 3, …. This ordering has the same
+order type as the natural numbers, and thus enables a one-to-one
+correspondence between the natural numbers and the integers. One of
+Cantor’s most striking early observations is that the same is
+possible with the positive rational numbers. Every positive rational
+number can be written uniquely in lowest terms as some fraction
+\, where \ and \ are positive integers with no common
+factor. We can then order these fractions by first comparing the sum
+\ of numerator and denominator, and then if the sum is equal for
+two fractions, put the one with lower numerator \ first. This
+ordering begins 1, 1/2, 2, 1/3, 3, 1/4, 2/3, 3/2, 4, 1/5, 5, 1/6, 2/5,
+3/4, 4/3, 5/2, 6, ….  Every positive rational number must appear in this list
+, and only has finitely many
+predecessors  fractions whose sum of
+numerator and denominator is \).
+The ordering: 1, 1/2, 2, 1/3, 3, 1/4, 2/3, 3/2, …. Every
+rational number is eventually included.
+However, Cantor also observed that different well-orderings of the
+same infinite sets will produce a different order type. For instance,
+we can define an ordering on the integers where every non-negative
+integer comes before every negative integer, with any two integers of
+the same sign being ordered by their absolute value. To approximately
+represent this ordering we could write it as \. In this ordering, every non-empty subset still has a
+first element . If we pair up
+the first element of this ordering with the first of the standard
+ordering on the natural numbers, and the second with the second, and
+the third with the third, and so on, then the negative integers would
+not be paired with any natural number. But we can put the natural
+numbers into the same order type by declaring the odd numbers to be
+before the even numbers, and ordering them by size within these two
+sets: \. A single infinite set can be
+given orderings of many different order types, and also different
+orderings of the same order type .
+Cantor noted that for any two well-ordered sets, the initial positions
+in one ordering  correspond to
+the initial positions in the other, the way that they do for finite
+sets. In fact, he showed that
+all
+of the positions of one
+well-ordering must correspond to initial positions in the other.  Thus, there is a single list of all the possible
+positions in well-ordered sets, beginning with the first, second,
+third, and so on, and these positions are called the
+ordinal
+numbers
+. A well-ordered set can be said to have its own ordinal
+number, which is the first ordinal number that does not correspond to
+a position in that set.
+A
+cardinal number
+—also called a
+cardinality
+—represents how many elements a set has. Two
+sets have the same cardinal number if it is possible to come up with
+any correspondence at all between the members of one and the members
+of the other, even if this correspondence fails to respect the
+ordering or any other structure of the sets. Two
+finite
+sets
+have the same cardinal number if and only if they have the same
+ordinal number. For infinite sets, if they are well-ordered and have
+the same ordinal number, then they have the same cardinal number
+. But they may have the same cardinal number without having
+the same ordinal number: we have seen that sets of one cardinality can
+be represented with many different order types.
+Cantor used lowercase Greek letters to represent infinite ordinal
+numbers, with \ representing the order type of the standard
+ordering of the natural numbers. Addition of ordinal numbers
+corresponds to the order type that results from taking an ordering of
+the first type, followed by an ordering of the second type. Thus,
+\ represents the order type of the integers with the
+non-negative numbers first and the negative numbers afterwards, while
+\ represents the order type of the natural numbers with
+just one element put at the end. Note that \ is the order
+type of a single element, followed by a copy of the natural numbers,
+which is in fact the same as the order type of the natural numbers!
+Thus, \, which is not equal to \. So
+ordinal addition is not commutative.
+Von Neumann  defined a canonical representation of ordinal
+numbers, using the fact that the ordinals are themselves well-ordered.
+Each ordinal is represented by the set consisting of all smaller
+ordinals. Thus 0 is represented by the empty set \, 1 by
+the set containing the empty set \, 2 by the set
+containing both of those \, and so on.
+\ is then the set containing all of these finite ordinals
+\,
+\ is the set containing it as well
+\,
+and so on.
+Multiplication of ordinal numbers corresponds to replacing each
+element of the second ordering by an entire ordering of the first
+type. \ represents the order type of an
+\-sequence of \-sequences, which we can have by
+taking the positive rational numbers and sorting them first by
+denominator, and then by numerator: 1, 2, 3, … 1/2, 3/2, 5/2,
+…, 1/3, 2/3, 4/3, 5/3, …, 1/4, 3/4, 5/4, …. Note
+that \ is 2 copies of \, while
+\ is \ copies of 2. \ is thus
+\, while \ is \, which is
+\.  So again, ordinal multiplication is
+not commutative.
+But for any ordinal, one can generate another ordinal by putting one
+more element at the end. And for any increasing sequence of ordinals,
+there is a limit of that sequence. Cantor also defined a notion of
+exponentiation for ordinals, and this gives many different ordinal
+numbers:
+0, 1, 2, 3, … ,\ \ \
+…, \,\)
+\ \ \
+\ …, \,\) …, 
+\ …, \ …, \ 
+\ \ …,
+\ …,
+\ …, \
+\  \ \ …). But these
+ordinal numbers all correspond to the same cardinal number, which is
+that of the natural numbers.
+At this point, one might be forgiven for thinking that there is no
+cardinal number greater than that of the natural numbers, just as
+there is no extended real number larger than \. However,
+Cantor’s second striking result is that the cardinality of the
+positive real numbers is in fact greater than the cardinality of the
+positive integers, and his third striking result is that for every
+set, the set of all its subsets—its power set—has an even
+greater cardinality. Although many different infinite sets of
+different order types can all be put into one-to-one correspondence
+with each other, there are some infinite sets that cannot. Sets whose
+cardinality is equal to that of the natural numbers  are said to be
+countably infinite
+or
+denumerable
+, while infinite sets that are not countable  are said to be
+uncountable
+. See proofs of the results in the
+Supplement on Proofs of Theorems
+.
+Thus, just as there is an infinite hierarchy of infinite ordinal
+numbers, which Cantor represented with lowercase Greek letters, there
+is also an infinite hierarchy of infinite cardinal numbers, which
+Cantor represented with Hebrew letters, and in particular aleph,
+“\”. The finite cardinals are 0, 1, 2, 3,
+….  The first infinite cardinal, that of the natural numbers
+, is \. Cantor’s
+“well-ordering principle”, stating that every set can be
+put into some well-ordered form , implies that every cardinal number can be represented by an
+ordinal number, and the definition of ordinal numbers ensures that for
+any non-empty set of ordinal numbers there is always a first. So the
+cardinals must in fact be well-ordered. So Cantor used ordinal numbers
+to designate each cardinal’s position in their ordering.
+\ is the first cardinal beyond \, \
+is the next beyond that, and after \, \, and so
+on, we eventually reach \, \,
+\, and so on with one cardinal for every
+ordinal.
+Because we have this one-to-one correspondence between the cardinals
+and the ordinals, one might be tempted to say that the set of
+cardinals and the set of ordinals have the same order type, and then
+ask what the ordinal of this order type  is.
+However, if there were such an ordinal, there would be a
+paradox—it would have to contain, and thus be larger than, all
+ordinals, including itself! This is the
+Burali-Forti paradox
+.
+Relatedly, since every set has a cardinality less than that of its
+power set, there can be no set that contains everything . The two results imply that there cannot be a
+set of all ordinals or a set of all sets. In a similar way one argues
+that there cannot be a set of all cardinals. As a consequence of the
+above results we can also answer some of the questions we raised at
+the beginning: there are infinitely many cardinal numbers and
+infinitely many ordinal numbers. However, there is neither a set of
+all cardinal numbers nor a set of all ordinal numbers. Thus, the
+infinity of the cardinals and of the ordinals cannot be measured by a
+cardinal or an ordinal, for otherwise a paradox would ensue. 
+Although it took several decades from Cantor’s work to find a
+system of axioms for set theory that avoids these paradoxes , 
+Cantor already saw, in this unreachability of the totality of all
+ordinals or cardinals, a notion of “absolute
+infinity”. Although in his system, there are many infinite sets
+that are tractable and graspable at many different levels, starting
+with the natural numbers , he discovered an even greater
+Aristotelian potential infinity. This led to the distinction between a
+“set” as a totality that can be grasped in the relevant
+sense, and a “proper class”, which is too large even for a
+system that encompasses each of Cantor’s many infinities.
+We can define addition for cardinal numbers as the cardinality of a
+set that is the union of two disjoint sets of those cardinalities. We
+can define multiplication for a pair of cardinal numbers as the
+cardinality of the set of all ordered pairs whose first elements are
+drawn from a set of the first cardinality and whose second elements
+are drawn from a set of the second cardinality. But it turns out that
+these operations are relatively trivial once we get beyond the finite
+cardinals—just as we saw that the sum or product of two
+countable ordinals was still countable, the sum or product of two
+infinite cardinals is equal to whichever of the two is larger!  Thus, one can’t get to
+\ from \ by means of addition or multiplication
+.
+However, cardinal exponentiation is more powerful. It turns out to be
+natural to define \ as the cardinality of the power set of
+a set whose cardinality is \.  and
+\ are traditionally used as variables to represent infinite
+cardinals, with letters \ and \ used for ordinals.)
+It turns out that the cardinality of the set of real numbers
+ is the same as that of the power set of
+the natural numbers, \, and Cantor showed that
+\. Cantor conjectured that \
+was in fact equal to \, and this conjecture was called the
+“Continuum hypothesis”. 
+Just as \ is a cardinality that can’t be reached by
+the operations of ordinal addition, multiplication, or exponentiation,
+even in the limit, one might conjecture that even before one reaches
+the Cantorian absolute infinity, there are further cardinalities that
+can still be grasped in some sense, but can’t be reached even by
+the stronger operation of cardinal exponentiation, even in the limit.
+Such conjectures have turned out to be surprisingly fruitful for the
+study of set theory and mathematical logic generally. 
+Although we have defined addition and multiplication for both ordinals
+and cardinals, their features make it hard to make sense of
+subtraction or division. First, the non-commutativity of the ordinal
+operations, and the triviality of the cardinal operations, makes it
+hard to define meaningful inverses of these operations.  But more importantly, the
+conceptual ideas of counting 
+don’t really allow for negatives or fractions, the way that the
+conceptual ideas of measuring and geometry do .
+ Counting involves treating each element as discrete and unique, and
+there is no way for multiple elements to combine to yield nothing  or to yield a unit . However,
+measurement  involves a sort of structure on the
+thing being measured so that some measurements can be fractions of
+others, or can point in the opposite direction, which yields
+meaningful notions of division and subtraction.
+This section has given just an introductory taste of the mathematics
+of ordinal and cardinal numbers—it has come to be called
+Cantor’s Paradise
+. But we have already seen many
+characteristic features of these notions of infinity that
+differentiate them starkly from those discussed in the previous
+section. Just as the differences between the natural numbers and the
+real numbers demonstrate the differences between counting elements of
+sets, and measuring lengths, areas, and so on, the differences between
+Cantor’s cardinals and the extended reals
+further demonstrate differences between counting and measuring.
+For further discussion of the kind of material presented in this
+section, see the SEP entries on:
+set theory
+,
+the early development of set theory
+, and
+the axiom of choice
+.
+An excellent introduction to basic set theory is Enderton ; an
+informal but still rigorous introduction is Sheppard ; more
+advanced texts include Devlin , Kunen , and Jech . For the
+higher reaches, to which we will come back in section
+4
+, see Kanamori .
+Set theory provides a theory of cardinality that implements the idea
+that “sameness of size” upholds the bijection intuition.
+The recent theory of numerosities, developed by Benci, Di Nasso, and
+Forti, by contrast, upholds the part-whole intuition. See the
+Supplement on Theories of Numerosities
+.
+3.4 Infinitesimals and hyperreals
+We have already discussed a notion of \ and of \
+that is designed to provide values for real-valued functions to take
+as limits at special points. But the understanding of limits
+themselves was originally thought to require a notion of
+“infinitesimally small” distances. While these quantities
+were considered problematic for several centuries, in recent decades
+some mathematical entities with their properties have been rigorously
+studied.
+3.4.1 Newton and Leibniz
+An infinitesimal is a number smaller in absolute magnitude than any
+positive finite number, and yet not zero. Infinitesimals have had a
+chequered history. Early work in the calculus, as we have seen when
+presenting the structure of L’Hôpital’s 1696
+treatise, was mostly based on a geometrical or kinematic
+ understanding of infinitesimals. Here we
+treat infinitesimals arithmetically, i.e. within the context of
+the real number system, while conveying the key features of how the
+early analysts made use of them. To figure out the slope of the
+function \=x^2\) precisely at one point, one considered an
+“infinitesimally small number” \ and considered
+the slope of the straight line through \\) and
+\\).
+To find the slope of a function, one considers the slope of a straight
+line that intersects it at two “infinitesmally close”
+points.
+This slope is equal to \^2-x^2}{\epsilon}\). In
+order for this fraction to make sense, \ must be non-zero.
+However, we can calculate that this value is
+\, or \. At
+this point, we no longer need \ to be non-zero, so the
+slope can be said to be just \. This sort of slippage between
+non-zero and zero for these infinitesimals is what made Berkeley refer
+to them as “the ghosts of departed quantities”. However,
+engineers, scientists and mathematicians who actually made use of the
+calculus rested content in the knowledge that the calculus delivered
+the goods.
+In the 19th century, Cauchy, Bolzano, Weierstrass, Dedekind and Cantor
+sought to establish foundations for real analysis that gave no role to
+infinitesimals: in what became the canonical account of the calculus,
+Cantorian set theory and the \-\ formalization of
+the notion of a limit described in section
+3.2
+allowed for a fully rigorous development of real analysis.
+Instead of taking
+particular infinitesimal
+values, one
+quantifies
+over values of
+real-valued variables
+\ and \. For example, the claim that the slope of
+the squaring function at \ is \ is interpreted as saying that
+for any
+desired degree \ of approximation,
+there is
+some finite \ such that for any \
+within \ of \, the slope of the line from \\) to
+\\) approximates \ to within \. A
+single infinitesimal is replaced by a relation involving two nested
+quantifiers. The process of elimination of infinitesimal quantities
+from the calculus was a central part of a larger process known as the
+“arithmetization of analysis”, which aimed at removing
+kinematical and geometrical notions from the calculus in favour of
+purely arithmetical notions. .)
+This infinitesimal-free program accomplished its goals
+successfully—among its major accomplishments were the rigorous
+definition of a continuous function at a point and the definition of
+the Riemann integral. However, one should keep in mind that other
+areas of mathematics, such as geometry, continued exploiting
+infinitesimal considerations and studied extensively
+non-Archimedean
+number systems. Archimedes’ axiom
+states:
+given any two areas, or two distances, or any two quantities of the
+same sort, say \ and \, it is possible to add \ to itself
+finitely many times so that the quantity obtained is greater than
+\.
+Non-Archimedean systems are ones in which this axiom does not hold. If
+the 17th century engagement with infinity, and Cantor’s work in
+set theory, can be seen as revolutions, the study of non-Archimedean
+mathematics in the second half of the 19th century can be likened to
+an infinitary uprising.
+Many of the quantities considered in 17th century calculus, such as
+Leibnizian infinitesimals, do not obey the Archimedean axiom. An
+infinitesimal can be added to itself any finite number of times but
+the outcome of that process will never be greater than any finite
+quantity, however small. A pervasive historiographical tradition has
+argued that with the elimination of infinitely small quantities from
+the calculus, non-Archimedean quantities were relegated to engineering
+practice for a long time. According to the standard account, it was
+only in the 1960s that infinitesimals came back when Abraham Robinson
+presented his theory of non-standard analysis, which has received a
+lot of attention from philosophers and mathematicians .
+ Robinson’s theory gave a legitimate mathematical status to
+infinitely small and infinitely large quantities in the reconstruction
+of the infinitesimal calculus, now developed accordingly to rigorous
+model-theoretic techniques. For a long time, Robinson’s work was
+hailed as the first successful effort to develop a system of
+non-Archimedean quantities. But Philip Ehrlich, in a series of
+fundamental papers , has argued that this
+widespread perception needs serious questioning. Indeed, he has shown
+convincingly that interest in non-Archimedean mathematics emerged in
+the 1870s and continued to grow in the hands of mathematicians such as
+Veronese, du Bois-Reymond, Levi-Civita, Hahn, Stolz, Hardy, and
+others.
+It would be out of place in this entry to attempt even a small
+survey of the developments mentioned above. We simply refer to the
+reader to Ehrlich  and . The interconnection with many
+important related issues such as Conway’s surreal numbers 
+ and other alternative approaches to the construction of the real
+numbers, such as smooth infinitesimal analysis mentioned at the end of
+section
+3.4.2
+,
+ cannot be properly addressed here. See Salanskis and Sinaceur ,
+Ehrlich , Berger, Osswald, and Schuster , and Ehrlich .
+3.4.2 Non-standard analysis and infinitesimal analysis
+As a result of the rigorous definitions in the calculus mentioned
+above, from the mid-19th century most mathematicians working in
+analysis abandoned infinitesimals. However, in the mid-20th century,
+Robinson  showed that it is possible to give a rigorous
+definition of infinitesimals, and that infinitesimals can be used in a
+non-standard development of real analysis . While he developed his non-standard
+analysis using model theory, subsequent developments have also been
+grounded in algebra and topology. Robinson’s approach supplies
+an extended number system—the
+hyperreal
+number
+system—that contains the standard real number system, plus
+further ‘infinitesimal’ numbers whose absolute values are
+greater than 0, but less than any positive standard real number.
+Robinson’s construction of the hyperreals provides a set with
+the same cardinality as the standard reals. Simple modifications of
+the construction can create sets of hyperreals of larger
+cardinality.
+Importantly, due to the logical techniques used in its construction,
+Robinson’s system behaves exactly like the standard finite real
+numbers for any sentence expressible within the algebraic language of
+addition and multiplication. Thus, every number other than 0 has a
+multiplicative inverse, and if \, then \. In
+particular, this means that if \ is a positive
+infinitesimal number, then \ is an infinitely large
+number! Unlike Cantorian infinities of counting from section
+3.3
+these infinitely large numbers are subject to subtraction and
+division as well as addition and multiplication, and unlike the
+infinities of the extended real line from section
+3.2
+,
+ they behave just as nicely as the finite numbers with respect to
+them. For instance, statements such as these hold of standard real
+numbers as well as of the new infinitely small and infinitely large
+numbers:
+\ ;
+\ ;
+\=xy+xz\) .
+In fact, Robinson’s hyperreals satisfy a “transfer
+principle”—if statements are formulated entirely within a
+first-order language for the reals, then they are true of the standard
+reals if and only if they are true for the hyperreals. So any proof of
+such a theorem in one system can be transferred to the other. This
+sometimes greatly simplifies calculations and proofs of theorems.
+Consider the limit of the quantity \^3-x^3)/h\) as \
+approaches 0. In the standard reals, to show that this is \, we
+need to show that for every \ there is a \ such
+that for any value of \ less than \, the corresponding
+value of this function is less than \ away from \.
+In this case, it turns out that choosing \
+works when \ is sufficiently large, and choosing \ works when \ is sufficiently small, but figuring out
+these choices is difficult.
+For the hyperreals though, it is sufficient to show that this value is
+infinitesimally close to \ whenever h is infinitesimal.
+\[\begin{align}
+\frac{^3-x^3}{h} &= \frac{x^3+3x^2h+3xh^2+h^3-x^3}{h} \\
+   &= 3x^2+3xh+h^2,
+\end{align}\]
+and for any real \, \ is infinitesimal whenever \ is
+infinitesimal.) For any particular real \, this shows that
+there is some
+hyperreal
+\ that works , and by the transfer principle we can conclude that for
+this real \ there is some
+real
+\ that
+works, and we no longer need to worry about the details of how to find
+it. Thus, we can validate the reasoning of Newton and Leibniz that
+allows them to treat infinitesimals as non-zero for calculations until
+we get to the final result, and then treat them as zero at the end.
+They really work like the “ghosts of departed quantities”
+that Berkeley satirized!  for a
+classic source of this debate.)
+For results stated in a first-order logical language, the hyperreals
+and the standard reals satisfy the transfer principle. But for results
+about
+sets
+, they behave differently. Every bounded set of
+standard reals has a least upper bound. However, for instance, the set
+of infinitesimal hyperreals is bounded , but there is no
+least
+upper
+bound . Edward Nelson 
+pioneered an alternative approach—Internal Set Theory—on
+which the basic language of mathematics is enriched in order to allow
+us to distinguish between standard and non-standard real numbers, as
+well as “internal” and “external” sets. On
+Nelson’s approach, infinitesimals are non-standard real numbers
+that are smaller in absolute value than any positive standard real
+numbers. “Internal sets” are those that can be defined in
+the basic language, and they behave just the same as standard sets of
+standard reals—for instance, bounded internal sets always have a
+least upper bound. But the set of all infinitesimals, just like the
+set of all standard real numbers, is an “external set” of
+the theory that can’t be defined within the language, and thus
+doesn’t necessarily have a least upper bound.
+The approaches pioneered by Robinson and Nelson do not allow us to
+prove results about the standard real numbers that
+cannot
+be
+proved using standard real analysis. However, these approaches do
+provide simpler—and, in some sense, more intuitive—proofs
+of many theorems of standard real analysis. ).
+And there are cases of results in real analysis that were first proven
+using non-standard real analysis .) Moreover, these approaches clearly show that we do
+not need to adopt the \-\ formalization of the
+notion of a limit in order to have access to a fully rigorous
+development of real analysis.
+The literature on non-standard analysis is very rich. See Dauben 
+for a biography of Robinson with special emphasis on non-standard
+analysis. See also Goldblatt  for a recent formal introduction and
+Cutland, di Nasso, and Ross  for recent mathematical developments.
+The reader is referred to the extensive bibliographies contained in
+those volumes for further references.
+An interesting alternative to nonstandard analysis, which allows for a
+development of substantive parts of mathematics, goes under the name
+of
+ infinitesimal analysis
+. This differs from both
+ordinary and nonstandard analysis by allowing
+nilpotent
+infinitesimals
+, namely ‘linelets’ \ such that
+\ but \. The consistency of such a theory
+is proved using toposes in category theory. The best exposition of the
+topic is Bell  ; philosophical aspects
+of the theory are discussed in Hellman and Shapiro . Arthur 
+discusses infinitesimal analysis in connection to Leibniz and makes
+points similar to those made by Bos  on Leibniz and non-standard
+analysis. Constructive interpretations of non-standard analysis are
+developed in Salanskis , which includes discussions of
+Nelson’s approach as well as the French school of non-standard
+analysis . For further discussion of infinitesimals,
+see Davis , Thomason , Bell , and the entry on
+continuity and infinitesimals
+.
+3.4.3 Surreal numbers
+Dedekind showed how to fill the gaps
+between
+rational
+numbers; Cantor showed how to extend  numbers
+beyond
+the existing finite numbers. John Conway 
+integrated both ideas. He developed a very different system that
+generalizes von Neumann’s representation of Cantor’s
+ordinals, as well as Dedekind’s representation of the real
+numbers, to generate a much larger field that has become known as the
+“surreal numbers”. It contains a copy of each ordinal and
+cardinal number, while defining operations that work just like
+addition, subtraction, multiplication, division, exponentiation, and
+the taking of roots, on the standard reals. In particular, even the
+infinite and infinitesimal surreal numbers are amenable to these
+operations. Thus, as well as familiar numbers, we now have numbers
+such as \
+and so on. Indeed, as Ehrlich  observes, the surreal
+numbers may plausibly be regarded as including “all numbers
+great and small”! The surreal numbers can apparently be applied
+in cases where there is no straightforward way to use hyperreals, as
+for example in the treatment of Pascal’s Wager, discussed in
+section
+7.3
+—see Hájek .
+Because the field of surreal numbers contains copies of all the
+ordinals, it is too big to form a set. But because the operations
+behave like the operations on the standard reals, these copies of the
+ordinals don’t represent counting. See the
+Supplement on the Construction of Surreal Numbers
+for a summary of Conway’s construction of them. Other
+constructions of this same structure have been carried out by Knuth
+ and Gonshor  in more introductory texts.
+3.5 Wrapup
+Let us take stock. In response to worries that infinities in
+mathematics are suspect , rigorous mathematical theories
+of infinity have been developed . But one might worry
+that, even if we can talk with mathematical rigor about infinities,
+they do not correspond to or apply to anything in the real world . Infinities might just
+be castles in the sky. Furthermore, one might suspect that we can, by
+some further mathematical developments, remove any reference to
+infinities in any practically important mathematics. The following
+section places this dialectic in the context of general questions
+about mathematical ontology, canvassing some important historical
+attempts to expunge the infinite from mathematics. It then explains
+the very difficult—perhaps insurmountable—challenges that
+any such attempt faces.
+4. Mathematical ontology
+Various questions about infinity naturally arise in the course of
+theorizing about ontology. If mathematical objects exist, are there
+infinitely many of them? Do individual infinite objects like the ones
+mentioned above exist, in addition to the infinitely many individual
+finite numbers? This article will not directly discuss the question of
+whether and in what sense mathematical objects exist. Instead, we will
+focus on the question of whether the infinities discussed above exist
+in the same sense as the finite integers. For more on the general
+questions of mathematical existence, see the entries on:
+logic and ontology
+,
+philosophy of mathematics
+,
+platonism in the philosophy of mathematics
+,
+nominalism in the philosophy of mathematics
+,
+fictionalism in the philosophy of mathematics
+,
+naturalism in the philosophy of mathematics
+, and
+logicism and neologicism
+.
+Most viewpoints in the philosophy of mathematics accept the existence
+of all of the finite and infinite objects mentioned so far in exactly
+the same way that they accept the existence of finite integers.
+ Standard set
+theories can prove the existence of all these objects, and for most
+mathematicians and philosophers, this is all that is needed. Logicist
+and neologicist accounts of mathematics may obtain the existence of
+infinite sets or infinitely many numbers by explicit postulation  or as the outcome of an implicit
+postulation . While the axiom of
+infinity is easily stated and understood, Hume’s Principle has a
+peculiar form, for it postulates the existence of a function \
+that sends concepts into objects while respecting an equivalence
+relation \ among concepts. Formally it is stated as
+follows:
+\[\tag{HP}
+\forall B\forall C\, \# B = \# C \text{ iff } B \approx C
+\]
+where \ is short-hand for one of the many equivalent
+formulas of pure second order logic expressing the equivalence
+relation “there is a one to one correlation between the objects
+falling under \ and those falling under \”. Informally,
+it can be read as saying that two concepts \ and \ have the
+same ‘number’ if and only if there is a one to one
+correspondence among the objects that fall under \ and those that
+fall under \. Principles like HP that define a function from an
+equivalence relation are called
+abstraction
+principles. By
+presupposing the existence of a function that sends concepts into
+objects, Hume’s Principle exploits the possibility of defining
+infinitely many concepts that do not stand in the equivalence relation
+mentioned in its right-hand side to generate infinitely many natural
+numbers. There are other varieties of neologicism that do not
+postulate Hume’s Principle or an axiom of infinity at the outset
+but yield infinitely many natural numbers by means of other logical
+principles . In addition, all
+these varieties of neologicism generate at least an infinite cardinal
+numbers and what is of philosophical relevance here is the different
+resources they use to establish these results.
+Incidentally, Frege’s logicism and the neologicist program use
+one-to-one correspondence to state identity criteria for
+“concepts” even when infinitely many objects fall under
+the concepts. For alternative criteria for assigning numbers to
+infinite concepts see Mancosu  and .
+In light of the paradoxes for early set theories , some mathematicians
+and philosophers worried that standard set theory might be
+inconsistent as well. One alternative viewpoint on mathematics is
+intuitionism
+, which only accepts the existence of
+mathematical objects whose construction can be carried out in some
+sense by the human mind. Intuitionism requires a revision of logic,
+since this limitation invalidates the Law of Excluded
+Middle—there are cases in which we can prove that the
+non
+-existence of a certain type of object would lead to a
+contradiction, but don’t have any method of constructing such an
+object, so that there might be a truth-value gap. Intuitionists often
+accept the Aristotelian limitation to “potential
+infinities”, rather than “actual infinities”, but
+there is also sophisticated intuitionistic reasoning about what types
+of infinite entities might exist. 
+Another viewpoint, associated with David Hilbert, is called
+finitism
+. Most finitists accept classical
+logic, but worry about the consistency of theories of infinite
+objects. Hilbert’s worries about consistency were fueled by the
+paradoxes that the new infinitary set-theoretic mathematics was giving
+rise to  Hilbert was convinced that
+quantification over such infinite totalities was at the root of the
+troubles. Finite objects, like configurations of strokes corresponding to the natural numbers, and finite sentences
+of a formal language, are taken by the Hilbertian finitist to be
+unproblematic, since these objects can in some sense be grasped
+individually and thus in their  totality. But infinite
+objects are taken to be problematic: this includes Cantor’s
+higher ordinals and cardinals, and all the geometric, algebraic, and
+topological objects of which mathematicians were starting to develop
+detailed theories at the turn of the 20th century.
+Hilbert’s proposed project  was to
+replace talk of these infinitary entities themselves with talk of the
+finitely long sentences that we ordinarily interpret as being about
+the entities. His goal was to axiomatize the theories of these
+infinite objects, and then to prove, using finitary means of syntactic
+reasoning about the language, that these theories are consistent.
+While this idea doesn’t
+deny
+the existence of the
+infinite objects, it suggests a methodological approach of only
+literally accepting the finitary objects, whether strokes standing for the integers or
+sentences. 
+Some mathematicians and philosophers have adopted finitism not merely
+as a methodological viewpoint, but also as a metaphysical one. Finite
+objects, like numbers and sentences, exist , but infinite objects  don’t. Versions of this view are
+often attributed to the 19th century number theorist and algebraist,
+Leopold Kronecker, who is quoted as saying “The dear God created
+the whole numbers; everything else is the work of man.”
+Kronecker criticized Cantor’s work as theology rather than
+mathematics. Hilbert started his program with the intent of defending
+Cantor while working within a framework dialectically acceptable to
+Kronecker’s allies. But when Kurt Gödel proved that no
+finitary theory for arithmetic and syntax can even prove its
+own
+consistency, let alone prove the consistency of a
+stronger theory for talking about completed infinities,
+Hilbert’s program was taken to have failed at disabusing the
+metaphysical finitists. Gödel’s incompleteness theorems
+apply most notably to Peano Arithmetic. The language of Peano
+Arithmetic is given by \, where \ is the
+successor function . Within it one can
+express ordinary arithmetical claims such as the commutativity of
+addition and the infinitude of prime numbers. The axioms of Peano
+Arithmetic tell us that the function \ is one-one; that 0 is not
+the successor of any number; that \ and \ satisfy the usual
+recursive definitions; and finally we have a schema of induction for
+every formula \\) expressible in the language, i.e. if \\)
+and for all \ \rightarrow A\), then for all \\).
+The detailed foundational work carried out in set theory and other
+foundational areas has in many ways dispelled the fear of impending
+doom that characterized the reaction to the paradoxes at the beginning
+of the twentieth century. As a consequence, most mathematicians today
+are perfectly happy to work with completed infinities. But there are
+still some finitists and intuitionists.
+An intermediate position is that defended by classical
+“predicativists” such as Poincaré and Weyl. The
+theory, presented in a satisfactory logical way by Feferman and
+others, accepts the excluded middle on the natural numbers 
+but does not accept the existence of the power set of the natural
+numbers. According to
+predicativism
+, sets
+exist only if they are definable in some non-circular linguistic way.
+In accepting the excluded middle on the natural numbers and in making
+the existence of sets depend on our definitional abilities, this
+position is a sort of a compromise between a classical and a
+constructive viewpoint. In 1918, Hermann Weyl  presented the foundations of analysis
+within this framework and showed that a great part of classical
+analysis can be carried out within the framework by replacing talk of
+arbitrary sets of real numbers with arithmetical sequences of real
+numbers. Feferman 1988 gave a detailed formal presentation of the
+theory and proved that, on a certain reconstruction, the theory is a
+conservative extension of Peano Arithmetic. In addition, he also used
+the theory to state an important conjecture concerning how much
+mathematics is needed in physics. In Feferman 1984 and 1987, he
+proposed that all of mathematics used in physical theory can be
+recaptured in a predicative system of analysis. Using the
+metatheoretical result of conservativity mentioned above, he also
+exploited the argument to claim that Quine and Putnam’s
+indispensability arguments  
+ at best commit us to what Peano Arithmetic commits us to.
+In contrast to the possibility of eliminating infinity as just
+described stand a number of results that show that some finitary
+statements can only be proved through infinitary considerations. These
+results originally emerge with Gödel’s incompleteness
+theorems  but have been recently refined by
+displaying statements of mathematical interest . In order to understand the
+conceptual distinctions required, let us grant —as most
+logicians do—that all finitistic modes of reasoning are included
+in first-order Peano Arithmetic .
+A consequence of Gödel’s incompleteness theorems is that
+under the assumption that PA is consistent one can find a finitistic
+statement such that neither it nor its negation is provable from Peano
+Arithmetic. Gödel showed, through subtle coding of
+metamathematical notions in the language of arithmetic, how to express
+in the language of arithmetic a formula \ that “says” of
+itself that it is not provable. One can also ascertain that the
+formula is true on the natural numbers. Since all the finitary
+reasoning is assumed to be included in PA, establishing the truth of
+the Gödel sentence and of the new incompleteness results requires
+appeal to some “infinitary” principles  is established through appeal to the
+statement expressing the consistency of PA, it is establishing the
+latter that requires some portion of infinitary reasoning, such as
+induction up to an infinite ordinal called \\).
+The situation is the same for the statement Con expressing the
+consistency of PA. Gödel’s second incompleteness theorem
+shows that neither it nor its negation can be proved from PA but an
+appeal to some infinitary reasoning shows it to hold in the natural
+numbers. While perfectly fine for the logician’s need and
+central to the evaluation of Hilbert’s program,
+Gödel’s sentences appear concocted from the point of view
+of the practicing mathematician. Within Hilbert’s program
+statements of PA expressible either without quantifiers or with a
+string of universal quantifiers followed by a non-quantificational
+formula count as finitistic statements. The statements \ and
+Con mentioned above also belong to this class. Finitistic
+statements with obvious mathematical relevance include basic
+properties such as the commutativity of addition as well as the
+statement of Fermat’s last theorem . Logicians have not been able to
+find finitistic statements with obvious mathematical significance that
+require a detour through the infinite, but they have been able to do
+the next best thing. They have found statements that have the form
+\  A,\) which express a certain
+functional connection between numbers and have shown that such
+statements, although true, cannot be proved using only the resources
+of PA. Among the most famous such results are a modification of
+Ramsey’s finite theorem provided by Paris and Harrington ,
+and the proof that a theorem by Goodstein  cannot be proved
+in PA .  There are stronger results that are
+independent of even stronger systems that are studied within the
+context of reverse mathematics .
+Such results show that even an arithmetical theory such as PA can
+express statements of mathematical significance  that require some detour
+through the infinite to be proved, even though they can be stated
+purely arithmetically. In contrast to arithmetic, the mathematical
+incompleteness of set theory was shown by Gödel and Cohen for
+important statements such as the Axiom of Choice, the continuum
+hypothesis, etc. It is important to emphasize here that logicians
+working in set theory, recursion theory and proof theory probe the
+mysterious role of the infinite in proving results about the finite.
+It could be said that set theorists are mainly concerned with
+understanding how the demonstrable mathematical incompletability of
+Zermelo-Fraenkel  set theory, which is a
+consequence of results by Gödel and Cohen, can be addressed by
+finding new principles that will allow us to solve some of the most
+pressing questions concerned with the structure of the real numbers.
+In other words, since ZFC cannot be taken as a sufficient basis for
+the mathematics of infinity much of contemporary set theory is trying
+to solve the problem by finding new principles, which often take the
+form of assuming the existence of very large cardinals . 
+ The hope is that this work will lead to
+settling the Continuum Hypothesis and other major problems about the
+projective sets .
+Recursion theorists are also trying to understand the role that
+infinitary principles or compactness arguments play in our
+determination of results about the finite. And proof theorists would
+like to know when certain infinitistic theories can be justified
+through finitary means. Obviously, a more precise description of these
+developments goes well beyond the technical knowledge that we can
+presuppose here.
+Most working mathematicians don’t worry about the existence of
+infinitely large sets and other objects. There are some other
+ontological worries about particular infinite sets, related to the
+Axiom of Choice, and some of the larger cardinalities mentioned above
+in the section on Cantor. But bigger worries arise in the context of
+whether there can be physical infinities.
+For collections of sources on the classical foundational positions
+ see van Heijenoort , Ewald
+, and Mancosu . On finitism and intuitionism see the
+entries
+Hilbert’s program
+and
+intuitionism in mathematics
+. 
+ On predicativity see Feferman . On Paris-Harrington see Katz and
+Reimann 2018; on Goodstein’s theorem see the friendly
+presentation in Stillwell . Stillwell  also has a chapter on large
+cardinals; for recent directions see Woodin  and Steel . On
+the interplay between finite and infinite in recursion theory see
+Hirschfeldt .
+5. Paradise lost? Paradoxes and puzzles involving infinity
+The latter part of this entry will explore selected applications of
+mathematical concepts of infinity in theories of probability,
+decision, and spacetime, and some associated paradoxes. Before we turn
+to those theories, we warm up with some paradoxes and puzzles that
+link mathematics, metaphysical possibility, and physical possibility.
+There are many different paradoxes and puzzles that we might have
+included in this section. We consider a small sample of paradoxes and
+puzzles that some—e.g. Pruss —have thought might
+motivate a return to Aristotle’s views on the impossibility of
+actual infinites.
+In the
+Supplement on al-Ghazālī’s objection
+,
+we discuss a puzzle due to al-Ghazālī that is of historical
+interest. For more see, for example, Rucker , Moore , Oppy
+, and Huemer .
+5.1 Hilbert’s Hotel
+Hilbert’s Hotel has infinitely many rooms, labelled 1, 2, 3,
+…, each of which is currently occupied by a guest. Despite the
+fact that the hotel is already full, a new guest who turns up at
+reception is readily accommodated: for each n, the guest in room \
+is moved to room \, and the new guest is installed in room 1.
+Indeed, despite the fact that the hotel is already full, it can
+accommodate infinitely many new guests: for each \, the guest in
+room \ is moved to room \, and the new guests are installed
+in the odd-numbered rooms. Of course, if the infinitely many people in
+the odd-numbered rooms check out, there are infinitely many people
+left in Hilbert’s Hotel; but if infinitely many people check out
+from all but the first three rooms, only three people remain.
+Some philosophers have thought that Hilbert’s Hotel supports an
+argument against the possibility of physically realized
+infinities:
+If there could be physically realized infinities, then there could
+be a hotel with infinitely many rooms.
+But if there could be a hotel with infinitely many rooms, then the
+events described in the preceding paragraph could occur.
+But it is absurd to suppose that the events described in the
+preceding paragraph could occur.
+So there cannot be physically realized infinities. .)
+This argument faces various challenges, depending on one’s views
+about what physical possibility amounts to. The first premise may be
+challenged: perhaps some kinds of physical infinities can be realized
+even though other kinds of physical infinities cannot: for example,
+perhaps there can be infinitely many stars even though there cannot be
+a hotel with infinitely many rooms. The second premise may also be
+challenged: even if there could be a hotel with infinitely many rooms,
+perhaps the events described in the story could not occur—the
+story was told at a high level of abstraction, and the details may
+matter. And the third premise is also questionable: it is not clearly
+absurd to suppose that there could be an infinite hotel in which
+guests come and go in the manner described.
+For further discussion of Hilbert’s Hotel, see Gamow ,
+Huby , Rucker , Moore , Oppy , Kragh ,
+Huemer , and the entries on
+supertasks
+and
+cosmology and theology
+.
+5.2 Thomson’s Lamp
+Suppose that we have a lamp and a means of turning the lamp off and
+on. Suppose that the lamp is initially off. In the first minute, we
+change the state of the lamp from off to on. In the next half minute,
+we change the state of the lamp from on to off. … In the next
+\ minute we change the state of the lamp to the other state
+… . The question that we are invited to answer is: what is the
+state of the lamp at the end of the second minute?
+The scenario is under-described. We can imagine that the means of
+turning the lamp off and on requires a spacetime location at which at
+least one physical quantity is infinite. If so, it is plausible to say
+that the case is impossible: there could not be such a lamp, and so
+there is no question to answer. Suppose, for example, that there is a
+switch that moves the same distance back and forth to turn the lamp on
+and off. Consider the speed at which the tip of the switch is
+travelling at the end of the second minute.
+We can also imagine that the means of turning the lamp off and on does
+not involve any spacetime location at which at least one physical
+quantity is infinite; Grünbaum  describes a scenario that
+fits this specification. In that case, the means of turning the lamp
+off and on converges to a specified state at the end of the two
+minutes, and there is an answer to the question that lies in the
+details of the specified state. But that answer is underdetermined by
+the brief description that we were initially given, as Benacerraf
+ argues: we can have the lamp on at the end of the two minutes,
+or off at the end of the two minutes, depending upon the details of
+the implementation of Grünbaum’s proposal. Huemer  points out that if we hold fixed enough physics, then, before
+the end of the two minutes, the activation of the mechanism will stop
+changing the state of the lamp. So, depending upon your views about
+the range of what is possible, you may regard as impossible even cases
+in which there is no spacetime location at which at least one physical
+quantity is infinite.
+Thomson’s lamp is an example of a
+supertask
+: a process that involves infinitely many steps
+completed in a finite amount of time. The trick is that the steps are
+completed in shorter and shorter periods of time, corresponding to a
+convergent series. The lamp is one of many examples of supertasks that
+various authors have found paradoxical, while other authors have been
+less troubled by them. See the entry on
+supertasks
+.
+For further discussion of Thomson’s lamp, see: Thomson , Benacerraf , Chihara , Grünbaum ,
+Craig , Berresford , Moore , Earman and Norton
+, McLaughlin , Oppy , Huemer , and Pruss
+.
+5.3 Paralysis
+Suppose that Achilles wants to run from \ to \ but there are
+infinitely many gods who—unbeknownst to one another and to
+Achilles—each have reason to stop him from getting to \. God
+1 resolves to instantaneously paralyse Achilles if and when he reaches
+halfway between \ and \. God 2 resolves to instantaneously
+paralyse Achilles if and when he reaches one quarter of the way from
+\ to \. … God \ resolves to instantaneously
+paralyse Achilles if and when he reaches \ of the way from
+\ to \. … Since all of the Gods are able to act on
+their resolve, Achilles is unable to move: for, if he moved, he would
+violate the intentions of infinitely many Gods. But, until he does
+move, none of the Gods act on their intentions. So what actually stops
+him from moving? Isn’t it absurd to suppose that someone can be
+rendered immobile by a nested sequence of conditional intentions upon
+which no one acts?
+Suppose instead that each of the Gods erects a force field, placed in
+a parallel manner to the previous case, that it is impossible for
+Achilles to cross. Then Achilles is completely immobilized. On the
+assumption that it is possible for an infinite number of Gods to
+collectively create such a force field in the manner described, there
+is a straightforward explanation for Achilles’ inability to
+move. Of course, granted this assumption, there is no single God whose
+force field immobilizes Achilles; indeed, there is no finite
+collection of Gods whose collective force field does so; indeed, no
+force field touches him at all. Is this possible? Presumably one
+should come to the same verdict regarding the conditional intentions
+case as in this case.
+Depending on your views about the range of possibility, there is much
+in this story that you may think is impossible. You may think that it
+is impossible for there to be Gods who can act as required; for
+example, depending on your conception of the Gods and their actions,
+you might think that the story requires instantaneous action at a
+distance. You may think that it is impossible for force fields to be
+positioned with unbounded degrees of accuracy. And so on. However, if
+there is nothing in the set-up that makes you baulk, and if further
+elaboration of the set-up does not introduce any singularities, then
+it seems that you should just accept the conclusions with equanimity:
+Achilles is rendered immobile by conditional intentions on which no
+one acts, or by a set of force fields none of which he is in direct
+contact with. Bizarrely counterfactual circumstances have bizarre
+consequences.
+For further discussion of this case, see: Benardete , Moore , Priest , Hawthorne ,
+Perez-Laraudogoitia , Yablo , Oppy , Koons
+, and Huemer , Caie .
+We have started to see that infinity seems to be both friend and
+foe—it features in powerful mathematics, but also in some vexing
+conundrums. We will see more of its Manichean nature in the following
+sections on probability, decision theory, and space and time. We will
+also see how sophisticated methods for reclaiming it have been
+developed.
+6. Probability
+Probability theory runs relatively smoothly in the finite realm, but
+puzzles emerge when infinities are afoot. There are multiple sources
+of infinitude, arising both in the mathematics and the interpretation
+of probability. We will firstly discuss more informally these sources,
+and then progress to more advanced issues.
+6.1 Infinitude in the mathematics of probability: basics
+Let us begin with the mathematics. Probability theory assumes that we
+have a set of “possibilities” or “outcomes”,
+called a
+sample space
+, regarded as ways the world could be,
+or the possible outcomes of a random experiment. For many purposes, an
+infinite set is assumed. For example, we may toss a coin repeatedly
+and be interested in how many tosses it takes until we see the first
+heads. The number could be 1, or 2, or 3, or … Here, the sample
+space is denumerable. Or we might consider picking a point at random
+from the  interval of the real line—e.g., we might imagine
+throwing an idealized dart at a representation of that interval, and
+consider the point on which it lands. Here, the sample space is
+uncountable, because it is infinitely divisible and has limits of sequences, but bounded. Or we
+might consider sampling a quantity that is governed by a normal
+distribution, the bell-shaped distribution that is used to model
+various quantities in the real world. Here, infinitude enters twice
+over: the sample space is both uncountable and unbounded, being the
+entire real line.
+Orthodox probability theory assigns
+real numbers
+between 0
+and 1  to subsets of the sample space, and again we
+encounter infinitude: there are uncountably many possible probability
+values. We will soon see how we encounter it again in the way that
+these values are additive.
+6.2 Infinitude in the interpretations of probability
+Infinitary considerations also enter into certain
+interpretations
+of probability—attempts to explain what
+probabilities are and what probability statements mean. 
+Hypothetical frequentism
+regards probabilities as
+limiting relative frequencies in hypothetical infinite sequences of
+trials. For example, we may toss a coin repeatedly, generating a
+sequence of outcomes—e.g.
+heads, tails, heads, heads, tails, tails, tails, heads, …
+We can keep track after each trial of the relative frequency of heads
+so far: the ratio of the number of heads to the total number of
+tosses. In our example, the sequence of relative frequencies is
+\[
+\frac{1}{1}, \frac{1}{2}, \frac{2}{3}, \frac{3}{4},
+  \frac{3}{5}, \frac{3}{6}, \frac{3}{7}, \frac{4}{8}, \ldots
+\]
+We may then imagine this sequence extended indefinitely,
+and identify the probability of heads with the limit of this sequence.
+However, the very same results may be reordered, one way or another,
+to generate any limiting relative frequency in  whatsoever, if
+there are infinitely many heads and infinitely many tails. Infinitude
+rears its ugly head here—for a finite sequence, reordering can
+make no difference to the relative frequencies of its outcomes.
+According to Popper’s
+propensity
+interpretation, a
+probability \ of an outcome of a certain type is a propensity of a
+repeatable experiment to produce outcomes of that type with limiting
+relative frequency \. Again, infinitude is central to this
+interpretation, and its ugly head rears as it did for hypothetical
+frequentism. The
+best-system
+interpretation of probability,
+associated with Lewis  and others, is also prey to problems if
+there are infinitely many events of a particular kind in the
+universe—for example, infinitely many coin tosses. As Elga
+ shows, the interpretation’s central notion of
+fit
+is compromised. And even the subjective probabilities of
+idealized rational agents have tacit infinitary assumptions underlying
+them—for example, that the agents are logically omniscient, and
+their probability assignments are infinitely sharp . These assumptions have also been regarded as problematic,
+especially when modeling agents who are anything like us.
+6.3 Infinitude in the mathematics of probability: more advanced issues
+To state some of the thornier puzzles generated by the mathematics of
+probability, we need a more formal presentation. Kolmogorov’s
+ axiomatization begins with a finite set \ and an
+algebra \ of subsets of \: a set closed under complementation
+and union. The members of \ are known as
+states
+while the
+members of \ are known as
+events
+. A probability function
+is a function from \ to the real numbers. It is non-negative,
+assigns 1 to \, and it is  additive—the
+probability that one of two mutually exclusive events occurs is the
+sum of their individual probabilities:
+Finite additivity
+If \ and \ are disjoint sets in \, then \ =
+P + P\).
+Kolmogorov goes on to generalize this to an
+infinite
+\,
+and to a
+sigma-algebra
+\ of subsets of \: a set
+closed under complementation and
+countable
+union. Additivity
+is strengthened to hold also in infinite cases:
+Countable additivity
+If \ is a countably infinite collection of 
+disjoint sets, each in \, then 
+
+\[
+P = \sum_{n=1}^{\infty} P
+\]
+Some have felt that restricting additivity to merely countable sums is arbitrary, and is merely an artifact of the summation
+technique introduced in section
+3.2
+. An alternate technique for
+summing infinite sets of non-negative numbers takes advantage of the
+fact that a sum of nonnegative numbers as defined earlier
+doesn’t depend on the order of the terms. We consider the set of
+all partial sums of arbitrary finite subsets of the set, and take the
+least upper bound of this set to represent the sum of the set as a
+whole. If this sum is some positive finite value \, then we can see
+that at most \ of the terms in the set being summed can be greater
+than 1/\. Since every positive real number is greater than 1/\ for
+some \, this means that the set of positive elements of the set is a
+countable union of finite sets, and thus must be countable. That is,
+if a set being summed in this way has uncountably many non-zero
+elements, the sum must be infinite.
+So if we require full  additivity, rather than merely
+countable additivity, then we can see that at most countably many
+events have positive probability, and their probabilities sum to 1. A
+probability distribution with these features, where events of
+probability 0 have been removed, is known as a
+discrete
+distribution . For such a distribution, the probabilities of the
+individual states determine the probabilities of all events through
+the use of additivity.
+However, many applications of probability require what are known as
+continuous
+distributions , and thus require a restriction to
+countable additivity. In a continuous distribution, there are
+uncountably many states, usually named by real numbers. Each
+individual state has probability 0, even though events containing
+uncountably many states often have non-zero probability.  However, in the common continuous
+distributions, there is usually a way to define a probability density
+for each state, such that the probability of any event is the integral
+of the density over the states that make it up. In finite and discrete
+distributions, it is standard to treat events of probability 0 as if
+they do not happen, while in continuous distributions there is always
+some event of probability 0 that occurs.
+For finite and discrete distributions, there is a straightforward
+definition of a concept of conditional probability. For any two events
+\ and \, the probability of \ conditional on \,
+notated as \\), is defined as \/P\), if the
+probability of B is non-zero, and undefined otherwise. For any fixed
+\, the function \\) is another probability function
+on the same space. We can prove the Law of Total Probability. If
+\ form a partition \) then:
+\[
+P = \sum_i PP.
+\]
+This tells us that the unconditional probability \\) is a
+weighted average of the conditional probabilities \\).
+However, for distributions that are not discrete, so that the set of
+states is uncountable in an essential way, and events of probability 0
+often occur, we can’t use this ratio definition of conditional
+probability, since it would involve dividing by 0. However, Kolmogorov
+notes  that for any suitably nice partition, it is
+still possible to come up with a definition of conditional probability
+conditional on events in this partition, satisfying a generalization
+of the Law of Total Probability, replacing the sum with an
+integral:
+\[
+P = \int PdP
+\]
+,
+Rescorla .) For more on determining when conditional
+probabilities that satisfy this rule exist, see
+Hoffmann-Jørgensen , and for more on how to use
+probability densities to calculate these conditional probabilities,
+see Chang and Pollard .
+However, there are some difficulties with this account of conditional
+probability. Kolmogorov notes that if the original probability space
+is the uniform distribution of points on a sphere, and if \ ranges
+over the set of longitudes , then
+probability conditional on a line of longitude will not be uniform,
+but instead will be concentrated near the equator.  Since every great circle on a
+sphere can be viewed as a line of longitude with an appropriate choice
+of pole, this makes the probability conditional on an event depend not
+only on which event was chosen, but also which family of alternatives
+it is contrasted with. 
+Some have found this consequence troubling enough that they have
+endorsed an alternative account of conditional probability that gives
+up the Law of Total Probability, and instead insists that \\)
+has a unique value regardless of which alternatives to \ are under
+consideration. However, this also has some unpalatable consequences.
+Since \\) is no longer the average of \\) where \
+ranges over the elements of a partition, this means that there are
+some partitions such that every element of the partition is positively
+correlated with \. Furthermore, the conditional probability
+functions generated in this way no longer satisfy countable additivity
+.
+But some, starting with de Finetti  have argued on
+other grounds that we should give up even countable additivity and
+only accept finite additivity, with a correspondingly broader class of
+probability distributions. One of de Finetti’s chief arguments
+involves an infinite lottery with each natural number appearing on
+exactly one ticket. We would like to assign each ticket the same
+probability of being drawn. Under countable additivity, this is not
+possible. For if we assign probability 0 to each number’s being
+picked, then the sum of all these probabilities is again 0; yet the
+union of all of these events has probability 1 , and \. On the other hand,
+if we assign some  probability \ to
+each number being picked, then the sum of these probabilities diverges
+to \, and \. If we drop countable additivity,
+however, then we may assign 0 to each event and 1 to their union
+without contradiction. In the
+Supplement on God’s Lottery,
+we explore how an alternative approach to Kolmogorov’s, a
+non-Archimedean probability theory , can account for de
+Finetti’s lottery by assigning an infinitesimal probability to
+each ticket.
+However, a probability function that satisfies finite additivity
+without satisfying countable additivity is mathematically much more
+complicated than one that satisfies countable additivity. To even
+prove the existence of such a function over the algebra of subsets of
+a countable set of states requires the Axiom of Choice. With countable
+additivity, it is possible to specify a discrete probability function
+by enumerating the probabilities of the countably many states, and it
+is possible to specify a continuous probability function by
+enumerating the probabilities of the countably many rational open
+sets. But if merely finite additivity is assumed, specifying a
+probability function even on a countable state space may require
+specifying the probabilities of uncountably many events, rather than
+calculating the probabilities of these events from the countably many
+probabilities of the states. Furthermore, with such probability
+functions, many standard convergence results like the Strong Law of
+Large Numbers fail.
+For more on infinite probability spaces where only finitely additive
+probability holds, see Bartha , Bingham , de Finetti
+, Dubins , Easwaran , Hill and Lane ,
+Howson , Kadane, Schervish, and Seidenfeld , Schervish,
+Seidenfeld, and Kadane , Seidenfeld , Seidenfeld,
+Schervish, and Kadane, .
+A lively debate concerns a further constraint on probabilities that
+may be regarded as desirable: anything that is possible should be
+assigned positive probability. This is known as
+regularity
+:
+Regularity
+If \ is a non-empty subset of \, then \ \gt 0\).
+Folk thinking about probability seems to be committed to
+regularity—“if it has probability zero, it can’t
+happen!”, as one might say.
+We have seen a striking violation of regularity in de Finetti’s
+lottery: his assignment of 0 to
+each
+ticket. Regularity may
+be preserved here by countably additive probabilities, but at the
+expense of a uniform distribution—for example, \
+to ticket 1, \, to ticket 2, \ to ticket
+3, and so on. It may be shown that if \ is uncountable, a
+Kolmogorovian  probability distribution must violate
+regularity.  This has led to a cottage
+industry of exploring whether regularity can be preserved by allowing
+the ranges of probability functions to be richer fields than the real
+numbers. For example, Bernstein and Wattenberg  show that there
+exists a regular
+hyperreal-valued
+probability function for
+the dart throw at  that we imagined earlier. Each landing point
+receives
+infinitesimal
+probability. Williamson  argues that an
+infinite sequence of tosses of a fair coin all landing heads must
+receive probability 0 rather than some infinitesimal probability;
+Howson  challenges the argument. The debate for and against
+preserving regularity continues, with Easwaran  and Pruss  against, Benci, Horsten and Wenmackers 
+for—offering NAP as a way of doing so, again assigning
+infinitesimal probabilities where Kolmogorov’s theory would
+assign 0’s.
+For several further puzzles involving probability in infinite spaces,
+see Arntzenius, Elga, and Hawthorne  and Bartha and Hitchcock
+. For more on infinitesimal probabilities in philosophical
+applications, see Benci, Horsten and Wenmackers , Easwaran
+, Halpern , Hofweber , Howson , Kremer
+, Lauvers , Pruss , van
+Fraassen , and Wenmackers and Horsten .
+Infinitesimal probabilities are also appealed to in game theory. For
+example, the concept of
+trembling hand perfect equilibrium
+assumes that each player in a game may make a mistake with positive
+but negligible probability, which may be regarded as
+infinitesimal—see Halpern and Moses . We will see further
+use of infinitesimal probabilities in decision theory, to which we now
+turn.
+7. Decision
+When you make a decision, what you choose and the way the world turns
+out together determine an outcome, to which you assign a
+utility
+that measures how desirable it is for you. In a
+decision under certainty, each action that you may perform has exactly
+one possible outcome. In that case, it seems that you should simply
+perform an action that has maximal utility.  In a
+decision under risk, you assign probabilities to the various ways the
+world could turn out—the possible
+states
+. Suppose that
+there are various actions \ that you could perform, and various
+states \ to which you assign probabilities \. Together
+they determine outcomes to which you assign utilities \.
+Classic decision theory says that you should
+maximize expected
+utility
+: you should perform an action that maximizes the weighted
+average of the utilities associated with that action, the weights
+given by your probabilities. Formally, you should maximize
+\[
+\text{EU} = \sum_j p_j u_{ij}
+\]
+
+In standard cases, it is assumed that
+there are finitely many possible actions,
+finitely many states of the world,
+and that
+the utilities are finite.
+However, we may drop each of these assumptions, yielding three
+different sources of infinitude in a decision problem. Accordingly, we
+will present some well-known problems that arise when one or more of
+these assumptions are violated. We begin with a decision under
+certainty.
+7.1 Infinitely many possible actions: Ever-better wine
+Pollock  offers the following puzzle. You have a bottle of
+Ever-better wine, which keeps improving as it ages: the later you open
+it, the better it will be. When should you open it? There’s a
+good sense in which any time is too soon: opening it slightly later
+would be better. But the worst option is never to open it, and to
+avoid this it must be opened at some time. This decision problem has
+uncountably many possible actions, but we could easily make them
+denumerable by adding that the bottle can only be opened at discrete
+times—e.g. on the hour. You would gladly perform an action that
+has maximal utility, but here there is no such action! This problem
+displays an intriguing feature that Bartha, Barker and Hájek
+ call
+discontinuity at infinity
+: “an infinite
+sequence of choices, each apparently sanctioned by plausible
+principles, converges … to a ‘limit choice’ whose
+utility is distinct from, and typically much lower than, the limit
+approached by the utilities of the choices in the sequence” . Their paper discusses other decision problems with this feature.
+For more discussion of this kind of phenomenon, see Chow, Robbins, and
+Siegmund  and Seidenfeld .
+7.2 Infinitely many states: the St. Petersburg paradox
+A fair coin is tossed. If it comes up heads, you receive $2. If it
+comes up tails, the coin is tossed for a second time. If it then comes
+up heads, you receive $4. If it comes up tails, the coin is tossed for
+a third time. If it then comes up heads, you receive $8. If it comes
+up tails, the coin is tossed for a fourth time. And so on. We continue
+until the coin comes up heads. If this takes n tosses, then you win
+$\.
+How much should you be prepared to pay to play this game? You have a
+1/2 chance of winning 4; and a 1/8
+chance of winning $8; ….; and a \ chance of winning
+$\; and … . Hence, your expected payoff from playing the
+St. Petersburg game is infinite:
+\[\begin{align}
+ &+  +
+   + \cdots +  + \cdots \\
+ &= 1 + 1 + 1 + \cdots
+\end{align}\]
+If we identify dollars won with utilities, the game has infinite
+expected utility.
+Decision theory seems to say that you should be prepared to pay any
+finite amount to play this game. But most people think this is crazy;
+indeed, most would only pay a few dollars to play .
+And decision theory seems to say that you should be prepared to pay
+any finite amount for a ticket in any finite lottery whose payoff is a
+single play of this game. That may seem really crazy.
+You might object that the utility of money decreases as you obtain
+more of it: if the rate of this decrease is sufficiently large, then
+the expected value of playing the game is finite. Daniel Bernoulli
+argued that utility goes by the logarithm of the amount of money, and
+indeed replacing the dollar amounts with their logarithms yields a
+finite expected utility. However, we can retell the story in terms of
+utilities themselves. And we can retell it with super-exponential
+escalation of the value of the payoffs: taking logarithms then gives
+us exactly the original expected utility.  In
+fact, as long as utilities are unbounded, we can fashion a version of
+the game that has infinite expected utility.
+So you might object that the utilities are bounded.  However, unbounded quantities abound—length, volume,
+mass, curvature, temperature, and so on. Why is utility unlike them in
+this regard? Moreover, one might imagine a case in which utilities are
+intimately linked to another such quantity—e.g., the further
+away you get from some undesirable place, the better—and an
+unbounded function might link them. Moreover, as we have noted,
+probability theory is already shot through with infinitude; we need a
+principled reason why
+this
+kind of infinitude should be
+shunned.  And
+perhaps it is not crazy after all to value the St. Petersburg game
+infinitely. After all, it dominates each truncation of the game, which
+pays nothing if heads has not come up after \ trials ): the
+St. Petersburg game’s outcome is equally good in finitely many
+states, and strictly better in infinitely many. Plausibly, then, it
+should be preferred to all these truncations of the game —its desirability is greater than \, for
+each \.
+For further discussion of the St. Petersburg game, see, for example:
+Samuelson , Jeffrey , Weirich , Cowen and High
+, Jordan , Chalmers , Peters  and the
+entry on
+the St. Petersburg paradox
+.
+Related but different problems arise in the
+Pasadena game
+, a
+St. Petersburg-like game in which the expected payoff is apparently
+undefined
+. Then, it seems that
+decision theory goes silent regarding the value of the game. And yet
+various choices regarding the game seem to be rationally
+required—e.g. preferring the game plus a $1 to the game itself.
+For further discussion, see e.g. Nover and Hájek ,
+Hájek and Nover , Hájek , Easwaran
+, Bartha  and Colyvan and Hájek .
+7.3 Infinite utility: Pascal’s Wager
+In the St. Petersburg game, each possible payoff is finite; it is the
+way in which they are averaged by the expected utility formula that
+yields the infinitude. We now turn to a classic decision problem in
+which a possible payoff itself is infinite.
+Pascal maintains that we cannot know whether God exists or not, but he
+argues that we can solve the decision problem of whether or not to
+‘wager for God’—roughly, to cultivate belief in God.
+There are two available courses of action: wager for God, or fail to
+wager for God. There are two relevant conceivable states of the world:
+God exists, or God does not exist. The probability that God exists is
+\, whence the probability assigned that God does not exist is \. The utility of wagering for God, if God exists—salvation
+forever—is infinite. All of the other utilities—of an
+earthly life of some finite duration—are finite. We may
+formulate the resulting decision table as follows:
+God exists
+God does not exist
+Probabilities:
+\
+\
+Wager for God
+\
+\
+Wager against God
+\
+\
+We may now do the expected utility calculations:
+The expected utility of wagering for God is
+\[
+p\cdot \infty + \cdot f_1 = \infty.
+\]
+The expected utility of failing to wager for God is
+\[
+p \cdot f_2 + \cdot f_3 = \text{ a finite value}.
+\]
+In order to maximize expected utility, one ought to wager for God.
+Among the many objections that have been levelled at Pascal’s
+Wager, several focus on the role that ‘\’ plays
+in the argument. Can utilities be infinite? There is a considerable
+literature that considers possible extensions of our decision rule,
+and possible modifications to the framework within which the decision
+problem is framed. However, to date, there is no widely accepted
+alternative formulation of Pascal’s Wager that avoids all these
+difficulties that focus on the role that ‘\’
+plays in the argument. And once infinite utilities are countenanced,
+it seems that we should be open to infinitesimal probabilities also.
+But then there is the prospect that when an infinite utility and an
+infinitesimal probability are multiplied in the expected utility
+formula, the product may be a finite number. Will wagering for God
+still maximize expected utility? These issues and more are discussed
+in the entry on
+Pascal’s wager
+.
+For further discussions of the treatment of infinity in Pascal’s
+Wager, see, for example: Duff , Oppy , Hájek
+, Bartha , Bartha and Pasternack ,
+Monton , and Wenmackers .
+7.4 Infinite utility streams
+So far we have been considering decisions in which one’s payoff
+comes in a single ‘hit’: a reward  comes
+all at once. However, we can also consider cases in which one is to
+choose between different infinite utility
+streams
+—e.g.,
+streams of finite daily utility that accumulate over an infinite
+future. There is an obvious candidate for evaluating the utility of a
+finite stream: add the utilities along the stream. But this method is
+not available when we have an infinite stream; we require additional
+principles to help us evaluate such streams, and it is not obvious
+what those principles should be.
+Suppose that a day spent in Heaven has utility 1 and a day spent in
+Hell has utility \. Suppose further that, for all \, \
+days in Heaven have utility \, and \ days in Hell have utility
+\. Suppose, finally, that, for all \ and \, any
+combination of \ days in Heaven and \ days in Hell has utility
+\.
+Here are some candidate principles for the comparison of alternative
+possible future utility streams:
+One should prefer the possible future utility stream that has
+maximal total utility .
+If more than one possible future utility stream has divergent
+utility—i.e. is such that there is no finite value to which the
+total utility of the stream converges as the number of days
+increases—one should prefer the divergent utility stream whose
+partial sum is
+dominant
+. This means that on
+some days, the sum of utility to that day is greater than for any
+other stream, and on no days, the sum of utility to that day is less
+than for some other stream.
+If more than one possible future utility stream has divergent
+utility, one should be indifferent between divergent future utility
+streams that are permutations of one another.
+Consider the choice between the following two infinite utility
+streams:
+An infinite number of days in Heaven.
+An infinite number of days in Heaven preceded by a finite number
+of days in Hell.
+Principle 2 says correctly that we should prefer  to .
+However, consider the choice between the following two options:
+An infinite number of alternating days, first in Heaven, and then
+in Hell.
+An infinite number of alternating days, first in Hell, and then in
+Heaven.
+Principle 2 says, incorrectly presumably, that we should prefer  to
+.
+Now consider the choice between the following two options:
+An infinite number of alternating days, first in Heaven, and then
+in Hell.
+An infinite number of alternating days, first one in Heaven and
+one in Hell, then two in Heaven and one in Hell, then three in Heaven
+and one in Hell, and so on.
+While Principle 3 says,  correctly that we should be
+indifferent between  and , it also says,  incorrectly,
+that we should be indifferent between  and .
+In the face of these difficulties, you might consider weakening the
+principles:
+If more than one possible future utility stream has divergent
+utility, prefer the divergent possible future utility stream that is
+step-by-step dominant .
+If more than one possible future utility stream has divergent
+utility, maintain indifference between divergent possible future
+utility streams that are finite permutations of one another .
+But this pair of principles yields no verdict in the case of  and
+, and so does not yield a complete set of principles.
+More generally, it is hard to codify rules for choosing among infinite
+utility streams. Indeed, there are some impossibility results in the
+economics literature which suggest that there is no fully satisfactory
+theory that countenances them.
+For further discussion of infinite utility streams, see, for example:
+Segerberg , Jeffrey , Nelson , Vallentyne , Cain , Ng , Van Liedekerke , Lauwers
+, Vallentyne and Kagan , Basu and
+Mitra , Crespo, Nuñez, and Rincou-Zapatero , Bartha,
+Barker and Hájek , and Jonsson and Voorneveld .
+Each of these decisions problems wears its infinitude on its sleeve:
+it is obvious that there are infinitely many possible actions, or
+infinitely many states, or infinite utility, or infinite streams of
+utility. However, in some problems, such infinitude is not
+foregrounded, but it is tacitly there nonetheless. The
+two-envelope paradox
+is such a problem. See the
+Supplement on Tacitly Infinite Decision Problems: Two Envelopes
+.
+There are various other paradoxes of infinity in decision
+theory—the interested reader may follow these references:
+“An Infinite Decision Puzzle”: Barrett and Arntzenius
+
+“Trumped”: Arntzenius and McCarthy 
+“Rouble Trouble”: Arntzenius and Barrett 
+“The Airtight Dutch Book”: McGee 
+Several paradoxes in Arntzenius, Elga and Hawthorne 
+“The Cable Guy”: Hájek .
+8. Space and time
+Considering whether space and time are infinite in extent and
+divisibility has led to many famous puzzles, paradoxes and antimonies.
+It was on account of such paradoxes that Kant was led to the claim
+that whether space is finite or infinite escapes any possible
+empirical determination. Kant’s presentation of the antinomies
+rested on a number of assumptions  that were undermined by later results in
+mathematics or were simply found to be philosophically questionable.
+Another interesting paradox relates to divisibility. In this section
+we discuss Kant on the antinomies of space and time and a
+measure-theoretic solution to this paradox of divisibility. This is
+followed by a quick overview of some developments in non-Euclidean
+geometries and relativistic cosmology. In the final part, we mention
+some recent developments in cosmic topology, an area of cosmology that
+attempts to determine whether space is finite or infinite by a
+combination of empirical observation and mathematical theorizing. The
+emphasis will be on the latter aspect.
+8.1 Antinomies of space and time
+Many philosophers have devised paradoxes and even putative
+‘antinomies’ that exploit the structural features of space
+and time in a way that essentially involves the infinite. Among the
+ancients, Zeno is renowned for his paradoxes of space, time and
+motion. They involve infinitely many spatial or temporal subdivisions
+or processes that are putatively impossible—see the entry on
+Zeno’s paradoxes
+.  
+
+Among the moderns, Kant is particularly notable for his treatment of
+the extent of space and time in his ‘First Antinomy of Pure
+Reason’. We turn to it now.
+8.1.1 Kant
+In the
+Critique of Pure Reason
+, A426–A434,
+B454–B462—Kant gives ‘proofs’ of conflicting
+theses—‘thesis’ and
+‘antithesis’—about the extent of space and time. The
+‘thesis’ says that:
+the world has a beginning in time; and
+the world has a finite extension.
+The ‘antithesis’ says:
+the world has no beginning in time; and
+the world has infinite extension.
+To a reasonable approximation, the ‘proofs’ run as
+follows:
+If the world has no beginning in time, then, up to any given
+moment, an eternity has elapsed: there has passed away an infinite
+series of successive states of things. But the infinity of a series
+consists in the fact that it can never be completed through successive
+synthesis. So it is impossible for an infinite series of successive
+states of things to have passed away: the world has a beginning in
+time.
+Since infinite extension cannot be thought in a single completed
+act of thought, the world can only be thought to have infinite
+extension through an act of synthesis in which completion is achieved
+via the addition of units. But an act of synthesis that achieved
+completion via the addition of units requires the lapse of an infinite
+amount of time—and we have already seen, in , that this is
+impossible. Consequently, it cannot be thought that the world has
+infinite extension. So the world does not have infinite
+extension.
+Something begins to exist only if there is a prior time at which
+it does not exist. Hence, if the world has a beginning in time, there
+must be an earlier time at which it does not exist: an empty time. But
+nothing can come into existence in an empty time, since there is no
+sufficient reason for the thing to come into existence in one rather
+than another part of empty time. So the world does not have a
+beginning in time.
+If the world has finite extension, then the world is contained in
+an unlimited empty space. Consequently, the objects in the world are
+not only related
+in
+space but also related
+to
+space.
+In particular, the relation of the world to empty space is a relation
+of the world to no object, i.e. to nothing. But there can be no such
+relation. So the world has infinite extension.
+Much in Kant’s discussion of the antinomies of space and time is
+marred by his conflation of the modern definition of infinity as lack
+of finitude with the Aristotelian conception of the impossibility of
+completion. In addition, at A487/B515 we have confirmation that Kant
+uses “infinite” and “unbounded”, as well as
+“finite” and “bounded”, synonymously:
+“For if it [the magnitude of the world in space] is infinite and
+unbounded, then it is too big for every possible empirical concept. If
+it is finite and bounded, then you can rightfully ask: What determines
+this boundary?” It was only with the work of Bernhard Riemann in
+the nineteenth century that geometrical concepts of space were
+introduced that allowed the decoupling of unboundedness and infinity
+. See section
+8.2
+.
+You can find further—sometimes sympathetic—discussion of
+these arguments in Bennett , Huby , Whitrow , Craig
+, Moore , Oppy , Huemer , and the entry on
+Kant’s Critique of Metaphysics
+.
+8.1.2 Measure
+Here is a Zeno-style argument:
+Suppose for
+reductio
+that a finite line segment of non-zero
+length is composed of infinitely many disjoint parts of equal,
+real-valued length.
+Either the parts all have zero length or they all have the same
+non-zero length.
+The length of the whole line segment is the sum of the lengths of
+the parts.
+If the parts all have zero length, then the line segment has zero
+length, contradicting our assumption that it has non-zero length.
+If the parts all have non-zero length, then the line segment has
+infinite length contradicting our assumption that it is finite.
+Conclusion 1: A finite line segment cannot be composed of infinitely
+many disjoint parts of equal real-valued length.
+Therefore,
+Conclusion 2: It cannot be composed of points.
+Premise 1 is beyond reproach. However, premises 2, 3, and 4 require us
+to be careful about how lengths add. Recall that in section
+3.2
+we
+discussed how to add a countable sequence of numbers – but the
+method described there depends on the order, and requires a countable,
+well-ordered sequence. Although there are techniques for summing
+uncountable sets of non-negative numbers, most mathematicians deny
+that lengths or other measures can be added in these ways. This is
+parallel to what Kolmogorov said about probability . 
+Probability and length are two paradigms of the more general
+mathematical field of “measure theory”, which includes all
+such countably additive real-valued functions. For a more detailed
+discussion of this problem, including approaches involving
+infinitesimal length, see Skyrms .
+For more about measure theory, see Bartle  and Tao .
+8.2. Non-Euclidean geometries, relativistic space-time, and cosmic topology
+8.2.1 Non-Euclidean geometries
+In section
+1
+we anticipated that Archytas’ argument for the
+infinitude of the cosmos, and Kant’s treatment of the
+antinomies, conflated the notions of
+finiteness
+and
+boundedness
+.
+We now need to introduce another aspect of 19th century mathematics
+that brought that crucial distinction into focus. The distinction
+between finiteness and boundedness  greatly improved our understanding of
+issues concerning the structure of space, and what shape a finite, or
+an infinite space, might take. Recall that for two centuries after
+Newton, cosmology was developed within the framework of Euclidean
+infinite space. Such a space is infinite in all directions, it is
+homogeneous and isotropic—that is, it is the same at all
+locations and in all directions.
+In the middle of the 19th century, alternative conceptions of
+geometrical space were developed, so-called
+non-Euclidean
+geometries
+. Gauss, Bolyai, Lobachevski and Riemann, showed that
+one can develop geometries that falsify Euclid’s parallel axiom
+while preserving all the other Euclidean axioms. The axiom states  that for
+any line and a point external to that line, there is one and only one
+parallel to the given line passing through the point. The statement
+contains a claim of existence and a claim of uniqueness. It can be
+thus falsified by denying existence or by accepting the existence but
+denying the uniqueness. Both alternatives have been developed, with
+some of the earliest interpretations using surfaces. The first
+alternative, where no parallels exist to any given line that pass
+through a given point external to the given line, is known as
+elliptic geometry
+. An instance of elliptic geometry is
+spherical geometry
+, so called because it can be modeled on
+the surface of a sphere. The second alternative is known as
+hyperbolic
+geometry and in it for every line in the model and
+any point outside of the line there are infinitely many parallels to
+that line passing through the point. A portion of the surface of a
+horse saddle can be used to model hyperbolic geometry. 
+The curvature of a surface at a point \ on the surface measures
+how much the surface bends away from its tangent plane at \. The
+curvature of a surface is constant if at every point \ of the
+surface the surface bends away from the tangent plane by the same
+quantity. Examples of surfaces which can be used to model various
+geometries are the surface of the cylinder , the sphere , and the
+horse saddle . They are all homogenous
+and isotropic but they have different constant curvature.
+Such geometries on surfaces spurred the development of
+three-dimensional and higher dimensional spaces with different
+curvatures: positive, null, and negative. An example of a space of
+positive constant curvature is the
+3-sphere
+ used by Bernhard Riemann in his 1854 dissertation . A
+3-sphere
+is a surface in a
+four-dimensional space that is obtained as a generalization of the
+2-
+sphere
+as visualized in three dimensions: in both cases we
+define the relevant notion as a locus of points that have a constant
+distance from a point . For instance, the unit 2-sphere
+centered at the origin is the set of triples of real numbers \\) that are one unit away from , i.e. that satisfy \, and the 3-sphere with distance 1 from the origin  is the set of quadruples \\) of real numbers
+satisfying \. It is a model of physical space
+that is
+finite but unbounded
+, in explicit opposition to
+Newton’s conception of space.
+Archytas’s argument , which conflated
+unboundedness with infinitude, could finally be put to rest.
+Riemann’s model allows for the universe to be finite and
+unbounded at the same time. In 1854 he wrote: “The unboundedness
+of space possesses in this way a greater empirical certainty than any
+external experience. But its infinite extent by no means follows from
+this; on the other hand if we assume independence of bodies from
+position, and therefore ascribe to space constant curvature, it must
+necessarily be finite provided this curvature has ever so small a
+positive value. If we prolong all the geodesics starting in a given
+surface-element, we should obtain an unbounded surface of constant
+curvature, i.e., a surface which in a flat manifoldness of three
+dimensions would take the form of a sphere, and consequently be
+finite.” 
+The distinction between infinite and unbounded is an integral part of
+the conceptual leap that leads to the idea that physical space need
+not be Euclidean. In the following section we will briefly describe
+how issues of curvature and topology play a role in addressing the
+question of whether the world is spatially finite or infinite in
+cosmology.
+On non-Euclidean geometries the reader will find useful Greenberg 
+and Gray . On the philosophical relevance of curvature and
+Riemannian geometry see the classic Torretti .
+8.2.2 Relativistic space-time and cosmic topology
+In 1915 Einstein introduced general relativity, and our conception of
+the universe is based on it. General relativity rests on a conception
+of space and time—or better, space-time matter—that stands
+in opposition to the Newtonian one we have described above. In
+Einstein’s theory, space-time is deformable and its shape
+depends on the presence of matter. Space-time is, in technical terms,
+a four-dimensional manifold. We may think of an \-dimensional
+manifold as a set of \-tuples of real numbers. The spatial section
+of a four-dimensional manifold of space-time is a three-dimensional
+manifold ,
+and when cosmologists ask about the shape of the universe they try to
+characterize this three-dimensional manifold. The curvature of
+space-time corresponds to gravitation, and light rays and other
+material particles follow the geodesics  in the
+manifold. In general, the geodesics differ depending on the
+matter-energy content of the space being considered. The geodesics of
+the surface of the sphere  are
+portions of great circles. In the Euclidean plane, they are segments
+of straight lines. There are analogous notions for four-dimensional
+manifolds. Einstein’s equations for general relativity describe
+how the matter-energy content of the universe determines the geometry
+of space-time. The equations also yield cosmological models, which
+must be tested by empirical observation. The equations allow for
+multiple solutions and, as Alexander Friedmann  observed,
+“in the absence of additional hypotheses, Einstein’s
+equations for the universe do not allow to definitely answer the
+question of the finiteness of the universe”. Let us briefly
+explain what is at stake in this comment, by pointing out the role of
+curvature and topology with respect to the issue of finiteness vs.
+infiniteness of our universe in relativistic cosmology. Topology is
+the branch of geometry that classifies spaces according to whether
+they can be transformed into one another “continuously”,
+that is with transformations that do not lead to cuts or tears.
+In 1917, Einstein posited a static finite universe. The finiteness was
+given by the choice of the 3-sphere  and the static
+nature of the universe by the fact that the radius of the hypersphere
+did not change with time. With Friedmann  and Lemaître
+, Einstein’s static model would be replaced by dynamical
+models .
+Such models are also among the possible solutions for Einstein’s
+equations and they were the source for the so-called “Big
+Bang” theories. But what about finiteness? The finiteness or
+infiniteness of the universe are not determined by Einstein’s
+equations, which allow for both possibilities. In his choice of the
+3-sphere, Einstein was motivated by considerations that had to do with
+preserving a hypothesis by Mach on inertial mass and inertial motion.
+Friedmann and Lemaître also opted for the finiteness of the
+universe . Their dynamical
+models assumed a uniform distribution of matter in the universe and
+that space is homogeneous and isotropic. But the
+Friedmann-Lemaître dynamical solutions still allow for a great
+variety of mathematical solutions and do not settle the issue of
+finiteness. Our observations in what follows are restricted to such
+models.
+Space, in this context, is characterized by its curvature  and its topology. Let us consider curvature first. In these
+models, there are three possible types of spaces depending on whether
+the curvature of the space is negative, null, or positive. The spaces
+corresponding to such curvatures are called
+hyperbolic
+,
+Euclidean
+, and
+elliptical
+. A spherical space
+ is always of finite extension, no matter
+what its topology is. This explains, at least in part, why many early
+cosmologists  opted for this solution. Indeed, for a long time issues
+concerning the topology of space were not brought to the fore due to
+the implicit assumption that the topology of space was a simply
+connected topology . Under that
+assumption, spaces of positive constant curvature are finite and those
+of null and negative constant curvature are infinite. The issue then
+of the finiteness vs. infiniteness of the universe rests on the mean
+density of matter and energy and on the value of a parameter \
+introduced by Einstein in 1917, called the
+cosmological
+constant
+. With
+most cosmologists  assuming \, and
+with the assumption that space is simply connected, determining
+curvature 
+depends only on a critical value for the mean density of
+matter—equivalently, on a density parameter \. Thus, under those
+assumptions, it would be in principle possible to determine the
+curvature of space experimentally.
+Different values of \ lead to different scenarios for the
+evolution of the universe. With \, if the curvature of space
+is negative or null we end up with a constantly expanding universe; if
+the curvature of space is positive, a phase of expansion would be
+followed by a contraction leading to a “big crunch”. Other
+values of the cosmological constant are possible and if \ a
+“big crunch” will occur no matter what the curvature of
+space is. By contrast, if \, no “big crunch”
+will occur. New experimental evidence  seems to indicate a positive mean density of
+matter and a value of \. In this case the universe would be
+finite while still remaining in perpetual accelerated expansion.
+Moreover, recent work has pointed out the importance of considering
+non-simply connected
+topologies. Unlike what happens for
+simply connected topologies, curvature does not immediately determine
+the finiteness or infinity of the space. Indeed, there are spaces of
+null or negative curvature that can be finite or infinite depending on
+the non-connected topology associated to them. This leads into
+cosmic topology
+, which investigates the global shape of space
+and how it can be determined experimentally. If space has positive
+curvature, then the universe is finite independently of the specific
+topology associated with it. But if the curvature is negative or null,
+whether the universe is finite or not will depend on the topology.
+Thus, determining whether the universe is finite or infinite requires
+not only determining the mean density of matter  but also the topology of space. Two major
+techniques that are employed experimentally to determine the topology
+of space are cosmic crystallography and the circles in the sky method
+.
+For further information on cosmic topology see Luminet, Starkmann, and
+Weeks, , Luminet and Lachièze-Rey , Luminet 
+. See also Aguirre  and Luminet . For more
+technical treatment see Thurston , Weeks , and Hitchmann
+2018.
+9. Conclusion
+We are well aware that our discussion of infinity is
+incomplete—but then, so is any such discussion. We take some
+comfort from the fact that it is impossible to give balanced coverage
+to a boundless set of issues in finite space.
+There are many more philosophically significant paradoxes and puzzles
+that involve infinity in one way or another; we have only given a
+small sample. And new paradoxes involving infinity seem to appear at
+an ever-increasing rate . However, so too are our tools for
+understanding infinity. Of course, we cannot give a definitive
+assessment of the state of play, but the theoretical developments that
+we have sketched and references that we have cited make us sanguine
+that overall, the prospects for our relationship with infinity are
+good: we can indeed live with it.

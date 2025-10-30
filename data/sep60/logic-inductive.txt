@@ -1,0 +1,3598 @@
+1. Inductive Arguments
+Let us begin by considering some common kinds of examples of inductive arguments. Consider the following two arguments:
+Example 1.
+Every raven in a random sample of 3200
+ravens is black. This strongly supports the following conclusion: All
+ravens are black.
+Example 2.
+62 percent of voters in a random sample of
+400 registered voters  said that they
+favor John Kerry over George W. Bush for President in the 2004
+Presidential election. This supports with a probability of at least
+.95 the following conclusion: Between 57 percent and 67 percent of all
+registered voters favor Kerry over Bush for President .
+This kind of argument is often called an
+induction by
+enumeration
+. It is closely related to the technique of statistical
+estimation. We may represent the logical form of such arguments
+semi-formally as follows:
+Premise: In random sample
+S
+consisting of
+n
+members of
+population
+B
+, the proportion of members that have attribute
+A
+is
+r
+.
+Therefore, with degree of support
+p
+,
+Conclusion: The proportion of all members of
+B
+that have
+attribute
+A
+is between \ and \ .
+Let’s lay out this argument more formally. The premise breaks
+down into three separate
+ statements:
+
+Semi-formalization
+Formalization
+Premise 1
+The frequency  of members with attribute
+A
+among the members of
+S
+is
+r
+.
+\
+Premise 2
+S
+is a random sample of
+B
+with respect to whether
+or not its members have
+A
+Rnd[\]
+Premise 3
+Sample
+S
+has exactly
+n
+members
+Size[\
+Therefore
+with degree of support
+p
+\
+Conclusion
+The proportion of members of
+B
+that have attribute
+A
+lies between \ and \ 
+\
+Any inductive logic that treats such arguments should address two
+challenges.  It should tell us which enumerative inductive
+arguments should count as
+good
+inductive arguments. In
+particular, it should tell us how to determine the appropriate
+degree
+p
+to which such premises
+inductively
+support
+the conclusion, for a given margin of error
+q
+. 
+It should demonstrably satisfy the
+CoA
+.
+ That is, it should be provable  that
+if
+a
+conclusion expressing the approximate proportion for an attribute in a
+population is true,
+then
+it is very likely that sufficiently
+numerous random samples of the population will provide true premises
+for
+good
+inductive arguments that confer
+degrees of
+support
+p
+approaching 1 for that true
+conclusion—where, on pain of triviality, these
+sufficiently
+numerous
+samples are only a tiny fraction of a large population.
+The supplement on
+Enumerative Inductions: Bayesian Estimation and Convergence
+,
+ shows precisely how a a Bayesian account of enumerative induction may
+meet these two challenges.
+Enumerative induction is, however, rather limited in scope. This form
+of induction is only applicable to the support of claims involving
+simple universal conditionals  and claims about the proportion of an
+attribute in a population . But, many
+important empirical hypotheses are not reducible to this simple form,
+and the evidence for these hypotheses is not composed of an
+enumeration of such instances. Consider, for example, the Newtonian
+Theory of Mechanics:
+All objects remain at rest or in uniform motion unless acted upon by
+some external force. An object’s acceleration  is in the
+same direction as the force exerted on it; and the rate at which the
+object accelerates due to a force is equal to the magnitude of the
+force divided by the object’s mass. If an object exerts a force
+on another object, the second object exerts an equal amount of force
+on the first object, but in the opposite direction to the force
+exerted by the first object.
+The evidence for  this theory is not gotten by examining
+a randomly selected subset of objects and the forces acting upon them.
+Rather, the theory is tested by calculating what this theory
+says
+ about observable phenomena in a wide
+variety of specific situations—e.g., ranging from simple
+collisions between small bodies to the trajectories of planets and
+comets—and then seeing whether those phenomena occur in the way
+that the theory
+says
+they will. This approach to testing
+hypotheses and theories is ubiquitous, and should be captured by an adequate inductive logic.
+More generally, for a wide range of cases where inductive
+reasoning is important, enumerative induction is inadequate. Rather,
+the kind of evidential reasoning that judges the likely truth of hypotheses 
+on the basis of what
+they
+say
+ about the evidence is more appropriate.
+Consider the kinds of inferences jury members are supposed to make,
+based on the evidence presented at a murder trial. The inference to
+probable guilt or innocence is based on a patchwork of evidence of
+various kinds. It almost never involves consideration of a randomly
+selected sequences of past situations when people like the accused
+committed similar murders. Or, consider how a doctor diagnoses her
+patient on the basis of his symptoms. Although the frequency of
+occurrence of various diseases when similar symptoms have been present may
+play a role, this is clearly not the whole story. Diagnosticians
+commonly employ a form of
+hypothesis evaluation
+—e.g.,
+would the hypothesis that the patient has a brain tumor account for his symptoms?; or are these symptoms more likely the result of
+a minor stroke?; or may some other hypothesis better account for the
+patient’s symptoms? Thus, a fully adequate account of inductive
+logic should explicate the logic of
+hypothesis evaluation
+,
+through which a hypothesis or theory may be tested on the basis of
+what it says
+ about observable phenomena. In
+Section 3
+we will see how a kind of probabilistic inductive logic called "Bayesian Inference" or
+"Bayesian Confirmation Theory" captures such reasoning. The full logical
+structure of such arguments will be spelled out in that section.
+2. Inductive Logic and Inductive Probabilities
+Perhaps the oldest and best understood way of representing partial
+belief, uncertain inference, and inductive support is in terms
+of
+probability
+and the equivalent
+notion
+odds
+. Mathematicians have studied probability for over
+350 years, but the concept is certainly much older. In recent times a
+number of other, related representations of partial belief and
+uncertain inference have emerged. Some of these approaches have found
+useful application in computer based artificial intelligence systems
+that perform inductive inferences in expert domains such as medical
+diagnosis. Nevertheless, probabilistic representations have
+predominated in such application domains. So, in this article we will
+focus exclusively on probabilistic representations of inductive
+support. A brief comparative description of some of the most prominent
+alternative representations of uncertainty and support-strength can be
+found in the supplement
+Some Prominent Approaches to the Representation of Uncertain Inference
+.
+2.1 The Historical Origins of Probabilistic Logic
+The mathematical study of probability originated with Blaise Pascal
+and Pierre de Fermat in the mid-17
+th
+century. From that
+time through the early 19
+th
+century, as the mathematical
+theory continued to develop, probability theory was primarily applied
+to the assessment of risk in games of chance and to drawing simple
+statistical inferences about characteristics of large
+populations—e.g., to compute appropriate life insurance premiums
+based on mortality rates. In the early 19
+th
+century Pierre
+de Laplace made further theoretical advances and showed how to apply
+probabilistic reasoning to a much wider range of scientific and
+practical problems. Since that time probability has become an
+indispensable tool in the sciences, business, and many other areas of
+modern life.
+Throughout the development of probability theory various researchers appear to have thought of it as a kind of logic. But the first extended treatment of
+probability as an explicit part of logic was George Boole’s
+The Laws of Thought
+. John Venn followed two decades
+later with an alternative empirical frequentist account of probability
+in
+The Logic of Chance
+. Not long after that the whole
+discipline of logic was transformed by new developments in deductive
+logic.
+In the late 19
+th
+and early 20
+th
+century Frege,
+followed by Russell and Whitehead, showed how deductive logic may be
+represented in the kind of rigorous formal system we now call
+quantified predicate logic
+. For the
+first time logicians had a fully formal deductive logic powerful
+enough to represent all valid deductive arguments that arise in
+mathematics and the sciences. In this logic the validity of deductive
+arguments depends only on the logical structure of the sentences
+involved. This development in deductive logic spurred some logicians
+to attempt to apply a similar approach to inductive reasoning. The
+idea was to extend the deductive entailment relation to a notion of
+probabilistic entailment
+for cases where premises provide
+less than conclusive support for conclusions. These
+partial
+entailments
+are expressed in terms of
+conditional
+probabilities
+, probabilities of the form \
+, where
+P
+is a probability function,
+C
+is a conclusion sentence,
+B
+is a conjunction of premise
+sentences, and
+r
+is the probabilistic degree of support that
+premises
+B
+provide for conclusion
+C
+. Attempts to develop
+such a logic vary somewhat with regard to the ways in which they attempt to
+emulate the paradigm of formal deductive logic.
+Some inductive logicians have tried to follow the deductive paradigm
+by attempting to specify inductive support probabilities solely in
+terms of the syntactic structures of premise and conclusion sentences.
+In deductive logic the syntactic structure of the sentences involved
+completely determines whether premises logically entail a conclusion.
+So these inductive logicians have attempted to follow suit. 
+In such a system each sentence confers a
+syntactically specified degree of support on each of the other
+sentences of the language. Thus, the inductive probabilities in such a
+system are
+logical
+in the sense that they depend on syntactic
+structure alone. This kind of conception was articulated to some
+extent by John Maynard Keynes in his
+Treatise on Probability
+. Rudolf Carnap pursued this idea with greater rigor in his
+Logical Foundations of Probability
+ and in several
+subsequent works . 
+In the inductive logics of Keynes and Carnap, Bayes’ theorem, a
+straightforward theorem of probability theory, plays a central role in
+expressing how evidence comes to bear on hypotheses. Bayes’
+theorem expresses
+how the probability of a hypothesis
+h
+on the evidence
+e
+, \, depends on the probability that
+e
+should occur if
+h
+is true, \, and on the
+probability of hypothesis
+h
+prior
+to taking the
+evidence into account, \ .  So, such approaches might well be called
+Bayesian
+logicist
+inductive logics. Other prominent Bayesian logicist
+attempts to develop a probabilistic inductive logic include the works
+of Jeffreys , Jaynes , and Rosenkrantz .
+It is now widely held that the core idea of this syntactic approach to
+Bayesian logicism is fatally flawed—that syntactic logical
+structure cannot be the sole determiner of the degree to which
+premises inductively support conclusions. A crucial facet of the
+problem faced by syntactic Bayesian logicism involves how the logic is
+supposed to apply in scientific contexts where the conclusion sentence
+is some scientific hypothesis or theory, and the premises are evidence
+claims. The difficulty is that in
+any
+probabilistic logic
+that satisfies the usual axioms for probabilities, the inductive
+support for a hypothesis must depend in part on its
+prior
+probability
+. This
+prior probability
+represents
+ how plausible the hypothesis is taken to be on the basis of
+considerations other than the observational and experimental evidence
+. A syntactic
+Bayesian logicist must tell us how to assign values to these
+pre-evidential
+prior probabilities
+of hypotheses in a way
+that relies only on the syntactic logical structure of the hypothesis,
+perhaps based on some measure of syntactic simplicity. There are
+severe problems with getting this idea to work. Various
+kinds of examples seem to show that such an approach must assign
+intuitively quite unreasonable prior probabilities to hypotheses in
+specific cases . Furthermore, for this idea to apply to the evidential
+support of real scientific theories, scientists would have to
+formalize theories in a way that makes their relevant syntactic
+structures apparent, and then evaluate theories solely on that
+syntactic basis . Are we to evaluate alternative theories of
+gravitation, and alternative quantum theories, this way? This seems an
+extremely dubious approach to the evaluation of real scientific
+hypotheses and theories. Thus, it seems that logical structure alone
+may not suffice for the inductive evaluation of scientific hypotheses.
+
+At about the time that the syntactic Bayesian logicist idea was
+developing, an alternative conception of probabilistic inductive
+reasoning was also emerging. This approach is now generally referred
+to as the Bayesian
+subjectivist
+or
+personalist
+approach to inductive reasoning . This approach treats
+inductive probability as a measure of an agent’s
+degree-of-belief
+that a hypothesis is true, given the truth
+of the evidence. This approach was originally developed as part of a
+larger normative theory of belief and action known as
+Bayesian
+decision theory
+. The principal idea is that the strength of an
+agent’s desires for various possible outcomes should combine
+with her belief-strengths regarding claims about the world to produce
+optimally rational decisions. Bayesian subjectivists provide a logic
+of decision that captures this idea, and they attempt to justify this
+logic by showing that in principle it leads to optimal decisions about
+which of various risky alternatives should be pursued. On the Bayesian
+subjectivist or personalist account of inductive probability,
+inductive probability functions represent the subjective 
+belief-strengths of ideally rational agents, the kind of belief
+strengths that figure into rational decision making. 
+Elements of a logicist conception of inductive logic live on today as
+part of the general approach called
+Bayesian inductive logic
+.
+However, among philosophers and statisticians the term
+‘Bayesian’ is now most closely associated with the
+subjectivist or personalist account of belief and decision. And the
+term ‘Bayesian inductive logic’ has come to carry the
+connotation of a logic that involves purely subjective probabilities.
+This usage is misleading since, for inductive logics, the
+Bayesian/non-Bayesian distinction should really turn on whether the
+logic gives Bayes’ theorem a prominent role, or the approach largely eschews the use of Bayes’ theorem in inductive
+inferences, as do the
+classical approaches
+to statistical
+inference developed by R. A. Fisher  and by Neyman & Pearson
+). Indeed, any inductive logic that employs the same probability
+functions to represent both the
+probabilities of evidence claims
+due to hypotheses
+and the
+probabilities of hypotheses due to
+those evidence claims
+must be a
+Bayesian
+inductive logic
+in this broader sense; because Bayes’ theorem follows directly
+from the axioms that each probability function must satisfy, and
+Bayes’ theorem expresses a necessary connection between the
+probabilities of evidence claims due to hypotheses
+and the
+probabilities of hypotheses due to those evidence claims
+.
+In this article the
+probabilistic inductive logic
+we will
+examine is a
+Bayesian
+inductive logic in this broader sense.
+This logic will not presuppose the
+subjectivist Bayesian
+theory
+of belief and decision, and will avoid the objectionable
+features of the syntactic version of Bayesian logicism. We will see
+that there are good reasons to distinguish
+inductive
+probabilities
+from
+degree-of-belief probabilities
+and
+from
+purely syntactic logical probabilities
+. So, the
+probabilistic logic articulated in this article will be presented in a
+way that depends on neither of these conceptions of what the
+probability functions
+are
+. However, this version of the logic
+will be general enough that it may be fitted to a Bayesian
+subjectivist or Bayesian syntactic-logicist program, if one desires to
+do that.
+2.2 Probabilistic Logic: Axioms and Characteristics
+All logics derive from the meanings of terms in sentences. What we now
+recognize as
+formal deductive logic
+rests on the meanings
+ of the standard logical terms.
+These logical terms, and the symbols we will employ to represent them,
+are as follows:
+‘not’, ‘\’;
+‘and’, ‘\’;
+‘inclusive or’, ‘\’;
+truth-functional ‘if-then’, ‘\’;
+‘if and only if’, ‘\’;
+the quantifiers
+‘all’, ‘\’, and
+‘some’, ‘\’;
+and
+the identity relation, ‘=’.
+The meanings of all other terms, the non-logical terms such as names
+and predicate and relational expressions, are permitted to
+“float free”. That is, the logical validity of deductive
+arguments depends neither on the meanings of the name and predicate
+and relation terms, nor on the truth-values of sentences containing
+them. It merely supposes that these non-logical terms are meaningful,
+and that sentences containing them have truth-values. Deductive logic
+then tells us that the logical structures of some
+sentences—i.e., the syntactic arrangements of their logical
+terms—preclude them from being jointly true of any possible
+state of affairs. This is the notion of
+logical
+inconsistency
+. The notion of
+logical entailment
+is
+inter-definable with it. A collection of premise sentences
+logically entails
+a conclusion sentence just when the
+negation of the conclusion is
+logically inconsistent
+with
+those premises.
+An inductive logic must, it seems, deviate from the paradigm provided
+by deductive logic in several significant ways. For one thing, logical
+entailment is an absolute, all-or-nothing relationship between
+sentences, whereas inductive support comes in degrees-of-strength. For
+another, although the notion of
+inductive support
+is
+analogous to the deductive notion of
+logical entailment
+, and
+is arguably an extension of it, there seems to be no inductive logic
+extension of the notion of
+logical inconsistency
+—at
+least none that is inter-definable with
+inductive support
+in
+the way that
+logical inconsistency
+is inter-definable with
+logical entailment
+. Indeed, it turns out that when the
+unconditional probability of \\) is very nearly 0
+\) is “nearly
+inconsistent”), the degree to which
+B
+inductively
+supports
+A
+, \, may range anywhere between 0
+and 1.
+Another notable difference is that when
+B
+logically
+entails
+A
+, adding a premise
+C
+cannot undermine the
+logical entailment—i.e., \\) must
+logically entail
+A
+as well. This property of
+logical entailment
+is
+called
+monotonicity
+. But
+inductive support
+is
+nonmonotonic
+. In general, depending on what \, and
+C
+mean, adding a premise
+C
+to
+B
+may substantially
+raise the degree of support for
+A
+, or may substantially lower
+it, or may leave it completely unchanged—i.e., \]\) may have a value much larger than \, or
+may have a much smaller value, or it may have the same, or nearly the
+same value as \.
+In a formal treatment of probabilistic inductive logic, inductive
+support is represented by conditional probability functions defined on
+sentences of a formal language
+L
+. These conditional probability
+functions are constrained by certain rules or axioms that are
+sensitive to the meanings of the logical terms . The axioms apply without regard for what the other terms of
+the language may mean. In essence the axioms specify a family of
+possible support functions
+, \ for a given language
+L
+. Although each
+support function satisfies these same axioms, the further issue of
+which among them provides an appropriate measure of
+inductive
+support
+is not settled by the axioms alone. That may depend on
+additional factors, such as the meanings of the non-logical terms
+ of the language.
+A good way to specify the axioms of the logic of inductive support
+functions is as follows. These axioms are apparently weaker than the
+usual axioms for conditional probabilities. For instance, the usual
+axioms assume that conditional probability values are restricted to
+real numbers between 0 and 1. The following axioms do not assume this,
+but only that support functions assign some real numbers as values for
+support strengths. However, it turns out that the following axioms
+suffice to derive all the usual axioms for conditional probabilities
+. We draw
+on these weaker axioms only to forestall some concerns about whether the support
+function axioms may assume too much, or may be overly restrictive.
+Let
+L
+be a language for predicate logic with identity, and let
+‘\’ be the standard
+logical entailment
+relation—i.e., the expression
+‘\’
+says
+“
+B logically entails A
+” and the expression
+‘\’
+says
+“
+A
+is a tautology”. A support function is a
+function \ from pairs of sentences of
+L
+to real
+numbers that satisfies the following axioms:
+
+\ for at
+least some sentences \, and
+H
+.
+For all sentence \, and
+D
+:
+
+If
+\, then \;
+
+\] = P_{\alpha}[A \pmid ]\);
+
+If
+\\), then either 
+
+\[P_{\alpha}[ \pmid  C] = P_{\alpha}[A \pmid  C] + P_{\alpha}[B \pmid  C]\]
+
+ 
+
+ or else \[P_{\alpha}[E \pmid  C] = P_{\alpha}[C \pmid  C]\] for every sentence
+E
+;
+
+\ \pmid C] = P_{\alpha}[A \pmid ]
+\times P_{\alpha}[B \pmid C]\).
+This axiomatization takes conditional probability as basic, as seems
+appropriate for
+evidential support functions
+. ]\). However, these axioms permit
+conditional probabilities \ to remain defined
+even when condition statement
+C
+has probability 0—i.e.,
+even when \] = 0\).)
+Notice that conditional probability functions apply only to pairs of
+sentences, a conclusion sentence and a premise sentence. So, in
+probabilistic inductive logic we represent finite collections of
+premises by conjoining them into a single sentence. Rather than say,
+A
+is supported to degree
+r
+by the set of premises
+\, \, \,…, \,
+we instead say that
+A
+is supported to degree
+r
+by the conjunctive premise
+\\cdot B_3)\cdot \ldots \cdot B_n)\),
+and write this as
+\[P[A \pmid  \cdot B_3)\cdot \ldots \cdot B_n)] = r.\]
+The above axioms are quite weak. For instance, they do not say that
+logically equivalent sentences are supported by all other sentences to
+the same degree; rather, that result is derivable from these axioms
+. Nor do these axioms say that logically equivalent sentences
+support all other sentences to the same degree; rather, that result is
+also derivable . Indeed, from these axioms all of the usual theorems of
+probability theory may be derived. The following results are
+particularly useful in probabilistic logic. Their derivations from
+these axioms are provided in note
+ 2.
+
+If \, then \.
+If \\), then either
+
+\[P_{\alpha}[ \pmid  C] = P_{\alpha}[A \pmid  C] + P_{\alpha}[B \pmid  C]\] 
+
+ or else \ for every sentence
+E
+.
+\ or else \ for every sentence
+C
+.
+\.
+If \, then \.
+If \ and \, then
+\.
+If \, then \
+\pmid C] = P_{\alpha}[ \pmid C] = P_{\alpha}[A \pmid
+C]\).
+If \ and \, then
+\.
+\, then 
+
+\[P_{\alpha}[A \pmid  ] = P_{\alpha}[B \pmid  ] \times \frac{P_{\alpha}[A \pmid  C]}{P_{\alpha}[B \pmid  C]}\]
+
+.
+\ \pmid C] = P_{\alpha}[A
+\pmid C] + P_{\alpha}[B \pmid C] - P_{\alpha}[ \pmid C]\).
+If \ is any finite set of
+sentences such that for each pair \ and \\) , then either
+\
+for
+every sentence
+D
+, or 
+
+\[
+P_{\alpha}[\vee \ldots \vee B_n) \pmid  C] = \sum ^{n}_{i=1} P_{\alpha}[B_i \pmid  C].
+\]
+If \ is any
+countably infinite set of sentences such that for each pair \
+and \\), then either
+\ for every sentence
+D
+,
+ or
+
+\[
+\lim_n P_{\alpha}[\vee \ldots \vee B_n) \pmid  C] =
+\sum^{\infty}_{i=1}
+P_{\alpha}[B_i \pmid  C].
+\]
+Let us now briefly consider each axiom to see how plausible it is as a
+constraint on a quantitative measure of inductive support, and how it
+extends the notion of deductive entailment. First notice that each
+degree-of-support
+function \ on
+L
+measures
+support strength
+with some real number values, but
+the axioms don’t explicitly restrict these values to lie between
+0 and 1. It turns out that the all support values must lie between 0
+and 1, but this follows from the axioms, rather than being assumed by
+them. The scaling of inductive support via the real numbers is surely
+a reasonable way to go.
+Axiom 1
+is a non-triviality requirement. It says that the support values
+cannot be the same for all sentence pairs. This axiom merely rules out
+the trivial support function that assigns the same amount of support
+to each sentence by every sentence. One might replace this axiom with
+the following rule:
+\[P_{\alpha}[ \pmid  ] \ne P_{\alpha}[ \pmid  ].\]
+But this alternative rule turns out to be derivable from axiom 1
+together with the other axioms.
+Axiom 2
+asserts that when
+B
+logically entail
+A
+, the
+support of
+A
+by
+B
+is as strong as support can possibly
+be. This comports with the idea that an inductive support function is
+a generalization of the deductive entailment relation, where the
+premises of deductive entailments provide the strongest possible
+support for their conclusions.
+Axiom 3
+merely says that \\) supports sentences to precisely the
+same degree that \\) supports them. This is an especially
+weak axiom. But taken together with the other axioms, it suffices to
+entail that logically equivalent sentences support all sentences to
+precisely the same degree.
+Axiom 4
+says that inductive support
+adds up
+in a plausible way. When
+C
+logically entails the incompatibility of
+A
+and
+B
+, i.e., when no possible state of affairs can make both
+A
+and
+B
+true together, the degrees of support that
+C
+provides to each of them individually must sum to the support
+it provides to their disjunction. The only exception is in those cases
+where
+C
+acts like a logical contradiction and supports all
+sentences to the maximum possible degree .
+To understand what
+axiom 5
+says, think of a support function \ as describing a
+measure on possible states of affairs. Read each degree-of-support
+expression of form ‘\’ to say
+that the proportion of states of affairs in which
+D
+is true
+among those states of affairs where
+E
+is true is
+r
+. Read
+this way, axiom 5 then says the following. Suppose
+B
+is true in
+proportion
+q
+of all the states of affairs where
+C
+is
+true, and suppose
+A
+is true in fraction
+r
+of those
+states where
+B
+and
+C
+are true together. Then
+A
+and
+B
+should be true together in what proportion of all the
+states where
+C
+is true? In fraction
+r
+\) part) of proportion
+q
+ of all those
+states where
+C
+is true.
+The degree to which a sentence
+B
+supports a sentence
+A
+may well depend on what these sentences mean. In particular it will
+usually depend on the meanings we associate with the non-logical terms
+, that is, on the
+meanings of the names, and the predicate and relation terms of the
+language. For example, we should want
+\[P_{\alpha}[\textrm{George is not married} \pmid  \textrm{George is a bachelor}] = 1,\]
+given the usual meanings of ‘bachelor’ and
+‘married’, since “all bachelors are unmarried”
+is analytically true—i.e. no empirical evidence is required to
+establish this connection. , since \\) is analytically true on this meaning
+assignment to the non-logical terms.) So, let’s associate with
+each individual support function \ a specific assignment
+of meanings  to all the non-logical terms
+of the language.  to make
+\[P_{\alpha}[\textrm{This glass is full of H\O} \pmid  \textrm{This glass is full of water}] = 1,\]
+since we presumably want the inductive logic to draw on explicit
+empirical evidence to support the claim that water is made of
+H
+2
+O. Thus, the meanings of terms we associate with a
+support function should only be their primary intensions, not their
+secondary intensions.)
+In the context of inductive logic it
+makes good sense to supplement the above axioms with two additional
+axioms. Here is the first of them:
+
+If
+A
+is an axiom of set theory or any other piece of pure
+mathematics employed by the sciences, or if
+A
+is
+analytically true
+\), then, for all sentences
+C
+, \ \).
+Here is how axiom 6 applies to the above example, yielding
+\ when the meaning assignments to
+non-logical terms associated with support function \
+makes \\) analytically true. From
+axiom 6  we have
+\[
+\begin{align}
+1 & = P_{\alpha}[\forall x \pmid  Bg] \\
+& = P_{\alpha}[) \pmid  Bg]\\
+& \le P_{\alpha}[{\nsim}Mg \pmid  Bg] \\
+& \le 1;
+\end{align}
+\]
+thus, \. The idea behind axiom 6
+is that inductive logic is about evidential support for contingent
+claims. Nothing can count as empirical evidence for or against
+non-contingent truths. In particular, analytic truths should be
+maximally supported by all premises
+C
+.
+One important respect in which inductive logic
+should
+follow
+the deductive paradigm is that the logic should not presuppose the truth of
+contingent statements. If a statement
+C
+is contingent, then some other statements should be able to count as evidence against
+C
+. Otherwise, a support function \ will take
+C
+and all of its logical consequences to be supported to degree 1 by all possible evidence claims.
+This is no way for an inductive logic to behave. The whole idea of inductive logic is
+to provide a measure of the extent to which premise statements indicate
+the likely truth-values of contingent conclusion statements. This idea
+won’t work properly if the truth-values of some contingent
+statements are
+presupposed
+by assigning them support value 1 on every possible premise. Such probability assignments would make the inductive logic enthymematic
+by hiding significant premises in inductive support relationships.
+It would be analogous to permitting deductive arguments to count as valid 
+in cases where the explicitly stated premises are insufficient to logically entail the conclusion, but where the validity of the argument is permitted to depend on additional unstated premises. This is not how a
+rigorous approach to deductive logic should work, and it should not be a common
+practice in a rigorous approach to inductive logic.
+Nevertheless, it is common practice for probabilistic logicians to
+sweep provisionally accepted contingent claims under the rug by
+assigning them probability 1 . This practice saves
+the trouble of repeatedly writing a given contingent sentence
+B
+as a premise, since \ will equal
+\ whenever \.
+Although this convention is useful, such probability functions should
+be considered mere abbreviations for proper, logically explicit,
+non-enthymematic, inductive support relations. Thus, properly
+speaking, an inductive support function \ should not
+assign probability 1 to a sentence on every possible premise unless
+that sentence is either  logically true, or  an axiom of set
+theory or some other piece of pure mathematics employed by the
+sciences, or  unless according to the interpretation of the
+language that \ presupposes, the sentence is
+analytic
+.
+Thus, we adopt the following version of the so-called “axiom of
+regularity”.
+
+If,
+for all
+C
+, \
+), then
+A
+must be a logical
+truth or an axiom of set theory or some other piece of pure
+mathematics employed by the sciences, or
+A
+must be
+analytically true
+\).
+Axioms 6 and 7 taken together say that a support function
+\ counts as non-contingently true, and so not subject to
+empirical support, just those sentences that are assigned probability
+1 by every premise.
+Some Bayesian logicists have proposed that an inductive logic might be
+made to depend solely on the logical form of sentences, as is the case
+for deductive logic. The idea is, effectively, to supplement axioms
+1–7 with additional axioms that depend only on the logical
+structures of sentences, and to introduce enough such axioms to reduce
+the number of possible support functions to a single uniquely best
+support function. It is now widely agreed that this project cannot be
+carried out in a plausible way. Perhaps support functions should obey
+some rules in addition to axioms 1–7. But it is doubtful that
+any plausible collection of additional rules can suffice to determine
+a single, uniquely qualified support function. Later, in
+Section 3
+, we will briefly return to this issue,
+ after we develop a more detailed account of how inductive probabilities
+capture the relationship between hypotheses and evidence.
+2.3 Two Conceptions of Inductive Probability
+Axioms 1–7 for conditional probability functions merely place
+formal constraints on what may properly count as a
+degree of
+support function
+. Each function \ that satisfies
+these axioms may be viewed as a possible way of applying the notion of
+inductive support
+to a language
+L
+that respects the
+meanings of the logical terms, much as each possible
+truth-value
+assignment
+for a language represents a possible way of assigning
+truth-values to its sentences in a way that respects the meanings of the logical terms. The issue of which
+of the
+possible
+truth-value assignments to a language
+represents the
+actual
+truth or falsehood of its sentences
+depends on more than this. It depends on the meanings of the
+non-logical terms and on the state of the actual world. Similarly, the
+degree to which some sentences
+actually
+support others in a
+fully meaningful language must rely on something more than the mere
+satisfaction of the axioms for support functions. It must, at least, rely
+on what the sentences of the language mean, and perhaps on much more
+besides. But, what more? Perhaps a better understanding of what inductive probability
+is
+may provide some help by filling out our conception of what
+inductive support
+is about. Let’s pause to
+discuss two prominent views—two
+interpretations
+of the notion of inductive probability.
+One kind of non-syntactic logicist reading of inductive probability takes each support
+function \ to be a measure on possible states of affairs. The idea is that,
+given a fully meaningful language )
+‘\’ says that among those
+states of affairs in which
+B
+is true,
+A
+is true in
+proportion
+r
+of them. There will not generally be a single
+privileged way to define such a measure on possible states of affairs.
+Rather, each of a number of functions \, \,
+\,…, etc., that satisfy the constraints imposed by
+axioms 1–7 may represent a viable measure of the
+inferential
+import
+of the propositions expressed by sentences of the
+language. This idea needs more fleshing out, of course. The next
+section will provide some indication of how that might
+go.
+Subjectivist Bayesians
+offer an alternative reading of the
+support functions. First, they usually take unconditional probability
+as basic, and take conditional probabilities as defined in terms of
+unconditional probabilities: the conditional probability
+‘\’ is defined as a ratio of
+unconditional probabilities:
+\[P_{\alpha}[A \pmid  B] =  \frac{P_{\alpha}[A\cdot B]}{P_{\alpha}[B]}.\]
+Subjectivist Bayesians
+take each unconditional probability
+function \ to represent the belief-strengths or
+confidence-strengths of an ideally rational agent, \. On this
+understanding ‘\’ says, “the
+strength of \’s belief  that
+A
+is
+truth is
+r
+”. Subjectivist Bayesians usually tie such
+belief strengths to how much money  the agent would be willing to bet on
+A
+turning
+out to be true. Roughly, the idea is this. Suppose that an ideally
+rational agent \ would be willing to accept a wager that
+would yield  $
+u
+if
+A
+turns out to be true
+and would lose him $1 if
+A
+turns out to be false. Then, under
+reasonable assumptions about the agent’s desire money, it can be
+shown that the agent’s belief strength that
+A
+is true
+should be
+\[P_{\alpha}[A] = \frac{1}{}. \]
+And it can further be shown that any function \ that
+expresses such betting-related belief-strengths on all statements in
+agent \’s language must satisfy axioms for
+unconditional probabilities analogous to axioms
+ 1–5.
+
+Moreover, it can be shown that any function \ that
+satisfies these axioms is a possible rational belief function for some
+ideally rational agent \. These relationships between
+belief-strengths and the desirability of outcomes  are at the core of
+subjectivist Bayesian
+decision theory
+.
+Subjectivist Bayesians
+usually take
+inductive probability
+to just
+be
+this notion of
+probabilistic belief-strength
+.
+Undoubtedly real agents do believe some claims more strongly than
+others. And, arguably, the belief strengths of real agents can be
+measured on a probabilistic scale between 0 and 1, at least
+approximately. And clearly the inductive support of a hypothesis by
+evidence should influence the strength of an agent’s belief in
+the truth of that hypothesis—that’s the point of engaging
+in inductive reasoning, isn’t it? However, there is good reason
+for caution about viewing
+inductive support functions
+as
+Bayesian belief-strength functions, as we’ll see a bit later.
+So, perhaps an agent’s support function is not simply
+identical to
+his belief function, and perhaps the
+relationship between
+inductive support
+and
+belief-strength
+is somewhat more complicated.
+In any case, some account of what support functions are supposed to
+represent is clearly needed. The belief function account and the
+logicist account 
+are two attempts to provide this account. But let us put this interpretative
+issue aside for now. One may be able to get a better handle on what
+inductive support functions
+really are
+after one sees how the
+inductive logic that draws on them is supposed to work.
+3. The Application of Inductive Probabilities to the Evaluation of Scientific Hypotheses
+One of the most important applications of an inductive logic is its treatment of
+the evidential evaluation of scientific hypotheses.
+The logic should capture the structure of evidential support for all
+sorts of scientific hypotheses, ranging from simple diagnostic claims  to complex scientific theories about the fundamental nature of the world, such as quantum
+mechanics or the theory of relativity. This section will show how
+evidential support functions 
+represent the evidential evaluation of scientific hypotheses and theories. This logic is essentially comparative. The evaluation of a hypothesis depends on how strongly evidence supports it over alternative hypotheses.
+Consider some collection of mutually incompatible, alternative hypotheses 
+about a common subject matter, \. The collection of
+alternatives may be very simple, e.g., {“the patient has
+HIV”, “the patient is free of HIV”}. Or, when the
+physician is trying to determine which among a range of diseases is
+causing the patient’s symptoms, the collection of alternatives may
+consist of a long list of possible disease hypotheses. For the cosmologist, the collection of alternatives may consist of several distinct gravitational
+theories, or several empirically distinct variants of the “same” theory. Whenever two variants of a hypothesis  differ in empirical import, they count as distinct hypotheses. 
+The collection of competing hypotheses  to be evaluated by the logic may be finite in number, or may be countably infinite. No realistic language contains more than a countable number of expressions; so it suffices for a logic to apply to countably infinite number of sentences. From a purely logical perspective the collection of competing alternatives may consist of every rival hypothesis  about a given subject matter that can be expressed within a given language — e.g., all possible theories of the origin and evolution of the universe expressible in English and contemporary mathematics. In practice, alternative hypotheses  will often be constructed and evidentially evaluated over a long period of time. The logic of evidential support works in much the same way regardless of whether all alternative hypotheses are considered together, or only a few alternative hypotheses are available at a time.
+Evidence for scientific hypotheses consists of the results of specific
+experiments or observations. For a given experiment or observation,
+let ‘\’ represent a description of the relevant
+conditions
+under which it is performed, and let
+‘\’ represent a description of the result of the experiment or observation, the
+evidential outcome
+of 
+conditions \.
+The logical connection between scientific hypotheses and the evidence often requires the mediation of background information and auxiliary hypotheses. Let ‘\’ represent whatever background and auxiliary hypotheses are required to connect each hypothesis \ among the competing hypotheses \ to the evidence. Although the claims expressed by the auxiliary hypotheses within \ may themselves be subject to empirical evaluation, they should be the kinds of claims that
+are not at issue in the evaluation of the alternative hypothesis in the collection
+\. Rather, each of the alternative hypotheses under consideration draws on the same background and auxiliaries to
+logically connect to the evidential events.  and
+\ draw on distinct auxiliary hypotheses \ and \,
+respectively, in making logical contact with evidential claims, then
+the following treatment should be applied to the respective
+conjunctive hypotheses, \\) and \\), since these alternative conjunctive hypotheses will
+constitute the empirically distinct alternatives at issue.)
+In cases where a hypothesis is deductively related to an
+outcome \ of an observational or experimental condition
+\ ), we will have
+either
+\
+or
+\
+. For example, \ might be the Newtonian
+Theory of Gravitation. A test of the theory might involve a condition
+statement \ that describes the results of some earlier measurements
+of Jupiter’s position, and that describes the means by which the
+next position measurement will be made; the outcome description
+\ states the result of this additional position measurement;
+and the background information  \
+might state some already well confirmed theory about the workings and
+accuracy of the devices used to make the position measurements. Then,
+from \ we may calculate the specific outcome
+\ we expect to find; thus, the following logical entailment
+holds:
+\
+. Then, provided that the experimental and observational
+conditions stated by \ are in fact true, if the evidential
+outcome described by \ actually occurs, the resulting conjoint
+evidential claim \\) may be considered good evidence for
+\, given \.  On
+the other hand, when from \ we calculate some
+outcome incompatible with the observed evidential outcome \,
+then the following logical entailment holds:
+\.
+In that case, from deductive logic alone we
+must also have that
+\
+; thus, \ is said to be
+falsified
+by \. The Bayesian account of
+evidential support we will be describing below extends this
+deductivist approach to include cases where the hypothesis \
+ may not be deductive related to the evidence,
+but may instead imply that the evidential outcome is likely or unlikely
+to some specific degree
+r
+. That is, the Bayesian approach applies to cases where we may have neither
+\
+nor
+\,
+but may instead only have \, where
+r
+is some
+“entailment strength” between 0 and 1.
+Before going on to describing the logic of evidential support in more
+detail, perhaps a few more words are in order about the background knowledge
+and auxiliary hypotheses, represented here by ‘\’.
+Duhem  and Quine  are generally credited with alerting
+inductive logicians to the importance of auxiliary hypotheses in
+connecting scientific hypotheses and theories to empirical evidence.
+
+ They point out that scientific hypotheses often make little contact
+with evidence claims on their own. Rather, in most cases scientific hypotheses
+make testable predictions only relative to background information and
+auxiliary hypotheses that tie them to the evidence.  Typically
+auxiliaries are highly confirmed hypotheses from other scientific
+domains. They often describe the operating characteristics of various
+devices  used to make observations or
+conduct experiments. Their credibility is usually not at issue in the testing of hypothesis \ against its competitors, because \ and its alternatives
+usually rely on the same auxiliary hypotheses to tie them to the
+evidence. But even when an auxiliary hypothesis is already
+well-confirmed, we cannot simply assume that it is unproblematic, or
+just
+known to be true
+. Rather, the evidential support or
+refutation of a hypothesis \ is
+relative to
+whatever
+auxiliaries and background information ) is being
+supposed in the confirmational context. In other contexts the auxiliary hypotheses used to test \ may themselves be among a collection of alternative hypotheses
+that are subject to evidential support or refutation. Furthermore, to
+the extent that competing hypotheses employ different auxiliary
+hypotheses in accounting for evidence, the evidence only tests each
+such hypothesis in conjunction with its distinct auxiliaries against
+alternative hypotheses packaged with their distinct auxiliaries, as
+described earlier. Thus, what counts as a
+hypothesis to be
+tested
+, \, and what counts as auxiliary hypotheses and
+background information, \, may depend on the epistemic context—on what class of alternative hypotheses are being tested by a collection of experiments or observations, and on what claims are presupposed in that context.
+No statement is intrinsically a
+test hypothesis
+, or
+intrinsically an
+auxiliary hypothesis
+or
+background condition
+. Rather, these categories are roles statements may play in a particular epistemic context.
+In a probabilistic inductive logic the degree to which the evidence
+\\) supports a hypothesis \ relative to background and auxiliaries
+\ is represented by the
+posterior probability
+of
+\, \, according to an evidential
+support function \. It turns out that the
+posterior
+probability
+of a hypothesis depends on just two kinds of factors:
+ its
+prior probability
+, \,
+together with the prior probabilities of its competitors,
+\, \, etc.; and  the
+likelihood
+of evidential outcomes \ according to \ in conjunction with with \ and \, \, together with
+the likelihoods of these same evidential outcomes according to competing hypotheses, \, \, etc. We will now examine each of these factors in some detail. Following that we will see precisely how the values of posterior probabilities depend on the values of likelihoods
+and prior probabilities.
+3.1 Likelihoods
+In probabilistic inductive logic
+the likelihoods
+carry the
+empirical import of hypotheses. A
+likelihood
+is a support
+function probability of form \. It
+expresses how likely it is that outcome \ will occur according
+to hypothesis \ together with the background and auxiliaries \ and the experimental  conditions \.
+
+If a hypothesis together with auxiliaries and experimental/observation conditions
+deductively entails an evidence claim, the axioms of probability make
+the corresponding likelihood
+objective
+in the sense that every support
+function must agree on its values: \ if \; \ if \. However, in many cases
+a hypothesis \ will not be deductively related to the evidence,
+but will only imply it probabilistically. There are several ways this
+might happen:  hypothesis \ may itself be an explicitly
+probabilistic or statistical hypothesis;  an auxiliary statistical
+hypothesis, as part of the background
+b
+, may connect hypothesis
+\ to the evidence;  the connection between the hypothesis and
+the evidence may be somewhat loose or imprecise, not mediated by
+explicit statistical claims, but nevertheless objective enough for the
+purposes of evidential evaluation. Let’s briefly consider
+examples of the first two kinds. We’ll treat case  in
+Section 5
+,
+ which addresses the the issue of vague and imprecise likelihoods.
+The hypotheses being tested may themselves be statistical in nature.
+One of the simplest examples of statistical hypotheses and their role
+in likelihoods are hypotheses about the chance characteristic of
+coin-tossing. Let
+\
+be a hypothesis that says a specific coin has a propensity 
+r
+for coming up
+heads
+on normal tosses, let \ say that such tosses are probabilistically independent of one another. Let \
+state that the coin is tossed
+n
+times in the normal way; and
+let \ say that on these tosses the coin comes up heads
+m
+times. In cases like this the value of the likelihood of the outcome
+\ on hypothesis
+\
+for condition \ is given by the well-known binomial formula:
+\[
+P[e \pmid  h_{[r]}\cdot b\cdot c] =
+\frac{n!}{m! \times!}
+\times r^m ^{n-m}.
+\]
+There are, of course, more complex cases of likelihoods involving
+statistical hypotheses. Consider, for example, the hypothesis that
+plutonium 233 nuclei have a half-life of 20 minutes—i.e., that
+the propensity  for a Pu-233 nucleus to
+decay within a 20 minute period is 1/2. The full statistical model for
+the lifetime of such a system says that the propensity  for that system to remain intact  within any time period
+x
+is governed by the
+formula \, where \ is the half-life of such a
+system. Let \ be a hypothesis that says that this statistical
+model applies to Pu-233 nuclei with \ minutes; let
+\ say that some specific Pu-233 nucleus is intact within a decay detector  at an initial time \; let \ say that no decay of this same Pu-233 nucleus is detected by the later time \; and let \ say that the detector is completely accurate .  Then, the associated likelihood of
+\ given \ and \ is this: \/\tau}\), where the value of \ is 20 minutes.
+An auxiliary statistical hypothesis, as part of the background
+\, may be required to connect hypothesis \ to the evidence. For example,
+a blood test for HIV has a known false-positive rate and a known
+true-positive rate. Suppose the false-positive rate is .05—i.e.,
+the test tends to incorrectly show the blood sample to be positive for
+HIV in 5% of all cases where
+HIV is not present
+. And suppose that the
+true-positive rate is .99—i.e., the test tends to correctly show
+the blood sample to be positive for HIV in 99% of all cases where
+HIV
+really is present
+. When a particular patient’s blood is tested, the hypotheses under consideration are
+this patient is infected with HIV
+, \, and
+this patient is not infected with HIV
+, \. In this context the known test characteristics function as background information,
+b
+. The
+experimental condition \ merely states that this particular
+patient was subjected to this specific kind of blood test for HIV,
+which was processed by the lab using proper procedures. Let us suppose
+that the outcome \ states that the result is a
+positive
+test
+result for HIV. The relevant likelihoods then, are \ and \ = .05.
+In this example the values of the likelihoods are entirely due to the
+statistical characteristics of the accuracy of the test, which is
+carried by the background/auxiliary information \. The hypothesis
+\ being tested by the evidence is not itself statistical.
+This kind of situation may, of course, arise for much more complex
+hypotheses. The alternative hypotheses of interest may be deterministic
+physical theories, say Newtonian Gravitation Theory and some specific alternatives. 
+Some of the experiments that test this theory relay on somewhat imprecise
+measurements that have known statistical error characteristics, which
+are expressed as part of the background or auxiliary hypotheses,
+\. For example, the auxiliary \ may describe the error
+characteristics of a device that measures the torque imparted to a
+quartz fiber, where the measured torque is used to assess the strength
+of the gravitational force between test masses. In that case \
+may say that for this kind of device the measurement errors are
+normally distributed about whatever value a given gravitational theory
+predicts, with some specified standard deviation that is
+characteristic of the device. This results in specific values \
+for the likelihoods, \, for each
+of the various gravitational theories, \, being
+tested.
+Likelihoods that arise from explicit statistical claims—either
+within the hypotheses being tested, or from explicit statistical
+background claims that tie the hypotheses to the evidence—are
+often called
+direct inference likelihoods
+. Such likelihoods
+should be completely objective. So, all evidential support functions should agree on their values, just as all support functions agree on likelihoods when evidence is logically
+entailed. Direct inference likelihoods are
+logical
+in an
+extended, non-deductive sense. Indeed, some logicians have attempted
+to spell out the logic of
+direct inferences
+in terms of the
+logical form of the sentences
+ involved.
+
+But regardless of whether that project succeeds, it seems reasonable
+to take likelihoods of this sort to have highly objective or
+intersubjectively agreed values.
+Not all likelihoods of interest in confirmational contexts are
+warranted deductively or by explicitly stated statistical claims. In
+such cases the likelihoods may have vague, imprecise values, but
+values that are determinate enough to still underwrite an objective
+evaluation of hypotheses on the evidence. In
+Section 5
+we’ll consider such cases, where no underlying statistical
+theory is involved, but where likelihoods are determinate enough to
+play their standard role in the evidential evaluation of scientific
+hypotheses. However, the proper treatment of such cases will be more
+easily understood after we have first seen how the logic works when
+likelihoods are precisely known . In any case, the likelihoods that relate
+hypotheses to evidence claims in many scientific contexts will have
+such objective values. So, although a variety of different support
+functions \, \,…, \,
+etc., may be needed to represent the differing “inductive
+proclivities” of the various members of a scientific community,
+for now we will consider cases where all evidential support functions
+agree on the values of the likelihoods. For,
+the likelihoods represent the empirical content of a scientific hypothesis, what
+the hypothesis , and background and auxiliaries \)
+says
+or
+probabilistically implies
+about the
+evidence. Thus, the empirical objectivity of a science relies on a
+high degree of objectivity or intersubjective agreement among
+scientists on the numerical values of likelihoods.
+To see the point more vividly, imagine what a science would be like if
+scientists disagreed widely about the values of likelihoods. Each
+practitioner interprets a theory to
+say
+quite different
+things about how likely it is that various possible evidence
+statements will turn out to be true. Whereas scientist \
+takes theory \ to probabilistically imply that event \ is
+highly likely, his colleague \ understands the empirical
+import of \ to say that \ is very unlikely. And,
+conversely, \ takes competing theory \ to
+probabilistically imply that \ is very unlikely, whereas
+\ reads \ to say that \ is extremely likely. So,
+for \ the evidential outcome \ supplies strong support
+for \ over \, because
+\[P_{\alpha}[e \pmid  h_1\cdot b\cdot c]  \gg P_{\alpha}[e \pmid  h_2\cdot b\cdot c].\]
+But his colleague \ takes outcome \ to show just the
+opposite, that \ is strongly supported over \, because
+\[P_{\beta}[e \pmid  h_2\cdot b\cdot c] \gg  P_{\beta}[e \pmid  h_1\cdot b\cdot c].\]
+If this kind of situation were to occur often, or for significant evidence
+claims in a scientific domain, it would make a shambles of the
+empirical objectivity of that science. It would completely undermine
+the empirical testability of such hypotheses and theories within that
+scientific domain. Under these circumstances, although each scientist
+employs the same
+sentences
+to express a given theory
+\, each understands the
+empirical import
+of these
+sentences
+so differently that \ as understood by
+\ is an empirically different theory than \ as
+understood by \.  must take
+at least one of the two sentences, \ or \, to express a different proposition than does \.) Thus, the empirical
+objectivity of the sciences requires that experts should be in close
+agreement about the values of the likelihoods.
+
+For now we will suppose that the likelihoods have objective or
+intersubjectively agreed values, common to all agents in a scientific
+community. We mark this agreement by dropping the subscript
+‘\’, ‘\’, etc., from
+expressions that represent likelihoods, since all support functions
+under consideration are supposed to agree on the values for
+likelihoods. One might worry that this supposition is overly strong.
+There are legitimate scientific contexts where, although scientists
+should have enough of a common understanding of the empirical import
+of hypotheses to assign quite similar values to likelihoods, precise
+agreement on their numerical values may be unrealistic. This point is
+right in some important kinds of cases. So later, in Section 5, we will see how to relax the supposition that precise
+likelihood values are available, and see how the logic works in such
+cases. But for now the main ideas underlying probabilistic inductive
+logic will be more easily explained if we focus on those contexts were
+objective or intersubjectively agreed likelihoods are available. Later
+we will see that much the same logic continues to apply in contexts
+where the values of likelihoods may be somewhat vague, or where
+members of the scientific community disagree to some extent about
+their values.
+An adequate treatment of the likelihoods calls for the introduction of
+one additional notational device. Scientific hypotheses are generally
+tested by a sequence of experiments or observations conducted over a
+period of time. To explicitly represent the accumulation of evidence,
+let the series of sentences \, \, …, \,
+describe the conditions under which a sequence of experiments or
+observations are conducted. And let the corresponding outcomes of
+these observations be represented by sentences \, \,
+…, \. We will abbreviate the conjunction of the first
+n
+descriptions of experimental or observational conditions by
+‘\’, and abbreviate the conjunction of descriptions
+of their outcomes by ‘\’. Then, for a stream of
+n
+observations or experiments and their outcomes, the
+likelihoods take form \,
+for appropriate values of \. In many cases the likelihood
+of the evidence stream will be equal to the product of the likelihoods
+of the individual outcomes:
+\[
+P[e^n \pmid  h_{i}\cdot b\cdot c^{n}] = P[e_1 \pmid  h_i\cdot b\cdot c_1] \times \cdots \times P[e_n \pmid  h_{i}\cdot b\cdot c_{n}].
+\]
+When this equality holds, the individual bits of evidence are said to
+be
+probabilistically independent on the hypothesis 
+. In the following account of the logic of evidential
+support, such
+probabilistic independence
+will
+not
+be assumed,
+except in those places where it is explicitly invoked.
+3.2 Posterior Probabilities and Prior Probabilities
+The probabilistic logic of evidential support represents the net
+support of a hypothesis by the
+posterior probability of the
+hypothesis
+, 
+
+\.
+
+The posterior probability represents the net support for the
+hypothesis that results from the evidence, \, together
+with whatever
+plausibility considerations
+are taken to be
+relevant to the assessment of \. Whereas the likelihoods are the
+means through which evidence contributes to the posterior probability
+of a hypothesis, all other relevant plausibility consideration are
+represented by a separate factor, called the
+prior probability of
+the hypothesis
+: \. The
+prior
+probability
+represents the weight of any important considerations
+not captured by the evidential likelihoods. Any relevant
+considerations that go beyond the evidence itself may be explicitly
+stated within expression \  may contain in support of the likelihoods). Thus, the prior probability of \
+may depend explicitly on the content of \. It turns out that posterior
+probabilities depend
+only
+on the values of evidential
+likelihoods together with the values of prior probabilities.
+As an illustration of the role of
+prior probabilities
+, consider the
+HIV test
+example described in the previous section. What the
+physician and the patient want to know is the value of the posterior
+probability, \, that the patient
+has HIV, \, given the evidence of the positive test, \, and given the error rates of the test, described within \.
+The value of this posterior probability depends on the likelihood  of this patient obtaining a true-positive result,
+\, and of obtaining a
+false-positive result, \. In
+addition, the value of the of the posterior probability depends on how
+plausible it is that the patient has HIV prior to taking the test
+results into account, \. In the context of
+medical diagnosis, this prior probability is usually assessed on the
+basis of the
+base rate
+for HIV in the patient’s risk
+group . On a rigorous approach to the logic, such
+information and its risk-relevance should be explicitly stated within the
+background information \. To see the importance of this
+information, consider the following numerical results . If the base rate for the patient’s risk group
+is relatively high, say \, then the
+positive test result yields a posterior probability value for his
+having HIV of \. However,
+if the patient is in a very low risk group, say \, then a positive test result only raises the posterior
+probability of his having an HIV infection to \. This posterior probability is much higher
+than the prior probability of .001, but should not worry the patient
+too much. This positive test result may well be due to the comparatively high
+false-positive rate for the test, rather than to the presence of HIV.
+This sort of test, with a false-positive rate as large as .05, is
+best used as a screening test; a positive result warrants conducting a
+second, more rigorous, less error-prone test.
+More generally, in the evidential evaluation of scientific hypotheses and theories, prior
+probabilities represent assessments of non-evidential
+plausibility weightings
+among hypotheses. However, because the strengths of such plausibility assessments may
+vary among members of a scientific community, critics often brand such assessments as
+merely subjective
+, and take their role in Bayesian inference to be highly problematic. Bayesian inductivists counter that plausibility
+assessments play an important, legitimate role in the sciences, especially
+when evidence cannot suffice to distinguish among some alternative hypotheses. And, they argue, the epithet “merely subjective” is unwarranted. Such plausibility assessments are
+often backed by extensive arguments that may draw on forceful
+conceptual considerations.
+Scientists often bring plausibility arguments to bear
+in assessing competing views. Although such arguments are seldom
+decisive, they may bring the scientific community into widely shared
+agreement, especially with regard to the
+implausibility
+of some
+logically possible alternatives. This seems to be the primary
+epistemic role of thought experiments.
+Consider, for example, the kinds of plausibility arguments that have
+been brought to bear on the various interpretations of quantum theory
+. These arguments go
+to the heart of conceptual issues that were central to the original
+development of the theory. Many of these issues were first raised by
+those scientists who made the greatest contributions to the development of quantum theory, in their attempts to get a conceptual hold on the theory and its implications.
+Given any body of evidence, it is fairly easy to cook up
+a host of logically possible alternative hypotheses that make the evidence as probable as desired. In particular, it is easy to cook up hypotheses that logically entail any given body evidence, providing likelihood values equal to 1 for all the available evidence. Although most of these cooked up hypotheses will be laughably implausible, evidential likelihoods cannot rule them out. But, the only factors other than likelihoods that figure into the values of posterior probabilities for hypotheses are the values of their prior probabilities; so only prior probability assessments provide a place for the Bayesian logic to bring important plausibility considerations to bear. Thus, the Bayesian logic can only give implausible hypotheses their due via prior probability assessments.
+It turns out that the mathematical structure of Bayesian inference makes prior probabilities especially well-suited to represent plausibility assessments among competing hypotheses. For, in the fully fleshed out account of evidential support for hypotheses , it will turn out that only ratios of prior probabilities for competing hypotheses, \, together with ratios of likelihoods, \, play essential roles. The ratio of prior probabilities is well-suited to represent how much more  plausible hypothesis \ is than competing hypothesis \. Furthermore, the plausibility arguments on which such this comparative assessment is based may be explicitly stated within \. So, given that an inductive logic needs to incorporate well-considered plausibility assessments , the comparative assessment of Bayesian prior probabilities seems well-suited to do the job.
+Thus, although prior probabilities may be subjective in the sense that
+agents may disagree on the relative strengths of plausibility
+arguments, the priors used in scientific contexts need not
+represent
+mere subjective whims
+. Rather, the comparative strengths of the priors for hypotheses should be supported by arguments about
+how much more plausible one hypothesis is than another. The important
+role of plausibility assessments is captured by such received bits of
+scientific wisdom as the well-known scientific aphorism,
+extraordinary claims require
+extraordinary evidence
+. That is, it takes especially strong
+evidence, in the form of extremely high values for 
+likelihoods, to overcome the extremely low pre-evidential plausibility values
+possessed by some hypotheses. In the next section we’ll see precisely how this idea works, and we’ll return to it again in
+Section 3.4
+.
+When sufficiently strong evidence becomes available, it turns out that the contributions of prior plausibility assessments to the values of posterior probabilities may be substantially “washed
+out”, overridden by the evidence. That is, provided the prior probability of a true hypothesis isn’t assessed to be too
+close to zero, the influence of the values of
+the prior probabilities will
+very probably
+fade away as evidence accumulates. In
+Section 4
+we’ll see precisely how this kind of Bayesian convergence to the true hypothesis works.
+Thus, it turns out that prior plausibility assessments play their most important role
+when the distinguishing evidence represented by the likelihoods remains weak.
+One more point before moving on to the logic of Bayes’ Theorem. Some Bayesian logicists have maintained that posterior
+probabilities of hypotheses should be determined by syntactic logical
+form alone. The idea is that the likelihoods might reasonably be
+specified in terms of syntactic logical form; so if syntactic form
+might be made to determine the values of prior probabilities as well,
+then inductive logic would be fully “formal” in the same
+way that deductive logic is “formal”. Keynes and Carnap
+tried to implement this idea through syntactic versions of the
+principle of indifference—the idea that syntactically similar
+hypotheses should be assigned the same prior probability values.
+Carnap showed how to carry out this project in detail, but only for
+extremely simple formal languages. Most logicians now take the project
+to have failed because of a fatal flaw with the whole idea that
+reasonable prior probabilities can be made to depend on logical form
+alone. Semantic content should matter. Goodmanian grue-predicates
+provide one way to illustrate this
+ point.
+
+Furthermore, as suggested earlier, for this idea to apply to the
+evidential support of real scientific theories, scientists would have
+to assess the prior probabilities of each alternative theory based
+only on its syntactic structure. That seems an unreasonable way to
+proceed. Are we to evaluate the prior probabilities of alternative
+theories of gravitation, or for alternative quantum theories, by
+exploring only their syntactic structures, with absolutely no regard
+for their content—with
+no
+regard for what they
+say
+about the world? This seems an extremely dubious approach
+to the evaluation of real scientific theories. Logical structure alone
+cannot, and should not suffice for determining reasonable prior
+probability values for real scientific theories. Moreover, real
+scientific hypotheses and theories are inevitably subject to
+plausibility considerations based on what they
+say
+about the
+world. Prior probabilities are well-suited to represent the comparative weight of plausibility considerations for alternative hypotheses. But no reasonable assessment of comparative plausibility can derive solely from the logical form of hypotheses.
+We will return to a discussion of prior probabilities a bit later. Let’s now see how Bayesian logic combines likelihoods with prior probabilities
+to yield posterior probabilities for hypotheses.
+3.3 Bayes’ Theorem
+Any probabilistic inductive logic that draws on the usual
+rules of probability theory to represent how evidence supports
+hypotheses must be a
+Bayesian inductive logic
+in the broad
+sense. For, Bayes’ Theorem follows directly from the usual axioms of probability theory. Its importance derives from the relationship it expresses
+between hypotheses and evidence. It
+shows how evidence, via the likelihoods, combines with prior
+probabilities to produce posterior probabilities for hypotheses.
+We now examine several forms of Bayes’ Theorem, each derivable from
+axioms 1–5
+.
+The simplest version of Bayes’ Theorem as it applies to evidence for a hypothesis goes like this:
+Bayes’ Theorem: Simple Form
+\[\begin{align*}
+P_{\alpha}[h_i \pmid e] &= \frac{P_{\alpha}[e \pmid h_i]\times P_{\alpha}[h_i]}{P_{\alpha}[e]}
+\end{align*}\]
+This equation expresses the posterior probability of hypothesis
+\ due to evidence \, \, in terms of the
+likelihood
+of
+the evidence on that hypothesis, \, the
+prior probability of the hypothesis
+, \, and the
+simple probability of the evidence
+, \. The factor \ is often called
+the expectedness of the evidence
+. Written this way, the theorem suppresses the experimental  conditions, \, and all background information and auxiliary hypotheses, \. As discussed earlier, both of these terms play an important role in logically connecting the hypothesis at issue, \, to the evidence \. In scientific contexts the objectivity of the likelihoods, \, almost always depends on such terms. So, although the suppression of experimental  conditions and auxiliary hypotheses is a common practice in accounts of Bayesian inference, the treatment below, and throughout the remainder of this article will make the role of these terms explicit.
+The subscript \ on the evidential support function \ is there to remind us that more than one such function exists. A host of distinct probability functions satisfy
+axioms 1–5
+, so each of them satisfies Bayes’ Theorem. Some of these probability functions may provide a better fit with our intuitive conception of how the evidential support for hypotheses should work. Nevertheless, there are bound to be reasonable differences among Bayesian agents regarding to the initial plausibility of a hypothesis \. This diversity in initial plausibility assessments is represented by diverse values for prior probabilities for the hypothesis: \, \, \, etc. This usually results in diverse values for posterior probabilities for hypotheses: \, \, \, etc. So it is important to keep the diversity among evidential support functions in mind.
+Here is how the Simple Form of Bayes’ Theorem looks
+when terms for the experimental  conditions, \, and the
+background information and auxiliary hypotheses \ are made explicit:
+Bayes’ Theorem: Simple Form with explicit Experimental Conditions, Background Information and Auxiliary Hypotheses
+\[\tag{8}
+\begin{align}
+ P_{\alpha}[h_i \pmid  b\cdot c\cdot e]
+&=
+\frac{P[e \pmid  h_i\cdot b \cdot c] \times P_{\alpha}[h_i \pmid  b]}
+{P_{\alpha}[e \pmid  b \cdot c]}
+
+\\ &\qquad
+\times
+
+\frac{P_{\alpha}[c \pmid  h_i\cdot b]}
+{P_{\alpha}[c \pmid  b]}\\[3ex]
+& =
+\frac{P[e \pmid  h_i\cdot b\cdot c] \times P_{\alpha}[h_i \pmid  b]}
+{P_{\alpha}[e \pmid  b\cdot c]}\\[2ex]
+& \textrm{when  }
+P_{\alpha}[c \pmid  h_j\cdot b] =
+P_{\alpha}[c \pmid b].
+
+\end{align}
+\]
+This version of the theorem determines the posterior probability of the hypothesis,
+\, from the value of the
+likelihood
+of the evidence according to that hypothesis , \, the value of the
+prior probability of the hypothesis
+, \, and the value of the
+expectedness of the evidence
+, \. Notice that in the factor for the likelihood, \, the subscript \ has been dropped. This marks the fact that in scientific contexts the likelihood of an evidential outcome \ on the hypothesis together with explicit background and auxiliary hypotheses and the description of the experimental conditions, \, is usually objectively determinate. This factor represents what the hypothesis 
+objectively says
+about the likelihood of possible evidential outcomes of the experimental conditions. So, all reasonable support functions should agree on the values for likelihoods. 
+This version of Bayes’ Theorem includes a term that represents the ratio of the
+likelihood of the experimental conditions
+on the hypothesis and background information  to the
+“likelihood” of the experimental conditions
+on
+the background  alone:
+
+\.
+
+Arguably the value of this term should be 1, or very nearly 1, since the
+truth of the hypothesis at issue should not significantly affect how
+likely it is that the experimental conditions are satisfied. If
+various alternative hypotheses assign significantly different
+likelihoods to the experimental conditions themselves, then such
+conditions should more properly be included as part of the evidential
+outcome \.
+Both the
+prior probability
+of the hypothesis and the
+expectedness
+tend to be somewhat subjective factors in that
+various agents from the same scientific community may legitimately
+disagree on what values these factors should take. Bayesian logicians
+usually accept the apparent subjectivity of the prior probabilities of
+hypotheses, but find the subjectivity of the
+expectedness
+to
+be more troubling. This is due at least in part to the fact that in a
+Bayesian logic of evidential support the value of the expectedness
+cannot be determined independently of likelihoods and prior
+probabilities of hypotheses. That is, when, for each member of a collection
+of alternative hypotheses, the likelihood \ has an objective  value, the
+expectedness
+is constrained by the following equation , which
+may be finite or countably infinite):
+\[
+\begin{align}
+P_{\alpha}[e \pmid  b\cdot c] &= \sum_j P[e \pmid  h_j\cdot b\cdot c] \times P_{\alpha}[h_j \pmid  b \cdot c].
+\end{align}
+\]
+This equation shows that the values for the prior probabilities
+together with the values of the likelihoods uniquely determine the
+value for the
+expectedness of the evidence
+. Furthermore, it
+implies that the value of
+the expectedness
+must lie between
+the largest and smallest of the various likelihood values implied by
+the alternative hypotheses. However, the precise value of
+the
+expectedness
+can only be calculated this way when every
+alternative to hypothesis \ is specified. In cases where some
+alternative hypotheses remain unspecified , the value
+of
+the expectedness
+is constrained in principle by the
+totality of possible alternative hypotheses, but there is no way to
+figure out precisely what its value should be.
+Troubles with determining a numerical value for the
+expectedness of the evidence
+may be circumvented by appealing to another form of Bayes’
+Theorem, a ratio form that compares hypotheses one pair at a time:
+Bayes’ Theorem: Ratio Form
+\[\tag{9}
+\begin{align}
+\frac{P_{\alpha}[h_j \pmid  b\cdot c\cdot e]}
+{P_{\alpha}[h_i \pmid  b\cdot c\cdot e]}
+& =
+\frac{P[e \pmid  h_j\cdot b\cdot c]}
+{P[e \pmid  h_i\cdot b\cdot c]}
+\times
+\frac{P_{\alpha}[h_j \pmid  b]}
+{P_{\alpha}[h_i \pmid  b]}\\
+&\qquad\times
+\frac{P_{\alpha}[c \pmid  h_j\cdot b]}
+{P_{\alpha}[c \pmid  h_i\cdot b]}\\[2ex]
+& =
+\frac{P[e \pmid  h_j\cdot b\cdot c]}
+{P[e \pmid  h_i\cdot b\cdot c]}
+ \times
+\frac{P_{\alpha}[h_j \pmid  b]}
+{P_{\alpha}[h_i \pmid  b]}
+\\[2ex]
+& \textrm{when  }
+P_{\alpha}[c \pmid  h_j\cdot b] =
+P_{\alpha}[c \pmid  h_i\cdot b].
+
+\end{align}
+\]
+The clause 
+
+\
+
+says that the experimental  condition described by \ is as likely on \\) as on \\) — i.e., the experimental or observation conditions are no more likely according to one hypothesis than according to the other.
+
+This Ratio Form of Bayes’ Theorem expresses how much more
+plausible, on the evidence, one hypothesis is than another. Notice
+that the
+likelihood ratios
+carry the full import of the
+evidence. The evidence influences the evaluation of hypotheses in no
+other way. The only other factor that influences the value of the
+ratio of posterior probabilities is the ratio of the prior
+probabilities. When the likelihoods are fully objective, any
+subjectivity that affects the ratio of posteriors can only arise via
+subjectivity in the ratio of the priors.
+This version of Bayes’s Theorem shows that in order to evaluate
+the
+posterior probability ratios
+for pairs of hypotheses, the
+prior probabilities of hypotheses need not be evaluated absolutely;
+only their ratios are needed. That is, with regard to the priors, the
+Bayesian evaluation of hypotheses only relies on
+how much more
+plausible
+one hypothesis is than another . This kind of Bayesian evaluation of
+hypotheses is essentially comparative in that only
+ratios of
+likelihoods
+and
+ratios of prior probabilities
+are ever
+really needed for the assessment of scientific hypotheses.
+Furthermore, we will soon see that the absolute values of the
+posterior probabilities of hypotheses entirely derive from the
+posterior probability ratios
+provided by the Ratio Form of
+Bayes’ Theorem.
+When the evidence consists of a collection of
+n
+distinct
+experiments or observations, we may explicitly represent this fact by
+replacing the term ‘\’ by the conjunction of experimental or observational conditions, \\), and replacing the term
+‘\’ by the conjunction of their respective outcomes, \\). For notational convenience, let’s use the term
+‘\’ to abbreviate the conjunction of
+n
+the experimental conditions, and we use the term ‘\’ to abbreviate the corresponding conjunction of
+n
+their respective outcomes. Relative to any given hypothesis \, the evidential
+outcomes of distinct experiments or observations will usually be
+probabilistically independent of one another, and also independent of the
+experimental conditions for one another. In that case we have:
+\[
+P[e^n \pmid  h\cdot b\cdot c^n] =  P[e_1 \pmid  h\cdot b\cdot c_1] \times \cdots \times  P[e_n \pmid  h\cdot b\cdot c_n].
+\]
+When the Ratio Form of Bayes’ Theorem is extended to explicitly represent the evidence as consisting of a collection of
+n
+of distinct experiments  and their respective outcomes, it takes the following form.
+Bayes’ Theorem: Ratio Form for a Collection of
+n
+Distinct Evidence Claims
+\[\tag{9*}
+\begin{align}
+
+\frac{P_{\alpha}[h_j \pmid  b\cdot  c^n   \cdot  e^n ] }
+{P_{\alpha}[h_i \pmid  b\cdot  c^n   \cdot  e^n ]}
+&  =
+\frac{P [ e^n   \pmid   h_j\cdot b\cdot  c^n ]}
+{P [ e^n   \pmid   h_i\cdot b\cdot  c^n ]}
+\times
+\frac{P_{\alpha}[h_j \pmid  b]}
+{P_{\alpha}[h_i \pmid  b]}\\[2ex]
+&\qquad \times
+\frac{P_{\alpha} [ c^n   \pmid   h_j\cdot b]}
+{P_{\alpha} [ c^n   \pmid   h_i\cdot b]}\\[2ex]
+& =
+\frac{P [ e^n   \pmid   h_j\cdot b\cdot  c^n ]}
+{P [ e^n   \pmid   h_i\cdot b\cdot  c^n ]}
+\times
+\frac{P_{\alpha}[h_j \pmid  b]}
+{P_{\alpha}[h_i \pmid  b]}
+\\[2ex]
+&\textrm{when }
+P_{\alpha} [ c ^n   \pmid   h _j\cdot b ] =
+P_{\alpha} [ c ^n   \pmid   h _i\cdot b ].
+\end{align}
+\]
+Furthermore, when evidence claims are probabilistically independent of one another, we have
+\[\tag{9**}
+\begin{align}
+
+\frac{P_{\alpha}[h_j \pmid  b\cdot  c^n   \cdot  e^n  ] }
+{P_{\alpha}[h_i \pmid  b\cdot  c^n   \cdot  e^n  ]}
+&  =
+\frac{P[e_1 \pmid  h_j\cdot b\cdot c_1]}
+{P[e_1 \pmid  h_i\cdot b\cdot c_1]}
+\times \cdots \\[2ex]
+&\qquad \times
+\frac{P[e_n \pmid  h_{j }\cdot b\cdot c_{ n}]}
+{P[e_n \pmid  h_{i }\cdot b\cdot c_{ n}]}
+\times
+\frac{P_{\alpha}[h_j \pmid  b]}
+{P_{\alpha}[h_i \pmid  b]}.
+
+\end{align}
+\]
+Let’s consider a simple example of how the Ratio Form of
+Bayes’ Theorem applies to a collection of independent evidential events. Suppose we possess a warped coin
+and want to determine its propensity for
+heads
+when tossed in
+the usual way. Consider two hypotheses, \ and
+\, which say that the propensities for the coin to come up
+heads
+on the usual kinds of tosses are \ and \,
+respectively. Let \ report that the coin is tossed
+n
+times in the normal way, and let \ report that precisely
+m
+occurrences of
+heads
+has resulted. Supposing that
+the outcomes of such tosses are probabilistically independent ),
+the respective likelihoods take the binomial form
+\[
+P[e^n \pmid  h_{[r]}\cdot b\cdot c^n] =
+\frac{n!}{m! \times!}
+\times r^m ^{n-m},
+\]
+with \ standing in for \ and for \, respectively. Then,
+Equation 9**
+yields the following formula, where the likelihood ratio is the
+ratio of the respective binomial terms:
+\[
+\frac{P_{\alpha}[h_{[p]} \pmid  b\cdot c^{n }\cdot e^{ n}]}
+{P_{\alpha}[h_{[q]} \pmid  b\cdot c^{n }\cdot e^{ n}]}
+=
+\frac{p^m ^{n-m}}
+{q^m ^{n-m}}
+\times
+\frac{P_{\alpha}[h_{[p]} \pmid  b]}
+{P_{\alpha}[h_{[q]} \pmid  b]}
+\]
+When, for instance, the coin is tossed \ times and comes up
+heads
+\ times, the evidence for hypothesis
+\ as compared to \ is given by the likelihood
+ratio
+\[\frac{P [ e^n   \pmid   h_{[1/2]}\cdot b\cdot  c^n ]}
+{P [ e^n   \pmid   h_{[3/4]}\cdot b\cdot  c^n ]} = \frac{[^{72}^{28}]}{[^{72}^{28}]} = .000056269. \]
+In that case, even if the prior plausibility considerations
+) make it 100 times more plausible that the
+coin is
+fair
+than that it is warped towards
+heads
+with
+propensity 3/4
+— i.e., even if \ — the evidence provided by these tosses makes the posterior plausibility that the coin is
+fair
+only about 6/1000
+ths
+as plausible as the hypothesis that it
+is warped towards
+heads
+with
+propensity 3/4
+:
+\[
+\frac{P_{\alpha}[h_{[1/2]} \pmid  b\cdot c^{n}\cdot e^{n}]}{P_{\alpha}[h_{[3/4]} \pmid  b\cdot c^{n}\cdot e^{n}]} = .0056269.
+\]
+Thus, such evidence
+strongly refutes
+the “fairness
+hypothesis” relative to the “3/4-
+heads
+hypothesis”, provided the assessment of prior
+prior plausibilities doesn’t make the latter hypothesis
+too
+extremely implausible
+to begin with. Notice, however, that
+strong refutation
+is not
+absolute refutation
+.
+Additional evidence could reverse this trend towards the
+refutation of the
+fairness hypothesis
+.
+This example employs repetitions of the same kind of
+experiment—repeated tosses of a coin. But the point holds more
+generally. If, as the evidence increases, the
+likelihood
+ratios
+\[\frac{P[e^n \pmid  h_{j}\cdot b\cdot c^{n}]}{P[e^n \pmid  h_{i}\cdot b\cdot c^{n}]}\]
+approach 0, then the Ratio Forms of Bayes’ Theorem, Equations \\) and \\), 
+ show that the posterior probability of \ must approach 0 as
+well, since
+\[P_{\alpha}[h_j \pmid  b\cdot c^{n}\cdot e^{n}] \le \frac{P_{\alpha}[h_j \pmid  b\cdot c^{n}\cdot e^{n}]}{P_{\alpha}[h_i \pmid  b\cdot c^{n}\cdot e^{n}]}.\]
+Such evidence comes to strongly refute \, with little regard for
+its prior plausibility value. Indeed, Bayesian induction turns out to
+be a version of
+eliminative induction
+, and Equation \ and \ begin
+to illustrate this. For, suppose that \ is the true hypothesis,
+and consider what happens to
+each
+of its false competitors,
+\. If enough evidence becomes available to drive each of the
+likelihood ratios
+\[\frac{P[e^n \pmid  h_{j}\cdot b\cdot c^{n}]}{P[e^n \pmid  h_{i}\cdot b\cdot c^{n}]}\]
+toward 0 , then Equation \ says that each false
+\ will become effectively refuted — each of their posterior
+probabilities will approaches 0 . As a result, the posterior probability of \ must approach 1. The next two equations show precisely how
+this works.
+If we sum the ratio versions of Bayes’ Theorem in Equation
+\ over all alternatives to hypothesis \ , if appropriate), we get the Odds Form
+of Bayes’ Theorem. By definition, the
+odds against
+a statement \ given \ is related to the probability of \ given \ as follows:
+\[\Omega_{\alpha}[{\nsim}A \pmid  B] = \frac{P_{\alpha}[{\nsim}A \pmid  B]}{P_{\alpha}[A \pmid  B]} = \frac{1 - P_{\alpha}[A \pmid  B]}{P_{\alpha}[A \pmid  B]}.\]
+This notion of
+odds
+gives rise to the following version of Bayes’ Theorem:
+Bayes’ Theorem: Odds Form
+\[\tag{10}
+\begin{align}
+   \Omega_{\alpha}[{\nsim}h_i \pmid  b\cdot c^{n }\cdot e^{ n}]
+& =  \sum_{j\ne i}
+\frac{P_{\alpha}[h_j \pmid  b\cdot c^{n }\cdot e^{ n}]}
+{P_{\alpha}[h_i \pmid  b\cdot c^{n }\cdot e^{ n}]}
+\\ &\qquad
++
+\frac{P_{\alpha}[h_K \pmid  b\cdot c^{n }\cdot e^{ n}]}
+{P_{\alpha}[h_i \pmid  b\cdot c^{n }\cdot e^{ n}]}\\[2ex]
+& =
+\sum_{ j\ne i}
+\frac{P[e^n \pmid  h_{j }\cdot b\cdot c^{ n}]}
+{P[e^n \pmid  h_{i }\cdot b\cdot c^{ n}]}
+\times
+\frac{P_{\alpha}[h_j \pmid  b]}
+{P_{\alpha}[h_i \pmid  b]}\\[2ex]
+&\qquad +
+\frac{P_{\alpha}[e^n \pmid  h_{K }\cdot b\cdot c^{ n}]}
+{P[e^n \pmid  h_{i }\cdot b\cdot c^{ n}]}
+\times
+\frac{P_{\alpha}[h_K \pmid  b]}
+{P_{\alpha}[h_i \pmid  b]}
+\end{align}
+\]
+where the factor following the ‘
++
+’ sign is only
+required in cases where a catch-all alternative hypothesis, \,
+is needed.
+Recall that when we have a finite collection of concrete alternative
+hypotheses available, \, but where this
+set of alternatives is not exhaustive , the
+catch-all alternative hypothesis \ is just the denial of each of
+the concrete alternatives, \\). Generally, the likelihood of evidence claims relative to
+a catch-all hypothesis will not enjoy the same kind of objectivity possessed by
+the likelihoods for concrete alternative hypotheses. So, we leave the
+subscript \ attached to the likelihood for the catch-all hypothesis
+to indicate this lack of objectivity.
+Although the catch-all hypothesis may lack objective likelihoods, the
+influence of the catch-all term in Bayes’ Theorem diminishes as
+additional concrete hypotheses are articulated. That is, as new
+hypotheses are discovered they are “peeled off” of the
+catch-all. So, when a new hypothesis \ is formulated and
+made explicit, the old catch-all hypothesis \ is replaced by a
+new catch-all, \, of form \\);
+and the prior probability for the new catch-all hypothesis is gotten
+by diminishing the prior of the old catch-all: \.
+Thus, the influence of the catch-all term should diminish towards 0 as
+new alternative hypotheses are made
+ explicit.
+
+If increasing evidence drives towards 0 the likelihood ratios
+comparing each competitor \ with hypothesis \, then the
+odds against \, \, will approach 0 . And, as
+\
+approaches 0, the posterior probability of \ goes to 1. This derives from the fact that the odds against \ is related to and its posterior probability by the following formula:
+Bayes’ Theorem: General Probabilistic Form
+\[\tag{11}
+ P_{\alpha}[h_i \pmid  b\cdot c^{n}\cdot e^n] = \frac{1}{1 + \Omega_{\alpha}[{\nsim}h_i \pmid  b\cdot c^n\cdot e^{n}]}.
+\]
+The odds against a hypothesis depends only on the values of
+ratios
+of posterior probabilities
+, which entirely derive from the Ratio
+Form of Bayes’ Theorem. Thus, we see that the individual value
+of the posterior probability of a hypothesis depends only on the
+ratios of posterior probabilities
+, which come from the Ratio
+Form of Bayes’ Theorem. Thus, the Ratio Form of Bayes’
+Theorem captures all the essential features of the Bayesian
+evaluation of hypothesis. It shows how the impact of evidence  combines with comparative plausibility
+assessments of hypotheses  to provide a net assessment of the extent to which
+hypotheses are refuted or supported via contests with their rivals.
+There is a result, a kind of
+Bayesian Convergence Theorem
+,
+that shows that if \ \) is true,
+then the likelihood ratios
+\[\frac{P[e^n \pmid  h_{j}\cdot b\cdot c^{n}]}{P[e^n \pmid  h_{i}\cdot b\cdot c^{n}]}\]
+comparing evidentially distinguishable alternative hypothesis \
+to \ will
+very probably
+approach 0 as evidence
+accumulates . Let’s call this
+result the
+Likelihood Ratio Convergence Theorem
+. When this
+theorem applies,
+Equation \
+shows that the posterior probability of a false competitor \
+will very probably approach 0 as evidence accumulates, regardless of
+the value of its prior probability \. As
+this happens to each of \’s false competitors,
+Equations 10
+and
+11
+say that the posterior probability of the true hypothesis, \,
+will approach 1 as evidence
+ increases.
+
+Thus, Bayesian induction is at bottom a version of
+induction by
+elimination
+, where the elimination of alternatives comes by way
+of likelihood ratios approaching 0 as evidence accumulates. Thus, when
+the
+Likelihood Ratio Convergence Theorem
+applies, the
+Criterion of Adequacy
+for an Inductive Logic described at the
+beginning of this article will be satisfied: As evidence accumulates,
+the
+degree
+to which the collection of true evidence
+statements comes to
+support
+a hypothesis, as measured by the
+logic, should very probably come to indicate that false hypotheses are
+probably false and that true hypotheses are probably true. We will
+examine this
+Likelihood Ratio Convergence Theorem
+in
+Section 4
+.
+
+A view called
+Likelihoodism
+relies on likelihood ratios in
+much the same way as the Bayesian logic articulated above. However,
+Likelihoodism
+attempts to avoid the use of prior
+probabilities. For an account of this alternative view, see
+the supplement
+Likelihood Ratios, Likelihoodism, and the Law of Likelihood
+.
+For more discussion of
+ Bayes’ Theorem and its application, see the entries on
+Bayes’ Theorem
+and on
+Bayesian Epistemology
+in this
+Encyclopedia
+.
+3.4 On Prior Probabilities and Representations of Vague and Diverse Plausibility Assessments
+Given that a scientific community should largely agree on the values
+of the likelihoods, any significant disagreement among them with
+regard to the values of posterior probabilities of hypotheses should
+derive from disagreements over their assessments of values for the
+prior probabilities of those hypotheses. We saw in
+Section 3.3
+that the Bayesian logic of evidential support need only rely on
+assessments of
+ratios of prior probabilities
+—on how
+much more plausible one hypothesis is than another. Thus, the logic of
+evidential support only requires that scientists can assess the
+comparative plausibilities of various hypotheses. Presumably, in
+scientific contexts the comparative plausibility values for hypotheses
+should depend on explicit plausibility arguments, not merely on
+privately held opinions. .) It would be highly
+unscientific
+for a
+member of the scientific community to disregard or dismiss a
+hypothesis that other members take to be a reasonable proposal with
+only the comment, “don’t ask me to give my reasons,
+it’s just my opinion”. Even so, agents may be unable to
+specify
+precisely
+how much more strongly the available
+plausibility arguments support a hypothesis over an alternative; so
+prior probability ratios for hypotheses may be vague. Furthermore,
+agents in a scientific community may disagree about how strongly the
+available plausibility arguments support a hypothesis over a rival
+hypothesis; so prior probability ratios may be somewhat diverse as
+well.
+Both the vagueness of comparative plausibilities assessments for
+individual agents and the diversity of such assessments among the
+community of agents can be represented formally by sets of support
+functions, \, that agree on the
+values for the likelihoods but encompass a range of values for the
+ prior probabilities of hypotheses.
+Vagueness
+and
+diversity
+are somewhat different issues, but they may be
+represented in much the same way. Let’s briefly consider each in
+turn.
+Assessments of the prior plausibilities of hypotheses will often be
+vague—not subject to the kind of precise quantitative treatment
+that a Bayesian version of probabilistic inductive logic may seem to
+require for prior probabilities. So, it may seem that the kind of
+assessment of prior probabilities required to get the Bayesian
+algorithm going cannot be accomplished in practice. To see how
+Bayesian inductivists address this worry, first recall the Ratio Form
+of Bayes’ Theorem, Equation \.
+\[
+\frac{P_{\alpha}[h_j \pmid  b\cdot c^{n }\cdot e^{ n}]}
+{P_{\alpha}[h_i \pmid  b\cdot c^{n }\cdot e^{ n}]}
+=
+\frac{P[e^n \pmid  h_{j }\cdot b\cdot c^{ n}]}
+{P[e^n \pmid  h_{i }\cdot b\cdot c^{ n}]}
+\times
+\frac{P_{\alpha}[h_j \pmid  b]}
+{P_{\alpha}[h_i \pmid  b]}
+\]
+Recall that this Ratio Form of the theorem captures the essential
+features of the logic of evidential support, even though it only
+provides a value for the ratio of the posterior probabilities. Notice
+that the ratio form of the theorem easily accommodates situations
+where we don’t have precise numerical values for prior
+probabilities. It only depends on our ability to assess
+how much
+more or less plausible
+alternative hypothesis \ is than
+hypothesis \—only the value of the ratio \ need be assessed; the values of
+the individual prior probabilities are not needed. Such comparative
+plausibilities are much easier to assess than specific numerical
+values for the prior probabilities of individual hypotheses. When
+combined with the
+ratio of likelihoods
+, this
+ratio of
+priors
+suffices to yield an assessment of the
+ratio of
+posterior plausibilities
+,
+\[\frac{P_{\alpha}[h_j \pmid  b\cdot c^{n}\cdot e^{n}]}{P_{\alpha}[h_i \pmid  b\cdot c^{n}\cdot e^{n}]}.\]
+Although such posterior ratios don’t supply values for the
+posterior probabilities of individual hypotheses, they place a crucial
+constraint on the posterior support of hypothesis \, since
+\[
+\begin{align}
+P_{\alpha}[h_j \pmid  b\cdot c^{n }\cdot e^{ n}]  
+& \lt 
+\frac{P_{\alpha}[h_j \pmid  b\cdot c^{n }\cdot e^{ n}]}
+{P_{\alpha}[h_i \pmid  b\cdot c^{n }\cdot e^{ n}]}\\
+& =
+\frac{P[e^n \pmid  h_{j }\cdot b\cdot c^{ n}]}
+{P[e^n \pmid  h_{i }\cdot b\cdot c^{ n}]}
+\times
+\frac{P_{\alpha}[h_j \pmid  b]}
+{P_{\alpha}[h_i \pmid  b]}
+\end{align}
+\]
+This Ratio Form of Bayes’ Theorem tolerates a good deal of
+vagueness or imprecision in assessments of the ratios of prior
+probabilities. In practice one need only assess bounds for these prior
+plausibility ratios to achieve meaningful results. Given a prior ratio
+in a specific interval,
+\[
+q \le \frac{P_{\alpha}[h_j \pmid  b]}{P_{\alpha}[h_i \pmid  b]} \le r
+\]
+a likelihood ratio
+\[\frac{P[e^n \pmid  h_{j}\cdot b\cdot c^{n}]}{P[e^n \pmid  h_{i}\cdot b\cdot c^{n}]} = \LR^n\]
+results in a posterior support ratio in the interval
+\[
+ \le \frac{P_{\alpha}[h_j \pmid  b\cdot c^{n}\cdot e^{n}]}{P_{\alpha}[h_i \pmid  b\cdot c^{n}\cdot e^{n}]} \le .
+\]
+, a
+vagueness set
+, for which the inequality
+holds. Thus, technically, the Bayesian logic employs sets of
+probabilistic support functions to represent the vagueness in
+comparative plausibility values for hypotheses.)
+Observe that if the likelihood ratio values \ approach 0 as
+the amount of evidence \ increases, the interval of values for
+the posterior probability ratio must become tighter as the upper bound
+\) approaches 0. Furthermore, the absolute degree of
+support for \, \, must also approach 0.
+This observation is really useful. For, it can be shown that when
+\ is true and \ is empirically
+distinct from \, the continual pursuit of evidence is
+very
+likely
+to result in evidential outcomes \ that  yield values of likelihood ratios \ that
+approach 0 as the amount of evidence increases. This result, called
+the
+Likelihood Ratio Convergence Theorem
+, will be
+investigated in more detail in
+Section 4
+.
+ When that kind of convergence towards 0 for likelihood ratios occurs,
+the upper bound on the posterior probability ratio also approaches 0,
+driving the posterior probability of \ to approach 0 as well,
+effectively refuting hypothesis \. Thus, false competitors of a
+true hypothesis will effectively be eliminated by increasing evidence.
+As this happens, Equations
+9*
+through
+11
+show that the posterior probability \ of the true hypothesis \ approaches 1.
+Thus, Bayesian logic of inductive support for hypotheses is a form of
+eliminative induction, where the evidence effectively refutes false
+alternatives to the true hypothesis. Because of its eliminative
+nature, the Bayesian logic of evidential support doesn’t require
+precise values for prior probabilities. It only needs to draw on
+bounds on the values of comparative plausibility ratios, and these
+bounds only play a significant role while evidence remains fairly
+weak. If the true hypothesis is assessed to be comparatively plausible
+, then
+plausibility assessments give it a leg-up over alternatives. If the
+true hypothesis is assessed to be comparatively implausible, the
+plausibility assessments merely slow down the rate at which it comes
+to dominate its rivals, reflecting the idea that
+extraordinary
+hypotheses require extraordinary evidence
+ to overcome their initial implausibilities.
+Thus, as evidence accumulates, the agent’s vague initial
+plausibility assessments transform into quite sharp posterior
+probabilities that indicate their strong refutation or support by the
+evidence.
+When the various agents in a community may widely disagree over the
+non-evidential plausibilities of hypotheses, the Bayesian logic of
+evidential support may represent this kind of
+diversity
+across the community of agents as a collection of the agents’
+vagueness sets
+of support functions. Let’s call such a
+collection of support functions a
+diversity set
+. That is, a
+diversity set
+is just a set of support functions
+\ that cover the ranges of values for comparative
+plausibility assessments for pairs of competing hypotheses
+\[
+q \le \frac{P_{\alpha}[h_j \pmid  b]}{P_{\alpha}[h_i \pmid  b]} \le r
+\]
+as assessed by the scientific community. But, once again, if
+accumulating evidence drives the likelihood ratios comparing various
+alternative hypotheses to the true hypothesis towards 0, the range of
+support functions in a
+diversity set
+will come to near
+agreement, near 0, on the values for posterior probabilities of false
+competitors of the true hypothesis. So, not only does such evidence
+firm up
+each agent’s vague initial plausibility
+assessment, it also brings the whole community into agreement on the
+near refutation
+of empirically distinct competitors of a true
+hypothesis. As this happens, the posterior probability of the true
+hypothesis may approach 1. The
+Likelihood Ratio Convergence
+Theorem
+implies that this kind of convergence to the truth should
+very probably
+happen, provided that the true hypothesis is
+empirically distinct enough from its rivals.
+One more point about prior probabilities and Bayesian convergence
+should be mentioned before proceeding to
+Section 4
+.
+ Some subjectivist versions of Bayesian induction seem to suggest that
+an agent’s prior plausibility assessments for hypotheses should
+stay fixed once-and-for-all, and that all plausibility updating should
+be brought about via the likelihoods in accord with Bayes’
+Theorem. Critics argue that this is unreasonable. The members of a
+scientific community may quite legitimately revise their 
+prior plausibility assessments for hypotheses from time to time as
+they rethink plausibility arguments and bring new considerations to
+bear. This seems a natural part of the conceptual development of a
+science. It turns out that such reassessments of the comparative
+plausibilities of hypotheses poses no difficulty for the probabilistic
+inductive logic discussed here. Such reassessments may be represented
+by the addition or modification of explicit statements that modify the
+background information
+b
+. Such reassessments may result in
+ transitions to new
+vagueness sets
+for
+individual agents and new
+diversity sets
+for the community.
+The
+logic
+of Bayesian induction  has
+nothing to say about what values the prior plausibility assessments
+for hypotheses should have; and it places no restrictions on how they
+might change over time. Provided that the series of reassessments of
+ prior plausibilities doesn’t happen to diminish
+the  prior plausibility value of the true hypothesis
+towards zero , the
+Likelihood Ratio Convergence Theorem
+implies that the
+evidence will very probably bring the posterior probabilities of
+empirically distinct rivals of the true hypothesis to approach 0 via
+decreasing likelihood ratios; and as this happens, the posterior
+probability of the true hypothesis will head towards 1.
+
+4. The Likelihood Ratio Convergence Theorem
+In this section we will investigate the
+Likelihood Ratio
+Convergence Theorem
+. This theorem shows that under certain
+reasonable conditions, when hypothesis \  is true and an alternative hypothesis \
+is empirically distinct from \ on some possible outcomes of
+experiments or observations described by conditions \, then it
+is
+very likely
+that a long enough sequence of such
+experiments and observations
+c\
+will produce a sequence
+of outcomes \ that yields likelihood ratios \ that
+approach 0, favoring \ over \, as evidence accumulates
+. This theorem places an explicit lower
+bound on the “rate of probable convergence” of these
+likelihood ratios towards 0. That is, it puts a lower bound on how
+likely it is, if \ is true, that a stream of outcomes will occur
+that yields likelihood ratio values against \ as compared to
+\ that lie within any specified small distance above 0.
+The theorem itself does not require the full apparatus of Bayesian
+probability functions. It draws only on likelihoods. Neither the
+statement of the theorem nor its proof employ prior probabilities of
+any kind. So even
+likelihoodists
+, who eschew the use of
+Bayesian prior probabilities, may embrace this result. Given the forms
+of Bayes’ Theorem, 9*-11 from the previous section, the
+Likelihood Ratio Convergence Theorem
+further implies the
+likely convergence to 0 of the posterior probabilities of false
+competitors of a true hypothesis. That is, when the ratios \ approach 0 for increasing
+n
+, the Ratio Form of
+Bayes’ Theorem,
+Equation 9*
+,
+ says that the posterior probability of \ must also approach 0
+as evidence accumulates, regardless of the value of its prior
+probability. So, support functions in collections representing vague
+prior plausibilities for an individual agent  and representing the diverse range of priors
+for a community of agents  will come
+to agree on the near 0 posterior probability of empirically distinct
+false rivals of a true hypothesis. And as the posterior probabilities
+of false competitors fall, the posterior probability of the true
+hypothesis heads towards 1. Thus, the theorem establishes that the
+inductive logic of probabilistic support functions satisfies the
+Criterion of Adequacy 
+suggested at the beginning of this article.
+The
+Likelihood Ratio Convergence Theorem
+merely provides some
+sufficient conditions for probable convergence. But likelihood ratios
+may well converge towards 0  even
+when the antecedent conditions of the theorem are not satisfied. This
+theorem overcomes many of the objections raised by critics of Bayesian
+convergence results. First, this theorem does not employ
+second-order probabilities
+; it says noting about the
+probability of a probability. It only concerns the probability of a
+particular disjunctive sentence that expresses a disjunction of
+various possible sequences of experimental or observational outcomes.
+The theorem does not require evidence to consist of sequences of
+events that, according to the hypothesis, are identically distributed
+. The result is most easily expressed
+in cases where the individual outcomes of a sequence of experiments or
+observations are probabilistically independent, given each hypothesis.
+So that is the version that will be presented in this section.
+However, a version of the theorem also holds when the individual
+outcomes of the evidence stream are not probabilistically independent,
+given the hypotheses.  In addition,
+this result does not rely on supposing that the probability functions
+involved are
+countably additive
+. Furthermore, the explicit
+lower bounds on the rate of convergence provided by this result means
+that there is no need to wait for the infinitely long run before
+convergence occurs .
+It is sometimes claimed that Bayesian convergence results only work
+when an agent locks in values for the prior probabilities of
+hypotheses once-and-for-all, and then updates posterior probabilities
+from there only by conditioning on evidence via Bayes Theorem. The
+Likelihood Ratio Convergence Theorem
+, however, applies even
+if agents revise their prior probability assessments over time. Such
+non-Bayesian shifts from one support function  to another may arise from new plausibility arguments or from
+reassessments of the strengths of old ones. The
+Likelihood Ratio
+Convergence Theorem
+itself only involves the values of
+likelihoods. So, provided such reassessments don’t push the
+prior probability of the true hypothesis towards 0
+too
+rapidly
+, the theorem implies that the posterior probabilities of
+each empirically distinct false competitor will
+very probably
+approach 0 as evidence
+ increases.
+
+4.1 The Space of Possible Outcomes of Experiments and Observations
+To specify the details of the
+Likelihood Ratio Convergence
+Theorem
+we’ll need a few additional notational conventions
+and definitions. Here they are.
+For a given sequence of
+n
+experiments or observations \,
+consider the set of those possible sequences of outcomes that would
+result in likelihood ratios for \ over \ that are less
+than some chosen small number \. This set is
+represented by the expression,
+\[
+\left\{e^n : \frac{P[e^n \pmid  h_{j }\cdot b\cdot c^{ n}]}{P[e^n \pmid  h_{i }\cdot b\cdot c^{ n}]} \lt \varepsilon \right\}.
+\]
+Placing the disjunction symbol ‘\’ in front of this
+expression yields an expression,
+\[
+\vee \left\{  e^n : \frac{P[e^n \pmid  h_{j }\cdot b\cdot c^{ n}]}{P[e^n \pmid  h_{i }\cdot b\cdot c^{ n}]} \lt \varepsilon \right\} ,
+\]
+that we’ll use to represent the disjunction of all outcome
+sequences \ in this set. So,
+\[
+\vee \left\{   e^n : \frac{P[e^n \pmid  h_{j }\cdot b\cdot c^{ n}]}{P[e^n \pmid  h_{i }\cdot b\cdot c^{ n}]} \lt \varepsilon \right\} 
+\]
+is just a particular sentence that says, in effect, “one of the
+sequences of outcomes of the first
+n
+experiments or
+observations will occur that makes the likelihood ratio for \
+over \ less than \”.
+The
+Likelihood Ratio Convergence Theorem
+says that under
+certain conditions , the likelihood of a
+disjunctive sentence of this sort, given that ‘\’ is true,
+\[
+ P \left[\vee \left\{   e^n : \frac{P[e^n \pmid  h_{j }\cdot b\cdot c^n]}{P[e^n \pmid  h_i\cdot b\cdot c^{ n}]} \lt \varepsilon \right\}  \pmid    h_{i }\cdot b\cdot c^{ n}\right] ,
+\]
+must be at least \\), for some explicitly calculable term
+\. Thus, the true hypothesis \ probabilistically implies
+that as the amount of evidence,
+n
+, increases, it becomes highly
+likely  that one of the outcome sequences
+\ will occur that yields a likelihood ratio \ less
+than \; and this holds for any specific value of
+\ you may choose. As this happens, the posterior
+probability of \’s false competitor, \, must
+approach 0, as required by the Ratio Form of Bayes’ Theorem,
+Equation 9*
+.
+The term \ in the lower bound of this probability depends on a
+measure of the empirical distinctness of the two hypotheses \
+and \ for the proposed sequence of experiments and observations
+\. To specify this measure we need to contemplate the collection
+of possible outcomes of each experiment or observation. So, consider
+some sequence of experimental or observational conditions described by
+sentences \. Corresponding to each condition
+\ there will be some range of possible alternative outcomes. Let
+\ be a set of statements
+describing the alternative possible outcomes for condition \.
+; so, the
+value of
+w
+may depend on \.) For each hypothesis \,
+the alternative outcomes of \ in \ are mutually exclusive
+and exhaustive, so we have:
+\[
+    P[o_{ku }\cdot o_{kv} \pmid  h_j\cdot b\cdot c_{ k}] = 0  
+\textrm{  and }
+\sum^{w}_{u = 1}    P[o_{ku} \pmid  h_{j }\cdot b\cdot c_{ k}] =1 .  
+\]
+We now let expressions of form ‘\’ act as variables
+that range over the possible outcomes of condition \—i.e.,
+\ ranges over the members of \. As before,
+‘\’ denotes the conjunction of the first
+n
+test conditions, \\), and
+‘\’ represents possible sequences of corresponding
+outcomes, \\). Let’s use
+the expression ‘
+E\
+’ to represent the set of
+all possible outcome sequences that may result from the sequence of
+conditions
+c\
+. So, for each hypothesis \
+\), \.
+Everything introduced in this subsection is mere notational
+convention. No substantive suppositions  have yet been introduced. The version of the
+Likelihood Ratio Convergence Theorem
+I’ll present below
+does, however, draw on one substantive supposition, although a rather
+weak one. The next subsection will discuss that supposition in
+detail.
+4.2 Probabilistic Independence
+In most scientific contexts the outcomes in a stream of experiments or
+observations are
+probabilistically independent
+of one another
+relative to each hypothesis under consideration, or can at least be
+divided up into probabilistically independent parts. For our purposes
+probabilistic independence of evidential outcomes on a
+hypothesis
+divides neatly into two types.
+Definition: Independent Evidence Conditions
+:
+A sequence of outcomes \ is
+condition-independent
+of a condition for an
+additional experiment or observation \, given \
+together with its own conditions \,
+if and only if
+\[
+P[e^k \pmid  h\cdot b\cdot c^{k }\cdot c_{ k+1}]  = P[e^k \pmid  h\cdot b\cdot c^k] .
+\]
+An individual outcome \ is
+result-independent
+of a sequence of other observations and
+their outcomes \\), given \ and its
+own condition \,
+if and only if
+\[
+P[e_k \pmid  h\cdot b\cdot c_k\cdot]  = P[e_k \pmid  h\cdot b\cdot c_k] .
+  \]
+When these two conditions hold, the likelihood for an evidence
+sequence may be decomposed into the product of the likelihoods for
+individual experiments or observations. To see how the two
+independence conditions
+affect the decomposition, first
+consider the following formula, which holds even when neither
+independence condition
+is satisfied:
+\[\tag{12}
+    P[e^n \pmid  h_{j }\cdot b\cdot c^{ n}] =  
+\prod^{n}_{k = 1}
+    P[e_k \pmid  h_{j }\cdot b\cdot c^n\cdot e^{ k-1}] .  
+\]
+When
+condition-independence
+holds, the likelihood of the
+whole evidence stream parses into a product of likelihoods that
+probabilistically depend
+on only past observation conditions
+and their outcomes. They do not depend on the conditions for other
+experiments whose outcomes are not yet specified. Here is the
+formula:
+\[\tag{13}
+    P[e^n \pmid  h_{j }\cdot b\cdot c^{ n}] =  
+ \prod^{n}_{k = 1}
+    P[e_k \pmid  h_{j }\cdot b\cdot c_k\cdot ] .  
+\]
+Finally, whenever both
+independence conditions
+are satisfied
+we have the following relationship between the likelihood of the
+evidence stream and the likelihoods of individual experiments or
+observations:
+\[\tag{14}
+    P[e^n \pmid  h_{j }\cdot b\cdot c^{ n}] =  
+\prod^{n}_{k = 1}
+    P[e_k \pmid  h_{j }\cdot b\cdot c_{ k}] .  
+\]
+
+In scientific contexts the evidence can almost always be divided into
+parts that satisfy both clauses of the
+Independent Evidence
+Condition
+with respect to each alternative hypothesis. To see
+why, let us consider each independence condition more carefully.
+Condition-independence
+says that the mere addition of a new
+observation condition \,
+without specifying one of its
+outcomes
+, does not alter the likelihood of the outcomes \
+of other experiments \. To appreciate the significance of this
+condition, imagine what it would be like if it were violated. Suppose
+hypothesis \ is some statistical theory, say, for example, a
+quantum theory of superconductivity. The conditions expressed in
+\ describe a number of experimental setups, perhaps conducted in
+numerous labs throughout the world, that test a variety of aspects of
+the theory . An outcome sequence
+\ describes the results of these experiments. The violation of
+condition-independence
+would mean that merely adding to
+\ a statement \ describing how an
+additional experiment has been set up, but with no mention of its
+outcome, changes how likely the evidence sequence \ is taken to
+be. What \\)
+says
+via likelihoods about the
+outcomes \ of experiments \ differs as a result of merely
+supplying a description of another experimental arrangement,
+\.
+Condition-independence
+, when it holds, rules out
+such strange effects.
+Result-independence
+says that the description of previous
+test conditions
+together with their outcomes
+is irrelevant to
+the likelihoods of outcomes for additional experiments. If this
+condition were widely violated, then in order to specify the most
+informed likelihoods for a given hypothesis one would need to include
+information about volumes of past observations and their outcomes.
+What a hypothesis says about future cases would depend on how past
+cases have gone. Such
+dependence
+had better not happen on a
+large scale. Otherwise, the hypothesis would be fairly useless, since
+its empirical import in each specific case would depend on taking into
+account volumes of past observational and experimental results.
+However, even if such dependencies occur, provided they are not too
+pervasive,
+result-independence
+can be accommodated rather
+easily by packaging each collection of
+result-dependent
+data
+together, treating it like a single extended experiment or
+observation. The
+result-independence condition
+will then be
+satisfied by letting each term ‘\’ in the statement
+of the independence condition represent a conjunction of test
+conditions for a collection of
+result-dependent
+tests, and by
+letting each term ‘\’ ’) stand for a conjunction of the corresponding
+result-dependent
+outcomes. Thus, by packaging
+result-dependent
+data together in this way, the
+result-independence
+condition is satisfied by those
+ statements that describe the separate,
+result-independent
+chunks.
+
+The version of the
+Likelihood Ratio Convergence Theorem
+we
+will examine depends only on the
+Independent Evidence
+Conditions
+. It
+draws on no other assumptions. Indeed, an even more general version of
+the theorem can be established, a version that draws on neither of the
+Independent Evidence Conditions
+. However, the
+Independent
+Evidence Conditions
+will be satisfied in almost all scientific
+contexts, so little will be lost by assuming them. 
+From this point on, let us assume that the following versions of the
+Independent Evidence Conditions
+hold.
+Assumption: Independent Evidence Assumptions
+. For
+each hypothesis
+h
+and background
+b
+under consideration,
+we assume that the experiments and observations can be packaged into
+condition statements, \, and
+possible outcomes in a way that satisfies the following
+conditions:
+Each sequence of possible outcomes \ of a sequence of
+conditions \ is
+condition-independent
+of
+additional conditions \—i.e., 
+
+\[P[e^k \pmid  h\cdot b\cdot c^{k}\cdot c_{k+1}] = P[e^k \pmid  h\cdot b\cdot c^k].\]
+Each possible outcome \ of condition \ is
+result-independent
+of sequences of other observations
+and possible outcomes \\)—i.e.,
+
+\[P[e_k \pmid  h\cdot b\cdot c_k\cdot] = P[e_k \pmid  h\cdot b\cdot c_k].\]
+We now have all that is needed to begin to state the
+Likelihood
+Ratio Convergence Theorem
+.
+4.3 Likelihood Ratio Convergence when Falsifying Outcomes are Possible
+The
+Likelihood Ratio Convergence Theorem
+comes in two parts.
+The first part applies only to those experiments or observations
+\ within the total evidence stream \ for which some of the
+possible outcomes have 0 likelihood of occurring according to
+hypothesis \ but have non-0 likelihood of occurring according to
+\. Such outcomes are highly desirable. If they occur, the
+likelihood ratio comparing \ to \ will become 0, and
+\ will be
+falsified
+. So-called
+crucial
+experiments
+are a special case of this, where for at least one
+possible outcome \, \ and \. In the more
+general case \ together with
+b
+says that one of the
+outcomes of \ is at least minimally probable, whereas \
+says that this outcome is impossible—i.e., \ and \. It will be convenient to define a term for this
+situation.
+Definition: Full Outcome Compatibility.
+Let’s
+call \
+fully outcome-compatible
+with \ on
+experiment or observation \
+just when
+, for each of its
+possible outcomes \, if \, then \.
+Equivalently, \ is
+fails to be fully outcome-compatible
+with \ on experiment or observation \
+just when
+,
+for at least one of its possible outcomes \, \ but \.
+The first part of the
+Likelihood Ratio Convergence Theorem
+applies to that part of the total stream of evidence  on which hypothesis \
+fails to be fully outcome-compatible
+with hypothesis \;
+the second part of the theorem applies to the remaining part of the
+total stream of evidence, that subsequence of the total evidence
+stream on which \ is
+fully outcome-compatible
+with
+\. It turns out that these two kinds of cases must be treated
+differently.  for experiments and observations
+that
+fail to be fully outcome compatible
+). Thus, the
+following part of the convergence theorem applies to just that part of
+the total stream of evidence that consists of experiments and
+observations that
+fail to be fully outcome compatible
+for the
+pair of hypotheses involved. Here, then, is the first part of the
+convergence theorem.
+Likelihood Ratio Convergence Theorem 1—The Falsification
+Theorem:
+Suppose that the total stream of evidence \ contains precisely
+m
+experiments or observations on which \
+fails to be
+fully outcome-compatible
+with \. And suppose that the
+Independent Evidence Conditions
+hold for evidence stream
+\ with respect to each of these two hypotheses. Furthermore,
+suppose there is a lower bound \ such that for each
+\ on which \
+fails to be fully outcome-compatible
+with \,
+\[P[\vee \{ o_{ku} : P[o_{ku} \pmid  h_{j}\cdot b\cdot c_{k}] = 0\} \pmid  h_{i}\cdot b\cdot c_{k}]  \ge \delta\]
+—i.e., \ together with \
+says
+, with
+likelihood at least as large as \, that one of the outcomes
+will occur that \
+says
+cannot occur. Then,
+\[\begin{align}
+P \left[\vee \left\{ e^n : \frac{P[e^n \pmid  h_{j}\cdot b\cdot c^n]}{P[e^n \pmid  h_i\cdot b\cdot c^{n}]} = 0\right\} \pmid   h_{i}\cdot b\cdot c^{n}\right]\\[2ex]
+ = P\left[\vee \left\{ e^n : P[e^n \pmid  h_{j}\cdot b\cdot c^{n}] = 0\right\} \pmid   h_{i}\cdot b\cdot c^{n}\right]\\
+ \ge 1 - ^m,
+\end{align}
+\]
+which approaches 1 for large
+m
+. 
+In other words, we only suppose that for each of
+m
+observations, \
+says
+observation \ has at
+least a small likelihood \ of producing one of the outcomes
+\ that \
+says
+is impossible. If the number
+m
+of such experiments or observations is large enough  on the likelihoods of getting such outcomes
+is large enough), and if \ \) is
+true, then it is highly likely that one of the outcomes held to be
+impossible by \ will actually occur. If one of these outcomes
+does occur, then the likelihood ratio for \ as compared to over
+\ will become 0. According to Bayes’ Theorem, when this
+happen, \ is absolutely refuted by the evidence—its
+posterior probability becomes 0.
+The Falsification Theorem is quite commonsensical. First, notice that
+if there is a
+crucial experiment
+in the evidence stream, the
+theorem is completely obvious. That is, suppose for the specific
+experiment \ \) there are two
+incompatible possible outcomes \ and \ such that
+\ and \. Then, clearly, \, since \ is one of the \ such that
+\. So, where a crucial
+experiment is available, the theorem applies with \ and
+\.
+The theorem is equally commonsensical for cases where no crucial
+experiment is available. To see what it says in such cases, consider
+an example. Let \ be some theory that implies a specific rate of
+proton decay, but a rate so low that there is only a very small
+probability that any particular proton will decay in a given year.
+Consider an alternative theory \ that implies that protons
+never
+decay. If \ is true, then for a persistent enough
+sequence of observations , eventually a proton
+decay will almost surely be detected. When this happens, the
+likelihood ratio becomes 0. Thus, the posterior probability of \
+becomes 0.
+It is instructive to plug some specific values into the formula given
+by the Falsification Theorem, to see what the convergence rate might
+look like. For example, the theorem tells us that if we compare any
+pair of hypotheses \ and \ on an evidence stream \
+that contains at least \ observations or experiments, where
+each has a likelihood \ of yielding a
+falsifying
+outcome
+, then the likelihood \) of
+obtaining an outcome sequence \ that yields likelihood-ratio
+\[\frac{P[e^n \pmid  h_{j}\cdot b\cdot c^{n}] }{P[e^n \pmid  h_{i}\cdot b\cdot c^{n}]} = 0,\]
+will be at least as large as \^{19}) = .865\).  and
+m
+.)
+A comment about the
+need for
+and
+usefulness of
+such
+convergence theorems is in order, now that we’ve seen one. Given
+some specific pair of scientific hypotheses \ and \ one
+may directly compute the likelihood, given \\), that a proposed sequence of experiments or observations
+\ will result in one of the sequences of outcomes that would
+yield low likelihood ratios. So, given a specific pair of hypotheses
+and a proposed sequence of experiments, we don’t need a general
+Convergence Theorem
+to tell us the likelihood of obtaining
+refuting evidence. The specific hypotheses \ and \ tell us
+this
+themselves
+. They tell us the likelihood of obtaining
+each specific outcome stream, including those that either refute the
+competitor or produce a very small likelihood ratio for it.
+Furthermore, after we’ve actually performed an experiment and
+recorded its outcome, all that matters is the actual ratio of
+likelihoods for that outcome. Convergence theorems become moot.
+The point of the Likelihood Ratio Convergence Theorem  is to
+assure us
+in advance of considering any specific pair of
+hypotheses
+that if the possible evidence streams that test
+hypotheses have certain characteristics which reflect the empirical
+distinctness of the two hypotheses, then it is highly likely that one
+of the sequences of outcomes will occur that yields a very small
+likelihood ratio. These theorems provide finite lower bounds on how
+quickly such convergence is likely to be. Thus, they show that the
+CoA
+is satisfied in advance of our using the logic to test specific pairs
+of hypotheses against one another.
+4.4 Likelihood Ratio Convergence When No Falsifying Outcomes are Possible
+The Falsification Theorem applies whenever the evidence stream
+includes possible outcomes that may
+falsify
+the alternative
+hypothesis. However, it completely ignores the influence of any
+experiments or observations in the evidence stream on which hypothesis
+\ is
+fully outcome-compatible
+with hypothesis \.
+We now turn to a theorem that applies to those evidence streams  consisting only of experiments and
+observations on which hypothesis \ is
+fully
+outcome-compatible
+with hypothesis \. Evidence streams of
+this kind contain no
+possibly falsifying
+outcomes. In such
+cases the only outcomes of an experiment or observation \ for
+which hypothesis \ may specify 0 likelihoods are those for which
+hypothesis \ specifies 0 likelihoods as well.
+Hypotheses whose connection with the evidence is entirely statistical
+in nature will usually be
+fully outcome-compatible
+on the
+entire evidence stream. So, evidence streams of this kind are
+undoubtedly much more common in practice than those containing
+possibly falsifying outcomes. Furthermore, whenever an entire stream
+of evidence contains some mixture of experiments and observations on
+which the hypotheses are
+not fully outcome compatible
+along
+with others on which they are
+fully outcome compatible
+, we
+may treat the experiments and observations for which
+full outcome
+compatibility
+holds as a separate subsequence of the entire
+evidence stream, to see the likely impact of that part of the evidence
+in producing values for likelihood ratios.
+To cover evidence streams 
+consisting entirely of experiments or observations on which \ is
+fully outcome-compatible
+with hypothesis \ we will
+first need to identify a useful way to measure the degree to which
+hypotheses are empirically distinct from one another on such evidence.
+Consider some particular sequence of outcomes \ that results
+from observations \. The likelihood ratio \
+itself measures the extent to which the outcome sequence distinguishes
+between \ and \. But as a measure of the power of evidence
+to distinguish among hypotheses, raw likelihood ratios provide a
+rather lopsided scale, a scale that ranges from 0 to infinity with the
+midpoint, where \ doesn’t distinguish at all between
+\ and \, at 1. So, rather than using raw likelihood ratios
+to measure the ability of \ to distinguish between hypotheses,
+it proves more useful to employ a symmetric measure. The logarithm of
+the likelihood ratio provides such a measure.
+Definition: QI—the Quality of the Information
+.
+For each experiment or observation \, define
+the quality of
+the information
+provided by possible outcome \ for
+distinguishing \ from \, given
+b
+, as follows :
+\[
+\QI[o_{ku} \pmid  h_i /h_j \pmid  b\cdot c_k] = \log\left[\frac{P[o_{ku} \pmid  h_{i}\cdot b\cdot c_k]}{P[o_{ku} \pmid  h_j\cdot b\cdot c_{k}]}\right].
+\]
+Similarly, for the sequence of experiments or observations \,
+define
+the quality of the information
+provided by possible
+outcome \ for distinguishing \ from \, given
+b
+, as follows:
+\[
+\QI[e^n \pmid  h_i /h_j \pmid  b\cdot c^n] = \log\left[\frac{P[e^n \pmid  h_{i}\cdot b\cdot c^n]}{P[e^n \pmid  h_j\cdot b\cdot c^{n}]}\right].
+\]
+That is, QI is the base-2 logarithm of the likelihood ratio for
+\ over that for \.
+So, we’ll measure the
+Quality of the Information
+an
+outcome would yield in distinguishing between two hypotheses as the
+base-2 logarithm of the likelihood ratio. This is clearly a symmetric
+measure of the outcome’s evidential strength at distinguishing
+between the two hypotheses. On this measure hypotheses \ and
+\ assign the same likelihood value to a given outcome \
+just when
+\. Thus, QI measures information on a logarithmic scale that is
+symmetric about the natural no-information midpoint, 0. This measure
+is set up so that
+positive information
+favors \ over
+\, and
+negative information
+favors \ over
+\.
+Given the
+Independent Evidence Assumptions
+with respect to
+each hypothesis, it’s easy to show that the QI for a sequence of
+outcomes is just the sum of the QIs of the individual outcomes in the
+sequence:
+\[\tag{15}
+   \QI[e^n \pmid  h_i /h_j \pmid  b\cdot c^n] =
+\sum^{n}_{k = 1}
+   \QI[e_k \pmid  h_i /h_j \pmid  b\cdot c_k].  
+\]
+Probability theorists measure the
+expected value
+of a
+quantity by first multiplying each of its
+possible values
+by
+their probabilities of occurring, and then summing these products.
+Thus, the
+expected value
+of QI is given by the following
+formula:
+Definition: EQI—the Expected Quality of the
+Information
+.
+We adopt the convention that if \, then the term \. This
+convention will make good sense in the context of the following
+definition because, whenever the outcome \ has 0 probability
+of occurring according to \ \), it
+makes good sense to give it 0 impact on the ability of the evidence to
+distinguish between \ and \ when \ \) is true. Also notice that the
+full
+outcome-compatibility
+of \ with \ on \ means
+that whenever \, we must
+have \ as well; so whenever
+the denominator would be 0 in the term
+\[\QI[o_{ku} \pmid  h_i /h_j \pmid  b\cdot c_k] = \log\left[\frac{P[o_{ku} \pmid  h_{i}\cdot b\cdot c_k]}{P[o_{ku} \pmid  h_j\cdot b\cdot c_{k}]}\right],\]
+the convention just described makes the term
+\[\QI[o_{ku} \pmid  h_i /h_j \pmid  b\cdot c_k] \times P[o_{ku} \pmid  h_{i}\cdot b\cdot c_{k}] = 0.\]
+Thus the following notion is well-defined:
+For \
+fully outcome-compatible
+with \ on
+experiment or observation \, define
+\[
+\EQI[c_k \pmid  h_i /h_j \pmid  b] = \sum_u \QI[o_{ku} \pmid  h_i /h_j \pmid  b\cdot c_k] \times P[o_{ku} \pmid  h_{i}\cdot b\cdot c_{k}].
+\]
+Also, for \
+fully outcome-compatible
+with \ on
+each experiment and observation in the sequence \, define
+\[
+\EQI[c^n \pmid  h_i /h_j \pmid  b]
+  =
+  \sum_{e^n\in E^n}
+   \QI[e^n \pmid  h_i /h_j \pmid  b\cdot c^n] \times P[e^n \pmid  h_{i}\cdot b\cdot c^{n}].  
+\]
+The EQI of an experiment or observation is the
+Expected Quality of
+its Information
+for distinguishing \ from \ when
+\ is true. It is a measure of the expected evidential strength
+of the possible outcomes of an experiment or observation at
+distinguishing between the hypotheses when \ \) is true. Whereas QI measures the ability of each
+particular outcome or sequence of outcomes to empirically distinguish
+hypotheses, EQI measures the tendency of experiments or observations
+to produce distinguishing outcomes. It can be shown that EQI tracks
+empirical distinctness in a very precise way. We return to this in a
+moment.
+It is easily seen that the EQI for a sequence of observations \
+is just the sum of the EQIs of the individual observations \ in
+the sequence:
+\[\tag{16}
+   \EQI[c^n \pmid  h_i /h_j \pmid  b]
+  =
+   \sum^{n}_{k=1}
+   \EQI[c_k \pmid  h_i /h_j \pmid  b_{}].  
+\]
+ is the sum of the EQI for the individual \
+.)
+This suggests that it may be useful to average the values of the
+\ over the number of observations
+n
+to obtain a measure of the
+average expected quality of
+the information
+among the experiments and observations that make
+up the evidence stream \.
+Definition: The Average Expected Quality of
+Information
+For \
+fully outcome-compatible
+with \ on each
+experiment and observation in the evidence stream \, define the
+average expected quality of information, \, from \ for
+distinguishing \ from \, given \, as
+follows:
+\[
+\begin{align}
+   \bEQI[c^n \pmid  h_i /h_j \pmid  b] 
+&   =
+   \frac{\EQI[c^n \pmid  h_i /h_j \pmid  b]}{n}\\
+&   =
+   \times
+   \sum^{n}_{k=1}
+   \EQI[c_k \pmid  h_i /h_j \pmid  b_{}].
+\end{align}
+  \]
+It turns out that the value of \
+cannot be less than 0; and it must be greater than 0 just in case
+\ is
+empirically distinct
+from \ on at least one
+outcome \—i.e., just in case it is
+empirically
+distinct
+in the sense that \, for at least one
+outcome \. The same goes for the average, \.
+Theorem: Nonnegativity of EQI.
+\; and \
+if and only if
+for at least one
+of its possible outcomes \,
+\[P[o_{ku} \pmid  h_{i}\cdot b\cdot c_{k}] \ne P[o_{ku} \pmid  h_{j}\cdot b\cdot c_{k}].\]
+As a result, \; and
+\
+if and only if
+at
+least one experiment or observation \ has at least one possible
+outcome \ such that
+\[P[o_{ku} \pmid  h_{i}\cdot b\cdot c_{k}] \ne P[o_{ku} \pmid  h_{j}\cdot b\cdot c_{k}].\]
+
+In fact, the more finely one partitions the outcome space \ into distinct outcomes that
+differ on likelihood ratio values, the larger EQI
+ becomes.
+
+This shows that EQI tracks empirical distinctness in a precise way.
+The importance of the
+Non-negativity of EQI
+result for the
+Likelihood Ratio Convergence Theorem
+will become clear in a
+moment.
+We are now in a position to state the second part of the
+Likelihood Ratio Convergence Theorem
+. It applies to all
+evidence streams not containing
+possibly falsifying outcomes
+for \ when \ holds—i.e., it applies to all evidence
+streams for which \ is
+fully outcome-compatible
+with
+\ on each \ in the stream.
+Likelihood Ratio Convergence Theorem 2—The Probabilistic
+Refutation Theorem.
+Suppose the evidence stream \ contains only experiments or
+observations on which \ is
+fully outcome-compatible
+with \—i.e., suppose that for each condition \ in
+sequence \, for each of its possible outcomes possible outcomes
+\, either \ or
+\. In addition , for some \ a number smaller than \ ; where
+e
+’ is the base of the natural logarithm), suppose that
+for each possible outcome \ of each observation condition
+\ in \, either \ or
+\[\frac{P[o_{ku} \pmid  h_{j}\cdot b\cdot c_{k}]}{P[o_{ku} \pmid  h_{i}\cdot b\cdot c_{k}]} \ge \gamma.\]
+And suppose that the
+Independent Evidence Conditions
+hold for
+evidence stream \ with respect to each of these hypotheses. Now,
+choose any positive \, as small as you like, but
+large enough  that the value of
+\[\bEQI[c^n \pmid  h_i /h_j \pmid  b]  \gt -\frac{}{n}.\]
+Then:
+\[
+\begin{multline}
+P\left[\vee \left\{ e^n : \frac{P[e^n \pmid  h_{j}\cdot b\cdot c^{n}]}{P[e^n \pmid  h_{i}\cdot b\cdot c^{n}]} \lt \varepsilon \right\} \pmid   h_{i}\cdot b\cdot c^{n}\right]\\[2ex]
+\gt 1 - \frac{1}{n} \times  
+\frac{^2}
+{/n)^2}
+\end{multline}
+\]
+For \ and \, this formula
+becomes,
+\[
+\begin{multline}
+P\left[\vee \left\{ e^n : \frac{P[e^n \pmid  h_{j}\cdot b\cdot c^{n}]}{P[e^n \pmid  h_{i}\cdot b\cdot c^{n}]} \lt 1/2^m\right\} \pmid   h_{i}\cdot b\cdot c^{n}\right]\\
+  \gt 1  - \frac{1}{n}
+  \times
+\frac{q^2}
+{ )^2}
+  \end{multline}
+\]
+
+This theorem provides sufficient conditions for the
+likely
+refutation
+of false alternatives via exceeding small likelihood
+ratios. The conditions under which this happens characterize the
+degree to which the hypotheses involved are empirically distinct from
+one another. The theorem says that when these conditions are met,
+according to hypothesis \ \),
+the likelihood is near 1 that that one of the outcome sequence \
+will occur for which the likelihood ratio is smaller than
+\  you may choose). The
+likelihood of getting such an evidential outcome \ is quite
+close to 1—i.e., no more than the amount
+\[\frac{1}{n} \times \frac{^2}{\left}{n}\right)^2}\]
+below 1. 
+It turns out that in almost every case  the actual likelihood of obtaining such evidence \)
+will be
+much closer
+to 1 than this factor
+ indicates.
+
+Thus, the theorem provides an overly cautious lower bound on the
+likelihood of obtaining small likelihood ratios. It shows that the
+larger the value of \ for an evidence stream, the more likely
+that stream is to produce a sequence of outcomes that yield a very
+small likelihood ratio value. But even if \ remains quite
+small, a long enough evidence stream,
+n
+, of such low-grade
+evidence will, nevertheless, almost surely produce an outcome sequence
+having a very small likelihood ratio
+ value.
+
+Notice that the antecedent condition of the theorem, that
+“either
+\[P[o_{ku} \pmid  h_{i}\cdot b\cdot c_{k}] = 0\]
+or
+\[\frac{P[o_{ku} \pmid  h_{j}\cdot b\cdot c_{k}]}{P[o_{ku} \pmid  h_{i}\cdot b\cdot c_{k}]}  \ge \gamma,\]
+for some \ but less than \ )”, does not favor hypothesis \ over \ in any
+way. The condition only rules out the possibility that some outcomes
+might furnish
+extremely strong
+evidence
+against
+\ relative to \—by making \ or by making
+\[\frac{P[o_{ku} \pmid  h_{j}\cdot b\cdot c_{k}] }{P[o_{ku} \pmid  h_{i}\cdot b\cdot c_{k}]}\]
+less than some quite small \. This condition is only needed
+because our measure of evidential distinguishability, QI, blows up
+when the ratio
+\[\frac{P[o_{ku} \pmid  h_{j}\cdot b\cdot c_{k}]}{P[o_{ku} \pmid  h_{i}\cdot b\cdot c_{k}]}\]
+is extremely small. Furthermore, this condition is really no
+restriction at all on possible experiments or observations. If \
+has some possible outcome sentence \ that would make
+\[\frac{P[o_{ku} \pmid  h_{j}\cdot b\cdot c_{k}]}{P[o_{ku} \pmid  h_{i}\cdot b\cdot c_{k}]}  \lt \gamma\]
+ of interest), one may disjunctively lump
+\ together with some other outcome sentence \ for
+\. Then, the antecedent condition of the theorem will be
+satisfied, but with the sentence ‘\\)’ treated as a single outcome. It can be proved that
+the only effect of such “disjunctive lumping” is to make
+\ smaller than it would otherwise be  are more desirable). If the
+too strongly refuting
+disjunct \ actually occurs when the experiment or observation
+\ is conducted, all the better, since this results in a
+likelihood ratio
+\[\frac{P[o_{ku} \pmid  h_{j}\cdot b\cdot c_{k}]}{P[o_{ku} \pmid  h_{i}\cdot b\cdot c_{k}]}\]
+smaller than \ on that particular evidential outcome. We
+merely failed to take this
+more strongly refuting
+possibility
+into account when computing our lower bound on the
+likelihood that
+refutation via likelihood ratios
+would occur.
+The point of the two
+Convergence Theorems
+explored in this
+section is to assure us, in advance of the consideration of any
+specific pair of hypotheses, that if the possible evidence streams
+that test them have certain characteristics which reflect their
+evidential distinguishability, it is highly likely that outcomes
+yielding small likelihood ratios will result. These theorems provide
+finite lower bounds on how quickly convergence is likely to occur.
+Thus, there is no need to wait through some infinitely long run for
+convergence to occur. Indeed, for any evidence sequence on which the
+probability distributions are at all well behaved, the
+actual
+likelihood
+of obtaining outcomes that yield small likelihood
+ratio values will inevitably be
+much higher
+than the lower
+bounds given by Theorems 1 and 2.
+In sum, according to Theorems 1 and 2, each hypothesis \
+says
+, via likelihoods, that given enough observations,
+it
+is very likely to dominate its empirically distinct rivals
+in a contest of likelihood ratios. The true hypothesis speaks
+truthfully about this, and its competitors lie. Even a sequence of
+observations with an extremely low
+average expected quality of
+information
+is very likely to do the job if that evidential
+sequence is long enough. Thus ,
+ as evidence accumulates, the
+degree of support
+for false
+hypotheses will very probably approach 0, indicating that they are
+probably false; and as this happens,  the
+degree of support for the true hypothesis will approach 1, indicating
+its probable truth. Thus, the
+Criterion of Adequacy
+ is satisfied.
+5. When the Likelihoods are Vague or Diverse
+Up to this point we have been supposing that likelihoods possess
+objective or agreed numerical values. Although this supposition is
+often satisfied in scientific contexts, there are important settings
+where it is unrealistic, where hypotheses only support vague
+likelihood values, and where there is enough ambiguity in what
+hypotheses
+say
+about evidential claims that the scientific
+community cannot agree on precise values for the likelihoods of
+evidential
+ claims.
+
+Let us now see how the supposition of precise, agreed likelihood
+values may be relaxed in a reasonable way.
+Recall why agreement, or near agreement, on precise values for
+likelihoods is so important to the scientific enterprise. To the
+extent that members of a scientific community disagree on the
+likelihoods, they disagree about the empirical content of their
+hypotheses, about what each hypothesis
+says
+about how the
+world is likely to be. This can lead to disagreement about which
+hypotheses are refuted or supported by a given body of evidence.
+Similarly, to the extent that the values of likelihoods are only
+vaguely implied by hypotheses as understood by an individual agent,
+that agent may be unable to determine which of several hypotheses is
+refuted or supported by a given body of evidence.
+We have seen, however, that the individual values of likelihoods are
+not really crucial to the way evidence impacts hypotheses. Rather, as
+Equations 9–11 show, it is
+ratios of likelihoods
+that
+do the heavy lifting. So, even if two support functions \
+and \ disagree on the values of individual likelihoods,
+they may, nevertheless, largely agree on the refutation or support
+that accrues to various rival hypotheses, provided that the following
+condition is satisfied:
+Directional Agreement Condition
+:
+The likelihood ratios due to each of a pair of support functions
+\ and \ are said to
+agree in
+direction
+
+just in
+case
+whenever possible outcome sequence \ makes 
+
+\[\frac{P_{\alpha}[e^n \pmid  h_{j}\cdot b\cdot c^{n}]}{P_{\alpha}[e^n \pmid  h_{i}\cdot b\cdot c^{n}]}  \lt 1,\]
+
+ it
+also makes 
+
+\[\frac{P_{\beta}[e^n \pmid  h_{j}\cdot b\cdot c^{n}]}{P_{\beta}[e^n \pmid  h_{i}\cdot b\cdot c^{n}]}  \lt 1;\]
+whenever possible outcome sequence \ makes 
+
+\[\frac{P_{\alpha}[e^n \pmid  h_{j}\cdot b\cdot c^{n}]}{P_{\alpha}[e^n \pmid  h_{i}\cdot b\cdot c^{n}]}  \gt 1,\]
+
+ it
+also makes 
+
+\[\frac{P_{\beta}[e^n \pmid  h_{j}\cdot b\cdot c^{n}]}{P_{\beta}[e^n \pmid  h_{i}\cdot b\cdot c^{n}]}  \gt 1;\]
+each of these likelihood ratios is either close to 1 for both of
+these support functions, or is quite far from 1 for both of
+ them.
+
+When this condition holds, the evidence will support \ over
+\ according to \ just in case it does so for
+\ as well, although the strength of support may differ.
+Furthermore, although the
+rate
+at which the likelihood ratios
+increase or decrease on a stream of evidence may differ for the two
+support functions, the impact of the cumulative evidence should
+ultimately affect their refutation or support in much the same way.
+When likelihoods are vague or diverse, we may take an approach similar
+to that we employed for
+vague
+and
+diverse
+prior
+plausibility assessments. We may extend the
+vagueness sets
+for individual agents to include a collection of inductive support
+functions that cover the range of values for likelihood ratios of
+evidence claims . Similarly,
+we may extend the
+diversity sets
+for communities of agents to
+include support functions that cover the ranges of likelihood ratio
+values that arise within the
+vagueness sets
+of members of the
+scientific community.
+This broadening of
+vagueness
+and
+diversity
+sets to
+accommodate vague and diverse likelihood values makes no trouble for
+the
+convergence to truth results
+for hypotheses. For,
+provided that the
+Directional Agreement Condition
+is
+satisfied by all support functions in an extended
+vagueness
+or
+diversity set
+under consideration, the
+Likelihood
+Ratio Convergence Theorem
+applies to each individual support
+function in that set. For, the the proof of that convergence theorem
+doesn’t depend on the supposition that likelihoods are objective
+or have intersubjectively agreed values. Rather, it applies to each
+individual support function \. The only possible problem
+with applying this result across a range of support functions is that
+when their values for likelihoods differ, function \ may
+disagree with \ on which of the hypotheses is favored by a
+given sequence of evidence. That can happen because different support
+functions may represent the evidential import of hypotheses
+differently, by specifying different likelihood values for the very
+same evidence claims. So, an evidence stream that favors \
+according to \ may instead favor \ according to
+\. However, when the
+Directional Agreement
+Condition
+holds for a given collection of support functions, this
+problem cannot arise.
+Directional Agreement
+means that the
+evidential import of hypotheses is similar enough for \
+and \ that a sequence of outcomes may favor a hypothesis
+according to \ only if it does so for \ as
+well.
+Thus, when the
+Directional Agreement Condition
+holds for all
+support functions in a
+vagueness
+or
+diversity
+set
+that is extended to include vague or diverse likelihoods, and provided
+that enough evidentially distinguishing experiments or observations
+can be performed, all support functions in the extended
+vagueness
+or
+diversity
+set will very probably come
+to agree that the likelihood ratios for empirically distinct false
+competitors of a true hypothesis are extremely small. As that happens,
+the community comes to agree on the refutation of these competitors,
+and the true hypothesis rises to the top of the
+ heap.
+
+What if the true hypothesis has evidentially equivalent rivals? Their
+posterior probabilities must rise as well. In that case we are only
+assured that the disjunction of the true hypothesis with its
+evidentially equivalent rivals will be driven to 1 as evidence lays
+low its evidentially distinct rivals. The true hypothesis will itself
+approach 1 only if either it has no evidentially equivalent rivals, or
+whatever equivalent rivals it does have can be laid low by
+plausibility arguments of a kind that don’t depend on the
+evidential likelihoods, but only show up via the comparative
+plausibility assessments represented by ratios of prior
+probabilities.

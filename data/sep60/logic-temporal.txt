@@ -1,0 +1,2852 @@
+1. Temporal reasoning from antiquity to modern days
+Discussions of temporality and reasoning about time go back to
+antiquity, and examples can be found even in the Bible .
+Zeno’s famous flying arrow paradox refers to the nature of time
+and broaches the corresponding notion of change. Much of the early
+temporal discussion, however, centered around the problem of
+future contingents
+, that is, the question whether statements
+about future events that are neither necessary nor impossible can have
+definite truth values. The most widely known and probably most cited
+example is the sea-fight scenario discussed by Aristotle in
+On
+Interpretation
+. Aristotle argued that statements such
+as “There will be a sea-fight tomorrow”, as well as the
+contrary prediction “There will not be a sea-fight
+tomorrow”, do not hold of necessity and hence lack definite
+truth values at present, while conceding that it is necessary that
+either there will be a sea-fight tomorrow or not. A few decades later,
+the philosopher Diodorus Chronus demonstrated the problem of future
+contingents in his famous
+Master Argument
+, which led him to
+define the possible as “what is or will be the case”. A
+detailed discussion of Diodorus’ argument is provided in e.g.
+Rescher and Urquhart  and the entry on
+future contingents
+.
+Philosophical discussions concerning time and the contingent future
+continued in the Middle Ages, where the theme was taken up by writers
+such as Peter Aureole, William of Ockham, and Luis Molina. In the
+center of focus here was the question how to reconcile God’s
+foreknowledge with the idea of human freedom. Ockham, for example,
+embraced the idea of a true or actual future, holding that future
+contingent statements are either true or false even though only God
+knows their truth values. According to Ockham, this is not to say,
+however, that future contingents are necessary, meaning that there are
+alternative possibilities for humans to choose from. Later, several
+philosophers and logicians engaged in the problem of relating
+temporality with free will, indeterminism, and the open future,
+proposing various different solutions. C.S. Peirce objected to the
+idea that future contingents can have definite truth values. He
+advanced the view that only the present and the past are actual
+whereas the future is the realm of possibility and necessity. In a
+similar spirit, J. Łukasiewicz devised a three-valued logic,
+treating the truth values of future contingent statements as
+undetermined. For a more recent philosophical discussion on free will,
+indeterminism, and the open future, see e.g. Belnap et al.  and
+Müller .
+The modern era of formal temporal logic was initiated by the seminal
+work of Arthur N. Prior, with important precursors such as H.
+Reichenbach, J. Findlay, J. Łukasiewicz, and J.
+ Łoś.
+
+From the early 1950s, Prior introduced and analyzed in detail over
+more than a decade several different versions of Tense Logic, many of
+which are discussed below. Prior’s invention of Tense Logic was
+largely driven by philosophical considerations. In particular, the
+Master Argument of Diodorus Chronus and the intricate relationship
+between time, determinism, God’s foreknowledge, and human
+freedom played a pivotal role in his work. Prior was convinced that a
+proper logical approach could help to clarify and solve such
+philosophical problems. He introduced temporal operators, studied
+metric tense logic, was a pioneer in hybrid temporal logic, devised
+two versions of branching time temporal logic, which he took to reflect the
+views of Ockham and Peirce, respectively, etc. His work paved the way
+for the development of the vast and diverse field of temporal logic,
+with numerous important applications not only in philosophy, but also
+in computer science, artificial intelligence, and linguistics. For
+more on Prior’s views and work, see Hasle et al. ;
+Blackburn et al. ; and the entry on
+Arthur Prior
+.
+ A comprehensive overview of the history of temporal reasoning and
+logics is provided in Øhrstrøm and Hasle . See
+also Øhrstrøm and Hasle  and Dyke and Bardon
+.
+2. Formal models of time
+The ontological nature and properties of time give rise to fundamental
+philosophical questions, which find their expression in the rich
+variety of formal models of time employed in temporal logics. For
+example, is time instant-based or interval-based? Is it discrete,
+dense, or continuous? Does time have a beginning or an end? Is it
+linear, branching, or circular? Before we turn to the formal languages
+of temporal logics and their semantics, we briefly introduce below the
+two most basic types of formal models of time together with some of
+their pertinent properties: instant-based and interval-based
+models.
+2.1 Instant-based models of time
+In instant-based models the primitive temporal entities are points in
+time, viz.
+time instants
+, and the basic relationship between
+them  is
+temporal precedence
+. Thus, the
+flow of time is represented by a non-empty set of time instants \
+with a binary relation \ of precedence on it: \
+There are some basic properties which can naturally be imposed on
+instant-based flows of time. The temporal precedence relation is
+usually required to be a strict partial ordering, that is, an
+irreflexive, transitive, and hence asymmetric relation. Sometimes,
+however, it is assumed to be reflexive, and then the antisymmetry
+condition is added. The relevant properties are listed below.
+One fundamental distinction in the realm of instant-based models of
+time is the distinction between linear models, where the flow of time
+is depicted as a line, and backward-linear models, which allow a
+tree-like representation, supporting the view that the past is fixed
+ while the future may be open . In either case, the temporal ordering may
+or may not contain minimal or maximal elements, corresponding to first
+or last instants in time, respectively.
+Another important distinction is between discrete models of time, which are prevalent in computer science, and dense or continuous ones, which are more common in natural sciences and
+philosophy. In forward-discrete
+ models, each time instant that has a successor
+ always has a corresponding immediate successor
+. In dense models, by contrast, between any two
+subsequent time instants, there is another instant.
+Many, but not all, possible properties which an instant-based model of
+time \ may have
+can be expressed by first-order sentences as follows  is an abbreviation of \):
+reflexivity
+: \;\)
+irreflexivity
+: \;\)
+transitivity
+: \;\)
+asymmetry
+: \;\)
+anti-symmetry
+: \;\)
+linearity 
+: \;\)
+forward-linearity
+: \);\)
+backward-linearity
+: \);\)
+beginning
+: \;\)
+end
+: \;\)
+no beginning
+: \;\)
+no end 
+: \;\)
+density
+: \);\)
+forward-discreteness
+: \));\)
+backward-discreteness
+: \)).\)
+Note that, in linear models, the two discreteness conditions simplify
+to
+\))\) and
+\)),\) respectively.
+Key examples of properties of instant-based models of time that cannot
+be expressed by first-order sentences, but require a second-order
+language with quantification over sets, are
+continuity
+,
+well-ordering
+, and the
+finite interval property
+.
+Continuity demands that there be no gaps in the temporal order. Not
+only must the temporal order be dense, it must also be
+Dedekind
+complete
+, i.e., every non-empty set of time instants that has an
+upper bound has a least upper bound. An example is the ordered set of
+real numbers, while a non-example is the ordering of the rational
+numbers: consider e.g. the set of all rational numbers whose square is
+less than 2. An instant-based model of time is well-ordered if every
+non-empty, linear set of time instants has a least element, and it has
+the finite interval property if between any two subsequent time
+instants there are at most finitely many instants. The natural numbers
+are well-ordered and have the finite interval property, the negative
+integers are not well-ordered but still have the finite interval
+property, and the positive rationals or reals are neither well-ordered
+nor do they have the finite interval property. As we will see in
+Section 3.6
+,
+ these second-order properties can be expressed in propositional
+temporal languages.
+2.2 Interval-based models of time
+Instant-based models of time are often not suitable for reasoning
+about events with duration, which are better modeled if the underlying
+temporal ontology uses
+time intervals
+, i.e. periods rather
+than instants, as the primitive entities. The roots of interval-based
+temporal reasoning can be traced back to Zeno and Aristotle
+. In an interval-based setting,
+Zeno’s famous flying arrow paradox  does
+not arise. Other examples that naturally require interval-based
+reasoning are: “Last night Alice cried a lot while writing the
+letter, and then she calmed down” and “Bill was drinking
+his tea when the postman came”.
+Interval-based models usually presuppose linear time. Still, they are
+ontologically richer than instant-based models, as there are many more
+possible relationships between time intervals than between time
+instants. An interval-based model of time can, for instance, include
+the relations
+temporal precedence
+\
+inclusion
+\ and
+overlap
+\ over a
+set of time intervals \: formally, \ Some natural properties of
+such interval-based relations and models include:
+reflexivity of
+\ \;\)
+anti-symmetry of
+\ \;\)
+atomicity of
+\ :
+\);\)
+downward monotonicity of \ w.r.t.
+\
+\;\)
+symmetry of
+\: \;\)
+overlapping intervals intersect in a subinterval
+:
+\));\)
+monotonicity of \ w.r.t. \:
+\.\)
+In an influential early work on the formal study of interval-based
+temporal ontology and reasoning in AI, Allen  considered the
+family of all binary relations that can arise between two intervals in
+a linear order, subsequently called
+Allen relations
+. These 13
+relations, displayed in
+Table 1
+,
+ are mutually exclusive and jointly exhaustive, i.e., exactly one of
+them holds between any given pair of strict intervals . Moreover, they turn out to be definable in terms of
+only two of them, viz. in terms of ‘meets’ and
+‘met-by’ .
+Interval relations
+Allen’s notation
+\ notation
+┣━━┫
+equals
+\
+├──┤ ┣┫
+before
+\ /
+after
+\
+\
+Later
+├──╊┫
+meets
+\ /
+met-by
+\
+\
+After
+├─╊┿━┫
+overlaps
+\ /
+overlapped-by
+\
+\
+Overlaps
+├─╊┫
+finished-by
+\ /
+finishes
+\
+\
+Ends
+├╊╉┤
+contains
+\ /
+during
+\
+\
+During
+┣╉─┤
+started-by
+\ /
+starts
+\
+\
+Begins
+Table 1:
+Allen relations between time
+intervals and the corresponding Halpern-Shoham modal operators .
+Given an abstract structure defined by a certain set of interval
+relations of arbitrary arity that are required to satisfy certain
+properties, the question arises whether it can be represented by means
+of a concrete interval-based model over linear time. Answers are
+provided by various representation theorems, see e.g. van Benthem
+; Ladkin ; and Venema .
+2.3 Instant-based vs. interval-based models of time
+The choice between instants and intervals as the primary objects of
+temporal ontology has been a highly debated philosophical theme since
+the times of Zeno and Aristotle. Technically, the two types of
+temporal ontologies are closely related, and they are reducible to
+each other: on the one hand, time intervals can be defined by pairs of
+time instants ; on the other hand, a time instant
+can be construed as a degenerate interval, viz. as a point-interval
+whose beginning and end points coincide.
+Still, the technical reductions do not resolve the semantic question
+whether sentences are to be evaluated with respect to instants or with
+respect to intervals, and one may argue that both instants and
+intervals are needed as mutually complementary. Two-sorted
+point-interval models were studied in e.g. Balbiani et al. , and
+more complex models of time have been investigated as well, including
+models of time granularity , which allow
+for different resolution levels of temporal intervals , metric and layered temporal models
+, etc.
+Here we discuss both instant-based and interval-based temporal logics.
+For further discussion on the ontological primacy of instants versus
+intervals in temporal logics, see Hamblin ; Kamp ;
+Humberstone ; Galton ; as well as van Benthem  for a
+detailed comparative exploration of both approaches. A more
+philosophical and historical overview is provided in e.g.
+Øhrstrøm and Hasle ; Dyke and Bardon ;
+and Meyer .
+3. Prior’s basic tense logic TL
+In this section, we discuss the language, semantics, and
+axiomatization of the basic tense logic TL introduced by Prior , the founding father of temporal logic. Prior’s
+motivation for inventing tense logic was largely philosophical, and
+his ideas were strongly inspired by the use of tense in natural
+language. The innovative feature of Prior’s approach was that he
+treated propositions as tensed rather than tenseless. Technically,
+this was achieved by the introduction of temporal operators into the
+language, which were given a modal-logic type of semantics. In view of
+the pivotal role that tense is playing in his framework, Prior himself
+referred to his account as
+Tense Logic
+, whereas nowadays the
+more general expression
+Temporal Logic
+is prevailing.
+3.1 Prior’s tense operators
+The basic language of Prior’s Tense Logic TL extends the
+standard propositional language  by four temporal operators with intended
+meaning as follows:
+\:
+“It has at
+some time been the case that …”
+\:
+“It will
+at some time be the case that …”
+\:
+“It has
+always been the case that …”
+\:
+“It will
+always be the case that …”
+For example, “It will always be the case that Prior invented
+Tense Logic” translates in TL as \\) and has the formal reading “It will always be the
+case that it has at some time been the case that Prior invents Tense
+Logic”.
+TL comprises one pair of temporal operators for the past, \ and
+\, and one pair of temporal operators for the future, \ and
+\. The operators \ and \ are often referred to as the
+‘weak’ temporal operators, while \ and \ are known
+as the ‘strong’ ones. The respective past and future
+operators are duals of each other, i.e., they are interdefinable by
+means of the following equivalences:
+\[
+P\varphi \equiv \neg H\neg \varphi, H\varphi \equiv \neg P\neg
+\varphi \text{ and } F\varphi \equiv \neg G\neg \varphi, G\varphi \equiv \neg
+F\neg \varphi.
+\]
+In light of these equivalences, the set of formulae of TL can be
+recursively defined as follows, over a given set of atomic
+propositions \: 
+
+\[
+\varphi := p \in {PROP} \mid \bot \mid \lnot \varphi \mid  \mid
+P\varphi \mid F\varphi.
+\] 
+
+ The truth-functional connectives
+\ and \ are definable in terms of
+\ and \ as usual. Besides, we can define \ and, dually, \ which on linear flows of time
+mean “always” and “sometime”,
+respectively.
+As said, Prior’s introduction of the temporal operators was
+initially motivated by the use of tense in natural language, and
+various tenses in natural language can, at least approximately, be
+captured in TL. For example:
+\
+corresponds to “\
+was
+the case” or
+“\
+has been
+the case”.
+\
+corresponds to “\
+will be
+the
+case”.
+\
+corresponds
+to “
+\ had been
+the
+case”.
+\
+corresponds
+to “
+\ will have been
+the case”.
+\
+corresponds
+to “\
+would be
+the
+case” or “\
+was going to be
+the
+case”.
+Hamblin and Prior showed that, in models of linear time, any sequence
+of temporal operators reduces to a sequence of at most two operators.
+In total, they identified 15 different such combinations — or
+tenses
+, as they call them — that can be expressed in TL
+over linear flows of time . Even though
+these combinations seem to surpass the number of verbal tenses in e.g.
+English, there are also temporal properties of natural language that
+cannot be captured in TL: Prior’s temporal operators are, for
+instance, not very well suited to model distinctions of aspect , which are arguably more adequately dealt
+with in an interval-based framework. For details, see Kuhn and Portner
+ and the entry on
+tense and aspect
+.
+3.2 Semantics of TL
+The standard semantics of TL is essentially a Kripke-style semantics,
+familiar from modal logic. In modal logic, sentences are evaluated
+over so-called Kripke frames consisting of a non-empty set of possible
+worlds and an accessibility relation between them. In temporal logic,
+the possible worlds are time instants, and the accessibility relation
+has a concrete interpretation in terms of temporal precedence. In
+other words, sentences are evaluated over instant-based models of time
+\, hereafter called
+temporal frames
+. Note that so far no conditions, like
+transitivity, irreflexivity, etc., are imposed on the precedence
+relation \.
+Given a set of atomic propositions \, a
+temporal model
+for TL is a triple \ where \ is a temporal frame and \ is a
+valuation
+assigning to each atomic proposition \ the set of time
+instants \ \subseteq T\) at which \ is considered true.
+ which assigns a
+truth value to each atomic proposition at each time instant in the
+temporal frame, or by a
+labeling
+or
+state
+description
+\\), which assigns to
+each time instant the set of atomic propositions that are considered
+true at that instant.)
+The
+truth of an arbitrary formula \ of TL at a given
+time instant \ in a given temporal model \
+) is then defined inductively
+as follows:
+\   iff   \\), for
+\;
+\   );
+\   iff  
+\;
+\   iff  
+\ and \;
+\   iff  
+\ for some time instant \ such
+that \;
+\   iff  
+\ for some time instant \ such
+that \.
+That is, given a temporal model \, a formula of the form
+\ is true at an instant \ iff \ is true at
+some earlier instant \ and \ is true at \ iff
+\ is true at some later instant \ Consequently, for
+the duals \ and \, it holds that \ is true at \
+iff \ is true at all earlier instants \ and
+\ is true at \ iff \ is true at all later
+instants \
+\   iff  
+\ for all time instants \ such
+that \;
+\   iff  
+\ for all time instants \ such
+that \.
+Note that, from the point of view of modal logic,
+there are, formally speaking, two different accessibility relations
+involved here: an ‘earlier-relation’ in the case of the
+past operators and a ‘later-relation’ in the case of the
+future operators. In temporal logic, these two relations are uniformly
+captured by a single precedence relation; after all,
+‘earlier’ and ‘later’ are just converses of
+each other  is earlier than \ iff \ is later than
+\).
+A formula \ of TL is
+valid in a temporal model
+\
+) iff it
+is true at every time instant in that model. Moreover, we say that
+\ is
+valid in a temporal frame
+\
+) iff it is valid in every
+model on that frame. Accordingly, a formula \ is
+valid
+) iff it is valid in all
+temporal frames, i.e. true at all time instants in all temporal
+models. A formula \ is
+satisfiable
+iff its negation
+is not valid, i.e. if \ is true at some time instant in some
+temporal model.
+3.3 Standard translation of TL into first-order logic
+As in the case of modal logic, the language and semantics of TL can be
+translated into classical first-order logic .
+Suppose that the set of atomic propositions of TL is
+\, and let \ be a
+first-order language with \ a binary predicate symbol \ and
+a denumerable set of unary predicate symbols
+\, one for each atomic
+proposition of TL. The
+standard translation
+\ of TL into
+\ is defined as follows, where \ is the result
+of substituting \ for all free occurrences of \ in
+\:
+\ = P_{i};\)
+\ = \bot;\)
+\ = \lnot ST;\)
+\ = ST\land ST;\)
+\ = \exists y[y/x]),\)
+where \ is a fresh variable;
+\ = \exists y[y/x]),\)
+where \ is a fresh variable.
+It then follows that
+\ = \forall y[y/x]);\)
+\ = \forall y[y/x]).\)
+For example:
+\[ST=\forall y\lor \exists y).\]
+Not every first-order formula has a correspondent in TL. Actually,
+with a little extra care to re-use individual variables, TL can be
+translated in the two-variable fragment FO\ of first-order
+logic, which eventually implies decidability of validity in TL  is decidable, as shown by Grädel and Otto
+1999). For instance, the example above can be re-written as
+\[ST=\forall y\lor \exists y).\]
+Given the standard translation, every temporal model
+\ can be regarded
+as an \-model by interpreting \ as \ and each
+\ as \.\) Then:
+\[\begin{align}
+\mathcal{M},t  \models \varphi \ & \text{ iff } \mathcal{M}\models  ST[x:=t], \\
+\mathcal{M} \models \varphi \ & \text{ iff } \mathcal{M}\models \forall x ST.
+\end{align}\]
+Thus, validity of a formula of TL in a temporal model is a first-order
+property. Validity in a temporal frame, on the other hand, turns out to be a
+second-order property as it involves quantification over valuations.
+If we treat the unary predicates from \ as predicate
+variables of a second-order language \ every temporal frame
+\ can be regarded as an
+\-model, where the predicate variables represent the valuation
+of the respective atomic propositions. Let \ denote the universal closure of an \-formula \ over
+all predicate variables occurring in it. Then:
+\[\begin{align}
+\mathcal{T}\models \varphi \ & \text{ iff }\mathcal{T}\models \forall \overline{P}\forall x ST, \\
+\models \varphi \ & \text{ iff }\models \forall \overline{P}\forall x ST. 
+\end{align}\]
+The standard translation of TL into first-order logic enables a
+systematic treatment of various aspects of temporal logic with the
+tools and techniques of classical logic . As we will see in
+Section 3.6
+,
+ however, not all first-order properties of temporal frames are
+definable by temporal formulae; and vice versa, not all properties of
+temporal frames that can be expressed by formulae of TL are
+first-order definable. A non-trivial correspondence between temporal
+logic and first-order logic as alternative languages for describing
+properties of time emerges.
+3.4 Tense logic, first-order logic, and McTaggart’s time series
+The standard translation discussed in the previous section links the
+semantics of Prior’s basic tense logic to first-order logic.
+Yet, there are crucial differences between the two approaches to
+formalizing the logic of time. In fact, in the early days of temporal
+logic, Prior’s approach was perceived as a rival to more
+conventional approaches using first-order logic. The rivalry between
+tense logic and first-order logic can be seen as reflecting a
+fundamental distinction concerning the nature of time, namely the
+distinction between the A-series and the B-series of time introduced
+by McTaggart .
+The A-series essentially amounts to a characterization of time and
+temporal order in terms of past, present, and future. The B-series, in
+contrast, is based on the notions ‘earlier’ and
+‘later’. Thus, whereas the A-series presupposes a
+distinguished present, the B-series involves an overarching, global
+perspective on time. McTaggart argued that the B-series is
+insufficient because it lacks an appropriate notion of change, and he
+rejected the A-series as inconsistent because what is future now will
+be past, which, according to him, requires that one and the same time
+instant has incompatible properties. From this he concluded that time
+is unreal. For a detailed discussion of McTaggart’s account and
+its philosophical relevance, see Ingthorsson  and the entry on
+time
+.
+There is a close correspondence between the A-series of time and tense
+logic, on the one hand, and between the B-series and first-order
+logic, on the other, as was already noted by Prior 
+himself. Consider, for example, the sentence “It is dark, it was
+light, and it will be light again.” This sentence can be
+formalized in TL as 
+
+\[\mathsf{dark} \wedge P \wedge F\] 
+
+while its first-order formulation reads 
+
+\[\mathsf{dark} \wedge \exists t_0 ) \wedge \exists t_2 ).\] 
+
+ The TL formula consists of tensed propositions
+,
+and it invokes the local perspective of the present. In the
+first-order formula, in contrast, propositions are untensed or
+tenseless. Here we are provided with predicates of time instants
+rather than with tenses, and the perspective involved is a global
+perspective from outside of time. Prior felt that not everything that
+can be expressed in a tensed language can likewise be expressed in a
+tenseless one, his classic example being: “Thank goodness,
+that’s over!” .
+3.5 Axiomatic system \ for TL
+Like every formal logical system, temporal logic has two major
+aspects: a
+semantic
+and a
+deductive
+one. In this section, we
+present a deductive system for validity in TL, viz. the
+minimal
+temporal logic \
+. The logic \
+is an axiomatic system, i.e., it is given by a list of axioms and
+inference rules. The system was first studied by Lemmon, following
+earlier axiomatizations proposed by Hamblin and Prior .
+The list of axioms of the minimal temporal logic \
+extends the list of classical propositional logic by the following
+four axiom schemata:
+\\)
+\\rightarrow \)
+\\)
+\\rightarrow \)
+
+\
+
+\
+The first two axiom schemata are the temporal correspondents of the
+so-called
+K-axiom
+of modal logic, and hence the terminology
+\. The third and the fourth axiom schemata capture
+the interaction of the past and future operators. On the formal level,
+they guarantee that these operators correspond to converse temporal
+relations, viz. earlier and later, respectively.
+The inference rules comprise, in addition to the classical
+modus
+ponens
+, two
+necessitation rules
+for the temporal
+operators  means, as usual,
+“deducible”):
+
+If \ and \ then \
+)
+If \ then \
+)
+If \ then \
+The axiomatic system \ is sound and complete for
+validity in TL: all and only those formulae that are valid in TL can
+be deduced from the axioms by means of the given inference rules. For
+a proof, see e.g. Rescher and Urquhart ; Goldblatt ; and
+Gabbay et al. .
+3.6 Expressing temporal properties in TL and extensions of \
+The minimal temporal logic \ captures those
+validities of TL that do not depend on any specific assumptions
+concerning the properties of the temporal precedence relation. Yet,
+many natural properties of temporal frames can be expressed by
+temporal formulae, and, taken as additional axioms, these formulae can
+be used to represent important ontological assumptions about the
+structure of time.
+A temporal formula of TL
+expresses
+ a property of temporal frames if the formula
+is valid in all and only those frames that have the property. The most
+important correspondences between properties of temporal frames 
+ and TL formulae include:
+
+any of \ \ \ or \
+
+
+any of \ \ \ or
+\
+
+
+\\)
+
+
+\\)
+
+
+\ \rightarrow \)
+
+
+\
+)
+
+\
+)
+
+\  or  \
+
+
+\  or  \
+
+
+any of \ \ \ or
+\
+
+
+\ \rightarrow
+FH\varphi\)
+
+
+\ \rightarrow
+PG\varphi\)
+
+)
+\\rightarrow
+GF\varphi\)
+
+)
+\\rightarrow
+HP\varphi\)
+
+
+\\rightarrow \)
+))
+Alternatively, Dedekind completeness can be expressed by:
+\ \rightarrow F\).
+
+\\rightarrow H\varphi\)
+
+
+\\rightarrow )\ \wedge\) 
+\\rightarrow )\)
+
+Note that this formula is equivalent to the conjunction of
+) and ).
+The principle  combines forward-linearity  and
+backward-linearity  in a single condition. The resulting
+formula is, however, not sufficient to guarantee the connectedness of
+the temporal order. In other words, it cannot rule out disjoint linear
+time lines. It is also worthwhile to note that ) implies
+backward-discreteness and that ) implies forward-discreteness
+but not conversely. For instance, a time flow consisting of a copy of
+the natural numbers followed by a copy of the integers is
+backward-discrete, but it does not satisfy ).
+Recall that the last three properties mentioned above —
+Dedekind completeness, well-ordering, and the finite interval property —
+are not definable by first-order sentences, but they can be expressed
+by temporal formulae. On the other hand, some very simple properties
+of temporal frames that are first-order definable, such as
+irreflexivity or anti-symmetry, are not expressible in TL. For more on
+temporal axioms expressing properties of time and details on such
+results, see Segerberg ; Rescher and Urquhart ; Burgess
+; van Benthem ; Goldblatt ; and Hodkinson and
+Reynolds .
+By extending the list of axioms of \ with one or
+several of the above principles one can capture the validities of a
+number of natural models of time; that is, there are axiomatic
+extensions that are sound and complete for the corresponding classes
+of temporal frames. Some of these extensions were already being
+studied in the early days of Temporal Logic, and Prior 
+discusses various systems obtained by postulating different
+combination of axioms.
+\[\begin{align}
+\mathbf{K4}_{t} &= \mathbf{K}_{t} + \text{: all transitive frames.} \\
+\mathbf{S4}_{t} &= \mathbf{K}_{t} + \text{ + : all partial orderings.} \\
+\mathbf{L}_{t} &=\mathbf{K}_{t} + \text{ +: all strict linear orderings.} \\
+\mathbf{N}_{t} &=\mathbf{L}_{t} + \text{ + ) +
+  : } \langle \mathbf{N,\lt}\rangle. \\
+\mathbf{Z}_{t} &=\mathbf{L}_{t} + \text{ +  +
+  ) + ): } \langle \mathbf{Z,\lt}\rangle. \\
+\mathbf{Q}_{t} &=\mathbf{L}_{t} + \text{ +  +
+  : } \left\langle \mathbf{Q, \lt}\right\rangle. \\
+\mathbf{R}_{t} &=\mathbf{L}_{t} + \text{ +  +
+   + : } \left\langle \mathbf{R, \lt}\right\rangle.
+\end{align}\]
+As these axiomatizations illustrate, the fact that  does not
+suffice to guarantee connectedness in the strict sense or the fact
+that irreflexivity is not definable in TL do not constitute any severe
+limitations here: connectedness and irreflexivity do not yield any new
+validities.
+Each of the above logics turns out
+decidable
+, which is typically shown by proving the
+so-called
+finite model property
+, in most cases, with
+respect to non-standard finite models. For detailed proofs of
+completeness of variations of these axiomatic systems as well as
+proofs of decidability, see Segerberg ; Rescher and Urquhart
+; Burgess ; Burgess and Gurevich ; Goldblatt ;
+and Gabbay et al. .
+4. Extensions of TL over linear time
+A very natural class of instant-based models of time is the class of
+linear models, and soon after Prior’s invention of Tense Logic
+several extensions of TL over linear time have been proposed. In this
+section, we discuss two such extensions of Prior’s basic
+temporal logic: the extension of TL by a
+Next Time
+operator
+over discrete, linear models of time and the introduction of the
+operators
+Since
+and
+Until
+. These operators also form
+the basis of the linear time temporal logic LTL, which has widespread
+applications in computer science.
+4.1 Adding the
+Next Time
+operator
+In linear, unbounded, forward-discrete temporal models \ where every instant \ has
+a unique immediate successor \,\) it is natural to add a new
+temporal operator \  with
+ semantics:
+
+\[
+ \mathcal{M},t \models X\varphi \text{ iff } \mathcal{M},s \models \varphi.
+\]
+That is, \ is true at a time instant \ iff \
+is true at the immediate successor \\) of \. The
+Next
+Time
+operator was already mentioned by Prior , but its importance was first fully appreciated in the context
+of LTL.
+The operator \ satisfies the K-axiom
+)
+\ \to ;\)
+and the functionality axiom
+
+\
+It also enables a recursive, fixed point definition of \
+), and, on the ordering of the natural numbers, the operators
+\ and \ satisfy an induction principle . Assuming that
+the temporal precedence relation \ is reflexive, which is a
+standard assumption in computer science, we get the following
+definitions:
+)
+\;\)
+
+\\rightarrow G\varphi.\)
+In the language with \ and \:
+\ = \mathbf{L}_{t}\) + K\ + FUNC + FP\
+axiomatizes completely the temporal logic of linear, unbounded,
+forward-discrete orderings, while
+\ = \mathbf{N}_{t}\) + K\ + FUNC + FP\ + IND
+axiomatizes completely the temporal logic of \ where \ = n+1.\)
+A past analogue of \, usually denoted \
+, can be defined and axiomatized
+likewise. For more detail, see Goldblatt  and Andréka et
+al. .
+4.2 Adding
+Since
+and
+Until
+Perhaps the most important extension of Prior’s basic tense
+logic TL was the introduction of the binary temporal operators \
+ and \
+ by Hans Kamp in his doctoral
+dissertation . The intuitive meanings of these
+ are
+
+\
+“\
+has been the case since a time when
+\ was the case.”
+\
+“\
+will be the case until a time when
+\ is the case.”
+For instance, the sentence “I will keep trying until I
+succeed” can be formalized as: \ As another example, “Ever since Mia left
+home, Joe has been unhappy and has been drinking until losing
+consciousness” can be formalized using
+Since
+and
+Until
+as:
+\[ 
+))\ S\ .
+\]
+The formal semantics of \ and \ in a temporal model
+\ is given by the following
+two clauses:
+\[\begin{array}{ll} \mathcal{M},t\vDash \varphi S\psi\quad \text{ iff }
+&\mathcal{M},s\vDash \psi \text{ for some } s \text{ such that }
+s\prec t \\ & \text{ and } \mathcal{M},u\vDash \varphi \text{
+for every } u \text{ such that } s\prec u\prec t;  \\
+
+\mathcal{M},t\vDash \varphi U\psi \quad \text{ iff }
+&\mathcal{M},s\vDash \psi \text{ for some } s \text{ such that } 
+t\prec s \\ & \text{ and } \mathcal{M},u\vDash \varphi
+\text{ for every } u \text{ such that } t\prec u\prec s.
+\end{array}\]
+These are the ‘strict’ versions of \ and \
+prevalent in philosophy. In computer science, usually reflexive
+versions of the semantics clauses are considered.
+Prior’s temporal operators \ and \ are definable in
+terms of \ and \:
+\[
+P\varphi :=\top S\varphi \ \text{ and } \ F\varphi :=\top
+U\varphi.
+\]
+On irreflexive, forward-discrete, linear temporal orders, \ and
+\ also allow for a definition of the
+Next Time
+operator
+\:
+\[
+X\varphi := \bot U \varphi.
+\]
+Note that this definition fails on reflexive temporal orders, which
+shows that the irreflexive versions of \ and \ are more
+expressive than their reflexive
+ counterparts.
+
+Other natural operators can be defined in terms of \ and \ as
+well, such as for instance
+Before
+, given by \U\psi)\) with intuitive reading “If
+\ will be the case in the future, \ will occur before
+\”.
+Kamp  proved the following remarkable result concerning the
+expressive power of temporal languages with
+Since
+and
+Until
+:
+Every temporal operator on a class of continuous, strict linear
+orderings that is definable in first-order logic is expressible in
+terms of \ and \
+.
+Stavi later proposed two more operators, \ and
+\ which, when added to \ and \, make the
+temporal language expressively complete on
+all linear frames
+.
+Yet, as shown by Gabbay, no finite number of new operators can make
+the temporal language functionally complete on all
+partial
+orderings. See Gabbay et al.  for an overview of these
+results.
+Burgess  provided a complete axiomatic system of the
+Since-Until logic on the class of all linear orderings with reflexive
+precedence relation, which was further simplified by Xu .
+Extensions of this axiomatization for strict linear orderings were
+obtained by Venema  and Reynolds . For details and
+related results see Burgess ; Zanardo ; Gabbay et al. ; Finger et
+al. ; and Hodkinson and Reynolds . The Burgess-Xu
+axiomatic system and some of its extensions are presented 
+in the supplementary document:
+Burgess-Xu Axiomatic System for
+Since
+and
+Until
+and Some Extensions
+4.3 The linear time temporal logic LTL
+The most popular and widely used temporal logic in computer science is
+the linear time temporal logic LTL, which was proposed in the seminal
+paper Pnueli , and it was first explicitly axiomatized and
+studied in Gabbay et al. . In LTL, time is conceived of as a
+linear, discrete succession of time instants, and the language
+involves the operators \ \, and \ .
+LTL is interpreted over \
+where the temporal ordering is assumed to be reflexive as is common in
+computer science.
+The logic LTL is very useful for expressing properties of infinite
+computations in reactive systems, such as safety, liveness, and
+fairness, as laid out in
+Section 11.1
+.
+ For example, the specification “Every time when a message is
+sent, an acknowledgment of receipt will eventually be returned, and
+the message will not be marked ‘sent’ before an
+acknowledgment of receipt is returned” can be formalized in LTL
+as:
+\[
+ G).
+\]
+The axiomatic system for LTL extends classical propositional logic by
+the K-axiom for \, the K-axiom and the functionality axioms for
+\, as well as by axioms providing fixed point characterizations of
+the reflexive versions of \ and \:
+)
+\\rightarrow \)
+)
+\\rightarrow \)
+
+\
+)
+\\)
+)
+\) \rightarrow G\varphi\)
+)
+\))\)
+)
+\)\rightarrow \theta)\rightarrow \)
+The inference rules involve only the classical
+modus ponens
+and the necessitation rule for \. In technical terms, the axiom
+) says that \ is a
+fixed point
+of the
+operator \ defined by \ = \varphi
+\land X\theta,\) whereas ) says that \ is
+ a
+greatest
+post-fixed point
+of \ Likewise, the axiom
+) says that \ is a
+fixed point
+of
+the operator \ defined by \ = \psi
+\lor ,\) whereas ) says that
+\ is a
+least pre-fixed point
+of
+\. Some variations of this axiomatic system are 
+presented in the supplementary document:
+Some Variations of the Axiomatic System for LTL
+Early studies of temporal logics for linear time are presented in
+Rescher and Urquhart  and McArthur . Proofs of
+completeness of variations of the axiomatic system given above can be
+found in Gabbay et al. ; Goldblatt ; and Finger et
+al. . All logics mentioned in this section have the finite model
+property  and therefore
+are decidable. For proofs of decidability, see the references on
+completeness.
+5. Branching time temporal logics
+Much of Prior’s work on Tense Logic was initially motivated by
+the problems concerning the relationship between time and modality
+raised by the Master Argument of Diodorus Chronus and its fatalistic
+conclusion. Prior held a genuine interest in themes like indeterminism
+and the open future. One of his major concerns here was to allow for
+human freedom. In order to capture the notion of historical necessity
+underlying Diodorus’ argument, he opted for a branching
+representation of the interrelation of time and modality, which was
+first suggested to him in a letter by Kripke in 1958 . The Diodorean conception of modality as
+quantification over linear time was abandoned and replaced by the
+picture of a tree, whose branches depict alternative possibilities for
+the future. Prior  considered two different versions
+of branching time temporal logic, which he associated with the
+historical views of Peirce and Ockham, respectively. An early formal
+treatment of these ideas is provided in Thomason  and
+Burgess . Many technical results and further developments have
+been proposed since then, and we mention the most important ones
+below. For Prior’s motivational views on indeterminism and human
+freedom, see Øhrstrøm and Hasle  and Øhrstrøm . A detailed discussion of the
+philosophical aspects of the theory of branching time is contained in
+e.g. Belnap et al.  and Correia and Iacona .
+5.1 Prior’s theory of branching time
+The picture that is at the core of Prior’s theory of branching
+time is reminiscent of the one evoked by Borges’
+The Garden
+of Forking Paths
+. The interrelation of time and modality is
+represented as a tree of alternative histories that is linear towards
+the past and branches into multiple possible futures.
+Backward-linearity captures the idea that the past is fixed;
+forward-branching reflects the openness of the future. At each point
+in time, there may be more than one path leading towards the future,
+and each such path represents a future possibility.
+Formally, a
+tree
+ is a
+temporal frame \
+where the temporal precedence relation \ is a backward-linear
+partial ordering on the set of time instants \ which is such that
+any two instants have a common \-predecessor in \. That
+is, every time instant in a tree has a linearly ordered set of
+\-predecessors, and any two instants share some common past. The
+former condition rules out backward-branching, while the latter
+ensures ‘historical connectedness’. In the philosophical
+literature, the temporal precedence relation \ is commonly
+assumed to be irreflexive, i.e. a strict partial order, whereas in
+computer science, usually reflexive structures are studied.
+A tree \ depicts
+alternative, mutually incompatible possibilities for the future in a
+unified structure, and it can be carved up into multiple histories. A
+history
+in \ is a maximal 
+set of time instants that is linearly ordered by \, that is,
+an entire path through the tree; and it represents a complete possible
+course of events. We denote the set of all histories in
+\ by \\), and we use
+\\) for the set of histories passing through a given
+time instant \ in \.
+Some philosophers have criticized the label ‘branching
+time’ as a misnomer, arguing that time does not branch but
+rather evolves linearly. Early criticism along these lines is found in
+Rescher and Urquhart , and a similar point is raised in Belnap
+et al. , who suggest the label ‘branching histories’
+instead. This criticism also casts doubt on the appropriateness of the
+terminology ‘time instants’ used here to refer to the
+primitive points of the tree. We stick to the terminology for reasons
+of uniformity. In the branching time literature, the more neutral
+expression ‘moments’ is prevailing, and in Belnap et al.
+ the distinction between instants of time and moments is
+formally worked out: branching time structures are associated with a
+linearly ordered set of time instants, where an instant is defined as
+the set of contemporaneous moments contained in different
+histories.
+5.2 The Peircean branching time temporal logic
+Prior’s basic tense logic TL is neutral about the structure of
+time. In a branching time setting with alternative future
+possibilities, the original semantics of the future operator \ is,
+however, no longer adequate to capture future truth. In such a
+setting, the future operator \ merely reads “it will
+possibly be the case that \”. Prior 
+therefore considered two alternative semantics for the future operator
+in branching time, which give rise to the Peircean and Ockhamist
+branching time temporal logics, respectively.
+In the Peircean branching time logic PBTL, the intuitive meaning of
+the future operator \ is “it will necessarily be the case
+that \”. That is, future truth is conceived of as truth
+in
+all
+possible futures. On this new reading, the future
+operator \ is no longer dual to the strong future operator \,
+which now needs to be included as an additional primitive operator
+into the language. Given a set of atomic propositions \, the
+set of formulae of PBTL can be recursively defined as follows:
+\[
+\varphi := p \in {PROP}\mid \bot \mid \neg \varphi\mid  \mid P \varphi \mid F\varphi \mid G \varphi. 
+\]
+Formulae of PBTL are evaluated in a temporal model \ on a tree \, called a
+Peircean tree model
+. As usual,
+\ is a valuation that assigns to every atomic proposition \ the set of time instants \ \subseteq T\) at which \
+is considered true, and the
+truth of an arbitrary formula
+\ of PBTL at a given time instant \ in a Peircean tree
+model \
+is defined inductively. The semantic
+clauses for the truth-functional connectives and for the past operator
+\ ) are as in TL ,
+ and we only provide here the semantic clauses for the future
+operators \ and \:
+\[\begin{array}{ll} \mathcal{M},t\vDash F\varphi \quad \text{ iff }
+& \text{for all histories } h\in \mathcal{H}\text{, there is some time }  \\ & \text{instant } t'\in h \text{ such that } t\prec t' \text{ and } \mathcal{M},t'\vDash \varphi;  \\
+
+\mathcal{M},t\vDash G\varphi \quad \text{ iff }
+& \text{for all histories } h\in \mathcal{H} \text{ and for all time instants } \\ & t'\in h \text{ such that } t\prec t', \mathcal{M},t'\vDash \varphi.
+\end{array}\]
+Thus, according to the Peircean semantics, a formula of the form
+\ is true at an instant \ iff every history passing
+through \ contains some later instant \ at which \
+is true. The strong future operator \ essentially retains its
+original semantics but now reads “it will necessarily always be
+the case that \”. Note that in this case the universal
+quantification over histories is redundant and can be omitted without
+loss of meaning. The dual of \ is the weak future operator of TL,
+which is now denoted by \, while the dual of the Peircean \ is
+commonly written \ . All future operators
+involve  quantification over histories and
+are modalized: they capture possibility and necessity regarding the
+future. There is no actual future and, accordingly, no notion of plain
+future truth. As this accords well with the view held by Peirce, Prior
+called this system ‘Peircean’.
+Note that in the Peircean temporal logic, the formula \ is no longer valid, which blocks the Master
+Argument of Diodorus Chronus: what is the case now need not have been
+necessary in the past. Moreover, while Peirceanism preserves bivalence
+and the principle of excluded middle \, it
+renders all formulae expressing future contingents false and hence
+invalidates the principle of future excluded middle \. This principle states that eventually either
+\ or \ will be the case and is usually judged
+intuitively valid .
+A complete finite axiomatization of the Peircean branching time temporal logic
+was given by Burgess , using a version of the so-called Gabbay
+Irreflexivity Rule. Zanardo  provides an alternative
+axiomatization, where the Gabbay Irreflexivity Rule is replaced by an
+infinite list of axioms.
+5.3 The Ockhamist branching time temporal logic
+While Prior himself favored Peirceanism, the Ockhamist branching time
+temporal logic, which he developed as a possible alternative, has been
+gaining much more influence in the literature on branching time. In
+the Ockhamist branching time logic OBTL, truth is not only relativized
+to a time instant in the tree but also to a history passing through
+that instant, and the future operator \ is now evaluated along the
+given history. Thus, the intuitive meaning of \ becomes
+“
+With respect to the given history
+, it will be the case
+that \”. In addition to the temporal operators \ and
+\, the language of OBTL contains a modal operator \ and
+its dual \, which are interpreted as quantifiers over
+histories. Given a set of atomic propositions \, the set of
+formulae of OBTL can be recursively defined by
+\[
+\varphi := p \in {PROP}\mid \bot \mid \neg \varphi\mid  \mid P\varphi \mid F\varphi \mid \Diamond\varphi. 
+\]
+In the Ockhamist semantics, formulae are interpreted in a model on a
+tree \ at pairs \\)
+consisting of a time instant \ and a history \\) containing that instant. Sometimes the
+instant-history pairs \\) are conceived of as ‘initial
+branches’ that start at the instant \ and span the possible
+future specified by the history \ .
+Naturally, the question arises how to evaluate the atomic propositions
+in the model: do the truth values of atomic propositions depend only
+on the time instant, or do they depend on the history as well? The
+answer to this question crucially hinges on whether atomic
+propositions may contain ‘traces of futurity’ or not
+. There is no consensus on the treatment of atomic
+propositions in the literature , and Prior himself
+entertained the idea of a two-sorted language with two different kinds
+of atomic propositions that each require a different treatment . Here we will allow the truth values of atomic
+propositions to depend on both the time instant and the history. The
+more specific case of instant-based propositions can be obtained by
+imposing the additional requirement that the formula \ be valid for \.
+Thus, an
+Ockhamist tree model
+is a triple \ where \ is a tree and \ is a valuation that assigns to
+every atomic proposition \ the set of instant-history
+pairs \ \subseteq T \times \mathcal{H}\) at which
+\ is considered true. The
+truth of an arbitrary formula
+\ of OBTL at an instant-history pair \\) in an
+Ockhamist tree model \
+is defined inductively as
+follows:
+\   iff   \\in V\), for \;
+\;
+\   iff   \;
+\   iff  
+\ and \;
+\   iff   \ for some time instant \ such that \;
+\   iff   \ for some time instant \ such that \;
+\   iff  
+\ for some history \\).
+The temporal operators are essentially interpreted as they are in
+linear temporal logic: the instant of evaluation is simply shifted
+backwards and forwards on the given history. Note that the requirement
+“\” is redundant in the semantic clause for the
+past operator \ as there is no backward branching. It is crucial,
+however, in the clause for the future operator \. As usual, the
+strong temporal operators \ and \ are defined as the duals of
+\ and \, respectively. The modal operators quantify over the
+set of histories passing through the current instant. The operator
+\ is an existential quantifier over that set and captures
+possibility, while its dual \ involves universal quantification
+and expresses ‘inevitability’ or ‘historical
+necessity’.
+We say that a formula of OBTL is
+Ockhamist valid
+iff it is
+true at all instant-history pairs in all Ockhamist tree models.
+Obviously, all temporal formulae that are valid in linear models of
+time are Ockhamist valid as well. Hence, Ockhamism validates the principle of
+future excluded middle \  as well as the formula \. It invalidates, however, the principle of the
+necessity of the past \, and it
+thereby blocks Diodorus’ Master Argument.
+Whereas in the Peircean branching time logic PBTL future truth is
+modalized, in the Ockhamist branching time logic OBTL future truth and
+modality come apart. The Peircean formulae \ and
+\ are equivalent to the Ockhamist \ and
+\, respectively. In fact, PBTL can be regarded as a
+proper fragment of OBTL, namely the fragment that comprises all and
+only those formulae that are recursively built up from 
+atomic propositions using truth-functional connectives and the
+combined modalities \, \, and their duals \ and \. However, the Peircean language is less
+expressive than the Ockhamist one, lacking e.g. an equivalent for
+\ .
+By relativizing truth at an instant to a history in the tree, the
+Ockhamist branching time logic provides a notion of plain future
+truth. From a philosophical point of view, however, the relativization
+to a history is not entirely unproblematic. There are essentially two
+different ways to interpret the Ockhamist history parameter: first,
+one may think of the history parameter as referring to the actual
+course of events in the tree of possibilities and, since this idea
+meshes well with Ockham’s view on the future, Prior chose the
+label ‘Ockhamism’. The actualist position has triggered a
+variety of branching time temporal logics, which are often summarized under the
+label ‘Thin Red Line’ theories . Second, one may think of the history parameter as an auxiliary
+parameter of truth that cannot be initialized in a context: a context of utterance, one may argue, uniquely determines the time instant of the utterance, but it does not and cannot single out one of the histories passing through that instant if the future is genuinely open. This line
+of thought has given rise to ‘post-semantic’ accounts,
+which aim to bridge the gap between the recursive semantic machinery
+and a context by introducing a notion of
+super-truth
+, most
+notably Thomason’s supervaluationism  and
+MacFarlane’s assessment-sensitive post-semantics . These accounts sacrifice bivalence, but they preserve the
+principles of excluded middle \ and
+future excluded middle \.
+From a logical point of view, the Ockhamist approach to branching time
+bears a strong resemblance to the idea underlying the notion of a
+\ frame
+and the more general notion of a
+Kamp
+frame
+, discussed in Thomason ; the latter is technically
+equivalent to the notion of an
+Ockhamist frame
+introduced in
+Zanardo . These kinds of frames build on a set of distinct
+possible worlds, each of which is endowed with an internal linear
+temporal structural, and assume a time-relative, historical
+accessibility relation between possible worlds. That is, overlap of
+histories is replaced by accessibility, and possible worlds are
+considered primitive elements whereas in branching time histories are
+defined in terms of instants. As a consequence, if we merge a frame
+consisting of historically related possible worlds into a single tree
+, new histories may emerge that
+do not correspond to any of the possible worlds .
+Technically, the difference between a possible worlds based approach
+and a branching time based approach can be overcome by equipping
+branching time structures with a primitive set of histories that is
+rich enough to cover the entire structure, a so-called
+bundle
+. A
+bundle tree
+is defined as a triple
+\ where \ is a tree and the bundle \\) is a non-empty set of histories such that
+every instant in \ belongs to some history in
+\ . The Ockhamist branching time
+logic straightforwardly generalizes to bundled trees: the sole
+difference is that the semantics is now restricted to histories from
+the bundle. Bundled tree validity is equivalent to Kamp validity
+, but it is weaker than full Ockhamist
+validity. Reynolds  provides the following example of a formula
+that is Ockhamist valid but falsifiable in bundled trees : 
+
+\[\Box G \to \Diamond G.\]
+
+ The antecedent of this formula intuitively allows
+one to construct a ‘limit history’ in which \
+always holds from an infinite bundle of different histories. Such
+limit histories may be omitted in bundled trees, which gave rise to
+philosophical discussions concerning the adequacy of those frames .
+A complete axiomatization of bundled tree validity is given in Zanardo
+ and Reynolds . Finding a complete axiomatization for
+Ockhamist validity turned out more difficult. It has been shown that
+the class of Ockhamist trees is not definable in the class of bundled
+trees . In Reynolds , a complete
+axiomatization for Ockhamist validity is claimed and a proof sketched. In this system, the problem of emergent histories is dealt with by an
+infinite axiom scheme that is based on the formula given above and is
+supposed to guarantee the ‘limit closure property’. The
+full proof, however, has not appeared yet. The proposed axiomatic system can be found in the supplementary document:
+Reynolds’ Axiomatic System for OBTL
+5.4 Extensions of Peirceanism and Ockhamism
+Several extensions and variations of the Peircean and Ockhamist
+branching time temporal logics have been proposed and studied over the past
+years, including logics that unify both frameworks, and we will
+briefly mention some of them here.
+Brown and Goranko  propose an axiomatization of a logic that
+combines Peircean and Ockhamist ideas. The language of the Ockhamist
+branching time logic is extended by a modality for an
+alternative
+branch, and a special kind of
+fan
+variables
+is introduced to represent all histories passing
+through one instant.
+The branching time logic with
+indistinguishability functions
+developed in Zanardo  unifies Peirceanism and Ockhamism. The
+language extends the Peircean temporal logic by modal operators, and
+formulae are evaluated on so-called
+I-trees
+, which are trees
+\ with an indistinguishability
+function \ that assigns to each time instant in \ a
+partition of the set of histories passing through that instant.
+Whereas in the Ockhamist semantics truth at an instant is relativized
+to a history, in the semantics on I-trees truth at an instant is
+relativized to an equivalence class modulo indistinguishability at
+that instant, i.e. to a set of histories. Peirceanism and Ockhamism
+correspond to the limiting cases where the partition is trivial, that
+is, a singleton or a set of singletons, respectively. For details, see
+Zanardo , as well as Zanardo  and Ciuni and Zanardo
+, where the idea is combined with elements of the
+stit
+logic of agency.
+An account that is similar in spirit and likewise unifies Peirceanism
+and Ockhamism is the
+transition semantics
+presented in
+Rumberg . The novel feature of this framework is that possible
+courses of events are successively built up from local future
+possibilities: they are viewed as possibly non-maximal,
+downward-closed chains of transitions, where each transition specifies a possible direction at a branching point. Incomplete possible courses of events become available as well,
+which can then be extended towards the future, and the language
+contains, in addition to temporal and modal operators, a so-called
+stability operator, which allows one to capture how the truth value of
+a formula about the future at an instant changes in the course of
+time. Peirceanism and Ockhamism result as limiting cases by
+restricting the range of admissible courses of events to the empty set of transitions and
+maximal chains, respectively. For details, see Rumberg 
+and Rumberg and Zanardo . A brief overview is presented
+in the supplementary document:
+Transition Semantics
+5.5 The computation tree logics CTL and CTL*
+Branching time logics are extensively used in computer science. The
+most popular ones are the computation tree logics CTL and CTL*, which
+are variations of the Peircean and Ockhamist branching time temporal
+logics. They are interpreted on the class of so-called
+computation
+trees
+, where every history has the order type of the natural
+numbers. These trees are naturally obtained as tree unfoldings of
+discrete transition systems and represent the possible infinite
+computations arising in such systems. While CTL historically preceded
+CTL*, nowadays CTL is often viewed as a fragment of CTL*, and we
+follow this convention here.
+The
+full computation tree logic
+CTL* is the computational
+variant of Ockhamism, and it was introduced by Emerson and Halpern
+. The language of CTL* contains  the
+future operators \ and \  as well as the
+Next Time
+operator \ , which are now
+interpreted on computation trees. As in the general Ockhamist
+branching time logic, the evaluation is relativized to both an instant
+ and a history . We note that in computer science usually instant-based
+atomic propositions are assumed, i.e., the valuation of the atomic
+propositions depends only on the state.
+The
+computation tree logic
+CTL is the computational
+variant of Peirceanism, and it was introduced by Emerson and Clarke
+. CTL is the fragment of CTL* where each of the temporal
+operators \, \, and \ is immediately preceded by a modal
+operator, \ or \, here usually denoted as the path
+quantifiers \ and \. That is, the language of CTL
+is recursively built up using the combined modalities \, \\), \ and
+\, \\), \. A precursor of CTL is the logic UB, introduced by Ben-Ari
+et al. , in which \ does not occur.
+The logic CTL became widely used owing to its good computational
+properties with regard to
+model checking
+, having linear
+complexity both in the size of the input formula and in the size of
+the input model . However, CTL is not
+very expressive, which led to its extension CTL*. The logic CTL* is
+expressively much more powerful and subsumes the linear time temporal logic
+LTL, but it has higher complexities of model checking  and of
+deciding satisfiability . For references and further
+details, see Emerson  and Stirling .
+A complete axiomatization of CTL can be obtained by replacing the
+axioms of LTL by their path-quantified versions. For proofs of
+completeness, see Emerson  and Goldblatt . For CTL* more
+axioms must be added to account for the combinations of temporal and
+modal operators and to enforce the limit closure property of trees. A
+complete axiomatization for CTL* was obtained by Reynolds , and
+a completeness result for the extension of CTL* with past operators is
+established in Reynolds . A sketch of the axiomatic system for
+CTL can be found in the supplementary document:
+An Axiomatic System for CTL
+We note that the Peircean and Ockhamist branching time logics, as well
+as their computational variants, have the finite model property and
+are decidable. Proofs of decidability of the respective logics can be
+found in e.g. Burgess ; Emerson and Sistla ; Gurevich and
+Shelah ; Emerson and Halpern ; Emerson
+; Goldblatt ; Gabbay et al. ; Finger et al. ; and Demri et al.
+.
+6. Interval temporal logics
+Instant-based and interval-based models of time are two different
+kinds of temporal ontologies and, even though they are technically
+reducible to each other, this does not solve the main semantic issue
+arising when developing a logical formalism to capture temporal
+reasoning: should propositions about time, and therefore formulae in
+the given logical language, be interpreted as referring to time
+instants or to intervals?
+There have been various proposals and developments of interval-based
+temporal logics in the philosophical logic literature. Important early
+contributions include Hamblin ; Humberstone ; Röper
+; and Burgess . The latter provides an axiomatization for
+an interval-based temporal logic involving the temporal precedence
+relation between intervals on the rationals and the reals. The
+interval-based approach to temporal reasoning has been very prominent
+in Artificial Intelligence. Some notable works here include
+Allen’s logic of planning , Kowalski and
+Sergot’s calculus of events , and
+Halpern and Shoham’s modal interval logic . But, it also features in some applications in computer science,
+such as
+real-time logics
+and
+hardware verification
+,
+notably Moszkowski’s Interval Logic  and Zhou, Hoare, and
+Ravn’s Duration Calculus .
+Here we will briefly present the propositional modal interval logic
+proposed by Halpern and Shoham , hereafter called
+\ The language of \ includes a family of
+unary interval operators of the form \ one for
+each of Allen’s interval relations over linear time. The respective notations are listed in
+Table 1
+. Given a set of atomic propositions \, formulae
+are recusively defined by the following grammar: 
+
+\[\varphi := p \in {PROP} \mid \bot \mid \neg \varphi \mid  \mid \langle X\rangle\varphi.\]
+The interval logic \ starts from instant-based models
+over linear time, and intervals are considered defined elements. So
+let \ be a temporal frame and
+assume that the temporal precedence relation \ induces a
+strict linear order on the set of time instants \. An
+interval
+in \ is defined as an ordered pair
+\ such that \ and \ The set of all
+intervals in \ is denoted by
+\}.\) Note that the definition allows for
+‘point intervals’ whose beginning and end points coincide,
+following the original proposal by Halpern and Shoham .
+Sometimes, only ‘strict’ intervals are considered,
+excluding point-intervals.
+In interval-based temporal logic, formulae are evaluated relative to
+time intervals rather than instants. An
+interval model
+is a
+triple \ consisting of a
+temporal frame \ and a
+valuation \ that assigns to each atomic proposition \
+the set of time intervals \ \subseteq
+\mathcal{P})\) at which \ is considered
+true. The
+truth of an arbitrary formula \ with respect to a given
+interval \ in an interval model \
+is
+defined by structural induction on formulae as follows:
+\   iff   \\), for \
+\
+\   iff  
+\
+\   iff
+  \ and \
+\   iff
+  \ for some interval
+\ such that \, where \ is
+Allen’s interval relation corresponding to the modal operator
+\ .
+That is, the new interval operators are given a Kripke-style semantics
+over the associated Allen relations. E.g., for the Allen relation
+“meets”, we have:
+\[
+\mathcal{M},[t_{0},t_{1}] \models \langle A\rangle \varphi \text{ iff } \mathcal{M},[t_{1},t_{2}] \models \varphi \text{ for some interval } [t_{1},t_{2}].
+\]
+For each diamond modality \ the corresponding box
+modality is defined as its dual: \ Sometimes it is useful to include an
+additional modal constant for point intervals, denoted \ with
+the following truth definition:
+\[
+ \mathcal{M},[a,b]\models\pi \text{ iff } a=b.
+\]
+Some of the \ modalities are definable in terms of
+others, and for each of the strict and non-strict semantics, minimal
+fragments that are expressive enough to define all other operators
+have been identified. Complete sets of equivalences that allow one to
+define certain \ modalities in terms of others are
+presented in the supplementary document:
+Inter-definability of \ Modalities
+The logic \ has over a thousand expressively
+non-equivalent fragments involving only some of the modal operators,
+which have been studied extensively . \ and most of its fragments are very
+expressive, and the respective notions of validity are usually
+undecidable -complete). However, some quite
+non-trivial decidable fragments of HS have been identified. Probably
+the best studied one is the
+neighborhood interval logic
+,
+which involves the operators \ and
+\ . One specific
+axiom for \ ) is \
+saying that any two consecutive right-neighboring intervals can be
+joined into one right-neighboring interval.
+In addition to the unary \ interval modalities
+associated with Allen’s binary interval relations, there is a
+natural and important operation of chopping an interval into two
+subintervals, which gives rise to the ternary interval relation
+‘chop’, proposed and studied in Moszkowski . The
+framework was later extended in Venema  to the logic CDT, which
+involves next to ‘chop’ ), the two residual
+‘chop’ operators \ and \ The logic CDT was
+completely axiomatized in Venema ; see also Goranko et al.
+ and Konur .
+There is a natural spatial interpretation of interval temporal logics,
+based on the idea that the pairs of points that define an interval on
+a linear order \ can be considered coordinates of a point in the
+\-plane. Relations between intervals are then interpreted
+as spatial relations between the corresponding points. This
+interpretation has been fruitfully explored to transfer various
+technical results between spatial and interval logics, such as
+undecidability, see e.g. Venema  and Marx and Reynolds
+.
+Lastly, a few words about the relationship between interval temporal
+logics and first-order logic. The standard translation of
+Prior’s basic tense logic TL into first-order logic 
+ extends naturally to interval logics, where atomic propositions are
+represented in the first-order language by binary relations. It turns
+out that some fragments of \ can be translated into the
+two-variable fragment FO\ of first-order logic, which
+eventually implies their decidability. The expressively strongest such
+interval logic is the neighborhood interval logic, which was proven to
+be expressively complete for FO\ . Other
+fragments of \ require at least three distinct variables
+for the standard translation. Still, even the full logic
+\ is less expressive than the three-variable fragment
+FO\ of first-order logic, for which Venema  showed that
+the logic CDT is expressively complete.
+For more on interval temporal logics, see Halpern and Shoham ;
+Venema ; Goranko et al. ; Della Monica et al.
+; the survey Konur , and the references therein.
+7. Other variants of temporal logics
+So far we have discussed the traditional family of temporal logics,
+but there are numerous variations and alternative developments that
+provide useful formalisms for various applications. We briefly present
+some of them here: hybrid temporal logics, metric and real-time
+temporal logics, and quantified propositional logics.
+7.1 Hybrid temporal logics
+A notable family of temporal logics, enriching the traditional
+framework, are
+hybrid temporal logics
+, which combine
+propositional temporal logic with elements of first-order logic and
+thereby considerably increase the expressive power of the
+language.
+The most prominent notion in hybrid temporal logics is that of a
+nominal
+. Nominals are special atomic propositions in that
+they are considered to be true at exactly one instant of the temporal
+model. Hence, one can think of a nominal \ as saying “It is
+\ o’clock now”. For this reason, nominals are
+sometimes also called ‘clock variables’. The idea of
+nominals can be traced back to Prior , who considered the possibility of identifying instants with
+instant-propositions: an instant can be conceived of as the
+conjunction of all those propositions that are true at that instant. A
+first systematic treatment of hybrid temporal logic was given in Bull
+. In addition to nominals, hybrid languages are often augmented
+by further syntactic mechanisms, such as a satisfaction operator,
+nominal quantifiers, and reference pointers, which we briefly discuss
+below. The former two mechanisms can already be found in Prior’s
+work  and were reinvented independently in Passy and Tinchev . Reference pointers were introduced only much later
+in Goranko , and a similar referencing mechanism is found in
+Alur and Henzinger .
+Satisfaction operator
+: The satisfaction operator
+\ allows one to express that a given formula is true in a
+model at the time instant denoted by the nominal \. That is,
+\ iff \\vDash
+\varphi,\) where \\) is the unique instant where \ is true.
+The notion of truth at an instant of a temporal model is imported into
+the object-language.
+Quantifiers over nominals
+: By means of the nominal
+quantifier \ one can express that a given formula is true
+at a given time instant in a temporal model under each possible
+assignment of time instants to \. More formally,
+\ iff \ for any instant \ in \ where
+\ is the model obtained from
+\ by re-assigning the denotation of \ to be \
+The full power of first-order quantification is brought into the
+temporal language, while many of its propositional virtues are
+preserved.
+Reference pointers
+: Reference pointers \
+are often also referred to as ‘binders’, for they bind the
+value of the nominal \ to the current instant of evaluation. A
+formula \ is true at a given instant \ in
+a temporal model iff \ is true at \ whenever the nominal
+\ denotes \. That is, \ iff \. Reference pointers provide a mechanism for referring to the
+current time instant, i.e. saying ‘now’. For a systematic
+logical treatment of ‘now’, see Kamp .
+Other operators that can be considered hybrid temporal logic operators
+are the
+universal modality
+, the
+difference modality
+, and
+propositional
+quantifiers
+. The universal modality \ says that a given
+formula is true at every instant of the temporal modal and hence
+captures the global notion of truth in a model: \ iff \. The difference
+modality \, on the other hand, states that the given formula
+is true at some other instant. Note that both modalities abstract away
+from the underlying accessibility relation. Propositional
+quantifiers \ introduce second-order quantification
+into the propositional language, and we discuss them in
+Section 7.3
+below.
+Hybrid languages are very expressive. Here are just two examples:
+Irreflexivity of the precedence relation, which is not expressible
+in TL, can be expressed in a language with nominals and the
+satisfaction operator \ as \
+The operators \ and \ are definable in a language with
+nominals and binders: \)\) and likewise for \
+While the weaker versions of hybrid logics — with nominals,
+satisfaction operators, universal modality, and difference modality
+— are still decidable, the more expressive ones — with
+quantifiers over nominals or reference pointers — are usually
+undecidable. For details, see Goranko ; and Areces and ten Cate
+.
+Branching time versions of hybrid temporal logics have been
+investigated as well. For an overview of varieties of hybrid temporal
+logics and their historical development, see Blackburn and Tzakova
+ and the entry on
+hybrid logic
+.
+7.2 Metric and real-time temporal logics
+Metric temporal logics go back to Prior, too . He used the notation \ for “It was the case the
+interval \ ago that \”  was the
+case \ time units ago) and \ for “It will be the
+case the interval \ hence that \” 
+will be the case \ time units hence). These operators presuppose
+that time has a certain metric structure and can be carved up into
+temporal units, which may be associated with clock times . If the relevant units are days, for example, the
+operator \ reads ‘tomorrow’.
+Prior noted that \ can be defined as \\varphi.\)
+The case \ accordingly amounts to the present tense. The metric
+operators validate combination principles such as:
+\[FnFm\varphi \rightarrow F\varphi.\]
+The interrelation of the metric and non-metric versions of the
+temporal operators is captured by the following equivalences:
+\[\begin{matrix}
+P\varphi \equiv \exists {n} 
+   & F\varphi \equiv \exists n \\
+H\varphi \equiv \forall {n} 
+   & G\varphi \equiv \forall n.
+\end{matrix}\]
+Instant-based temporal logics for metric time are studied in e.g.
+Rescher and Urquhart ; Montanari ; and
+Montanari and Policriti . For metric interval logics, see
+Bresolin et al. .
+Various metric extensions of temporal logics over the structure of the
+real numbers have been proposed as well, giving rise to so-called
+real-time
+logics. These logics introduce additional
+operators, such as the following, which allow for different
+formalizations of the example sentence “whenever \ holds in
+the future, \ will hold within three time units later”:
+time-bounded operators, e.g.: \;\)
+freeze quantifiers ,
+e.g.: \);\)
+quantifiers over time variables, e.g.: \).\)
+Such real-time extensions are usually very expressive and often lead
+to logics with undecidable decision problems. A way to regain
+decidability is to relax “punctuality” requirements
+involving precise time durations, by requirements involving time
+intervals. For details, see e.g. Koymans ; Alur and Henzinger 
+as well as Reynolds  on the real-time linear temporal
+logic RTL, and the survey Konur .
+7.3 Quantified propositional temporal logics
+Propositional temporal logics can be extended with quantifiers over
+atomic propositions .
+Semantically, these quantify over all valuations of the respective
+atomic propositions and hence are tantamount to monadic second-order
+quantifiers. The resulting languages are very expressive, and the
+respective logics are usually undecidable . Notable extensions include the logic QPTL, the
+quantified propositional version of LTL , as well as the extension of CTL* . Complete axiomatic systems and decidability results for
+the quantified propositional temporal logic QPTL  have been presented in Kesten and Pnueli  and
+French and Reynolds .
+8. First-order temporal logics
+Objects exist in time, and they change their properties over time.
+Propositional temporal logics are not expressive enough to capture
+this dynamic aspect of the world, for all that is associated with a
+time instant in a model of propositional temporal logics is a set of
+abstract atomic propositions that are declared true there. What is
+needed, instead, is a full-fledged model of the temporal history of
+the world, with objects that may have certain properties and stand in
+certain relations. Accordingly, the language should contain names for
+objects, variables and quantifiers ranging over objects, as well as
+predicates for denoting properties and relations, to adequately
+describe how the world is at a given instant in time — in
+addition to temporal operators for reasoning about how the world
+changes over time. This is what first-order temporal logics
+provide.
+8.1 Existence and quantification in time
+Existence in time is a major topic in the philosophy of time. Usually,
+objects come into being at one point in time and go out of being at
+some later time. But what is it for an object to exist in time? Do
+only present objects exist, as a
+presentist
+would have it, or
+is existence to be understood in a broader sense comprising past and
+future objects as well, as an
+eternalist
+would hold? The
+controversy between
+presentism
+and
+eternalism
+is
+accompanied by a debate on
+persistence
+, that is, on the
+question how objects exist through time. Are objects wholly present at
+each instant at which they exist — a view known as
+endurantism
+— or do they persist by having different
+temporal stages at different instants in time — a view called
+perdurantism
+? For a detailed overview of these debates, see
+e.g. Dyke and Bardon , Meyer , as well as the entries
+on
+time
+,
+temporal parts
+, and
+identity over time
+.
+Similar questions concerning the existence of objects in time and
+their identity over time arise in the context of first-order temporal
+logics, albeit under a different guise. These questions become
+particularly important when it comes to the interaction of temporality
+and quantification. For example, the sentence “A philosopher
+will be a king” can be interpreted in several different ways,
+such
+ as
+
+\\land {F} \, king)\)
+Someone who is now a philosopher will be a king at some future
+time.
+\\land king)\)
+There now exists someone who will at some future time be both a
+philosopher and a king.
+\\land {F}\, king)\)
+There will exist someone who is a philosopher and later will be a
+king.
+\\land king)\)
+There will exist someone who is at the same time both a
+philosopher and a king.
+The interpretations given above assume that the domain of
+quantification is always relative to a time instant and that the same
+individual may exist at multiple times. To enable these
+interpretations, we need to introduce in the models a
+local
+domain
+of objects \\) for each time instant \, to
+restrict the range of the quantifiers to that domain, and to identify
+the same object across different times.
+Moreover, the example above suggests that the local domain at a given
+time instant contains exactly those individuals that do in fact exist
+at that instant. From a logical point of view, however, there are
+alternative ways how to think of the local domains associated with
+time instants, which mirror different conceptions of existence in
+time. Here are four natural options:
+Objects come into being at one point in time and go out of being at a
+later time, i.e., they actually exist only over a certain period of
+time. This idea can be formally captured by assuming that the local
+domain at a given time instant comprises those, and only those,
+objects that presently exist at that instant. Thus, objects belong to
+the local domains of precisely those instants at which they actually
+exist, and the local domains accordingly vary over time.
+Objects actually exist over a period of time, but they remain in the
+temporal history of the world once they have ceased to actually exist.
+On this account, the local domain at an instant includes not only
+those objects that presently exist but all past objects as well. That
+is, the local domains increase as time progresses and new objects come
+into being.
+Alternatively, one may hold that all objects that will ever exist are
+initially part of the temporal history of the world but drop out once
+they have ceased to actually exist. Technically, this amounts to the
+idea that the local domain at an instant comprises all present and
+future objects. Thus, the local domains decrease as time progresses
+and objects go out of being.
+Past, present, and future objects likewise exist. This is the notion
+of existence in an eternalist sense. One way to formally capture this
+idea is by requiring that the local domain associated with a time
+instant contains all objects that are part of the temporal history of
+the world. Hence, the local domains remain constant over
+time.
+A conceptually different but technically closely related issue
+concerns the scope of quantification. What do we quantify over in a
+temporal setting?
+Only over those objects that presently exist at the current time
+instant, as presupposed in the above example?
+Over all present, past, and future objects in the temporal history of
+the world?
+Adopting the terminology ‘actualist quantification’ and
+‘possibilist quantification’ by Fitting and Mendelsohn
+ to the temporal case, we may refer to the first kind of
+quantification as
+presentist quantification
+and use the term
+eternalist quantification
+for the latter. Depending on the
+choice between these options, the sentence “Every human is born
+after 1888”, for instance, can be true or false. It is true if
+we quantify only over those humans that are currently alive; but it is
+false if we quantify over all humans in the temporal history of the
+world, including those that have ever lived. A further issue arising
+here concerns fictitious entities, such as Santa Claus or Pippi
+Longstocking, which do not actually exist at any time instant. Still,
+they may be said to exist in a broader sense, and one may want to
+include them in the domain of quantification. We set this issue aside
+here and refer the reader to the entry on
+free logic
+, which is a logic that allows reference to non-existing entities .
+Many of the questions concerning the interrelation of existence and
+quantification arising here correspond to well known problems in modal
+first-order logics, where an extensive discussion on these issues
+started already with Frege and Russell and peaked in the 1940s-1950s
+in the works of R. Barcan-Marcus, R. Carnap, W. Quine, R. Montague,
+and others .
+ A central issue in first-order modal logics relates to the validity or
+invalidity of the so-called Barcan formula, a temporal version of
+which intuitively says: “If at some time in the future there
+will be something that is \, then there is something now that will
+be \ at some time in the future.” Whether this statement is
+guaranteed to be true crucially depends on how the local domains at
+the various instants in time are construed and what our quantifiers
+range over. What is more, temporal logic yields two versions of the
+Barcan formula, one for the future and one for the past.
+8.2 The language and models of FOTL
+A basic language of first-order temporal logic  is essentially
+an extension of a given first-order language by the operators \
+and \. Whereas in propositional temporal logics atomic
+propositions are unstructured entities, in first-order temporal logics
+atomic formulae are built up from terms denoting individuals and
+predicate symbols denoting relations, and the language is equipped
+with quantifiers ranging over individuals.  
+In what follows, we consider FOTL over a relational first-order
+language  with equality. The set of formulae is
+defined as follows:
+\[\varphi \ \ := \ R \ | \ \tau_1 = \tau_2 \ | \
+\bot \ | \ \neg \varphi \ | \  \ | \ \forall x
+\varphi \ | \ P \varphi \ | \ F \varphi, \]
+where \\) and \ are atomic
+formulae. The truth functional connectives \, and
+\, as well as the temporal operators \ and
+\, can be defined as usual. Moreover, the dual \ of
+\ is defined by \.
+The models of FOTL are based on temporal frames where each time
+instant is associated with a first-order relational structure.
+Formally, a
+first-order temporal model
+is a quintuple:
+
+\[\mathcal{M}= 
+\]
+
+ where:
+\ is a temporal
+frame;
+\ is the
+global domain 
+of
+the model;
+\\) is a
+domain function
+,
+assigning to each time instant \ a
+local domain
+\ such that \.
+
+\ is an
+interpretation function
+, assigning for
+each \:
+an object \ \in \mathcal{U}\) to each constant
+symbol \;
+an \-ary relation \ \subseteq \mathcal{U}^{n}\)
+to each \-ary predicate symbol \.
+Note, that the interpretations of the constant and predicate symbols
+are defined locally, i.e. with respect to a given time instant,
+while the respective extensions range over the global domain. This
+approach allows for reference to objects that do not currently exist
+and enables a proper treatment of cross-temporal relations, as, for
+example, in the sentence “One of my friends is a descendant of a
+follower of William the Conqueror”.
+The quadruple \\) is called the
+augmented temporal frame
+of the model \. Since
+the model is supposed to represent the temporal evolution of the
+world, the local domains at the different time instants in the
+underlying augmented temporal frame must be suitably connected. There
+are four natural cases to distinguish for an augmented temporal frame,
+respectively for any first-order temporal model based on it:
+varying domains
+: no restrictions apply;
+expanding  domains
+: for all \, if
+\ then \;
+shrinking  domains
+: for all \, if
+\ then \;
+locally constant domains
+: for all \, if \ then \.
+Thus, an augmented temporal frame \ has locally constant
+domains if and only if it has both expanding and shrinking domains. In
+particular, we say that \ has
+a constant domain
+if all local domains are the same as the global domain. Since the
+global domain is required to be the union of all local domains, having
+locally constant domains implies having a constant domain in case the
+set of time instants forms a temporally connected whole.
+One natural way to make sense of the four cases distinguished here is
+by means of the four notions of existence in time discussed in
+ Section
+8.1
+above.
+8.3 Semantics of FOTL
+As in propositional temporal logic, formulae of FOTL are evaluated in
+first-order temporal models locally at time instants. However, since
+the formulae of FOTL may contain variables, the notion of truth is
+relativized not only to a model and a time instant but also to a
+variable assignment. We denote the set of individual variables of FOTL
+by \ and the set of individual terms
+ by \.
+Given a first-order temporal model \\), a
+variable assignment in
+\
+is a mapping \
+that assigns to each variable \ an element
+\\) in the global domain \ of the model. Each such
+assignment \ can be uniquely extended to a
+term valuation
+\ as follows: 
+
+\[v_{t} := v, \  v_{t} :=  \mathcal{I}_{t}.
+\]
+
+Note that the variable assignment is defined globally, whereas the
+valuation of the constant symbols depends on the respective time
+instant.
+The
+truth of an arbitrary formula \ of FOTL at a given
+time instant \ in a given first-order temporal model
+\ with respect to a variable assignment \
+) is now defined
+inductively as follows:
+\\)   iff  
+\,\ldots,v_{t}) \in \mathcal{I}_{t}\),
+for any \-ary predicate symbol \ and terms
+\;
+\   iff   \ =
+v_{t}\), for any terms \;
+\;
+\   iff  
+\;
+\   iff  
+\ and \;
+\   iff   \ for some \ such that \;
+\   iff   \ for some \ such that \;
+\   iff   …
+presentist quantification
+:
+…\ for every \;
+eternalist quantification
+:
+…\ for every \,
+where \ is the variant of the variable assignment \ such
+that \ = a\).
+As we mentioned earlier, there are two natural approaches to
+quantification in temporal logic:
+presentist quantification
+and
+eternalist quantification
+. Technically, presentist
+quantification amounts to quantification over the
+local
+domain at the given time instant whereas eternalist quantification is
+construed as quantification over the
+global
+domain. The
+respective semantic clauses for the dual \ of \
+accordingly read as follows:
+\ iff …
+presentist quantification
+:
+…\ for some \;
+eternalist quantification
+:
+…\ for some \.
+Note that presentist quantification naturally relates to first-order
+temporal models with varying domains, while in the semantics based on
+eternalist quantification the local domains do not play any essential
+role. In fact, from a technical point of view, eternalist
+quantification amounts to the assumption that the model has a constant
+domain, i.e., all local domains equal the global domain. Moreover, in
+constant domain models the semantics based on presentist
+quantification coincides with the semantics based on eternalist
+quantification. Thus, presentist quantification suggests a
+varying
+domain semantics
+, whereas the semantics associated with
+eternalist quantification is a
+constant domain semantics
+, and
+in what follows we will use these expressions interchangeably.
+In each of these semantics, a FOTL formula \ is said to be
+valid in a model \
+iff it is true in that model
+at each time instant with respect to every variable assignment; it is
+valid in an augmented temporal frame
+iff it is valid in each
+model based on that frame; and it is
+valid
+iff it is valid in
+every model.
+Adopting one or the other approach to quantification affects the
+notion of validity, even for non-temporal principles. For instance, the
+sentence \\) is valid in first-order logic, and it is
+valid in the constant domain semantics as well, but it is no longer
+valid in the varying domain semantics, because the object assigned to
+the constant \ may not belong to the local domain. Another
+principle from plain first-order logic that distinguishes the two
+semantics is the scheme of
+Universal Instantiation
+ is any term free for substitution for \ in \):
+
+\[\forall x \varphi \to  \varphi,
+\]
+
+ which is, likewise, valid in the constant domain
+semantics but invalid in the varying domain semantics, for analogous
+reasons. The main distinction between the two semantics is, however,
+in terms of principles that involve interaction of temporal operators
+and quantification, such as the Barcan formula schemata and their
+converses. In the following two sections, we take a closer look at
+some important validities and non-validities in the respective
+semantics.
+8.4 Eternalist quantification and constant domain semantics
+Let us look at some FOTL validities and non-validities in the constant
+domain semantics, that is, in the semantics with eternalist
+quantification. We denote validity in the constant domain semantics by
+\.
+All FOTL instances of valid first-order formulae are
+CD-valid.
+In particular, the scheme of
+Universal Instantiation
+is
+CD-valid:
+\ \to \varphi\), for
+any term \ free for substitution for \ in
+\.
+The
+Future Barcan
+ Formula
+
+scheme, \, is CD-valid:
+\ \to G \forall x
+\varphi\) or, equivalently,
+\ \to \exists x F \varphi\).
+The
+Converse Future Barcan Formula
+scheme,
+\, is CD-valid:
+\ \to \forall x G
+\varphi\) or, equivalently,
+\ \to F \exists x \varphi\).
+Some important non-validities include:
+\ \to F \forall x
+\varphi\)  and  \ \to \exists x G \varphi\).
+Analogous claims hold for the past versions of the above schemes, with
+\ and \ instead of \ and \. An axiomatic system for
+the minimal FOTL with constant domain semantics, as well as some
+important theorems of it, are provided in the supplementary
+document:
+Axiomatic System
+FOTL
+for the Minimal FOTL with Constant Domain Semantics
+8.5 Presentist quantification and varying domain semantics
+In the varying domain semantics, free variables range over the global
+domain, whereas quantifiers are given a presentist reading, i.e., they
+quantify over the local domains only. As a consequence, some formulae
+that are valid in the semantics with constant domains are no longer
+valid in the varying domain semantics. Most importantly, the varying
+domain semantics invalidates Universal Instantiation \ \to \varphi\) as well as both the Future and Past
+Barcan Formula schemata and their converses. We denote validity in the
+varying domain semantics by \.
+In fact, the Barcan formulae schemata \ and
+\ and their converses \ and
+\ correspond to conditions on the local domains.
+For any augmented temporal frame \, the following
+holds:
+\ has expanding domains iff \ iff \;
+\ has shrinking domains iff \ iff \.
+Note that the Future Barcan scheme \ semantically
+corresponds to the converse Past Barcan scheme \,
+and
+vice versa
+. From the above it follows that an augmented
+temporal frame \ has locally constant domains iff either
+of the following formulae is
+VD
+-valid in \:
+\, \, \, or
+\.
+An axiomatic system for the minimal FOTL with varying domain semantics
+is provided in the supplementary document:
+Axiomatic System
+FOTL
+for the Minimal FOTL with Varying Domain Semantics
+8.6 The existence predicate
+While presentism and eternalism are alternative theories in the
+philosophy of time, their respective technical manifestations are
+interreducible. On the one hand, the constant domain semantics with
+eternalist quantification can be obtained from the varying domain
+semantics with presentist quantification by imposing the constraint
+that the Past and Future Barcan Formula schemata and their converses
+be valid. On the other hand, the varying domain semantics can be
+simulated in the constant domain semantics by adding to the language
+of FOTL an
+existence predicate
+for ‘existence at the
+current time instant’, which can be defined in the varying
+domain semantics by \ := \exists x \).
+With the existence predicate at our disposal, the sentence “Some
+man exists who signed the Declaration of Independence” can be
+formalized in two different ways: 
+
+\[\exists x \land P))
+\]
+
+ and 
+
+\[\exists x \land \mathsf{man} \land P)).
+\]
+
+ While
+the former formula is true at the present instant in the constant
+domain semantics with eternalist quantification, the latter formula is
+presently false in that semantics, but it was true in 1777.
+To generalize, for every formula \ of FOTL, its
+\-relativization
+in the extended language can be obtained
+by replacing every occurrence of \ in \ by
+“\ \to ...)\)” and every occurrence of
+\ by “\ \land ...)\)”. Then
+the following holds: for any FOTL sentence \ not containing
+\, \ is valid in the varying domain semantics if and
+only if its \-relativization is valid in the constant domain
+semantics. The question that remains, from a philosophical
+point of view, is whether existence is a legitimate predicate. An axiomatic system for the minimal FOTL with existence
+predicate can be obtained along the lines of free logic, as outlined
+in the supplementary document:
+Axioms for the Minimal FOTL with \: the Free Logic Version
+8.7 Proper names and definite descriptions
+A further issue arising in first-order temporal logic relates to the
+interpretation of individual terms. Depending on what kind of terms we
+are dealing with, we may or may not want to allow their interpretation
+to vary with time.
+In the semantics outlined above, variable assignments are defined
+globally, and hence individual variables pick out the same object at
+all times. The interpretation of constant symbols, on the other hand, is
+specified locally, relative to a time instant, even though the
+respective extensions range over the global domain. From a
+philosophical point of view, it seems natural to treat constant
+symbols as
+proper names
+or as
+rigid designators
+,
+that is, to impose the additional requirement that their
+interpretations be constant across different times. Constant symbols
+can then be used to identify an object in time. For instance, treating
+\ as a name for Aristotle, the sentence “Aristotle existed
+but does no longer exist” can be formalized in the varying domain
+semantics as \ \wedge \neg\exists x\).
+If constants are treated as rigid designators, the principle of
+Necessity of Identity
+\\) is valid, for both variables and constants ). However, the
+language may also contain individual terms for which this principle
+fails. A core example are
+definite descriptions
+, such as
+“the Pope”, which may pick out different objects at
+different times. Importantly, proper names and definite descriptions
+require a different semantic treatment and are not freely
+inter-substitutable. For example “The Pope has been the
+sovereign of the Vatican City since 1929” is true, whereas
+“Jorge Mario Bergoglio has been the sovereign of the Vatican
+City since 1929” is false. Moreover, in a temporal setting, the
+question arises how to deal with definite descriptions that refer to
+objects that do no longer or not yet exist, such as “the first
+child to be born in South Africa in 2050”. The problems get even
+more intricate in a branching time setting, where time and modality
+are combined. Note, for instance, that some definite descriptions that
+are temporally rigid may be modally non-rigid. For more on definite
+descriptions in the context of temporal logic, see Rescher and
+Urquhart  and Cocchiarella .
+One way to deal with definite descriptions is to switch from an
+extensional to an intensional account of individual terms. That is,
+rather than assigning to each term at each time instant an
+extension
+, i.e. an object from the domain, one may
+assign to each term an
+intension
+, i.e. a function from
+time instants to objects. A general framework in which individual
+terms are assigned both extensions and intensions is the Case
+Intensional First-Order Logic  proposed in Belnap and
+M
+ü
+ller . In CIFOL, identity is
+extensional, predication is intensional, and individuals can be
+identified across times without making use of rigid designation. The
+framework is also interesting against the background of the debate on
+persistence as it remains metaphysically neutral with respect to the
+precise nature of the objects included in the overall domain.
+8.8 Some technical results on first-order temporal logics
+First-order temporal logics are very expressive, and this often comes
+with a high computational price: these logics can be deductively very
+complex and are typically
+highly
+undecidable . The first-order
+temporal logic with constant domain semantics over the natural
+numbers, for example, with only two variables and unary relation
+symbols, is not only undecidable but not even recursively
+axiomatizable .
+Few axiomatizable, and even fewer decidable, natural fragments of
+first-order temporal logics have been identified and investigated so
+far. These include first-order temporal logics with
+Since
+and
+Until
+over the class of all linear flows of time and over the
+order of the rationals , the fragment T of
+FOTL, where temporal operators may not occur inside the scope of a
+quantifier , as well as the
+monodic fragment
+, only allowing formulae with at most one free variable in the scope of a temporal operator . Still, as shown in the latter
+paper, already the monodic fragment with equality is no longer
+recursively axiomatizable. For further decidability results for
+suitably restricted fragments of FOTL, see Hodkinson et
+al. . Additional technical references are given in Gabbay
+et al.  and Kröger and Merz . For
+completeness results for first-order modal logics see also Fitting and
+Mendelsohn  and the entry on
+modal logic
+.
+For further philosophical discussion on first-order modal and temporal
+logics, see Rescher and Urquhart ; McArthur ;
+Garson : Linsky and Zalta ; van Benthem ;
+Fitting and Mendelsohn ; W
+ö
+lfl ;
+Cocchiarella ; as well as Lindström and Segerberg
+.
+9. Combining temporal and other logics
+Logics can be used to reason about dynamically changing aspects of the
+world, and time plays a role in many domains. For instance, the notion
+of knowledge studied in epistemic logic, the idea of an action
+underlying logics of agency, or the physical concept of space in
+spatial logics all bear an intimate relation to time. It is therefore
+natural to add a temporal dimension to these logics and equip the
+corresponding languages with temporal operators that are suited to
+capture the relevant notion of change.
+From a technical point of view, there are several ways of combining
+models and logical systems: products, fusions, etc. .
+ These constructions provide different mechanisms for temporalizing a
+logic and raise generic questions about transfer of logical
+properties, such as axiomatizations, completeness, decidability.
+Decidability, for instance, is usually preserved in fusions, while it
+is often lost in products of logical systems. For a general discussion
+of temporalizing logical systems and properties of temporalized
+logics, see Finger and Gabbay ; Finger et al. ; and
+Gabbay et al. . Here we only present and briefly discuss some of
+the most popular cases of temporalized logical systems.
+9.1 Temporal-epistemic logics
+Temporal-epistemic logics bring together temporal logics and
+ logics of knowledge. Some interesting properties can
+naturally be expressed by combining the epistemic modality \
+ with temporal operators, e.g.
+perfect recall
+: \  now, then the agent will always know \ in
+the future) and
+no learning
+: \.
+Various temporal-epistemic logics were developed during the 1980s,
+with a unifying study by Halpern and Vardi . They consider a
+variety of 96 temporal-epistemic logics on so-called
+interpreted
+systems
+, i.e. sets of runs in a transition system with epistemic
+indistinguishability relations on the state space for each agent. The
+variety is based on several parameters:
+number of agents
+,
+the language
+,
+the formal model of time
+,
+recall abilities
+,
+learning abilities
+,
+synchrony
+,
+unique initial
+state
+. Depending on the particular choice of these parameters,
+the computational complexity of the decision problem for these logics
+ranges very broadly from PSPACE-complete to highly undecidable
+-complete). For details, see Halpern and Vardi ;
+Fagin et al. ; as well as the more recent van Benthem and Pacuit
+, which surveys a number of decidability and undecidability
+results for temporal-epistemic logics and illustrates how the
+combination of time with other modalities bears on computational
+complexity.
+9.2 Temporal logics and logics of agency
+Temporal reasoning is an important aspect of reasoning about agents
+and their actions. The probably most influential family of logics of
+agency in philosophical studies is the family of so-called
+stit
+logics, originating from the work of Belnap and Perloff
+. These logics contain formulae of the form
+stit
+\, reading “The agent sees to it that
+\”, which allow one to reason about how an
+agent’s choices to act bear on the world. The original versions
+of
+stit
+logic do not involve temporal operators.
+Nevertheless, their semantics is based on Ockhamist branching time
+models, where an agent’s set of choices at a given time instant
+is represented by a partition of the set of histories passing through
+that instant. Intuitively, the formula
+stit
+\ is
+true at a given time instant \ with respect to a given history
+\ iff the agent’s choice at the instant \ with respect
+to the history \ guarantees that \, i.e. if \
+is true at \ relative to all histories in the respective choice
+cell. For a detailed discussion of varieties of
+stit
+logic
+and their historical development, see Belnap et al.  and the
+entry on
+the logic of action
+.
+ Temporal extensions of
+stit
+logics have been proposed in
+Broersen  and Lorini : in Broersen  the
+stit
+operator is combined with the
+Next Time
+operator \ into a single operator which requires that the
+objective be met in the next step, whereas in Lorini  the
+stit
+operator and the temporal operators are treated
+separately.
+Another important family of temporal logics of agency are the
+alternating-time logics
+ATL and ATL*, introduced in Alur et
+al. . ATL and ATL* are multi-agent extensions of the computation
+tree logics CTL and CTL*, and they have become a popular logical
+framework for strategic reasoning in multi-agent systems.
+Alternating-time temporal logics enrich the language with strategic
+path quantifiers \
+intuitively saying “The coalition \ has a collective
+strategy to guarantee that the objective \ is met on every
+path enabled by that collective strategy”, where the objective
+\ is a temporal formula. While
+stit
+logics build on
+the rather abstract notion of a history, ATL and ATL* are interpreted
+over so-called concurrent game structures, in which paths are viewed
+as sequences of successor states that are generated by discrete
+transitions caused by collective actions of all agents. A combination
+of ATL and
+stit
+theory was developed in Broersen et al.
+. The branching time logics CTL and CTL* can be regarded as
+single-agent versions of ATL and ATL*. Even though the latter are
+quite more expressive, they generally preserve the good computational
+properties of the former. For further details, see Alur et al. ,
+as well as Goranko and van Drimmelen , where a complete
+axiomatization and decidability results for ATL are established. A
+general introduction to ATL from a temporal logic perspective is
+provided in Demri et al. .
+9.3 Spatial-temporal logics
+Space and time are intimately related in the physical world, and they
+have become inseparable in modern physical theories. While early
+physical theories, culminating in Newton’s classical mechanics,
+presuppose an absolute notion of time independent from space,
+Einstein’s relativity theory views time and space as
+inextricably interwoven, as modeled by Minkowski’s
+four-dimensional space-time manifold.
+Combined logical reasoning about space-time is discussed in Rescher
+and Urquhart . In Goldblatt , the Diodorean
+modal logic of Minkowski space-time was studied and proved to be
+exactly the modal logic D4.2; further results are provided in Uckelman
+and Uckelman . Logical investigations into relativity theory
+have been conducted as well, see e.g. Andréka et al.
+.
+In Artificial Intelligence, space-time reasoning has been actively
+evolving over the past decades, particularly in the context of
+spatio-temporal databases, ontologies, and constraint networks. The
+main focus here is on the logical characterization of spatio-temporal
+models, expressiveness, and computational complexity .
+Another interesting line of research is triggered by the theory of
+branching space-times developed in Belnap . This theory relates
+to space-time just as Prior’s theory of branching time relates
+to linear time; that is, it combines space-time reasoning with
+indeterminism. See e.g. Müller  and Placek , where
+the topology of branching space-times is studied against the
+background of relativity theory. An extensive overview of branching space-times can be found in Belnap et al. .
+9.4 Temporal description logics
+Description logics are essentially variations of modal logics. They
+involve
+concepts
+ and
+roles
+ and are used to describe various ontologies and
+the relations between the concepts in them . Description logics can be temporalized in various ways. For
+details, see Artale and Franconi ; Wolter and Zakharyaschev
+; and Lutz et al. .
+9.5 Temporal logics and other non-classical logics
+Temporal reasoning can naturally be combined with various
+non-classical logical systems, resulting, for instance, in many-valued
+temporal logics ,
+intuitionistic temporal logics , constructive and
+paraconsistent temporal logics ,
+probabilistic temporal logics ,
+etc.
+10. Logical deduction and decision methods for temporal logics
+Extensive research and numerous publications over the past 50 years
+have developed a variety of logical deduction systems and decision
+methods for the temporal logics mentioned here and many more.
+Hilbert style axiomatic systems
+are the most common logical
+deduction systems for temporal logics, but many complete systems of
+semantic tableaux
+,
+sequent calculi
+, and
+resolution-based systems
+have been proposed as well. Some
+general references on deductive systems for temporal logics  include: Rescher and Urquhart ; McArthur ; Burgess
+; Emerson ; Goldblatt ; Gabbay et al. ; van
+Benthem ; Bolc and Szalas ; Gabbay and Guenthner ;
+Gabbay et al. ; Fisher et al. ; Blackburn et al. ;
+Baier and Katoen ; Kröger and Merz ; Fisher ;
+Demri et al. .
+One of the most important logical decision problems is to determine
+whether a given formula of a given logic is valid 
+in the semantics provided for that logic. Particularly efficient and
+practically useful for deciding satisfiability are the
+tableaux-based methods
+, originating from pioneering work of
+Beth, Hintikka, Smullyan, and Fitting. These methods are based on a
+systematic search of a satisfying model 
+if an input formula that is tested for satisfiability is provided, and
+they are guaranteed to find such a model whenever it exists.
+Tableaux-based methods have been successfully developed for
+constructive satisfiability testing for a variety of temporal logics.
+See Goré  for a survey on tableaux systems for many
+temporal logics and more specifically: Ben-Ari et al.  for the
+branching time logic UB; Emerson and Halpern  for the
+computation tree logic CTL; Wolper  for the linear time temporal
+logic LTL; Kontchakov et al.  on temporalizing tableaux;
+Reynolds  for CTL with bundled tree semantics; Goranko and
+Shkatov  for ATL; Reynolds  for the full computation tree
+logic CTL*; Reynolds  for the real-time temporal logic RTL,
+etc.
+Other methods that have proven practically fruitful for deciding
+satisfiability as well as for model checking of temporal logics in
+computer science are the
+automata-based methods
+, which have
+been actively developing since the early 1990s. These methods
+transform temporal formulae into automata on infinite words  or infinite trees  and
+represent models for the logics as input objects  for their associated automata. Thus, satisfiability of a
+formula becomes equivalent to the language of the associated automaton
+being non-empty. The methods are based on classical results about
+decidability of the monadic second-order theories of the natural
+numbers  and of the infinite binary tree .
+For instance, in Emerson and Sistla , automata on infinite trees
+and Rabin’s theorem were used to obtain a decision procedure for
+CTL*. For further details see Vardi .
+Important references on decidability results and decision procedures
+for various temporal logics include: Burgess  and Gurevich and
+Shelah  for branching time logics; Burgess and Gurevich 
+for linear temporal logics; Goldblatt  for both linear and
+branching time logics; Montanari and Policriti  for metric and
+layered temporal logics; French  for some quantified
+propositional branching time logics.
+While most propositional temporal logics are decidable, adding some
+syntactic or semantic features can make them explode computationally
+and become undecidable. The most common causes of undecidability of
+temporal logics, besides combinations with other expressive logics,
+include: grid-like models; temporal operators along multiple time-lines;
+products of temporal logics; interval-based logics with no locality
+assumptions; time reference mechanisms, such as hybrid reference pointers and freeze quantifiers; arithmetic features, such as time addition,
+exact time constraints, etc. However, there are various ways to tame
+temporal logics and restore decidability, such as adding syntactic and
+parametric restrictions , imposing suitable semantic restrictions
+, identifying decidable fragments
+ of classical first-order
+logic, guarded fragments, monodic fragments), etc.
+11. Applications of temporal logics
+Temporal logic is a field whose development has been heavily driven by
+philosophical considerations. At the same time, the logical formalisms
+and technical systems developed over the years have found application
+in various different disciplines, ranging from computer science,
+artificial intelligence, and linguistics, to natural, cognitive, and
+social sciences. In this section, we briefly discuss some pertinent
+applications of temporal logics in computer science, artificial
+intelligence, and linguistics.
+11.1 Temporal logics in Computer Science
+The idea to apply temporal reasoning to the analysis of deterministic
+and stochastic transition systems was already present in the theory of
+processes and events in Rescher and Urquhart .
+However, it was with the seminal paper of Pnueli  that temporal
+logic became really prominent in computer science. Pnueli proposed the
+application of temporal logics to the specification and verification
+of
+reactive and concurrent programs and systems
+. In order to
+ensure correct behavior of a reactive program, in which computations
+are non-terminating , it is necessary to
+formally specify and verify the acceptable infinite executions of that
+program. In addition, to ensure correctness of a concurrent program,
+where two or more processors are working in parallel, it is necessary
+to formally specify and verify their interaction and
+synchronization.
+Key properties of infinite computations that can be captured by
+temporal patterns are liveness, safety, and fairness :
+Liveness
+properties or
+eventualities
+involve
+temporal patterns of the forms \ \ or \,\) which ensure that if a specific precondition ) is
+initially satisfied, then a desirable state ) will
+eventually be reached in the course of the computation. Examples are
+“If a message is sent, it will eventually be delivered”
+and “Whenever a printing job is activated, it will eventually be
+completed”.
+Safety
+or
+invariance
+properties involve temporal
+patterns of the forms \ \ or \,\) which ensure that if a specific precondition ) is
+initially satisfied, then undesirable states ) will never occur. Examples are: “No more than
+one process will be in its critical section at any moment of
+time”, “A resource will never be used by two or more
+processes simultaneously”, or, to give more practical examples:
+“The traffic lights will never show green in both
+directions”, “A train will never pass a red
+semaphore”.
+Fairness
+properties involve combinations of temporal
+patterns of the forms \ ”) or \ ”).
+Intuitively, fairness requires that whenever several processes that
+share resources are run concurrently, they must be treated
+‘fairly’ by the operating system, scheduler, etc. A
+typical fairness requirement says that if a process is persistent
+enough in sending a request , its request will eventually be granted.
+An infinite computation is formally represented by a model of the
+linear time temporal logic LTL. Non-deterministic systems are modeled
+by branching time structures. Thus, both LTL and the computation tree
+logics CTL and CTL* have been very important for specification and
+verification of reactive and concurrent systems.
+The following example combines liveness and safety properties of a
+single computation: “Whenever a state of alert is reached, the
+alarm is activated and remains activated until a safe state is
+eventually reached”. This property is expressible in LTL as
+\[
+ G).
+\]
+Another example, referring to all computations in the system, is:
+“If the process \ is eventually enabled on some
+computation starting from the current state, then on every computation
+starting there, whenever \ is enabled, it will remain enabled
+until the process \ is disabled”. This property can be
+formalized in CTL* as
+\[ 
+\Diamond F\,\textsf{enabled}_{\sigma} \to \Box
+G).  
+\]
+A variation of LTL with useful applications for specifying and
+reasoning about concurrent systems is Lamport’s 
+temporal logic of actions
+TLA. Other applications of temporal
+logics in computer science include: temporal databases, real-time
+processes and systems, hardware verification, etc. Further information
+on such applications can be found in e.g. Pnueli ; Emerson and
+Clarke ; Moszkowski ; Galton ; Emerson ; Alur
+and Henzinger ; Lamport ; Vardi and Wolper ; Bolc
+and Szalas ; Gabbay et al. ; Baier and Katoen ;
+Kröger and Merz ; Fisher ; Demri et al. .
+11.2 Temporal logics in Artificial Intelligence
+Artificial Intelligence  is one of the major areas of application
+of temporal logics. Relating temporal reasoning to AI was suggested
+already in the early philosophical discussion on AI by McCarthy and
+Hayes , the theory of processes and events in Rescher and
+Urquhart , and the period-based theories of Hamblin
+; see Øhrstrøm and Hasle  for an overview of
+these early developments. In the 1980s, temporal representation and
+reasoning gradually became an increasingly prominent theme in AI with
+several influential works, including McDermott’s temporal logic
+for reasoning about processes and plans ;
+Allen’s general theory of action and time ; the
+Event Calculus of Kowalski and Sergot ; the reified temporal
+logic by Shoham ; the logic of time representation by Ladkin
+; and the work on temporal database management by Dean and
+McDermott . Galton  provides a systematic account of these
+and other important developments in that period; see also Vila 
+and Pani and Bhattacharjee  for comprehensive reviews.
+Influential works in the 1990s include the introduction of
+interval-based temporal logics by Halpern and Shoham  and by
+Allen and Ferguson , with representation of actions and events;
+the Situation Calculus of Pinto and Reiter ; and Lamport’s
+Action Theory , etc. Further important developments
+relating temporal reasoning and AI since then include: temporal
+reasoning in natural language, temporal ontologies, temporal databases
+and constraint solving, temporal planning, executable temporal logics,
+spatial-temporal reasoning, temporal reasoning in agent-based systems,
+etc. The field has gradually grown so rich and broad — as
+witnessed by the 20-chapter handbook edited by Fisher et al. 
+— that it is impossible to even briefly survey it here, so we
+only bookmark a few of the main issues of philosophical relevance that
+have been in the focus of temporal reasoning and logics in AI.
+The prevailing logical approach to temporal representation and
+reasoning in AI, especially in the 1980s-1990s, has traditionally been
+based on temporalized variations of first-order logic rather than on
+Prior-style temporal logic. The approach is best illustrated by the
+so-called
+method of temporal arguments
+. According to this method, the temporal
+dimension is captured by augmenting propositions and predicates with
+‘time stamp’ arguments, as for example “Publish”. An alternative, yet
+closely related approach, is the one of
+reified temporal
+logics
+. This approach makes use of reifying
+meta-predicates, such as ‘TRUE’ and ‘FALSE’,
+but also ‘HOLDS’, ‘OCCURS’,
+‘BEFORE’, ‘AFTER’, interval relations such as
+‘MEETS’, ‘OVERLAPS’, etc., which are applied
+to propositions of some standard logical language . An example of a reified expression is
+“OCCUR, 1914)”. Associated with theories of
+time are theories of
+temporal incidence
+.
+Still, the prominence of the modal logic based approach has always
+been strong, and it has more recently resurged, e.g. in the context of
+agent-based temporal reasoning .
+Theories of temporal reasoning in AI distinguish between
+fluents
+, which are propositions describing states of the
+world that may change over time, and
+events
+, representing
+what happens in the world and causes changes between states.
+Philosophical issues arising here concern the nature of fluents and
+events, the meaning of instantaneous events, the distinction between
+homogeneous states and inhomogeneous events, the
+dividing instant
+problem
+, the
+frame problem
+, etc. For further discussion,
+see Shoham ; Galton ; and Vila . See also the
+related discussion on reasoning about action and change in Section 4
+of the entry on
+logic and artificial intelligence
+.
+Both fluents and events can be considered in discrete or
+continuous time and they can be instantaneous or durational. This
+keeps the debate on
+instant-based
+versus
+interval-based
+formal models of time alive, with various
+theories following and comparing both approaches, including van
+Benthem ; Allen ; Allen and Hayes ; Allen and
+Ferguson ; Galton ; Vila ; etc.
+For further reading and discussion on temporal reasoning and logics in
+AI, see Vila ; Galton ; the comprehensive handbook Fisher
+et al. ; and the more concise handbook chapter Fisher
+.
+11.3 Temporal logics in Linguistics
+Tense is an important feature of natural languages. It is a linguistic
+device that allows one to specify the relative location of events in
+time, usually with respect to the speech time. In most languages,
+including English, tense becomes manifest in a system of different
+verbal tenses. English allows for a distinction between past, present,
+and future tense  and, traditionally, the
+respective perfect and progressive forms are referred to as tenses as
+well.
+As laid out above, Prior’s invention of tense logic was largely
+motivated by the use of tense in natural language. An alternative
+early logical approach to tense was provided by Reichenbach ,
+who suggested an analysis of the English verbal tenses in terms of
+three points in time: speech time, event time, and reference time,
+where the reference time is a contextually salient point in time,
+which, intuitively, captures the perspective from which the event is
+viewed. Using the notion of reference time, Reichenbach was able to
+distinguish, for example, between the simple past  and the present perfect , which are conflated in Prior’s account. In both
+cases, of simple past and of present perfect, the event time precedes
+the speech time; but, in the former case the reference time coincides
+with the event time whereas in the latter case the reference time is
+simultaneous with the speech time.
+Neither Prior’s nor Reichenbach’s frameworks can account
+for the difference between, for instance, the simple past  and the past progressive . The relevant distinction here is one of aspect
+rather than of tense and naturally requires an interval-based or
+event-based setting to be adequately dealt with. For accounts along
+these lines, see e.g. Dowty ; Parsons ; Galton ; and
+van Lambalgen and Hamm .
+Whereas Reichenbach’s analysis makes reference to a contextually
+salient point in time, on Prior’s account tenses are construed
+as temporal operators, which are interpreted as quantifiers over
+instants in time. This raises the general question: are tenses in
+natural language to be treated as quantifiers, or do they refer to
+specific points in time? In an influential paper, Partee 
+provided the following counterexample against a quantifier treatment
+of tenses: the sentence “I didn’t turn off the
+stove” means neither  there is an earlier time instant at
+which I do not turn off the stove, nor does it mean  there is no
+earlier instant at which I turn off the stove. The first requirement
+is too weak, the second too strong. Partee suggested an analogy
+between tenses and referential pronouns. According to this proposal,
+tenses refer to specific, contextually given points in time , which are presupposed to stand in
+appropriate temporal relations to the speech time. Subsequently,
+accounts that restrict quantification to a contextually given time
+interval  have become popular. On these accounts,
+Partee’s example sentence has the intuitive meaning: there is no
+earlier time instant in the contextually salient time interval at
+which I turn off the stove. Formally, this idea is compatible with
+both a quantifier and a referential treatment of tenses; for details
+see Kuhn and Portner  and Ogihara .
+Other pertinent issues in linguistics relating to time concern the
+meaning of temporal adverbs and connectives, the interaction of tense
+and quantification, the interpretation of embedded tenses and sequence
+of tense, as well as the interrelation of tense and modality. For an
+overview and further discussion on the application of temporal logics
+in linguistics, see e.g. Steedman ; Kuhn and Portner ;
+Mani et al. ; ter Meulen ; Moss and Tiede ; Ogihara
+; Dyke ; and the entry on
+tense and aspect
+.

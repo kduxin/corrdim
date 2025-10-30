@@ -1,0 +1,3063 @@
+1. The Vaiśeṣika System of Categories
+1.1 Methodology and Theory of Definition
+Most Nyāya-Vaiśeṣika texts are structured in one of
+two ways. They either follow a traditional Vaiśeṣika
+pattern, in which the categories and their various sub-groups are
+discussed in order, or else they follow a pattern employed by the
+Buddhist logician Diṅnāga, and copied by
+Gaṅgeśa, in which each of the sources of knowledge is
+treated in turn.
+The Manual of Reason
+, however, adopts a
+style of analysis due to Vātsyāyana . Vātsyāyana stated
+that:
+This [Nyāya] system will follow a three-fold procedure, viz.
+enumeration , definition
+ and examination
+. Of these,
+‘enumeration’ means the act of referring to each object
+[to be analysed] by name; ‘definition’ means [citing] a
+characteristic of the named object which distinguishes it from all
+other objects; ‘examination’ means ascertaining, with the
+help of the
+pramāṇas
+, the appropriateness of the
+distinguishing characteristic for the object defined
+.
+The heart of this method lies in the use it makes of definitions,
+conceived of as differentiating marks of the thing defined.
+The
+Manual of Reason
+ refines the idea: it defines a
+‘definition’ of a class of things as any characteristic
+which is co-extensive with that class. A defining characteristic of
+the class ‘cow’ is the property ‘having
+dewlap’. Note that this does not tell us what the
+essence
+of the class is—it merely supplies us with a
+syndrome or
+trait
+by means of which we can identify the thing
+in question. The Naiyāyikas, we might say, have a
+‘diagnostic’, rather than an ‘essentialist’,
+conception of definition. The purpose of the ‘examination’
+now becomes clear: it is to see whether the alleged defining trait
+really is co-extensive with the class to be defined, or whether it is
+faulty, either by ‘over-covering’ 
+or by ‘under-covering’ , or both. A properly
+defining characteristic has to be, to use modern terms, both a
+necessary and a sufficient property of the thing to be defined. We see
+the pattern of enumeration, definition, and examination repeated again
+and again in Navya-Nyāya texts like
+The Manual of
+Reason
+.
+1.2 What is the Vaiśeṣika System of Categories?
+The Vaiśeṣika system of ‘categories’
+ is an attempt to classify in a systematic way
+all the different types of existent. Navya-Nyāya lists seven
+‘categories’ of object: substance ,
+quality , motion or action ,
+universal , particularity or
+differentiator , inherence
+, and absence . Of
+these, the first six comprise the classical list of categories, found
+even in the
+Vaiśeṣika-sūtra
+, while the
+seventh  is a distinctive addition by the later school. Most
+of these types are themselves subject to sub-division: thus, there are
+nine types of substance, twenty four types of quality, etc.
+One main question concerning this list of categories is whether we can
+discern any underlying structure or organising principle. This is
+related with another important question: just what is a category?
+The Manual of Reason
+answers this second question by giving
+the etymological analysis of the term
+‘
+padārtha’
+:
+‘
+padārtha’
+is the
+artha
+or meaning
+of a
+pada
+or word. The claim is that the Vaiśeṣika
+categories are in some way the metaphysical correlates of linguistic
+structures. One way to make this claim more precise would be to note
+the existence of striking similarities between the
+Vaiśeṣika system and Sanskrit grammar . Another way is to observe a distinctive pattern of argument
+employed, in which the hypothesis that a certain type of substance,
+quality, etc. exists is supported on the ground that it explains some
+feature of our linguistic practice 
+An alternative approach would be to seek some purely
+apriori
+rationale behind the list. Athalye  offers one such:
+A notion is either positive or negative, and so the external object of
+a notion might be ‘existent’  or
+‘non-existent’ .
+‘Existent’ things again are of two kinds, properties and a
+common substratum in which they reside. The latter is
+‘substance’ . Of the properties, again,
+some reside in many objects conjointly, others in individual things
+singly. The first is ‘universal’
+, while the latter class is again
+divisible into properties that are stationary and those that are
+evanescent, i.e. ‘quality’  and
+‘motion’ . The remaining two categories,
+‘inherence’  and
+‘particularity’  are assumed
+to explain the special theories of the Vaiśeṣikas.
+This reconstruction of the Vaiśeṣika system is not quite
+satisfactory, for it relies on an unexplained and perhaps
+question-begging distinction between stationary and evanescent
+properties, and leaves two of the categories completely unaccounted
+for. Another reconstruction  is offered by Potter
+. When we look at
+The Manual of Reason
+’s own
+definitions of the individual categories, it seems to be following
+this approach.
+The Manual of Reason
+’s definitions are
+as follows:
+Substance
+
+that which possesses the universal substance-hood;
+
+that which possesses qualities 
+Quality
+
+that which possesses universals, and isn’t a substance
+or motion;
+
+that which possesses the universal quality-hood 
+Motion
+
+that which causes conjunctions ;
+
+that which possesses the universal motion-hood 
+Universal
+that which is eternal, unitary, and inherent in many things 
+Differentium
+that which exists in eternal substances and functions as their
+differentiator 
+Inherence
+that thing which is eternal and a relation 
+Absence
+[No general definition given]
+There are certain problems with this series of definitions, read as an
+apriori
+reconstruction of the categories. In particular, the
+definitions of ‘substance’ and ‘quality’ seem
+to be jointly circular, unless we take as already given universals
+such as substance-hood, which make the definitions somewhat vacuous. I
+will give another reconstruction, one which roughly follows the great
+Nyāya-Vaiśeṣika author Udayana .
+1.3 The Underlying Structure of the List
+First divide things up into the existents and the non-existents, the
+latter corresponding to the category ‘absence’. Now take
+inherence to be a primitive, fundamental relation. Given such a
+relation, the following three-fold division is exhaustive:
+things which do not inhere in others, but are inhered in,
+things which both inhere in others, and are themselves inhered
+in,
+things which inhere in others, but are not inhered in by
+anything.
+We want group  to correspond to the category
+‘substance’. Unfortunately, the Vaiśeṣikas
+claim that wholes are distinct from, and inhere in, their parts. The
+only substances which do not inhere in anything are the atomic
+substances . Group  corresponds to the category
+‘universal’, for universals are said to inhere in things
+ but do not have anything inhering
+in them. Group  comprises, the non-atomic substances, the qualities
+and the motions. Let us now divide this group into two: those which
+are inhered in only by universals, and those which are inhered in by
+other things as well. The former corresponds to the categories
+‘quality’ and ‘motion’, for substances are
+inhered in, not only by universals, but also by qualities, motions, as
+well as by other substances. Finally, we must find a way to sub-divide
+the former group into qualities and motions. More traditional
+Naiyāyikas preserve the distinction by saying that motions, but
+not qualities, cause the substances in which they inhere to come into
+contact with  each other. This, however, appeals
+to the idea of ‘contact’, which cannot itself be defined
+in terms of our primitive relation inherence. Some radical
+Naiyāyikas  claim that
+motions are just a kind of quality, as their properties are so
+similar. The only remaining category is ‘differentium’
+, whose members reside in and individuate
+the eternal substances i.e. the atoms. The point, perhaps, is that all
+other things are individuated by the universals and wholes that inhere
+in them, but two atoms of the same substance are in all respects
+identical. But if objects are individuated by means of what inheres in
+them, then there must be something inhering in each atom which
+distinguishes it from the others—a ‘differentium’
+.
+This is a rough sketch, omitting many technicalities, of how the
+Vaiśeṣika philosophers tried to build their system of
+categories on logical principles .
+The Manual of Reason
+points out
+that a substance cannot be defined as the substratum of qualities,
+because of the Vaiśeṣika doctrine that substances do not
+possess any qualities at the moment when they are created.)
+2. Physical Substance
+2.1 The Five Primary Physical Substances
+Vaiśeṣika distinguishes, among nine acknowledged types of
+substance, a sub-class of five—earth, water, fire, air and
+ākāśa
+—to which it gives the name
+“
+bhūta
+” .
+A
+bhūta
+is defined as a substance which possesses a
+specific sensible quality—odour, taste, colour, touch and
+sound.
+It was, perhaps, originally thought that the five physical substances
+and the five sensible qualities are directly correlated, each quality
+residing in one and only one substance, odour just in earth, taste
+just in water etc. . This may give some insight into the origins
+of the ‘five physical substances’ theory, but it was
+realised very early on that it is extremely implausible to maintain
+that earth, for example, is invisible, or else that its colour is
+always due to intermixture with fire . The set of
+correlations between physical substances and sensible qualities is
+more complex in the
+Vaiśeṣika-sūtras
+and
+later texts, and is indicated in the following chart:
+odour
+taste
+colour
+touch
+sound
+earth
+x
+x
+x
+x
+water
+x
+x
+x
+fire
+x
+x
+air
+x
+ākāśa
+x
+The orthodox Vaiśeṣika view is that each physical substance
+is characterised by the possession of a particular type of sensible
+quality and the absence of certain others. Thus, earth is the
+substance endowed with odour, water with taste but not odour, fire
+with colour but not taste or odour, etc. A drawback of such
+definitions is that we cannot infer, from the detection of a sensible
+quality, which type of substance is present. Later
+Vaiśeṣika therefore looks for a diagnostic set of
+definitions, one which seeks to find, for each substance, a particular
+sensible quality whose presence is indicative of that substance. The
+Manual of Reason
+:
+Earth is  endowed with odour
+Water is  endowed with cold touch
+Fire is  endowed with hot touch
+Air is  endowed with touch without colour
+ākāśa
+is  endowed with sound.
+Thus, although earth, water, and fire are all tactile, only water
+allegedly has cold touch. It seems that it could find no positive
+distinguishing trait for air, and thus reverted to the older style of
+definition.
+It is perhaps surprising to find a ‘five elements’ theory
+defended still in the seventeenth century. Some modern writers have
+tried to represent these substances as metaphors for different
+‘states’ of matter—solid , liquid ,
+gas , and temperature . This is, however, improbable, for
+it is nowhere said that a particular substance can turn from earth to
+water to air. Perhaps it is a mistake to see the theory as belonging
+to physics at all; instead, bearing in mind the way the substances are
+defined in terms of their sensible qualities, we might see it as an
+exercise in the logical analysis of the data presented by the various
+sense modalities to construct a  theory of the world.
+Such a theory would, for example, explain the fact that there are
+correlations between what we see and what we touch by positing that
+there must be types of things which can be both seen and touched.
+Likewise, the occurrence of tactile sensations with no correlated
+visual sensations leads us to postulate the existence of substances
+which can be felt but not seen , and so on for the other
+substances. It is, after all, the existence of such correlations
+between different sense modalities which grounds an objective
+conception of the world .
+2.2 Vaiśeṣika Atomism
+The Manual of Reason
+ repeats the
+conventional Vaiśeṣika theory that the first four
+substances  are each of two types, atomic and
+composite. An atom  is indestructible
+, indivisible , and has a special
+kind of dimension, called “small” .
+The Vaiśeṣikas’ standard argument for atomism is as
+follows. It is an empirically established truth that whatever is
+perceived is composite. Thus even the smallest perceptible thing,
+namely, a fleck of dust in a sun-beam, has parts, which are therefore
+invisible. The Vaiśeṣikas call the smallest perceptible
+thing a “triad”  and claim that
+it has three parts, each of which is called a “dyad”
+. Does each of these parts itself have parts?
+Yes—for it is another empirically established truth that the
+parts of a visible thing themselves have parts . The
+Vaiśeṣikas say that a dyad has two parts, each of which is
+an atom.
+This argument establishes that there are objects too small to be seen,
+but it does not demonstrate that some of them are non-composite. Why
+cannot the process of sub-division be continued ad infinitum?
+The
+Manual of Reason
+’s intriguing answer is that if such were
+the case then Mount Meru and a mustard seed would have the same size,
+as each would have the same  number of constituent parts! An
+implicit premise here  is
+that the size of a whole is a function of the size, number and spatial
+arrangement of its parts.
+The argument seems to be question-begging, for the implicit premise is
+only true if atomism is already accepted. A non-atomist will say that
+the size of an object is determined, not by its constituents, but by
+the spatial boundaries of the ‘stuff’ it is made of.
+2.3 The Metaphysics of Number 
+The Navya-Nyāya account of number has been likened in content and
+sophistication to that of Frege, and is indeed fascinating.
+The
+Manual of Reason
+says only that numbers are qualities
+, that they are the ground for numerical
+judgements, and that they range from 1 to a very high number called
+parārdha
+. The view that numbers are qualities is in fact
+associated with old Vaiśeṣika, and turned out to be
+irreconcilable with the structure of the Vaiśeṣika
+ontological system. We may speak of there being three horses in the
+field, but also of there being 24 qualities in the
+Vaiśeṣika system. Yet a quality cannot by definition reside
+in another quality—hence numbers cannot be qualities. This
+problem led the Navya-Naiyāyikas to develop a new account of
+numbers, based on a new type of relation called the
+paryāpti
+or ‘completing’ relation.
+Here is a summary of their theory. Consider the following pair of
+sentences:
+The table has wooden legs
+The table has four legs.
+The similarity between  and  suggests that we think of
+number-words as akin to other adjectives, i.e. as attributing some
+property to the object/s they qualify. The Nyāya say that, in
+, the property of being wooden resides in the legs of the table by
+the relation of inherence. Can we analyse  the same way, as stating
+that a universal property four-hood inheres in the legs? The new
+Nyāya  answer in the
+negative. For note that  entails
+Each leg is wooden.
+However,  does not entail,
+Each leg is four.
+The solution offered is to postulate a new relation,
+‘completion’, which relates the property fourhood to the
+four legs
+jointly
+, but not to each leg individually.
+Raghunātha remarks that “the ‘completion’
+relation, whose existence is indicated by constructions such as
+‘This is one pot’ and ‘These are two’, is a
+special kind of self-linking relation.” His commentator
+Jagadīśa adds:
+It might be thought that the ‘completion’ relation is
+nothing but inherence…So Raghunātha states that
+‘completion’ is a another relation….In a sentence
+like “These are two pots”, ‘completion’
+relates the property two-hood by delimiting it as a property which
+resides in both pots. Otherwise, it would follow that there is no
+difference between saying “These are two” and “Each
+one possesses two-hood”.
+The proposal is that number properties are related jointly to objects
+by the many-one relation ‘completion’. I think we can
+simplify this proposal a little without losing its essential
+structure. Rather than saying, in a sentence like “Mars is a
+planet”, that the property planethood resides in Mars by the
+inherence relation, we would now say that the predicate
+“…is a planet” is true of Mars, so to speak
+building the inherence relation  into the predicate. In an
+entirely analogous way, we can build the completion relation into the
+number-predicate, which then becomes, if the number is
+n
+, an
+n
+-place relation. Thus the sentence “Venus and Mars are
+two” asserts of Venus and Mars that they stand in a certain
+2-place relation, the relation which is the number 2. The Nyāya
+idea, then, is that number-adjectives are
+n
+-place relational
+predicates, and that numbers are
+n
+-place relations holding
+jointly between
+n
+distinct objects. It in no way follows from
+the statement that the relation 2 holds between Venus and Mars, that
+it holds just with Venus, any more than it follows from the statement
+that
+X
+is to the left of
+Y
+, that
+X
+is to
+the left, full stop. On the Nyāya proposal, then, it looks as
+though the troublesome inference is blocked because its conclusion is
+not even well-formed, since the phrase “Venus is two”,
+like the phrase “
+X
+is to the left”, is an
+incomplete or unsaturated expression.
+The Nyāya, we have seen, distinguish two relations, the inherence
+and completion relations. Their motive is, as we might now say, to
+account for the distinction between collective and distributive
+properties. For the recognition that the inference from “These
+are two pots” to “Each pot is two” is invalid is
+just the recognition that the predicate two does not distribute over
+plural subjects. The Nyāya idea is to analyse collective
+predicates like ‘…are two’, not as one-place
+predicates of aggregates or sets, but as n-place relational
+predicates, true of n objects jointly. But since such relational
+predicates still take objects as subjects, this indeed shows that
+recognising the distinction between distributive and collective
+predicates does not force us to abandon the adjectival view. The
+Nyāya, indeed, have a term for collective properties: they call
+them
+vyāsajya-vṛtti-dharma
+or ‘properties
+which occur jointly’.
+3. Space, Time and Motion
+3.1 Space 
+The Manual of Reason
+’s remarks on the nature of space
+and time are sketchy in the extreme. We must supplement them with
+details from other Vaiśeṣika and Nyāya authors. Even
+then, the theories of space and time found in
+Nyāya-Vaiśeṣika texts have been studied very little,
+and we can only form a rough and inadequate picture at the present
+time.
+The Manual of Reason
+’s observations concerning
+the notion of space are as follows:
+Space is a substance 
+Space is the ‘ground’ for statements such as
+“this is east of that” etc. 
+Space is unique, ubiquitous, and eternal .
+Space is an instrumental cause of every effect .
+‘Nearness’  and
+‘farness’  are spatial qualities of
+objects.
+Space is conceived of as that substance in virtue of which statements
+attributing distance and direction, such as “
+A
+is to
+the east of
+B
+”  are objectively true or false. Space is thus
+an explanatory postulate: it is argued that we must postulate the
+existence of a new  substance to explain the fact that
+objects stand in spatial relations with one another. The problem is to
+make sense of this claim. Bhaduri  does so as
+follows :
+Imagine a sequence of objects
+A
+,
+B
+,
+C
+,
+D
+, …,
+F
+, each in contact with the next,
+arranged in a line. Now
+A
+is to the left of
+B
+, and
+B
+is to the left of
+C
+, and since “being to the
+left of” is a transitive relation,
+A
+is to the left of
+C
+, etc. But, although
+A
+is in contact with
+B
+, and
+B
+is in contact with
+C
+, it is not
+true that
+A
+is in contact with
+C
+—contact is
+atransitive. Thus contact cannot be what spatially relates objects.
+What then? “According the Vaiśeṣika, it is space
+which brings [
+A
+and
+C
+] into relation. Both are in
+conjunction with space and thus with each other through its mediation.
+Space is that which turns the relation of conjunction into a
+transitive relation” .
+This explanation has a problem. It assumes that between any two bodies
+there is a chain of touching material objects. But, given this
+assumption, we do not need to postulate a new substance with which
+everything is in contact, in order to create a transitive relation
+from contact. For we can define “being to the left of”
+thus:
+x
+is to the left of
+y
+iff there are distinct
+objects
+p
+,
+q
+,
+r
+,…
+t
+such
+that
+x
+is in contact with
+p
+,
+p
+is in
+contact with
+q
+, …,
+t
+is in contact with
+y
+.
+Potter  refines the argument. We say that
+A
+is
+nearer to
+D
+than to
+F
+because there are more
+intervening objects between
+A
+and
+F
+than there are
+between
+A
+and
+D
+. Suppose however that between
+D
+and
+F
+there is no chain of material objects. How
+is it that we can still say “
+A
+is nearer to
+D
+than to
+F
+”? Potter answers: “In order to provide
+the material to explain this comparative judgement we must postulate
+an intervening series of entities, and these must be spatial”.
+Note that this explains, not the transitivity of directional relations
+like “to the left of”, but rather the magnitude of
+distance relations like “near to”. “Near to”
+is not a transitive relation. It accepts the basic premise that the
+distance between two objects is measured in terms of the number of
+intervening entities, and postulates a series of “spatial
+entities” when there are no material ones present.
+This explanation also has a problem, for space is supposed to be a
+single entity. Perhaps it should say that the two objects are in
+contact with a ‘segment’ of space, and spatial segments
+have magnitude.
+Perhaps the best way to construe the argument is as offering an
+explanation of spatial separation
+without
+having to postulate
+a series of mediating bodies. Thus, if
+A
+is nearer to
+D
+than
+F
+, and there is nothing either between
+A
+and
+D
+or between
+A
+and
+F
+, the
+best explanation is that
+D
+is in contact with a nearer part
+of space than
+F
+.
+The Manual of Reason
+says that space is
+‘ubiquitous’ , which it defines as
+‘being in contact with every sample of earth, air, fire, water
+ . This raises the question: is space
+infinite in dimension, or the same size as the cosmos? If space is
+defined in terms of the relations between physical objects, then it
+would seem to have the same size as the cosmos. There are however
+Vaiśeṣika arguments that it is infinite. The
+Vaiśeṣikas say that most bodies are either
+‘long’  or ‘short’
+ in dimension , but that a
+body’s having ‘long’ or ‘short’
+dimension is unintelligible unless it has bounding, perimeter parts.
+Space, however, has no parts and hence no boundary. Some
+Vaiśeṣikas conclude that space has no finite dimension
+; others that it has a special dimension called
+‘
+paramadīrgha
+’ or ‘maximal
+length’.
+3.2 Time 
+The Manual of Reason
+says of time that it is the ground for
+statements about the past, present and future, that it is unique,
+eternal and ubiquitous, and that it is the container of everything and
+a instrumental cause of every effect . The conception of time
+mirrors that of space: it is that in virtue of which statements of the
+form “A is earlier than B” are objectively true of false.
+Time is said to differ from space, and thus not be identical with it,
+in the following respect: whereas what is spatially near or far varies
+from person to person, what is temporally near or far is the same for
+all persons . But why should we
+restrict our attention only to presently existing persons?
+In the
+Nyāya-sūtra
+, Gautama mentions an argument
+against the possibility of present time remarkably similar to  Nāgārjuna’s arguments
+against motion. NS 2.1.39 : There is no such thing as the
+present time, because, when an object is falling to the ground, each
+point on its descent belongs either to the already-traversed sector or
+to the yet-to-be-traversed sector. There is therefore, no point on the
+trajectory to which the present time can be attributed. The present
+time is an imaginary point of demarcation between the past and the
+future. Gautama replies  to this by saying 
+that the concepts of ‘past’ and ‘future’ are
+relative to that of the ‘present’, and not to each other,
+and  that the denial of the present has an absurd consequence,
+that nothing can be known perceptually, as perception functions in the
+present. The point of , perhaps, is that even if the present is
+just a boundary, it is not thereby imaginary.
+3.3 Vaiśeṣika Dynamical Theory: The Nature and Causes of Motion
+Beginning with Praśastapāda ,
+the early Vaiśeṣika authors took a rational and scientific
+interest in the behaviour of projectiles and other moving bodies.
+Their theory bears comparison with Philoponus’
+“impetus” theory, which was responsible for a paradigm
+shift in Western scientific thought.
+The Manual
+’s
+account substantially agrees with that already found in
+Praśastapāda, which is partially traceable to the
+Vaiseṣika-sūtra
+itself. The content of the
+relevant stanzas can be summarized as follows:
+Motion is the non-inherent cause of conjunction and disjunction. It is
+of five types, four volitional  and the fifth comprising all non-volitional
+motion  .
+Weight  is the non-inherent cause of the initial
+falling motion of a body .
+Fluidity  is the non-inherent cause of 
+flowing .
+‘Impetus’  is a dispositional property
+, as is ‘elasticity’
+ . ‘Impetus’ is the
+non-inherent cause of the second and subsequent falling motions of a
+body . Elasticity is that which restores something to its
+original state after it has been distorted.
+Here is a brief summary of the theory. A moving body possesses, at
+each moment in time, a particular ‘motion’, which is to be
+thought of as a momentary, quality-like property of the body. Motions
+are defined to be the cause of conjunctions or disjunctions. A
+conjunction with a  body is brought about by displacement
+in space. We are thus to think of the motion of a body as being either
+identical with, or else the cause of, its displacement in space
+between two moments in time. A motion cannot be caused by another
+motion . A body is set in
+motion by its possession of a quality like ‘weight’ or
+‘fluidity’. It persists in motion by having a
+dispositional property, ‘impetus’ or
+‘elasticity’, which is the continuous cause of subsequent
+motions. It is brought to rest by coming into contact with other
+objects.
+The role of ‘impetus’ in this account is particularly
+interesting. It is illustrated with reference to two examples:  a
+fruit falling from a tree;  a javelin thrown obliquely
+upwards.
+At time
+t
+0
+the fruit is stationary at place
+s
+0
+. Its weight is counterbalanced by its contact
+with its stalk. At
+t
+1
+, its stalk breaks and its
+weight causes it to move to point
+s
+1
+. At this time
+too there is produced in the fruit a dispositional
+‘impetus’. At
+t
+2
+, the impetus in the
+fruit causes a second motion, from
+s
+1
+to
+s
+2
+, and so on for all subsequent times. Note that
+the ‘weight’ of the fruit is the cause of its initial
+motion, but then ceases to be operative. The cause of all subsequent
+motion is the ‘impetus’ impressed into the fruit by the
+initial motion. It is this idea, that the subsequent motion of the
+fruit is the result, not of an external force, but of the internally
+impressed
+vega
+, which licenses us to describe the
+Vaiśeṣika account as an impetus theory.
+When the javelin is thrown, the initial volitional push imparts
+into the javelin an initial motion and an impetus. The upwards impetus
+counteracts the javelin’s weight and causes its upwards motion.
+When this impetus is exhausted by contact with the air, the
+javelin’s weight imparts a downwards impetus and the javelin
+falls. The horizontal motion of the javelin is caused by its having a
+horizontal impetus which again decreases as a result of contact with
+the air. The amount of impetus initially acquired by the javelin is
+proportional to the applied volitional push. Once again, its is the
+javelin’s having impetus, rather than the action of some
+external force, which accounts for its continued motion through the
+air.
+The Vaiśeṣikas extend this model to explain certain other
+kinds of motion.  The initial cause of the flowing of water is
+alleged to result from a force called ‘fluidity’ . The subsequent flowing is the result of
+the water’s acquired impetus.  Interestingly, the impetus of
+a body moving in a straight line was thought to be ontologically of
+the same type as the elasticity of a bent stick—a fact which
+reveals that impetus was thought of as a kind of internal force, not
+as inertia.  The Vaiśeṣikas mention various other kinds
+of motion: the movement of an iron needle towards a magnet, the upward
+motion of flames, the movement of air, and the initial motion of the
+atoms at the beginning of creation. Given the above model, there must
+be some ‘force’ which initially gives rise to each of
+these motions, yet none of the ‘forces’ so far isolated
+ will do. The
+Vaiśeṣikas therefore speak of a new force,
+‘
+adṛṣṭa
+’ , alleged to account for such motions.
+4. Selves: Human and Divine
+The eighth of the nine Vaiśeṣika types of substance is
+‘self’ , defined as the substratum of
+mental states such as believing, knowing, etc. , a distinct element in the
+ontology of the mental.) Selves are divided into two types—human
+ and divine .
+The Manual of Reason
+supplies
+arguments  for the existence of
+both types of self.
+4.1 A Causal Argument for God’s Existence
+A properly formulated Nyāya argument has three components:
+thesis, reason  and example
+. The thesis, again, has two
+components: the ‘locus’  or place of
+the inference, and a property  whose presence in
+the locus is to be inferred. Thus every Nyāya argument exhibits
+the same pattern:
+p
+has
+S
+, because it has
+H
+; e.g.,
+d
+.  has fire , because it has smoke ; e.g. the kitchen ”. See further §8). A
+sound argument must fulfil at least three criteria:  the reason
+property must be uncontroversially present in the locus;  the
+reason property and the inferred property must be appropriately
+related, roughly such that wherever the reason is present, so is the
+inferred property;  the example must be an uncontroversial place
+where both the reason property and the inferred property are
+present.
+With this in mind, let us consider
+The Manual of
+Reason
+’s argument for the existence of God:
+A dyad of earth etc. has a maker, because it is an effect; e.g. a pot
+.
+Here, the locus of the inference is a dyad, the smallest composite
+entity. The reason is “being an effect”
+, and the inferred property is “having a
+maker” .
+The Manual of
+Reason
+carefully defines what it means by a ‘maker’:
+a thing which is non-inferentially aware of the inherent or material
+cause of the thing to be made, has a desire to make it, and acts
+accordingly. In this sense, the potter, but not the potter’s
+wheel or the clay or any other causally relevant feature, is the maker
+of the pot, for it is the potter who sees the clay , desires to make a pot, and acts accordingly by using the
+wheel and stick.
+Comments:  Why does
+The Manual of Reason
+take dyads to be
+the locus of the inference? This is, in fact, a clever move.
+Obviously, we cannot take God to be the locus , for then the first criterion on a sound inference
+will not be met—the reason property, whatever it is, cannot be
+uncontroversially present in a locus whose very existence is
+controversial. We can’t take the locus to be “everything
+in the world”, for many such things are not effects  and so
+The Manual of Reason
+’s desired reason
+will again not be unequivocally present in the locus. Hence, we must
+pick some particular thing. We had better not choose a human artefact,
+for the inference, even if sound, would then establish nothing about
+God. From the class of non-artefacts, the choice of dyads is a good
+one here, for  they are the most basic things made out of the
+atoms, and hence out of which everything else is made, and  if
+The Manual of Reason
+can show that these have a maker, then
+it follows that the maker is aware of everything  above). Thus, God’s omniscience will be a
+corollary of the proof of his existence.
+ The argument takes the picture of causation used in the
+“potter-pot” example and extends it to cover all natural
+phenomena. God’s function is to make things out of the given and
+uncreated ingredients , which are the
+products’ material cause. Matilal accordingly describes the
+Nyāya as having a “potter model” of God, in contrast
+with a “spider model”, in which God spins the world out of
+his own essence, or a “magician” model, in which the world
+is an illusion conjured up by God. The argument, however, rests upon
+an anthropomorphic and agentive view of causation. The Buddhist
+Dharmakīrti ridiculed the argument by likening the pot to an
+anti-hill : should we say that this
+admittedly complex and intricate construction is the product of
+intelligent agents? And even if we do, why should not the world, like
+an ant-hill be a product of collective agency, rather than produced by
+a single agent?
+ The argument might be thought of as an argument based on
+induction, induction from the class of artefacts to the class of
+natural products. What licenses the induction from things seen to have
+a maker to things not so seen? Dharmakīrti  says that we are licensed to infer that an object has a
+maker only if we have seen other objects of the same type being made.
+Thus, we can infer that the Pyramids had a maker, not because we can
+see that maker, but because the Pyramids belong to a type 
+other instances of which we have seen made. The Naiyāyika makes a
+bolder inductive claim, that two object belong to the same
+‘type’, in this sense, if they are both effects.
+4.2 An Argument for the Existence of the Human Self
+Vaiśeṣika defines the human self as the substratum of such
+psychological qualities as believing, etc., as well as of happiness
+and other emotions, which God does not have. There is an implicit
+appeal, here too, to the “potter” model of causation: just
+as, in the sentence “The potter makes the pot”, the
+property “….making the pot” resides in the potter,
+so too in “I believe that
+p
+”, the property
+“….believes that
+p
+” resides in me. Given
+that the self is defined as that substance, whichever it is, in which
+a person’s psychological qualities reside, the question is
+whether we can identify this substance as a physical one, for example,
+the person’s body or their senses, or whether we must postulate
+some new type of substance. Vaiśeṣika’s argument for
+the existence of the self as a new substance is by elimination of two
+rival candidates.
+ The substratum of beliefs, etc. is the person’s body.
+The Manual of Reason
+makes the case for this as follows: If I
+say, “I am cold”, “I am running”, it is my
+body to which the predicate applies. Therefore, when I say “I
+believe that
+p
+”, the subject likewise is my body.
+The Manual
+’s reply is that if this were true, then
+there would be the difficulty that with the destruction of a hand, a
+foot, etc., there will be the destruction of the body and it will
+follow that there will also be the destruction of the self.
+Clearly, I can lose part of my body without ceasing to believe and
+know things. But losing part of my body does not entail losing my
+body, as a whole. So this argument fails. A better argument is found
+in the
+Nyāya-sūtra
+: the very phrase “my
+body” shows that I am not identical with my body. But this
+doesn’t work either, for I can also say “my soul”!
+There is no clear argument against physicalism here.
+ The substratum of beliefs etc. is the person’s
+sense-faculties [recall that every physical substance was divided into
+three: pertaining to body, sense-faculty, and  object].
+This rather strange claim might be taken to include the view of the
+Buddhists, that a person is reducible to a stream of momentary mental
+events, including sense-data etc.
+The Manual of
+Reason
+’s argument against such a view  is a strong
+one:
+Were this the case, there would be no re-identifying awareness
+, e.g. “I who saw that pot am now
+touching it”, for there cannot be any recognition by one of what
+is apprehended by another.
+The idea here is that the possibility of recognitive experience
+presupposes the existence of a unitary enduring self. There are really
+two arguments compressed here. One is this: I cannot
+remember
+an object unless I have seen it earlier—I cannot remember what
+you have seen . The other argument is more
+intricate. The Abhidharma Buddhist claims that a person is just an
+aggregate of experiences, some visual, some tactile, etc. The problem
+raised for such an account by the Naiyāyika is that it is
+possible to make trans-modality judgements, in which the deliverances
+of one sense-faculty are compared with another. Suppose that
+V
+ is a visual experience of an object
+o
+1
+, and
+T
+ is a
+tactile experience of an object
+o
+2
+. It is possible
+to judge “
+o
+1
+=
+o
+2
+”, but this judgement does not belong to
+the sphere of any one sense-faculty. Hence, it must be located in some
+other substance. The self is here conceived of as that which collates,
+organises and compares the deliverances of the individual senses. See
+Ganeri 2012, chapters 11, 15, 16 for an expanded discussion.
+This is a convenient place at which to introduce the last of the nine
+substances, the ‘mind’ . It is defined by
+The Manual of Reason
+ as a sixth sense-faculty, one by
+which a person ‘perceives’ their inner mental objects
+ In other words, it is a faculty of
+introspection. Naturally, we need an argument why this faculty cannot
+be identified as belonging to the self, and the usual Nyāya claim
+is that the self is the agent of cognising, while the mind is an
+instrument for cognising, just as we must distinguish between the
+axe-man, who is the agent chopping the tree, and the axe, which is the
+instrument for chopping. The Nyāya also claim that the mind has
+another function, which is to ‘switch’ between the
+different sense-faculties, it being assumed that, while we are being
+subjected to sense-impressions from different faculties
+simultaneously, we only attend to one at a time.
+The Manual of Reason
+ says that eight of the
+Vaiśeṣika qualities reside only in the self, and in no
+other substance. They are cognition, memory, pleasure or happiness
+, pain or unhappiness , desire
+, aversion , merit
+ and demerit  . The
+first two we will discuss later . As regards
+happiness and unhappiness, Matilal , summarizes the
+Vaiśeṣika view when he says that “the essential
+characteristic of pleasure or happiness consists in its being
+experienced as favourable to us or being in accord with us, i.e. with
+our body or mind or our very existential situation
+”, which makes it distinct from knowing
+or perceiving or apprehending something, and that it is an
+“inner disposition on account of which the external world
+becomes agreeable or desirable”. Desire is the state of craving
+for something. Merit is that which is produces by meritorious action
+. See further Ganeri 2012, chapters 13, 14.
+5. Philosophical Psychology
+5.1 Overview of Philosophical Psychology
+Study of the nature, content and causes of cognition  lies at the very centre of the
+Nyāya philosophical method. In epistemology, the question asked
+is: how do we distinguish between true and false cognitions, and under
+what conditions does a true cognition arise? In logical theory, the
+issue is: when does one cognition ‘follow’ from another,
+in some suitably articulated sense. In philosophy of language, the
+assumption is that sentence structure mirrors cognitive structure, and
+hence that an inquiry into sentence meaning proceeds via an analysis
+of the cognitions sentences ‘express’. The importance of
+this topic is reflected by
+The Manual of Reason
+, for although
+‘cognition’ is technically just one of twenty-four types
+of quality in the Vaiśeṣika schema, its analysis accounts
+for nearly half of the book .
+The term ‘cognition’ is used by the Naiyāyikas to
+refer to any intentional 
+mental state, including states of perceiving, inferring, doubting,
+guessing, remembering, etc., but excluding desiring, hoping,
+suffering, etc. . Because we say that the
+subject has such states, they are thought to be
+‘qualities’ 
+of the soul.
+The Manual of Reason
+states that a cognition is
+the “ground for all linguistic practice” ,
+reflecting the Nyāya conception of language as primarily an
+instrument for transmitting true thoughts from speaker to hearer.
+From the point of view of epistemology, the most important division,
+within the class of cognitions, is between those which are true and
+the rest. However, the standard Nyāya classification of the
+species of cognition, repeated by
+The Manual of Reason
+,
+begins with another division, between memory cognitions
+ and the remainder . The full classification is as follows:
+cognition
+nonrecollective
+
+memory
+
+true
+
+perceptual
+inferential
+comparison-based
+testimony-based
+not true
+
+false 
+doubt 
+tarka
+‘true’
+
+‘not true’
+
+Nyāya epistemology is in effect a theory of the true
+nonrecollective cognitions, and their division into four types on the
+basis of the different accredited epistemic means
+ by which they are produced. . It is clear that, no matter how generally reliable are
+our epistemic methods, it will always be possible for misfires to
+issue occasionally in false cognitions .
+The Manual of
+Reason
+’s example  is of the false pseudo-perceptual
+judgement “This is a piece of silver” on seeing an
+oyster-shell. I will discuss the epistemology of perception, inference
+and testimony in §§ 7, 8 and 9 respectively. Here, I will
+examine in more detail three types of cognition which, though very
+important within the Nyāya framework, are subsidiary to its
+epistemology. They are: memory, ‘doubt’ and
+tarka
+. 
+5.2 Memory
+Memory is considered in the western tradition to be an important means
+by which an individual can justify her beliefs about the past. It is
+striking then to note that the Nyāya at the outset separate
+memory states from knowledge-yielding beliefs and deny to them the
+status of knowledge-hood.
+The Manual of Reason
+has the
+following to say about memory:
+A memory state is one which results solely from a ‘mental
+disposition’  .
+A ‘mental disposition’ is a quality of the soul which is
+caused by a nonrecollective cognition and causes a memory cognition
+.
+Memories are either ‘true’ or ‘false’, as the
+originating cognition is true or false .
+The general theory is that an initial cognition, e.g. a perceptual
+experience of an object, generates a dispositional mental state, which
+has the capacity, when certain other causal factors are present, to
+trigger an active memory of that object.  The resultant memory state has the same content as the
+originating perceptual experience, and can be said derivatively to be
+‘true’ or ‘false’, depending on whether the
+original perception was veridical or not. Memory, on this account is
+represented as an entirely infallible faculty: there is no mention of
+the possibility of what is called “false memory”, i.e.
+having memories without any originating experience, or of
+“faulty memory”, in which the content of the memory does
+not exactly match that of the originating experience.
+Given this account, in which memory is seen merely as reproducing a
+past knowing experience, there is perhaps a sense in which the memory
+does not itself count as knowledge, any more than an exact
+reproduction of a Picasso counts as a Picasso. The Naiyāyikas
+state that memories lack ‘independence’. The idea,
+perhaps, is this. In general we establish the veracity of an
+experience by examining the way in which it was caused . In the case of a memory, however, we must go via
+the originating experience. Memory is conceived of as a mere surrogate
+for the original experience, and its veracity is
+‘dependent’ on that of the original. We might think,
+however, that memory in fact does more than merely reproduce the
+original experience. It may represent the experienced event as
+happening in the past, and thus have a different content.
+5.3 Doubt 
+The concept of doubt has an important theoretical role in Nyāya,
+for a state of doubt is claimed to be a necessary precondition for any
+philosophical enquiry. Doubt is one of the sixteen topics listed under
+Nyāya-sūtra
+1.1.1, which determine the content of
+the entire text. In particular, a doubt is the first step in a
+properly formulated inference: is there a fire on the
+mountain?—Yes, because there is smoke there.
+The Manual of
+Reason
+gives a very precise definition of a doubt : a
+cognition of two incompatible qualifiers in the same qualificand, for
+example the cognition “Is this  a person or a tree-stump?” Schematically, then, a doubt
+is a cognition whose content is of the form “
+x
+is
+F
+or not-
+F
+?”.
+Two points are worth noting.  Although doubts are classified as
+non-true  cognitions, they are not false. A
+false cognition is one whose content is “
+x
+is
+F
+” when in fact
+x
+is not
+F
+. 
+Doubts are distinguished from other cognitions by virtue of having a
+special type of content, rather than by being propositional attitudes
+of a special kind. The Nyāya do not here say that we can take one
+of a series of attitudes towards the same proposition, believing,
+disbelieving, doubting, etc. Yet if the only thing which distinguishes
+a doubt is its having a content of the form specified in TS 71, then
+what differentiates the doubt that
+x
+is
+F
+from the
+belief that
+x
+is both
+F
+and not-
+F
+?
+Vardhamāna replies by drawing a distinction between actually
+having a contradictory belief and merely believing that one has a
+contradictory belief. The former is supposedly impossible, the
+supposedly contradictory belief that
+x
+is both
+F
+and
+not-
+F
+is really a belief that I have a belief whose
+qualificand is
+x
+and whose qualifiers are
+F
+and
+not-
+F
+. Since there are no genuine contradictory beliefs,
+there are no beliefs with the same content as doubts.
+5.4
+Tarka “
+Suppositional Thinking”
+The term ‘
+tarka’
+is often used loosely in the
+sense of hypothetical or reductio-ad-absurdum reasoning, but
+The
+Manual of Reason
+gives it a much more precise and technical
+sense:
+Tarka
+is the ‘ascription’ 
+of the ‘pervader’  by the
+ascription of the ‘pervaded’ . For
+example, ‘if there is no fire, then there is no smoke’.
+The terms in this definition require explanation. The technical sense
+of ‘ascription’  is
+‘counterfactual or suppositional cognition’
+, defined as a cognition whose
+qualifier is an property the opposite of which is known to reside in
+the qualificand. In other words, it is a counterfactual assumption.
+‘Pervader’ and ‘pervaded’ are notions taken
+from the Nyāya theory of inference. When we say that wherever
+there is smoke, there is fire, this can be re-expressed as that fire
+pervades smoke, i.e. that the property of being a
+smoke-possessing-thing has a narrower extension than the property of
+being a fire-possessing-thing. So here, fire is the pervader and smoke
+is the pervaded. Thus,
+tarka
+consists in a cognition of
+smoke’s absence given the counterfactual assumption that fire is
+absent. It is the cognition of a conditional “if
+p
+then
+q
+”, or “were
+p
+to be true then
+q
+would be true”, assuming that
+‘
+p
+’ is false.
+One main function of
+tarka
+is said to be the elimination of
+doubt. Suppose one has the doubt “Is
+x
+F
+?”. One might then judge “if
+x
+is not
+F
+then
+x
+is not
+G
+”, and if one also
+knows that
+x
+is
+G
+, it will follow that
+x
+is
+F
+. The Naiyāyikas recognise this function but deny
+nevertheless that
+tarka
+is a source of knowledge
+. Their reason, it seems, is that there
+is a distinction between citing positive empirical evidence for a
+thesis and merely eliminating the contrary possibility by a priori
+methods. This is reflected, perhaps, in the fact that no example is
+cited in arguments based on
+tarka
+to buttress the inference.
+The Manual of Reason
+, it seems, goes even further and denies
+that the counterfactual conditional is a true cognition, which
+implies, since they are not false either, that counterfactual
+conditionals do not have a truth-value.
+Udayana claims that
+tarka
+is of five types, namely
+‘self-dependence’ ,
+‘mutual dependence’ ,
+‘circle’ , ‘infinite
+regress’ , and ‘having an
+undesirable consequence’ or reductio-ad-absurdum
+. These are basically
+self-explanatory – the fifth,
+‘
+prasaṅga
+’ is the one used to great effect
+by Nāgārjuna and other Mādhyamika Buddhists. Other
+authors give slightly different lists .
+6. Causation and the Causal Theory of Knowledge
+6.1 Overview of Causation
+The study of causation is an important part of Indian philosophical
+thought. One reason for this is the early interest in cosmological
+speculation: “We should remember that philosophic activity in
+India arose out of the cosmogonic speculations of the Vedas and the
+Upaniṣads. The all-important business of philosophy was to
+attempt to discover some simple, unitary cause for the origin of this
+complex universe” . Another reason is that
+Indian linguistics  is based on an
+underlying causal model, in which the verb in a sentence designates an
+event, for the production of which each such object as is designated
+by a noun has a particular causal role. This same model informed and
+influenced Indian epistemology, and led to the development of the
+theory of ‘
+pramāṇas
+’, the causal means
+or processes leading to an epistemically accredited awareness-event
+. In the Nyāya tradition, four such
+pramāṇas
+are recognised: perception
+, inference ,
+‘analogical identification’ or ‘comparison’
+ and testimony . The
+accounts given of each of these employ an extremely causalistic idiom,
+typical questions being ‘what causes a perceptual
+experience?’, ‘what are the distinguishing causal factors
+of true and false perceptual experiences?’, ‘under what
+conditions does knowledge of the premises of an argument cause
+knowledge of the conclusion?’, etc.
+The choice of examples undoubtedly influences one’s causal
+theory. The Naiyāyikas almost invariably illustrate their
+discussions with one of the following three examples: 
+The
+potter-pot example
+. The effect is the finished pot. Some of its
+causes are the pot-halves ,
+the potter, his wheel and stick, the contact between each of the
+pot-halves, and between them and the stick, etc. 
+The
+thread-cloth example
+. Here the effect is the piece of cloth.
+Among its causes are the threads from which it is woven, the weaver,
+the shuttle, the loom, various contacts, etc. 
+The axe-tree
+example
+. The effect, i.e. the felling of the tree, is caused by
+the axe, its contact with the tree, the axeman, etc. Some of the
+questions we would like to ask here are these. Can all instances of
+causation be fitted into the general pattern illustrated by these
+examples ? Do the
+Naiyāyikas have an adequate account of causation even for these
+examples ? Can both
+objects and events be causes? Are causal relations singular or based
+on repeatable regularities? Attempts to answer such questions as these
+led to increasingly sophisticated accounts of causation as the
+Nyāya school evolved.
+6.2 The Three Types of Cause
+The Nyāya-Vaiśeṣikas traditionally held that, within
+the total collection  of causal factors
+leading to an event, there are three distinguishable types of cause,
+namely ‘substrate’ or ‘inherence’ causes
+, ‘non-substrate’ or
+‘non-inherence’ causes
+, and
+‘instrumental’ causes
+. This classification is repeated
+by
+The Manual of Reason
+. A substrate cause is a
+substance in which the effect inheres. The substrate cause of a pot
+would be the pot-halves; of a cloth, the threads. This is because the
+Nyāya say that a whole inheres in its parts, and, so, if the
+effect  is a whole, its substrate causes are the parts
+in which it inheres. If the effect is an object’s coming to have
+a new property , the substrate
+cause is the object . Note that, in spite of a certain
+similarity, the notion of a substrate cause is not the same as
+Aristotle’s “material” cause, for  the parts of
+an object are not necessarily identical with the material from which
+it is composed, and  even an immaterial substance can be a
+substrate cause, for example the soul, which is the substrate cause of
+epistemic events.
+All other causal factors are either ‘non-substrate’ causes
+or ‘instrumental’ causes. A non-substrate cause is one
+which inheres in the substrate cause. Thus, though not being the
+substrate, it is closely connected with it. The conjunction of threads
+is said to be a non-substrate cause of a piece of cloth. Another
+example is often cited. The non-substrate cause of the colour of a
+piece of cloth is the colour of the threads .
+Any other causal factor is called an instrumental cause, for example,
+the weaver’s shuttle or the weaver herself. Why did the
+Naiyāyikas distinguish between non-substrate causes and the
+remainder? Perhaps it was an attempt to differentiate between those
+causes which must continue to exist for the effect to exist, and those
+which need not. If the threads were to lose their colour, then the
+cloth would lose its, and if the threads were to become disjoint, the
+cloth would cease to exist altogether. If, however, the weaver dies,
+having already woven the cloth, or if the shuttle is subsequently
+destroyed, it will not affect the continued existence of the
+effect.
+It does not follow from these definitions that anything which inheres
+in the substrate is a non-substrate cause, or that anything which does
+not is an instrumental cause. In other words, we still need to define
+“being a cause”. First, however, two more types of causal
+factor are distinguished by the Nyāya. These are the
+‘special’ instrumental cause  and
+the ‘operating condition’  We
+often speak of
+the
+cause of an effect, and in doing so pick
+out one factor from the total collection of causal factors as being
+particularly salient or important in bringing about the effect.
+Intuitively, the idea is that, even if we have the substrate cause
+, the non-substrate cause , and even some of the instrumental causes ,
+we will not get the effect  unless the potter acts or
+‘operates’ to bring it about. In a sense, then, it is the
+potter’s actually using his stick which is
+the
+cause of
+the pot. The Naiyāyikas try to capture this idea by saying that
+one of the instrumental causes is the ‘special’
+ cause of the effect, and they
+call it the ‘
+karaṇa
+’. This notion is
+particularly important to the Nyāya epistemology .
+What constitutes the ‘special’ nature of this cause? The
+Navya-nyāya  answer is as follows. They introduce
+first the notion of an ‘operative condition’
+, defined as that cause which immediately
+precedes the effect. For example, the operative condition for a pot is
+the conjunction of the pot-halves; for the felling of a tree, it is
+the final contact between axe and tree before the tree falls. The
+‘special’ cause is defined as that factor which
+‘brings about’ this operative condition. In other words,
+it is the factor whose operation directly brings about the effect. In
+the examples, it would be the axe or the potter’s stick. These
+objects are, for the Nyāya, the true instruments by means of
+which the effect is produced.
+6.3 What is a Cause?
+The Naiyāyikas build up in this way a model of causation, in
+which different causal factors have different types of causal role.
+The model reflects  the Indian grammatical
+analysis of causal statements, such as “The potter throws a pot
+with her stick”, “The lumberjack fells a tree with her
+axe”, in which one distinguishes, apart from the verb
+designating the event, an agent , object
+, instrument , and so on. We
+do not yet know, however, how to distinguish between causes and
+non-causes.
+The Manual of Reason
+ provides the
+Navya-Nyāya answer. Given two entities,
+c
+and
+e
+,
+c
+is a causal factor for
+e
+iff
+c
+exists before
+e
+,
+c
+exists ‘regularly’
+ with
+e
+, and
+c
+is ‘relevant’
+ to
+e
+.
+The first clause is to prevent self-causation. The import of the
+second condition is that entities similar to
+c
+must always
+exist with entities similar to
+e
+. There must be an invariable
+or constant conjunction between
+c
+-type entities and
+e
+-type entities. This rules out objects which just happen to
+be there, such as, to give the Naiyāyikas’ example, a
+donkey happening to wander past the pottery just as the potter goes to
+work. This feature of the account, the insistence that a causal
+relation instantiates a regularity, resembles a Humean account of
+causation. The Naiyāyika, however, recognised the possibility of
+‘accidental’, non-causal regularities, such as day always
+preceding night, or , the colour of the thread always preceding the cloth.
+Although the occurrence of a cloth is invariably preceded, not just by
+threads, but by the presence of thread-colour as well, we would not
+want to say that thread-colour is a cause of cloth. The third clause
+is their attempt to eliminate such accidental regularities. The same
+clause is supposed to stop the cause of a cause  from being a cause. Its meaning, however, is
+not quite clear. Literally, it states that a cause must be ‘not
+established otherwise’. Kalidas Bhattacharya says that “an
+invariable antecedent is irrelevant if knowledge of it is not required
+for any anticipative knowledge of the origination of the effect”
+. Matilal says that an antecedent is irrelevant
+if “it is possible to find a reasonable explanation of its
+appearance” .
+The Manual of Reason
+states
+that an antecedent is irrelevant if its antecedence is only
+established along with some other entity. We know that thread-colour
+precedes cloth only because we know that it occurs with the thread
+; hence the thread-colour is
+irrelevant in this sense. This highlights an asymmetry between the two
+regularities, the threadcolour-cloth regularity and the thread-cloth
+regularity. For while we can establish the latter directly by
+observing correlations between thread and cloth, we establish the
+former by observing the correlation between threadcolour and thread.
+Thus the former supposedly depends on the latter but not vice versa.
+It is not clear, however, that the dependence does not run the other
+way too. In any case, in using this criterion to block transitivity,
+the Naiyāyikas seem to seeking a definition not of causality per
+se , but rather an
+epistemic notion of ‘causal explanation’ or ‘causal
+salience’.
+6.4 Causation and Knowledge
+Cognitions that are not memories are classified under two headings:
+true and false. If we can find factors invariably preceding
+true
+cognitions, then we will have the beginnings of a causal
+theory of knowledge. We will be able to say that a cognition is a
+knowledge-episode iff it is  true and  preceded by a causal
+factor which invariably precedes true cognitions . The Nyāya  claim to find four, and
+only four, invariable correlations: perception, inference, comparison,
+and testimony. To each they apply the model of causation outlined
+above. In particular, they isolate, in each case, a
+‘special’ instrumental cause , to
+which they give the name ‘
+pramāṇa
+’. In
+the case of perception, for example, it is the senses. Note that an
+invariable correlation between two entities, in the sense defined
+above, does not entail that whenever the first is present, so is the
+second—the potter is invariably connected with a pot, but only
+causes a pot when he is actually ‘operating’. Similarly, a
+pramāṇa
+, e.g. the eyes, only causes a true
+cognition when it is actually operating. In other words, the
+pramāṇa
+is a necessary but not a sufficient cause
+for true cognitions. To get a sufficient cause, the Nyāya  says:
+The causal condition that is ‘special’ to true cognition
+is called a ‘
+guṇa
+’ [an epistemic
+excellence]; the causal condition that is ‘special’ to
+false cognition is called ‘
+doṣa
+’ [an
+epistemic defect]. In the perceptual case, the
+guṇa
+[of
+a true cognition ‘
+x
+is
+F
+’] is the
+sensory connection with an object [
+x
+] possessing a property
+[
+F
+], etc.
+This is, in effect, the operative condition for true perceptual
+cognitions. Thus, the occurrence of all the usual factors 
+together with an epistemic excellence  is a
+necessary and sufficient causal condition for the occurrence of a true
+cognition .
+7. Perception, Concepts and Sense-Object Relations
+Noticing something coiled up in the corner of the room, I perceive it
+to be a piece of rope. Looking out of the window, I see that the sky
+is blue and see also, perhaps, the blueness of the sky. I see too that
+the air is cold, and that there is nobody on the street. What do all
+these experiences have in common, in virtue of which they are all acts
+of perception?
+The Manual of Reason
+ gives the
+classical Nyāya answer:
+Principle 1
+: In each case of perceptual experience,
+the experience has as its special instrumental cause a
+‘connection’  between the
+object perceived and the perceiver’s sense-faculty.
+All seeings are the product of a sensory connection  with the thing seen. This basic idea must be embellished in
+two ways before it is can serve as a proper a theory of perception:
+ some account must be given of the fact that, in all the cases
+cited above, the content of perception is semantically structured
+, for otherwise
+perceptual experiences would not be capable of being true, and hence
+fail to qualify as knowledge-episodes;  an account must be given
+of the type of ‘connection’ involved here. Only then can
+we evaluate the merits of the Nyāya theory.
+7.1 ‘Qualificative Perception’ and the Role of Concepts
+A structured perception, of an object a as having a certain property
+f
+, is called by the Naiyāyikas ‘qualificative’
+, for it a perception of an
+object, the ‘qualificand’  as
+having a certain feature or ‘qualifier’
+ . It
+is alleged by the Naiyāyikas that any piece of perceptual
+knowledge
+must be of this form, and further that most cases
+in which we claim just to be seeing an object  are really cases of seeing something as a car. In a
+‘qualificative’ perception, it is the qualificand which is
+in sensory connection with the perceiver. How then does the qualifier
+enter the picture? The Nyāya claim that:
+Principle 2
+: In every case of perception, the
+qualifier is a previously perceived entity  which is recalled by the perceiver and
+‘superimposed’ upon the qualificand.
+The intuitive idea is that the qualifying feature is a concept,
+empirically acquired by the perceiver, and now used to categorise the
+object perceived. To see that the passing animal is a horse, one must
+first possess the concept
+horse
+, by means of previous
+acquaintance with the type. . The Nyāya thus use
+their theory of memory  as a theory of concept-possession.
+Principle 2 has a number of consequences:
+If every case of seeing an object
+a
+as
+f
+is
+preceded by a prior perception of
+f
+, and if that prior
+perception were itself of
+f
+as qualified by some qualifier
+g
+, we would get an infinite regress. The Nyāya  therefore state that, in addition to qualificative perceptions,
+there are also ‘non-qualificative’  perceptual experiences. In such
+experiences, on sees both the object and its qualifier, but not as
+being qualified by the qualifier.
+To illustrate the general theory, suppose I perceive for the first
+time a vase having a particular shade of blue which I have never
+before seen. The theory states that, prior to seeing the vase as being
+qualified by that shade, I first see the vase, together with  the shade, and then, recalling that shade, impose it
+upon the vase.
+Perceptual illusions, hallucinations, etc., are all explained as
+cases in which a wrong feature is recalled from memory . Suppose I misperceive the coiled object in the corner as being
+a snake. The account given by the Nyāya is that I recall and
+superimpose the feature snakehood, on the basis presumably of its
+close similarity with the true feature ropehood. Similarly, if I
+hallucinate a dagger, the account entails that I am superimposing the
+memory of some previously encountered dagger upon the region of space
+in front of me . This is called the ‘mislocation’
+ theory of perceptual error. Note
+that, if all error is a product of qualifier-mislocation, then no
+error is possible with respect to the qualificand with which one is in
+sensory connection. Note too that the Nyāya make no appeal to
+‘images’, ‘ideas’ or any other subjective
+content to explain illusion—it is an externalist account of
+error. This shows that the so-called argument from illusion, from the
+phenomenal indistinguishability of veridical and non-veridical
+perceptual experiences to their having a shared subjective content, is
+false. It is not clear, however, that one can always find a suitable
+qualificand  or a suitable qualifier 
+This theory allows the Nyāya to say that locutions like
+“I see  that the air is cold” or “I see
+that the mango is sweet”, in which the qualifier, though
+perceptible is not a visible property, are genuine cases of
+perception. They classify them as a type of
+‘extra-ordinary’ perception, called
+jñāna-lakṣaṇā-pratyāsatti
+.
+
+The Nyāya state that experience amounts to a
+knowledge-episode when and only when it is true, i.e. when the
+qualifier actually qualifies the qualificand.
+The Manual of
+Reason
+ says that the
+guṇa
+or special
+causal factor for perceptual knowledge when the qualifier imposed by
+the perceiver onto the sensorily connected qualificand is actually
+present in the qualificand. There may, however, be scope for
+Gettier-style counter-examples to this definition.
+7.2 Types of Sense-Object Relation
+The Manual of Reason
+ reports the standard Nyāya
+view, which is due to Uddyotakara, that there are exactly six types of
+sense-object relation which ground perceptual experiences:
+Contact or conjunction . Ordinary
+perceptions, e.g. of a pot. If by ‘contact’ we understand
+some sort of causal relation, then the Nyāya can be said to have
+a causal theory of perception. However, they may mean that the eye is
+in contact with the object in some more literal sense.
+Inherence-in-the-conjoined
+. We noted above that, in
+‘non-qualificative’ perception, one sees the object and
+its feature together. The relation between the feature and the
+perceiver is an indirect one—the feature inheres in the object,
+with which the perceiver is in contact.
+Inherence-in-the-inherent-in-the-conjoined
+. If the feature in
+ is a quality , e.g. a particular shade of
+blue, then inhering in it is a universal, blueness, which can itself
+apparently be perceived.
+Inherence . The
+Nyāya-Vaiśeṣikas have a rather strange doctrine, that
+each sense-faculty is made out of the type of substance with which it
+is particularly associated. The auditory faculty is thus made out of
+ākāśa
+, and, as sounds inhere in
+ākāśa
+, the relation between the hearer and the
+sound is inherence.
+Inherence-in-the-inherent . By
+this indirect relation, the hearer is related to properties such as
+sound-hood inhering in sound.
+Qualifier-qualificand relation
+.
+This is an important one. The Nyāya believe that absences are
+‘real’ objects, e.g. the absence of an elephant in the
+room now, and that they can be perceived. Absences are said to qualify
+their substrata, and are perceived indirectly, by the perceiver seeing
+the substratum. The Buddhist Dharmakīrti argued that this is
+really an inference from non-apprehension 
+running thus: “I perceive the walls of the room; if there were an
+elephant, I would not see it, and my perceptual faculties are working
+normally; therefore, there is no elephant”.
+7.3 Gaṅgeśa’s Criticisms and New Definition
+Gaṅgeśa criticises Principle 1 on three grounds:  it
+entails that every awareness is perceptual since every awareness is
+produced by the instrumentality of the ‘inner’ sense
+faculty or
+manas
+;  it fails to include divine perception,
+which involves no sensory connection; and  there is no one type of
+sensory connection, nor anything obviously in common to the ad hoc
+list of six types. Gaṅgeśa therefore offers a new
+definition:
+Principle 3
+: A perceptual experience is a cognition
+which has no other non-mnemonic cognition as its ‘special’
+instrumental cause .
+Two objections to this definition are countered. Objection 1: Since
+every qualificative cognition is produced by a prior awareness of the
+qualifier, the definition under-extends. Reply: No. The awareness of
+the qualifier is merely an auxiliary causal factor, the
+‘special’ instrumental cause is a sense-object contact.
+Objection 2: Since recognition, which is a type of perception, does
+have the prior awareness of the qualifier as its ‘special’
+instrumental cause, the definition under-extends. Reply: No. The
+‘special’ causal factor is the memory of the qualifier
+triggered by the dispositional trace produced by the prior awareness,
+not the prior awareness itself.
+Gaṅgeśa’s definition has the virtue of capturing the
+sense in which perceptual experience is more ‘immediate’
+than other types of experience, and is also applicable both to human
+and to divine perception. Restricted to human perception, it turns
+into the previous definition .
+8. Logical Theory and Gaṅgeśa’s Analysis of Inferential Warrant 
+8.1 Overview of Logical Theory
+Gaṅgeśa’s
+Tattvacintāmaṇi
+is
+divided into four parts, one for each of the four knowledge-sources or
+pramāṇa
+s recognised by the Nyāya school. The
+post-Gaṅgeśa scholars focused more and more exclusively on
+the second part, concerning inference, and wrote increasingly detailed
+commentaries on a comparatively small portion of the book, namely the
+part where Gaṅgeśa examines the relation between
+inferential sign and property-to-be-inferred, which is called the
+vyāpti
+, ‘pervasion’ or
+‘inference-warranting’ relation . Even today, in a traditional Indian education, study
+of these sub-commentaries on various subsections of the
+vyāpti
+section of Gaṅgeśa forms an essential
+part of the curriculum.
+The general structure of a properly formulated Nyāya inference
+has three components: thesis, reason  and example
+. The thesis, again, has two
+components: the ‘locus’  or place of
+the inference, and a property  whose presence in
+the locus is to be inferred. Thus every Nyāya argument exhibits
+the same pattern:
+p
+has
+S
+, because it has
+H
+; e.g.
+d
+. For example, “The mountain  has fire , because it has smoke ; e.g. the kitchen ”. A sound argument must
+fulfil at least three criteria:  the reason property must be
+uncontroversially present in the locus;  the reason property and
+the inferred property must be appropriately related, roughly such that
+wherever the reason is present, so is the inferred property;  the
+example must be an uncontroversial place where both the reason
+property and the inferred property are present.
+Certain topics concerning this account are addressed in
+The Manual
+of Reason
+and other Navya-Nyāya texts. Among them are: the
+conditions under which inference can take place, and the conditions
+under which the result is a knowledge-episode ; the correct
+account of the inference-warranting relation, between the inferential
+sign and the property-to-be-inferred, called the
+‘pervasion’ or ‘
+vyāpti
+’ relation
+; the distinction between inference and demonstration
+ ; the three-fold classification of inference types, those which are
+‘universally positive’ , those
+which are ‘universally negative’
+, and those which are combined positive
+and negative  ; the types of
+inferential fallacy  .
+I will discuss mainly the definition of the ‘pervasion’
+relation. First, however, a brief note on how the causal model of
+knowledge is applied to inference. The ‘special’
+instrumental cause  of an inferential cognition
+is said to be the inferrer’s knowledge of the relevant pervasion
+relation. The ‘operative condition’
+ is said to be an awareness that the locus
+of inference  possesses such an inferential sign
+ as is pervaded by the property inferred .
+This is, in effect, an awareness which combines the two premises of
+the argument together immediately prior to the conclusion being
+derived, and is called the ‘
+parāmarśa
+’
+or ‘consideration’. The ‘
+guṇa
+’
+or ‘causal factor responsible for the truth’ of the
+inferential cognition is the condition that this
+‘consideration’ be true, i.e. that the locus does in fact
+possess such a sign as is pervaded by the inferred property. Another
+auxiliary causal factor is that the inferrer must either not yet
+already know the conclusion or else must have a particular desire to
+infer . This condition is known as
+‘
+pakṣaṭā
+’, and should not to be
+confused with ‘
+pakṣadharmatā
+’, which
+is the name of condition  above.
+8.2 Definitions of the Pervasion  Relation
+Vyāpti
+or pervasion, is that relation between the
+inferential sign  and the inferred property
+, which legitimises the inference. It would
+typically be expressed by a sentence such as “wherever there is
+smoke there is fire”, or “whatever exists is
+transitory”. Knowledge of this relation, according to the
+Nyāya, is the instrumental cause in the inferential
+process—it is that relation knowledge of which, when combined
+with observation of the inferential sign, will permit us to make a
+sound or knowledge-yielding inference. Gaṅgeśa therefore
+attaches great importance to the precise definition of this relation.
+He notes as many as twenty-one definitions all of which he rejects for
+some reason or other, and then he goes on to give seven further
+formulations, each of which he considers acceptable. Of the
+definitions he rejects, the first five came to be known as the
+‘
+vyāpti-pañcaka
+’, and inspired a huge
+literature both among the Sanskrit commentators and their modern
+interpreters. These definitions are traceable to the earlier Buddhist
+and Nyāya literature. Two more rejected definitions, known as the
+‘Lion and Tiger’ definitions, are apparently due to
+Gaṅgeśa’s Navya-Nyāya predecessors . The definition Gaṅgeśa finally accepts is called
+his ‘
+siddhānta-lakṣaṇa
+’.
+8.3 The ‘No Counter-Example’ Definition
+The five definitions which make up Gaṅgeśa’s
+‘
+vyāpti-pañcaka
+’ are all varieties of
+what we might dub the ‘no counter-example’ definition of
+the pervasion relation. This states that the inferred property
+S
+pervades the reason property
+H
+just in case there
+is no place/entity where
+H
+is located but
+S
+is
+absent. Formally:
+V
+1
+Pervades  iff
+    ¬.
+where
+S
+′ is used to denote the complement of
+S
+. This definition is traceable both to the early Nyāya
+notion of a ‘deviating’ pseudo-reason ,
+and to Diṅnāga’s ‘triple-condition’
+theory of the inferential sign, his third condition being that H must
+not be located in any “disagreeing case” , i.e. a place where
+S
+is absent. In either case, the intuition is that a relation expressed
+by “where there is smoke there is fire” obtains just in
+case there is no place where fire is absent but smoke is present, i.e.
+no counter-example. The first definition which Gaṅgeśa
+considers is of just this form. It is that
+S
+pervades
+H
+iff
+H
+has “non-occurrence in the loci of
+absence of
+S
+”
+, i.e.
+V
+1
+.
+Why is this plausible-seeming interpretation of the notion of
+pervasion rejected in Navya-Nyāya? There are two reasons:
+The Problem of Partially Locatable Properties
+. The first
+problem with the ‘no counter-example’ definition depends
+on the Navya-nyāya notion of partial location
+. A property is said to occur
+wholly or completely in an object if it occurs in every part of that
+object. For example, the property of being golden occurs completely in
+a piece of  gold; the object is ‘saturated’
+
+by the property, just as sesame oil
+saturates a sesame seed. Some properties, however, occur in some parts
+of the object but not others—these are called “partially
+locatable”. For example, the property of being molten occurs at
+the centre of the Earth but not at the periphery. Note that the same
+property can be wholly located in some loci and partially located in
+others—e.g. redness occurs wholly in a ruby but partially in a
+red snooker ball. The distinction concerns two modes of
+property-possession, not two types of property. An important point is
+that, if a property is partially located in an object, then so is its
+negation. The Naiyāyikas’ standard example of a partially
+locatable property, viz. “…is in contact with a
+monkey” , illustrates the point. If the
+monkey is sitting on a branch of a tree, then the following statements
+may be true:
+The tree is in-contact-with-the-monkey at time
+t
+,
+and
+The tree is not-in-contact-with-the-monkey at time
+t
+,
+ being true because there are parts of the tree with which the
+monkey is not in contact. Nyāya avoids the threatened violation
+of the law of non-contradiction by relativising the notion of
+occurrence.  is thus analysed as “the occurrence, of the
+property being-in-contact-with-the-monkey in the tree,
+is
+delimited by 
+the branch”. Since a different
+delimitor appears in , there is no inconsistency between the two
+statements.
+The main effect of admitting partially located properties into the
+system is that it is no longer the case that a property,
+P
+,
+and its complement,
+P
+′, are disjoint: they may now
+intersect. If the inferred property is partially located, then the
+class of “agreeing cases”  and the class of
+“disagreeing cases”  overlap rather than being
+distinct classes. To put it another way, a property
+P
+should
+be thought of as having both a “presence range”
+ and an “absence range” ,
+and the two may overlap. Consider now the standard inference
+“The mountain has fire, because it has smoke”. Suppose we
+find a place where smoke is present, and fire is both absent and also
+present, e.g. the kitchen. Does this show the inference to be faulty?
+According to definition V
+1
+, it does, because the kitchen
+will be a counter-example, a place where smoke is present and fire
+absent. But this is wrong: since fire is also present there, it is not
+a real counter-example to the rule “where there is smoke there
+is fire”. The upshot is that we must examine the “presence
+ranges” of the reason property and inferred properties, not
+their “absence ranges”. A real counter-example to rule is
+a case which is in the presence-range of the reason property but not
+in the presence range of the inferred property.
+Gaṅgeśa’s second definition is designed to solve this
+problem:
+H
+’s “non-occurrence in the loci of
+absence of
+S
+which are different from locus of
+S
+”. In other words, a locus of absence of
+S
+which is also not a locus of
+S
+should not be a locus of
+H
+:
+V
+2
+Pervades  iff
+      ¬.
+The effect of the new clause is precisely to rule out the problem of
+partially locatable properties, by specifying more restrictively what
+constitutes a counter-example.
+The Problem of Universally Positive Inference
+. There are,
+claim the Nyāya, patterns of legitimate inference in which the
+property inferred has as its extension the entire domain. Such
+inference are called ‘
+kevalānvayin
+’ or
+‘universally positive’ . The stock Nyāya
+example is the inference “This is nameable, because it is
+knowable”, nameability being regarded as a property of
+everything. Another example would be “This exists because it is
+produced”. If such an inference is sound, then its reason
+property and inferred property must exemplify the pervasion relation.
+According to the above definition, to say that nameability pervades
+knowability is to say that any locus of the property
+absence-of-nameability is not a locus of knowability. The problem is
+that, since nameability is a universal property,
+absence-of-nameability is an uninstantiated 
+property, and the Nyāya claim that such properties are
+ontologically suspect. To put it another way, the statement “any
+locus of the property absence-of-nameability is not a locus of
+knowability” includes a non-referring expression,
+“locus-of-absence-of-nameability” or “unnameable
+thing”, and hence is not truth-evaluable. The problem does not
+arise for all uninstantiated properties, for some, e.g. being a
+sky-lotus, or being a square circle, can be shown to be constructs
+made out of simpler instantiated properties. Thus, the statement
+“The square circle is circular” can be taken not as
+containing a non-referring expression, but as meaning “The
+circle is square and circular”. However, ‘unnameable
+’ is not decomposable into two distinct properties this
+way.
+None of the interpretations of the ‘no counter-example’
+definition considered by Gaṅgeśa can solve the problem of
+universally positive inferences, and Gaṅgeśa accordingly
+rejects them all. His own definition uses a trick to get round the
+problem.
+8.4 Gaṅgeśa’s Definition: the ‘
+siddhānta-lakṣaṇa
+’
+The Manual of Reason
+reproduces with slight simplification
+Gaṅgeśa’s new definition. It says that
+S
+and
+H
+are related by the pervasion relation just in case there is
+collocation of
+H
+with
+S
+and
+S
+is not a
+property the absence of which is collocated with
+H
+. Almost the same formulation is found
+in other Navya-Nyāya texts, such as the
+Siddhānta-muktāvali
+. This definition is supposed to
+be applicable even if the inferred property
+S
+is
+‘universally positive’. The idea, roughly, is that if
+S
+pervades
+H
+then no property whose absence is
+collocated with
+H
+can be identical to
+S
+. If we can
+find an instance of a locus of smoke which is also a locus of the
+absence of some property, coldness say, then coldness cannot be
+identical with fieriness. That is:
+Pervades  only if
+ → .
+. What this
+says is that there is no place where
+H
+is collocated with the
+absence of
+S
+, but it does so without actually using the
+potentially non-referring phrase “absence of S”, and it
+thereby avoids the problem of universally positive properties.
+However, although this condition is necessary for pervasion, it is not
+sufficient, for it is consistent with
+H
+ being
+uninstantiated. So Gaṅgeśa insists too that
+H
+and
+S
+must be collocated:
+Pervades  iff
+i.
+∃
+x
+ → ,
+      and
+ii.
+∃
+x
+.
+Gaṅgeśa’s trick implicitly trades on the theorem
+“
+A
+→
+B
+≡ ¬ ”. Thus clause  is virtually equivalent to
+V
+1
+. This shows too that we do not yet have a definition
+which can deal with the partially locatable properties, for which we
+need something more like V
+2
+. Hence
+Gaṅgeśa’s final definition is:
+V
+3
+Pervades  iff
+i.
+∃
+x
+ →
+      , and
+ii.
+∃
+x
+.
+This definition of pervasion is able to handle both universally
+positive properties and partially located properties appearing as
+inferred property.
+One may wonder why it is that, since a pervasion relation is of the
+form “all
+H
+s are
+S
+”, the Naiyāyikas
+did not simply use the notion of universal quantification in their
+definitions. The answer, perhaps, is that they were in fact trying to
+define this notion, and to do so only in terms of certain other
+notions which they took to be primitive, especially the notion of
+co-location and absence. If this is correct, however, then we must
+show how to reconstruct the definition without its implicit
+quantification over a property
+P
+.
+9. Meaning, Understanding and Testimony
+9.1 The Language Processing Mechanism
+Just as perception and inference are described, in the
+pramāṇa
+system, as knowledge-yielding faculties,
+so too is language. This leads the Nyāya to formulate a
+description of the mechanism by which a competent language-user is
+able to decode noise-utterances and derive language-based knowledge.
+The description
+The Manual of Reason
+gives of this
+‘language processing mechanism’ is as follows .
+The input to the process is the hearer’s auditory perception of
+a spoken utterance qua uninterpreted noise, and this is identified as
+the ‘special’ instrument cause .
+For example, hearing the noise-string
+[*]
+“The” “cat” “is”
+      “on” “the” “mat”.
+The ‘operative condition’  is
+the hearer’s  knowledge of the meaning
+ of each of the words in the
+utterance. This is what marks off a person who understands the
+language in question from one who does not .
+For example, knowledge that
+[M1]
+“the cat” means the cat,
+[M2]
+“the mat” means the mat, and
+[M3]
+“is on” means the substratum-superstratum relation.
+The output of the process, i.e. the effect of the combined causal
+factors, is the hearer’s forming a belief, for example belief
+that
+[P]
+The cat is on the mat.
+Just as, in the case of perception, a number of auxiliary causal
+factors, such as there being adequate lighting, the perceiver’s
+sense-faculty being in good condition, the perceiver paying attention,
+etc., so here too. Nyāya isolates four such factors for special
+attention, namely: spatio-temporal ‘contiguity’
+ of the uttered words; the speaker’s
+intention ; ‘syntactic expectancy’
+; and ‘semantic
+fitness’  . The first is
+self-explanatory: if the words in the utterance are uttered one at a
+time over a long period of time, or mixed in with the words of a
+distinct utterance, it will be impossible form a proper auditory
+perception of the utterance. The second, ‘speaker’s
+intention’ is appealed to when the sentence contains an
+ambiguous word—disambiguation proceeds via consideration of the
+speaker’s intended meaning.
+The Manual of Reason
+defines ‘syntactic expectancy’ as ‘the inability of
+one word to produce, without another word, an awareness of the
+relation between them’, and it cites, as an example of an
+utterance which fails to possess such expectancy, the sentence
+“horse man elephant”. Clearly the idea is at least that
+the utterance must be grammatically correct. More than that, there is
+a suggestion that it is in virtue of the syntactical rules that the
+unarticulated semantic relations between the words are expressed. What
+makes it the case that someone who understands the utterance
+“the cat is on the mat” grasps a united proposition, and
+not just a list of items [the cat, the on-relation, the mat]? The idea
+here, perhaps, is that  the syntactical rules generates
+an awareness of the connecting relations between each of these
+items.
+‘Semantic fitness’  is an
+intriguing concept.
+The Manual of Reason
+defines it as
+‘the absence of incompatibility among what is signified by the
+words’, and illustrates its definition by contrasting the
+sentence “He sprinkles the field with water” with
+“He sprinkles the field with fire”. The idea is that the
+activity of sprinkling is ‘compatible with’  a liquid like water, and not with a substance like fire.
+It would be like saying “Cathood is on the mat” or perhaps
+Chomsky’s “Colourless green ideas sleep furiously”.
+Such sentences, though grammatically correct, do not make sense. This
+causal factor, then, is that an utterance is intelligible only if the
+proposition expressed is ontologically possible, by the light of a
+preconceived ontological system, such as the Vaiśeṣika
+system of categories. Some Naiyāyikas, however, impose a more
+demanding requirement, that to be ‘semantically fit’ the
+utterance must be true, i.e. that ‘fit’ =
+‘true’, not merely ‘possible’, and
+consequently that an utterance is intelligible only if it is true! In
+effect, they identify ‘semantic fitness’ with the
+‘
+guṇa
+’ or ‘causal factor leading to
+truth’, in the language-processing mechanism. We will return to
+this dispute a little later.
+9.2 Semantic Power and the Reduction of Semantic Properties
+The Manual of Reason
+’s definition of a word is
+celebrated and often quoted. It says  that a word is that which
+has semantic power . A sentence
+ is defined as a collection of words. So
+The
+Manual of Reason
+’s definition fits with the modern one,
+according to which a word is a semantically significant sentential
+constituent. Semantic power is that knowledge of which enables the
+competent hearer to interpret the word, and this, for the
+Naiyāyikas, consists in the word’s standing for an object.
+Thus, someone who understands the word “cat” knows
+something of the form <“cat” means cat>, where
+“means” is a relation between words and objects of some
+type.
+The Manual of Reason
+raises three questions about this
+relation:  Is it a new and irreducible type or relation, not
+reducible, that is, to any of the relations already admitted ?  What is the relatum, i.e. with what type of entity are
+words semantically related ?  How do we learn the
+meaning of a word .
+ The Mīmāṃsakas and Grammarians were
+‘essentialists’ about meaning, arguing that the Sanskrit
+language is a natural entity, independent of human convention or
+usage, whose words possess intrinsic semantic powers to signify
+objects, just as fire has the intrinsic capacity to burn. The
+Naiyāyikas traditionally opposed this view, arguing instead that
+language is a product of convention, and that it is possible to
+account for a word’s semantic power in terms of stipulations
+governing its use. The claim is that we can define 
+the meaning-relation thus:
+x
+means
+y
+iff there is a decree/stipulation
+ of the form “Let utterances of
+x
+generate cognitions of
+y
+”.
+Now a stipulation or decree is claimed to consist in the
+decree-maker’s having a certain mental state, viz. a
+‘desire’ or ‘will’  of
+the form specified. Thus, the meaning relation is analysed in terms of
+mental states and their contents, and not as a new type of relation.
+Who is the decree-maker?
+The Manual of Reason
+states that it
+is God, but most later Naiyāyikas drew a distinction between
+words which have belonged ‘endlessly’ in the language
+ and words introduced by an explicit human
+stipulation .
+ What is the meaning-relatum of a word like “cow”, a
+generic nominal expression? Here again
+The Manual of Reason
+contrasts the Nyāya view with that of the
+Mīmāṃsakas. One sub-school of
+Mīmāṃsakas  claim that the meaning of
+“cow” is the universal cowhood, since sentences like
+“ cow is an animal”, or injunctive laws like
+“Never kick a cow”, say something about the entire class
+of cows, not about any one individual. Thus:
+
+“cow” means cowhood.
+In reply to the obvious objection, that in many other sentences, such
+as “The cow is in the garden”, a particular cow is
+referred to, these Mīmāṃsakas appeal to the idea that
+a sentence can carry an ‘implication’
+ other than its literal meaning. Thus the
+sentence “The cow is in the garden” may mean literally
+that cowhood is collocated with occurrence-in-the-garden , but carries the implication that a
+certain particular cow is in the garden. The principle here is that a
+prior awareness of the qualifier 
+leads to an implicated awareness of the thing qualified
+ . The Nyāya reply to this
+argument proceeds by way of rejecting the principle cited, for, they
+say, awareness of a qualifier or universal is possible only via an
+awareness of the thing qualified.
+The Manual of Reason
+states the modern Nyāya view: the
+meaning of an utterance of the word “cow” is a particular
+individual as qualified by cowhood
+:
+
+“cow” means a-cow-as-qualified-by-cowhood.
+The idea is this. Anyone who understands an utterance of the sentence
+“ cow is in the garden” does so by  identifying a
+certain object as the referent of the word “cow”, and 
+grasps that that individual is qualified by the property
+occurrence-in-the-garden. However, one can only identify an object by
+distinguishing it from others, and this involves the use of a
+distinguishing feature. So the individual is grasped in awareness as
+distinguished/qualified by the feature cowhood. Since the meaning of a
+word is, by definition, its contribution to the final belief generated
+by hearing the utterance containing the word, the meaning of
+“cow” is an individual as qualified by cowhood. Note that,
+on such a theory, token utterances of “cow” vary with
+respect to the individual to which they refer, but every token
+utterance nevertheless shares a common semantic property, viz. “
+…—qualified-by-cowhood”. The Naiyāyikas in
+this way draw a distinction between type- and token- meaning .
+The other Mīmāṃaka sub-school 
+claim that, in order to explain the fact that, on hearing a sentence,
+we grasp a unified proposition and not just a list of entities, the
+meaning-relatum of a word like “cow” is ‘an object
+connected with another’ . The
+meaning-relatum is a cow along with a ‘hook’ to link it
+with other meaning-relata. More precisely, the meaning of the word
+would be something like
+
+“cow” means a cow-individual, which is
+     ……
+So the sentence “The cow is in the garden” does not just
+mean the list <cow, being in the garden>, as it would if each
+word simply designated an object, but rather the connected proposition
+<cow-which-is in-the-garden>. The idea, in effect, is that all
+meaning-relata, are, in Frege’s terminology,
+‘unsaturated’. To this ingenious suggestion,
+The
+Manual of Reason
+replies  that it is superfluous, for
+“since it is possible for the relation [between meaning-relata]
+to be apprehended as what is signified by the sentence [as a whole],
+it is not necessary to postulate a semantic power with reference to
+the relation”. In other words,
+The Manual of Reason
+claims that general  features of the sentence
+are enough to connect the meaning-relata, without needing to claim
+that those meaning-relata themselves do the connecting.
+ The Naiyāyikas offer the following account  of
+language acquisition. The child makes a series of observations
+concerning the linguistic behaviour of adults. She hears adult A utter
+a certain noise “Bring the cow” say, and sees adult B
+perform a certain action, bringing of the cow. Again, she hears A
+utter the noise “Bring the horse”, and sees B bring the
+horse, and hears “Feed the cow” and sees the cow being
+fed. Then, by a twin inductive process, of  “agreement in
+presence”  and “agreement in
+absence” —i.e. noticing the
+correlation between A making or not making an utterance and B
+performing or not performing an action, and 
+‘collection’  and
+‘rejection —i.e. noticing the
+regularities between utterances of “cow” and events
+concerning the cow, utterances of “bring” and bringing
+events, etc., the child understands that the word “cow” is
+linked with objects belonging the class of cows, etc.
+This is an empiricist account of language learning reminiscent of the
+account attributed by Wittgenstein to Augustine, and severely
+criticised by him. Apart from the superhuman inferential powers
+attributed to the child, the problem highlighted by Wittgenstein is
+that no amount of observation can show, for example, that the relevant
+correlation is between “cow” and cow-individuals, and not
+between “cow” and B’s cow-directed-actions, the
+universal cowhood, heifers rather than cows, etc. .
+9.3 Testimony
+The Manual of Reason
+says that statements are either Vedic or
+secular. It adds that  Vedic statement is a
+pramāṇa
+, a means of knowing that which is stated,
+because Vedic statements are originally uttered by God.  Hearing a secular statement is a
+means of knowing only if the speaker is an ‘authoritative
+person’ . An authoritative person is defined
+as one who speaks the truth . There
+is an ambiguity here: is an authoritative person one who is speaking
+the truth with respect to the particular utterance in question, or one
+who is generally truthful? Another question here is: must the
+testifiee know that the testifier is an authority in this sense or
+not?
+To confuse matters further,
+The Manual of Reason
+says that
+the ‘
+guṇa
+’, causal factor responsible for
+the truth of the testifiee’s belief, is
+‘
+yathārtha-yogyatā-jñāna
+’,
+which can mean either  veridical cognition of semantic fitness, or
+ cognition of veridical semantic fitness. In either case, the
+‘
+guṇa
+’ has nothing to do with the
+speaker’s credentials, it seems. Option , however, must be
+wrong, for it cannot be a condition upon testimony that the hearer
+already knows that what was said is true. Option , however, would
+not guarantee that the final hearer’s belief is true, unless by
+‘fitness’
+The Manual of Reason
+now intends a
+rather stronger notion, according to which the meaning-relata
+‘fit’ together iff they are in fact connected, i.e. if the
+utterance expresses a truth. This is, indeed, how some other
+Naiyāyikas understand the notion of
+yogyatā
+, but
+does not accord with
+The Manual of Reason
+’s own
+definition.
+I propose the following resolution. The language processing mechanism
+was described above as one which issues in the testifiee believing
+that which the testifier says. The truth of the testifiee’s
+belief will therefore depend upon whether or not the testifier is
+speaking truly, and so this should be called the
+‘
+guṇa
+’ here. However, we do not always
+believe what we hear, especially if we have reasons to suppose that
+the speaker is not likely to be speaking the truth. It is possible,
+then, that the output of the language processing mechanism is not
+simply belief in
+what
+was said, but rather belief simply
+that
+it has been said. There are, roughly, two sorts of case
+when this can happen:  if the testifiee judges that the testifier
+is deceitful or unreliable or simply uninformed about the topic, and
+ if the testifiee knows on independent grounds that what the
+testifier is saying is false , perhaps on
+a priori
+grounds concerning the plausibility of the assertion. With a little
+interpretative licence, we might think that these two conditions
+correspond to the two conditions imposed by
+The Manual of
+Reason
+on testimony: that the testifier must be an
+‘authority’ , and that the sentence
+must be ‘semantically fit’ .
+10. The Vaiśeṣika Concepts of Universal, Inherence, and Basic Differentium
+10.1 Universals
+The Manual of Reason
+reports the standard
+Nyāya-Vaiśeṣika definition of a universal
+:
+A universal is something which is  eternal,  unitary, and 
+located in a plurality of things .
+
+Universals are thus conceived of as unstructured, objective properties
+which necessarily reside in individuals. The postulation of such
+entities in the Vaiśeṣika schema has explanatory force,
+accounting for the distinction between ‘natural’ and
+‘conventional’ classifications. Intuitively, this is the
+distinction between groupings such as the class of cows or horses,
+which reflect natural divisions , and those such as the class of Cabinet Ministers or
+the class of endangered species, which reflect anthropocentric
+concerns. The Naiyāyikas mark this distinction by calling natural
+properties “universals”  and
+anthropocentric properties “imposed” or
+“nominal” properties .
+Correlatively, a semantic distinction is drawn between “natural
+kind terms” , i.e. terms the basis for
+whose application is a universal, and “imposed kind
+terms”, terms whose basis for application is an anthropocentric
+property. Udayana tried to make this distinction more precise by
+giving a list of criteria for a property to count as natural.
+Examination of his list  will reveal something further about
+the nature of the natural properties according to Nyāya.
+The six impediments are  ‘non-plurality’—a
+genuine universal must be plurally instantiated; 
+‘equipollence’ —two co-extensive
+properties cannot both be genuine universals; 
+‘cross-connection’ —two
+genuine universals must not partially overlap; 
+‘regress’—a property like universality cannot itself
+be a universal, on pain of infinite regress ;  a property like differentia-hood cannot be a genuine
+universal, for by definition the basic differentia share no common
+universal property;  a property like inherence-hood cannot be a
+universal, since it does not inhere in its loci. Of these six, the
+last three are there basically to maintain the internal consistency of
+the Vaiśeṣika system, and the first is a straightforward
+consequence of the definition of a universal. It debars a
+singly-instanced properties such as space-hood from the status of
+genuine natural kind, perhaps motivated by the thought that the very
+nature of a universal consists in its grounding judgements of the form
+“
+x
+is of the same kind as
+y
+”, which
+presuppose that there are at least two entities.
+The second and third criteria are the most important, and can be
+stated more formally as follows. If
+P
+and
+Q
+are
+distinct properties, then :
+[
+P
+] = [
+Q
+] → either
+P
+or
+Q
+ is not a universal,
+where ‘[
+P
+]’ denotes the extension of
+P
+.
+The contraposed form is:
+P
+and
+Q
+are universals → [
+P
+] ≠
+[
+Q
+].
+Note that this does not entail that universal properties are
+extensionally individuated or equivalent to classes, as some have
+maintained. It shows only that corresponding to each class, there is
+at most one universal. Although, within the domain of universals, a
+universal is uniquely determined by its extension, the distinction
+between a universal and a co-extensive imposed property  is an intensional distinction.
+As for the third impediment , if
+P
+and
+Q
+are distinct properties, then
+[
+P
+] partially overlaps [
+Q
+] → either
+P
+or
+Q
+ is not a universal.
+The contraposed form is:
+P
+and
+Q
+are universals → [
+P
+] ⊂
+[
+Q
+] or [
+P
+] ⊃ [
+Q
+] or [
+P
+] ∩
+[
+Q
+] = ∅.
+ In other words, genuine universals are arranged in a
+hierarchy: given two universals, either they are related as genus and
+species, all instances of one being instances of the other, or else
+they are completely disjoint, having no instance in common . The Nyāya say that, if one
+universal is thus subsumed by another, the former is
+‘lower’  and the latter is
+‘higher’  . The
+‘highest’ universal of all is ‘existentness’
+, into whose extension falls every substance,
+quality and motion. The demand that universals be organised
+hierarchically shows that the Nyāya took as their paradigm the
+biological species, which tend to exhibit this structure. Bearing in
+mind that the term for “universal”, i.e.
+“
+jāti
+” is also the word for caste, Matilal
+ speculates that
+[O]ne might discover in the Nyāya doctrine of generic property a
+remote influence of the socio-religious ideas of the Brahmins.
+Translated into biological terms, the … principle of
+‘non-overlapping’ becomes a principle which opposes
+cross-breeding. There is thus some evidence that the Nyāya bias
+for real generic properties was partly influenced by the Brahmanical
+concept of an ideal social order where intermixture of classes is not
+to be permitted.
+Some Naiyāyikas, especially Bhāsarvajña and
+Raghunātha, reject the ‘cross-connection’ impediment,
+pointing out the problems encountered trying to apply it to
+non-biological natural kinds . Raghunātha suggests that consistent
+application of this principle would eliminate virtually all universals
+from the ontology. Udayana’s criterion of a property to be
+‘natural’ is thus not a necessary one, and neither is it
+sufficient: none of his impediments shows why the pair
+‘blue-green’ is more natural than Goodman’s pair
+‘grue-bleen’ 
+The idea that universals are, in some sense, ‘located’ in
+particulars generated two distinctive objections to the theory.
+Diṅnāga trades on the spatial metaphor to argue that the
+Nyāya conception of universals is incoherent. For, if a universal
+is ‘unitary’, it can be located in at most one place, and
+thus not ‘plurally instanced’. If, conversely, if is
+located simultaneously at many places, that can only be because it has
+parts, each located at a different place, and hence is not
+‘unitary’. This argument plays on the ambiguity of the
+notion of ‘being located’, and pretends that a universal
+like cowhood is located in individual cows in just the same sense that
+a cow is located in a field. Nevertheless, it forces the Nyāya to
+be more careful in its account of the universal-particular relation.
+As
+The Manual of Reason
+notes , a universal is said to
+reside in its instances by the relation of ‘inherence’
+, defined as an “inseparability”
+ relation. Of two entities,
+x
+and
+y
+,
+x
+is inseparable from
+y
+iff
+x
+cannot exist
+unless
+y
+exists.
+The idea is that a cow cannot exist unless the universal cowhood
+exists, and that it is in this sense that cowhood is located in the
+cow.  and substances, a whole
+and its parts, and the basic differentia and the atoms.) Spatial
+location, on the other hand, involves a quite different relation,
+namely contact . In this way, the term
+‘location’ is disambiguated.
+The other problem is the classic one: what happens to a universal if
+all its instances are destroyed? Can universals exist without being
+instantiated? The definition of the inherence relation permits this,
+for the requirement is that cows cannot exist without cowhood, not
+vice versa. We might say that the cow’s existence supervenes on
+that of the universal cowhood. However, it is not so clear that we can
+say in the same way that the parts  cannot exist unless
+the whole  exists.
+10.2 The Basic Differentia 
+The Vaiśeṣika traditionally and uniquely accept into their
+ontology a category of item called ‘basic differentia’
+, from which, some claim, they derive
+their name.
+The Manual of Reason
+defines these items as
+follows : “those entities which reside in the eternal
+substances [i.e. the atoms] and function as their differentiators are
+called
+viśeṣa
+”. The idea is that, just as a
+cow and a horse are distinct entities, as they have distinct
+properties, so too even two atoms of the same substance, e.g. earth,
+must differ with respect to at least one property. Each atom,
+therefore, possesses a ‘differentium’ unique to itself,
+which serves to distinguish it from any other atom of the same type.
+The assumption, then, is that any two non-identical items are
+distinguished by virtue of possessing distinct properties. This is the
+contraposed version of Leibniz’ Law that Indiscernibles are
+Identical, that  → , where
+“
+P
+” ranges over properties. The principle faces
+triviality unless certain constraints are placed on the range of
+properties quantified over. For example, if the property
+“… =
+y
+” is permitted, the principle states
+vacuously that identicals are identical. The Vaiśeṣikas
+implicitly restrict the principle to intrinsic, non-relational
+properties of the objects concerned, ruling out, for example,
+‘being at a certain spatial or temporal location’ as being
+a property capable of discriminating two otherwise identical objects.
+Thus, the claim seems to be that no two objects, including atoms, can
+be intrinsically identical. This is how Leibniz himself appears to
+have understood his Law, saying that “It is always necessary
+that beside the difference of time and place there be internal
+principles of distinction….thus although time and place serve
+in distinguishing things, we do not easily distinguish them by
+themselves,” and that “There is no such thing as two
+individuals indiscernible from each other. Two drops of water, or
+milk, viewed with a microscope, will appear distinguishable from each
+other”.
+The principle is, admittedly, as strong one. Wittgenstein
+ points out that it entails the logical
+impossibility of a universe containing two identical spheres; Wiggins
+notes that it implies the logical impossibility of even a single
+sphere , since it entails the
+identity of the two hemispheres . More to the point, as the Vaiśeṣikas
+implicitly realised, it implies the logical impossibility of more than
+one atom of a given substance .
+Rather than reject the principle, however, they instead introduced new
+intrinsic properties, the basic differentia, thereby avoiding the
+unpalatable consequence.
+11. The Ontology of Nonexistence  and the Semantics of Negative Statements
+11.1 Motivations
+The later Naiyāyikas develop a remarkable theory of nonexistence.
+According to them, the
+absence
+of an object or feature at a
+particular spatial or temporal location is a state of affairs just as
+objective as the
+presence
+of the object or feature there. To
+Kanāḍa’s original list of six categories
+ or types of existent, they therefore add a
+seventh, ‘absence’ . This
+ontological doctrine is underpinned by  phenomenological and 
+semantic considerations.
+ The phenomenological point was that a negative awareness, say that
+a certain person is not in the room, is a kind of awareness
+phenomenally distinct from any awareness about what is in the room.
+Cognition of what is not has an autonomous phenomenology . The principle appealed to is thus:
+P
+1
+Experiences of nonexistence are phenomenally distinct from, and
+  irreducible to, experiences of existents.
+The idea emerges in the Nyāya epistemology with their claim that
+absence is perceived, and that this perception is a
+sui
+generis
+type of perceptual experience, not reducible to a
+combination of ordinary perception and inference .
+ The semantic point is that the Nyāya espouse a version of
+the correspondence theory of truth, according to which true sentences
+correspond to facts. It is alleged that true negative sentences  correspond to
+‘negative facts’. Facts, however, are all, for the
+Nyāya, of the same basic relational form, ‘bRa’ . This restriction on what
+constitutes a fact is expressible via the following semantical
+principle:
+P
+2
+Sentences correspond to facts constructed out of simple or
+complex entities .
+The principle entails that one cannot use the truth-functional
+connectives to construct facts, except where they are equivalent to
+term-logical connectives.  The point is that a sentence like “The pot is
+not on the ground” cannot correspond to a fact of the form
+‘¬bRa’ , but must rather correspond to a fact of the form
+‘bRā’. Hence the introduction into one’s
+ontology of negative entities.
+11.2 Temporally and Spatially Located Absence
+The Manual of Reason
+ reports the usual
+Nyāya view that there are four types of absence: prior
+nonexistence ; posterior nonexistence
+or ‘destruction’ ;
+‘constant’ or ‘absolute’ absence
+; and difference
+. Of these, the first two refer to
+possible temporal states of a transient object. Suppose we represent
+the temporal duration of a person
+A
+by the following line
+:
+t
+1
+1650
+t
+2
+1750
+t
+3
+At any time
+t
+1
+prior to 1650,
+A
+does not
+yet exist, and at any time
+t
+3
+later than 1750,
+A
+no longer exists. In accordance with the above principles,
+Nyāya reformulates these negative existential claims as positive
+existential statements about negative entities, namely, the
+‘prior absence of
+A
+’,
+‘<
+A
+’ say, and the ‘posterior absence of
+A
+’, ‘
+A
+>’ say. Thus, the first
+reads:
+<
+A
+exists at
+t
+1
+,
+or, since, in the Nyāya idiom, objects are said to be located in
+time as well as in space,
+<
+A
+is located at
+t
+1
+.
+Similarly,
+A
+> is located at
+t
+3
+.
+What happens at times such as
+t
+2
+? These are times
+at which
+A
+exists or is present . Note,
+furthermore, that, at
+t
+2
+, there is a posterior
+absence of <
+A
+, which we designate by
+‘>’. There is also a prior absence of
+A
+> , i.e. ‘<’.
+The Manual of
+Reason
+ records the older Naiyāyikas’ claim
+that these double absences must be identical with the original entity,
+on pain of an infinite regress. Thus:
+> = < =
+A
+.
+Later Naiyāyikas apparently disputed this natural identity , on the
+ground that double negative constructions contain the concept of
+negation, and hence are logically more complex.
+A third type of absence, called ‘constant’ or
+‘absolute’ absence  is
+illustrated by constructions of the form “The pot is not on the
+ground”.
+The Manual of Reason
+states  that what
+distinguishes this type of absence is that it is located in the three
+times—past, present and future. This seems odd, as it might be
+that the pot is on the ground at some times but not others. Perhaps
+the point is that the locus of the absence here is a spatial entity
+rather than a temporal one. For example, the construction “Heat
+is not in ice” illustrates this kind of absence. Perhaps,
+furthermore, the force of this negation is that the pot is
+never
+located on the ground—hence we cannot speak of
+the prior or posterior absence of the pot . 
+The fourth type of absence, ‘difference’
+, is illustrated by the sentence
+“The pot is not  cloth”. This is to be read as a
+non-identity statement.
+The Naiyāyikas thus say that every negative sentence is the
+negation of a sentence of the form
+“
+aRb
+”, and they distinguish
+between cases where the relation
+R
+is the identity relation
+and cases where it is a relation other than identity. The object
+a
+is called the locus of the absence, and the object
+b
+is called the ‘counterpositive’ or
+‘negatum’  of the absence, i.e. it is
+the object whose presence in the locus is being denied. This
+highlights the fact that absences are thought of as a kind of property
+or ‘locatable’, rather than as a kind of
+‘location’ .
+For example, the absence of
+A
+is located in many places at
+once. It is not said that there is a distinct absence-of-
+A
+at
+each and every place where
+A
+is absent. We can now see how
+the Nyāya parse negative sentences without using a sentential
+negation. Take the sentence “The pot is not blue”. The
+first-order paraphrase of this would be: It is not the case that the
+pot is blue . The Nyāya strategy is
+first to say that every property, such as blueness, has both an
+extension
+F
+ and a
+counter-extension
+F
+′ , and then to paraphrase the sentence as: The pot has
+absence-of-blue. Note that a partially locatable property is one for
+which the extension and counter-extension overlap—it is possible
+for a feature to be collocated with its absence.
+11.3 The Logic of Negation
+The Manual of Reason
+ makes some very interesting
+observations about the logical properties of absence or negation.
+Reference versus description
+. It is claimed that
+there is a distinction between a qualified absence
+ and a mere absence
+. Consider the following pair of
+sentences:
+Annambhaṭṭa is not in the room, and
+The author of
+The Manual of Reason
+is not in the
+room.
+The idea is that in  the ‘mere’ absence of
+Annambhaṭṭa is located in the room, whereas in  a
+qualified absence  is located in the room. Do  and  really have
+distinct logical forms? Perhaps we find here a realisation that
+nominal expressions such as “The author of
+The Manual of
+Reason
+” have two distinct logical functions, namely those
+of
+referring
+to an individual and
+describing
+an
+individual
+via
+his properties.  can thus be read either as
+asserting the same as , that Annambhaṭṭa is not in the
+room, or as saying that the author of
+The Manual of Reason
+,
+whoever it or she is, is not in the room, i.e. that the properties
+“being the author of
+The Manual of Reason
+” and
+“being in the room” are not collocated. If that is the
+sense in which  involves a qualified absence, then  and  do
+have different logical forms.
+Universal Quantification
+.
+The Manual of
+Reason
+draws another very important distinction, between a
+specific absence  and a
+generic absence . These are
+illustrated by the following sentences:
+ pot is not in the room, and
+ pot is not in the room
+. To say that there is a specific absence of pot in the
+room is to say that some particular pot is not in the room, but to say
+that generic absence of pot in the room is to say that any pot is not
+in the room . The distinction is thus
+linked to the formulation of universally quantified constructions.
+Indeed, in Nyāya logical theory, generic absences are used to
+formulate the pervasion  relation: “where
+there is smoke there is fire” is contraposed to give
+“where there is no fire there is no smoke”, and this is
+expressed by saying that there is a generic absence of smoke in places
+where there is a generic absence of fire . It is clear that  and  do have distinct logical
+forms. In the Nyāya technical language, the distinction is made
+out by saying that the property which delimits the counterpositiveness
+of the absence  is
+this-pot-hood in , but pothood in .
+Logical Connectives and De Morgan’s Laws
+.
+The Manual of Reason
+touches on the meaning of conjunctive
+and disjunctive absence, i.e. absence of   and absence of  . It
+observes that an awareness that two pots are absent is consistent with
+an awareness that one pot is present . In fact,
+as Ingalls shows  the Nyāya recognised the
+validity of two general equations:
+absence of  = 
+or , and
+absence of  = 
+and .
+These are recognisably versions of De Morgan’s Laws, that
+¬ ≡ ¬
+A
+∨
+¬
+B
+,
+and that
+¬  ≡ ¬
+A
+& ¬
+B
+.
+As an example of the second of
+these laws, consider Mathuranātha’s remark  that
+a ‘heap’ of  absences
+ is equivalent to a generic
+absence. A place which is the locus of generic absence of fire is a
+place at which every particular fire is absent, and conversely, if
+every specific fire is absent, then fire is generically absent. Thus
+the ‘heap’  of specific absences of fire, is
+equivalent to the absence of any fire at all .
