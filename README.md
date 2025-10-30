@@ -38,10 +38,7 @@ uv init  # Initialize the uv project
 uv sync
 
 # Optional: AWQ-quantized model support
-uv sync --extra awq
-
-# Optional: Demo applications
-uv sync --extra demo
+uv add autoawq
 ```
 
 ## Quick Start
