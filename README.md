@@ -15,16 +15,33 @@ Correlation dimension is a fractal-geometric measure of self-similarity that qua
 
 ## Installation
 
+**Requirements**: Python >= 3.11
+
+### Using uv (Recommended)
+
+[uv](https://github.com/astral-sh/uv) is a fast Python package installer and resolver. If you don't have uv installed:
+
+```bash
+# Install uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Or via pip
+pip install uv
+```
+
+Then initialize and install the package:
+
 ```bash
 git clone https://github.com/kduxin/corrdim.git
 cd corrdim
-uv pip install -e .
+uv init  # Initialize the uv project
+uv sync
 
 # Optional: AWQ-quantized model support
-uv pip install -e ".[awq]"
+uv sync --extra awq
 
 # Optional: Demo applications
-uv pip install -e ".[demo]"
+uv sync --extra demo
 ```
 
 ## Quick Start
@@ -69,7 +86,7 @@ result = corrdim.CorrelationDimensionCalculator.compute_correlation_dimension_fr
 print(f"Correlation dimension: {result.corrdim:.2f}")
 ```
 
-See [examples/sep60.ipynb](examples/sep60.ipynb) for more detailed examples.
+See [examples/basic_usage.ipynb](examples/basic_usage.ipynb) for more detailed examples.
 
 ## API Reference
 
