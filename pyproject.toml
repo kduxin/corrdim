@@ -1,0 +1,98 @@
+[project]
+name = "corrdim"
+version = "0.1.0"
+description = "Correlation Dimension for LLMs - A library for computing correlation dimension of autoregressive large language models"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "kduxin", email = "duxin@aoni.waseda.jp"}
+]
+keywords = [
+    "correlation-dimension",
+    "language-models",
+    "fractal-geometry",
+    "nlp",
+    "machine-learning",
+    "natural-language-processing",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.30.0",
+    "accelerate>=0.20.0",
+    "numpy>=1.21.0",
+    "scikit-learn>=1.0.0",
+    "tqdm>=4.62.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.4.2",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+    "mypy>=1.0.0",
+    "ipykernel>=6.0.0",
+    "matplotlib>=3.10.6",
+    "triton[dev]>=3.4.0",
+]
+docs = [
+    "sphinx>=6.0.0",
+    "sphinx-rtd-theme>=1.2.0",
+    "myst-parser>=1.0.0",
+]
+awq = [
+    "autoawq>=0.2.9",
+    "intel-extension-for-pytorch>=2.8.0",
+]
+demo = [
+    "streamlit>=1.0.0",
+    "plotly>=5.0.0",
+    "scipy>=1.16.2",
+    "networkx>=3.5",
+]
+
+[project.urls]
+Homepage = "https://github.com/kduxin/corrdim"
+Repository = "https://github.com/kduxin/corrdim"
+Documentation = "https://corrdim.readthedocs.io"
+"Bug Tracker" = "https://github.com/kduxin/corrdim/issues"
+
+[project.scripts]
+corrdim = "corrdim.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["corrdim"]
+
+[tool.black]
+line-length = 120
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+
+[tool.isort]
+profile = "black"
+line_length = 120
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
