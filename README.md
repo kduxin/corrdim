@@ -34,7 +34,6 @@ Then initialize and install the package:
 ```bash
 git clone https://github.com/kduxin/corrdim.git
 cd corrdim
-uv init  # Initialize the uv project
 uv sync
 
 # Optional: AWQ-quantized model support
