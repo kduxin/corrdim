@@ -7,10 +7,11 @@ A Python library for computing correlation dimension of autoregressive large lan
 Correlation dimension is a fractal-geometric measure of self-similarity that quantifies the epistemological complexity of text as perceived by a language model. Unlike traditional evaluation metrics that focus on local prediction accuracy, correlation dimension captures long-range structural complexity and can detect various forms of degeneration in generated text.
 
 **Key Features:**
-- Efficient computation with Triton support
-- Works with any autoregressive language model (Transformer, Mamba, etc.)
-- Robust to model quantization down to 4-bit precision
-- Reveals distinct phases during language model pretraining
+- **Bridges local and global perspectives**: Captures long-range structural complexity beyond local prediction accuracy (perplexity)
+- **Detects various forms of degeneration**: Identifies repetition, incoherence, and blandness in generated text—issues that perplexity alone cannot reliably capture
+- **Reveals training dynamics**: Uncovers three distinct phases during LLM pretraining (short-range learning, long-range emergence, generalization) that remain hidden to perplexity-based metrics
+- **Computationally efficient**: Requires only next-token log-probability vectors at inference time, making it easy to integrate into existing workflows
+- **Model-agnostic**: Works with any autoregressive language model (Transformer, Mamba, etc.) and is robust to quantization
 
 ## Installation
 
@@ -93,10 +94,6 @@ Main class for computing correlation dimension.
 
 - `correlation_integral(vecs, epsilons)`: Compute correlation integral
 - `set_corrint_backend(backend)`: Set backend ("triton", "pytorch", or "pytorch_fast")
-
-## Requirements
-
-Python >= 3.8, PyTorch >= 2.0.0, Transformers >= 4.30.0, NumPy >= 1.21.0, scikit-learn >= 1.0.0, tqdm >= 4.62.0
 
 ## Citation
 
