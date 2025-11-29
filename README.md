@@ -21,6 +21,7 @@ This repository contains the implementation for computing correlation dimension,
 ### 🔗 Resources
 
 - 🏠 [Our Research Group @ Waseda University](https://ml-waseda.jp)
+- 📊 [Conference Poster](asset/poster.pdf)
 
 ## Features
 
@@ -28,6 +29,14 @@ This repository contains the implementation for computing correlation dimension,
 - Robust to model quantization (down to 4-bit precision or more)
 - Applicable across autoregressive architectures (Transformer, Mamba, etc.)
 - Real-time inference integration
+
+## Example: Correlation Integral Curves
+
+The following figure shows correlation integral curves for various pre-trained language models on the "Newton's Philosophy" article from the Stanford Encyclopedia of Philosophy, compared to i.i.d. Gaussian noise:
+
+![Correlation Integral Curves](asset/newton-philosophy.png)
+
+*Models shown: GPT2-1.5B, Mamba-2.8B, Pythia-12B, Falcon3-10B, OpenLlama-13B, Yi1.5-34B*
 
 ---
 
