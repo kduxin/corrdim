@@ -10,9 +10,17 @@ This repository contains the implementation for computing correlation dimension,
 
 ## Quick Links
 
-- 📄 [Paper](https://arxiv.org/abs/2510.21258) - Full paper on arXiv
-- 🎯 [NeurIPS 2025](https://neurips.cc/virtual/2025/loc/san-diego/poster/116508) - Conference page
-- 🏠 [Lab @ Waseda](https://ml-waseda.jp) - Our research group
+### 📚 Publications
+
+- **NeurIPS 2025**
+  - 📄 [Full Paper (arXiv)](https://arxiv.org/abs/2510.21258)
+  - 🎯 [Conference Page](https://neurips.cc/virtual/2025/loc/san-diego/poster/116508)
+- **Physical Review Research (2024)**
+  - 📄 [arXiv](https://arxiv.org/abs/2405.06321) | [APS Journal](https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.6.L022028)
+
+### 🔗 Resources
+
+- 🏠 [Our Research Group @ Waseda University](https://ml-waseda.jp)
 
 ## Features
 
