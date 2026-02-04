@@ -218,7 +218,8 @@ class GPT2Wrapper(TransformersModelWrapper):
             model_size: GPT-2 model size ('gpt2', 'gpt2-medium', 'gpt2-large', 'gpt2-xl')
             **kwargs: Additional arguments for TransformersModelWrapper
         """
-        super().__init__(f"gpt2-{model_size}" if model_size != "gpt2" else "gpt2", **kwargs)
+        model_name = model_size if model_size.startswith("gpt2") else f"gpt2-{model_size}"
+        super().__init__(model_name, **kwargs)
 
 
 class LLaMAWrapper(TransformersModelWrapper):
