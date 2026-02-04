@@ -10,6 +10,65 @@ __all__ = [
     'progressive_correlation_integral',
 ]
 
+_RESOURCE_EXHAUSTED_MARKERS = (
+    "out of resources",
+    "too many resources requested",
+    "shared memory",
+    "local memory",
+    "invalid configuration argument",
+)
+
+
+def _is_resource_exhausted_error(exc: Exception) -> bool:
+    message = str(exc).lower()
+    return any(marker in message for marker in _RESOURCE_EXHAUSTED_MARKERS)
+
+
+def _select_block_sizes(device: torch.device, *, m: int, n: int | None, k: int):
+    props = torch.cuda.get_device_properties(device)
+    shared_mem = getattr(props, "shared_memory_per_block", 0) or 0
+
+    block_mn = 64
+    block_k = 32
+    group_m = 8
+    if shared_mem and shared_mem < 64 * 1024:
+        block_mn = 32
+        block_k = 16
+        group_m = 4
+
+    def _pow2_cap(value: int, cap: int) -> int:
+        return min(cap, 2 ** int(np.ceil(np.log2(max(value, 1)))))
+
+    block_m = _pow2_cap(m, block_mn)
+    block_n = _pow2_cap(n, block_mn) if n is not None else None
+    block_k = _pow2_cap(k, block_k)
+
+    return block_m, block_n, block_k, group_m
+
+
+def _candidate_block_sizes(device: torch.device, *, m: int, n: int | None, k: int):
+    block_m, block_n, block_k, group_m = _select_block_sizes(device, m=m, n=n, k=k)
+
+    def _pow2_floor(value: int) -> int:
+        return 2 ** int(np.floor(np.log2(max(value, 1))))
+
+    def _downscale(value: int | None, factor: int, min_value: int) -> int | None:
+        if value is None:
+            return None
+        return max(min_value, _pow2_floor(value // factor))
+
+    candidates = [(block_m, block_n, block_k, group_m)]
+    for factor, min_mn, min_k, min_group in ((2, 16, 16, 4), (4, 16, 8, 2)):
+        scaled_m = _downscale(block_m, factor, min_mn)
+        scaled_n = _downscale(block_n, factor, min_mn) if block_n is not None else None
+        scaled_k = _downscale(block_k, factor, min_k)
+        scaled_group = max(min_group, group_m // factor)
+        entry = (scaled_m, scaled_n, scaled_k, scaled_group)
+        if entry not in candidates:
+            candidates.append(entry)
+
+    return candidates
+
 @triton.jit
 def batched_correlation_counts_cross_kernel(
     vecs1_ptr, vecs2_ptr, logthreshs_ptr, counts_ptr,
@@ -219,26 +278,37 @@ def _batched_progressive_correlation_counts(vecs: torch.FloatTensor, epsilons: t
 
     grid = lambda META: (B * triton.cdiv(M, META["BLOCK_SIZE_M"]) * triton.cdiv(M, META["BLOCK_SIZE_M"]),)
     torch.cuda.set_device(vecs.device)
-    batched_progressive_counts_kernel[grid](
-        vecs,
-        log_epsilons,
-        inc,
-        B,
-        M,
-        K,
-        T,
-        vecs.stride(0),
-        vecs.stride(1),
-        vecs.stride(2),
-        log_epsilons.stride(0),
-        inc.stride(0),
-        inc.stride(1),
-        inc.stride(2),
-        BLOCK_SIZE_M=64,
-        BLOCK_SIZE_K=32,
-        GROUP_SIZE_M=8,
-    )
-    torch.cuda.synchronize()
+    for block_m, _block_n, block_k, group_m in _candidate_block_sizes(vecs.device, m=M, n=None, k=K):
+        try:
+            inc.zero_()
+            batched_progressive_counts_kernel[grid](
+                vecs,
+                log_epsilons,
+                inc,
+                B,
+                M,
+                K,
+                T,
+                vecs.stride(0),
+                vecs.stride(1),
+                vecs.stride(2),
+                log_epsilons.stride(0),
+                inc.stride(0),
+                inc.stride(1),
+                inc.stride(2),
+                BLOCK_SIZE_M=block_m,
+                BLOCK_SIZE_K=block_k,
+                GROUP_SIZE_M=group_m,
+            )
+            torch.cuda.synchronize()
+            break
+        except RuntimeError as exc:
+            if not _is_resource_exhausted_error(exc):
+                raise
+    else:
+        from . import pytorch as torch_impl
+
+        return torch_impl.progressive_correlation_counts(vecs, epsilons)
 
     # Convert incremental unordered counts into prefix ordered-pair counts.
     return inc.cumsum(dim=1) * 2
@@ -261,20 +331,31 @@ def _batched_correlation_counts(
         B * triton.cdiv(M, META['BLOCK_SIZE_M']) * triton.cdiv(M, META['BLOCK_SIZE_N']),
     )
     torch.cuda.set_device(vecs.device)
-    batched_correlation_counts_cross_kernel[grid](
-        vecs, vecs, log_epsilons, counts,
-        B, M, M, K, T,
-        vecs.stride(0), vecs.stride(1), vecs.stride(2),
-        vecs.stride(0), vecs.stride(1), vecs.stride(2),
-        log_epsilons.stride(0),
-        counts.stride(0), counts.stride(1),
-        BLOCK_SIZE_M=64,
-        BLOCK_SIZE_N=64,
-        BLOCK_SIZE_K=32,
-        GROUP_SIZE_M=8,
-        same_vecs=True,
-    )
-    torch.cuda.synchronize()
+    for block_m, block_n, block_k, group_m in _candidate_block_sizes(vecs.device, m=M, n=M, k=K):
+        try:
+            counts.zero_()
+            batched_correlation_counts_cross_kernel[grid](
+                vecs, vecs, log_epsilons, counts,
+                B, M, M, K, T,
+                vecs.stride(0), vecs.stride(1), vecs.stride(2),
+                vecs.stride(0), vecs.stride(1), vecs.stride(2),
+                log_epsilons.stride(0),
+                counts.stride(0), counts.stride(1),
+                BLOCK_SIZE_M=block_m,
+                BLOCK_SIZE_N=block_n,
+                BLOCK_SIZE_K=block_k,
+                GROUP_SIZE_M=group_m,
+                same_vecs=True,
+            )
+            torch.cuda.synchronize()
+            break
+        except RuntimeError as exc:
+            if not _is_resource_exhausted_error(exc):
+                raise
+    else:
+        from . import pytorch as torch_impl
+
+        return torch_impl.correlation_counts(vecs, epsilons)
     return counts
 
 def _batched_correlation_counts_cross(
@@ -301,22 +382,33 @@ def _batched_correlation_counts_cross(
         B1 * triton.cdiv(M, META['BLOCK_SIZE_M']) * triton.cdiv(N, META['BLOCK_SIZE_N']),
     )
     torch.cuda.set_device(vecs1.device)
-    BLOCK_SIZE_M = min(64, 2 ** int(np.ceil(np.log2(M))))
-    BLOCK_SIZE_N = min(64, 2 ** int(np.ceil(np.log2(N))))
-    batched_correlation_counts_cross_kernel[grid](
-        vecs1, vecs2, log_epsilons, counts,
-        B1, M, N, K1, T,
-        vecs1.stride(0), vecs1.stride(1), vecs1.stride(2),
-        vecs2.stride(0), vecs2.stride(1), vecs2.stride(2),
-        log_epsilons.stride(0),
-        counts.stride(0), counts.stride(1),
-        BLOCK_SIZE_M=BLOCK_SIZE_M,
-        BLOCK_SIZE_N=BLOCK_SIZE_N,
-        BLOCK_SIZE_K=32,
-        GROUP_SIZE_M=8,
-        same_vecs=False,
-    )
-    torch.cuda.synchronize()
+    for block_m, block_n, block_k, group_m in _candidate_block_sizes(vecs1.device, m=M, n=N, k=K1):
+        batched_block_m = min(block_m, 2 ** int(np.ceil(np.log2(M))))
+        batched_block_n = min(block_n, 2 ** int(np.ceil(np.log2(N))))
+        try:
+            counts.zero_()
+            batched_correlation_counts_cross_kernel[grid](
+                vecs1, vecs2, log_epsilons, counts,
+                B1, M, N, K1, T,
+                vecs1.stride(0), vecs1.stride(1), vecs1.stride(2),
+                vecs2.stride(0), vecs2.stride(1), vecs2.stride(2),
+                log_epsilons.stride(0),
+                counts.stride(0), counts.stride(1),
+                BLOCK_SIZE_M=batched_block_m,
+                BLOCK_SIZE_N=batched_block_n,
+                BLOCK_SIZE_K=block_k,
+                GROUP_SIZE_M=group_m,
+                same_vecs=False,
+            )
+            torch.cuda.synchronize()
+            break
+        except RuntimeError as exc:
+            if not _is_resource_exhausted_error(exc):
+                raise
+    else:
+        from . import pytorch as torch_impl
+
+        return torch_impl.correlation_counts(vecs1, epsilons, vecs_other=vecs2)
     return counts
 
 
