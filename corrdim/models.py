@@ -120,7 +120,7 @@ class TransformersModelWrapper(LanguageModelWrapper):
         if dim_reduction is not None:
             if dim_reduction > self.model.config.vocab_size:
                 raise ValueError(f"Dim reduction must be less than or equal to the vocabulary size: {self.model.config.vocab_size}")
-            print("Warning: Using dimension reduction may change the correlation dimension value.")
+            # print("Warning: Using dimension reduction may change the correlation dimension value.")
 
         if len(tokens) <= context_length:
             # Short text: process all at once

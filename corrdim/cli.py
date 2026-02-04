@@ -5,7 +5,42 @@ Command-line interface for the corrdim library.
 import argparse
 import sys
 
-from .core import CorrelationDimensionCalculator
+from .calculator import CorrelationDimensionCalculator
+
+
+def _parse_dtype(dtype: str):
+    if dtype is None:
+        return None
+    s = str(dtype).strip().lower()
+    mapping = {
+        "float16": "float16",
+        "fp16": "float16",
+        "half": "float16",
+        "float32": "float32",
+        "fp32": "float32",
+        "bfloat16": "bfloat16",
+        "bf16": "bfloat16",
+    }
+    s = mapping.get(s, s)
+    try:
+        return getattr(__import__("torch"), s)
+    except Exception as e:
+        raise ValueError(f"Unsupported dtype={dtype!r}. Use one of: float16/float32/bfloat16.") from e
+
+
+def _parse_stride(stride: str):
+    if stride is None:
+        return "auto"
+    s = str(stride).strip().lower()
+    if s == "auto":
+        return "auto"
+    try:
+        v = int(s)
+    except ValueError as e:
+        raise ValueError("stride must be a positive integer or 'auto'") from e
+    if v < 1:
+        raise ValueError("stride must be a positive integer or 'auto'")
+    return v
 
 
 def main():
@@ -41,11 +76,17 @@ Examples:
     parser.add_argument('--context-length', type=int, default=None,
                        help='Context length for the model (default: None, let model decide)')
     parser.add_argument('--stride', type=str, default="auto",
-                       help='Stride for text processing (default: auto)')
+                       help="Stride for text processing: positive int or 'auto' (default: auto)")
     parser.add_argument('--dim-reduction', type=int, default=None,
                        help='Vocabulary dimension reduction (default: None)')
     parser.add_argument('--dtype', type=str, default="float16",
-                       help='Data type for the model (default: float16)')
+                       help='Model weights dtype: float16/float32/bfloat16 (default: float16)')
+    parser.add_argument(
+        "--backend",
+        type=str,
+        default=None,
+        help="Correlation backend: auto/triton/pytorch/pytorch_fast (default: env CORRDIM_BACKEND or auto)",
+    )
 
     # Output options
     parser.add_argument('--output', '-o', help='Output file path')
@@ -65,6 +106,11 @@ Examples:
 
 def compute_correlation_dimension(args):
     """Compute correlation dimension for a text file."""
+    if args.backend is not None:
+        from .corrint import set_corrint_backend
+
+        set_corrint_backend(args.backend)
+
     # Read text file
     try:
         with open(args.file, 'r', encoding='utf-8') as f:
@@ -93,7 +139,7 @@ def compute_correlation_dimension(args):
     # Create model wrapper
     model_wrapper = TransformersModelWrapper(
         model_name=args.model,
-        dtype=args.dtype,
+        torch_dtype=_parse_dtype(args.dtype),
     )
 
     tokens = model_wrapper.encode(text, add_special_tokens=False)
@@ -111,7 +157,7 @@ def compute_correlation_dimension(args):
     curve = calc.compute_correlation_integral_curve(
         text=text,
         context_length=args.context_length,
-        stride=args.stride,
+        stride=_parse_stride(args.stride),
         dim_reduction=args.dim_reduction,
         epsilon_range=(1e-20, 1e20),  # Fixed range for optimal results
         num_epsilon=10000  # Fixed number for high precision

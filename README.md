@@ -35,14 +35,17 @@ Then initialize and install the package:
 git clone https://github.com/kduxin/corrdim.git
 cd corrdim
 uv sync
-
-# Optional: AWQ-quantized model support
-uv add autoawq
 ```
 
 ## Quick Start
 
-### High-Level Interface
+### Command-Line Interface
+
+```bash
+uv run python -m corrdim.cli data/sep60/newton-philosophy.txt --model Qwen/Qwen2.5-1.5B
+```
+
+### High-Level Interface (Single Text Only)
 
 ```python
 import torch
@@ -58,7 +61,7 @@ result = calculator("Your text here...", dim_reduction=8192)
 print(f"Correlation dimension: {result.corrdim:.2f}")
 ```
 
-### Low-Level Interface
+### Low-Level Interface (Supports Batch Processing)
 
 ```python
 import torch
@@ -72,7 +75,7 @@ inputs = tokenizer(text, return_tensors="pt").to("cuda")
 logprobs = model(**inputs).logits[0].log_softmax(-1)
 
 # Compute correlation integral and dimension
-epsilons = torch.logspace(-20, 20, 10000, device="cuda")
+epsilons = torch.logspace(-10, 10, 1024, device="cuda")
 corrint = corrdim.correlation_integral(logprobs, epsilons)
 result = corrdim.CorrelationDimensionCalculator.compute_correlation_dimension_from_curve(
     epsilons=epsilons.cpu().numpy(),

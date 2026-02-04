@@ -8,18 +8,32 @@ based on the research paper "Correlation Dimension of Auto-regressive Large Lang
 __author__ = "duxin"
 __email__ = "duxin.ac@gmail.com"
 
-from .calculator import CorrelationDimensionCalculator, CorrelationIntegralResult, CorrelationDimensionResult
+from .calculator import (
+    CorrelationDimensionCalculator,
+    CorrelationDimensionResult,
+    CorrelationIntegralResult,
+)
+from .corrint import (
+    available_corrint_backends,
+    correlation_counts,
+    correlation_integral,
+    progressive_correlation_counts,
+    progressive_correlation_integral,
+    set_corrint_backend,
+)
 from .models import LanguageModelWrapper
-from .utils import load_model, get_log_probabilities
-from .corrint import set_corrint_backend, correlation_integral
+from .utils import clamp
 
 __all__ = [
-    "set_corrint_backend",
+    "clamp",
+    "available_corrint_backends",
+    "correlation_counts",
     "correlation_integral",
+    "progressive_correlation_counts",
+    "progressive_correlation_integral",
     "CorrelationDimensionCalculator",
-    "LanguageModelWrapper", 
-    "load_model",
-    "get_log_probabilities",
-    "CorrelationIntegralResult",
     "CorrelationDimensionResult",
+    "LanguageModelWrapper",
+    "CorrelationIntegralResult",
+    "set_corrint_backend",
 ]

@@ -11,6 +11,7 @@ import torch
 import sklearn.linear_model
 from dataclasses import dataclass
 
+from .utils import clamp
 from .models import LanguageModelWrapper
 from .corrint import correlation_integral
 
@@ -61,9 +62,9 @@ class CorrelationDimensionCalculator:
             device: Device to run computations on ('cpu', 'cuda', etc.)
         """
         if isinstance(model, str):
-            from .utils import load_model
+            from .models import create_model_wrapper
 
-            self.model_wrapper = load_model(model, tokenizer, device, **kwargs)
+            self.model_wrapper = create_model_wrapper(model, tokenizer=tokenizer, device=device, **kwargs)
         else:
             self.model_wrapper = model
 
@@ -248,10 +249,6 @@ class CorrelationDimensionCalculator:
     def tokenizer(self):
         return self.model_wrapper.tokenizer
 
-
-def clamp(values, reference, low, high):
-    in_range = (reference > low) & (reference < high)
-    return values[in_range], reference[in_range]
 
 def auto_linear_region_bounds(sequence_length: int, epsilons: np.ndarray, corrints: np.ndarray) -> Tuple[float, float]:
     N = sequence_length
