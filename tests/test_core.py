@@ -51,11 +51,11 @@ class TestCorrelationDimensionCalculator:
     
     def test_initialization_with_string(self):
         """Test calculator initialization with model name string."""
-        with patch('corrdim.utils.load_model') as mock_load:
-            mock_load.return_value = self.mock_model
+        with patch("corrdim.models.create_model_wrapper") as mock_create:
+            mock_create.return_value = self.mock_model
             calc = CorrelationDimensionCalculator("gpt2", device="cpu")
             assert calc.model_wrapper == self.mock_model
-            mock_load.assert_called_once()
+            mock_create.assert_called_once()
     
     def test_get_log_probability(self):
         """Test log probability extraction."""

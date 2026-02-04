@@ -47,7 +47,7 @@ class TestEdgeCases:
         calc = CorrelationDimensionCalculator(mock_model)
         
         # Should raise an error for sequences that are too short (< 100 tokens)
-        with pytest.raises(AssertionError, match="sequence length is too short"):
+        with pytest.raises(ValueError, match="sequence length is too short"):
             calc.compute_correlation_integral_curve_from_vector_sequences(
                 torch.randn(50, 20),  # Only 50 points, needs > 100
                 num_epsilon=10
@@ -73,7 +73,7 @@ class TestEdgeCases:
         vecs = torch.randn(150, 20)
         vecs[0, 0] = float('nan')
         
-        with pytest.raises(AssertionError, match="Found nan or inf"):
+        with pytest.raises(ValueError, match="Found nan or inf"):
             calc.compute_correlation_integral_curve_from_vector_sequences(
                 vecs,
                 num_epsilon=10
@@ -88,7 +88,7 @@ class TestEdgeCases:
         vecs = torch.randn(150, 20)
         vecs[0, 0] = float('inf')
         
-        with pytest.raises(AssertionError, match="Found nan or inf"):
+        with pytest.raises(ValueError, match="Found nan or inf"):
             calc.compute_correlation_integral_curve_from_vector_sequences(
                 vecs,
                 num_epsilon=10
