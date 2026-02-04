@@ -108,7 +108,7 @@ class CorrelationDimensionCalculator:
         num_epsilon: int = 1000,
         block_size: int = 512,
         show_progress: bool = False,
-        precision: str = torch.float32,
+        precision: torch.dtype = torch.float32,
     ) -> CorrelationIntegralResult:
         """
         Compute the full correlation integral curve S(ε) vs ε.
@@ -147,9 +147,13 @@ class CorrelationDimensionCalculator:
         show_progress: bool = False,
     ) -> CorrelationIntegralResult:
 
-        assert torch.isfinite(vecs).all(), "Found nan or inf in log-probability vectors. Please check the dtype of the model."
+        if not torch.isfinite(vecs).all():
+            raise ValueError("Found nan or inf in log-probability vectors. Please check the dtype of the model.")
 
-        assert vecs.shape[0] > 100, f"The sequence length is too short ({vecs.shape[0]} tokens). Please consider using a longer sequence with at least 100 tokens."
+        if vecs.shape[0] <= 100:
+            raise ValueError(
+                f"The sequence length is too short ({vecs.shape[0]} tokens). Please consider using a longer sequence with at least 100 tokens."
+            )
 
         N = vecs.shape[0]
 
@@ -176,7 +180,7 @@ class CorrelationDimensionCalculator:
         stride: Union[int, str] = "auto",
         block_size: int = 512,
         show_progress: bool = False,
-        precision: str = torch.float32,
+        precision: torch.dtype = torch.float32,
     ) -> CorrelationDimensionResult:
         """
         Estimate the correlation dimension from the correlation integral curve.
