@@ -1,0 +1,1415 @@
+Correlation Dimension of
+Auto-regressive Large Language Models
+
+Xin Du
+Waseda University
+duxin@aoni.waseda.jp
+
+Kumiko Tanaka-Ishii
+Waseda University
+kumiko@waseda.jp
+
+Abstract
+Large language models (LLMs) have achieved impressive results in natural language generation but continue to exhibit unexplained behaviors—such as repetition
+and incoherence—even at low perplexity. This exposes the limitations of traditional evaluation metrics, which focus on local prediction accuracy while neglecting long-range structural complexity. We introduce the correlation dimension, a
+fractal-geometric measure of self-similarity, to quantify the implicit textual complexity perceived by language models. Correlation dimension robustly captures the
+hierarchical recurrence structure of text, bridging local and global properties. Experiments demonstrate that this measure reveals distinct pretraining phases, reflects
+context-dependent complexity, and reliably detects various forms of degeneration
+in generated text. The method is computationally efficient, broadly applicable
+to autoregressive models, and offers new insight into the generative dynamics of
+LLMs.
+
+1
+
+Introduction
+
+Latest advances in large language models (LLMs) have demonstrated sophisticated capabilities,
+including mathematical reasoning and planning. These abilities suggest taht LLMs internally process
+information through complex, non-linear, and potentially hierarchical mechanisms, despite operating
+through simple, token-by-token predictions. Understanding precisely how LLMs achieve such
+macroscopic behaviors from microscopic predictive steps remains an important open question,
+essential for grasping the full potential and limitations of these models. Although previous research
+shows that minimizing next-token prediction loss—perplexity—is theoretically powerful [28], it still
+falls short in fully explaining unexpected model behaviors, such as hallucinations and repetitive,
+bland outputs, even when perplexity values are low. Thus, new tools for characterizing the complex
+behavior of LLMs are urgently needed.
+Current evaluation approaches broadly fall into two categories. The first includes methods based
+on local textual properties, such as lexical or syntactic statistics (e.g., n-gram frequencies). These
+metrics are intuitive and interpretable but often fail to capture semantic ambiguities or deeper
+structural complexities. The second category consists of global metrics, such as mean perplexity or
+semantic similarity measures. While these methods provide comprehensive quantitative evaluations,
+they frequently lack interpretability and specific insights into local textual phenomena. This divide
+between local interpretability and global comprehensiveness reflects the broader challenge of bridging
+microscopic (token-level) and macroscopic (long-range, structural) perspectives of LLM behavior.
+In this work, we propose correlation dimension, a measure drawn from fractal geometry and dynamical systems theory, to bridge this gap. Correlation dimension quantifies self-similarity—a fundamental
+characteristics of complex systems that exhibit invariant patterns across scales. Originally developed
+for analyzing deterministic chaotic systems [13], correlation dimension has since been successfully
+adapted to stochastic processes and real-world complex phenomena [35, 24]. Applied to language
+39th Conference on Neural Information Processing Systems (NeurIPS 2025).
+
+models, correlation dimension effectively the intrinsic complexity and recurrence structure of generated texts as perceived by the model. For instance, texts with randomly shuffled words appear highly
+complex and yield high dimensionality, whereas simple repetitive patterns exhibit low dimensionality.
+We specifically propose computing correlation dimension using sequences of next-token logprobability vectors, which are readily available for any autoregressive language model. Recurrences
+are defined via the Euclidean distance between these vectors. Unlike perplexity, correlation dimension
+reflects deeper structural properties of the text generation process. For example, a model experiencing
+mode collapse might produce contextually irrelevant but statistically plausible text, exhibiting low
+perplexity yet high correlation dimension. Conversely, models lacking adequate memory to handle
+long-range dependencies might show low dimensionality despite high perplexity, clearly indicating
+their limited structural comprehension.
+Correlation dimension serves as both a practical and theoretically grounded metric. It requires little
+computational overhead beyond perplexity calculations and runs at inference time, making it easy to
+be integrated into existing inference infrastructures such as vllm. At a theoretical level, it provides
+nuanced insights into model behavior, revealing the long-range complexity structures that perplexity
+alone cannot uncover. Practically, it offers a straightforward yet powerful method to evaluate model
+robustness, capturing subtle forms of degeneration such as repetition, incoherence, and blandness.
+Throughout the paper, we illustrate how correlation dimension inherently connects local recurrence
+structures and global textual complexity (Section 3), provides insights into intrinsic properties of texts
+and model behavior (Section 4), and effectively detects degeneration issues in long-text generation
+(Section 5). Overall, our approach naturally integrates interpretability and comprehensiveness,
+offering a robust metric grounded in the fundamental properties of complex dynamical systems.
+
+2
+
+Related Works
+
+2.1
+
+Statistical Self-Similar Phenomenon in Language
+
+Self-similarity is a fundamental property observed in various complex systems, characterized by
+invariant patterns across multiple scales. A special class of self-similarity, known as scale-free
+properties, refers specifically to patterns that are consistent when viewed at different scales [42].
+Unlike precise scale-free structures defined mathematically (e.g., the Koch snowflake), statistical
+self-similarity denotes approximate scale invariance identified through statistical analysis of empirical
+data [39].
+Statistical self-similarities has been widely documented in natural language, manifesting through
+phenomena such as Zipf’s law [48, 29, 31] for word frequencies, Herdan-Heap’s law [20, 17] for
+vocabulary growth, and long-range correlations [10, 9, 2, 40] for word occurrence across text spans.
+Recent approaches have explored statistical self-similarity at the abstract semantic level, extending
+beyond traditional lexical-based metrics (e.g., word frequency). For instance, [6, 7] utilized latent
+semantic analysis (LSA) embeddings of text paragraphs [5] and discovered geometric self-similarity
+(fractal structures) within semantic spaces, estimating fratal dimensions approximately between 8
+and 20. More recently, consistent semantic self-similarity across multiple languages was observed
+using pretrained language models [8]. However, the linguistic significance of the self-similarity and
+the explicit role of language models in capturing such phenomena is unclear. This paper proposes a
+new method utilizing language models that naturally addresses these gaps, thereby providing a new
+analytical tool for characterizing large language models.
+Characterizing LLMs via Self-Similarity Recent studies have evaluated language models via
+statistical self-similarity. [37] compared generated texts from language models to natural texts across
+five scale-free properties, revealing significant deviations in scaling exponents. Building on this, [30]
+introduced quantitative statistical tests to measure such deviations systematically and examined how
+different sampling strategies (e.g., nucleus sampling vs. beam search) affect self-similarity.
+Notably, [1] recently measured the fractal dimension and Hurst exponent of cumulative log-perplexity
+series, demonstrating that these scaling exponents correlate with downstream performance of LLMs.
+However, their approach primarily captures long-range dependencies in the model’s predictive error
+sequences. In contrast, our method (detailed in Section 3) examines the intrinsic generative recurrence
+2
+
+But then towards the paper’s end, Newton added his new line of
+argument, which employed some philosophical analysis together
+with some experimental evidence to support the …
+
+(a) Local skips
+Newton’s view that the ray actually contains a series of colors as
+its “qualities”. Are these qualities “sensible” if their presence can
+be detected only through the use of one or more prisms but
+never through the inspection of the sunlight through ordinary
+means ? These are apt to strike us as …
+
+7.0
+
+(b) Long-range skips (whole sentences)
+
+(c) Recurrence plot
+
+(d) Correlation integral curves
+
+Figure 1: Experimental results on the “Newton’s Philosophy” article of the Stanford Encyclopedia of Philosophy.
+(a-b) Examples of textual skips as predicted by the Pythia-12B model, illustrating both local and long-range
+recurrences in the text. (c) Segment of the recurrence plot for the log-probability vectors generated by the model;
+black dots indicate pairs of points within a specified distance threshold. (d) Correlation integral curves for six
+pre-trained language models (solid lines), compared to i.i.d. Gaussian noise in R50000 (dashed lines).
+
+structure inherent in language itself, uncovering fundamentally different insights about the model
+behavior and text complexity.
+2.2
+
+Complexity Metrics of Sequential Data
+
+3
+
+Recurrence Structure and Correlation Dimension of Language
+
+Natural language exhibits self-similarity across various linguistic scales, ranging from morphological,
+lexical, and syntactic to semantic structures and long-range dependencies. Unlike mathematically
+precise fractals such as the Koch snowflake, real-world self-similarity is typically approximate and
+statistical, manifesting through recurrent statistical patterns rather than exact repetitions.
+The correlation dimension provides a quantitative framework to measure such statistical self-similarity
+in sequences by analyzing their recurrence structure. A recurrence is defind as an event where the
+trajectory of a system approximately revisits a previous state within a predefined distance threshold ε.
+As ε increases, more recurrences naturally emerge. Self-similar systems typically follow a power-law
+relationship betwen the recurrence frequency S(ε) and the distance threshold ε, formally defined as
+follows:
+Definition 1 (Correlation dimension [13]). Given an infinite sequence {xt }∞
+t=1 in a metric space
+(e.g., RD ), its correlation dimension d is the exponent characterizing the scaling behavior of the
+correlation integral S(ε):
+S(ε) ∝ εd as ε → 0,
+(1)
+where the correlation integral S(ε) is defined as the frequency of point pairs separated by distances
+less than ε:
+X
+2
+S(ε) = lim
+1{∥xi − xj ∥ < ε}.
+(2)
+t→∞ t(t − 1)
+1≤i<j≤t
+
+Here, ∥·∥ denotes the Euclidean norm, and 1{·} is the indicator function that equals 1 if the condition
+is true and 0 otherwise.
+Correlation dimension was originally developed to characterize deterministic attractors (e.g., Hénon
+maps [19]) but subsequently generalized for analyzing stochastic processes such as fractional Brownian motion [11] and complex networks [24].
+Correlation Dimension Applied to Language. Representing text as a sequence of numerical
+vectors allow the identification and measurement of recurrences and subseqeuntly their correlation
+dimension. However, selecting a meaningful, stable, and interpretable representation for natural
+language is nontrivial.
+We propose utilizing the Euclidean distance betwen logarithmic next-token probability vectors derived
+from language models. Specifically, the log-probability vector at time t, denoted xt , is calculated as:
+xt (ω) = log Pθ (ωt = ω|ωt−c , · · · , ωt−1 ) ∀ω ∈ Ω,
+3
+
+(3)
+
+where ωt represents the token at position t, Pθ represents the model-predicted probability (θ specifies
+the model), and Ω is the vocabulary set. Unless otherwise specified, the context length c is set to 512
+tokens; its impact is further examined in Section 4.2.
+Textual Skips as Recurrences. Recurrences in next-token log-probability vectors can be interpreted
+as textual skips. If two states xt and xs (s < t) are close, the text segment [s, t) could theoretically be
+omitted without significantly altering subsequent text generation. Skips occur at multiple scales, as
+illustrated in Figure 1(a-b): from local (single-word skips) to global (sentence-level skips). Smaller
+distance thresholds (ε) identify local skips, while larger thresholds detect longer-range skips. The
+hierarchy aligns naturally with Chomsky’s generative grammar [4], where such skips may correspond
+to omitted subtrees within the hierarchical structure of language.
+Figure 1(c) provides an example recurrence plot based on log-probability vectors from the text
+Newton’s Philosophy [23], clearly visualizing recurrences at a certain threshold. The correlation
+integrals S(ε), illustrated in Figure 1(d), demonstrate near-linear scaling for multiple pre-trained
+language models (GPT2 [34], Pythia [3], Falcon3 [41], OpenLLaMA [12], Yi1.5 [44], and Mamba
+[16]), yielding a consistent correlation dimension around 7. In contrast, Gaussian random vectors
+in equivalent dimensional spaces exhibit distinct different scaling behavior, underscoring languagespecific recurrence structures.
+3.1
+
+Sufficiency of Next-Token Log-probabilities
+
+The next-token log-probability vectors represent only partial information of a language model’s
+full state, defined theoretically as the distribution over all future token sequences. Thus, one might
+question the sufficiency of next-token probabilities alone for characterizing long-range text generation.
+Time-delayed embeddings, motivated by Takens’ embedding theorem [38] and its stochastic extensions [35, 36], are common methods for reconstructing full states from partial observations.
+Such embeddings concatenate multiple sequential log-probability vectors, yt = [xt ; xt+1 ; . . . ; xt+k ],
+potentially capturing higher-order dependencies.
+However, empirical observations reveal negligible differences in the correlation dimension when
+comparing simple next-token log-probability vectors (k = 1) to embeddings with higher orders
+(k > 1), after accounting for the noise inevitably introduced in the delayed embeddings. This somewhat surprising result suggests that single-step log-probability vectors inherently encode significant
+long-term structural information about language evolution. This phenomenon mirrors findings in
+knowledge distillation [21], where single-step probability distributions effectively summarize model
+knowledge. Additional details and analysis are provided in Appendix C.
+3.2
+
+Empirical Convergence of Correlation Dimension
+
+Considering an ideal “perfect” langauge model capable of precisely predicting next-token distributions, its correlation dimension would reflect intrinsic textual complexity. However, slight imperfections in predictions significantly affect correlation dimension measurements, particularly due to
+rare outcomes influencing the measure disproportionately
+compared to typical loss calculations. Pre
+cisely, let l(θ) = Eω≤t ∼P log Pθ (ωt |ω≤t−1 ) be the cross-entropy loss function of a language model
+parameterized by θ, where P and Pθ represent the empirical distribution and the model-predicted
+distribution, respectively, and ω≤t = [ω1 , · · · , ωt ] represents the sequence of tokens until time t.
+Then, we can see that the contribution of rare outcomes ω to the total loss is very small:
+∂ l(θ)
+= P(ω|ω≤t−1 )
+∂ log Pθ (ω|ω≤t−1 )
+
+∀ω ∈ Ω.
+
+(4)
+
+In other words, the log-probability vectors at rare words ω may vary significantly, without affecting
+the loss function, but this variation will be reflected in the correlation dimension regardless of the
+rareness of the word.
+Nonetheless, empirical experiments indicate convergence in correlation dimensions of well-trained
+language models to a narrow range as perplexity decreases. Figure 2 illustrates correlation dimension
+for various pre-trained LLMs across the SEP dataset which is summarized in Appendix B. As
+the perplexity decreases, correlation dimensions stablize around a consistent value near 6.5. This
+4
+
+>10 Random texts
+
+Math
+
+6.5
+
+Natural
+language
+…
+
+4
+
+Trigram
+Bigram
+
+N-grams
+
+Simple repetitions
+2
+Polya urn model
+
+Figure 2: Left: Mean correlation dimension of the SEP dataset measured with various pre-trained LLMs. Right:
+A conjectured spectrum of correlation dimension for different types of texts / language models.
+
+empirical convergence underscores correlation dimension’s reliability as a stable, interpretable metric
+for evaluating the structural complexity of natural language and the performance of language model.
+The right half of Figure 2 presents the spectrum of correlation dimension values across various
+types of texts and statistical processes. Randomly shuffled texts exhibit high correlation dimensions,
+typically above ten, whereas self-reinforcing processes such as the Polya urn model [27] display much
+lower values, below two. n-gram processes with small n also yield lower correlation dimensions
+compared to natural language, while mathematical texts occupy the higher end of the spectrum. The
+latter observation is based on the MATH dataset [18] analyzed with a math-finetuned LLM; however,
+this finding remains provisional, as the characteristics of “typical” mathematical texts are not well
+defined—particularly given the rapid evolution of math-enhanced LLMs.
+
+4
+
+Characterizing Language Models Using Correlation Dimension
+
+Estimating the correlation dimension of a text using language models raises critical questions regarding the reliability and interpretability of this measure when the underlying model is imperfect or
+incompletely trained. Ideally, with a perfect language model, the correlation dimension would represent the intrinsic complexity of the text itself. However, real-world language models inevitably contain
+imperfections, prompting us to investigate whether the correlation dimension remains meaningful
+under such conditions.
+In this section, we demonstrate that the correaltion dimension is a robust measure of the perceived
+complexity of texts from the perspective of language models, even when these models are imperfect
+or incompletely trained. Specifically, we explore three key aspects: (1) how the correlation dimension
+reflects the inherent complexity of a text as determined by its underlying generative structure (Section
+4.1); (2) how the correlation dimension is influenced by constraints on the contextual information
+available to the model (Section 4.2), and (3) how distinct stages emerge in the correlation dimension
+throughout the training process of language models, a phenomenon not observed in conventional
+metrics such as perplexity (Section 4.3).
+4.1
+
+Correlation Dimension and Textual Complexity
+
+To analyze how correlation dimension captures inherent textual complexity, we generate sequences
+using the Lin-Tegmark grammar [26], a probabilistic context-free grammar defined over a binary
+alphabet {0, 1}. The grammar’s complexity is parameterized by a single Bernoulli parameter q ∈
+5
+
+1-q
+
+0
+
+q
+
+1 q
+0 1-q 1
+
+G
+0
+
+0
+
+1
+
+1 0 0 1 1 0 0 0
+
+G
+G
+
+“1 0 0 1 1 0 0 0”
+(a)
+
+(b)
+
+Figure 3: (a) Illustration of the Lin-Tegmark grammar generation process governed by the transition matrix
+G (Eq. (5)), parameterized by q. (b) Correlation integral curves for texts generated with different q values,
+measured using the OpenLLaMA-13B model.
+
+(a)
+
+(b)
+
+Figure 4: (a) Correlation integral curves on an article from the SEP dataset, measured by Pythia-1B model at
+different context lengths. (b) Mean correlation dimension on the SEP dataset (vertical axis), measured using
+three models at different context lengths, with respect to the negative perplexity (horizontal axis).
+
+[0, 1] (Figure 3(a)), controlling the mutual information decay between tokens:
+
+
+q
+1−q
+G=
+,
+1−q
+q
+
+(5)
+
+where Gij denotes the probability of generating a child node valued j given a parent node valued i.
+The resultant text complexity varies from highly predictable sequences (as q approaches 0 or 1) to
+highly unpredictable sequences (as q approaches 0.5).
+Figure 3(b) illustrates the correlation integral curves computed by the OpenLLaMA-13B model
+for different values of q. As q increases towards 0.5, the correlation dimension increases markedly
+from near zero to values above ten, demonstrating its sensitivity to textual complexity. Despite
+the nonlinear curves due to the model not being explicitly trained on this grammar, the correlation
+dimension consistently captures the inherent complexity defined by the grammar.
+4.2
+
+Effect of Contextual Constraints on Correlation Dimension
+
+We next explore how limiting contextual access affects the correlation dimension measured by
+pretrained language models. Varying the context length parameter c in Eq. (3) imposes restrictions
+on the model’s available context, directly influencing its complexity perception. A context length of
+c = 1 reduces the model effectively to a bigram approximation, while longer contexts progressively
+enable deeper linguistic comprehension.
+6
+
+(a)
+
+(b)
+
+Figure 5: (a) Evolution of the mean correlation dimension for various language models on the SEP dataset
+during pre-training. (b) Notable case of two smaller models (Pythia-14M and 160M) that show a marked increase
+in correlation dimension (top) near the end of training, coinciding with a significant drop in in-context learning
+accuracy (bottom).
+
+Figure 4(a) shows correlation integral curves for the Pythia-1B model measured on the SEP dataset at
+varying context lengths. Figure 4(b) depicts average correlation dimensions against perplexity for
+multiple models (Pythia-1B [3], Qwen2.5-1.5B [43], and Llama3.2-1B [14]). Notably, we observe a
+two-stage pattern: initial correlation increases sharply from approximately 3 to about 8 as context
+length extends to 32 tokens, followed by a gradual reduction to around 6.5 at longer contexts.
+This pattern indicates that initial increases in context length enhance the model’s perception of
+complexity, revealing more contextual variation. Subsequently, the model identifies redundant
+contextual variations, compressing perceived complexity and converging to a stable dimension around
+6.5. This trend consistently appears across different models, validating the correlation dimension as a
+reliable metric of the complexity perceived by language models.
+4.3
+
+Three-Stage Evoluation in LLM Pre-Training
+
+Pre-training language models typically focus on monotonically reducing perplexity, implying a linear
+improvement. However, we find that correlation dimension reveals a distinct, nonlinear evolution
+consisting of three stages during training.
+We monitored correlation dimension across multiple checkpoints of various models, including the
+Pythia family (12B, 2.8B, 1B, 160M, 14M), OpenLLaMA (3B, 13B), and Amber-7B (Figure 5). The
+evolution distinctly unfolds in three stages: (1) an initial rapid drop in correlation dimension due to
+learning short-range (bigram-level) structures, (2) a subsequent increase as models begin capturing
+longer-range dependencies, and (3) a final gradual decline indicating improved generalization via
+context compression. This three-stage evolution is clearly observed in the Pythia family, for which
+the early-stage checkpoints are available; for the other models, the evolution is verified in the last
+stage. Notably, these shifts occur even though perplexity continuously decreases.
+Interestingly, the third stage, indicative of improved generalization, does not universally occur.
+Smaller models, like Pythia-14M and Pythia-160M, instead exhibit a sudden increase in correlation
+dimension at later stages, correlating with degraded performance in contextual learning tasks. Near
+the end of the training process, the correlation dimensions of these models exhibit a sudden rise
+to around 8. In the lower half, we show the accuracy of the two models in a simple in-context
+learning task, where the model is asked to repeat a sequence of symbols. A clear correlation is seen
+between the accuracy and the increase in correlation dimension, suggesting the loss of generalization
+ability of the model. This observation underscores the potential of correlation dimension to indicate
+generalization failures and stability in language models, insights inaccessible through perplexity
+alone.
+
+5
+
+Correlation Dimension for Quantifying Degeneration in Text Generation
+7
+
+A critical challenge in language model
+generation is maintaining coherence, diversity, and relevance throughout extended text sequences. A well-known
+phenomenon, termed degeneration, describes scenarios where texts become
+repetitive, incoherent, or bland [22].
+While explicit repetition is easily detectable, subtler forms of degeneration
+such as incoherence or blandness lack
+clear definitions or reliable quantification methods.
+
+Table 1: Schematic summary of various LLM evaluation methods
+(rows) and their ability to detect different types of degeneration
+(columns). Triangles indicate potential usefulness that has not
+been empirically validated.
+Metric
+
+repetition
+
+incoherent
+
+bland
+
+Local generation probability
+Perplexity
+△
+×
+Cond. Entropy
+△
+×
+
+△
+△
+
+Word or N -gram statistics
+Zipf Coefficient [48]
+✓
+△
+Heap Coefficient [17]
+✓
+△
+Rep-N [22]
+✓
+×
+Distinct-N [25]
+✓
+×
+Self-BLEU [47]
+✓
+×
+
+×
+×
+×
+×
+△
+
+In this section, we propose using correlation dimension as a unified metric
+to quantify degeneration. Conceptually,
+Semantics
+degeneration is viewed as a sudden col×
+✓
+△
+lapse from a higher-dimensional trajec- BERTScore [46]
+MAUVE [32]
+×
+✓
+△
+tory in the model’s state space into a
+✓
+✓
+✓
+lower-dimensional attractor. Such col- CorrDim (ours)
+lapses generally are irreversible, mirroring the boundary crisis phenomenon in chaotic dynamical systems [15]. Table 1 compares several
+puplar evaluation methods (rows) against specific degeneration types (columns), highlighting correlation dimension’s unique capability to detect all considered forms: repetition, incoherence, and
+blandness.
+5.1
+
+Detecting Degeneration Beyond Repetition
+
+To empirically evaluate our approach, we created a controlled dataset comprising responses to
+twenty generic questions. Each question had ten normal responses and intentionally degenerate
+texts—repetitive, incoherent, or bland—generated by the GPT-4o model (details in Appendix D). We
+computed correlation dimensions using the Falcon3-10B model [41]. Because all the texts are short
+and their lengths are within the context length limit of the model, we set c to the maximum context
+length of the model (See Section A).
+The results, shown in Table 2, indicate significantly lower correlation dimensions for degenerate
+texts compared to normal responses, confirmed by
+Wilcoxon signed-rank tests (all p-values < 0.01).
+These findings validate the correlation dimension’s
+sensitivity to different degeneration modes, including those traditionally difficult to quantify, such as
+incoherence and blandness.
+
+Table 2: Correlation dimension or perplexity of
+degenerate texts compared to normal texts, measured using the Falcon3-10B model, with p-values
+from Wilcoxon signed-rank test in the parentheses.
+Group
+
+mean
+CorrDim
+
+mean
+perplexity
+
+Normal
+
+5.04
+
+10.79
+
+3.80 (9.5E-7)
+1.25
+For comparison, the table also reports the mean per- Repetitive
+Incoherent
+3.96 (2.9E-6)
+13.24
+plexity (right-most column) of each group, as mea- Bland
+4.51 (1.1E-3)
+4.24
+sured by the Falcon3-10B model. While perplexity
+can distinguish certain types of degeneration—show
+much lower values for repetitive texts and higher values for incoherent texts compared to normal
+response—the direction of change is inconsistent across degeneration types. This indicates perplexity
+not being a intrinsic measure of degeneration.
+
+5.2
+
+Stress-Testing Language Models with Random Texts
+
+To access model susceptibility to degeneration, we designed a stress-test involving random texts—
+specifically, a list of randomly generated English names separated by commas, totaling approximately
+1024 tokens. Models were tasked with completing the sequence from varying input lengths (n),
+generating 1024 − n tokens. Random sequences typically have high initial correlation dimension due
+to unpredictability; thus models prone to degeneration exhibit abrupt drops in dimension as repetition
+or incoherence emerges.
+8
+
+Figure 6 illustrates correlation dimension trends for three models as the input length n increases
+(and the output length 1024 − n decreases). Robust models like Yi1.5-34B consistently increasd
+their correlation dimension, whereas weaker models such as Qwen2-7B-Instruct displayed marked
+dimension drops, indicating degeneration.
+Further quantification is presented in Table 3, which reports mean correlation dimensions at input
+length n = 512 alongside scores from the HelloEval text-completion benchmark [33]. A high
+correlation (Spearman’s ρ = 0.952) is evident, underscoring correlation dimension’s validity as an
+intrinsic measure of model robustness in generating long, coherent text without relying on complex
+evaluation tasks.
+Table 3: Mean correlation dimensions of generated texts for each model, compared with the HelloEval text completion scores.
+Model
+Qwen2-7B-Instruct
+Llama3.1-8B
+InternLM2.5-7B
+Mistral-7B-v0.2
+GLM4-9B-Chat
+LongWriter-GLM4-9B
+InternLM2.5-20B
+Yi1.5-34B
+Figure 6: Correlation dimension of generated texts
+with respect to the length of input texts.
+
+6
+
+Spearman’s ρ
+
+HelloEval
+
+CorrDim
+
+5.12
+-5.61
+6.39
+13.05
+12.32
+17.67
+36.68
+44.73
+
+3.54
+4.15
+4.61
+5.23
+6.45
+8.01
+8.89
+8.89
+
+-
+
+0.952
+
+Practical Usage of Correlation Dimension
+
+Lower CorrDim at a similar perplexity often indicates better generalization.
+Detection of Explicit Memorization from inconsistency between models.
+Sliding window triggers redo generation
+
+7
+
+Limitations
+
+We acknowledge several limitations in our work. First, our approach requires accessing a language
+model’s full output probabilities, which are not available typically for models available via APIs,
+such as GPT-4. This limits the evaluation of closed-source models. Second, it is unclear to which
+extent advanced quantization techniques would affect the correlation dimension. We conducted our
+experiments based on the FP16 precision at model inference and FP64 at distance calculation.
+
+8
+
+Conclusion
+
+In this paper, we introduced correlation dimension as a robust and insightfu metric for analyzing the
+complexity and structural characteristics of language generation processes in large language models
+(LLMs). Unlike conventional evaluation metrics that focus primarily on prediction accuracy, the
+correlation dimension provides a quantitative measure of the perceived textual complexity from the
+perspective of the language model itself.
+Our results show that correlation dimension captures inherent text complexity and reveals multi-stage
+learning behaviors during LLM training—patterns that remain hidden to perplexity-based evaluation.
+It highlights stages such as short-range dependency acquisition, long-range contextual structure
+emergence, and generalization or degeneration. Additionally, we validated correlation dimension as a
+comprehensive detector of various forms of degeneration—including repetition, incoherence, and
+blandness—in model-generated texts. Our empirical results confirmed its superior sensitivity compared to existing evaluation methods. Moreover, stress-testing experiments demonstrated correlation
+dimension’s effectiveness in evaluating a model’s robustness to degeneration in long text generation
+tasks.
+9
+
+Overall, the correlation dimension emerges as a versatile and theoretically grounded tool that complements traditional metrics, offering deeper insights into language model behavior, structural complexity,
+and generalization capability. Future research directions include further theoretical exploration of
+correlation dimension properties and practical applications in model evaluation and optimization.
+
+References
+[1] Ibrahim M Alabdulmohsin, Vinh Tran, and Mostafa Dehghani. Fractal patterns may illuminate
+the success of next-token prediction. Advances in Neural Information Processing Systems,
+37:112864–112888, 2024.
+[2] Edouard G. Altmann, Giampaolo Cristadoro, and Mirko D. Esposti. On the origin of long-range
+correlations in texts. Proceedings of the National Academy of Sciences, 109(29):11582–11587,
+2012.
+[3] Stella Biderman, Hailey Schoelkopf, Quentin Gregory Anthony, Herbie Bradley, Kyle O’Brien,
+Eric Hallahan, Mohammad Aflah Khan, Shivanshu Purohit, USVSN Sai Prashanth, Edward
+Raff, et al. Pythia: A suite for analyzing large language models across training and scaling. In
+International Conference on Machine Learning, pages 2397–2430. PMLR, 2023.
+[4] Noam Chomsky. Aspects of the Theory of Syntax. Number 11. MIT press, 2014.
+[5] Scott Deerwester, Susan T Dumais, George W Furnas, Thomas K Landauer, and Richard
+Harshman. Indexing by latent semantic analysis. Journal of the American society for information
+science, 41(6):391–407, 1990.
+[6] Isidoros Doxas, Simon Dennis, and William Oliver. The dimensionality of language. In
+Proceedings of the Annual Meeting of the Cognitive Science Society, volume 29, 2007.
+[7] Isidoros Doxas, Simon Dennis, and William L Oliver. The dimensionality of discourse. Proceedings of the National Academy of Sciences, 107(11):4866–4871, 2010.
+[8] Xin Du and Kumiko Tanaka-Ishii. Correlation dimension of natural language in a statistical
+manifold. Physical Review Research, 6:L022028, May 2024.
+[9] Werner Ebeling and Alexander Neiman. Long-range correlations between letters and sentences
+in texts. Physica A, 215:233–241, May 1995.
+[10] Werner Ebeling and Thorsten Pöschel. Entropy and long-range correlations in literary English.
+Europhysics Letters, 26(4):241–246, 1993.
+[11] Patrick Flandrin. On the spectrum of fractional brownian motions. IEEE Transactions on
+information theory, 35(1):197–199, 1989.
+[12] Xinyang Geng and Hao Liu. Openllama: An open reproduction of llama, May 2023.
+[13] Peter Grassberger and Itamar Procaccia. Characterization of strange attractors. Physical review
+letters, 50(5):346, 1983.
+[14] Aaron Grattafiori, Abhimanyu Dubey, Abhinav Jauhri, Abhinav Pandey, Abhishek Kadian,
+Ahmad Al-Dahle, Aiesha Letman, Akhil Mathur, Alan Schelten, Alex Vaughan, et al. The llama
+3 herd of models. arXiv preprint arXiv:2407.21783, 2024.
+[15] Celso Grebogi, Edward Ott, and James A Yorke. Crises, sudden changes in chaotic attractors,
+and transient chaos. Physica D: Nonlinear Phenomena, 7(1-3):181–200, 1983.
+[16] Albert Gu and Tri Dao. Mamba: Linear-time sequence modeling with selective state spaces. In
+First Conference on Language Modeling, 2024.
+[17] Harold Stanley Heaps. Information retrieval: Computational and theoretical aspects. Academic
+Press, Inc., 1978.
+[18] Dan Hendrycks, Collin Burns, Saurav Kadavath, Akul Arora, Steven Basart, Eric Tang, Dawn
+Song, and Jacob Steinhardt. Measuring mathematical problem solving with the math dataset.
+NeurIPS, 2021.
+10
+
+[19] Michel Hénon. A two-dimensional mapping with a strange attractor. The theory of chaotic
+attractors, pages 94–102, 2004.
+[20] Gustav Herdan. The advanced theory of language as choice and chance. Springer-Verlag New
+York, 1966.
+[21] Geoffrey E. Hinton, Oriol Vinyals, and Jeffrey Dean. Distilling the knowledge in a neural
+network. CoRR, abs/1503.02531, 2015.
+[22] Ari Holtzman, Jan Buys, Li Du, Maxwell Forbes, and Yejin Choi. The curious case of neural
+text degeneration. In 8th International Conference on Learning Representations, ICLR 2020,
+Addis Ababa, Ethiopia, April 26-30, 2020. OpenReview.net, 2020.
+[23] Andrew Janiak. Newton’s Philosophy. In Edward N. Zalta, editor, The Stanford Encyclopedia
+of Philosophy. Metaphysics Research Lab, Stanford University, Fall 2021 edition, 2021.
+[24] Lucas Lacasa and Jesús Gómez-Gardenes. Correlation dimension of complex networks. Physical
+review letters, 110(16):168703, 2013.
+[25] Jiwei Li, Michel Galley, Chris Brockett, Jianfeng Gao, and Bill Dolan. A diversity-promoting
+objective function for neural conversation models. In Proceedings of NAACL-HLT, pages
+110–119, 2016.
+[26] Henry W. Lin and Max Tegmark. Critical behavior in physics and probabilistic formal languages.
+Entropy, 19(7), 2017.
+[27] Hosam Mahmoud. Pólya urn models. Chapman and Hall/CRC, 2008.
+[28] Eran Malach. Auto-regressive next-token predictors are universal learners. In International
+Conference on Machine Learning, pages 34417–34431. PMLR, 2024.
+[29] Benoit Mandelbrot et al. An informational theory of the statistical structure of language.
+Communication theory, 84(21):486–502, 1953.
+[30] Clara Meister and Ryan Cotterell. Language model evaluation beyond perplexity. In Chengqing
+Zong, Fei Xia, Wenjie Li, and Roberto Navigli, editors, Proceedings of the 59th Annual Meeting
+of the Association for Computational Linguistics and the 11th International Joint Conference
+on Natural Language Processing (Volume 1: Long Papers), pages 5328–5339, Online, August
+2021. Association for Computational Linguistics.
+[31] Steven T Piantadosi. Zipf’s word frequency law in natural language: A critical review and
+future directions. Psychonomic bulletin & review, 21:1112–1130, 2014.
+[32] Krishna Pillutla, Swabha Swayamdipta, Rowan Zellers, John Thickstun, Sean Welleck, Yejin
+Choi, and Zaid Harchaoui. Mauve: Measuring the gap between neural text and human text
+using divergence frontiers. Advances in Neural Information Processing Systems, 34:4816–4828,
+2021.
+[33] Haoran Que, Feiyu Duan, Liqun He, Yutao Mou, Wangchunshu Zhou, Jiaheng Liu, Wenge
+Rong, Zekun Moore Wang, Jian Yang, Ge Zhang, et al. Hellobench: Evaluating long text
+generation capabilities of large language models. arXiv preprint arXiv:2409.16191, 2024.
+[34] Alec Radford, Jeffrey Wu, Rewon Child, et al. Language models are unsupervised multitask
+learners. OpenAI blog, 1(8):9, 2019.
+[35] Tim Sauer, James A Yorke, and Martin Casdagli. Embedology. Journal of statistical Physics,
+65:579–616, 1991.
+[36] Jaroslav Stark, David S Broomhead, Mike E Davies, and J Huke. Delay embeddings for forced
+systems. ii. stochastic forcing. Journal of Nonlinear Science, 13:519–577, 2003.
+[37] Shuntaro Takahashi and Kumiko Tanaka-Ishii. Evaluating computational language models with
+scaling properties of natural language. Computational Linguistics, 45(3):481–513, 2019.
+11
+
+[38] Floris Takens. Detecting strange attractors in turbulence. In Dynamical Systems and Turbulence,
+Warwick 1980: proceedings of a symposium held at the University of Warwick 1979/80, pages
+366–381. Springer, 1980.
+[39] Kumiko Tanaka-Ishii. Statistical Universals of Language: Mathematical Chance vs. Human
+Choice. Springer Nature, 2021.
+[40] Kumiko Tanaka-Ishii and Tatsuru Kobayashi. Taylor’s law for linguistic sequences and random
+walk models. Journal of Physics Communications, 2(11):115024, 2018.
+[41] Falcon-LLM Team. The falcon 3 family of open models, December 2024.
+[42] Stefan Thurner, Rudolf Hanel, and Peter Klimek. Introduction to the theory of complex systems.
+Oxford University Press, 2018.
+[43] An Yang, Baosong Yang, Beichen Zhang, Binyuan Hui, Bo Zheng, Bowen Yu, Chengyuan
+Li, Dayiheng Liu, Fei Huang, Haoran Wei, Huan Lin, Jian Yang, Jianhong Tu, Jianwei Zhang,
+Jianxin Yang, Jiaxi Yang, Jingren Zhou, Junyang Lin, Kai Dang, Keming Lu, Keqin Bao, Kexin
+Yang, Le Yu, Mei Li, Mingfeng Xue, Pei Zhang, Qin Zhu, Rui Men, Runji Lin, Tianhao Li,
+Tingyu Xia, Xingzhang Ren, Xuancheng Ren, Yang Fan, Yang Su, Yichang Zhang, Yu Wan,
+Yuqiong Liu, Zeyu Cui, Zhenru Zhang, and Zihan Qiu. Qwen2.5 technical report. arXiv preprint
+arXiv:2412.15115, 2024.
+[44] Yi. The yi model, 2024. https://huggingface.co/01-ai/Yi-34B, visited in January
+2024.
+[45] Edward N. Zalta and Uri Nodelman. The stanford encyclopedia of philosophy, 2024.
+[46] Tianyi Zhang, Varsha Kishore, Felix Wu, Kilian Q Weinberger, and Yoav Artzi. Bertscore:
+Evaluating text generation with bert. In International Conference on Learning Representations.
+[47] Yaoming Zhu, Sidi Lu, Lei Zheng, Jiaxian Guo, Weinan Zhang, Jun Wang, and Yong Yu.
+Texygen: A benchmarking platform for text generation models. In The 41st international ACM
+SIGIR conference on research & development in information retrieval, pages 1097–1100, 2018.
+[48] George Kingsley Zipf. Human behavior and the principle of least effort. Addison-Wesley Press,
+1949.
+
+12
+
+A
+
+Details for Estimating Correlation Dimension
+
+In practice, we can only observe a finite sequence of points (i.e., finite t); in addition, there is no
+guarantee that the correlation sum S(ε) is a perfect power-law function of ε. Nevertheless, the
+empirical correlation dimension still provides meaningful descriptions of the complexity of the
+system, as we will shown in the following sections. The correlation dimension d can be estimated
+by the slope of the log-log plot of S(ε) versus ε, i.e., log S(ε) ∝ d log ε. To provide accurate
+estimates which are consistent across sequences of different lengths t, we limit the range of S(ε)
+2
+× 10, 1t × 1] and estimate the slope using an ordinary least-square fit. This range covers
+to [ t(t−1)
+roughly the lower half of the curve while avoiding the tail that is often dominated by noise.
+We adopt slightly different settings in estimating the correlation dimension for long and short
+sequences. For long sequences, such as those in the SEP dataset, which are beyond the context
+limit of typical LLMs, we used a moving-window approach to estimate the next-token prediction
+probability with a exact predefined context length (e.g., 512 tokens).
+For short sequences, this approach would lead to discarding a large portion of the sequence. Therefore,
+we did not restrict the context length for short sequences. On the other hand, such short sequences
+are often within the context limit of the model, and the model can access all tokens in the sequence.
+In this case, we input the entire sequence all at once and calculate the correlation dimension using the
+output probabilities at all time steps. Therefore, the log-probability vectors are estimated with an
+increasing context length. This applies to the experiments in Section 5.
+All the experiments throughout the paper were conducted on a single NVIDIA H100 GPU with 92GB
+memory. The amount of GPU memory required is approximately twice the parameter size of the
+model, as we used FP16 precision for model inference.
+
+B
+
+The SEP Dataset and Additional Results
+
+We constructed the Stanford Encyclopedia of Philosophy (SEP) dataset by using the 60 longest
+articles on the SEP website [45]. The identifiers of the articles are listed in Table 4 in the left-most
+column. For each article, we removed the prologue and catalog. All the 60 articles were longer than
+20,000 words. In measuring the correlation dimension, we truncated each article to the first 20,000
+tokens. This may introduce a slight difference between models that use different tokenizers, but the
+difference was small for most models we examined.
+“process-theism”
+
+Figure 7: Comparison of correlation dimensions of the SEP articles between three models.
+
+Results for three representative models, Qwen2.5-32B, Qwen2.5-7B, and Falcon3-10B, are shown
+in Table 4. The second to fourth columns show the correlation dimensions of the articles, and the
+right-most column shows the perplexities for the Qwen2.5-32B model. The correlation dimensions
+among articles showed good consistency across different models, especially within the same family
+(Qwen2.5-32B), as shown in Figure 7.
+The largest difference in correlation dimension was observed for the article “process-theism”, as
+indicated in Figure 7 and in Table 4 in gray. which contained long lists of names. The Qwen2.5
+13
+
+models regarded the list of names as a flattened structure and estimated a low correlation dimension,
+while the Falcon3-10B model inferred a complex structure behind the list and estimated a high
+correlation dimension. This difference reflects an interesting aspect of the models in terms of their
+“perception” of text structure. The difference in correlation dimension could be due to the different
+training data and the fine-tuning process of the models.
+
+C
+
+Consistency with Time-Delayed Embeddings
+
+A potential concern with the correlation dimension estimation method in Section 3 is that we used
+only the probabilistic information of the next tokens, which is not a complete representation of the
+model’s state. A state of a dynamical system is defined as a point in the phase space, which contains
+all the information that governs the future evolution of the system.
+
+6.0
+
+6.0
+
+6.0
+
+Figure 8: Correlation integral curves for time-delayed embeddings with different delays (3 or 5), compared with
+that for the original sequence.
+
+A common method to reconstruct the phase space from partial observations is to measure the dimension on time-delayed embeddings. While the theoretical effectiveness of time-delayed embedding is
+guaranteed by the Takens’ theorem and variants [38, 35, 36], the method is empirically sensitive to
+noise and the choice of the embedding dimension, failing to deliver satisfactory results except for
+simple, low-dimensional systems. In this work, we aim at characterizing language models that are
+very high-dimensional and random in nature. For such systems, the time-delayed embeddings are
+often overwhelmed by observational noise and the dimension is overestimated.
+Nevertheless, we observe that the correlation dimension values exhibit good consistency even if the
+time-delayed embedding is used. For the log-probability vector times series x = [x1 , x2 , · · · ], we
+acquired two time-delayed sequences x(3) and x(5) with delays of 3 and 5, respectively. For a delay
+(τ )
+τ , xt = [xt ; · · · ; xt+τ −1 ], i.e., the the concatenation of vectors from t to t + τ − 1. The correlation
+integral curves for these time-delayed sequences are shown in Figure 8. While the time-delayed
+embeddings have 3x or 5x the dimension of the original sequence, the correlation integral curves are
+similar to that of the original sequence at small ε, except that the curves are shifted to the right. The
+slopes of the curves increased at large ε because of accumulated noise and is outside the range of
+interest.
+This indicates that the next-token probabilities contain information beyond the next token, and it is
+sufficient to use the next-token probabilities to characterize the dimenison of the model’s evolution.
+
+D
+
+Supplementary Information for Experiments in Section 5
+
+D.1
+
+Degenerate Text Generation
+
+The twenty prompts used in the experiment in Section 5.1 are listed in Table 5.
+To generate different types of degenerate texts with GPT-4o, we gave different instructions to the
+model and collected its responses, as follows.
+14
+
+Table 4: Summary of the results on the SEP dataset for three pre-trained LLMs.
+Article
+Qwen2.5-32B
+
+CorrDim
+Qwen2.5-7B
+
+Falcon3-10B
+
+Perplexity
+Qwen2.5-32B
+
+prisoner-dilemma
+process-theism
+cosmological-argument
+information
+ethics-chinese
+recursive-functions
+reasoning-automated
+infinity
+buddhism-tiantai
+evil
+logic-temporal
+mohist-canons
+linguistics
+publichealth-ethics
+mill-moral-political
+gasset
+computational-complexity
+africana
+principia-mathematica
+levinas
+formal-belief
+spacetime-singularities
+computational-linguistics
+chaos
+shaftesbury
+possibilism-actualism
+trinity
+dynamic-epistemic
+proof-theory
+logics-for-games
+game-theory
+consciousness-temporal
+sidgwick
+epistemic-game
+innateness-language
+newton-philosophy
+habermas
+descartes-epistemology
+russell-moral
+mereology
+connectives-logic
+weyl
+consciousness-intentionality
+attention
+margaret-cavendish
+qm-action-distance
+normativity-metaethics
+epistemology-bayesian
+aesthetics-18th-german
+logic-inductive
+chance-randomness
+idealism
+egalitarianism
+reid
+early-modern-india
+heidegger-aesthetics
+pythagoreanism
+heidegger
+al-farabi-metaphysics
+ontological-commitment
+
+3.28
+4.42
+4.93
+5.22
+5.39
+5.40
+5.48
+5.51
+5.53
+5.64
+5.66
+5.72
+5.73
+5.79
+5.79
+5.85
+5.91
+5.91
+5.93
+5.96
+6.03
+6.09
+6.10
+6.13
+6.17
+6.18
+6.19
+6.21
+6.22
+6.30
+6.36
+6.38
+6.40
+6.42
+6.47
+6.51
+6.52
+6.62
+6.65
+6.67
+6.68
+6.75
+6.78
+6.79
+6.81
+6.83
+6.84
+6.84
+6.88
+6.97
+7.00
+7.03
+7.07
+7.10
+7.15
+7.49
+7.71
+7.84
+8.33
+8.33
+
+3.11
+3.56
+5.26
+5.28
+5.07
+5.76
+5.32
+5.33
+5.50
+6.01
+4.77
+6.06
+6.00
+5.96
+6.12
+6.33
+5.95
+5.32
+5.39
+6.14
+5.99
+6.66
+6.01
+5.84
+5.93
+5.68
+6.63
+5.70
+5.60
+5.52
+6.03
+6.13
+6.55
+6.31
+6.10
+6.63
+7.34
+6.56
+6.62
+6.96
+7.39
+6.87
+6.62
+6.56
+6.81
+7.12
+7.06
+6.94
+6.89
+6.76
+7.07
+7.01
+6.20
+6.34
+6.35
+7.34
+7.48
+8.69
+9.31
+8.10
+
+4.10
+8.49
+5.30
+5.41
+6.18
+5.88
+5.44
+5.48
+5.37
+6.37
+4.83
+6.14
+5.88
+5.77
+6.06
+6.55
+6.90
+7.05
+6.17
+6.73
+7.19
+6.81
+5.85
+5.81
+6.14
+5.98
+6.16
+5.71
+6.45
+5.53
+6.60
+6.83
+6.78
+7.54
+6.62
+6.75
+7.20
+6.32
+6.98
+6.71
+7.99
+6.15
+7.69
+6.65
+6.75
+7.18
+6.01
+6.95
+6.63
+7.16
+6.67
+7.29
+7.46
+8.32
+6.74
+7.05
+7.58
+7.59
+8.70
+7.25
+
+3.58
+5.68
+5.83
+6.31
+5.52
+4.96
+5.06
+5.68
+9.25
+4.69
+4.99
+3.75
+9.54
+8.87
+4.38
+11.22
+5.32
+12.21
+5.36
+15.92
+5.82
+5.42
+9.71
+6.70
+8.62
+6.72
+7.97
+5.44
+6.36
+9.92
+3.84
+8.63
+10.32
+5.43
+4.98
+6.19
+9.04
+6.48
+7.04
+7.71
+6.63
+5.62
+9.57
+7.10
+8.16
+4.70
+5.63
+5.94
+7.75
+5.10
+6.88
+6.94
+3.14
+5.43
+4.70
+7.42
+4.10
+6.59
+6.04
+5.19
+
+Mean
+Pearson’s ρ
+(w.r.t. CorrDim of Qwen2.5-32B)
+
+6.31
+-
+
+6.27
+0.90
+
+6.56
+0.63
+
+6.71
+-0.01
+
+15
+
+Table 5: List of prompts used in the experiment of degeneration detection.
+
+No.
+
+Prompt
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+
+Describe the primary goals of an effective team.
+Explain the basic steps involved in a standard project workflow.
+Outline the advantages of using modern technology in daily life.
+Discuss the key features of a reliable customer service program.
+Summarize the benefits of maintaining a consistent work schedule.
+Describe how a typical training session should be conducted.
+Explain why clear communication is important in organizations.
+Outline the main characteristics of a successful leadership style.
+Discuss the factors that contribute to a smooth operational process.
+Summarize the core principles of quality assurance.
+Describe the role of feedback in performance improvement.
+Explain the importance of setting realistic goals.
+Outline the steps for conducting a standard evaluation.
+Discuss how data is used to inform business decisions.
+ummarize the benefits of a structured planning approach.
+Describe the essential elements of a professional code of conduct.
+“Explain how consistency can improve team efficiency.
+Outline the main objectives of a routine maintenance program.
+Discuss the value of transparency in reporting results.
+Summarize the advantages of applying proven best practices.
+
+Normal Responses We used the following instruction:
+You are a creative text generator. Your task is to produce a
+richly detailed, vivid, and engaging passage of at least 1,500
+words (but no more than 2,000) that brings its subject to life
+with specific imagery, sensory detail, unique examples, and
+dynamic narrative. Avoid generic descriptions, stock phrases,
+or “safe” language. Instead, strive for:
+- Concrete specifics: name real or invented places, objects,
+characters, or processes.
+- Sensory richness: evoke sight, sound, smell, taste, and touch
+wherever possible.
+- Fresh metaphors and similes: craft original comparisons rather
+than clichés.
+- Varied sentence rhythms: mix short, punchy lines with longer,
+flowing sentences.
+- Emotional or intellectual hooks: give the reader something
+surprising, thought-provoking, or emotionally resonant.
+Generate a single coherent text that feels alive and unmistakably
+your own.’’
+Bland responses We used the following instruction:
+You are a text generator. Produce a bland yet coherent passage
+of 1,500–2,000 words that avoids exact repetition of phrases or words.
+Incoherent responses We used the following instruction:
+You are a text generator. Please produce a richly worded, vivid,
+and non-repetitive passage (1,500–2,000 words) that is intentionally
+disjointed—lacking logical coherence—so the reader feels the
+narrative is fragmented.
+Repetitive responses We used the responses generated under Normal Responses and then extracted
+the first sentence, and repeated it to form a passage of approximately the same length.
+16
+
+D.2
+
+Random Text
+
+For stress-testing the models, we used a string of random names, separated by commas, as the input
+text. The names are common English names, and we generated the string by sampling i.i.d. from the
+unique names. A part of the acquired random text is as follows:
+Quinlan, Anthony, Henry, Felicity, Taylor, Raymond, Xander,
+Christopher, King, Amanda, Flora, Nicole, Anthony, Frank,
+Quiana, Owen, Finley, Paige, Victoria, Aaron, Ulrika, Sarah,
+Ignacio, Emily, Yuna, Imogen, Cameron, Claire, William, Preston,
+Ulrika, Sabrina, Neil, Zara, Joseph, Orion, Vivian, Quinn, Wyatt,
+Paul, Sophia, Brian, Flynn, Hayden, Charles, Grace, Carter,
+Heather, Quest, Jacob, Jordan, Frances, Griffin, Yasmin, Quiana,
+Penelope, Emma, Sabrina, Elizabeth, Joseph, Zion, Quinlan, Omar,
+Ruby, Virginia, Ursula, Flynn, Alexander, Ian, Griffin, Frances,
+Yasmine, Warren, Isaiah, Ryan, Kyle, Xanthe, Lucy, Georgia, Gregory,
+Ophelia, Georgia, Patricia, Xiomara, Kayla, Finley, Zayden, Noah,
+Caitlin, Brittany, Connor, Quinton, Urban, King, Blake, Joshua,
+...
+
+17
+
+NeurIPS Paper Checklist
+1. Claims
+Question: Do the main claims made in the abstract and introduction accurately reflect the
+paper’s contributions and scope?
+Answer: [Yes]
+Justification: Claims are supported by experimental results in Sections 3 through 5.
+2. Limitations
+Question: Does the paper discuss the limitations of the work performed by the authors?
+Answer: [Yes]
+Justification: Limitations are discussed in Section 7.
+3. Theory assumptions and proofs
+Question: For each theoretical result, does the paper provide the full set of assumptions and
+a complete (and correct) proof?
+Answer: [NA]
+Justification: There are no theoretical results in the paper.
+4. Experimental result reproducibility
+Question: Does the paper fully disclose all the information needed to reproduce the main experimental results of the paper to the extent that it affects the main claims and/or conclusions
+of the paper (regardless of whether the code and data are provided or not)?
+Answer: [Yes]
+Justification: The only hyperparameters used in the experiments are the range of S(ε) to
+estimate the slope, which is described in Appendix A. All details of the dataset are explicitly
+described in the appendices.
+5. Open access to data and code
+Question: Does the paper provide open access to the data and code, with sufficient instructions to faithfully reproduce the main experimental results, as described in supplemental
+material?
+Answer: [Yes]
+Justification: We have provided essential information in the appendices, and we will release
+the code and data
+6. Experimental setting/details
+Question: Does the paper specify all the training and test details (e.g., data splits, hyperparameters, how they were chosen, type of optimizer, etc.) necessary to understand the
+results?
+Answer: [Yes]
+Justification: There is no training in the paper. All LLMs used are publicly available.
+7. Experiment statistical significance
+Question: Does the paper report error bars suitably and correctly defined or other appropriate
+information about the statistical significance of the experiments?
+Answer: [Yes]
+Justification: We reported the p-values of the Wilcoxon signed-rank test in Section 5.
+8. Experiments compute resources
+Question: For each experiment, does the paper provide sufficient information on the computer resources (type of compute workers, memory, time of execution) needed to reproduce
+the experiments?
+Answer: [Yes]
+Justification: Resources required are presented in Appendix A.
+18
+
+9. Code of ethics
+Question: Does the research conducted in the paper conform, in every respect, with the
+NeurIPS Code of Ethics https://neurips.cc/public/EthicsGuidelines?
+Answer: [Yes]
+Justification: I have read the NeurIPS Code of Ethics and I believe that the research
+conducted in this paper conforms to it.
+10. Broader impacts
+Question: Does the paper discuss both potential positive societal impacts and negative
+societal impacts of the work performed?
+Answer: [NA]
+Justification: There is no societal impact of the work performed.
+11. Safeguards
+Question: Does the paper describe safeguards that have been put in place for responsible
+release of data or models that have a high risk for misuse (e.g., pretrained language models,
+image generators, or scraped datasets)?
+Answer: [NA]
+Justification: We will not release any models or datasets that have a high risk for misuse.
+12. Licenses for existing assets
+Question: Are the creators or original owners of assets (e.g., code, data, models), used in
+the paper, properly credited and are the license and terms of use explicitly mentioned and
+properly respected?
+Answer: [Yes]
+Justification: We have properly cited the creators of the datasets and models used in the
+paper.
+13. New assets
+Question: Are new assets introduced in the paper well documented and is the documentation
+provided alongside the assets?
+Answer: [Yes]
+Justification: We have included details of the created datasets in the appendices.
+14. Crowdsourcing and research with human subjects
+Question: For crowdsourcing experiments and research with human subjects, does the paper
+include the full text of instructions given to participants and screenshots, if applicable, as
+well as details about compensation (if any)?
+Answer: [NA]
+Justification: We have not conducted any crowdsourcing experiments or research with
+human subjects.
+15. Institutional review board (IRB) approvals or equivalent for research with human
+subjects
+Question: Does the paper describe potential risks incurred by study participants, whether
+such risks were disclosed to the subjects, and whether Institutional Review Board (IRB)
+approvals (or an equivalent approval/review based on the requirements of your country or
+institution) were obtained?
+Answer: [NA]
+Justification: We have not conducted any crowdsourcing experiments or research with
+human subjects.
+16. Declaration of LLM usage
+Question: Does the paper describe the usage of LLMs if it is an important, original, or
+non-standard component of the core methods in this research? Note that if the LLM is used
+only for writing, editing, or formatting purposes and does not impact the core methodology,
+scientific rigorousness, or originality of the research, declaration is not required.
+19
+
+Answer: [Yes]
+Justification: LLM is a core part of our method and we have described the usage of LLMs in
+the paper.
+
+20
+
+

@@ -416,6 +416,7 @@ def correlation_counts(
     vecs: torch.FloatTensor,
     epsilons: torch.FloatTensor,
     vecs_other: torch.FloatTensor = None,
+    **kwargs,
 ) -> torch.LongTensor:
     """
     Compute the correlation integral counts (batched) between two sequences of vectors. For each epsilon in epsilons, counts the number of vector pairs (across the two inputs) whose distance is less than or equal to epsilon.
@@ -456,6 +457,7 @@ def correlation_integral(
     vecs: torch.FloatTensor,
     epsilons: torch.FloatTensor,
     vecs_other: torch.FloatTensor = None,
+    **kwargs,
 ) -> torch.FloatTensor:
     ndim = vecs.dim()
     assert ndim in [2, 3], "Input must be (M, K) or (B, M, K)"
@@ -472,6 +474,7 @@ def correlation_integral(
 def progressive_correlation_counts(
     vecs: torch.FloatTensor,
     epsilons: torch.FloatTensor,
+    **kwargs,
 ) -> torch.LongTensor:
     """Compute the counts of V[:t] at every step t of the vector sequence V.
     In implementation, the counts is updated at every step t by adding
@@ -492,6 +495,7 @@ def progressive_correlation_counts(
 def progressive_correlation_integral(
     vecs: torch.FloatTensor,
     epsilons: torch.FloatTensor,
+    **kwargs,
 ) -> torch.FloatTensor:
     """Compute the progressive correlation integral of V[:t] at every step t of the vector sequence V.
     In implementation, the integral is updated at every step t by adding

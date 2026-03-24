@@ -15,26 +15,45 @@ Correlation dimension is a fractal-geometric measure of self-similarity that qua
 
 ## Installation
 
-**Requirements**: Python >= 3.11
+**Requirements**: Python >= 3.10
 
-### Using uv (Recommended)
-
-[uv](https://github.com/astral-sh/uv) is a fast Python package installer and resolver. If you don't have uv installed:
+### Install matrix
 
 ```bash
-# Install uv
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# Or via pip
-pip install uv
+# Default install (includes Triton dependency)
+pip install corrdim
 ```
 
-Then initialize and install the package:
+```bash
+# CPU-only / no Triton dependency
+pip install "corrdim[no-triton]"
+```
 
 ```bash
-git clone https://github.com/kduxin/corrdim.git
-cd corrdim
-uv sync
+# Development install
+pip install "corrdim[dev]"
+```
+
+### Notes on Triton and backends
+
+- Default installation includes Triton so CUDA users can use the fastest backend when available.
+- `corrdim[no-triton]` avoids Triton installation and uses PyTorch backends.
+- Backend selection is automatic by default:
+  - if CUDA + Triton are available: `triton`
+  - otherwise: `pytorch`
+- You can override backend at runtime:
+
+```bash
+export CORRDIM_CORRINT_BACKEND=pytorch
+```
+
+(`CORRDIM_BACKEND` is still accepted for backward compatibility.)
+
+or in code:
+
+```python
+import corrdim
+corrdim.set_corrint_backend("pytorch")
 ```
 
 ## Quick Start
@@ -42,26 +61,49 @@ uv sync
 ### Command-Line Interface
 
 ```bash
-uv run python -m corrdim.cli data/sep60/newton-philosophy.txt --model Qwen/Qwen2.5-1.5B
+corrdim measure-text \
+  --file data/sep60/newton-philosophy.txt \
+  --model Qwen/Qwen2.5-1.5B
 ```
 
-### High-Level Interface (Single Text Only)
+If you prefer running without installing globally:
+
+```bash
+uv run corrdim measure-text \
+  --file data/sep60/newton-philosophy.txt \
+  --model Qwen/Qwen2.5-1.5B
+```
+
+### Development install (repository)
+
+If you are developing from source:
+
+```bash
+git clone https://github.com/kduxin/corrdim.git
+cd corrdim
+uv sync
+```
+
+### High-Level Interface
 
 ```python
 import torch
 import corrdim
 
-calculator = corrdim.CorrelationDimensionCalculator(
-    "Qwen/Qwen2.5-1.5B", 
-    device="cuda", 
-    dtype=torch.float16
+result = corrdim.measure_text(
+    "Your text here...",
+    model="Qwen/Qwen2.5-1.5B",
+    precision=torch.float16,
+    truncation_tokens=10000,
+    dim_reduction=8192,
 )
-
-result = calculator("Your text here...", dim_reduction=8192)
 print(f"Correlation dimension: {result.corrdim:.2f}")
 ```
 
-### Low-Level Interface (Supports Batch Processing)
+Text APIs default to dimensionality reduction with `dim_reduction=8192`.  
+To disable reduction explicitly, pass `dim_reduction=None`.
+
+### Low-Level Interface (vectors / batch / text)
 
 ```python
 import torch
@@ -75,41 +117,115 @@ inputs = tokenizer(text, return_tensors="pt").to("cuda")
 logprobs = model(**inputs).logits[0].log_softmax(-1)
 
 # Compute correlation integral and dimension
-epsilons = torch.logspace(-10, 10, 1024, device="cuda")
-corrint = corrdim.correlation_integral(logprobs, epsilons)
-result = corrdim.CorrelationDimensionCalculator.compute_correlation_dimension_from_curve(
-    epsilons=epsilons.cpu().numpy(),
-    corrints=corrint.cpu().numpy(),
-    sequence_length=logprobs.shape[0]
+curve = corrdim.curve_from_vectors(
+    logprobs,
+    num_epsilon=1024,
 )
+result = corrdim.estimate_dimension_from_curve(curve)
 print(f"Correlation dimension: {result.corrdim:.2f}")
+
+# Batch vectors
+vecs_batch = torch.randn(4, 150, 512, device="cuda")
+curves = corrdim.curve_from_vectors_batch(vecs_batch)
+results = corrdim.estimate_dimension_from_curves(curves)
+
+# Text and text batch paths (internally compute log-probs)
+curve_text = corrdim.curve_from_text("hello world", model="Qwen/Qwen2.5-1.5B")
+curve_texts = corrdim.curve_from_texts(["a", "b"], model="Qwen/Qwen2.5-1.5B")
+prog = corrdim.progressive_curve_from_vectors(logprobs)
+prog_batch = corrdim.progressive_curve_from_vectors_batch(vecs_batch)
+prog_text = corrdim.progressive_curve_from_text("hello", model="Qwen/Qwen2.5-1.5B")
+prog_texts = corrdim.progressive_curve_from_texts(["a", "b"], model="Qwen/Qwen2.5-1.5B")
+```
+
+### Backend control
+
+```python
+corrdim.set_corrint_backend("triton")
+```
+
+Available backend names:
+- `"triton"`
+- `"pytorch"`
+- `"pytorch_fast"`
+- `"auto"` (default)
+
+`*_from_text*` and `measure_*` use a process-wide LRU model cache (size 2) to avoid repeated model loading.
+You can clear it manually:
+
+```python
+corrdim.clear_model_cache()
+```
+
+### From-Curve Interface
+
+```python
+import corrdim
+
+curve = corrdim.CurveResult(
+    sequence_length=1500,
+    epsilons=epsilons_np,
+    corrints=corrints_np,
+)
+result = corrdim.estimate_dimension_from_curve(curve)
 ```
 
 See [examples/basic_usage.ipynb](examples/basic_usage.ipynb) for more detailed examples.
 
+## CLI Usage
+
+The package exposes a `corrdim` CLI with three subcommands:
+
+```bash
+# 1) Text -> correlation dimension
+corrdim measure-text \
+  --file data/sep60/chaos.txt \
+  --model Qwen/Qwen2.5-1.5B \
+  --dim-reduction 8192 \
+  --dtype float16
+
+# 2) Text -> curve JSON
+corrdim curve-from-text \
+  --file data/sep60/chaos.txt \
+  --model Qwen/Qwen2.5-1.5B \
+  --output curve.json
+
+# 3) Curve JSON -> correlation dimension
+corrdim estimate-dimension \
+  --curve-json curve.json
+```
+
+`--dim-reduction none` can be used to disable dimensionality reduction.
+
+Useful options:
+- `--backend triton|pytorch|pytorch_fast|auto`
+- `--stride <positive-int>` (default: `1`)
+- `--context-length <int>`
+- `--num-epsilon <int>`
+
 ## API Reference
 
-### `CorrelationDimensionCalculator`
+### High-Level
 
-Main class for computing correlation dimension.
+- `measure_text(text, model, ...)` → `DimensionResult`
+- `measure_texts(texts, model, ...)` → `list[DimensionResult]`
 
-- `__call__(text, ...)` → `CorrelationDimensionResult`: Compute correlation dimension
-- `compute_correlation_integral_curve(text, ...)` → `CorrelationIntegralResult`: Get full curve
-- `get_log_probability(text, ...)` → `torch.Tensor`: Extract log-probability vectors
+### Low-Level
 
-### `CorrelationDimensionResult`
+- `curve_from_vectors(vectors, ...)` / `curve_from_vectors_batch(vectors_batch, ...)`
+- `curve_from_text(text, model, ...)` / `curve_from_texts(texts, model, ...)`
+- `progressive_curve_from_vectors(...)` / `progressive_curve_from_vectors_batch(...)`
+- `progressive_curve_from_text(...)` / `progressive_curve_from_texts(...)`
 
-- `corrdim` (float): Correlation dimension value
-- `fit_r2` (float): R² score of the linear fit
-- `epsilons`, `corrints` (np.ndarray): Full curve data
-- `epsilons_linear_region`, `corrints_linear_region` (np.ndarray): Linear region data
-- `linear_region_bounds` (Tuple[float, float]): Bounds of linear region
-- `sequence_length` (int): Input sequence length
+### From-Curve
 
-### Utility Functions
+- `estimate_dimension_from_curve(curve, ...)` → `DimensionResult`
+- `estimate_dimension_from_curves(curves, ...)` → `list[DimensionResult]`
 
-- `correlation_integral(vecs, epsilons)`: Compute correlation integral
-- `set_corrint_backend(backend)`: Set backend ("triton", "pytorch", or "pytorch_fast")
+### Backend Utilities
+
+- `correlation_integral(vecs, epsilons, backend=...)`
+- `set_corrint_backend(backend)` (`"triton"`, `"pytorch"`, `"pytorch_fast"`)
 
 ## Citation
 

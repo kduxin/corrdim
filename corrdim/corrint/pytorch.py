@@ -50,9 +50,8 @@ def _counts_self_2d(
     For epsilon=+inf, the count equals M * (M - 1).
     """
     m = vecs.shape[0]
-    eps_log = epsilons.log().cpu().numpy()
-
-    counts = np.zeros(epsilons.shape[0], dtype=np.int64)
+    eps_log = epsilons.log()
+    counts = torch.zeros(epsilons.shape[0], dtype=torch.int64, device=vecs.device)
     for i in _tqdm_range(0, m, block_size, show_progress=show_progress, desc="Computing correlation counts"):
         a = vecs[i : i + block_size].to(torch.float32)
         for j in range(i, m, block_size):
@@ -61,13 +60,14 @@ def _counts_self_2d(
             _assert_finite(d)
             if i == j:
                 # Keep only strictly upper triangle within the diagonal block.
-                d[*torch.tril_indices(d.shape[0], d.shape[1], device=d.device)] = float("inf")
+                tril = torch.tril_indices(d.shape[0], d.shape[1], device=d.device)
+                d[tril[0], tril[1]] = float("inf")
 
-            d_log = torch.sort(d.reshape(-1), descending=False, stable=False).values.data.log().cpu().numpy()
-            counts += np.searchsorted(d_log, eps_log, side="right")
+            d_log = torch.sort(d.reshape(-1), descending=False, stable=False).values.log()
+            counts += torch.searchsorted(d_log, eps_log, right=True).to(torch.int64)
 
     # Convert "upper triangle once" into "ordered pairs" by doubling.
-    return torch.tensor(2 * counts, dtype=torch.int64, device=vecs.device)
+    return counts * 2
 
 
 def _counts_cross_2d(
@@ -86,9 +86,8 @@ def _counts_cross_2d(
     """
     m = vecs1.shape[0]
     n = vecs2.shape[0]
-    eps_log = epsilons.log().cpu().numpy()
-
-    counts = np.zeros(epsilons.shape[0], dtype=np.int64)
+    eps_log = epsilons.log()
+    counts = torch.zeros(epsilons.shape[0], dtype=torch.int64, device=vecs1.device)
     for i in _tqdm_range(0, m, block_size, show_progress=show_progress, desc="Computing correlation counts (cross)"):
         a = vecs1[i : i + block_size].to(torch.float32)
         for j in range(0, n, block_size):
@@ -96,10 +95,10 @@ def _counts_cross_2d(
             d = _cdist(a, b, fast=fast)
             _assert_finite(d)
 
-            d_log = torch.sort(d.reshape(-1), descending=False, stable=False).values.data.log().cpu().numpy()
-            counts += np.searchsorted(d_log, eps_log, side="right")
+            d_log = torch.sort(d.reshape(-1), descending=False, stable=False).values.log()
+            counts += torch.searchsorted(d_log, eps_log, right=True).to(torch.int64)
 
-    return torch.tensor(counts, dtype=torch.int64, device=vecs1.device)
+    return counts
 
 
 def _normalize_inputs(

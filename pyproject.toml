@@ -1,12 +1,12 @@
 [project]
 name = "corrdim"
-version = "0.1.0"
+version = "0.2.0"
 description = "Correlation Dimension for LLMs - A library for computing correlation dimension of autoregressive large language models"
 readme = "README.md"
-requires-python = ">=3.11"
+requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [
-    {name = "kduxin", email = "duxin@aoni.waseda.jp"}
+    {name = "kduxin", email = "duxin@tongji.edu.cn"}
 ]
 keywords = [
     "correlation-dimension",
@@ -22,6 +22,7 @@ classifiers = [
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Topic :: Scientific/Engineering :: Artificial Intelligence",
@@ -29,16 +30,19 @@ classifiers = [
 ]
 dependencies = [
     "numpy>=1.21.0",
+    "ninja>=1.11.0",
     "torch>=2.0.0",
+    "setuptools>=68.0.0",
     "transformers>=4.30.0",
-    "accelerate>=0.20.0",
-    "optimum>=2.0.0",
+    "accelerate>=0.21.0",
     "scikit-learn>=1.0.0",
     "tqdm>=4.62.0",
-    "triton>=3.5.0",
+    "triton>=3.5.0; extra != 'no-triton'",
 ]
 
 [project.optional-dependencies]
+gpu = []
+no-triton = []
 dev = [
     "pytest>=8.4.2",
     "pytest-cov>=4.0.0",
@@ -48,10 +52,6 @@ dev = [
     "mypy>=1.0.0",
     "ipykernel>=6.0.0",
     "matplotlib>=3.10.6",
-    "triton>=3.4.0",
-    "pandas>=2.3.3",
-    "autoawq>=0.2.9",
-    "plotly>=6.4.0",
 ]
 docs = [
     "sphinx>=6.0.0",
@@ -72,22 +72,30 @@ Documentation = "https://corrdim.readthedocs.io"
 corrdim = "corrdim.cli:main"
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["setuptools>=68.0.0", "wheel", "torch>=2.0.0"]
+build-backend = "setuptools.build_meta"
 
-[tool.hatch.build.targets.wheel]
-packages = ["corrdim"]
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["corrdim*"]
+
+[tool.setuptools.package-data]
+"corrdim.corrint.ext" = ["*.cpp", "*.cu", "*.cuh", "*.h"]
 
 [tool.black]
 line-length = 120
-target-version = ['py311', 'py312']
+target-version = ['py310', 'py311', 'py312']
 
 [tool.isort]
 profile = "black"
 line_length = 120
 
 [tool.mypy]
-python_version = "3.11"
+python_version = "3.10"
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
+

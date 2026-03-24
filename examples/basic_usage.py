@@ -1,150 +1,251 @@
 """
 Basic usage examples for the corrdim library.
 
-This script demonstrates the main functionality of the correlation dimension
-library for analyzing text complexity and detecting degeneration.
+Structure matches examples/basic_usage.ipynb:
+  - Example 1: High-level interface (one-line computation, multiple articles, plot)
+  - Example 2: Low-level interface (log-probabilities -> curve_from_vectors -> corrdim)
+  - Example 3: Correlation dimension changes along the text (progressive_correlation_integral)
+
+Each example runs in a try/except; failures are reported and the script continues.
 """
 
+import os
 import sys
 from pathlib import Path
 
 # Add the parent directory to the path so we can import corrdim
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from corrdim import (
-    CorrelationDimensionCalculator,
-    TextAnalyzer,
-    detect_degeneration,
-    analyze_text_complexity,
-    DegenerationType
-)
+import torch
+import matplotlib.pyplot as plt
+import corrdim
+
+torch.set_grad_enabled(False)  # We don't need gradients for inference
+
+# Paths
+REPO_ROOT = Path(__file__).parent.parent
+EXAMPLES_DIR = Path(__file__).parent
+PLOTS_DIR = EXAMPLES_DIR / "plots"
+DATA_DIR = REPO_ROOT / "data" / "sep60"
+CHAOS_PATH = DATA_DIR / "chaos.txt"
 
 
-def example_basic_computation():
-    """Example of basic correlation dimension computation."""
-    print("=== Basic Correlation Dimension Computation ===")
-    
-    # Sample texts with different characteristics
-    texts = {
-        "Normal text": "The quick brown fox jumps over the lazy dog. This is a normal sentence with varied vocabulary and structure.",
-        "Repetitive text": "The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.",
-        "Simple text": "The cat sat. The dog ran. The bird flew. Simple sentences with basic structure.",
-        "Complex text": "The intricate mechanisms underlying quantum field theory demonstrate remarkable complexity in their mathematical formulations, revealing profound connections between fundamental particles and the fabric of spacetime itself."
-    }
-    
-    # Initialize calculator
-    calc = CorrelationDimensionCalculator("gpt2")
-    
-    print("Computing correlation dimensions...")
-    for name, text in texts.items():
-        corr_dim = calc.compute_correlation_dimension(text)
-        print(f"{name}: {corr_dim:.4f}")
-    
-    print()
+def _save_fig(fig, filename: str) -> Path:
+    """Ensure plots dir exists, save figure, print path, return path."""
+    PLOTS_DIR.mkdir(parents=True, exist_ok=True)
+    path = PLOTS_DIR / filename
+    fig.savefig(path, bbox_inches="tight")
+    print(f"  Plot saved: {path.resolve()}")
+    return path
 
 
-def example_degeneration_detection():
-    """Example of degeneration detection."""
-    print("=== Degeneration Detection ===")
-    
-    # Sample texts representing different types of degeneration
-    test_texts = {
-        "Normal": "The quick brown fox jumps over the lazy dog. This is a normal sentence with varied vocabulary and structure.",
-        "Repetitive": "The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.",
-        "Bland": "The thing is good. The thing is nice. The thing is okay. The thing is fine. The thing is okay.",
-        "Incoherent": "Purple elephant dancing mathematics quantum soup refrigerator philosophy banana telephone gravity"
-    }
-    
-    for name, text in test_texts.items():
-        degeneration_type = detect_degeneration(text, "gpt2")
-        corr_dim = analyze_text_complexity(text, "gpt2")
-        print(f"{name}: {degeneration_type.value} (correlation dimension: {corr_dim:.4f})")
-    
-    print()
+def example1_high_level():
+    """
+    Example 1: High-Level Interface
+    The simplest way to compute correlation dimension - just one line of code!
+    """
+    # Step 1: Load the texts (Stanford Encyclopedia of Philosophy dataset)
+    texts = {}
+    if DATA_DIR.is_dir():
+        for filename in os.listdir(DATA_DIR):
+            filepath = DATA_DIR / filename
+            if filepath.is_file():
+                with open(filepath, "r") as f:
+                    lines = [line.strip() for line in f]
+                    texts[filename] = " ".join(lines)
+        print(f"Loaded {len(texts)} articles")
+    else:
+        print(f"Data dir not found: {DATA_DIR}. Skipping Example 1 text loading.")
+        return
+
+    # Step 2: Compute correlation dimensions
+    corrdim.set_corrint_backend("triton")
+    fig, ax = plt.subplots(1, 1, figsize=(8, 6), dpi=150)
+    max_articles = 6
+
+    for i, (filename, text) in enumerate(texts.items()):
+        if i >= max_articles:
+            break
+        result = corrdim.measure_text(
+            text,
+            model="Qwen/Qwen2.5-1.5B",
+            precision=torch.float16,
+            truncation_tokens=10000,
+            dim_reduction=8192,
+        )
+        ax.plot(
+            result.epsilons_linear_region,
+            result.corrints_linear_region,
+            "-o",
+            label=f"{filename}: corrdim = {result.corrdim:.2f}",
+        )
+        print(f"File = {filename}, epsilon range = {result.epsilons_linear_region[0]:g} - {result.epsilons_linear_region[-1]:g}: corrdim = {result.corrdim:.2f}")
+
+    ax.set_xscale("log")
+    ax.set_yscale("log")
+    ax.set_xlabel("ε (epsilon)")
+    ax.set_ylabel("Correlation Integral")
+    ax.set_title("Correlation Dimension of SEP Articles")
+    ax.legend()
+    plt.tight_layout()
+    _save_fig(fig, "example1_sep_articles.png")
+    plt.show()
 
 
-def example_detailed_analysis():
-    """Example of detailed text analysis."""
-    print("=== Detailed Text Analysis ===")
-    
-    text = "The intricate mechanisms underlying quantum field theory demonstrate remarkable complexity in their mathematical formulations, revealing profound connections between fundamental particles and the fabric of spacetime itself."
-    
-    analyzer = TextAnalyzer("gpt2")
-    result = analyzer.analyze_complexity(text, return_details=True)
-    
-    print(f"Text: {text[:50]}...")
-    print(f"Correlation dimension: {result['correlation_dimension']:.4f}")
-    print(f"Complexity level: {result['complexity_level']}")
-    print(f"Text length: {result['text_length']} characters")
-    print(f"Epsilon range: {result['epsilon_values'][0]:.6f} - {result['epsilon_values'][-1]:.6f}")
-    print()
+def example2_low_level():
+    """
+    Example 2: Low-Level Interface
+    Compute correlation dimension from log-probabilities directly.
+    """
+    import transformers
+
+    # Step 1: Load model and text
+    model_name = "Qwen/Qwen2.5-1.5B"
+    model = transformers.AutoModelForCausalLM.from_pretrained(
+        model_name,
+        dtype=torch.float16,
+    ).to("cuda")
+    tokenizer = transformers.AutoTokenizer.from_pretrained(model_name)
+
+    if CHAOS_PATH.is_file():
+        with open(CHAOS_PATH, "r") as f:
+            lines = [line.strip() for line in f]
+            text = " ".join(lines)
+    else:
+        text = "The quick brown fox jumps over the lazy dog. " * 50
+        print(f"File not found: {CHAOS_PATH}. Using fallback text.")
+
+    # Step 2: Compute log-probabilities (3000 tokens to manage memory)
+    max_tokens = 3000
+    inputs = tokenizer(
+        text, max_length=max_tokens, truncation=True, return_tensors="pt"
+    ).to("cuda")
+    outputs = model(**inputs)
+    logits = outputs.logits[0]
+    logprobs = logits.log_softmax(-1)
+    print(f"Log-probabilities shape: {logprobs.shape}")
+    print(f"Vocabulary size: {logprobs.shape[1]}")
+    logprobs = corrdim.reduce_dimension(logprobs, num_groups=8192)
+    print(f"Reduced log-probabilities shape: {logprobs.shape}")
+
+    # Step 3: Compute correlation integral
+    epsilons = torch.logspace(-20, 20, 10000, device="cuda")
+    curve = corrdim.curve_from_vectors(logprobs)
+
+    # Step 4: Estimate correlation dimension from the curve
+    result = corrdim.estimate_dimension_from_curve(
+        curve=curve,
+        correlation_integral_range="auto",
+    )
+    print(f"File = chaos, epsilon range = {result.epsilons_linear_region[0]:g} - {result.epsilons_linear_region[-1]:g}: corrdim = {result.corrdim:.2f}")
+
+    fig, ax = plt.subplots(1, 1, figsize=(4, 3), dpi=150)
+    ax.plot(
+        result.epsilons_linear_region,
+        result.corrints_linear_region,
+        label=f"corrdim = {result.corrdim:.2f}",
+    )
+    ax.set_xscale("log")
+    ax.set_yscale("log")
+    ax.set_xlabel("ε (epsilon)")
+    ax.set_ylabel("Correlation Integral")
+    ax.set_title("Correlation Dimension from Log-Probabilities")
+    ax.legend()
+    plt.tight_layout()
+    _save_fig(fig, "example2_log_probs.png")
+    plt.show()
 
 
-def example_text_comparison():
-    """Example of comparing multiple texts."""
-    print("=== Text Comparison ===")
-    
-    texts = [
-        "The quick brown fox jumps over the lazy dog.",
-        "The quick brown fox jumps over the lazy dog. The quick brown fox jumps over the lazy dog.",
-        "The intricate mechanisms underlying quantum field theory demonstrate remarkable complexity.",
-        "Simple text with basic structure and vocabulary."
-    ]
-    
-    labels = ["Normal", "Repetitive", "Complex", "Simple"]
-    
-    analyzer = TextAnalyzer("gpt2")
-    results = analyzer.compare_texts(texts, labels)
-    
-    print("Comparison results:")
-    for label, corr_dim in zip(results['labels'], results['correlation_dimensions']):
-        print(f"  {label}: {corr_dim:.4f}")
-    
-    stats = results['statistics']
-    print(f"\nStatistics:")
-    print(f"  Mean: {stats['mean']:.4f}")
-    print(f"  Std: {stats['std']:.4f}")
-    print(f"  Min: {stats['min']:.4f}")
-    print(f"  Max: {stats['max']:.4f}")
-    print()
+
+def example3_corrdim_along_text():
+    """
+    Example 3: Correlation dimension changes along the text
+    Uses progressive_correlation_integral to get corrdim at each prefix.
+    """
+    import transformers
+
+    # Step 1: Load model and text
+    model_name = "Qwen/Qwen2.5-1.5B"
+    model = transformers.AutoModelForCausalLM.from_pretrained(
+        model_name,
+        dtype=torch.float16,
+    ).to("cuda")
+    tokenizer = transformers.AutoTokenizer.from_pretrained(model_name)
+
+    if CHAOS_PATH.is_file():
+        with open(CHAOS_PATH, "r") as f:
+            lines = [line.strip() for line in f]
+            text = " ".join(lines)
+    else:
+        text = "The quick brown fox jumps over the lazy dog. " * 50
+
+    # Step 2: Compute log-probabilities
+    max_tokens = 10000
+    inputs = tokenizer(
+        text, max_length=max_tokens, truncation=True, return_tensors="pt"
+    ).to("cuda")
+    outputs = model(**inputs)
+    logits = outputs.logits[0]
+    logprobs = logits.log_softmax(-1)
+    print(f"Log-probabilities shape: {logprobs.shape}")
+    print(f"Vocabulary size: {logprobs.shape[1]}")
+    logprobs = corrdim.reduce_dimension(logprobs, num_groups=8192)
+    print(f"Reduced log-probabilities shape: {logprobs.shape}")
+
+    # Step 3: Correlation integrals for all prefixes
+    epsilons = torch.logspace(-20, 20, 10000, device="cuda")
+    corrints_arr = corrdim.progressive_correlation_integral(logprobs, epsilons)
+
+    # Step 4: Correlation dimension for each prefix (skip first 1000 tokens)
+    fig, ax = plt.subplots(1, 1, figsize=(6, 3), dpi=150)
+    epsilon_range = (500, 1200)
+    print(f"Epsilon range: {epsilon_range}")
+    xs = []
+    ys = []
+    for i in range(1000, max_tokens, 10):
+        corrints = corrints_arr[i]
+        result = corrdim.estimate_dimension_from_curve(
+            corrdim.CurveResult(
+                sequence_length=logprobs.shape[0],
+                epsilons=epsilons.cpu().numpy(),
+                corrints=corrints.cpu().numpy(),
+            ),
+            correlation_integral_range=None,
+            epsilon_range=epsilon_range,
+        )
+        xs.append(i)
+        ys.append(result.corrdim)
+
+    ax.plot(xs, ys)
+    ax.set_xlabel("Steps")
+    ax.set_ylabel("Correlation Dimension")
+    ax.set_title("Correlation Dimension changes along the text")
+    plt.tight_layout()
+    _save_fig(fig, "example3_corrdim_along_text.png")
+    plt.show()
 
 
-def example_correlation_integral_curve():
-    """Example of computing correlation integral curve."""
-    print("=== Correlation Integral Curve ===")
-    
-    text = "The quick brown fox jumps over the lazy dog. This is a normal sentence with varied vocabulary and structure."
-    
-    calc = CorrelationDimensionCalculator("gpt2")
-    epsilon_values, correlation_integrals = calc.compute_correlation_integral_curve(text)
-    
-    print(f"Text: {text[:50]}...")
-    print(f"Number of epsilon values: {len(epsilon_values)}")
-    print(f"Epsilon range: {epsilon_values[0]:.6f} - {epsilon_values[-1]:.6f}")
-    print(f"Correlation integral range: {correlation_integrals[0]:.6f} - {correlation_integrals[-1]:.6f}")
-    
-    # Show first few points
-    print("\nFirst 5 points:")
-    for i in range(min(5, len(epsilon_values))):
-        print(f"  ε={epsilon_values[i]:.6f}, S(ε)={correlation_integrals[i]:.6f}")
-    print()
+def run_example(name: str, fn):
+    """Run a single example; on failure print error and continue."""
+    print(f"\n{'='*60}")
+    print(f"  {name}")
+    print('='*60)
+    try:
+        fn()
+        print(f"  OK: {name}")
+    except Exception as e:
+        print(f"  SKIPPED: {name}")
+        print(f"  Error: {e}")
+        import traceback
+        traceback.print_exc()
 
 
 if __name__ == "__main__":
-    print("CorrDim Library Examples")
-    print("========================")
-    print()
-    
-    try:
-        example_basic_computation()
-        example_degeneration_detection()
-        example_detailed_analysis()
-        example_text_comparison()
-        example_correlation_integral_curve()
-        
-        print("All examples completed successfully!")
-        
-    except Exception as e:
-        print(f"Error running examples: {e}")
-        print("Make sure you have the required dependencies installed:")
-        print("  pip install torch transformers numpy scikit-learn tqdm")
+    print("CorrDim examples (structure matches basic_usage.ipynb)")
+    print("Failed examples are skipped; see errors above.\n")
+
+    run_example("Example 1: High-level interface", example1_high_level)
+    run_example("Example 2: Low-level interface", example2_low_level)
+    run_example("Example 3: Corrdim along text", example3_corrdim_along_text)
+
+    print("\nDone.")
