@@ -1,90 +1,68 @@
 # CorrDim: Correlation Dimension for Language Models
 
-A Python library for computing correlation dimension of autoregressive large language models, based on the research paper ["Correlation Dimension of Auto-Regressive Large Language Models"](https://arxiv.org/abs/2510.21258) (NeurIPS 2025).
+CorrDim is a Python library for computing the **correlation dimension** of autoregressive language models from next-token log-probability vectors, based on the paper **["Correlation Dimension of Auto-Regressive Large Language Models"](https://arxiv.org/abs/2510.21258)** (NeurIPS 2025).
 
-## Overview
+## Documentation
 
-Correlation dimension is a fractal-geometric measure of self-similarity that quantifies the epistemological complexity of text as perceived by a language model. Unlike traditional evaluation metrics that focus on local prediction accuracy, correlation dimension captures long-range structural complexity and can detect various forms of degeneration in generated text.
+Full documentation is available at [corrdim.readthedocs.io](https://corrdim.readthedocs.io).
 
-**Key Features:**
-- **Bridges local and global perspectives**: Captures long-range structural complexity beyond local prediction accuracy (perplexity)
-- **Detects various forms of degeneration**: Identifies repetition, incoherence, and blandness in generated text—issues that perplexity alone cannot reliably capture
-- **Reveals training dynamics**: Uncovers three distinct phases during LLM pretraining (short-range learning, long-range emergence, generalization) that remain hidden to perplexity-based metrics
-- **Computationally efficient**: Requires only next-token log-probability vectors at inference time, making it easy to integrate into existing workflows
-- **Model-agnostic**: Works with any autoregressive language model (Transformer, Mamba, etc.) and is robust to quantization
+Use the docs site for:
+
+- installation details and backend notes
+- the full Python API reference
+- CLI documentation
+- examples and usage patterns
+
+## What CorrDim measures
+
+Given a text and an autoregressive language model, CorrDim measures the text's **global structural complexity** as perceived by that model.
+
+In practice:
+
+- repetitive or degenerate text tends to have a lower correlation dimension
+- ordinary fluent text tends to have a higher dimension
+- richer long-range structure can produce an even higher dimension
+
+CorrDim is complementary to local metrics such as perplexity: it focuses on **sequence-level geometry**, not just token-level prediction quality.
+
+## How it works
+
+At a high level, CorrDim:
+
+1. converts text into a sequence of next-token log-probability vectors
+2. optionally reduces the vocabulary dimension
+3. computes a correlation-integral curve over epsilon thresholds
+4. estimates the correlation dimension by fitting a line in log-log space
+
+For the mathematical details, see the [paper](https://arxiv.org/abs/2510.21258).
 
 ## Installation
 
-**Requirements**: Python >= 3.10
-
-### Install matrix
+CorrDim requires Python 3.10 or newer.
 
 ```bash
-# Default install (includes Triton dependency)
 pip install corrdim
 ```
 
+If you want to avoid Triton installation:
+
 ```bash
-# CPU-only / no Triton dependency
 pip install "corrdim[no-triton]"
 ```
 
-```bash
-# Development install
-pip install "corrdim[dev]"
-```
-
-### Notes on Triton and backends
-
-- Default installation includes Triton so CUDA users can use the fastest backend when available.
-- `corrdim[no-triton]` avoids Triton installation and uses PyTorch backends.
-- Backend selection is automatic by default:
-  - if CUDA + Triton are available: `triton`
-  - otherwise: `pytorch`
-- You can override backend at runtime:
+For local development:
 
 ```bash
-export CORRDIM_CORRINT_BACKEND=pytorch
+pip install "corrdim[dev,docs]"
 ```
 
-(`CORRDIM_BACKEND` is still accepted for backward compatibility.)
-
-or in code:
-
-```python
-import corrdim
-corrdim.set_corrint_backend("pytorch")
-```
-
-## Quick Start
-
-### Command-Line Interface
+To compile the CUDA extension during installation:
 
 ```bash
-corrdim measure-text \
-  --file data/sep60/newton-philosophy.txt \
-  --model Qwen/Qwen2.5-1.5B
+CORRDIM_BUILD_CUDA=1 pip install .
 ```
 
-If you prefer running without installing globally:
-
-```bash
-uv run corrdim measure-text \
-  --file data/sep60/newton-philosophy.txt \
-  --model Qwen/Qwen2.5-1.5B
-```
-
-### Development install (repository)
-
-If you are developing from source:
-
-```bash
-git clone https://github.com/kduxin/corrdim.git
-cd corrdim
-uv sync
-```
-
-### High-Level Interface
+## Quick start
 
 ```python
 import torch
@@ -94,138 +72,80 @@ result = corrdim.measure_text(
     "Your text here...",
     model="Qwen/Qwen2.5-1.5B",
     precision=torch.float16,
-    truncation_tokens=10000,
-    dim_reduction=8192,
 )
-print(f"Correlation dimension: {result.corrdim:.2f}")
+
+print("corrdim:", result.corrdim)
+print("fit_r2:", result.fit_r2)
+print("linear_region_bounds:", result.linear_region_bounds)
 ```
 
-Text APIs default to dimensionality reduction with `dim_reduction=8192`.  
-To disable reduction explicitly, pass `dim_reduction=None`.
-
-### Low-Level Interface (vectors / batch / text)
+For batched input:
 
 ```python
 import torch
-import transformers
 import corrdim
 
-# Get log-probabilities from your model
-model = transformers.AutoModelForCausalLM.from_pretrained("Qwen/Qwen2.5-1.5B", dtype=torch.float16).to("cuda")
-tokenizer = transformers.AutoTokenizer.from_pretrained("Qwen/Qwen2.5-1.5B")
-inputs = tokenizer(text, return_tensors="pt").to("cuda")
-logprobs = model(**inputs).logits[0].log_softmax(-1)
-
-# Compute correlation integral and dimension
-curve = corrdim.curve_from_vectors(
-    logprobs,
-    num_epsilon=1024,
+results = corrdim.measure_texts(
+    [
+        "Short sample A...",
+        "Short sample B...",
+    ],
+    model="Qwen/Qwen2.5-1.5B",
+    precision=torch.float16,
 )
-result = corrdim.estimate_dimension_from_curve(curve)
-print(f"Correlation dimension: {result.corrdim:.2f}")
 
-# Batch vectors
-vecs_batch = torch.randn(4, 150, 512, device="cuda")
-curves = corrdim.curve_from_vectors_batch(vecs_batch)
-results = corrdim.estimate_dimension_from_curves(curves)
-
-# Text and text batch paths (internally compute log-probs)
-curve_text = corrdim.curve_from_text("hello world", model="Qwen/Qwen2.5-1.5B")
-curve_texts = corrdim.curve_from_texts(["a", "b"], model="Qwen/Qwen2.5-1.5B")
-prog = corrdim.progressive_curve_from_vectors(logprobs)
-prog_batch = corrdim.progressive_curve_from_vectors_batch(vecs_batch)
-prog_text = corrdim.progressive_curve_from_text("hello", model="Qwen/Qwen2.5-1.5B")
-prog_texts = corrdim.progressive_curve_from_texts(["a", "b"], model="Qwen/Qwen2.5-1.5B")
+for result in results:
+    print(result.corrdim, result.fit_r2)
 ```
 
-### Backend control
+## API overview
 
-```python
-corrdim.set_corrint_backend("triton")
-```
+The most important entry points are:
 
-Available backend names:
-- `"triton"`
-- `"pytorch"`
-- `"pytorch_fast"`
-- `"auto"` (default)
+- `measure_text` / `measure_texts` for end-to-end text measurement
+- `curve_from_text` / `curve_from_vectors` when you want the curve first
+- `estimate_dimension_from_curve` when you already have saved curve data
+- `progressive_curve_from_text` for prefix-wise analysis
+- `correlation_integral` and related functions for lower-level tensor workflows
 
-`*_from_text*` and `measure_*` use a process-wide LRU model cache (size 2) to avoid repeated model loading.
-You can clear it manually:
+For full API details, signatures, return types, and backend behavior, see the [documentation site](https://corrdim.readthedocs.io).
 
-```python
-corrdim.clear_model_cache()
-```
+## CLI
 
-### From-Curve Interface
-
-```python
-import corrdim
-
-curve = corrdim.CurveResult(
-    sequence_length=1500,
-    epsilons=epsilons_np,
-    corrints=corrints_np,
-)
-result = corrdim.estimate_dimension_from_curve(curve)
-```
-
-See [examples/basic_usage.ipynb](examples/basic_usage.ipynb) for more detailed examples.
-
-## CLI Usage
-
-The package exposes a `corrdim` CLI with three subcommands:
+CorrDim includes a `corrdim` command-line interface:
 
 ```bash
-# 1) Text -> correlation dimension
 corrdim measure-text \
   --file data/sep60/chaos.txt \
-  --model Qwen/Qwen2.5-1.5B \
-  --dim-reduction 8192 \
-  --dtype float16
-
-# 2) Text -> curve JSON
-corrdim curve-from-text \
-  --file data/sep60/chaos.txt \
-  --model Qwen/Qwen2.5-1.5B \
-  --output curve.json
-
-# 3) Curve JSON -> correlation dimension
-corrdim estimate-dimension \
-  --curve-json curve.json
+  --model Qwen/Qwen2.5-1.5B
 ```
 
-`--dim-reduction none` can be used to disable dimensionality reduction.
+Additional CLI commands and options are documented at [corrdim.readthedocs.io](https://corrdim.readthedocs.io).
 
-Useful options:
-- `--backend triton|pytorch|pytorch_fast|auto`
-- `--stride <positive-int>` (default: `1`)
-- `--context-length <int>`
-- `--num-epsilon <int>`
+## Backends
 
-## API Reference
+CorrDim supports multiple backends for correlation-integral computation:
 
-### High-Level
+- `cuda`
+- `triton`
+- `pytorch`
+- `pytorch_fast`
+- `auto`
 
-- `measure_text(text, model, ...)` → `DimensionResult`
-- `measure_texts(texts, model, ...)` → `list[DimensionResult]`
+Set the default backend with:
 
-### Low-Level
+```bash
+export CORRDIM_CORRINT_BACKEND=pytorch
+```
 
-- `curve_from_vectors(vectors, ...)` / `curve_from_vectors_batch(vectors_batch, ...)`
-- `curve_from_text(text, model, ...)` / `curve_from_texts(texts, model, ...)`
-- `progressive_curve_from_vectors(...)` / `progressive_curve_from_vectors_batch(...)`
-- `progressive_curve_from_text(...)` / `progressive_curve_from_texts(...)`
+Or in Python:
 
-### From-Curve
+```python
+import corrdim
 
-- `estimate_dimension_from_curve(curve, ...)` → `DimensionResult`
-- `estimate_dimension_from_curves(curves, ...)` → `list[DimensionResult]`
-
-### Backend Utilities
-
-- `correlation_integral(vecs, epsilons, backend=...)`
-- `set_corrint_backend(backend)` (`"triton"`, `"pytorch"`, `"pytorch_fast"`)
+print(corrdim.set_corrint_backend("auto"))
+print(corrdim.available_corrint_backends())
+```
 
 ## Citation
 
@@ -241,8 +161,9 @@ Useful options:
 
 ## Links
 
-- **Paper**: [arXiv:2510.21258](https://arxiv.org/abs/2510.21258)
-- **Repository**: [https://github.com/kduxin/corrdim](https://github.com/kduxin/corrdim)
+- Documentation: https://corrdim.readthedocs.io
+- Paper: https://arxiv.org/abs/2510.21258
+- Repository: https://github.com/kduxin/corrdim
 
 ## License
 

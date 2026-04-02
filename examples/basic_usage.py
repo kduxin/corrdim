@@ -135,7 +135,6 @@ def example2_low_level():
     # Step 4: Estimate correlation dimension from the curve
     result = corrdim.estimate_dimension_from_curve(
         curve=curve,
-        correlation_integral_range="auto",
     )
     print(f"File = chaos, epsilon range = {result.epsilons_linear_region[0]:g} - {result.epsilons_linear_region[-1]:g}: corrdim = {result.corrdim:.2f}")
 

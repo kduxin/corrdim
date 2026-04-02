@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Optional, Tuple, Union
+from typing import Optional, Tuple
 
 import numpy as np
 import sklearn.linear_model
@@ -25,20 +25,20 @@ def auto_linear_region_bounds(sequence_length: int, epsilons: np.ndarray, corrin
 
 def estimate_dimension_from_curve(
     curve: CurveResult,
-    correlation_integral_range: Optional[Union[str, Tuple[float, float]]] = None,
+    correlation_integral_range: Optional[Tuple[float, float]] = None,
     epsilon_range: Optional[Tuple[float, float]] = None,
 ) -> DimensionResult:
     epsilons = curve.epsilons.copy()
     corrints = curve.corrints.copy()
 
-    if correlation_integral_range is not None:
-        if correlation_integral_range == "auto":
-            try:
-                low, high = auto_linear_region_bounds(curve.sequence_length, epsilons, corrints)
-            except ValueError:
-                low, high = 0.0, 1.0
-        else:
-            low, high = correlation_integral_range
+    if correlation_integral_range is None and epsilon_range is None:
+        try:
+            low, high = auto_linear_region_bounds(curve.sequence_length, epsilons, corrints)
+        except ValueError:
+            low, high = 0.0, 1.0
+        eps_linear, corr_linear = clamp(epsilons, corrints, low=low, high=high)
+    elif correlation_integral_range is not None:
+        low, high = correlation_integral_range
         eps_linear, corr_linear = clamp(epsilons, corrints, low=low, high=high)
     else:
         low, high = None, None
@@ -78,7 +78,7 @@ def estimate_dimension_from_curve(
 
 def estimate_dimension_from_curves(
     curves: list[CurveResult],
-    correlation_integral_range: Optional[Union[str, Tuple[float, float]]] = "auto",
+    correlation_integral_range: Optional[Tuple[float, float]] = None,
     epsilon_range: Optional[Tuple[float, float]] = None,
 ) -> list[DimensionResult]:
     return [

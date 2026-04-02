@@ -33,13 +33,9 @@ def _normalize_backend_name(name: Any, *, source: str) -> str:
 
 
 def _env_default_backend() -> str:
-    # New canonical env var: CORRDIM_CORRINT_BACKEND
-    # Keep CORRDIM_BACKEND as backward-compatible fallback.
+    # Canonical env var for selecting the correlation-integral backend.
     raw = os.environ.get("CORRDIM_CORRINT_BACKEND")
     source = "CORRDIM_CORRINT_BACKEND"
-    if raw is None:
-        raw = os.environ.get("CORRDIM_BACKEND")
-        source = "CORRDIM_BACKEND"
     if raw is None:
         return "triton"
     return _normalize_backend_name(raw, source=source)

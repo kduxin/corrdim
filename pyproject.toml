@@ -1,10 +1,10 @@
 [project]
 name = "corrdim"
-version = "0.2.0"
+version = "0.2.1"
 description = "Correlation Dimension for LLMs - A library for computing correlation dimension of autoregressive large language models"
 readme = "README.md"
 requires-python = ">=3.10"
-license = {text = "MIT"}
+license = "MIT"
 authors = [
     {name = "kduxin", email = "duxin@tongji.edu.cn"}
 ]
@@ -20,7 +20,6 @@ classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
@@ -54,9 +53,9 @@ dev = [
     "matplotlib>=3.10.6",
 ]
 docs = [
-    "sphinx>=6.0.0",
+    "sphinx>=5.3.0",
     "sphinx-rtd-theme>=1.2.0",
-    "myst-parser>=1.0.0",
+    "myst-parser>=0.16.1",
 ]
 demo = [
     "streamlit>=1.51.0",
@@ -99,3 +98,8 @@ warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
 
+[[tool.uv.index]]
+name = "testpypi"
+url = "https://test.pypi.org/simple/"
+publish-url = "https://test.pypi.org/legacy/"
+explicit = true

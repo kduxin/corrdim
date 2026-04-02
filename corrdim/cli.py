@@ -142,7 +142,7 @@ def _cmd_estimate_dimension(args: argparse.Namespace) -> None:
         epsilons=np.asarray(data["epsilons"], dtype=float),
         corrints=np.asarray(data["corrints"], dtype=float),
     )
-    result = estimate_dimension_from_curve(curve, correlation_integral_range="auto")
+    result = estimate_dimension_from_curve(curve)
     payload = {
         "sequence_length": result.sequence_length,
         "corrdim": result.corrdim,

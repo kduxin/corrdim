@@ -26,13 +26,16 @@ def _parse_nvcc_version(cuda_home: str | None) -> str | None:
 
 
 def _build_cuda_extensions():
+    # Install-time CUDA compilation is opt-in: avoids slow/unreliable nvcc builds on default `pip install`.
+    if os.environ.get("CORRDIM_BUILD_CUDA", "").strip() != "1":
+        return [], {}
+
     from torch.utils.cpp_extension import BuildExtension, CUDAExtension, CUDA_HOME
     import torch
 
-    root = Path(__file__).resolve().parent
     sources = [
-        str(root / "corrdim" / "corrint" / "ext" / "corrdim_cuda.cpp"),
-        str(root / "corrdim" / "corrint" / "ext" / "corrdim_cuda_kernel.cu"),
+        "corrdim/corrint/ext/corrdim_cuda.cpp",
+        "corrdim/corrint/ext/corrdim_cuda_kernel.cu",
     ]
 
     force = os.environ.get("CORRDIM_FORCE_CUDA_BUILD", "").strip() == "1"
