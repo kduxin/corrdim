@@ -72,9 +72,31 @@ print(progressive.epsilons.shape)
 print(progressive.corrints_progressive.shape)
 ```
 
+### From progressive curve to many fitted dimensions
+
+If you want **scalar correlation dimensions** at several prefix lengths (not only the integral curves), use `measure_text_progressive`. It builds the progressive curve once, then runs `estimate_dimension_from_curve` at indices `skip_prefix_tokens`, `skip_prefix_tokens + measure_every_tokens`, … below `sequence_length`. Keys in the returned `dict` are those prefix indices; values are `DimensionResult` objects like `measure_text`.
+
+```python
+import torch
+import corrdim
+
+by_prefix = corrdim.measure_text_progressive(
+    "Your long text here...",
+    model="Qwen/Qwen2.5-1.5B",
+    precision=torch.float16,
+    skip_prefix_tokens=100,
+    measure_every_tokens=100,
+)
+
+for i in sorted(by_prefix):
+    r = by_prefix[i]
+    print(i, r.corrdim, r.fit_r2)
+```
+
 ## Which function should I use?
 
 - use `measure_text` / `measure_texts` for the final dimension directly
+- use `measure_text_progressive` when you want fitted dimensions at many prefixes in one pass
 - use `curve_from_text` / `curve_from_vectors` when you want the raw curve
 - use `progressive_curve_from_text` / `progressive_curve_from_vectors` for prefix-wise analysis
 - use `correlation_integral` when you already have tensors and want raw backend outputs

@@ -98,11 +98,35 @@ for result in results:
     print(result.corrdim, result.fit_r2)
 ```
 
+### Progressive dimension along the sequence
+
+To fit correlation dimension at multiple prefix lengths without re-running the model for each prefix, use `measure_text_progressive`. It calls `progressive_curve_from_text` once, then subsamples prefix indices:
+
+- `skip_prefix_tokens`: first prefix index to include (shorter prefixes are skipped)
+- `measure_every_tokens`: stride between measured indices
+
+```python
+import torch
+import corrdim
+
+by_prefix = corrdim.measure_text_progressive(
+    long_text,
+    model="Qwen/Qwen2.5-1.5B",
+    precision=torch.float16,
+    skip_prefix_tokens=100,
+    measure_every_tokens=100,
+)
+
+for prefix_len, result in sorted(by_prefix.items()):
+    print(prefix_len, result.corrdim, result.fit_r2)
+```
+
 ## API overview
 
 The most important entry points are:
 
 - `measure_text` / `measure_texts` for end-to-end text measurement
+- `measure_text_progressive` for multiple fitted dimensions along sequence prefixes (one model pass)
 - `curve_from_text` / `curve_from_vectors` when you want the curve first
 - `estimate_dimension_from_curve` when you already have saved curve data
 - `progressive_curve_from_text` for prefix-wise analysis

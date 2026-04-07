@@ -29,7 +29,7 @@ def test_cuda_backend_fallback_counts_warns_and_matches_pytorch(monkeypatch):
 def test_cuda_backend_fallback_progressive_integral_warns_and_matches_pytorch(monkeypatch):
     monkeypatch.setattr(cuda_impl, "_FALLBACK_WARNED", False)
 
-    vecs = torch.randn(10, 5, device="cpu")
+    vecs = torch.randn(200, 5, device="cpu")  # progressive tests use at least 200 sequence positions
     eps = torch.tensor([0.25, 1.25], device="cpu")
 
     with pytest.warns(RuntimeWarning, match="fell back to pytorch backend"):

@@ -26,6 +26,7 @@ In Python, these stages map roughly to:
 - `curve_from_text(...)` or `curve_from_vectors(...)` for curve construction
 - `estimate_dimension_from_curve(...)` for slope fitting
 - `measure_text(...)` when you want both steps wrapped into one call
+- `measure_text_progressive(...)` when you want fitted dimensions at subsampled prefix lengths after a single progressive curve pass
 
 ## Backend model
 
@@ -59,7 +60,7 @@ If you do not set anything, CorrDim defaults to `triton`.
 
 The library is intentionally split into layers:
 
-- high-level API: `measure_text`, `measure_texts`
+- high-level API: `measure_text`, `measure_texts`, `measure_text_progressive`
 - curve API: `curve_from_text`, `curve_from_texts`, `curve_from_vectors`
 - progressive API: `progressive_curve_from_text`, `progressive_curve_from_vectors`
 - raw backend API: `correlation_counts`, `correlation_integral`, `progressive_correlation_integral`

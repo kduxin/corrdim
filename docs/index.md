@@ -34,3 +34,5 @@ If you want the simplest path from text to a final scalar result, start with `co
 If you want the full correlation-integral curve first, use `corrdim.curve_from_text(...)` or `corrdim.curve_from_vectors(...)`, then fit with `corrdim.estimate_dimension_from_curve(...)`.
 
 If you want to study how structure changes over sequence prefixes, use `corrdim.progressive_curve_from_text(...)` or `corrdim.progressive_correlation_integral(...)`.
+
+If you want **fitted correlation dimensions** at many prefix lengths without separate full runs, use `corrdim.measure_text_progressive(...)` (see the quickstart section on progressive analysis).

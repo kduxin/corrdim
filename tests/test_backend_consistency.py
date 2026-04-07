@@ -55,7 +55,8 @@ def test_cuda_backend_matches_pytorch_self_cross_and_progressive():
         pytest.skip("CUDA backend not available")
 
     device = torch.device("cuda")
-    vecs, vecs_other, eps = _make_inputs(device, m=32, n=32, k=16)
+    # Progressive checks need at least 100 sequence positions.
+    vecs, vecs_other, eps = _make_inputs(device, m=200, n=200, k=16)
 
     # In some dev environments, the CUDA extension build may fail early (e.g. CUDA_HOME not set),
     # causing the CUDA backend to fall back to pytorch and emit a RuntimeWarning.
@@ -77,7 +78,7 @@ def test_cuda_backend_matches_pytorch_self_cross_and_progressive():
 
     ref_integral = corrdim.correlation_integral(vecs, eps, backend="pytorch")
     got_integral = corrdim.correlation_integral(vecs, eps, backend="cuda")
-    # One-count difference means ~1/(m*(m-1)). For m=32 => ~1e-3.
+    # One-count difference means ~1/(m*(m-1)). For m=100 => ~1e-4.
     _assert_integral_closeish(got_integral, ref_integral, atol=2e-3)
 
     # Cross
@@ -87,7 +88,7 @@ def test_cuda_backend_matches_pytorch_self_cross_and_progressive():
 
     ref_integral_cross = corrdim.correlation_integral(vecs, eps, vecs_other=vecs_other, backend="pytorch")
     got_integral_cross = corrdim.correlation_integral(vecs, eps, vecs_other=vecs_other, backend="cuda")
-    # One-count difference means ~1/(m*n). For 32x32 => ~1e-3.
+    # One-count difference means ~1/(m*n). For 100x100 => ~1e-4.
     _assert_integral_closeish(got_integral_cross, ref_integral_cross, atol=2e-3)
 
     # Progressive (exclude prefix-length index 0 due to different denom choice across implementations)
@@ -107,7 +108,8 @@ def test_triton_backend_matches_pytorch_self_cross_and_progressive():
         pytest.skip("Triton backend not available")
 
     device = torch.device("cuda")
-    vecs, vecs_other, eps = _make_inputs(device, m=32, n=32, k=16)
+    # Progressive checks need at least 100 sequence positions.
+    vecs, vecs_other, eps = _make_inputs(device, m=100, n=100, k=16)
 
     # Self
     ref_counts = corrdim.correlation_counts(vecs, eps, backend="pytorch")

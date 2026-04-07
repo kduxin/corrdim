@@ -87,11 +87,12 @@ def test_pytorch_batched_matches_per_batch(backend: str):
 @pytest.mark.parametrize("backend", ["pytorch", "pytorch_fast"])
 def test_pytorch_progressive_counts_matches_definition(backend: str):
     torch.manual_seed(5)
-    vecs = torch.randn(2, 9, 4, device="cpu")  # (B, M, K)
+    m = 200  # progressive tests use at least 200 sequence positions
+    vecs = torch.randn(2, m, 4, device="cpu")  # (B, M, K)
     eps = torch.tensor([0.0, 1.0], device="cpu")
 
     got = progressive_correlation_counts(vecs, eps, backend=backend)
-    assert got.shape == (2, 9, 2)
+    assert got.shape == (2, m, 2)
     assert torch.equal(got[:, 0, :], torch.zeros((2, 2), dtype=torch.int64))
 
     # Definition (matches Triton progressive implementation):
@@ -112,10 +113,11 @@ def test_pytorch_progressive_counts_matches_definition(backend: str):
 @pytest.mark.parametrize("backend", ["pytorch", "pytorch_fast"])
 def test_pytorch_progressive_integral_shape_and_finite(backend: str):
     torch.manual_seed(6)
-    vecs = torch.randn(11, 5, device="cpu")
+    m = 200
+    vecs = torch.randn(m, 5, device="cpu")
     eps = torch.tensor([0.5, 1.0, 2.0], device="cpu")
 
     got = progressive_correlation_integral(vecs, eps, backend=backend)
-    assert got.shape == (11, 3)
+    assert got.shape == (m, 3)
     assert torch.isfinite(got).all()
 

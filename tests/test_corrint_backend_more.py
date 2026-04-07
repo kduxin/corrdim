@@ -30,7 +30,7 @@ def test_correlation_integral_return_counts_matches_correlation_counts():
 def test_progressive_integral_return_counts_matches_progressive_counts():
     corrdim.set_corrint_backend("pytorch")
     torch.manual_seed(1)
-    vecs = torch.randn(8, 3)
+    vecs = torch.randn(200, 3)  # progressive tests use at least 100 sequence positions
     eps = torch.tensor([0.25, 1.5], dtype=torch.float32)
 
     counts = corrdim.progressive_correlation_counts(vecs, eps, backend="pytorch")

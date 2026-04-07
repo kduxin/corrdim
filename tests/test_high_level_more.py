@@ -1,3 +1,5 @@
+import math
+
 import pytest
 import torch
 from types import SimpleNamespace
@@ -5,6 +7,10 @@ from types import SimpleNamespace
 import corrdim
 import corrdim.high_level as high_level
 from corrdim.models import LanguageModelWrapper
+
+# Progressive tests use at least 100 tokens (tokenizer length and/or model seq_len).
+_PROGRESSIVE_SEQ_LEN = 256
+_PROGRESSIVE_TEXT = "t " * _PROGRESSIVE_SEQ_LEN
 
 
 class DummyTokenizer:
@@ -114,10 +120,10 @@ def test_measure_text_truncation_requires_tokenizer_or_model_tokenizer():
 
 def test_progressive_curve_from_text_shapes():
     corrdim.set_corrint_backend("pytorch")
-    wrapper = RecordingTextWrapper(seq_len=110, vocab=24, tokenizer=DummyTokenizer())
+    wrapper = RecordingTextWrapper(seq_len=_PROGRESSIVE_SEQ_LEN, vocab=24, tokenizer=DummyTokenizer())
 
     prog = corrdim.progressive_curve_from_text(
-        "hello",
+        _PROGRESSIVE_TEXT,
         model=wrapper,
         tokenizer=None,
         dim_reduction=8,
@@ -126,12 +132,12 @@ def test_progressive_curve_from_text_shapes():
         backend="pytorch",
     )
 
-    assert prog.sequence_length == 110
+    assert prog.sequence_length == _PROGRESSIVE_SEQ_LEN
     assert len(prog.epsilons) == 8
-    assert prog.corrints_progressive.shape == (110, 8)
+    assert prog.corrints_progressive.shape == (_PROGRESSIVE_SEQ_LEN, 8)
 
     progs = corrdim.progressive_curve_from_texts(
-        ["a", "b"],
+        [_PROGRESSIVE_TEXT, "u" * _PROGRESSIVE_SEQ_LEN],
         model=wrapper,
         tokenizer=None,
         dim_reduction=8,
@@ -140,20 +146,49 @@ def test_progressive_curve_from_text_shapes():
         backend="pytorch",
     )
     assert len(progs) == 2
-    assert progs[0].corrints_progressive.shape == (110, 6)
+    assert progs[0].corrints_progressive.shape == (_PROGRESSIVE_SEQ_LEN, 6)
+
+
+def test_measure_text_progressive_keys_and_finite_corrdim():
+    corrdim.set_corrint_backend("pytorch")
+    wrapper = RecordingTextWrapper(seq_len=_PROGRESSIVE_SEQ_LEN, vocab=24, tokenizer=DummyTokenizer())
+
+    skip, step = 10, 20
+    out = corrdim.measure_text_progressive(
+        _PROGRESSIVE_TEXT,
+        model=wrapper,
+        tokenizer=None,
+        skip_prefix_tokens=skip,
+        measure_every_tokens=step,
+        dim_reduction=8,
+        num_epsilon=8,
+        precision=torch.float32,
+        backend="pytorch",
+    )
+    assert set(out.keys()) == set(range(skip, _PROGRESSIVE_SEQ_LEN, step))
+    for res in out.values():
+        assert res.sequence_length == _PROGRESSIVE_SEQ_LEN
+        assert math.isfinite(res.corrdim)
+
+
+def test_measure_text_progressive_validates_sampling_params():
+    with pytest.raises(ValueError, match="skip_prefix_tokens"):
+        high_level.measure_text_progressive(_PROGRESSIVE_TEXT, model="unused", skip_prefix_tokens=-1)
+    with pytest.raises(ValueError, match="measure_every_tokens"):
+        high_level.measure_text_progressive(_PROGRESSIVE_TEXT, model="unused", measure_every_tokens=0)
 
 
 def test_progressive_curve_from_vectors_batch_shapes_and_validation():
     corrdim.set_corrint_backend("pytorch")
-    vectors_batch = torch.randn(2, 110, 12, dtype=torch.float32)
+    vectors_batch = torch.randn(2, _PROGRESSIVE_SEQ_LEN, 12, dtype=torch.float32)
     progs = corrdim.progressive_curve_from_vectors_batch(
         vectors_batch,
         num_epsilon=6,
         backend="pytorch",
     )
     assert len(progs) == 2
-    assert all(p.sequence_length == 110 for p in progs)
-    assert all(p.corrints_progressive.shape == (110, 6) for p in progs)
+    assert all(p.sequence_length == _PROGRESSIVE_SEQ_LEN for p in progs)
+    assert all(p.corrints_progressive.shape == (_PROGRESSIVE_SEQ_LEN, 6) for p in progs)
 
     with pytest.raises(ValueError, match="vectors_batch must have shape"):
         _ = corrdim.progressive_curve_from_vectors_batch(vectors_batch[0], num_epsilon=4, backend="pytorch")

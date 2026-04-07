@@ -10,7 +10,7 @@ def test_triton_progressive_counts_matches_loop_definition():
     torch.manual_seed(0)
     device = torch.device("cuda")
 
-    b, m, k = 2, 64, 16
+    b, m, k = 2, 200, 16  # progressive tests use at least 200 sequence positions
     vecs = torch.randn(b, m, k, device=device)
     eps = torch.tensor([0.0, 0.5, 1.0, 2.0], device=device)
 
