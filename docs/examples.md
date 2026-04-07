@@ -25,7 +25,7 @@ If you are new to the project:
 - start with `measure_text(...)` for an end-to-end workflow
 - switch to `curve_from_text(...)` when you want to inspect the curve itself
 - use `progressive_curve_from_text(...)` when you care about changes over sequence prefixes
-- use `measure_text_progressive(...)` when you want multiple `DimensionResult` values (fitted dimensions) along prefixes in one model pass
+- use `measure_text_progressive(...)` when you want a `ProgressiveDimensionResult` with per-prefix `DimensionResult` values in one model pass
 
 ## API reference
 

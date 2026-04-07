@@ -74,23 +74,23 @@ print(progressive.corrints_progressive.shape)
 
 ### From progressive curve to many fitted dimensions
 
-If you want **scalar correlation dimensions** at several prefix lengths (not only the integral curves), use `measure_text_progressive`. It builds the progressive curve once, then runs `estimate_dimension_from_curve` at indices `skip_prefix_tokens`, `skip_prefix_tokens + measure_every_tokens`, … below `sequence_length`. Keys in the returned `dict` are those prefix indices; values are `DimensionResult` objects like `measure_text`.
+If you want **scalar correlation dimensions** at several prefix lengths (not only the integral curves), use `measure_text_progressive`. It builds the progressive curve once, then runs `estimate_dimension_from_curve` at sampled indices below `sequence_length`. If `measure_every_tokens` is omitted (`None`), the stride is chosen from length: under 100 → `1`, under 1000 → `10`, otherwise `100`.
+
+The return value is a `ProgressiveDimensionResult`: `by_prefix` maps prefix index to `DimensionResult` (same fields as `measure_text`); `corrdims` maps index to the fitted scalar only.
 
 ```python
 import torch
 import corrdim
 
-by_prefix = corrdim.measure_text_progressive(
+prog_dims = corrdim.measure_text_progressive(
     "Your long text here...",
     model="Qwen/Qwen2.5-1.5B",
     precision=torch.float16,
     skip_prefix_tokens=100,
-    measure_every_tokens=100,
 )
 
-for i in sorted(by_prefix):
-    r = by_prefix[i]
-    print(i, r.corrdim, r.fit_r2)
+for i, d in sorted(prog_dims.corrdims.items()):
+    print(i, d)
 ```
 
 ## Which function should I use?

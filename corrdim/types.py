@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Optional, Tuple
+from typing import Dict, Optional, Tuple
 
 import numpy as np
 
@@ -30,3 +30,18 @@ class DimensionResult:
     epsilons_linear_region: np.ndarray
     corrints_linear_region: np.ndarray
     linear_region_bounds: Tuple[Optional[float], Optional[float]] = (None, None)
+
+
+@dataclass
+class ProgressiveDimensionResult:
+    """Correlation dimensions fitted at subsampled prefix indices after one progressive pass."""
+
+    sequence_length: int
+    epsilons: np.ndarray
+    skip_prefix_tokens: int
+    measure_every_tokens: int
+    by_prefix: Dict[int, DimensionResult]
+
+    @property
+    def corrdims(self) -> Dict[int, float]:
+        return {i: r.corrdim for i, r in self.by_prefix.items()}

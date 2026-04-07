@@ -165,8 +165,13 @@ def test_measure_text_progressive_keys_and_finite_corrdim():
         precision=torch.float32,
         backend="pytorch",
     )
-    assert set(out.keys()) == set(range(skip, _PROGRESSIVE_SEQ_LEN, step))
-    for res in out.values():
+    assert out.sequence_length == _PROGRESSIVE_SEQ_LEN
+    assert out.skip_prefix_tokens == skip
+    assert out.measure_every_tokens == step
+    assert out.epsilons.shape == (8,)
+    assert set(out.by_prefix.keys()) == set(range(skip, _PROGRESSIVE_SEQ_LEN, step))
+    assert out.corrdims == {i: out.by_prefix[i].corrdim for i in out.by_prefix}
+    for res in out.by_prefix.values():
         assert res.sequence_length == _PROGRESSIVE_SEQ_LEN
         assert math.isfinite(res.corrdim)
 
@@ -176,6 +181,45 @@ def test_measure_text_progressive_validates_sampling_params():
         high_level.measure_text_progressive(_PROGRESSIVE_TEXT, model="unused", skip_prefix_tokens=-1)
     with pytest.raises(ValueError, match="measure_every_tokens"):
         high_level.measure_text_progressive(_PROGRESSIVE_TEXT, model="unused", measure_every_tokens=0)
+
+
+def test_default_measure_every_tokens_by_sequence_length():
+    f = high_level._default_measure_every_tokens
+    assert f(50) == 1
+    assert f(99) == 1
+    assert f(100) == 10
+    assert f(500) == 10
+    assert f(1000) == 100
+
+
+@pytest.mark.parametrize(
+    "seq_len,expected_step,skip",
+    [
+        (128, 10, 10),
+        (500, 10, 10),
+        (2000, 100, 100),
+    ],
+)
+def test_measure_text_progressive_adaptive_measure_every(seq_len, expected_step, skip):
+    """Full pipeline needs sequence length > 100 (``_make_epsilons``); skip early prefix rows that fit poorly."""
+    torch.manual_seed(42)
+    corrdim.set_corrint_backend("pytorch")
+    wrapper = RecordingTextWrapper(seq_len=seq_len, vocab=24, tokenizer=DummyTokenizer())
+    text = "x" * seq_len
+
+    out = corrdim.measure_text_progressive(
+        text,
+        model=wrapper,
+        tokenizer=None,
+        skip_prefix_tokens=skip,
+        measure_every_tokens=None,
+        dim_reduction=8,
+        num_epsilon=8,
+        precision=torch.float32,
+        backend="pytorch",
+    )
+    assert out.measure_every_tokens == expected_step
+    assert set(out.by_prefix.keys()) == set(range(skip, seq_len, expected_step))
 
 
 def test_progressive_curve_from_vectors_batch_shapes_and_validation():

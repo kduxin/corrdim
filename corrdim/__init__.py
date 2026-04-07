@@ -34,7 +34,7 @@ from .low_level import (
     progressive_curve_from_vectors_batch,
 )
 from .models import LanguageModelWrapper
-from .types import CurveResult, DimensionResult, ProgressiveCurveResult
+from .types import CurveResult, DimensionResult, ProgressiveCurveResult, ProgressiveDimensionResult
 from .utils import clamp, reduce_dimension
 
 __all__ = [
@@ -60,6 +60,7 @@ __all__ = [
     "measure_texts",
     "CurveResult",
     "ProgressiveCurveResult",
+    "ProgressiveDimensionResult",
     "DimensionResult",
     "auto_linear_region_bounds",
     "LanguageModelWrapper",

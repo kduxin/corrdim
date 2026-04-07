@@ -6,9 +6,17 @@ import torch
 
 from .dimension import estimate_dimension_from_curve
 from .low_level import ModelLike, curve_from_text, curve_from_texts, progressive_curve_from_text
-from .types import CurveResult, DimensionResult
+from .types import CurveResult, DimensionResult, ProgressiveDimensionResult
 
 DEFAULT_EPSILON_RANGE: Tuple[float, float] = (10**-20.0, 10**20.0)
+
+
+def _default_measure_every_tokens(sequence_length: int) -> int:
+    if sequence_length < 100:
+        return 1
+    if sequence_length < 1000:
+        return 10
+    return 100
 
 
 def _truncate_text_by_tokens(
@@ -91,7 +99,7 @@ def measure_text_progressive(
     tokenizer: Optional[object] = None,
     truncation_tokens: Optional[int] = None,
     skip_prefix_tokens: int = 100,
-    measure_every_tokens: int = 100,
+    measure_every_tokens: Optional[int] = None,
     context_length: Optional[int] = None,
     dim_reduction: Optional[int] = 8192,
     stride: int = 1,
@@ -103,17 +111,19 @@ def measure_text_progressive(
     precision: torch.dtype = torch.float16,
     backend: Optional[str] = None,
     **model_kwargs,
-) -> dict[int, DimensionResult]:
+) -> ProgressiveDimensionResult:
     """Compute progressive curves once, then fit correlation dimension at sampled prefixes.
 
-    For each index ``i`` in ``range(skip_prefix_tokens, sequence_length, measure_every_tokens)``,
-    uses row ``corrints_progressive[i]`` with the shared ``epsilons`` grid. Return value maps
-    ``i`` to :class:`~corrdim.types.DimensionResult` (same structure as :func:`measure_text`).
+    For each index ``i`` in ``range(skip_prefix_tokens, sequence_length, step)``,
+    uses row ``corrints_progressive[i]`` with the shared ``epsilons`` grid. Results are in
+    :attr:`~corrdim.types.ProgressiveDimensionResult.by_prefix` (``i`` → :class:`~corrdim.types.DimensionResult`).
+    If ``measure_every_tokens`` is ``None``, ``step`` is chosen from ``sequence_length``:
+    ``< 100`` → ``1``, ``< 1000`` → ``10``, otherwise ``100``.
     Other arguments follow :func:`measure_text` / :func:`~corrdim.low_level.progressive_curve_from_text`.
     """
     if skip_prefix_tokens < 0:
         raise ValueError("skip_prefix_tokens must be non-negative.")
-    if measure_every_tokens < 1:
+    if measure_every_tokens is not None and measure_every_tokens < 1:
         raise ValueError("measure_every_tokens must be a positive integer.")
 
     if truncation_tokens is not None:
@@ -142,8 +152,14 @@ def measure_text_progressive(
         **model_kwargs,
     )
 
+    step = (
+        measure_every_tokens
+        if measure_every_tokens is not None
+        else _default_measure_every_tokens(prog.sequence_length)
+    )
+
     out: dict[int, DimensionResult] = {}
-    for i in range(skip_prefix_tokens, prog.sequence_length, measure_every_tokens):
+    for i in range(skip_prefix_tokens, prog.sequence_length, step):
         curve = CurveResult(
             sequence_length=prog.sequence_length,
             epsilons=prog.epsilons,
@@ -154,7 +170,13 @@ def measure_text_progressive(
             correlation_integral_range=correlation_integral_range,
             epsilon_range=epsilon_range,
         )
-    return out
+    return ProgressiveDimensionResult(
+        sequence_length=prog.sequence_length,
+        epsilons=prog.epsilons,
+        skip_prefix_tokens=skip_prefix_tokens,
+        measure_every_tokens=step,
+        by_prefix=out,
+    )
 
 
 def measure_texts(

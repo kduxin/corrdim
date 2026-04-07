@@ -62,7 +62,7 @@ The library is intentionally split into layers:
 
 - high-level API: `measure_text`, `measure_texts`, `measure_text_progressive`
 - curve API: `curve_from_text`, `curve_from_texts`, `curve_from_vectors`
-- progressive API: `progressive_curve_from_text`, `progressive_curve_from_vectors`
+- progressive API: `progressive_curve_from_text`, `progressive_curve_from_vectors`; fitted dimensions along prefixes use `measure_text_progressive` → `ProgressiveDimensionResult`
 - raw backend API: `correlation_counts`, `correlation_integral`, `progressive_correlation_integral`
 
 Use the highest layer that still gives you the outputs you need.
