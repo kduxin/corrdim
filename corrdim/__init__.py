@@ -21,7 +21,7 @@ from .dimension import (
     estimate_dimension_from_curve,
     estimate_dimension_from_curves,
 )
-from .high_level import measure_text, measure_text_progressive, measure_texts
+from .high_level import measure_text, measure_text_progressive, measure_texts, measure_texts_progressive
 from .low_level import (
     clear_model_cache,
     curve_from_text,
@@ -58,6 +58,7 @@ __all__ = [
     "measure_text",
     "measure_text_progressive",
     "measure_texts",
+    "measure_texts_progressive",
     "CurveResult",
     "ProgressiveCurveResult",
     "ProgressiveDimensionResult",

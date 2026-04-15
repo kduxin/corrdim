@@ -8,7 +8,7 @@ log-probability vectors needed for correlation dimension computation.
 import torch
 import numpy as np
 import tqdm.auto as tqdm
-from typing import Optional, List
+from typing import List, Optional
 from abc import ABC, abstractmethod
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from .utils import reduce_dimension
@@ -34,7 +34,6 @@ class LanguageModelWrapper(ABC):
         Args:
             text: Input text
             context_length: Maximum context length
-            batch_size: Batch size for processing
 
         Returns:
             Array of sampled log-probability vectors of shape (sampled_seq_len, vocab_size)
@@ -165,133 +164,229 @@ class TransformersModelWrapper(LanguageModelWrapper):
         self.input_device = self._infer_input_device()
 
         # Tokenize text
-        tokens = self.tokenizer.encode(text, add_special_tokens=False)
-        if len(tokens) == 0:
-            raise ValueError("Input text produced an empty token sequence.")
-
-        if context_length is None:
-            context_length = self.model.config.max_position_embeddings
-        elif context_length > self.model.config.max_position_embeddings:
-            raise ValueError(
-                f"Context length exceeds the max length allowed by the model: {self.model.config.max_position_embeddings}"
-            )
+        tokens = self._tokenize_texts([text])[0]
+        context_length = self._resolve_context_length(context_length)
 
         token_stride = self._normalize_token_stride(stride)
-
-        if dim_reduction is not None:
-            if dim_reduction > self.model.config.vocab_size:
-                raise ValueError(f"Dim reduction must be less than or equal to the vocabulary size: {self.model.config.vocab_size}")
-            # print("Warning: Using dimension reduction may change the correlation dimension value.")
+        self._validate_dim_reduction(dim_reduction)
 
         if len(tokens) <= context_length:
             # Short text: process in a single pass, then sample by token position.
             return self._get_log_probabilities_single_pass(
-                tokens,
+                [tokens],
                 dim_reduction=dim_reduction,
                 token_stride=token_stride,
                 show_progress=show_progress,
-            )
+            )[0]
         else:
-            # Long text: sliding-window inference is internal; stride is only used for sampling output positions.
             return self._get_log_probabilities_sliding_window(
-                tokens,
-                context_length,
+                [tokens],
+                context_length=context_length,
                 dim_reduction=dim_reduction,
                 token_stride=token_stride,
                 show_progress=show_progress,
+            )[0]
+
+    @torch.no_grad()
+    def get_log_probabilities_batch(
+        self,
+        texts: List[str],
+        context_length: Optional[int] = None,
+        dim_reduction: Optional[int] = None,
+        stride: int = 1,
+        show_progress: bool = False,
+        batch_size: Optional[int] = None,
+    ) -> List[torch.Tensor]:
+        """Encode ``texts`` using HuggingFace batched ``forward`` (padded batch, ``attention_mask``).
+
+        Returns one tensor per input string; rows can differ in length (``sampled_seq_len``) when
+        token lengths differ. This API only supports short sequences:
+        every input must satisfy ``len(tokens) <= context_length``.
+        """
+        if batch_size is not None and batch_size < 1:
+            raise ValueError("batch_size must be a positive integer or None.")
+        if not texts:
+            return []
+
+        self.input_device = self._infer_input_device()
+        context_length = self._resolve_context_length(context_length)
+
+        token_stride = self._normalize_token_stride(stride)
+        self._validate_dim_reduction(dim_reduction)
+
+        token_lists = self._tokenize_texts(texts)
+        max_tokens = max(len(tokens) for tokens in token_lists)
+        if max_tokens > context_length:
+            raise ValueError(
+                "get_log_probabilities_batch only supports short texts; "
+                f"got max token length {max_tokens} > context_length {context_length}."
             )
+
+        eff_bs = 1 if batch_size is None else batch_size
+        out: List[torch.Tensor] = []
+        for i in range(0, len(token_lists), eff_bs):
+            chunk_tokens = token_lists[i : i + eff_bs]
+            out.extend(
+                self._get_log_probabilities_single_pass(
+                    chunk_tokens,
+                    dim_reduction=dim_reduction,
+                    token_stride=token_stride,
+                    show_progress=show_progress,
+                )
+            )
+        return out
 
     def _normalize_token_stride(self, stride: int) -> int:
         if not isinstance(stride, int) or stride < 1:
             raise ValueError("stride must be a positive integer")
         return stride
 
+    def _resolve_context_length(self, context_length: Optional[int]) -> int:
+        if context_length is None:
+            return int(self.model.config.max_position_embeddings)
+        max_ctx = int(self.model.config.max_position_embeddings)
+        if context_length > max_ctx:
+            raise ValueError(
+                f"Context length exceeds the max length allowed by the model: {self.model.config.max_position_embeddings}"
+            )
+        return context_length
+
+    def _validate_dim_reduction(self, dim_reduction: Optional[int]) -> None:
+        if dim_reduction is None:
+            return
+        if dim_reduction > self.model.config.vocab_size:
+            raise ValueError(
+                f"Dim reduction must be less than or equal to the vocabulary size: {self.model.config.vocab_size}"
+            )
+
+    def _tokenize_texts(self, texts: List[str]) -> List[List[int]]:
+        token_lists = [self.tokenizer.encode(text, add_special_tokens=False) for text in texts]
+        if any(len(tokens) == 0 for tokens in token_lists):
+            raise ValueError("Input text produced an empty token sequence.")
+        return token_lists
+
+    @staticmethod
+    def _log_softmax_inplace(logits: torch.Tensor, dim: int) -> torch.Tensor:
+        logsumexp = torch.logsumexp(logits, dim=dim, keepdim=True)
+        torch.sub(logits, logsumexp, out=logits)
+        return logits
+
     def _get_log_probabilities_single_pass(
         self,
-        tokens: List[int],
-        dim_reduction: int = None,
+        token_lists: List[List[int]],
+        dim_reduction: Optional[int] = None,
         token_stride: int = 1,
         show_progress: bool = False,
-    ) -> torch.Tensor:
-        """Get log probabilities for short texts in a single pass."""
-        input_ids = torch.tensor([tokens], device=self.input_device)
+    ) -> List[torch.Tensor]:
+        """Get log probabilities for short token sequences in a single batched pass."""
+        if not token_lists:
+            return []
 
-        def log_softmax_(logits: torch.Tensor, dim) -> torch.Tensor:
-            """Log softmax in place."""
-            logsumexp = torch.logsumexp(logits, dim=dim, keepdim=True)
-            torch.sub(logits, logsumexp, out=logits)
-            return logits
+        lengths = [len(tokens) for tokens in token_lists]
+        batch_size = len(token_lists)
+        max_len = max(lengths)
+        pad_id = int(self.tokenizer.pad_token_id)
+        input_ids = torch.full((batch_size, max_len), pad_id, dtype=torch.long, device=self.input_device)
+        attention_mask = torch.zeros((batch_size, max_len), dtype=torch.long, device=self.input_device)
+        for b, tokens in enumerate(token_lists):
+            L = len(tokens)
+            input_ids[b, :L] = torch.tensor(tokens, dtype=torch.long, device=self.input_device)
+            attention_mask[b, :L] = 1
 
         cache = None
-        sampled_log_probs = []
-        total_seq_len = len(tokens)
+        per_row_chunks: List[List[torch.Tensor]] = [[] for _ in range(batch_size)]
+
         for chunk_start in tqdm.trange(
             0,
-            total_seq_len,
+            max_len,
             _FORWARD_CHUNK_SIZE,
             disable=not show_progress,
             desc="Computing log-probs",
         ):
-            chunk_end = min(chunk_start + _FORWARD_CHUNK_SIZE, total_seq_len)
-            outputs = self.model(input_ids[:, chunk_start:chunk_end], past_key_values=cache, use_cache=True)
+            chunk_end = min(chunk_start + _FORWARD_CHUNK_SIZE, max_len)
+            # With KV cache enabled, many models expect attention_mask length to include
+            # both past and current tokens (prefix up to chunk_end), not only current chunk.
+            outputs = self.model(
+                input_ids[:, chunk_start:chunk_end],
+                attention_mask=attention_mask[:, :chunk_end],
+                past_key_values=cache,
+                use_cache=True,
+            )
             cache = outputs.past_key_values
-
-            # Convert to log
-            logp = log_softmax_(outputs.logits[0], dim=-1)
+            logp = self._log_softmax_inplace(outputs.logits, dim=-1)
 
             if dim_reduction is not None:
                 logp = reduce_dimension(logp, method="group_add", num_groups=dim_reduction)
 
-            # Keep vectors at global positions: 0, token_stride, 2*token_stride, ...
-            offset = (-chunk_start) % token_stride
-            sampled_chunk = logp[offset::token_stride]
-            if sampled_chunk.shape[0] > 0:
-                sampled_log_probs.append(sampled_chunk)
+            for b in range(batch_size):
+                L_b = lengths[b]
+                if chunk_start >= L_b:
+                    continue
+                valid_end = min(chunk_end, L_b) - chunk_start
+                if valid_end <= 0:
+                    continue
+                row_logp = logp[b, :valid_end]
+                offset = (-chunk_start) % token_stride
+                if offset < row_logp.shape[0]:
+                    sampled_chunk = row_logp[offset::token_stride]
+                    if sampled_chunk.shape[0] > 0:
+                        per_row_chunks[b].append(sampled_chunk)
 
-        log_probs = torch.cat(sampled_log_probs, dim=0)
-        expected_rows = (total_seq_len - 1) // token_stride + 1
-        assert log_probs.shape[0] == expected_rows
-        return log_probs
+        result: List[torch.Tensor] = []
+        for b in range(batch_size):
+            log_probs = torch.cat(per_row_chunks[b], dim=0)
+            expected_rows = (lengths[b] - 1) // token_stride + 1
+            assert log_probs.shape[0] == expected_rows
+            result.append(log_probs)
+        return result
 
     def _get_log_probabilities_sliding_window(
         self,
-        tokens: List[int],
+        token_lists: List[List[int]],
         context_length: int,
-        dim_reduction: int = None,
+        dim_reduction: Optional[int] = None,
         token_stride: int = 1,
         show_progress: bool = False,
-    ) -> torch.Tensor:
-        """Get sampled log probabilities for long texts using internal sliding windows."""
-        seq_len = len(tokens)
-        input_ids = torch.tensor([tokens], device=self.input_device)
+    ) -> List[torch.Tensor]:
+        """Get sampled log probabilities for long token sequences using sliding windows."""
+        if not token_lists:
+            return []
 
-        # Internal step for long-sequence inference. This is separate from token_stride.
-        window_step = max(1, context_length // 10)
+        result: List[torch.Tensor] = []
+        iterator = tqdm.trange(len(token_lists), disable=not show_progress, desc="Computing log-probs")
+        for idx in iterator:
+            tokens = token_lists[idx]
+            seq_len = len(tokens)
+            input_ids = torch.tensor([tokens], device=self.input_device)
 
-        sampled_log_probs = []
-        for pos in tqdm.trange(0, seq_len, window_step, disable=not show_progress, desc="Computing log-probs"):
-            start = max(0, pos + window_step - context_length)
-            end = min(pos + window_step, seq_len)
-            ntokens_to_update = end - pos
-            if ntokens_to_update == 0:
-                continue
+            # Internal step for long-sequence inference. This is separate from token_stride.
+            window_step = max(1, context_length // 10)
 
-            outputs = self.model(input_ids[:, start:end])
-            logits = outputs.logits[0, -ntokens_to_update:, :]
-            logp = torch.log_softmax(logits, dim=-1)
+            sampled_log_probs = []
+            for pos in range(0, seq_len, window_step):
+                start = max(0, pos + window_step - context_length)
+                end = min(pos + window_step, seq_len)
+                ntokens_to_update = end - pos
+                if ntokens_to_update == 0:
+                    continue
 
-            if dim_reduction is not None:
-                logp = reduce_dimension(logp, method="group_add", num_groups=dim_reduction)
+                outputs = self.model(input_ids[:, start:end])
+                logits = outputs.logits[0, -ntokens_to_update:, :]
+                logp = torch.log_softmax(logits, dim=-1)
 
-            global_positions = torch.arange(pos, end, device=logp.device)
-            sampled_chunk = logp[(global_positions % token_stride) == 0]
-            if sampled_chunk.shape[0] > 0:
-                sampled_log_probs.append(sampled_chunk)
+                if dim_reduction is not None:
+                    logp = reduce_dimension(logp, method="group_add", num_groups=dim_reduction)
 
-        log_probs = torch.cat(sampled_log_probs, dim=0)
-        expected_rows = (seq_len - 1) // token_stride + 1
-        assert log_probs.shape[0] == expected_rows
-        return log_probs
+                global_positions = torch.arange(pos, end, device=logp.device)
+                sampled_chunk = logp[(global_positions % token_stride) == 0]
+                if sampled_chunk.shape[0] > 0:
+                    sampled_log_probs.append(sampled_chunk)
+
+            log_probs = torch.cat(sampled_log_probs, dim=0)
+            expected_rows = (seq_len - 1) // token_stride + 1
+            assert log_probs.shape[0] == expected_rows
+            result.append(log_probs)
+        return result
 
 
 class GPT2Wrapper(TransformersModelWrapper):

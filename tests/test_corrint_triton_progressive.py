@@ -28,3 +28,29 @@ def test_triton_progressive_counts_matches_loop_definition():
 
     assert torch.equal(got.cpu(), ref.cpu())
 
+
+@pytest.mark.skipif(not torch.cuda.is_available(), reason="CUDA not available; skipping Triton tests")
+def test_triton_progressive_counts_variable_lengths():
+    torch.manual_seed(0)
+    device = torch.device("cuda")
+
+    b, m, k = 3, 200, 16
+    vecs = torch.randn(b, m, k, device=device)
+    eps = torch.tensor([0.0, 0.5, 1.0, 2.0], device=device)
+    seq_lens = torch.tensor([200, 133, 79], device=device, dtype=torch.int32)
+
+    got = progressive_correlation_counts(vecs, eps, seq_lens=seq_lens)
+    assert got.shape == (b, m, eps.numel())
+
+    ref = torch.zeros_like(got)
+    for batch_idx in range(b):
+        m_b = int(seq_lens[batch_idx].item())
+        if m_b <= 0:
+            continue
+        inc = torch.zeros((m_b, eps.numel()), device=device, dtype=torch.int64)
+        for i in range(1, m_b):
+            inc[i, :] = correlation_counts(vecs[batch_idx, :i, :], eps, vecs_other=vecs[batch_idx, i : i + 1, :]) * 2
+        ref[batch_idx, :m_b, :] = inc.cumsum(dim=0)
+
+    assert torch.equal(got.cpu(), ref.cpu())
+

@@ -1,5 +1,6 @@
 import math
 
+import numpy as np
 import pytest
 import torch
 from types import SimpleNamespace
@@ -346,4 +347,84 @@ def test_measure_texts_explicit_epsilon_range_disables_auto_corr_range(monkeypat
     assert recorded["epsilon_range"] == explicit_epsilon_range
     assert recorded["correlation_integral_ranges"] == [None, None]
     assert recorded["estimate_epsilon_ranges"] == [explicit_epsilon_range, explicit_epsilon_range]
+
+
+def test_curve_from_texts_rejects_nonpositive_batch_size():
+    corrdim.set_corrint_backend("pytorch")
+    wrapper = RecordingTextWrapper(seq_len=120, vocab=16, tokenizer=DummyTokenizer())
+    with pytest.raises(ValueError, match="batch_size"):
+        corrdim.curve_from_texts(["x"], model=wrapper, batch_size=0, num_epsilon=8, precision=torch.float32, backend="pytorch")
+
+
+def test_measure_texts_passes_batch_size_to_curve_from_texts(monkeypatch):
+    recorded: dict = {}
+
+    def fake_curve_from_texts(**kwargs):
+        recorded["batch_size"] = kwargs.get("batch_size")
+        return []
+
+    monkeypatch.setattr(high_level, "curve_from_texts", fake_curve_from_texts)
+    monkeypatch.setattr(high_level, "estimate_dimension_from_curve", lambda *a, **k: None)
+
+    high_level.measure_texts(["only"], model="dummy", batch_size=3)
+    assert recorded["batch_size"] == 3
+
+
+def test_measure_texts_progressive_structure_and_batch_size(monkeypatch):
+    corrdim.set_corrint_backend("pytorch")
+    recorded: dict = {}
+
+    def fake_progressive_curve_from_texts(**kwargs):
+        texts = kwargs["texts"]
+        recorded["batch_size"] = kwargs.get("batch_size")
+        recorded["text_lengths"] = [len(t) for t in texts]
+        eps = np.linspace(1e-3, 1e-1, 8)
+        out = []
+        for idx, _ in enumerate(texts):
+            seq_len = _PROGRESSIVE_SEQ_LEN + idx * 17
+            corrint = np.ones((seq_len, 8), dtype=np.float64) * 0.5
+            out.append(
+                corrdim.ProgressiveCurveResult(
+                    sequence_length=seq_len,
+                    epsilons=eps,
+                    corrints_progressive=corrint,
+                )
+            )
+        return out
+
+    monkeypatch.setattr(high_level, "progressive_curve_from_texts", fake_progressive_curve_from_texts)
+
+    t1 = "t " * _PROGRESSIVE_SEQ_LEN
+    t2 = "u " * (_PROGRESSIVE_SEQ_LEN // 2)
+    t3 = "v " * (_PROGRESSIVE_SEQ_LEN + 23)
+    t4 = "w " * (_PROGRESSIVE_SEQ_LEN // 3)
+    t5 = "x " * (_PROGRESSIVE_SEQ_LEN + 41)
+    texts = [t1, t2, t3, t4, t5]
+    outs = high_level.measure_texts_progressive(
+        texts,
+        model="dummy",
+        skip_prefix_tokens=10,
+        measure_every_tokens=20,
+        dim_reduction=8,
+        num_epsilon=8,
+        precision=torch.float32,
+        backend="pytorch",
+        batch_size=2,
+    )
+    assert recorded["batch_size"] == 2
+    assert len(set(recorded["text_lengths"])) > 1
+    assert len(outs) == len(texts)
+    expected_seq_lens = [_PROGRESSIVE_SEQ_LEN + i * 17 for i in range(len(texts))]
+    for o, seq_len in zip(outs, expected_seq_lens):
+        assert o.sequence_length == seq_len
+        assert o.skip_prefix_tokens == 10
+        assert o.measure_every_tokens == 20
+        assert set(o.by_prefix.keys()) == set(range(10, seq_len, 20))
+
+
+def test_measure_texts_progressive_validates_sampling_params():
+    with pytest.raises(ValueError, match="skip_prefix_tokens"):
+        high_level.measure_texts_progressive(["a", "b"], model="unused", skip_prefix_tokens=-1)
+    with pytest.raises(ValueError, match="measure_every_tokens"):
+        high_level.measure_texts_progressive(["a", "b"], model="unused", measure_every_tokens=0)
 

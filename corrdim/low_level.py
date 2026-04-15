@@ -175,6 +175,47 @@ def _text_to_vectors(
     ).type(precision)
 
 
+def _texts_to_vectors_batched(
+    model_wrapper: LanguageModelWrapper,
+    texts: list[str],
+    dim_reduction: Optional[int] = 8192,
+    context_length: Optional[int] = None,
+    stride: int = 1,
+    show_progress: bool = False,
+    precision: torch.dtype = torch.float32,
+    batch_size: Optional[int] = None,
+) -> list[torch.Tensor]:
+    """Prefer :meth:`~corrdim.models.TransformersModelWrapper.get_log_probabilities_batch` when present."""
+    if batch_size is not None and batch_size < 1:
+        raise ValueError("batch_size must be a positive integer or None.")
+    batch_fn = getattr(model_wrapper, "get_log_probabilities_batch", None)
+    if batch_fn is not None:
+        raw = batch_fn(
+            texts,
+            context_length=context_length,
+            dim_reduction=dim_reduction,
+            stride=stride,
+            show_progress=show_progress,
+            batch_size=batch_size,
+        )
+        return [v.type(precision) for v in raw]
+
+    eff_bs = 1 if batch_size is None else batch_size
+    out: list[torch.Tensor] = []
+    for i in range(0, len(texts), eff_bs):
+        for text in texts[i : i + eff_bs]:
+            out.append(
+                model_wrapper.get_log_probabilities(
+                    text,
+                    dim_reduction=dim_reduction,
+                    context_length=context_length,
+                    stride=stride,
+                    show_progress=show_progress,
+                ).type(precision)
+            )
+    return out
+
+
 def curve_from_text(
     text: str,
     model: ModelLike,
@@ -223,24 +264,30 @@ def curve_from_texts(
     show_progress: bool = False,
     precision: torch.dtype = torch.float32,
     backend: Optional[str] = None,
+    batch_size: Optional[int] = None,
     **model_kwargs,
 ) -> list[CurveResult]:
     model_wrapper = _resolve_model_wrapper(model, tokenizer=tokenizer, **model_kwargs)
+    vectors_list = _texts_to_vectors_batched(
+        model_wrapper,
+        texts,
+        dim_reduction=dim_reduction,
+        context_length=context_length,
+        stride=stride,
+        show_progress=show_progress,
+        precision=precision,
+        batch_size=batch_size,
+    )
     return [
-        curve_from_text(
-            text,
-            model=model_wrapper,
-            context_length=context_length,
-            dim_reduction=dim_reduction,
-            stride=stride,
+        curve_from_vectors(
+            vectors=v,
             epsilon_range=epsilon_range,
             num_epsilon=num_epsilon,
             block_size=block_size,
             show_progress=show_progress,
-            precision=precision,
             backend=backend,
         )
-        for text in texts
+        for v in vectors_list
     ]
 
 
@@ -292,22 +339,28 @@ def progressive_curve_from_texts(
     show_progress: bool = False,
     precision: torch.dtype = torch.float32,
     backend: Optional[str] = None,
+    batch_size: Optional[int] = None,
     **model_kwargs,
 ) -> list[ProgressiveCurveResult]:
     model_wrapper = _resolve_model_wrapper(model, tokenizer=tokenizer, **model_kwargs)
+    vectors_list = _texts_to_vectors_batched(
+        model_wrapper,
+        texts,
+        dim_reduction=dim_reduction,
+        context_length=context_length,
+        stride=stride,
+        show_progress=show_progress,
+        precision=precision,
+        batch_size=batch_size,
+    )
     return [
-        progressive_curve_from_text(
-            text,
-            model=model_wrapper,
-            context_length=context_length,
-            dim_reduction=dim_reduction,
-            stride=stride,
+        progressive_curve_from_vectors(
+            vectors=v,
             epsilon_range=epsilon_range,
             num_epsilon=num_epsilon,
             block_size=block_size,
             show_progress=show_progress,
-            precision=precision,
             backend=backend,
         )
-        for text in texts
+        for v in vectors_list
     ]

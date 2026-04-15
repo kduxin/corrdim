@@ -25,6 +25,27 @@ class DummyWrapper(LanguageModelWrapper):
         return torch.randn(self.seq_len, self.vocab, dtype=torch.float32)
 
 
+class VaryingLenWrapper(LanguageModelWrapper):
+    def __init__(self, base_len: int = 120, vocab: int = 24):
+        self.base_len = base_len
+        self.vocab = vocab
+        self.tokenizer = None
+        self.calls: list[str] = []
+
+    def get_log_probabilities(
+        self,
+        text: str,
+        context_length=None,
+        dim_reduction=None,
+        stride: int = 1,
+        show_progress: bool = False,
+    ):
+        _ = (context_length, dim_reduction, stride, show_progress)
+        self.calls.append(text)
+        seq_len = self.base_len + len(text)
+        return torch.randn(seq_len, self.vocab, dtype=torch.float32)
+
+
 def test_curve_from_vectors_rejects_nonfinite_vectors():
     vecs = torch.randn(150, 8, dtype=torch.float32)
     vecs[0, 0] = float("nan")
@@ -101,4 +122,15 @@ def test_model_cache_key_includes_kwargs_and_tokenizer_identity(monkeypatch):
     )
 
     assert len(created) == 3
+
+
+def test_curve_from_texts_batch_size_fallback_handles_varying_lengths():
+    wrapper = VaryingLenWrapper(base_len=120, vocab=24)
+    texts = ["a", "medium_text", "x" * 40, "z" * 5, "q" * 17]
+    curves = corrdim.curve_from_texts(texts, model=wrapper, batch_size=2, num_epsilon=16, backend="pytorch")
+
+    assert wrapper.calls == texts
+    assert len(curves) == len(texts)
+    expected_lengths = [120 + len(t) for t in texts]
+    assert [c.sequence_length for c in curves] == expected_lengths
 

@@ -41,6 +41,36 @@ def test_batch_cross():
     assert torch.equal(batch_counts, expected)
 
 
+@pytest.mark.skipif(not torch.cuda.is_available(), reason="CUDA not available; skipping Triton tests")
+def test_batch_self_variable_lengths():
+    device = torch.device("cuda")
+    vecs, _, eps = _random_inputs(device, same=True)
+    seq_lens = torch.tensor([16, 11, 7], device=device, dtype=torch.int32)
+    batch_counts = correlation_counts(vecs, eps, seq_lens=seq_lens)
+    expected = []
+    for b in range(vecs.shape[0]):
+        m_b = int(seq_lens[b].item())
+        expected.append(correlation_counts(vecs[b, :m_b, :], eps))
+    expected = torch.stack(expected, dim=0)
+    assert torch.equal(batch_counts, expected)
+
+
+@pytest.mark.skipif(not torch.cuda.is_available(), reason="CUDA not available; skipping Triton tests")
+def test_batch_cross_variable_lengths():
+    device = torch.device("cuda")
+    vecs1, vecs2, eps = _random_inputs(device, same=False)
+    seq_lens1 = torch.tensor([16, 10, 6], device=device, dtype=torch.int32)
+    seq_lens2 = torch.tensor([20, 13, 9], device=device, dtype=torch.int32)
+    batch_counts = correlation_counts(vecs1, eps, vecs_other=vecs2, seq_lens=seq_lens1, seq_lens_other=seq_lens2)
+    expected = []
+    for b in range(vecs1.shape[0]):
+        m_b = int(seq_lens1[b].item())
+        n_b = int(seq_lens2[b].item())
+        expected.append(correlation_counts(vecs1[b, :m_b, :], eps, vecs_other=vecs2[b, :n_b, :]))
+    expected = torch.stack(expected, dim=0)
+    assert torch.equal(batch_counts, expected)
+
+
 def main():
     if not torch.cuda.is_available():
         print("CUDA not available; skipping Triton tests.")
