@@ -68,7 +68,7 @@ Documentation = "https://corrdim.readthedocs.io"
 corrdim = "corrdim.cli:main"
 
 [build-system]
-requires = ["setuptools>=68.0.0", "wheel", "torch>=2.3.0"]
+requires = ["setuptools>=68.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
@@ -96,12 +96,9 @@ warn_unused_configs = true
 disallow_untyped_defs = true
 
 # ── uv-specific configuration ────────────────────────────────────────────────
-# PyTorch is not listed in dependencies — install it before corrdim:
+# torch is not listed in dependencies — install it before running uv sync:
 #   uv pip install torch --torch-backend=auto
 # This auto-detects CUDA / ROCm / MPS / CPU and selects the correct index.
-
-[tool.uv]
-torch-backend = "auto"
 
 [[tool.uv.index]]
 name = "testpypi"

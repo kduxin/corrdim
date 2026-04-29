@@ -38,14 +38,23 @@ For the mathematical details, see the [paper](https://arxiv.org/abs/2510.21258).
 
 ## Installation
 
-CorrDim requires Python 3.10 or newer.
+CorrDim requires Python 3.10 or newer and PyTorch >= 2.3.
+
+**1. Install PyTorch** (choose the right build for your hardware):
+
+```bash
+# Auto-detect (recommended): CUDA, ROCm, MPS, or CPU
+uv pip install torch --torch-backend=auto
+
+# Or use pip with the PyTorch CUDA index
+pip install torch --index-url https://download.pytorch.org/whl/cu126
+```
+
+**2. Install CorrDim**:
 
 ```bash
 pip install corrdim
 ```
-
-> **Linux GPU users:** PyPI distributes CPU-only PyTorch. Install CUDA PyTorch first:
-> `pip install torch --index-url https://download.pytorch.org/whl/cu126`
 
 For local development:
 
