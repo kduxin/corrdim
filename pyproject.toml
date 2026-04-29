@@ -30,6 +30,7 @@ classifiers = [
 dependencies = [
     "numpy>=1.21.0",
     "ninja>=1.11.0",
+    "torch>=2.3.0",
     "setuptools>=68.0.0",
     "transformers>=4.30.0",
     "accelerate>=0.21.0",
@@ -96,9 +97,19 @@ warn_unused_configs = true
 disallow_untyped_defs = true
 
 # ── uv-specific configuration ────────────────────────────────────────────────
-# torch is not listed in dependencies — install it before running uv sync:
-#   uv pip install torch --torch-backend=auto
-# This auto-detects CUDA / ROCm / MPS / CPU and selects the correct index.
+# On Linux, torch is resolved from the PyTorch CUDA 13.0 index (x86_64 & aarch64).
+# On macOS / other platforms, torch falls back to PyPI.
+# cu130 wheels are forward-compatible with CUDA >= 13.0.
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu130", marker = "sys_platform == 'linux'" },
+]
 
 [[tool.uv.index]]
 name = "testpypi"
