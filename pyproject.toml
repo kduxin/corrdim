@@ -30,12 +30,13 @@ classifiers = [
 dependencies = [
     "numpy>=1.21.0",
     "ninja>=1.11.0",
-    "torch>=2.0.0",
+    "torch>=2.3.0",
     "setuptools>=68.0.0",
     "transformers>=4.30.0",
     "accelerate>=0.21.0",
     "scikit-learn>=1.0.0",
     "tqdm>=4.62.0",
+    "ipython>=8.39.0",
 ]
 
 [project.optional-dependencies]
@@ -57,14 +58,9 @@ docs = [
 demo = [
     "streamlit>=1.51.0",
 ]
-# CUDA 12.1 torch + triton (Linux only)
+# triton for CUDA (Linux only); version is managed by torch
 triton = [
-    "torch",
-    "triton>=3.5.0; sys_platform == 'linux'",
-]
-# CUDA 12.1 torch without triton (Linux only)
-cuda = [
-    "torch",
+    "triton; sys_platform == 'linux'",
 ]
 
 [project.urls]
@@ -77,7 +73,7 @@ Documentation = "https://corrdim.readthedocs.io"
 corrdim = "corrdim.cli:main"
 
 [build-system]
-requires = ["setuptools>=68.0.0", "wheel", "torch>=2.0.0"]
+requires = ["setuptools>=68.0.0", "wheel", "torch>=2.3.0"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
@@ -106,31 +102,23 @@ disallow_untyped_defs = true
 
 # ── uv-specific configuration ────────────────────────────────────────────────
 #
-# PyPI publishes CPU-only torch wheels for Linux.  To get CUDA support,
-# use the PyTorch CUDA 12.1 wheel index.  cu121 is forward-compatible
-# with CUDA >= 12.1.
+# On Linux, torch is pulled from the PyTorch CUDA 12.1 index automatically.
+# On macOS / other platforms, torch falls back to PyPI (MPS / CPU builds).
+# cu121 wheels are forward-compatible with CUDA >= 12.1.
 #
-# Due to uv's cross-platform lockfile, the CUDA index CANNOT be active by
-# default — it has no macOS wheels and would break `uv sync` on macOS.
-#
-# ── On a Linux machine with NVIDIA GPU ──────────────────────────────────────
-#
-# Uncomment the block below, then:
-#   uv sync --extra triton    →  CUDA 12.1 torch + triton
-#   uv sync --extra cuda      →  CUDA 12.1 torch (no triton)
-#
-# Remember to re-comment before pushing if you also develop on macOS.
-#
-# [[tool.uv.index]]
-# name = "pytorch-cu121"
-# url = "https://download.pytorch.org/whl/cu121"
-# explicit = true
-#
-# [tool.uv.sources]
-# torch = [
-#     { index = "pytorch-cu121", extra = "cuda" },
-#     { index = "pytorch-cu121", extra = "triton" },
-# ]
+# Usage:
+#   uv sync                 →  CUDA torch on Linux, PyPI torch on macOS
+#   uv sync --extra triton  →  same + triton (Linux only)
+
+[[tool.uv.index]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
+explicit = true
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu121", marker = "sys_platform == 'linux'" },
+]
 
 [[tool.uv.index]]
 name = "testpypi"
