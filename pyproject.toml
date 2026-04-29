@@ -1,6 +1,6 @@
 [project]
 name = "corrdim"
-version = "0.2.4"
+version = "0.2.5"
 description = "Correlation Dimension for LLMs - A library for computing correlation dimension of autoregressive large language models"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -36,12 +36,9 @@ dependencies = [
     "accelerate>=0.21.0",
     "scikit-learn>=1.0.0",
     "tqdm>=4.62.0",
-    "triton>=3.5.0; extra != 'no-triton'",
 ]
 
 [project.optional-dependencies]
-gpu = []
-no-triton = []
 dev = [
     "pytest>=8.4.2",
     "pytest-cov>=4.0.0",
@@ -59,6 +56,15 @@ docs = [
 ]
 demo = [
     "streamlit>=1.51.0",
+]
+# CUDA 12.1 torch + triton (Linux only)
+triton = [
+    "torch",
+    "triton>=3.5.0; sys_platform == 'linux'",
+]
+# CUDA 12.1 torch without triton (Linux only)
+cuda = [
+    "torch",
 ]
 
 [project.urls]
@@ -86,7 +92,7 @@ include = ["corrdim*"]
 
 [tool.black]
 line-length = 120
-target-version = ['py310', 'py311', 'py312']
+target-version = ['py310', 'py311', 'py312', 'py313', 'py314']
 
 [tool.isort]
 profile = "black"
@@ -97,6 +103,35 @@ python_version = "3.10"
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
+
+# ── uv-specific configuration ────────────────────────────────────────────────
+#
+# PyPI publishes CPU-only torch wheels for Linux.  To get CUDA support,
+# use the PyTorch CUDA 12.1 wheel index.  cu121 is forward-compatible
+# with CUDA >= 12.1.
+#
+# Due to uv's cross-platform lockfile, the CUDA index CANNOT be active by
+# default — it has no macOS wheels and would break `uv sync` on macOS.
+#
+# ── On a Linux machine with NVIDIA GPU ──────────────────────────────────────
+#
+# Option A: CLI flag (one-time)
+#   uv sync --extra triton --index-url torch=https://download.pytorch.org/whl/cu121
+#   uv sync --extra cuda   --index-url torch=https://download.pytorch.org/whl/cu121
+#
+# Option B: Uncomment the block below, then `uv sync --extra triton` or
+#           `uv sync --extra cuda`
+#
+# [[tool.uv.index]]
+# name = "pytorch-cu121"
+# url = "https://download.pytorch.org/whl/cu121"
+# explicit = true
+#
+# [tool.uv.sources]
+# torch = [
+#     { index = "pytorch-cu121", extra = "cuda" },
+#     { index = "pytorch-cu121", extra = "triton" },
+# ]
 
 [[tool.uv.index]]
 name = "testpypi"
