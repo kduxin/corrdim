@@ -30,7 +30,6 @@ classifiers = [
 dependencies = [
     "numpy>=1.21.0",
     "ninja>=1.11.0",
-    "torch>=2.3.0",
     "setuptools>=68.0.0",
     "transformers>=4.30.0",
     "accelerate>=0.21.0",
@@ -97,25 +96,12 @@ warn_unused_configs = true
 disallow_untyped_defs = true
 
 # ── uv-specific configuration ────────────────────────────────────────────────
-#
-# On Linux, torch is pulled from the PyTorch CUDA 12.6 index automatically.
-# On macOS / other platforms, torch falls back to PyPI (MPS / CPU builds).
-# cu126 wheels are forward-compatible with CUDA >= 12.6 and support both
-# x86_64 and aarch64 (e.g. NVIDIA Grace Hopper / DGX Spark).
-#
-# Usage:
-#   uv sync                 →  CUDA torch on Linux, PyPI torch on macOS
-#   uv sync --extra triton  →  same + triton (Linux only)
+# PyTorch is not listed in dependencies — install it before corrdim:
+#   uv pip install torch --torch-backend=auto
+# This auto-detects CUDA / ROCm / MPS / CPU and selects the correct index.
 
-[[tool.uv.index]]
-name = "pytorch-cu126"
-url = "https://download.pytorch.org/whl/cu126"
-explicit = true
-
-[tool.uv.sources]
-torch = [
-    { index = "pytorch-cu126", marker = "sys_platform == 'linux'" },
-]
+[tool.uv]
+torch-backend = "auto"
 
 [[tool.uv.index]]
 name = "testpypi"
