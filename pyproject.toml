@@ -115,12 +115,11 @@ disallow_untyped_defs = true
 #
 # ── On a Linux machine with NVIDIA GPU ──────────────────────────────────────
 #
-# Option A: CLI flag (one-time)
-#   uv sync --extra triton --index-url torch=https://download.pytorch.org/whl/cu121
-#   uv sync --extra cuda   --index-url torch=https://download.pytorch.org/whl/cu121
+# Uncomment the block below, then:
+#   uv sync --extra triton    →  CUDA 12.1 torch + triton
+#   uv sync --extra cuda      →  CUDA 12.1 torch (no triton)
 #
-# Option B: Uncomment the block below, then `uv sync --extra triton` or
-#           `uv sync --extra cuda`
+# Remember to re-comment before pushing if you also develop on macOS.
 #
 # [[tool.uv.index]]
 # name = "pytorch-cu121"
