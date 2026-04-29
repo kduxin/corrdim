@@ -44,20 +44,7 @@ CorrDim requires Python 3.10 or newer.
 pip install corrdim
 ```
 
-> **Linux GPU users:** By default, PyPI distributes CPU-only PyTorch on Linux. If you have an NVIDIA GPU, install CUDA PyTorch first:
-> `pip install torch --index-url https://download.pytorch.org/whl/cu130`
-
 For local development:
-
-```bash
-pip install "corrdim[dev,docs]"
-```
-
-To compile the CUDA extension during installation:
-
-```bash
-CORRDIM_BUILD_CUDA=1 pip install .
-```
 
 ## Quick start
 
@@ -148,7 +135,6 @@ Additional CLI commands and options are documented at [corrdim.readthedocs.io](h
 
 CorrDim supports multiple backends for correlation-integral computation:
 
-- `cuda`
 - `triton`
 - `pytorch`
 - `pytorch_fast`

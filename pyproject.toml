@@ -79,9 +79,6 @@ include-package-data = true
 where = ["."]
 include = ["corrdim*"]
 
-[tool.setuptools.package-data]
-"corrdim.corrint.ext" = ["*.cpp", "*.cu", "*.cuh", "*.h"]
-
 [tool.black]
 line-length = 120
 target-version = ['py310', 'py311', 'py312', 'py313', 'py314']

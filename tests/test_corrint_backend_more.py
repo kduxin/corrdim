@@ -14,7 +14,7 @@ pytestmark = pytest.mark.skipif(triton_impl is None, reason="Triton not availabl
 
 def test_available_corrint_backends_shape_and_keys():
     out = available_corrint_backends()
-    assert set(out.keys()) == {"cuda", "triton", "pytorch", "pytorch_fast"}
+    assert set(out.keys()) == {"triton", "pytorch", "pytorch_fast"}
     assert all(isinstance(v, bool) for v in out.values())
 
 

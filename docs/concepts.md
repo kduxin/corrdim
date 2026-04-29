@@ -32,11 +32,10 @@ In Python, these stages map roughly to:
 
 CorrDim exposes multiple backends for correlation-integral computation:
 
-- `cuda`: custom CUDA extension
 - `triton`: Triton kernels
 - `pytorch`: pure PyTorch implementation
 - `pytorch_fast`: PyTorch variant optimized for distance computation
-- `auto`: resolve automatically, preferring `cuda` when available and otherwise `pytorch`
+- `auto`: resolve automatically, preferring `triton` when available and otherwise `pytorch`
 
 You can select the backend with an environment variable:
 

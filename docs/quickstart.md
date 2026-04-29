@@ -48,7 +48,7 @@ If you already have a sequence of log-probability vectors:
 import torch
 import corrdim
 
-vectors = torch.randn(200, 512, device="cuda")
+vectors = torch.randn(200, 512)
 curve = corrdim.curve_from_vectors(vectors, num_epsilon=256)
 result = corrdim.estimate_dimension_from_curve(curve)
 ```

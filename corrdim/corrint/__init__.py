@@ -11,7 +11,6 @@ class CorrIntBackend(str, Enum):
     """Correlation integral backend selector."""
 
     AUTO = "auto"
-    CUDA = "cuda"
     TRITON = "triton"
     PYTORCH = "pytorch"
     PYTORCH_FAST = "pytorch_fast"
@@ -19,7 +18,7 @@ class CorrIntBackend(str, Enum):
 
 BackendLike = Union[str, CorrIntBackend, None]
 
-_KNOWN_BACKENDS = {"auto", "cuda", "triton", "pytorch", "pytorch_fast"}
+_KNOWN_BACKENDS = {"auto", "triton", "pytorch", "pytorch_fast"}
 
 
 def _normalize_backend_name(name: Any, *, source: str) -> str:
@@ -68,23 +67,11 @@ def _triton_is_available() -> bool:
     return True
 
 
-def _cuda_is_available() -> bool:
-    if not torch.cuda.is_available():
-        return False
-    try:
-        from . import cuda as _impl  # noqa: F401
-    except Exception:  # pragma: no cover
-        return False
-    return True
-
-
 def resolve_corrint_backend(backend: BackendLike = None) -> str:
     """Resolve AUTO to a concrete backend name."""
     name = _normalize_backend(backend)
     if name != "auto":
         return name
-    if _cuda_is_available():
-        return "cuda"
     if _triton_is_available():
         return "triton"
     return "pytorch"
@@ -93,7 +80,6 @@ def resolve_corrint_backend(backend: BackendLike = None) -> str:
 def available_corrint_backends() -> Dict[str, bool]:
     """Return availability of known backends."""
     return {
-        "cuda": _cuda_is_available(),
         "triton": _triton_is_available(),
         "pytorch": True,
         "pytorch_fast": True,
@@ -119,15 +105,11 @@ def _all_cuda(*tensors: Optional[torch.Tensor]) -> bool:
 
 def _select_impl(backend: BackendLike, *tensors: Optional[torch.Tensor]):
     name = resolve_corrint_backend(backend)
-    if name == "cuda" and _all_cuda(*tensors):
-        from . import cuda as impl
-
-        return name, impl, {}
     if name == "triton" and _all_cuda(*tensors):
         from . import triton as impl
 
         return name, impl, {}
-    # CUDA-only backends on non-CUDA devices: fall back to pytorch.
+    # Triton requires CUDA devices: fall back to pytorch on non-CUDA devices.
     from . import pytorch as impl
 
     return name, impl, {"fast": name == "pytorch_fast"}
