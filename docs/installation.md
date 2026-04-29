@@ -8,6 +8,17 @@ CorrDim requires Python 3.10 or newer.
 pip install corrdim
 ```
 
+### Linux GPU (CUDA PyTorch)
+
+By default, PyPI distributes CPU-only PyTorch on Linux. If you have an NVIDIA GPU, install CUDA PyTorch first. Choose based on your driver version:
+
+| CUDA version | Min driver | Install command |
+|---|---|---|
+| cu126 (default) | ≥ 560 | `pip install torch --index-url https://download.pytorch.org/whl/cu126` |
+| cu130 | ≥ 580 | `pip install torch --index-url https://download.pytorch.org/whl/cu130` |
+
+If using `uv`, the cu126 index is configured by default in `pyproject.toml`. To switch to cu130, change the torch source to `pytorch-cu130`.
+
 If you want to avoid installing Triton:
 
 ```bash

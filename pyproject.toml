@@ -94,9 +94,20 @@ warn_unused_configs = true
 disallow_untyped_defs = true
 
 # ── uv-specific configuration ────────────────────────────────────────────────
-# On Linux, torch is resolved from the PyTorch CUDA 13.0 index (x86_64 & aarch64).
+# On Linux, torch is resolved from a PyTorch CUDA index.
 # On macOS / other platforms, torch falls back to PyPI.
-# cu130 wheels are forward-compatible with CUDA >= 13.0.
+#
+# Two CUDA indexes are provided; the default is cu126 (driver >= 560).
+# To switch to cu130 (driver >= 580), change the source below:
+#   { index = "pytorch-cu130", marker = "sys_platform == 'linux'" }
+#
+# Or override at install time:
+#   uv pip install torch --index-url https://download.pytorch.org/whl/cu130
+
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
 
 [[tool.uv.index]]
 name = "pytorch-cu130"
@@ -105,7 +116,7 @@ explicit = true
 
 [tool.uv.sources]
 torch = [
-    { index = "pytorch-cu130", marker = "sys_platform == 'linux'" },
+    { index = "pytorch-cu126", marker = "sys_platform == 'linux'" },
 ]
 
 [[tool.uv.index]]
