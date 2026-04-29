@@ -48,7 +48,7 @@ pip install corrdim
 >
 > | CUDA version | Min driver | Install command |
 > |---|---|---|
-> | cu126 (default) | ≥ 560 | `pip install torch --index-url https://download.pytorch.org/whl/cu126` |
+> | cu126 (default) | ≥ 525 | `pip install torch --index-url https://download.pytorch.org/whl/cu126` |
 > | cu130 | ≥ 580 | `pip install torch --index-url https://download.pytorch.org/whl/cu130` |
 >
 > If using `uv`, the cu126 index is configured by default; see `pyproject.toml` to switch to cu130.
