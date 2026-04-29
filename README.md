@@ -1,3 +1,4 @@
+
 # CorrDim: Correlation Dimension for Language Models
 
 CorrDim is a Python library for computing the **correlation dimension** of autoregressive language models from next-token log-probability vectors, based on the paper **["Correlation Dimension of Auto-Regressive Large Language Models"](https://arxiv.org/abs/2510.21258)** (NeurIPS 2025).
@@ -39,21 +40,44 @@ For the mathematical details, see the [paper](https://arxiv.org/abs/2510.21258).
 ## Installation
 
 CorrDim requires Python 3.10 or newer.
+You may use `pip` or `uv` to install corrdim.
 
-```bash
-pip install corrdim
-```
+### pip
 
-> **Linux GPU users:** By default, PyPI distributes CPU-only PyTorch on Linux. If you have an NVIDIA GPU, install CUDA PyTorch first. Choose based on your driver version:
+> **Linux GPU users:** By default, PyPI distributes CPU-only PyTorch on Linux. If you have an NVIDIA GPU, install CUDA PyTorch first.
+> Choose based on your driver version:
 >
 > | CUDA version | Min driver | Install command |
 > |---|---|---|
 > | cu126 (default) | ≥ 525 | `pip install torch --index-url https://download.pytorch.org/whl/cu126` |
 > | cu130 | ≥ 580 | `pip install torch --index-url https://download.pytorch.org/whl/cu130` |
 >
-> If using `uv`, the cu126 index is configured by default; see `pyproject.toml` to switch to cu130.
+> (For NVIDIA DGX Spark with GB10, use cu130)
 
-For local development:
+Then, run
+```bash
+pip install corrdim
+```
+
+### uv
+
+If using `uv`, please install PyTorch first before installing corrdim
+
+> **Linux GPU users:** By default, PyPI distributes CPU-only PyTorch on Linux. If you have an NVIDIA GPU, install CUDA PyTorch first.
+> Choose based on your driver version:
+>
+> | CUDA version | Min driver | Install command |
+> |---|---|---|
+> | cu126 (default) | ≥ 525 | `uv add torch --index https://download.pytorch.org/whl/cu126` |
+> | cu130 | ≥ 580 | `uv add torch --index https://download.pytorch.org/whl/cu130` |
+> 
+> (For NVIDIA DGX Spark with GB10, use cu130)
+
+Then, run
+```
+uv add corrdim
+```
+
 
 ## Quick start
 
@@ -63,7 +87,7 @@ import corrdim
 
 result = corrdim.measure_text(
     "Your text here...",
-    model="Qwen/Qwen2.5-1.5B",
+    model="Qwen/Qwen3-0.6B",
     precision=torch.float16,
 )
 
@@ -83,7 +107,7 @@ results = corrdim.measure_texts(
         "Short sample A...",
         "Short sample B...",
     ],
-    model="Qwen/Qwen2.5-1.5B",
+    model="Qwen/Qwen3-0.6B",
     precision=torch.float16,
 )
 
@@ -106,7 +130,7 @@ import corrdim
 
 prog_dims = corrdim.measure_text_progressive(
     long_text,
-    model="Qwen/Qwen2.5-1.5B",
+    model="Qwen/Qwen3-0.6B",
     precision=torch.float16,
     skip_prefix_tokens=100,
 )
@@ -135,7 +159,7 @@ CorrDim includes a `corrdim` command-line interface:
 ```bash
 corrdim measure-text \
   --file data/sep60/chaos.txt \
-  --model Qwen/Qwen2.5-1.5B
+  --model Qwen/Qwen3-0.6B
 ```
 
 Additional CLI commands and options are documented at [corrdim.readthedocs.io](https://corrdim.readthedocs.io).
@@ -164,24 +188,26 @@ print(corrdim.set_corrint_backend("auto"))
 print(corrdim.available_corrint_backends())
 ```
 
-## Tips for low-VRAM systems
+## Tips for systems with limited GPU RAM (e.g., <10GB)
 
 If you run into out-of-memory errors, reduce `block_size` (default 512) to lower the peak memory usage during correlation-integral computation:
 
 ```python
 result = corrdim.measure_text(
     text,
-    model="Qwen/Qwen2.5-1.5B",
+    model="Qwen/Qwen3-0.6B
+",
     block_size=128,
 )
 ```
 
-You can also set `forward_chunk_size` to control how many tokens are processed per forward pass (reduce this value, e.g. 128, on systems with limited VRAM):
+
+You can also set `forward_chunk_size` to control how many tokens are processed per forward pass (reduce this value, e.g. 128, on systems with limited GPU RAM):
 
 ```python
 result = corrdim.measure_text(
     text,
-    model="Qwen/Qwen2.5-1.5B",
+    model="Qwen/Qwen3-0.6B",
     block_size=128,
     forward_chunk_size=128,
 )
