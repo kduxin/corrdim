@@ -37,7 +37,10 @@ def _env_default_backend() -> str:
     raw = os.environ.get("CORRDIM_CORRINT_BACKEND")
     source = "CORRDIM_CORRINT_BACKEND"
     if raw is None:
-        return "triton"
+        # Prefer Triton on CUDA; fall back to PyTorch on CPU / MPS / other devices.
+        if torch.cuda.is_available():
+            return "triton"
+        return "pytorch"
     return _normalize_backend_name(raw, source=source)
 
 
@@ -80,7 +83,11 @@ def resolve_corrint_backend(backend: BackendLike = None) -> str:
     name = _normalize_backend(backend)
     if name != "auto":
         return name
-    return "cuda" if _cuda_is_available() else "pytorch"
+    if _cuda_is_available():
+        return "cuda"
+    if _triton_is_available():
+        return "triton"
+    return "pytorch"
 
 
 def available_corrint_backends() -> Dict[str, bool]:
@@ -120,6 +127,7 @@ def _select_impl(backend: BackendLike, *tensors: Optional[torch.Tensor]):
         from . import triton as impl
 
         return name, impl, {}
+    # CUDA-only backends on non-CUDA devices: fall back to pytorch.
     from . import pytorch as impl
 
     return name, impl, {"fast": name == "pytorch_fast"}

@@ -2,7 +2,12 @@ import torch
 
 import pytest
 
-from corrdim.corrint.triton import correlation_counts
+try:
+    from corrdim.corrint.triton import correlation_counts
+except Exception:
+    correlation_counts = None
+
+pytestmark = pytest.mark.skipif(correlation_counts is None, reason="Triton not available")
 
 
 def _random_inputs(device, same=True):

@@ -12,6 +12,7 @@ from .corrint import (
     available_corrint_backends,
     correlation_counts,
     correlation_integral,
+    get_corrint_backend,
     progressive_correlation_counts,
     progressive_correlation_integral,
     set_corrint_backend,
@@ -32,8 +33,8 @@ from .low_level import (
     progressive_curve_from_texts,
     progressive_curve_from_vectors,
     progressive_curve_from_vectors_batch,
+    text_to_vectors,
 )
-from .models import LanguageModelWrapper
 from .types import CurveResult, DimensionResult, ProgressiveCurveResult, ProgressiveDimensionResult
 from .utils import clamp, reduce_dimension
 
@@ -64,7 +65,8 @@ __all__ = [
     "ProgressiveDimensionResult",
     "DimensionResult",
     "auto_linear_region_bounds",
-    "LanguageModelWrapper",
     "set_corrint_backend",
+    "get_corrint_backend",
     "reduce_dimension",
+    "text_to_vectors",
 ]

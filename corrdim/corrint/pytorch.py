@@ -192,27 +192,54 @@ def progressive_correlation_counts(
 
     This matches the Triton backend behavior: at step t, counts pairs between vecs[:t] and vecs[t:t+1],
     i.e. compares the current vector against all previous vectors (excluding self).
+
+    Optimised implementation: compute the full pairwise distance matrix once in
+    blocks, then count per-column matches for each epsilon and cumsum.  This
+    brings the complexity down from O(M^3) to O(M^2), matching the Triton
+    backend and making it practical on CPU / Apple MPS.
     """
     vecs_b, _other_b, squeezed = _normalize_inputs(vecs, None)
     bsz, m, _k = vecs_b.shape
-    t = epsilons.shape[0]
+    num_eps = epsilons.shape[0]
+    log_eps = epsilons.log()                          # (T,)
 
-    out = torch.zeros((bsz, m, t), device=vecs.device, dtype=torch.int64)
-    it = range(1, m)
-    if show_progress and tqdm is not None:
-        it = tqdm.trange(1, m, disable=not show_progress, desc="Computing progressive correlation counts")
+    # inc[b, j, t] = number of i < j with dist(i,j) <= eps[t]
+    inc = torch.zeros((bsz, m, num_eps), device=vecs.device, dtype=torch.int64)
 
-    for i in it:
-        out[:, i, :] = correlation_counts(
-            vecs_b[:, : i, :],
-            epsilons,
-            vecs_other=vecs_b[:, i : i + 1, :],
-            show_progress=False,
-            block_size=block_size,
-            fast=fast,
-        ) * 2
-    out = out.cumsum(dim=-2)
-    return out.squeeze(0) if squeezed else out
+    # Iterate over upper-triangle blocks (i <= j) of the M x M distance matrix.
+    for i_start in _tqdm_range(0, m, block_size, show_progress=show_progress, desc="Computing progressive counts"):
+        i_end = min(i_start + block_size, m)
+        a = vecs_b[:, i_start:i_end, :].to(torch.float32)   # (B, bm, K)
+
+        for j_start in range(i_start, m, block_size):
+            j_end = min(j_start + block_size, m)
+            b = vecs_b[:, j_start:j_end, :].to(torch.float32)   # (B, bn, K)
+
+            d = _cdist(a, b, fast=fast)                          # (B, bm, bn)
+            _assert_finite(d)
+            log_d = d.log()                                      # (B, bm, bn)
+
+            # For each epsilon, count how many i's satisfy log(dist) <= log(eps).
+            # log_d shape: (B, bm, bn);  log_eps shape: (T,)
+            # counts shape: (B, bm, bn, T)  — but we reduce over i immediately.
+            le = (log_d.unsqueeze(-1) <= log_eps).to(torch.int64)  # (B, bm, bn, T)
+
+            if i_start == j_start:
+                # Diagonal block: only strictly upper triangle (i < j).
+                bm, bn = i_end - i_start, j_end - j_start
+                triu_mask = torch.ones(bm, bn, dtype=torch.bool, device=d.device)
+                triu_mask.triu_(diagonal=1)
+                le = le * triu_mask.unsqueeze(0).unsqueeze(-1)
+
+            # Sum over the i-dimension (axis=1) to get per-column j counts.
+            col_counts = le.sum(dim=1)                           # (B, bn, T)
+
+            # Scatter into inc at column positions [j_start:j_end].
+            inc[:, j_start:j_end, :] += col_counts
+
+    # Convert incremental unordered counts into prefix ordered-pair counts.
+    counts = inc.cumsum(dim=1) * 2
+    return counts.squeeze(0) if squeezed else counts
 
 
 def progressive_correlation_integral(

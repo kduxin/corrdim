@@ -92,6 +92,7 @@ def measure_text(
     show_progress: bool = False,
     precision: torch.dtype = torch.float16,
     backend: Optional[str] = None,
+    forward_chunk_size: Optional[int] = None,
     **model_kwargs,
 ) -> DimensionResult:
     if truncation_tokens is not None:
@@ -117,6 +118,7 @@ def measure_text(
         show_progress=show_progress,
         precision=precision,
         backend=backend,
+        forward_chunk_size=forward_chunk_size,
         **model_kwargs,
     )
     return estimate_dimension_from_curve(
@@ -143,6 +145,7 @@ def measure_text_progressive(
     show_progress: bool = False,
     precision: torch.dtype = torch.float16,
     backend: Optional[str] = None,
+    forward_chunk_size: Optional[int] = None,
     **model_kwargs,
 ) -> ProgressiveDimensionResult:
     """Compute progressive curves once, then fit correlation dimension at sampled prefixes.
@@ -182,6 +185,7 @@ def measure_text_progressive(
         show_progress=show_progress,
         precision=precision,
         backend=backend,
+        forward_chunk_size=forward_chunk_size,
         **model_kwargs,
     )
 
@@ -209,6 +213,7 @@ def measure_texts(
     precision: torch.dtype = torch.float16,
     backend: Optional[str] = None,
     batch_size: Optional[int] = None,
+    forward_chunk_size: Optional[int] = None,
     **model_kwargs,
 ) -> list[DimensionResult]:
     effective_epsilon_range = DEFAULT_EPSILON_RANGE if epsilon_range is None else epsilon_range
@@ -227,6 +232,7 @@ def measure_texts(
         precision=precision,
         backend=backend,
         batch_size=batch_size,
+        forward_chunk_size=forward_chunk_size,
         **model_kwargs,
     )
     return [
@@ -257,6 +263,7 @@ def measure_texts_progressive(
     precision: torch.dtype = torch.float16,
     backend: Optional[str] = None,
     batch_size: Optional[int] = None,
+    forward_chunk_size: Optional[int] = None,
     **model_kwargs,
 ) -> list[ProgressiveDimensionResult]:
     """Like :func:`measure_text_progressive` for several strings; batches log-probability extraction when supported."""
@@ -293,6 +300,7 @@ def measure_texts_progressive(
         precision=precision,
         backend=backend,
         batch_size=batch_size,
+        forward_chunk_size=forward_chunk_size,
         **model_kwargs,
     )
     return [

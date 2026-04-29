@@ -36,6 +36,7 @@ def _resolve_model_wrapper(
     model: ModelLike,
     tokenizer: Optional[object] = None,
     device: Optional[str] = None,
+    forward_chunk_size: Optional[int] = None,
     **kwargs,
 ) -> LanguageModelWrapper:
     if isinstance(model, str):
@@ -44,6 +45,8 @@ def _resolve_model_wrapper(
             cached = _MODEL_CACHE.get(key)
             if cached is not None:
                 _MODEL_CACHE.move_to_end(key)
+                if forward_chunk_size is not None:
+                    cached.forward_chunk_size = forward_chunk_size
                 return cached
         wrapper = create_model_wrapper(model, tokenizer=tokenizer, device=device, **kwargs)
         with _MODEL_CACHE_LOCK:
@@ -51,7 +54,12 @@ def _resolve_model_wrapper(
             _MODEL_CACHE.move_to_end(key)
             while len(_MODEL_CACHE) > _MODEL_CACHE_MAX_SIZE:
                 _MODEL_CACHE.popitem(last=False)
+        if forward_chunk_size is not None:
+            wrapper.forward_chunk_size = forward_chunk_size
         return wrapper
+    # model is already a wrapper instance
+    if forward_chunk_size is not None:
+        model.forward_chunk_size = forward_chunk_size
     return model
 
 
@@ -60,12 +68,16 @@ def _make_epsilons(vecs: torch.Tensor, epsilon_range: Tuple[float, float], num_e
         raise ValueError("Found nan or inf in vectors.")
     if vecs.shape[-2] <= 100:
         raise ValueError(f"The sequence length is too short ({vecs.shape[-2]} tokens). Please use at least 100 tokens.")
-    return torch.logspace(
+    # torch.logspace is not supported on MPS; fall back to CPU then move.
+    device = vecs.device
+    target = device if device.type != "mps" else "cpu"
+    eps = torch.logspace(
         np.log10(float(epsilon_range[0])),
         np.log10(float(epsilon_range[1])),
         num_epsilon,
-        device=vecs.device,
+        device=target,
     )
+    return eps.to(device)
 
 
 def curve_from_vectors(
@@ -175,6 +187,55 @@ def _text_to_vectors(
     ).type(precision)
 
 
+def text_to_vectors(
+    text: str,
+    model: ModelLike,
+    tokenizer: Optional[object] = None,
+    context_length: Optional[int] = None,
+    dim_reduction: Optional[int] = 8192,
+    stride: int = 1,
+    show_progress: bool = False,
+    precision: torch.dtype = torch.float32,
+    forward_chunk_size: Optional[int] = None,
+    **model_kwargs,
+) -> torch.Tensor:
+    """Extract log-probability vectors from *text* using *model*.
+
+    This is the public entry point for vector extraction; the returned tensor
+    has shape ``(sampled_seq_len, reduced_vocab_size)`` and can be passed
+    directly to :func:`curve_from_vectors` or :func:`progressive_curve_from_vectors`.
+
+    Args:
+        text: Input text.
+        model: HuggingFace model name/ID (``str``) or a pre-built
+            :class:`~corrdim.models.LanguageModelWrapper` instance.
+        tokenizer: Tokenizer instance (only used when *model* is a string).
+        context_length: Maximum context length for the model.
+        dim_reduction: Vocabulary grouping size for dimensionality reduction.
+        stride: Keep every *stride*-th token vector.
+        show_progress: Show a progress bar during inference.
+        precision: Output tensor dtype.
+        forward_chunk_size: Number of tokens per forward-pass chunk.
+            Reduce this value (e.g. 128) on systems with limited VRAM.
+            Only effective when *model* is a string; for wrapper instances
+            set the attribute directly.
+        **model_kwargs: Extra keyword arguments forwarded to the model loader
+            when *model* is a string.
+    """
+    model_wrapper = _resolve_model_wrapper(
+        model, tokenizer=tokenizer, forward_chunk_size=forward_chunk_size, **model_kwargs
+    )
+    return _text_to_vectors(
+        model_wrapper,
+        text=text,
+        dim_reduction=dim_reduction,
+        context_length=context_length,
+        stride=stride,
+        show_progress=show_progress,
+        precision=precision,
+    )
+
+
 def _texts_to_vectors_batched(
     model_wrapper: LanguageModelWrapper,
     texts: list[str],
@@ -229,9 +290,12 @@ def curve_from_text(
     show_progress: bool = False,
     precision: torch.dtype = torch.float32,
     backend: Optional[str] = None,
+    forward_chunk_size: Optional[int] = None,
     **model_kwargs,
 ) -> CurveResult:
-    model_wrapper = _resolve_model_wrapper(model, tokenizer=tokenizer, **model_kwargs)
+    model_wrapper = _resolve_model_wrapper(
+        model, tokenizer=tokenizer, forward_chunk_size=forward_chunk_size, **model_kwargs
+    )
     vectors = _text_to_vectors(
         model_wrapper,
         text=text,
@@ -265,9 +329,12 @@ def curve_from_texts(
     precision: torch.dtype = torch.float32,
     backend: Optional[str] = None,
     batch_size: Optional[int] = None,
+    forward_chunk_size: Optional[int] = None,
     **model_kwargs,
 ) -> list[CurveResult]:
-    model_wrapper = _resolve_model_wrapper(model, tokenizer=tokenizer, **model_kwargs)
+    model_wrapper = _resolve_model_wrapper(
+        model, tokenizer=tokenizer, forward_chunk_size=forward_chunk_size, **model_kwargs
+    )
     vectors_list = _texts_to_vectors_batched(
         model_wrapper,
         texts,
@@ -304,9 +371,12 @@ def progressive_curve_from_text(
     show_progress: bool = False,
     precision: torch.dtype = torch.float32,
     backend: Optional[str] = None,
+    forward_chunk_size: Optional[int] = None,
     **model_kwargs,
 ) -> ProgressiveCurveResult:
-    model_wrapper = _resolve_model_wrapper(model, tokenizer=tokenizer, **model_kwargs)
+    model_wrapper = _resolve_model_wrapper(
+        model, tokenizer=tokenizer, forward_chunk_size=forward_chunk_size, **model_kwargs
+    )
     vectors = _text_to_vectors(
         model_wrapper,
         text=text,
@@ -340,9 +410,12 @@ def progressive_curve_from_texts(
     precision: torch.dtype = torch.float32,
     backend: Optional[str] = None,
     batch_size: Optional[int] = None,
+    forward_chunk_size: Optional[int] = None,
     **model_kwargs,
 ) -> list[ProgressiveCurveResult]:
-    model_wrapper = _resolve_model_wrapper(model, tokenizer=tokenizer, **model_kwargs)
+    model_wrapper = _resolve_model_wrapper(
+        model, tokenizer=tokenizer, forward_chunk_size=forward_chunk_size, **model_kwargs
+    )
     vectors_list = _texts_to_vectors_batched(
         model_wrapper,
         texts,

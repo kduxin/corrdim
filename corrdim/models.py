@@ -13,7 +13,7 @@ from abc import ABC, abstractmethod
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from .utils import reduce_dimension
 
-_FORWARD_CHUNK_SIZE = 512
+_DEFAULT_FORWARD_CHUNK_SIZE = 512
 
 
 class LanguageModelWrapper(ABC):
@@ -49,6 +49,7 @@ class TransformersModelWrapper(LanguageModelWrapper):
         model_name: str,
         tokenizer: Optional[object] = None,
         device: Optional[str] = None,
+        forward_chunk_size: int = _DEFAULT_FORWARD_CHUNK_SIZE,
         **kwargs,
     ):
         """
@@ -58,10 +59,20 @@ class TransformersModelWrapper(LanguageModelWrapper):
             model_name: Name or path of the model
             tokenizer: Tokenizer instance (if None, will load from model_name)
             device: Device to run on
+            forward_chunk_size: Number of tokens per forward pass chunk.
+                Reduce this value (e.g. 128) on systems with limited VRAM.
             torch_dtype: Data type for model weights
         """
         self.model_name = model_name
-        self.device = device or ("cuda" if torch.cuda.is_available() else "cpu")
+        self.forward_chunk_size = forward_chunk_size
+        if device is not None:
+            self.device = device
+        elif torch.cuda.is_available():
+            self.device = "cuda"
+        elif hasattr(torch.backends, "mps") and torch.backends.mps.is_available():
+            self.device = "mps"
+        else:
+            self.device = "cpu"
 
         # Load tokenizer
         if tokenizer is None:
@@ -80,6 +91,9 @@ class TransformersModelWrapper(LanguageModelWrapper):
             load_kwargs.setdefault("device_map", "auto")
             load_kwargs.setdefault("low_cpu_mem_usage", True)
             load_kwargs.setdefault("torch_dtype", torch.float16)
+        elif self.device == "mps":
+            # MPS: no device_map auto, prefer float32 for stability
+            load_kwargs.setdefault("torch_dtype", torch.float32)
         else:
             load_kwargs.setdefault("low_cpu_mem_usage", True)
 
@@ -114,7 +128,7 @@ class TransformersModelWrapper(LanguageModelWrapper):
             if isinstance(mapped, torch.device):
                 return mapped
             s = str(mapped)
-            if s in {"cpu"} or s.startswith("cuda"):
+            if s in {"cpu"} or s.startswith("cuda") or s == "mps":
                 return torch.device(s)
             return None
 
@@ -124,7 +138,7 @@ class TransformersModelWrapper(LanguageModelWrapper):
         if isinstance(hf_device_map, dict):
             for mapped in hf_device_map.values():
                 device = _to_device(mapped)
-                if device is not None and device.type == "cuda":
+                if device is not None and device.type in ("cuda", "mps"):
                     return device
             return torch.device("cpu")
         if hasattr(self.model, "device"):
@@ -299,11 +313,11 @@ class TransformersModelWrapper(LanguageModelWrapper):
         for chunk_start in tqdm.trange(
             0,
             max_len,
-            _FORWARD_CHUNK_SIZE,
+            self.forward_chunk_size,
             disable=not show_progress,
             desc="Computing log-probs",
         ):
-            chunk_end = min(chunk_start + _FORWARD_CHUNK_SIZE, max_len)
+            chunk_end = min(chunk_start + self.forward_chunk_size, max_len)
             # With KV cache enabled, many models expect attention_mask length to include
             # both past and current tokens (prefix up to chunk_end), not only current chunk.
             outputs = self.model(

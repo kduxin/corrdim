@@ -172,6 +172,29 @@ print(corrdim.set_corrint_backend("auto"))
 print(corrdim.available_corrint_backends())
 ```
 
+## Tips for low-VRAM systems
+
+If you run into out-of-memory errors, reduce `block_size` (default 512) to lower the peak memory usage during correlation-integral computation:
+
+```python
+result = corrdim.measure_text(
+    text,
+    model="Qwen/Qwen2.5-1.5B",
+    block_size=128,
+)
+```
+
+You can also set `forward_chunk_size` to control how many tokens are processed per forward pass (reduce this value, e.g. 128, on systems with limited VRAM):
+
+```python
+result = corrdim.measure_text(
+    text,
+    model="Qwen/Qwen2.5-1.5B",
+    block_size=128,
+    forward_chunk_size=128,
+)
+```
+
 ## Citation
 
 ```bibtex

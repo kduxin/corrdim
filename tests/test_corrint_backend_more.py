@@ -3,7 +3,13 @@ import torch
 
 import corrdim
 from corrdim.corrint import available_corrint_backends
-from corrdim.corrint import triton as triton_impl
+
+try:
+    from corrdim.corrint import triton as triton_impl
+except Exception:
+    triton_impl = None
+
+pytestmark = pytest.mark.skipif(triton_impl is None, reason="Triton not available")
 
 
 def test_available_corrint_backends_shape_and_keys():

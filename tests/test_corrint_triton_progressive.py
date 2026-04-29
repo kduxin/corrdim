@@ -2,7 +2,14 @@ import torch
 
 import pytest
 
-from corrdim.corrint.triton import correlation_counts, progressive_correlation_counts
+try:
+    from corrdim.corrint.triton import correlation_counts, progressive_correlation_counts
+except Exception:
+    correlation_counts = None
+    progressive_correlation_counts = None
+
+_triton_available = correlation_counts is not None
+pytestmark = pytest.mark.skipif(not _triton_available, reason="Triton not available")
 
 
 @pytest.mark.skipif(not torch.cuda.is_available(), reason="CUDA not available; skipping Triton tests")
