@@ -44,11 +44,8 @@ CorrDim requires Python 3.10 or newer.
 pip install corrdim
 ```
 
-If you want to avoid Triton installation:
-
-```bash
-pip install "corrdim[no-triton]"
-```
+> **Linux GPU users:** PyPI distributes CPU-only PyTorch. Install CUDA PyTorch first:
+> `pip install torch --index-url https://download.pytorch.org/whl/cu126`
 
 For local development:
 
