@@ -202,6 +202,7 @@ def measure_texts(
     texts: list[str],
     model: ModelLike,
     tokenizer: Optional[object] = None,
+    truncation_tokens: Optional[int] = None,
     context_length: Optional[int] = None,
     dim_reduction: Optional[int] = 8192,
     stride: int = 1,
@@ -216,10 +217,22 @@ def measure_texts(
     forward_chunk_size: Optional[int] = None,
     **model_kwargs,
 ) -> list[DimensionResult]:
+    processed = list(texts)
+    if truncation_tokens is not None:
+        processed = [
+            _truncate_text_by_tokens(
+                text=t,
+                truncation_tokens=truncation_tokens,
+                model=model,
+                tokenizer=tokenizer,
+            )
+            for t in processed
+        ]
+
     effective_epsilon_range = DEFAULT_EPSILON_RANGE if epsilon_range is None else epsilon_range
 
     curves = curve_from_texts(
-        texts=texts,
+        texts=processed,
         model=model,
         tokenizer=tokenizer,
         context_length=context_length,
