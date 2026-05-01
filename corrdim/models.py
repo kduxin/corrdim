@@ -87,8 +87,13 @@ class TransformersModelWrapper(LanguageModelWrapper):
         # Prefer fast/low-CPU-memory loading on CUDA.
         # Keep explicit user-provided kwargs as highest priority.
         load_kwargs = dict(kwargs)
-        if self.device.startswith("cuda"):
+        if self.device == "auto":
+            # "auto" → let accelerate handle multi-GPU device mapping
             load_kwargs.setdefault("device_map", "auto")
+            load_kwargs.setdefault("low_cpu_mem_usage", True)
+            load_kwargs.setdefault("torch_dtype", torch.float16)
+        elif self.device.startswith("cuda"):
+            # Single GPU: load with low CPU memory usage, no device_map
             load_kwargs.setdefault("low_cpu_mem_usage", True)
             load_kwargs.setdefault("torch_dtype", torch.float16)
         elif self.device == "mps":
