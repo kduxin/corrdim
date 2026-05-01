@@ -72,10 +72,13 @@ def _truncate_text_by_tokens(
     if tokenizer_obj is None:
         raise ValueError("Cannot truncate by tokens without a tokenizer. Please pass tokenizer explicitly.")
 
-    tokens = tokenizer_obj.encode(text, add_special_tokens=False)
-    if len(tokens) <= truncation_tokens:
-        return text
-    return tokenizer_obj.decode(tokens[:truncation_tokens], skip_special_tokens=False)
+    tokens = tokenizer_obj.encode(
+        text,
+        add_special_tokens=False,
+        max_length=truncation_tokens,
+        truncation=True,
+    )
+    return tokenizer_obj.decode(tokens, skip_special_tokens=False)
 
 def measure_text(
     text: str,
