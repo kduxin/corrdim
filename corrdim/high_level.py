@@ -5,7 +5,7 @@ from typing import Optional, Tuple
 import torch
 
 from .dimension import estimate_dimension_from_curve
-from .low_level import ModelLike, curve_from_text, curve_from_texts, progressive_curve_from_text, progressive_curve_from_texts
+from .low_level import ModelLike, _get_or_load_tokenizer, curve_from_text, curve_from_texts, progressive_curve_from_text, progressive_curve_from_texts
 from .types import CurveResult, DimensionResult, ProgressiveCurveResult, ProgressiveDimensionResult
 
 DEFAULT_EPSILON_RANGE: Tuple[float, float] = (10**-20.0, 10**20.0)
@@ -65,9 +65,7 @@ def _truncate_text_by_tokens(
     if tokenizer_obj is None and hasattr(model, "tokenizer"):
         tokenizer_obj = model.tokenizer
     if tokenizer_obj is None and isinstance(model, str):
-        from transformers import AutoTokenizer
-
-        tokenizer_obj = AutoTokenizer.from_pretrained(model)
+        tokenizer_obj = _get_or_load_tokenizer(model)
 
     if tokenizer_obj is None:
         raise ValueError("Cannot truncate by tokens without a tokenizer. Please pass tokenizer explicitly.")

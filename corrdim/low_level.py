@@ -17,6 +17,10 @@ _MODEL_CACHE_MAX_SIZE = 2
 _MODEL_CACHE: "OrderedDict[tuple, LanguageModelWrapper]" = OrderedDict()
 _MODEL_CACHE_LOCK = Lock()
 
+_TOKENIZER_CACHE_MAX_SIZE = 4
+_TOKENIZER_CACHE: "OrderedDict[str, object]" = OrderedDict()
+_TOKENIZER_CACHE_LOCK = Lock()
+
 
 def _freeze_kwargs(kwargs: dict) -> tuple:
     return tuple(sorted((str(key), repr(value)) for key, value in kwargs.items()))
@@ -30,6 +34,30 @@ def _cache_key(model_name: str, tokenizer: Optional[object], device: Optional[st
 def clear_model_cache() -> None:
     with _MODEL_CACHE_LOCK:
         _MODEL_CACHE.clear()
+    with _TOKENIZER_CACHE_LOCK:
+        _TOKENIZER_CACHE.clear()
+
+
+def _get_or_load_tokenizer(model_name: str) -> object:
+    # Prefer tokenizer already embedded in a loaded model wrapper
+    with _MODEL_CACHE_LOCK:
+        for key, wrapper in _MODEL_CACHE.items():
+            if key[0] == model_name and hasattr(wrapper, "tokenizer"):
+                return wrapper.tokenizer
+    # Fall back to tokenizer-only cache
+    with _TOKENIZER_CACHE_LOCK:
+        tok = _TOKENIZER_CACHE.get(model_name)
+        if tok is not None:
+            _TOKENIZER_CACHE.move_to_end(model_name)
+            return tok
+    from transformers import AutoTokenizer
+    tok = AutoTokenizer.from_pretrained(model_name)
+    with _TOKENIZER_CACHE_LOCK:
+        _TOKENIZER_CACHE[model_name] = tok
+        _TOKENIZER_CACHE.move_to_end(model_name)
+        while len(_TOKENIZER_CACHE) > _TOKENIZER_CACHE_MAX_SIZE:
+            _TOKENIZER_CACHE.popitem(last=False)
+    return tok
 
 
 def _resolve_model_wrapper(
@@ -54,6 +82,13 @@ def _resolve_model_wrapper(
             _MODEL_CACHE.move_to_end(key)
             while len(_MODEL_CACHE) > _MODEL_CACHE_MAX_SIZE:
                 _MODEL_CACHE.popitem(last=False)
+        # Keep tokenizer cache in sync so _get_or_load_tokenizer can reuse it
+        if hasattr(wrapper, "tokenizer"):
+            with _TOKENIZER_CACHE_LOCK:
+                _TOKENIZER_CACHE[model] = wrapper.tokenizer
+                _TOKENIZER_CACHE.move_to_end(model)
+                while len(_TOKENIZER_CACHE) > _TOKENIZER_CACHE_MAX_SIZE:
+                    _TOKENIZER_CACHE.popitem(last=False)
         if forward_chunk_size is not None:
             wrapper.forward_chunk_size = forward_chunk_size
         return wrapper
